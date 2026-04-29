@@ -1,19 +1,11 @@
-# Exclude actual collected data (large, ephemeral, 90-day rolling window)
-events/*
-media/*
-indexes/*
-
-# Keep structure
-!events/.gitkeep
-!media/.gitkeep
-!indexes/.gitkeep
-
-# Keep examples
-!examples/
+# Keep all collected data in repository
+# Data files (events, media, indexes) are now tracked for GitHub Actions workflow
 
 # Keep documentation and infrastructure
 !README.md
 !SCHEMA.md
 !manifest.json
 !scripts/
+!examples/
+!.gitkeep
 !.gitignore
