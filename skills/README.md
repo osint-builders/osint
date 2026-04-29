@@ -53,6 +53,52 @@ FFmpeg CLI for media processing and transformation. Convert formats, resize and 
 
 ---
 
+### sandcastle
+Run AI coding agents in isolated sandbox environments. Execute TypeScript/JavaScript code, prototype solutions, parallelize development tasks, and orchestrate multi-agent workflows using Docker, Podman, or Vercel providers. Perfect for on-the-fly code execution when AI needs to test implementations.
+
+**Location:** `sandcastle/`
+
+**Key Features:**
+- Isolated sandbox execution (Docker, Podman, Vercel)
+- Parallel agent orchestration on separate branches
+- Multi-iteration workflows with automatic merging
+- Git-based version control integration
+- Claude Code agent support (Opus, Sonnet, Haiku)
+
+**Quick Start:**
+
+```bash
+# Initialize sandcastle
+cd bin/sandcastle && npm install
+sandcastle init
+
+# Run agent with prompt
+sandcastle run --prompt "Create a function to calculate Fibonacci numbers with tests"
+
+# Parallel agents
+sandcastle parallel \
+  --task "auth:Implement authentication" \
+  --task "api:Build REST API" \
+  --task "tests:Write test suite"
+
+# Interactive session
+sandcastle interactive --prompt "Help me debug this issue"
+```
+
+**Common Use Cases:**
+- Prototype and test algorithms
+- Validate solutions before merging
+- Run multiple feature branches in parallel
+- Test code in isolation without affecting host
+- Multi-stage development pipelines (plan → implement → test)
+
+**See also:**
+- `sandcastle/SKILL.md` - Complete framework documentation
+- `sandcastle/scripts/` - Example workflows
+- `bin/sandcastle/` - CLI tool and usage guide
+
+---
+
 ### imagemagick
 ImageMagick CLI for comprehensive image processing. Convert formats, resize and crop, apply effects and filters, adjust colors, create thumbnails, batch process, composite images, add text and watermarks.
 
@@ -126,6 +172,7 @@ Each skill has corresponding binaries and setup in the `bin/` folder:
 - `bin/ffmpeg/` - FFmpeg binary setup
 - `bin/imagemagick/` - ImageMagick binary setup
 - `bin/perplexity/` - Perplexity AI CLI wrapper
+- `bin/sandcastle/` - Sandcastle CLI for isolated code execution
 
 ## Environment Configuration
 
