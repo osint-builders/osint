@@ -296,13 +296,22 @@ function generateRunScript(options) {
     ? `env: ${JSON.stringify(options.env)},`
     : '';
 
+  // Use anthropics/claude-code Docker image for sandcastle
+  const imageConfig = sandbox === 'docker'
+    ? `imageName: "anthropics/claude-code:latest",`
+    : '';
+
+  const sandboxConfig = (envConfig || imageConfig)
+    ? `{ ${envConfig}${envConfig && imageConfig ? ' ' : ''}${imageConfig} }`
+    : '';
+
   return `
 import { run, claudeCode } from "@ai-hero/sandcastle";
 import { ${sandbox} } from "@ai-hero/sandcastle/sandboxes/${sandbox}";
 
 const result = await run({
   agent: claudeCode(${JSON.stringify(model)}),
-  sandbox: ${sandbox}(${envConfig ? `{ ${envConfig} }` : ''}),
+  sandbox: ${sandbox}(${sandboxConfig}),
   ${promptConfig}
   ${branchStrategyConfig}
   maxIterations: ${maxIterations},
