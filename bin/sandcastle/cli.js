@@ -296,9 +296,9 @@ function generateRunScript(options) {
     ? `env: ${JSON.stringify(options.env)},`
     : '';
 
-  // Use anthropics/claude-code Docker image for sandcastle
+  // Use Node.js Docker image with git and basic tools
   const imageConfig = sandbox === 'docker'
-    ? `imageName: "anthropics/claude-code:latest",`
+    ? `imageName: "node:20-bullseye",`
     : '';
 
   const sandboxConfig = (envConfig || imageConfig)
