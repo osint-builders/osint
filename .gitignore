@@ -4,7 +4,6 @@ npm-debug.log
 
 # Bin folder dependencies (keep structure, ignore node_modules)
 bin/*/node_modules/
-bin/*/package-lock.json
 
 # Python
 __pycache__/
