@@ -1,0 +1,11 @@
+{
+  "name": "data-to-markdown-cli",
+  "version": "1.0.0",
+  "description": "CLI for converting data to Markdown with E-PRIME enforcement",
+  "type": "commonjs",
+  "private": true,
+  "main": "cli.js",
+  "bin": {
+    "data-to-markdown": "cli.js"
+  }
+}
