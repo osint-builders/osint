@@ -10,90 +10,69 @@ Native Rust CLI for browser automation by Vercel Labs. Fast, deterministic eleme
 **Location:** `agent-browser/`
 
 **Key Capabilities:**
-- Page navigation and history
-- Accessibility tree snapshots with deterministic element refs (@e1, @e2, etc.)
-- Element interaction (click, fill, type, select, etc.)
+- Page navigation and accessibility tree snapshots with element refs
+- Element interaction (click, fill, type, select)
 - Data extraction (text, HTML, JavaScript eval)
-- Screenshot capture (with optional element annotations)
+- Screenshot capture (with optional annotations)
 - Session management and authentication
-- Cloud provider support (Browserbase, Browserless, etc.)
-
-**Setup:**
-```bash
-npm install -g agent-browser
-agent-browser install
-```
 
 **Quick Start:**
 ```bash
 agent-browser open https://example.com
-agent-browser snapshot -i                    # Get interactive elements
-agent-browser click @e1                      # Click element
-agent-browser fill @e2 "input text"          # Fill input
+agent-browser snapshot -i
+agent-browser click @e1
 agent-browser screenshot page.png
-agent-browser close
 ```
-
-**See also:**
-- `agent-browser/SKILL.md` - Full skill documentation
-- `agent-browser/references/REFERENCE.md` - Complete command reference
-- `agent-browser/scripts/` - Workflow examples (bash)
-- `bin/agent-browser/README.md` - CLI setup and usage
 
 ---
 
 ### ffmpeg-cli
-FFmpeg CLI for media processing and transformation. Convert formats, resize and pad, extract audio, trim, generate thumbnails, create slideshows, overlay graphics, burn subtitles, and more. Use for video manipulation, media encoding, content creation, and OSINT media analysis.
+FFmpeg CLI for media processing and transformation. Convert formats, resize and pad, extract audio, trim, generate thumbnails, create slideshows, overlay graphics, burn subtitles, and more.
 
 **Location:** `ffmpeg-cli/`
 
 **Key Capabilities:**
-- Format conversion and remuxing (MP4 ↔ MKV, MOV, AVI)
-- Video scaling with aspect ratio preservation and letterboxing
+- Format conversion and remuxing
+- Video scaling with aspect ratio preservation
 - Audio extraction and processing
-- Trim and cut by time range
-- Thumbnail generation (single/multiple/scene-based)
-- Slideshow creation with fade transitions
+- Trim and cut by time
+- Thumbnail generation
+- Slideshow creation with fade
 - Logo and image overlay
 - Video concatenation
-- Subtitle burning
-- Ken Burns effect (zoompan)
-- GIF generation
-- Metadata inspection with ffprobe
-
-**Setup:**
-```bash
-# macOS
-brew install ffmpeg
-
-# Linux (Debian/Ubuntu)
-sudo apt-get install ffmpeg
-
-# Or use setup script
-cd bin/ffmpeg
-node setup.js
-```
 
 **Quick Start:**
 ```bash
-# Convert format (remux, no re-encoding)
 ffmpeg -i input.mp4 -c copy output.mkv
-
-# Resize with letterbox
-ffmpeg -i input.mp4 -vf "scale=w=1920:h=1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:color=black,setsar=1:1" output.mp4
-
-# Extract audio
-ffmpeg -i video.mp4 -vn -acodec libmp3lame -ab 192k audio.mp3
-
-# Generate thumbnail
+ffmpeg -i input.jpg -resize 800x600 output.jpg
 ffmpeg -i video.mp4 -ss 00:00:05 -vframes 1 thumbnail.png
 ```
 
-**See also:**
-- `ffmpeg-cli/SKILL.md` - Full skill documentation
-- `ffmpeg-cli/references/REFERENCE.md` - Complete command reference
-- `ffmpeg-cli/scripts/` - Workflow examples (bash scripts)
-- `bin/ffmpeg/README.md` - FFmpeg setup and installation
+---
+
+### imagemagick
+ImageMagick CLI for comprehensive image processing and manipulation. Convert formats, resize and crop, apply effects and filters, adjust colors, create thumbnails, batch process, composite images, add text and watermarks.
+
+**Location:** `imagemagick/`
+
+**Key Capabilities:**
+- Format conversion (250+ formats)
+- Image transformation (resize, crop, rotate, flip)
+- Effects and filters (blur, sharpen, grayscale, sepia, edge detection, emboss)
+- Color adjustments (brightness, contrast, saturation, hue)
+- Thumbnail generation
+- Batch processing with mogrify
+- Text overlays and watermarks
+- Image compositing and contact sheets
+
+**Quick Start:**
+```bash
+magick input.png output.jpg
+magick input.jpg -resize 800x600 output.jpg
+magick input.jpg -resize 200x200^ -gravity center -extent 200x200 thumb.jpg
+mogrify -resize 800x600 *.jpg
+magick input.jpg -blur 0x8 output.jpg
+```
 
 ---
 
@@ -106,32 +85,42 @@ skill-name/
 ├── SKILL.md          # Skill metadata and instructions
 ├── scripts/          # Executable code examples
 ├── references/       # Additional documentation
-└── assets/           # Static resources (templates, etc.)
+└── assets/           # Static resources (optional)
 ```
+
+## Related Binaries
+
+Each skill has corresponding binaries and setup in the `bin/` folder:
+- `bin/agent-browser/` - Agent browser CLI and wrapper
+- `bin/ffmpeg/` - FFmpeg binary setup
+- `bin/imagemagick/` - ImageMagick binary setup
 
 ## Adding New Skills
 
 To add a new skill:
 
 1. Create skill directory: `mkdir skills/my-skill`
-2. Create `SKILL.md` with required frontmatter:
+2. Create `SKILL.md` with frontmatter:
    ```yaml
    ---
    name: my-skill
-   description: What this skill does and when to use it.
+   description: Brief description of what the skill does.
    ---
    ```
 3. Add executable scripts in `scripts/`
 4. Add reference docs in `references/`
-5. Update this README with skill description
+5. Create `bin/my-skill/` with setup and documentation
+6. Update this README
 
 Validate skills:
 ```bash
 npx skills-ref validate ./skills/my-skill
 ```
 
-Check that:
-- `SKILL.md` has valid frontmatter
-- Name matches directory name
-- Description is descriptive
-- All file references are valid
+## Resources
+
+- [Agent Skills Specification](https://agentskills.io/specification)
+- [Skills.sh](https://skills.sh)
+- Agent Browser: https://github.com/vercel-labs/agent-browser
+- FFmpeg: https://ffmpeg.org
+- ImageMagick: https://imagemagick.org
