@@ -1,13 +1,22 @@
+#!/usr/bin/env node
+
 /**
- * Agent Browser Entry Point
+ * Agent Browser Entry Point (CLI)
  * 
- * Direct access to Browserbase SDK for CLI and programmatic use.
- * Location: bin/agent-browser/
+ * Convenience alias for cli.js. Delegates to the native agent-browser binary.
  */
 
-const Browserbase = require('./node_modules/@browserbasehq/sdk');
+import { execSync } from 'child_process';
+import { argv } from 'process';
 
-module.exports = {
-  Browserbase,
-  version: require('./package.json').version,
-};
+const args = argv.slice(2).join(' ');
+
+try {
+  const result = execSync(`agent-browser ${args}`, {
+    stdio: 'inherit',
+    env: process.env,
+  });
+  process.exit(0);
+} catch (error) {
+  process.exit(error.status || 1);
+}

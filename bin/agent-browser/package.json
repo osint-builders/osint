@@ -1,16 +1,12 @@
 {
-  "name": "bin",
+  "name": "agent-browser-bin",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "agent-browser CLI wrapper and setup",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install-agent-browser": "npm install -g agent-browser && agent-browser install",
+    "setup": "npm run install-agent-browser"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "@browserbasehq/sdk": "^2.10.0"
-  }
+  "keywords": ["agent-browser", "cli", "browser-automation"],
+  "license": "MIT"
 }

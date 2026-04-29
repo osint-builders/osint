@@ -1,67 +1,28 @@
 #!/usr/bin/env node
 
 /**
- * Agent Browser CLI
+ * Agent Browser CLI Wrapper
  * 
- * Command-line interface for agent-browser automation via Browserbase.
- * Usage: node bin/agent-browser/cli.js [command] [options]
+ * This wrapper provides a convenient entry point to the native agent-browser CLI.
+ * The native binary must be installed globally via: npm install -g agent-browser
+ * 
+ * For full documentation, see: https://github.com/vercel-labs/agent-browser
  */
 
-const Browserbase = require('./index.js');
+import { execSync } from 'child_process';
+import { argv } from 'process';
 
-const args = process.argv.slice(2);
-const command = args[0];
+// Pass all arguments directly to the agent-browser binary
+const args = argv.slice(2).join(' ');
 
-async function main() {
-  if (!command || command === '--help' || command === '-h') {
-    console.log(`
-Agent Browser CLI
-
-Usage:
-  node bin/agent-browser/cli.js <command> [options]
-
-Commands:
-  navigate <url>              Navigate to URL and capture screenshot
-  screenshot <url>            Take screenshot of URL
-  extract-text <url>          Extract text from URL
-  extract-links <url>         Extract all links from URL
-  help                        Show this help message
-
-Environment Variables:
-  BROWSERBASE_API_KEY         Required: Your Browserbase API key
-
-Examples:
-  node bin/agent-browser/cli.js navigate https://example.com
-  node bin/agent-browser/cli.js screenshot https://example.com
-  node bin/agent-browser/cli.js extract-links https://example.com
-    `);
-    process.exit(0);
-  }
-
-  if (!process.env.BROWSERBASE_API_KEY) {
-    console.error('Error: BROWSERBASE_API_KEY environment variable not set');
-    process.exit(1);
-  }
-
-  try {
-    const { Browserbase } = require('./index.js');
-    const client = new Browserbase({
-      apiKey: process.env.BROWSERBASE_API_KEY,
-    });
-
-    switch (command) {
-      case 'help':
-        console.log('Help command');
-        break;
-      default:
-        console.error(`Unknown command: ${command}`);
-        console.log('Run with --help for usage information');
-        process.exit(1);
-    }
-  } catch (error) {
-    console.error('Error:', error.message);
-    process.exit(1);
-  }
+try {
+  const result = execSync(`agent-browser ${args}`, {
+    stdio: 'inherit',
+    env: process.env,
+  });
+  process.exit(0);
+} catch (error) {
+  // execSync throws if agent-browser exits with non-zero status
+  // The error output is already printed to stderr, so just exit
+  process.exit(error.status || 1);
 }
-
-main();
