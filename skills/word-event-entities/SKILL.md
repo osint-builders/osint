@@ -7,7 +7,6 @@ metadata:
   author: osint-builders
   version: "1.0.0"
   entity-type: world-event
-  schema-id: "https://github.com/Zettersten/osint-/schemas/world_event.entity.schema.json"
   schema-version: "2020-12"
 ---
 
@@ -468,13 +467,12 @@ ingested_at (when added to system)
 ## Schema Compliance
 
 **JSON Schema Version**: 2020-12
-**Schema ID**: https://github.com/Zettersten/osint-/schemas/world_event.entity.schema.json
+**Type**: object
 **additionalProperties**: false (no extra fields allowed)
 
-Entities must validate against the authoritative JSON schema for strict compliance.
+Entities must validate against the JSON schema specification for strict compliance.
 
 ## References
 
 - See [REFERENCE.md](references/REFERENCE.md) for detailed field validation
 - See [scripts/](scripts/) for entity analysis and characterization examples
-- Schema source: https://github.com/Zettersten/osint-/schemas/world_event.entity.schema.json

@@ -1,6 +1,6 @@
 # World Event Entity - Complete Reference
 
-Authoritative field reference based on JSON Schema specification.
+Authoritative field reference based on JSON Schema 2020-12 specification.
 
 ## Required Fields (Must Present)
 
@@ -268,9 +268,7 @@ Common `source.provider` values:
 
 ## Schema Compliance
 
-**JSON Schema**: https://json-schema.org/draft/2020-12/schema
-**$id**: https://github.com/Zettersten/osint-/schemas/world_event.entity.schema.json
-**Title**: WorldEventEntity
+**JSON Schema**: 2020-12
 **Type**: object
 **additionalProperties**: false (strict schema, no extra fields)
 
@@ -290,11 +288,11 @@ Common `source.provider` values:
 
 ## Testing & Validation
 
-To validate an entity against the schema:
+For strict JSON Schema validation against the specification:
 
-```bash
-# Using jq
-jq 'keys == ["date_event", "date_published", "details", "geo", "id", "image_urls", "ingested_at", "links", "raw_email_ref", "source", "summary", "confidence", "title", "topics"] | sort' entity.json
-```
-
-For strict JSON Schema validation, use a validator tool with the schema URL.
+1. Ensure all required fields are present
+2. Verify data types match specification
+3. Validate string lengths meet minimums
+4. Check numeric ranges
+5. Verify timestamp formats are ISO 8601
+6. Confirm no additional properties exist (except raw_email_ref)
