@@ -7,7 +7,7 @@ metadata:
   author: osint-builders
   version: "1.0.0"
   provider: browserbase
-  binaries: "../../bin"
+  binaries: "../../bin/agent-browser"
 ---
 
 # Agent Browser Skill
@@ -90,18 +90,28 @@ Obtain an API key from [Browserbase](https://www.browserbase.com).
 
 ## Binaries
 
-The Browserbase SDK binaries are located at `../../bin` relative to the project root.
+The Browserbase SDK binaries and CLI are located at `../../bin/agent-browser` relative to the project root.
 
-Usage from project root:
+### CLI Usage
+
+From project root:
+```bash
+node bin/agent-browser/cli.js navigate https://example.com
+node bin/agent-browser/cli.js screenshot https://example.com
+node bin/agent-browser/cli.js extract-links https://example.com
+```
+
+### Programmatic Usage
+
 ```javascript
-const { Browserbase } = require('./bin/index.js');
+const { Browserbase } = require('./bin/agent-browser/index.js');
 
 const client = new Browserbase({
   apiKey: process.env.BROWSERBASE_API_KEY,
 });
 ```
 
-See `../../bin/README.md` for full binary documentation.
+See `../../bin/agent-browser/README.md` for complete binary documentation.
 
 ## Error Handling
 
@@ -124,4 +134,4 @@ Common error scenarios:
 
 - See [REFERENCE.md](references/REFERENCE.md) for detailed API documentation
 - See [scripts/](scripts/) for implementation examples
-- Browserbase binaries: `../../bin/node_modules/@browserbasehq/sdk`
+- Browserbase documentation: https://docs.browserbase.com
