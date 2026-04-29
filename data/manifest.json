@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-04-29T00:00:00Z",
+  "schema_version": "2020-12",
+  "retention_days": 90,
+  "data_range": {
+    "oldest_date": null,
+    "newest_date": null
+  },
+  "statistics": {
+    "total_events": 0,
+    "events_by_month": {},
+    "events_by_source": {},
+    "media_files": {
+      "images": 0,
+      "videos": 0,
+      "total_size_mb": 0
+    }
+  },
+  "last_cleanup": null,
+  "next_cleanup": null,
+  "metadata": {
+    "description": "World event entity data collection and storage",
+    "format": "JSONL (JSON Lines)",
+    "organization": "Date-based folders (YYYY-MM/YYYY-MM-DD.jsonl)",
+    "compatible_versions": ["1.0.x"]
+  }
+}
