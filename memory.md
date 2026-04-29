@@ -26,3 +26,8 @@ This file contains execution learnings captured during AI-assisted workflows. Ea
 Sandcastle agent failed with exit code 1
 Review Sandcastle logs for details.
 ---
+
+## Source twitter-tanker-trackers Failed - 2026-04-29T22:28:31.967508
+Sandcastle agent failed with exit code 1
+Review Sandcastle logs for details.
+---
