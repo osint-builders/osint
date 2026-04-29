@@ -16,15 +16,15 @@ Comprehensive reference and characterization of World Event Entity model - a sta
 
 ## Entity Overview
 
-The World Event Entity is a structured data model for representing events captured from news sources, emails, social media, and other information channels. It provides a unified JSON schema for storing event information with complete provenance tracking, geographic context, confidence scoring, and content references.
+The World Event Entity is a structured data model for representing events captured from any source - news sources, intelligence reports, social media, official announcements, and other information channels. It provides a unified JSON schema for storing event information with complete provenance tracking, geographic context, confidence scoring, and content references.
 
 **Primary Use Cases:**
-- OSINT (Open Source Intelligence) event tracking
-- Email-based event intelligence extraction
+- OSINT (Open Source Intelligence) event tracking and analysis
 - News aggregation and event correlation
 - Geospatial event mapping and analysis
 - Event verification and confidence assessment
 - Multi-source event deduplication and fusion
+- Event timeline construction and relationship analysis
 
 ## Core Model Structure
 
@@ -36,7 +36,7 @@ The World Event Entity is a structured data model for representing events captur
 | `source` | object | required: `name` | Event source/provider information | `{name: "Reuters", provider: "news"}` |
 | `title` | string | minLength: 3 | Event headline | `Earthquake Strikes Turkey` |
 | `summary` | string | minLength: 10 | Brief narrative summary | `A major earthquake... causing widespread damage` |
-| `details` | string | minLength: 20 | Comprehensive event description | `Full narrative with all context...` |
+| `contents` | string | minLength: 20 | Comprehensive markdown-formatted event description | `## Earthquake Details\n\n### Impact\n- Casualties...` |
 | `date_published` | ISO 8601 | format: date-time | When event was published | `2024-02-06T04:45:00Z` |
 | `links` | array | type: object[] | Source URLs with labels | `[{url: "...", label: "..."}]` |
 | `image_urls` | array | type: string[] | Image URLs | `["https://example.com/image.jpg"]` |
@@ -49,7 +49,6 @@ The World Event Entity is a structured data model for representing events captur
 | `geo` | object | properties: lat, lon, ... | Geographic information | `{lat: 37.27, lon: 37.02, country: "Turkey"}` |
 | `topics` | array | type: string[] | Event topics/tags | `["earthquake", "disaster", "turkey"]` |
 | `confidence` | number | min: 0, max: 1 | Data confidence score | `0.95` |
-| `raw_email_ref` | object | properties: message_id, thread_id, subject | Email source reference | `{message_id: "...", subject: "..."}` |
 | `ingested_at` | ISO 8601 | format: date-time | System ingestion timestamp | `2024-02-06T04:50:00Z` |
 
 ## Detailed Field Specification
@@ -89,9 +88,8 @@ The World Event Entity is a structured data model for representing events captur
 
 ```json
 {
-  "name": "john.doe@example.com",
-  "email": "john.doe@example.com",
-  "provider": "email"
+  "name": "Intelligence Report",
+  "provider": "official"
 }
 ```
 
@@ -130,31 +128,50 @@ efforts are underway across affected regions.
 
 ---
 
-### details
-**Type**: String
+### contents
+**Type**: String (Markdown formatted)
 **Constraints**: minLength 20
-**Purpose**: Comprehensive event description with full context
+**Purpose**: Comprehensive event description with full context, formatted as Markdown
+
+**Rules**:
+- Should be well-formed Markdown
+- May include headings, lists, tables, code blocks
+- Supports rich formatting for complex event narratives
+- Can include structured information sections
 
 **Examples**:
-```
+```markdown
+## Earthquake Event
+
+### Overview
 A powerful 7.8 magnitude earthquake struck the border region of Turkey and Syria 
-at 04:17 UTC on Monday, February 6, 2024. The epicenter was located in Gaziantep 
-Province at coordinates 37.27°N, 37.02°E, at a depth of approximately 18km.
+at 04:17 UTC on Monday, February 6, 2024.
 
-Seismic Activity:
-- Main quake: 7.8 magnitude
-- Strong aftershocks: Multiple 5.0+ magnitude tremors recorded
-- Duration: Shaking lasted 20+ seconds
+### Seismic Activity
+- **Main quake**: 7.8 magnitude
+- **Epicenter**: Gaziantep Province, 37.27°N, 37.02°E
+- **Depth**: ~18km
+- **Aftershocks**: Multiple 5.0+ magnitude tremors recorded
+- **Duration**: Shaking lasted 20+ seconds
 
-Impacts:
-- Casualties: Preliminary estimates exceed 50,000 deaths
-- Infrastructure: Thousands of buildings destroyed or severely damaged
-- Displacement: Estimated 10+ million people affected
+### Impacts
+| Category | Details |
+|----------|---------|
+| Casualties | Preliminary estimates exceed 50,000 deaths |
+| Infrastructure | Thousands of buildings destroyed or severely damaged |
+| Displacement | Estimated 10+ million people affected |
 
-International Response:
-- Turkish and Syrian governments declare emergency
-- International aid coordination activated
-- Search and rescue teams deployed from multiple countries
+### International Response
+1. Turkish and Syrian governments declare emergency
+2. International aid coordination activated
+3. Search and rescue teams deployed from multiple countries
+4. Medical assistance requested from neighboring nations
+
+### Timeline
+- **04:17 UTC**: Main earthquake strikes
+- **04:30 UTC**: Initial reports emerge
+- **06:00 UTC**: International responses begin
+- **12:00 UTC**: Major news coverage spreads globally
 ```
 
 ---
@@ -302,27 +319,6 @@ International Response:
 
 ---
 
-### raw_email_ref
-**Type**: Object
-**Properties**:
-- `message_id` (string, optional): Email message identifier
-- `thread_id` (string, optional): Email thread identifier
-- `subject` (string, optional): Email subject line
-- Additional properties allowed
-
-**Purpose**: Reference to source email (if email-originated)
-
-**Examples**:
-```json
-{
-  "message_id": "CADc-_xYZabc123@mail.gmail.com",
-  "thread_id": "thread-abc123",
-  "subject": "URGENT: Major earthquake reported"
-}
-```
-
----
-
 ### ingested_at
 **Type**: ISO 8601 DateTime
 **Format**: `YYYY-MM-DDTHH:mm:ssZ`
@@ -343,7 +339,7 @@ International Response:
 - `source.provider`: Provider type identifier
 - `title`: 3+ characters
 - `summary`: 10+ characters
-- `details`: 20+ characters
+- `contents`: 20+ characters, Markdown formatted
 
 ### Date/Time Types
 - `date_published`: Required ISO 8601 UTC
@@ -364,7 +360,6 @@ International Response:
 ### Object Types
 - `source`: Object with name, email, provider
 - `geo`: Object with location properties
-- `raw_email_ref`: Object with email references
 
 ## Validation Rules
 
@@ -373,7 +368,7 @@ International Response:
 - [ ] `source`: Object with required `name` property
 - [ ] `title`: Present, 3+ characters
 - [ ] `summary`: Present, 10+ characters
-- [ ] `details`: Present, 20+ characters
+- [ ] `contents`: Present, 20+ characters, valid Markdown
 - [ ] `date_published`: Valid ISO 8601 datetime
 - [ ] `links`: Array (may be empty), items have required `url`
 - [ ] `image_urls`: Array (may be empty), items are URIs
@@ -386,10 +381,11 @@ International Response:
 - [ ] `ingested_at`: Valid ISO 8601
 
 ### Content Validation
-- No HTML/JavaScript in text fields
+- No HTML in text fields (unless in Markdown code blocks)
 - All URLs must be valid HTTP/HTTPS
 - Timestamps must be valid ISO 8601
 - Geographic coordinates must be numeric and in valid ranges
+- `contents` should be valid Markdown
 
 ## Entity Relationship Patterns
 
@@ -403,8 +399,6 @@ International Response:
 
 ### Source Attribution Chain
 ```
-raw_email_ref (email source)
-    ↓
 source (who published)
     ↓
 date_published (when reported)
@@ -412,55 +406,34 @@ date_published (when reported)
 ingested_at (when added to system)
 ```
 
-## Common Entity Patterns
+## Common Entity Pattern
 
-### Natural Disaster Event
+### Complete Event Entity
 ```json
 {
   "id": "event-2024-001",
-  "source": {"name": "Reuters"},
-  "title": "Major Earthquake in Turkey",
-  "summary": "7.8 magnitude earthquake causes thousands of casualties",
-  "details": "Full event narrative...",
+  "source": {"name": "Reuters", "provider": "news-outlet"},
+  "title": "7.8 Magnitude Earthquake Strikes Turkey",
+  "summary": "A major earthquake causes widespread damage and thousands of casualties across Turkey and Syria",
+  "contents": "## Earthquake Overview\n\n### Event Details\n- **Magnitude**: 7.8\n- **Location**: Gaziantep Province, Turkey\n- **Time**: 04:17 UTC, February 6, 2024\n\n### Impacts\n- Thousands of casualties\n- Widespread infrastructure damage\n- International aid response initiated",
   "date_published": "2024-02-06T04:45:00Z",
   "date_event": "2024-02-06T04:17:00Z",
   "geo": {
     "lat": 37.27,
     "lon": 37.02,
     "country": "Turkey",
+    "region": "Gaziantep",
     "city": "Gaziantep"
   },
-  "links": [{"url": "https://reuters.com/...", "label": "Reuters"}],
-  "image_urls": ["https://example.com/image.jpg"],
+  "links": [
+    {"url": "https://reuters.com/...", "label": "Reuters Coverage"}
+  ],
+  "image_urls": [
+    "https://example.com/damage.jpg"
+  ],
   "topics": ["earthquake", "disaster", "turkey"],
   "confidence": 0.95,
   "ingested_at": "2024-02-06T04:50:00Z"
-}
-```
-
-### Email-Based Event
-```json
-{
-  "id": "event-email-2024-001",
-  "source": {
-    "name": "john.doe@example.com",
-    "email": "john.doe@example.com",
-    "provider": "email"
-  },
-  "title": "Critical infrastructure alert",
-  "summary": "Report of incident affecting transportation network",
-  "details": "Event details from email body...",
-  "date_published": "2024-02-06T08:30:00Z",
-  "links": [],
-  "image_urls": [],
-  "topics": ["infrastructure", "transportation"],
-  "confidence": 0.45,
-  "raw_email_ref": {
-    "message_id": "CADc-_xyz@mail.gmail.com",
-    "thread_id": "thread-123",
-    "subject": "Infrastructure Alert"
-  },
-  "ingested_at": "2024-02-06T08:35:00Z"
 }
 ```
 

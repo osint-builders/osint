@@ -15,7 +15,7 @@ Authoritative field reference based on JSON Schema 2020-12 specification.
 - **Purpose**: Event source/publisher information
 - **Examples**:
   - `{"name": "Reuters"}`
-  - `{"name": "john@example.com", "email": "john@example.com", "provider": "email"}`
+  - `{"name": "Official Statement", "provider": "official"}`
 
 ### title (String)
 - **minLength**: 3 characters
@@ -27,10 +27,20 @@ Authoritative field reference based on JSON Schema 2020-12 specification.
 - **Purpose**: Brief event summary
 - **Examples**: `A major 7.8 magnitude earthquake struck Turkey and Syria`
 
-### details (String)
+### contents (String - Markdown)
 - **minLength**: 20 characters
-- **Purpose**: Comprehensive event description
-- **Examples**: `Full narrative with context, impact, response...`
+- **Format**: Markdown formatted text
+- **Purpose**: Comprehensive event description with full context
+- **Structure**: Can include headings, lists, tables, code blocks, emphasis
+- **Examples**: 
+  ```markdown
+  ## Event Overview
+  A powerful earthquake struck the region...
+  
+  ### Key Points
+  - Point 1
+  - Point 2
+  ```
 
 ### date_published (ISO 8601)
 - **Format**: `date-time` (RFC 3339)
@@ -95,20 +105,6 @@ Authoritative field reference based on JSON Schema 2020-12 specification.
 - **Purpose**: Data confidence score
 - **Examples**: `0.95`, `0.65`, `0.35`
 
-### raw_email_ref (Object)
-- **Type**: Object
-- **Properties**: `message_id`, `thread_id`, `subject` (all optional strings)
-- **additionalProperties**: true (allows extra fields)
-- **Purpose**: Email source reference
-- **Examples**:
-  ```json
-  {
-    "message_id": "CADc-_xyz@mail.gmail.com",
-    "thread_id": "thread-123",
-    "subject": "Event Alert"
-  }
-  ```
-
 ### ingested_at (ISO 8601)
 - **Type**: string (format: date-time)
 - **Purpose**: System ingestion timestamp
@@ -121,7 +117,7 @@ Authoritative field reference based on JSON Schema 2020-12 specification.
 - [ ] `source` object with required `name` property
 - [ ] `title` present with minLength 3
 - [ ] `summary` present with minLength 10
-- [ ] `details` present with minLength 20
+- [ ] `contents` present with minLength 20 and valid Markdown
 - [ ] `date_published` valid ISO 8601 datetime
 - [ ] `links` array with valid URL objects
 - [ ] `image_urls` array with URI strings
@@ -141,14 +137,14 @@ Authoritative field reference based on JSON Schema 2020-12 specification.
 - [ ] All numbers are numeric
 
 ### Content Validation
-- [ ] No HTML/JavaScript in text fields
+- [ ] No HTML in text fields
 - [ ] URLs are valid HTTP/HTTPS format
 - [ ] Timestamps are valid ISO 8601
 - [ ] Coordinates in valid ranges
+- [ ] `contents` is valid Markdown format
 
 ### No Extra Properties
 - [ ] No properties outside defined schema (additionalProperties: false)
-- [ ] Exception: `raw_email_ref` allows additional properties
 
 ## ISO 8601 Date-Time Format
 
@@ -182,23 +178,22 @@ Authoritative field reference based on JSON Schema 2020-12 specification.
 
 Common `source.provider` values:
 - `news-outlet` (Reuters, BBC, AP, etc.)
-- `email` (Email-based intelligence)
 - `social-media` (Twitter, Facebook, etc.)
 - `official` (Government, institutional sources)
 - `eyewitness` (First-hand reports)
 - `wire-service` (News wires)
+- `intelligence` (Intelligence reports)
 - `other` (Other sources)
 
-## Common Entity Patterns
+## Complete Event Entity Example
 
-### Full Natural Disaster Event
 ```json
 {
   "id": "event-2024-001",
   "source": {"name": "Reuters", "provider": "news-outlet"},
   "title": "7.8 Magnitude Earthquake Strikes Turkey",
-  "summary": "A major earthquake causes widespread damage",
-  "details": "Full description with context...",
+  "summary": "A major earthquake causes widespread damage and thousands of casualties across Turkey and Syria",
+  "contents": "## Earthquake Overview\n\n### Event Details\n- **Magnitude**: 7.8\n- **Location**: Gaziantep Province, Turkey\n- **Coordinates**: 37.27°N, 37.02°E\n- **Depth**: ~18km\n- **Time**: 04:17 UTC, February 6, 2024\n\n### Seismic Activity\n- Main quake: 7.8 magnitude\n- Multiple 5.0+ magnitude aftershocks\n- Shaking lasted 20+ seconds\n\n### Impacts\n| Category | Details |\n|----------|----------|\n| Casualties | Preliminary estimates exceed 50,000 deaths |\n| Infrastructure | Thousands of buildings destroyed or severely damaged |\n| Displacement | Estimated 10+ million people affected |\n\n### Response\n1. Turkish and Syrian governments declare emergency\n2. International aid coordination activated\n3. Search and rescue teams deployed\n4. Medical assistance requested",
   "date_published": "2024-02-06T04:45:00Z",
   "date_event": "2024-02-06T04:17:00Z",
   "geo": {
@@ -209,60 +204,16 @@ Common `source.provider` values:
     "city": "Gaziantep"
   },
   "links": [
-    {"url": "https://reuters.com/...", "label": "Reuters Coverage"}
+    {"url": "https://www.reuters.com/world/earthquakes/2024-02-06/", "label": "Reuters Coverage"},
+    {"url": "https://www.bbc.com/news/world-middle-east", "label": "BBC News"}
   ],
   "image_urls": [
-    "https://example.com/damage.jpg"
+    "https://example.com/earthquake-damage-01.jpg",
+    "https://example.com/rescue-operations.jpg"
   ],
-  "topics": ["earthquake", "disaster", "turkey"],
+  "topics": ["earthquake", "disaster", "turkey", "emergency-response"],
   "confidence": 0.95,
   "ingested_at": "2024-02-06T04:50:00Z"
-}
-```
-
-### Minimal Email Event
-```json
-{
-  "id": "event-email-001",
-  "source": {
-    "name": "john@example.com",
-    "email": "john@example.com",
-    "provider": "email"
-  },
-  "title": "Alert",
-  "summary": "Incident reported",
-  "details": "Details from email...",
-  "date_published": "2024-02-06T08:30:00Z",
-  "links": [],
-  "image_urls": [],
-  "raw_email_ref": {
-    "message_id": "msg-123",
-    "subject": "Alert"
-  },
-  "ingested_at": "2024-02-06T08:35:00Z"
-}
-```
-
-### Event with Null Geographic Coordinates
-```json
-{
-  "id": "event-policy-001",
-  "source": {"name": "EU Commission"},
-  "title": "New Policy Announced",
-  "summary": "Policy affecting multiple countries",
-  "details": "Details...",
-  "date_published": "2024-02-06T10:00:00Z",
-  "geo": {
-    "lat": null,
-    "lon": null,
-    "country": "European Union"
-  },
-  "links": [
-    {"url": "https://ec.europa.eu/..."}
-  ],
-  "image_urls": [],
-  "confidence": 0.98,
-  "ingested_at": "2024-02-06T10:05:00Z"
 }
 ```
 
@@ -285,6 +236,7 @@ Common `source.provider` values:
 | Out of range | Number outside valid range | Keep within range |
 | Extra properties | Field not in schema | Remove extra fields |
 | Wrong type | Value is wrong type | Convert to correct type |
+| Invalid Markdown | Malformed Markdown in contents | Fix Markdown syntax |
 
 ## Testing & Validation
 
@@ -295,4 +247,5 @@ For strict JSON Schema validation against the specification:
 3. Validate string lengths meet minimums
 4. Check numeric ranges
 5. Verify timestamp formats are ISO 8601
-6. Confirm no additional properties exist (except raw_email_ref)
+6. Confirm no additional properties exist
+7. Validate Markdown in contents field
