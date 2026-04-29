@@ -1,61 +1,55 @@
-# Agent Skills
+# Skills
 
-Agent-driven capabilities for OSINT intelligence gathering and analysis.
+Agent skills for OSINT intelligence gathering and analysis. Each skill is a self-contained module that agents can activate and use.
 
 ## Available Skills
 
-### Agent Browser
-Browserbase-powered browser automation and web scraping for automated intelligence gathering.
+### agent-browser
+Automate browser navigation, interact with web pages, and extract data using Browserbase. Use for web scraping, automated form filling, screenshot capture, and intelligent web data extraction.
 
-**File**: `agent-browser.ts`
-**Manifest**: `manifest.json`
+**Location:** `agent-browser/`
 
-#### Navigation Skills
-- `navigate(session, options)` - Navigate to URLs
-- `goBack(session)` - Navigate backward in history
-- `goForward(session)` - Navigate forward in history
-- `reload(session)` - Reload current page
+**Key Capabilities:**
+- Browser session management
+- Page navigation and history
+- Element interaction (click, type, select)
+- Data extraction (text, HTML, links, metadata)
+- Screenshot capture
+- JavaScript execution
+- Error and console log inspection
 
-#### Interaction Skills
-- `click(session, selector)` - Click on elements
-- `type(session, selector, text)` - Type text into fields
-- `fill(session, selector, value)` - Fill form fields
-- `selectOption(session, selector, value)` - Select dropdown options
+**Setup:**
+```bash
+export BROWSERBASE_API_KEY=your_api_key
+```
 
-#### Data Extraction Skills
-- `screenshot(session, options)` - Capture page screenshots
-- `extractText(session, options)` - Extract text content
-- `extractHTML(session, options)` - Extract HTML content
-- `extractMetadata(session)` - Extract page metadata
-- `extractLinks(session)` - Extract links from page
+**See also:**
+- `agent-browser/SKILL.md` - Full skill documentation
+- `agent-browser/references/REFERENCE.md` - API reference
+- `agent-browser/scripts/` - Implementation examples
 
-#### Session Management Skills
-- `createSession(projectId)` - Create new browser session
-- `closeSession(session)` - Close browser session
-- `getStatus(session)` - Get session status
+## Skill Structure
 
-#### Debug Skills
-- `getConsoleLogs(session)` - Get page console logs
-- `getErrors(session)` - Get page errors
-- `executeScript(session, script)` - Execute JavaScript in page
+Each skill follows the [Agent Skills Specification](https://agentskills.io/specification):
 
-## Setup
+```
+skill-name/
+├── SKILL.md          # Skill metadata and instructions
+├── scripts/          # Executable code examples
+├── references/       # Additional documentation
+└── assets/           # Static resources (templates, etc.)
+```
 
-1. Install Browserbase SDK:
-   ```bash
-   npm install @browserbasehq/sdk
-   ```
+## Adding New Skills
 
-2. Set up environment variables:
-   ```
-   BROWSERBASE_API_KEY=your_api_key_here
-   ```
+To add a new skill:
 
-3. Import skills in your agent code:
-   ```typescript
-   import { AgentBrowserSkills } from './skills/agent-browser';
-   ```
+1. Create a new directory: `mkdir skills/my-skill`
+2. Create `SKILL.md` with required frontmatter and instructions
+3. Add scripts/ and references/ directories as needed
+4. Update this README with the new skill description
 
-## Implementation Status
-
-All skills are currently templated with placeholder implementations. Update the skill functions with actual Browserbase SDK calls.
+Validate skills using:
+```bash
+skills-ref validate ./skills/my-skill
+```
