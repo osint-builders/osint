@@ -9,27 +9,12 @@ Native Rust CLI for browser automation by Vercel Labs. Fast, deterministic eleme
 
 **Location:** `agent-browser/`
 
-**Quick Start:**
-```bash
-agent-browser open https://example.com
-agent-browser snapshot -i
-agent-browser click @e1
-agent-browser screenshot page.png
-```
-
 ---
 
 ### ffmpeg-cli
 FFmpeg CLI for media processing and transformation. Convert formats, resize and pad, extract audio, trim, generate thumbnails, create slideshows, overlay graphics, burn subtitles.
 
 **Location:** `ffmpeg-cli/`
-
-**Quick Start:**
-```bash
-ffmpeg -i input.mp4 -c copy output.mkv
-ffmpeg -i input.jpg -resize 800x600 output.jpg
-ffmpeg -i video.mp4 -ss 00:00:05 -vframes 1 thumbnail.png
-```
 
 ---
 
@@ -38,54 +23,51 @@ ImageMagick CLI for comprehensive image processing. Convert formats, resize and 
 
 **Location:** `imagemagick/`
 
-**Quick Start:**
-```bash
-magick input.png output.jpg
-magick input.jpg -resize 200x200^ -gravity center -extent 200x200 thumb.jpg
-mogrify -resize 800x600 *.jpg
-magick input.jpg -blur 0x8 output.jpg
-```
-
 ---
 
 ### perplexity-search
-Perplexity AI search for web search with AI-powered answers, deep research, and chain-of-thought reasoning. Perform direct web searches, get AI-synthesized research, conduct complex reasoning, and generate comprehensive reports.
+Perplexity AI search for web search with AI-powered answers, deep research, and chain-of-thought reasoning. Multiple models from lightweight to expert-level analysis.
 
 **Location:** `perplexity-search/`
 
-**Key Features:**
-- Multiple search models (sonar, sonar-pro, reasoning-pro, deep-research)
-- Web search with AI answers
-- Chain-of-thought reasoning for decisions
-- Deep comprehensive research
-- Citation tracking and source attribution
+---
 
-**Quick Start:**
-```bash
-# Quick question
-node bin/perplexity/cli.js --ask "What is Python?"
+### word-event-entities
+Characterize and analyze Word Event Entities - a comprehensive model for representing real-world events with structured data. Understand entity fields, properties, data types, and relationships. Use to inform AI systems about event model architecture.
 
-# Web search
-node bin/perplexity/cli.js --search "AI agents" --max-results 5
+**Location:** `word-event-entities/`
 
-# AI research
-node bin/perplexity/cli.js --research "FastAPI vs Django"
+**Key Components:**
+- Complete field specification (required, optional, geographic, metadata)
+- Data type reference and validation rules
+- Field relationships and dependencies
+- Event type classification patterns
+- Confidence scoring guidelines
+- Example entities (natural disasters, policy, protests)
+- Analysis and characterization scripts
 
-# Decision reasoning
-node bin/perplexity/cli.js --reason "SQL vs NoSQL for startup?"
+**Quick Reference:**
 
-# Deep research
-node bin/perplexity/cli.js --deep "state of AI observability 2025"
-```
+Required fields:
+- `id` (UUID)
+- `source` (publisher)
+- `title` (headline)
+- `summary` (brief narrative)
+- `details` (full narrative)
+- `date_published` (ISO 8601)
+- `links` (source URLs)
+- `image_urls` (media)
 
-**Setup:**
-```bash
-# 1. Get API key from https://www.perplexity.ai/api
-# 2. Set environment variable
-export PERPLEXITY_API_KEY="your_key_here"
-# 3. Verify setup
-node bin/perplexity/setup.js
-```
+Optional fields:
+- `date_occurred`, `event_type`, `severity`, `status`
+- `keywords`, `entities`, `related_event_ids`
+- `geo` (latitude, longitude, country, region, city)
+- `metadata` (confidence, updated_at, contributor)
+
+**See also:**
+- `word-event-entities/SKILL.md` - Full specification
+- `word-event-entities/references/REFERENCE.md` - Complete field reference
+- `word-event-entities/scripts/` - Analysis examples
 
 ---
 
@@ -125,16 +107,10 @@ See `.env.sample` for template.
 To add a new skill:
 
 1. Create skill directory: `mkdir skills/my-skill`
-2. Create `SKILL.md` with frontmatter:
-   ```yaml
-   ---
-   name: my-skill
-   description: Brief description of what the skill does.
-   ---
-   ```
+2. Create `SKILL.md` with frontmatter
 3. Add executable scripts in `scripts/`
 4. Add reference docs in `references/`
-5. Create `bin/my-skill/` with setup and documentation
+5. Create `bin/my-skill/` (if CLI tool)
 6. Update this README
 
 Validate skills:
@@ -146,7 +122,3 @@ npx skills-ref validate ./skills/my-skill
 
 - [Agent Skills Specification](https://agentskills.io/specification)
 - [Skills.sh](https://skills.sh)
-- Agent Browser: https://github.com/vercel-labs/agent-browser
-- FFmpeg: https://ffmpeg.org
-- ImageMagick: https://imagemagick.org
-- Perplexity: https://www.perplexity.ai/api
