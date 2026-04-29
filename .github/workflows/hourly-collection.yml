@@ -57,6 +57,9 @@ jobs:
 
       - name: Install Node dependencies
         run: |
+          echo "Installing .sandcastle dependencies..."
+          (cd .sandcastle && npm ci)
+
           echo "Installing bin/sandcastle dependencies..."
           (cd bin/sandcastle && npm ci)
 
