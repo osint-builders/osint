@@ -11,6 +11,41 @@ Native Rust CLI for browser automation by Vercel Labs. Fast, deterministic eleme
 
 ---
 
+### data-to-markdown
+Transform any data source into clean, semantic, concise Markdown following E-PRIME principles. Convert plain text, HTML, code, documents (Word, PowerPoint, PDF) into well-structured Markdown with precision and clarity.
+
+**Location:** `data-to-markdown/`
+
+**Key Features:**
+- E-PRIME conversion (removes "to be" forms for precise language)
+- Semantic structure detection (headings, lists, tables, code blocks)
+- Multi-format support (HTML, plain text, documents)
+- Validation and quality checking
+- CLI tool for automated conversion
+
+**Quick Start:**
+
+```bash
+# Convert HTML to Markdown
+node bin/data-to-markdown/cli.js convert input.html output.md
+
+# Apply E-PRIME principles
+node bin/data-to-markdown/cli.js convert input.txt output.md --eprime
+
+# Validate Markdown structure
+node bin/data-to-markdown/cli.js validate document.md
+
+# Check E-PRIME compliance
+node bin/data-to-markdown/cli.js check-eprime document.md
+```
+
+**See also:**
+- `data-to-markdown/SKILL.md` - Full conversion framework
+- `data-to-markdown/references/` - Detailed conversion guides
+- `bin/data-to-markdown/` - CLI tool and documentation
+
+---
+
 ### ffmpeg-cli
 FFmpeg CLI for media processing and transformation. Convert formats, resize and pad, extract audio, trim, generate thumbnails, create slideshows, overlay graphics, burn subtitles.
 
@@ -87,6 +122,7 @@ skill-name/
 
 Each skill has corresponding binaries and setup in the `bin/` folder:
 - `bin/agent-browser/` - Agent browser CLI and wrapper
+- `bin/data-to-markdown/` - Data-to-Markdown CLI utility
 - `bin/ffmpeg/` - FFmpeg binary setup
 - `bin/imagemagick/` - ImageMagick binary setup
 - `bin/perplexity/` - Perplexity AI CLI wrapper
