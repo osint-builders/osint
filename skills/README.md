@@ -9,13 +9,6 @@ Native Rust CLI for browser automation by Vercel Labs. Fast, deterministic eleme
 
 **Location:** `agent-browser/`
 
-**Key Capabilities:**
-- Page navigation and accessibility tree snapshots with element refs
-- Element interaction (click, fill, type, select)
-- Data extraction (text, HTML, JavaScript eval)
-- Screenshot capture (with optional annotations)
-- Session management and authentication
-
 **Quick Start:**
 ```bash
 agent-browser open https://example.com
@@ -27,19 +20,9 @@ agent-browser screenshot page.png
 ---
 
 ### ffmpeg-cli
-FFmpeg CLI for media processing and transformation. Convert formats, resize and pad, extract audio, trim, generate thumbnails, create slideshows, overlay graphics, burn subtitles, and more.
+FFmpeg CLI for media processing and transformation. Convert formats, resize and pad, extract audio, trim, generate thumbnails, create slideshows, overlay graphics, burn subtitles.
 
 **Location:** `ffmpeg-cli/`
-
-**Key Capabilities:**
-- Format conversion and remuxing
-- Video scaling with aspect ratio preservation
-- Audio extraction and processing
-- Trim and cut by time
-- Thumbnail generation
-- Slideshow creation with fade
-- Logo and image overlay
-- Video concatenation
 
 **Quick Start:**
 ```bash
@@ -51,27 +34,57 @@ ffmpeg -i video.mp4 -ss 00:00:05 -vframes 1 thumbnail.png
 ---
 
 ### imagemagick
-ImageMagick CLI for comprehensive image processing and manipulation. Convert formats, resize and crop, apply effects and filters, adjust colors, create thumbnails, batch process, composite images, add text and watermarks.
+ImageMagick CLI for comprehensive image processing. Convert formats, resize and crop, apply effects and filters, adjust colors, create thumbnails, batch process, composite images, add text and watermarks.
 
 **Location:** `imagemagick/`
-
-**Key Capabilities:**
-- Format conversion (250+ formats)
-- Image transformation (resize, crop, rotate, flip)
-- Effects and filters (blur, sharpen, grayscale, sepia, edge detection, emboss)
-- Color adjustments (brightness, contrast, saturation, hue)
-- Thumbnail generation
-- Batch processing with mogrify
-- Text overlays and watermarks
-- Image compositing and contact sheets
 
 **Quick Start:**
 ```bash
 magick input.png output.jpg
-magick input.jpg -resize 800x600 output.jpg
 magick input.jpg -resize 200x200^ -gravity center -extent 200x200 thumb.jpg
 mogrify -resize 800x600 *.jpg
 magick input.jpg -blur 0x8 output.jpg
+```
+
+---
+
+### perplexity-search
+Perplexity AI search for web search with AI-powered answers, deep research, and chain-of-thought reasoning. Perform direct web searches, get AI-synthesized research, conduct complex reasoning, and generate comprehensive reports.
+
+**Location:** `perplexity-search/`
+
+**Key Features:**
+- Multiple search models (sonar, sonar-pro, reasoning-pro, deep-research)
+- Web search with AI answers
+- Chain-of-thought reasoning for decisions
+- Deep comprehensive research
+- Citation tracking and source attribution
+
+**Quick Start:**
+```bash
+# Quick question
+node bin/perplexity/cli.js --ask "What is Python?"
+
+# Web search
+node bin/perplexity/cli.js --search "AI agents" --max-results 5
+
+# AI research
+node bin/perplexity/cli.js --research "FastAPI vs Django"
+
+# Decision reasoning
+node bin/perplexity/cli.js --reason "SQL vs NoSQL for startup?"
+
+# Deep research
+node bin/perplexity/cli.js --deep "state of AI observability 2025"
+```
+
+**Setup:**
+```bash
+# 1. Get API key from https://www.perplexity.ai/api
+# 2. Set environment variable
+export PERPLEXITY_API_KEY="your_key_here"
+# 3. Verify setup
+node bin/perplexity/setup.js
 ```
 
 ---
@@ -94,6 +107,18 @@ Each skill has corresponding binaries and setup in the `bin/` folder:
 - `bin/agent-browser/` - Agent browser CLI and wrapper
 - `bin/ffmpeg/` - FFmpeg binary setup
 - `bin/imagemagick/` - ImageMagick binary setup
+- `bin/perplexity/` - Perplexity AI CLI wrapper
+
+## Environment Configuration
+
+Create `.env` file in project root with API keys:
+
+```bash
+# .env
+PERPLEXITY_API_KEY="your_api_key_here"
+```
+
+See `.env.sample` for template.
 
 ## Adding New Skills
 
@@ -124,3 +149,4 @@ npx skills-ref validate ./skills/my-skill
 - Agent Browser: https://github.com/vercel-labs/agent-browser
 - FFmpeg: https://ffmpeg.org
 - ImageMagick: https://imagemagick.org
+- Perplexity: https://www.perplexity.ai/api
