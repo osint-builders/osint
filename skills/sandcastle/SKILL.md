@@ -470,6 +470,38 @@ See `scripts/` directory for complete examples:
 - `example-pipeline.ts` - Multi-stage development pipeline
 - `example-testing.ts` - Automated testing workflow
 
+## Related Tools & Skills
+
+### Bin CLIs
+- **bin/agent-browser** - Test UI changes in sandboxes via browser automation
+
+### Skills
+- **agent-browser** - Automated testing of UI implementations in sandboxes
+- **remember-as-you-go** - Capture Docker daemon issues, Git config requirements, sandbox provider quirks
+
+### System CLIs
+- `docker` - Primary sandbox container runtime
+- `podman` - Rootless container alternative
+- `git` - Branch management for sandbox strategies
+- `gh` - Create PRs from sandbox results
+
+### Integration Hints
+```bash
+# Sandbox test → Browser validation → PR creation
+sandcastle-run --prompt "Implement feature" --sandbox docker --branch test/feature
+agent-browser open http://localhost:3000
+agent-browser snapshot -i
+git log --oneline -5
+gh pr create --title "Feature implementation"
+
+# Parallel agents → Aggregate results
+sandcastle-parallel \
+  --task "auth:OAuth module" \
+  --task "api:REST endpoints" \
+  --task "ui:Dashboard"
+git branch | grep agent/
+```
+
 ## References
 
 - [Sandcastle Documentation](https://github.com/mattpocock/sandcastle)

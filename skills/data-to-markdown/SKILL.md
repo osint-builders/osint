@@ -446,6 +446,40 @@ function doSomething() { ... }
 ```
 ```
 
+## Related Tools & Skills
+
+### Bin CLIs
+- **bin/agent-browser** - Scrape web content for conversion to Markdown
+- **bin/perplexity** - Research content that needs formatting
+- **bin/imagemagick** - Process images referenced in documents
+
+### Skills
+- **agent-browser** - Extract HTML content for Markdown conversion
+- **perplexity-search** - Gather research for Markdown report generation
+- **word-event-entities** - Structure event data for `contents` field
+- **remember-as-you-go** - Capture format-specific edge cases, E-PRIME validation patterns, encoding issues
+
+### System CLIs
+- `pandoc` - Universal document converter (Word, HTML, LaTeX)
+- `jq` - Transform JSON to Markdown structures
+- `prettier` - Format and clean Markdown output
+- `markdownlint` - Validate Markdown structure
+
+### Integration Hints
+```bash
+# Scrape → Convert → Validate → Format
+agent-browser get html "article" > article.html
+node bin/data-to-markdown/cli.js convert article.html output.md
+node bin/data-to-markdown/cli.js check-eprime output.md
+prettier --write output.md
+
+# Research → Extract → Structure → Convert
+node bin/perplexity/cli.js --research "topic" > research.txt
+agent-browser open https://source.com/article
+agent-browser get text "body" > source.txt
+cat research.txt source.txt | node bin/data-to-markdown/cli.js convert - report.md
+```
+
 ## References
 
 - See [REFERENCE.md](references/REFERENCE.md) for complete conversion specifications

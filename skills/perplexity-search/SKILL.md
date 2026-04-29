@@ -326,6 +326,35 @@ node bin/perplexity/setup.js
 - Try shorter query if too complex
 - Use `--search` first to verify sources exist
 
+## Related Tools & Skills
+
+### Bin CLIs
+- **bin/agent-browser** - Visit cited URLs to verify sources
+- **bin/data-to-markdown** - Format search results as structured reports
+
+### Skills
+- **agent-browser** - Navigate to search results for verification
+- **data-to-markdown** - Convert research output to clean Markdown
+- **remember-as-you-go** - Capture API key setup, rate limiting patterns, model selection learnings
+
+### System CLIs
+- `curl` - Direct Perplexity API calls without wrapper
+- `jq` - Parse and filter JSON responses
+
+### Integration Hints
+```bash
+# Research → Visit sources → Extract pipeline
+node bin/perplexity/cli.js --research "topic" --json > results.json
+jq -r '.citations[].url' results.json | head -3 | while read url; do
+  agent-browser open "$url"
+  agent-browser get text "article" > "source_$(echo $url | md5).txt"
+done
+
+# Deep research → Format → Report
+node bin/perplexity/cli.js --deep "topic" > research.txt
+node bin/data-to-markdown/cli.js convert research.txt report.md
+```
+
 ## Related
 
 - See [REFERENCE.md](references/REFERENCE.md) for complete API reference

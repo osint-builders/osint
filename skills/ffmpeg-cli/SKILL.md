@@ -311,6 +311,36 @@ export FFMPEG_HWACCEL=videotoolbox  # macOS Metal
 - **Seek errors** — Use `-ss` before `-i` for faster seeking (less accurate)
 - **Quality loss** — Check CRF value and codec settings
 
+## Related Tools & Skills
+
+### Bin CLIs
+- **bin/imagemagick** - Process video frames as images, create contact sheets
+- **bin/agent-browser** - Capture web video for processing
+
+### Skills
+- **imagemagick** - Process extracted frames, generate thumbnails
+- **agent-browser** - Record browser sessions, capture web media
+- **remember-as-you-go** - Capture codec issues, container constraints, format-specific quirks
+
+### System CLIs
+- `ffprobe` - Inspect media metadata (included with FFmpeg)
+- `yt-dlp` - Download videos from web sources
+- `mediainfo` - Alternative media inspection
+- `sox` - Audio processing and effects
+
+### Integration Hints
+```bash
+# Extract frames → Process → Montage pipeline
+ffmpeg -i video.mp4 -vf fps=1 frame_%03d.png
+mogrify -path processed/ -resize 800x600 frame_*.png
+montage processed/*.png -geometry 200x200+2+2 contact-sheet.jpg
+
+# Download → Process → Thumbnail
+yt-dlp -o video.mp4 "https://example.com/video"
+ffmpeg -i video.mp4 -vf scale=1920:1080 processed.mp4
+ffmpeg -i processed.mp4 -ss 00:00:05 -vframes 1 thumbnail.png
+```
+
 ## References
 
 - See [REFERENCE.md](references/REFERENCE.md) for complete command reference

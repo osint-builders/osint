@@ -113,6 +113,95 @@ Perplexity AI search for web search with AI-powered answers, deep research, and 
 
 ---
 
+### remember-as-you-go
+Adaptive memory system that observes execution patterns and stores learnings in memory.md. Only creates memories when guesswork, errors, or exceptions occur. Helps AI refine execution by remembering non-obvious solutions, environment quirks, and tool interactions.
+
+**Location:** `remember-as-you-go/`
+
+**Key Features:**
+- Reactive memory creation (only on errors or issues)
+- Stores learnings in root `memory.md` file
+- Captures non-obvious solutions and workarounds
+- Prevents repeating mistakes across sessions
+- Environment-specific quirk documentation
+
+**When to Remember:**
+- ✅ Errors, exceptions, workarounds
+- ✅ Non-obvious flags or parameters
+- ✅ Environment quirks, configuration issues
+- ✅ Tool interaction problems
+- ❌ Standard operations, documented behavior
+- ❌ First-time successes without issues
+
+**Quick Examples:**
+
+```markdown
+## FFmpeg MKV Requires Explicit Codecs
+
+Converting to MKV without explicit codecs fails with "codec not supported".
+
+Solution:
+```bash
+ffmpeg -i input.mp4 -c:v libx264 -c:a aac output.mkv
+```
+
+Context: MKV container requires explicit codec specification.
+
+---
+```
+
+**See also:**
+- `remember-as-you-go/SKILL.md` - Complete memory framework
+- `remember-as-you-go/references/REFERENCE.md` - Memory patterns and templates
+- `memory.md` - Root memory storage file
+
+---
+
+### create-source
+Create, validate, and test new OSINT data sources for world event collection. Interactive wizard, validation scripts, and comprehensive testing framework guide authors through the complete source creation lifecycle. Automate source generation, ensure quality standards, and maintain source registry.
+
+**Location:** `create-source/`
+
+**Key Features:**
+- Interactive source creation wizard
+- Type-specific templates (Twitter, webpage, API, email, RSS)
+- Front matter validation with quality scoring
+- Connectivity and extraction testing
+- AI helper prompts for guidance
+- Automatic manifest management
+
+**Quick Start:**
+
+```bash
+# Create new source interactively
+node skills/create-source/scripts/create-source.js
+
+# Validate source file
+node skills/create-source/scripts/validate-source.js source/sources/my-source.md
+
+# Test source connectivity and extraction
+node skills/create-source/scripts/test-source.js source/sources/my-source.md
+
+# Validate all sources
+node skills/create-source/scripts/validate-source.js --all
+```
+
+**Source Types:**
+- Twitter accounts (handles, timelines, searches)
+- Webpages (scraping, crawling, selectors)
+- APIs (REST, GraphQL, structured data)
+- Email newsletters (IMAP, digests, alerts)
+- RSS/Atom feeds (news feeds, blogs)
+- Webhooks, websockets, files, databases
+
+**See also:**
+- `create-source/SKILL.md` - Complete framework
+- `create-source/references/QUICK-REFERENCE.md` - Fast reference guide
+- `create-source/references/AI-HELPERS.md` - AI assistance prompts
+- `source/` - Source directory and examples
+
+---
+
 ### word-event-entities
 Characterize and analyze Word Event Entities - a comprehensive model for representing real-world events with structured data. Understand entity fields, properties, data types, and relationships. Use to inform AI systems about event model architecture.
 

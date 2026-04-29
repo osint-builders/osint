@@ -277,6 +277,35 @@ BROWSERBASE_API_KEY                Browserbase API key (when using -p browserbas
 - Official repository: https://github.com/vercel-labs/agent-browser
 - Official docs: https://agent-browser.dev
 
+## Related Tools & Skills
+
+### Bin CLIs
+- **bin/imagemagick** - Process screenshots (resize, annotate, watermark)
+- **bin/ffmpeg** - Record browser sessions, process video
+- **bin/data-to-markdown** - Convert scraped HTML to clean Markdown
+- **bin/perplexity** - Research sites before scraping
+
+### Skills
+- **data-to-markdown** - Convert scraped content to structured Markdown
+- **imagemagick** - Post-process screenshots and visual assets
+- **ffmpeg-cli** - Create video recordings of browser automation sessions
+- **remember-as-you-go** - Capture Chrome installation issues, auth quirks, session persistence patterns
+
+### System CLIs
+- `curl` / `wget` - Simple HTTP requests without browser overhead
+- `jq` - Parse JSON output from `--json` flag
+
+### Integration Hints
+```bash
+# Scrape → Convert → Format pipeline
+agent-browser get html @e1 > page.html
+node bin/data-to-markdown/cli.js convert page.html output.md
+
+# Screenshot → Annotate workflow
+agent-browser screenshot page.png
+magick page.png -pointsize 20 -annotate +10+10 "Note" annotated.png
+```
+
 ## License
 
 Apache-2.0 (upstream: Vercel Labs)

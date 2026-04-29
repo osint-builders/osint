@@ -412,6 +412,37 @@ identify -list policy
 sudo nano /etc/ImageMagick-7/policy.xml
 ```
 
+## Related Tools & Skills
+
+### Bin CLIs
+- **bin/ffmpeg** - Extract video frames for batch image processing
+- **bin/agent-browser** - Capture screenshots for processing
+
+### Skills
+- **ffmpeg-cli** - Extract video frames, generate thumbnails
+- **agent-browser** - Capture web screenshots for annotation/processing
+- **remember-as-you-go** - Capture policy restrictions, format delegate issues, permission problems
+
+### System CLIs
+- `exiftool` - EXIF and metadata manipulation
+- `pngquant` - Superior PNG compression
+- `jpegoptim` - JPEG optimization
+- `optipng` - Lossless PNG optimization
+
+### Integration Hints
+```bash
+# Screenshot → Resize → Optimize → Watermark
+agent-browser screenshot page.png
+magick page.png -resize 1920x1080 resized.jpg
+jpegoptim --max=85 resized.jpg
+magick resized.jpg watermark.png -gravity southeast -composite final.jpg
+
+# Video frames → Batch process → Contact sheet
+ffmpeg -i video.mp4 -vf fps=1 frame_%03d.png
+mogrify -resize 800x600 -quality 90 frame_*.png
+montage frame_*.png -geometry 200x200+2+2 sheet.jpg
+```
+
 ## References
 
 - See [REFERENCE.md](references/REFERENCE.md) for complete command reference

@@ -1,0 +1,27 @@
+{
+  "name": "osint-create-source-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for creating, validating, and testing OSINT sources",
+  "main": "create-source.js",
+  "scripts": {
+    "create": "node create-source.js",
+    "validate": "node validate-source.js",
+    "test": "node test-source.js",
+    "validate-all": "node validate-source.js --all"
+  },
+  "keywords": [
+    "osint",
+    "source",
+    "validation",
+    "testing"
+  ],
+  "author": "osint-builders",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

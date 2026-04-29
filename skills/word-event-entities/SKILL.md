@@ -445,6 +445,42 @@ ingested_at (when added to system)
 
 Entities must validate against the JSON schema specification for strict compliance.
 
+## Related Tools & Skills
+
+### Bin CLIs
+- **bin/perplexity** - Research events for entity creation
+- **bin/agent-browser** - Scrape event information from sources
+- **bin/data-to-markdown** - Format `contents` field as structured Markdown
+
+### Skills
+- **perplexity-search** - Gather event context and verification
+- **agent-browser** - Extract event data from web sources
+- **data-to-markdown** - Structure event narratives in `contents` field
+- **remember-as-you-go** - Capture schema validation failures, field requirement patterns, data type edge cases
+
+### System CLIs
+- `jq` - Parse, filter, and validate event JSON entities
+- `jsonschema` / `ajv-cli` - Validate against World Event schema
+- `sqlite3` - Store and query event entities
+- `curl` - Fetch event data from APIs
+
+### Integration Hints
+```bash
+# Research → Scrape → Structure → Validate
+node bin/perplexity/cli.js --research "breaking event" --json > context.json
+agent-browser open https://news-source.com/event
+agent-browser get text "article" > event-text.txt
+node bin/data-to-markdown/cli.js convert event-text.txt event-details.md
+# Create event JSON with event-details.md as contents field
+jq . event.json | jsonschema -i - world-event-schema.json
+
+# Validate and store event entities
+for event in events/*.json; do
+  jsonschema -i "$event" world-event-schema.json && \
+    sqlite3 events.db "INSERT INTO events VALUES (json(readfile('$event')))"
+done
+```
+
 ## References
 
 - See [REFERENCE.md](references/REFERENCE.md) for detailed field validation
