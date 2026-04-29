@@ -105,16 +105,14 @@ def validate_environment(config: Dict[str, Any]) -> bool:
     except subprocess.CalledProcessError:
         errors.append("Git user.name and user.email not configured")
 
-    # Check Node dependencies installed
-    node_deps = [
-        repo_root / "bin" / "sandcastle" / "node_modules",
-        repo_root / "bin" / "agent-browser" / "node_modules",
-        repo_root / "bin" / "data-to-markdown" / "node_modules",
-    ]
+    # Check Node dependencies installed (only for packages that have dependencies)
+    # Check sandcastle which has actual dependencies
+    sandcastle_deps = repo_root / "bin" / "sandcastle" / "node_modules"
+    if not sandcastle_deps.exists():
+        errors.append(f"Node dependencies not installed: {sandcastle_deps.parent}")
 
-    for dep_dir in node_deps:
-        if not dep_dir.exists():
-            errors.append(f"Node dependencies not installed: {dep_dir.parent}")
+    # Note: agent-browser and data-to-markdown have no dependencies in package.json,
+    # so they won't have node_modules directories after npm ci
 
     # Print validation results
     if errors:
