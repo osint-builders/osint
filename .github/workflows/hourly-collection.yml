@@ -58,16 +58,16 @@ jobs:
       - name: Install Node dependencies
         run: |
           echo "Installing bin/sandcastle dependencies..."
-          cd bin/sandcastle && npm ci && cd ../..
+          (cd bin/sandcastle && npm ci)
 
           echo "Installing bin/agent-browser dependencies..."
-          cd bin/agent-browser && npm ci && cd ../..
+          (cd bin/agent-browser && npm ci)
 
           echo "Installing bin/perplexity dependencies..."
-          cd bin/perplexity && npm ci && cd ../..
+          (cd bin/perplexity && npm ci)
 
           echo "Installing bin/data-to-markdown dependencies..."
-          cd bin/data-to-markdown && npm ci && cd ../..
+          (cd bin/data-to-markdown && npm ci)
 
           echo "✓ All Node dependencies installed"
 
