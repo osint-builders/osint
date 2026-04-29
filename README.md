@@ -46,6 +46,21 @@ See [Local Development](#local-development) for manual collection workflow.
 
 ---
 
+## GitHub Actions Status
+
+![Hourly Collection](https://github.com/osint-builders/osint/actions/workflows/hourly-collection.yml/badge.svg)
+![Data Release](https://github.com/osint-builders/osint/actions/workflows/create-release.yml/badge.svg)
+
+**Automation**: Collection runs hourly via GitHub Actions. Python orchestrator (LangGraph) executes instructions below, invoking Sandcastle agents to collect events from active sources.
+
+**Workflows**:
+- **Hourly Collection** (`.github/workflows/hourly-collection.yml`): Runs every hour, collects events, commits to data/
+- **Data Release** (`.github/workflows/create-release.yml`): Weekly releases with archived data
+
+**Configuration**: See [.github/workflows/README.md](.github/workflows/README.md) for secrets, permissions, and troubleshooting.
+
+---
+
 ## Automation Instructions
 
 **AUDIENCE**: AI agents (Claude Code) executing in GitHub Actions  

@@ -1,0 +1,142 @@
+name: Create Data Release
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday at midnight UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: Create archive of data folder
+        run: |
+          echo "Creating data archive..."
+
+          # Check if data directories exist
+          if [ ! -d "data/events" ] && [ ! -d "data/media" ]; then
+            echo "No data to archive"
+            exit 0
+          fi
+
+          # Create tar.gz archive
+          tar -czf osint-data-${{ steps.date.outputs.date }}.tar.gz \
+            data/events/ \
+            data/media/ \
+            data/indexes/ \
+            data/SCHEMA.md \
+            data/README.md \
+            2>/dev/null || true
+
+          # Check if archive was created
+          if [ -f "osint-data-${{ steps.date.outputs.date }}.tar.gz" ]; then
+            size=$(du -h "osint-data-${{ steps.date.outputs.date }}.tar.gz" | cut -f1)
+            echo "✓ Archive created: ${size}"
+          else
+            echo "No archive created (no data present)"
+            exit 0
+          fi
+
+      - name: Count events and generate statistics
+        id: stats
+        run: |
+          # Count total events across all JSONL files
+          total_events=0
+          if [ -d "data/events" ]; then
+            total_events=$(find data/events -name "*.jsonl" -type f -exec wc -l {} + | tail -1 | awk '{print $1}')
+          fi
+
+          echo "total_events=${total_events}" >> $GITHUB_OUTPUT
+
+          # Count media files
+          total_images=0
+          if [ -d "data/media" ]; then
+            total_images=$(find data/media -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \) | wc -l)
+          fi
+
+          echo "total_images=${total_images}" >> $GITHUB_OUTPUT
+
+          echo "Statistics: ${total_events} events, ${total_images} images"
+
+      - name: Create Release
+        if: hashFiles('osint-data-*.tar.gz') != ''
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: data-${{ steps.date.outputs.date }}
+          name: OSINT Data Collection - ${{ steps.date.outputs.date }}
+          body: |
+            ## Automated Weekly Data Release
+
+            **Collection Date**: ${{ steps.date.outputs.date }}
+            **Total Events**: ${{ steps.stats.outputs.total_events }}
+            **Media Files**: ${{ steps.stats.outputs.total_images }} images
+
+            ### Contents
+
+            - **World Event Entities** in JSONL format (one JSON object per line)
+            - **Media files** (images and videos from events)
+            - **Index files** (by source, topic, location)
+            - **Schema documentation** (World Event Entity specification)
+
+            ### Data Structure
+
+            ```
+            data/
+            ├── events/YYYY-MM/YYYY-MM-DD.jsonl  # Daily event files
+            ├── media/YYYY-MM/images/YYYY-MM-DD/ # Images by date
+            ├── media/YYYY-MM/videos/YYYY-MM-DD/ # Videos by date
+            ├── indexes/*.json                    # Generated indexes
+            ├── SCHEMA.md                         # Entity schema
+            └── README.md                         # Documentation
+            ```
+
+            ### Retention
+
+            This release includes the most recent 90 days of collected data.
+
+            ### Format
+
+            Events follow the **World Event Entity** schema. See `data/SCHEMA.md` in the archive for complete field specifications.
+
+            **Required fields**: `id`, `source`, `title`, `summary`, `contents` (Markdown with E-PRIME), `date_published`, `links`, `image_urls`
+
+            **Optional fields**: `date_event`, `geo`, `topics`, `confidence`, `ingested_at`
+
+            ### Usage
+
+            ```bash
+            # Extract archive
+            tar -xzf osint-data-${{ steps.date.outputs.date }}.tar.gz
+
+            # Query events with jq
+            cat data/events/*/2026-04-29.jsonl | jq '.'
+
+            # Filter by topic
+            cat data/events/*/*.jsonl | jq 'select(.topics[] | contains("sanctions"))'
+
+            # Count events by source
+            cat data/events/*/*.jsonl | jq -r '.source.name' | sort | uniq -c
+            ```
+
+            ### E-PRIME Compliance
+
+            All `contents` fields use **E-PRIME** (English without "to be" verbs: is, are, was, were, be, been, being) for precise, objective language.
+
+            ---
+
+            🤖 Generated automatically via GitHub Actions
+          files: osint-data-${{ steps.date.outputs.date }}.tar.gz
+          draft: false
+          prerelease: false
+          fail_on_unmatched_files: false
