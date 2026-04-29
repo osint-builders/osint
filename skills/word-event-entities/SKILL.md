@@ -1,331 +1,480 @@
 ---
 name: word-event-entities
-description: Characterize and analyze Word Event Entities - a comprehensive model for representing real-world events with structured data. Understand entity fields, properties, data types, relationships, and identifiers. Use to inform AI systems about event model architecture and provide context for event processing and analysis.
+description: Characterize and analyze World Event Entities - a comprehensive model for representing real-world events with structured data. Understand entity fields, properties, data types, relationships, and identifiers. Use to inform AI systems about event model architecture, data validation rules, and entity characterization patterns.
 license: MIT
 compatibility: Language-agnostic reference documentation. Applicable to any system processing event entities.
 metadata:
   author: osint-builders
   version: "1.0.0"
   entity-type: world-event
-  schema-source: "https://github.com/Zettersten/osint-/schemas/world_event.entity.schema.json"
+  schema-id: "https://github.com/Zettersten/osint-/schemas/world_event.entity.schema.json"
+  schema-version: "2020-12"
 ---
 
-# Word Event Entities Skill
+# World Event Entities Skill
 
-Comprehensive reference and characterization of Word Event Entity model - a structured representation of real-world events with metadata, sources, geographic information, and temporal context.
+Comprehensive reference and characterization of World Event Entity model - a standardized JSON schema for representing real-world events with rich metadata, source attribution, geographic information, and temporal context.
 
 ## Entity Overview
 
-The Word Event Entity is a standardized data model for representing events captured from news sources, social media, official reports, and other information channels. It provides a unified schema for storing event information with rich metadata, source attribution, geographic context, and content references.
+The World Event Entity is a structured data model for representing events captured from news sources, emails, social media, and other information channels. It provides a unified JSON schema for storing event information with complete provenance tracking, geographic context, confidence scoring, and content references.
 
 **Primary Use Cases:**
 - OSINT (Open Source Intelligence) event tracking
+- Email-based event intelligence extraction
 - News aggregation and event correlation
 - Geospatial event mapping and analysis
-- Timeline construction and event relationship analysis
-- Event verification and source attribution
-- Real-world incident documentation
+- Event verification and confidence assessment
+- Multi-source event deduplication and fusion
 
 ## Core Model Structure
 
-### Required Fields
+### Required Fields (Must Always Be Present)
 
-| Field | Type | Description | Example |
-|-------|------|-------------|---------|
-| `id` | string (UUID) | Unique identifier for the event | `550e8400-e29b-41d4-a716-446655440000` |
-| `source` | string | Origin of event information | `bbc-news`, `reuters`, `twitter`, `official-gov` |
-| `title` | string (1-500 chars) | Event headline/summary title | `Earthquake Hits Turkey, Magnitude 7.8` |
-| `summary` | string (1-2000 chars) | Brief narrative summary | `A major 7.8 magnitude earthquake struck Turkey...` |
-| `details` | string (1-10000 chars) | Comprehensive event description | `Full narrative with context, impact, response...` |
-| `date_published` | ISO 8601 timestamp | Publication date/time | `2023-02-06T04:17:46Z` |
-| `links` | array[string] | URLs to source articles/references | `["https://example.com/article", ...]` |
-| `image_urls` | array[string] | URLs to event images | `["https://example.com/image.jpg", ...]` |
+| Field | Type | Constraints | Description | Example |
+|-------|------|-------------|-------------|---------|
+| `id` | string | minLength: 8 | Unique event identifier | `event-2024-001` |
+| `source` | object | required: `name` | Event source/provider information | `{name: "Reuters", provider: "news"}` |
+| `title` | string | minLength: 3 | Event headline | `Earthquake Strikes Turkey` |
+| `summary` | string | minLength: 10 | Brief narrative summary | `A major earthquake... causing widespread damage` |
+| `details` | string | minLength: 20 | Comprehensive event description | `Full narrative with all context...` |
+| `date_published` | ISO 8601 | format: date-time | When event was published | `2024-02-06T04:45:00Z` |
+| `links` | array | type: object[] | Source URLs with labels | `[{url: "...", label: "..."}]` |
+| `image_urls` | array | type: string[] | Image URLs | `["https://example.com/image.jpg"]` |
 
 ### Optional Fields
 
-| Field | Type | Description | Example |
-|-------|------|-------------|---------|
-| `date_occurred` | ISO 8601 timestamp | When event actually occurred (if different from published) | `2023-02-06T04:17:00Z` |
-| `event_type` | string | Category of event | `natural-disaster`, `conflict`, `protest`, `accident` |
-| `severity` | integer (1-10) | Impact severity level | `8` |
-| `status` | string | Current state of event | `active`, `resolved`, `ongoing`, `developing` |
-| `keywords` | array[string] | Relevant tags/keywords | `["earthquake", "turkey", "disaster"]` |
-| `entities` | array[object] | Named entities (people, places, organizations) | `[{type: "person", name: "John Doe"}, ...]` |
-| `related_event_ids` | array[string] | References to related events | `["uuid-1", "uuid-2"]` |
-| `metadata.confidence` | decimal (0-1) | Data quality/confidence score | `0.95` |
-| `metadata.updated_at` | ISO 8601 timestamp | Last update timestamp | `2023-02-07T12:30:00Z` |
-| `metadata.contributor` | string | Who added/updated the event | `analyst-123`, `system-crawler` |
+| Field | Type | Constraints | Description | Example |
+|-------|------|-------------|-------------|---------|
+| `date_event` | ISO 8601 or null | format: date-time | When event occurred | `2024-02-06T04:17:00Z` |
+| `geo` | object | properties: lat, lon, ... | Geographic information | `{lat: 37.27, lon: 37.02, country: "Turkey"}` |
+| `topics` | array | type: string[] | Event topics/tags | `["earthquake", "disaster", "turkey"]` |
+| `confidence` | number | min: 0, max: 1 | Data confidence score | `0.95` |
+| `raw_email_ref` | object | properties: message_id, thread_id, subject | Email source reference | `{message_id: "...", subject: "..."}` |
+| `ingested_at` | ISO 8601 | format: date-time | System ingestion timestamp | `2024-02-06T04:50:00Z` |
 
-### Geographic Fields
+## Detailed Field Specification
 
-| Field | Type | Description | Nullable |
-|-------|------|-------------|----------|
-| `geo.latitude` | decimal (-90 to 90) | Event latitude coordinate | Yes |
-| `geo.longitude` | decimal (-180 to 180) | Event longitude coordinate | Yes |
-| `geo.country` | string | Country ISO-3 code or name | Yes |
-| `geo.region` | string | State/province/region | Yes |
-| `geo.city` | string | City/municipality | Yes |
-| `geo.location_name` | string | Human-readable location | Yes |
+### id
+**Type**: String
+**Constraints**: minLength 8
+**Purpose**: Unique event identifier
+**Rules**:
+- Must be at least 8 characters
+- Should be globally unique
+- Format examples: UUID, event-codes, sequential IDs
 
-Geographic fields are nullable because many events may not have precise location data (e.g., policy announcements, global events).
+**Examples**:
+- `550e8400-e29b-41d4-a716-446655440000` (UUID)
+- `event-2024-001234`
+- `evt_20240206_turkey_eq`
 
-## Field Characteristics
+---
 
-### Identifiers
+### source
+**Type**: Object (required: `name`)
+**Properties**:
+- `name` (required, string): Source name
+- `email` (optional, string): Email address
+- `provider` (optional, string): Provider type
 
-**Primary Key**: `id`
-- UUID v4 format
-- Globally unique across systems
-- Immutable after creation
-- Used for event references and relationships
+**Purpose**: Identify the origin of the event information
 
-**Secondary Identifiers**:
-- `source` + `date_published` (typically unique within a source)
-- Can be used for deduplication
+**Examples**:
+```json
+{
+  "name": "Reuters",
+  "provider": "news-outlet"
+}
+```
 
-### Temporal Fields
+```json
+{
+  "name": "john.doe@example.com",
+  "email": "john.doe@example.com",
+  "provider": "email"
+}
+```
 
-**date_published** (Required)
-- ISO 8601 format: `YYYY-MM-DDTHH:mm:ssZ`
-- Represents when information was published/reported
-- Used for timeline ordering
+```json
+{
+  "name": "Twitter News",
+  "provider": "social-media"
+}
+```
 
-**date_occurred** (Optional)
-- When event actually happened
-- May differ from publication date (delayed reporting)
-- Useful for distinguishing event timing from news cycle
+---
 
-### Content Fields
+### title
+**Type**: String
+**Constraints**: minLength 3
+**Purpose**: Event headline/summary title
 
-**title** - Concise headline
-- 1-500 characters
-- Should be descriptive but brief
-- Used for event identification and display
+**Examples**:
+- `Magnitude 7.8 Earthquake Strikes Turkey and Syria`
+- `Protests Erupt in Downtown District`
+- `New Climate Policy Announced`
 
-**summary** - Executive summary
-- 1-2000 characters
-- Captures key event details
-- Should answer: Who, What, When, Where, Why
-- Contains essential information without full details
+---
 
-**details** - Comprehensive narrative
-- 1-10000 characters
-- Full event description with context
-- May include impact assessment, response actions
-- Primary content for analysis
+### summary
+**Type**: String
+**Constraints**: minLength 10
+**Purpose**: Brief narrative summary of the event
 
-### Reference Fields
+**Examples**:
+```
+A major 7.8 magnitude earthquake struck Turkey and Syria early Monday morning, 
+causing extensive damage and thousands of reported casualties. Emergency response 
+efforts are underway across affected regions.
+```
 
-**links** - Source URLs
-- Array of URLs
-- Points to original/authoritative sources
-- Used for source verification
-- Supports citation and attribution
+---
 
-**image_urls** - Visual content references
-- Array of image URLs
-- Provides visual documentation
-- May include maps, photos, diagrams
-- Supports visual analysis and reporting
+### details
+**Type**: String
+**Constraints**: minLength 20
+**Purpose**: Comprehensive event description with full context
+
+**Examples**:
+```
+A powerful 7.8 magnitude earthquake struck the border region of Turkey and Syria 
+at 04:17 UTC on Monday, February 6, 2024. The epicenter was located in Gaziantep 
+Province at coordinates 37.27°N, 37.02°E, at a depth of approximately 18km.
+
+Seismic Activity:
+- Main quake: 7.8 magnitude
+- Strong aftershocks: Multiple 5.0+ magnitude tremors recorded
+- Duration: Shaking lasted 20+ seconds
+
+Impacts:
+- Casualties: Preliminary estimates exceed 50,000 deaths
+- Infrastructure: Thousands of buildings destroyed or severely damaged
+- Displacement: Estimated 10+ million people affected
+
+International Response:
+- Turkish and Syrian governments declare emergency
+- International aid coordination activated
+- Search and rescue teams deployed from multiple countries
+```
+
+---
+
+### date_published
+**Type**: ISO 8601 DateTime
+**Format**: `YYYY-MM-DDTHH:mm:ssZ` (UTC)
+**Purpose**: When the event information was published/reported
+
+**Examples**:
+- `2024-02-06T04:45:00Z`
+- `2024-02-06T12:30:15Z`
+- `2024-02-07T08:22:30Z`
+
+---
+
+### date_event
+**Type**: ISO 8601 DateTime or null
+**Format**: `YYYY-MM-DDTHH:mm:ssZ` or null
+**Purpose**: When the event actually occurred
+**Rules**: 
+- Optional field
+- If present, typically precedes or equals `date_published`
+- Null when event timing is unknown
+
+**Examples**:
+- `2024-02-06T04:17:00Z` (event occurred)
+- `null` (timing unknown)
+
+---
+
+### links
+**Type**: Array of Objects
+**Object Schema**:
+```json
+{
+  "url": "string (required, format: uri)",
+  "label": "string (optional)"
+}
+```
+**Default**: `[]`
+**Purpose**: Source URLs with optional labels
+
+**Examples**:
+```json
+[
+  {
+    "url": "https://www.reuters.com/world/earthquakes/2024-02-06/",
+    "label": "Reuters Coverage"
+  },
+  {
+    "url": "https://www.bbc.com/news/world-middle-east",
+    "label": "BBC News"
+  }
+]
+```
+
+---
+
+### image_urls
+**Type**: Array of Strings (URIs)
+**Default**: `[]`
+**Purpose**: Image references for visual documentation
+
+**Examples**:
+```json
+[
+  "https://example.com/earthquake-damage-01.jpg",
+  "https://example.com/rescue-operations.jpg",
+  "https://example.com/satellite-map.png"
+]
+```
+
+---
+
+### geo
+**Type**: Object
+**Required Properties**: `lat`, `lon`
+**Object Schema**:
+```json
+{
+  "country": "string (optional)",
+  "region": "string (optional)",
+  "city": "string (optional)",
+  "lat": "number or null (required, -90 to 90)",
+  "lon": "number or null (required, -180 to 180)"
+}
+```
+
+**Purpose**: Geographic information about the event
+
+**Examples**:
+```json
+{
+  "lat": 37.27,
+  "lon": 37.02,
+  "country": "Turkey",
+  "region": "Gaziantep",
+  "city": "Gaziantep"
+}
+```
+
+```json
+{
+  "lat": null,
+  "lon": null,
+  "country": "European Union"
+}
+```
+
+---
+
+### topics
+**Type**: Array of Strings
+**Default**: `[]`
+**Purpose**: Event topics/keywords for categorization
+
+**Examples**:
+```json
+[
+  "earthquake",
+  "natural-disaster",
+  "turkey",
+  "emergency-response",
+  "humanitarian-crisis"
+]
+```
+
+---
+
+### confidence
+**Type**: Number
+**Range**: 0 to 1 (decimal)
+**Purpose**: Confidence/quality score for event data
+**Interpretation**:
+- 0.8-1.0: Multiple sources, official confirmation
+- 0.5-0.8: Good corroboration, mostly verified
+- 0.2-0.5: Limited sources, some uncertainty
+- 0.0-0.2: Unverified, single source
+
+**Examples**:
+- `0.95` (highly confident)
+- `0.65` (moderate confidence)
+- `0.35` (low confidence)
+
+---
+
+### raw_email_ref
+**Type**: Object
+**Properties**:
+- `message_id` (string, optional): Email message identifier
+- `thread_id` (string, optional): Email thread identifier
+- `subject` (string, optional): Email subject line
+- Additional properties allowed
+
+**Purpose**: Reference to source email (if email-originated)
+
+**Examples**:
+```json
+{
+  "message_id": "CADc-_xYZabc123@mail.gmail.com",
+  "thread_id": "thread-abc123",
+  "subject": "URGENT: Major earthquake reported"
+}
+```
+
+---
+
+### ingested_at
+**Type**: ISO 8601 DateTime
+**Format**: `YYYY-MM-DDTHH:mm:ssZ`
+**Purpose**: When the event was ingested into the system
+
+**Examples**:
+- `2024-02-06T04:50:00Z`
+- `2024-02-06T12:35:15Z`
+
+---
 
 ## Data Type Reference
 
 ### String Types
-- **id**: UUID v4 (36 chars with hyphens)
-- **source**: Machine-readable source identifier (alphanumeric, hyphens)
-- **title**: Plain text (no HTML)
-- **summary**: Plain text or markdown
-- **details**: Plain text or markdown with newlines
-- **event_type**: Enumerated value from predefined list
-- **status**: One of: active, resolved, ongoing, developing, closed
-- **keywords**: Free-form text tags
+- `id`: 8+ characters, identifier format
+- `source.name`: Non-empty string (source name)
+- `source.email`: Email address format
+- `source.provider`: Provider type identifier
+- `title`: 3+ characters
+- `summary`: 10+ characters
+- `details`: 20+ characters
+
+### Date/Time Types
+- `date_published`: Required ISO 8601 UTC
+- `date_event`: Optional ISO 8601 UTC or null
+- `ingested_at`: ISO 8601 UTC
+- Format: `YYYY-MM-DDTHH:mm:ssZ`
 
 ### Numeric Types
-- **severity**: Integer 1-10 (1=minimal, 10=catastrophic)
-- **confidence**: Decimal 0-1 (0.0=no confidence, 1.0=complete confidence)
-- **geo.latitude**: Decimal -90 to 90
-- **geo.longitude**: Decimal -180 to 180
+- `geo.lat`: Decimal -90 to 90, nullable
+- `geo.lon`: Decimal -180 to 180, nullable
+- `confidence`: Decimal 0.0 to 1.0
 
 ### Array Types
-- **links**: Array of URLs (strings)
-- **image_urls**: Array of URLs (strings)
-- **keywords**: Array of strings
-- **related_event_ids**: Array of UUIDs
-- **entities**: Array of objects (structured named entities)
+- `links`: Array of link objects
+- `image_urls`: Array of URI strings
+- `topics`: Array of string tags
 
 ### Object Types
-- **geo**: Nested object with location properties
-- **metadata**: Nested object with administrative properties
-- **entities[]**: Objects with type and name properties
+- `source`: Object with name, email, provider
+- `geo`: Object with location properties
+- `raw_email_ref`: Object with email references
 
-## Relationships & Dependencies
+## Validation Rules
 
-### Field Dependencies
+### Required Field Validation
+- [ ] `id`: Present, 8+ characters
+- [ ] `source`: Object with required `name` property
+- [ ] `title`: Present, 3+ characters
+- [ ] `summary`: Present, 10+ characters
+- [ ] `details`: Present, 20+ characters
+- [ ] `date_published`: Valid ISO 8601 datetime
+- [ ] `links`: Array (may be empty), items have required `url`
+- [ ] `image_urls`: Array (may be empty), items are URIs
 
-**Geographic Fields**:
-- If any geo field is populated, `geo.country` should typically be present
-- `geo.latitude` and `geo.longitude` should be paired (both or neither)
-- More specific locations (city/region) imply presence of country
-
-**Temporal Fields**:
-- `date_published` is always present (required)
-- If `date_occurred` is present, it typically precedes or equals `date_published`
-- `metadata.updated_at` should be >= `date_published`
-
-**Content Relationships**:
-- `title` should be extractable from or summarize `summary`
-- `summary` should summarize `details`
-- Hierarchy: title → summary → details (increasing specificity)
-
-**Event Relationships**:
-- `related_event_ids` references other event IDs
-- Relationships can be: predecessor, cause, consequence, related
-- Used to construct event chains or clusters
-
-### Source Attribution Chain
-
-```
-link (URL) 
-  ↓
-source (who published)
-  ↓
-date_published (when reported)
-  ↓
-contributor (who added to system)
-  ↓
-metadata.updated_at (last change)
-```
-
-## Entity Validation Rules
-
-### Required Fields Validation
-- `id`: Must be valid UUID v4
-- `source`: Non-empty alphanumeric string
-- `title`: 1-500 characters, non-empty
-- `summary`: 1-2000 characters, non-empty
-- `details`: 1-10000 characters, non-empty
-- `date_published`: Valid ISO 8601 timestamp
-- `links`: Array with at least 1 valid URL
-- `image_urls`: Array (may be empty)
-
-### Optional Fields Validation
-- `date_occurred`: If present, valid ISO 8601 timestamp
-- `event_type`: Must be from predefined enumeration
-- `severity`: If present, integer 1-10
-- `confidence`: If present, decimal 0-1
-- `geo.latitude`: If present, -90 to 90
-- `geo.longitude`: If present, -180 to 180
+### Optional Field Validation (if present)
+- [ ] `date_event`: Valid ISO 8601 or null
+- [ ] `geo.lat`: -90 to 90 or null
+- [ ] `geo.lon`: -180 to 180 or null
+- [ ] `confidence`: 0.0 to 1.0
+- [ ] `ingested_at`: Valid ISO 8601
 
 ### Content Validation
-- No HTML/script content in text fields (sanitized)
-- URLs in links/images must be valid HTTP/HTTPS
-- Timestamps must be timezone-aware or UTC
+- No HTML/JavaScript in text fields
+- All URLs must be valid HTTP/HTTPS
+- Timestamps must be valid ISO 8601
+- Geographic coordinates must be numeric and in valid ranges
 
-## Common Characterization Patterns
+## Entity Relationship Patterns
 
-### Event Type Classification
+### Temporal Relationships
+- `date_event` ≤ `date_published` (event before publication)
+- `date_published` ≤ `ingested_at` (published before ingested)
 
-**Natural Disaster**
-- Fields emphasized: `geo` (location), `severity`, `date_occurred`
-- Key data: impact area, casualties, damage
-- Example event_type values: earthquake, hurricane, flood, drought
+### Geographic Relationships
+- If `geo.lat` and `geo.lon` are non-null, they must be paired
+- If city/region present, country should typically be present
 
-**Conflict/Violence**
-- Fields emphasized: `entities` (parties involved), `severity`, `geo`
-- Key data: parties, locations, casualties, timeline
-- Example event_type values: armed-conflict, protest, riot, attack
+### Source Attribution Chain
+```
+raw_email_ref (email source)
+    ↓
+source (who published)
+    ↓
+date_published (when reported)
+    ↓
+ingested_at (when added to system)
+```
 
-**Policy/Announcement**
-- Fields emphasized: `date_published`, `entities` (issuing body)
-- Key data: policy details, issuing authority, effective date
-- Geographic scope may be national/international
-- geo may be null (policy is jurisdictional, not geographic incident)
+## Common Entity Patterns
 
-**Infrastructure Incident**
-- Fields emphasized: `severity`, `geo` (specific location), `status`
-- Key data: facility type, outage duration, affected area
-- Example event_type values: power-outage, bridge-collapse, pipeline-failure
-
-### Confidence Scoring
-
-**High Confidence (0.8-1.0)**
-- Multiple authoritative sources corroborate
-- Official statements or verified reporting
-
-**Medium Confidence (0.5-0.8)**
-- Some corroboration but some uncertainty
-- Mixed source quality
-- Developing story still gathering information
-
-**Low Confidence (0-0.5)**
-- Single source or unverified reports
-- Conflicting information
-- Preliminary/draft status
-
-## Usage Examples
-
-### Complete Event Entity
-
+### Natural Disaster Event
 ```json
 {
-  "id": "550e8400-e29b-41d4-a716-446655440000",
-  "source": "reuters",
-  "title": "Major Earthquake Strikes Turkey, Death Toll Rises",
-  "summary": "A devastating 7.8 magnitude earthquake struck Turkey and Syria on February 6, 2023, causing widespread damage and thousands of casualties.",
-  "details": "A major 7.8 magnitude earthquake struck Turkey and Syria at 04:17 UTC on Monday, February 6, 2023. The epicenter was located in Gaziantep Province, Turkey. Tremors were felt across the Middle East. Preliminary reports indicate over 5,000 casualties across both countries. Aftershocks continue. Emergency response underway.",
-  "date_published": "2023-02-06T04:45:00Z",
-  "date_occurred": "2023-02-06T04:17:00Z",
-  "event_type": "natural-disaster",
-  "severity": 9,
-  "status": "ongoing",
+  "id": "event-2024-001",
+  "source": {"name": "Reuters"},
+  "title": "Major Earthquake in Turkey",
+  "summary": "7.8 magnitude earthquake causes thousands of casualties",
+  "details": "Full event narrative...",
+  "date_published": "2024-02-06T04:45:00Z",
+  "date_event": "2024-02-06T04:17:00Z",
   "geo": {
-    "latitude": 37.27,
-    "longitude": 37.02,
-    "country": "TUR",
-    "region": "Gaziantep",
-    "city": "Gaziantep",
-    "location_name": "Gaziantep Province, Turkey"
+    "lat": 37.27,
+    "lon": 37.02,
+    "country": "Turkey",
+    "city": "Gaziantep"
   },
-  "links": [
-    "https://reuters.com/earthquake-turkey",
-    "https://bbc.com/news/earthquake"
-  ],
-  "image_urls": [
-    "https://example.com/earthquake-damage.jpg",
-    "https://example.com/rescue-operations.jpg"
-  ],
-  "keywords": ["earthquake", "turkey", "disaster", "casualties"],
-  "entities": [
-    {"type": "location", "name": "Turkey"},
-    {"type": "location", "name": "Syria"},
-    {"type": "organization", "name": "Turkish Red Crescent"}
-  ],
-  "metadata": {
-    "confidence": 0.95,
-    "updated_at": "2023-02-07T12:30:00Z",
-    "contributor": "system-crawler-001"
-  }
+  "links": [{"url": "https://reuters.com/...", "label": "Reuters"}],
+  "image_urls": ["https://example.com/image.jpg"],
+  "topics": ["earthquake", "disaster", "turkey"],
+  "confidence": 0.95,
+  "ingested_at": "2024-02-06T04:50:00Z"
 }
 ```
 
-### Minimal Event Entity (Required fields only)
-
+### Email-Based Event
 ```json
 {
-  "id": "550e8400-e29b-41d4-a716-446655440001",
-  "source": "twitter",
-  "title": "Breaking News Alert",
-  "summary": "Unconfirmed reports of incident in downtown area",
-  "details": "Early reports from social media indicate an incident in the downtown district. More information pending verification.",
-  "date_published": "2023-02-06T15:30:00Z",
-  "links": ["https://twitter.com/news/status/123456"],
-  "image_urls": []
+  "id": "event-email-2024-001",
+  "source": {
+    "name": "john.doe@example.com",
+    "email": "john.doe@example.com",
+    "provider": "email"
+  },
+  "title": "Critical infrastructure alert",
+  "summary": "Report of incident affecting transportation network",
+  "details": "Event details from email body...",
+  "date_published": "2024-02-06T08:30:00Z",
+  "links": [],
+  "image_urls": [],
+  "topics": ["infrastructure", "transportation"],
+  "confidence": 0.45,
+  "raw_email_ref": {
+    "message_id": "CADc-_xyz@mail.gmail.com",
+    "thread_id": "thread-123",
+    "subject": "Infrastructure Alert"
+  },
+  "ingested_at": "2024-02-06T08:35:00Z"
 }
 ```
+
+## Schema Compliance
+
+**JSON Schema Version**: 2020-12
+**Schema ID**: https://github.com/Zettersten/osint-/schemas/world_event.entity.schema.json
+**additionalProperties**: false (no extra fields allowed)
+
+Entities must validate against the authoritative JSON schema for strict compliance.
 
 ## References
 
-- See [REFERENCE.md](references/REFERENCE.md) for detailed field specification
-- See [DATA_DICTIONARY.md](references/DATA_DICTIONARY.md) for enumerated values
-- See [scripts/](scripts/) for analysis and characterization examples
+- See [REFERENCE.md](references/REFERENCE.md) for detailed field validation
+- See [scripts/](scripts/) for entity analysis and characterization examples
 - Schema source: https://github.com/Zettersten/osint-/schemas/world_event.entity.schema.json

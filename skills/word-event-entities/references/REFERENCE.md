@@ -1,446 +1,300 @@
-# Word Event Entity - Complete Field Reference
+# World Event Entity - Complete Reference
 
-Comprehensive specification of all fields in the Word Event Entity model.
+Authoritative field reference based on JSON Schema specification.
 
-## Required Fields
+## Required Fields (Must Present)
 
-### id
-**Type**: String (UUID v4)
-**Format**: 36 characters with hyphens: `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
-**Purpose**: Unique identifier for the event
-**Rules**: 
-- Must be UUID v4 (random)
-- Globally unique across all systems
-- Immutable after creation
-- Used for references and relationships
+### id (String)
+- **minLength**: 8 characters
+- **Purpose**: Unique event identifier
+- **Examples**: `event-2024-001`, `550e8400-e29b-41d4-a716-446655440000`
 
-**Example**: `550e8400-e29b-41d4-a716-446655440000`
+### source (Object)
+- **Required Property**: `name` (string)
+- **Optional Properties**: `email` (string), `provider` (string)
+- **Purpose**: Event source/publisher information
+- **Examples**:
+  - `{"name": "Reuters"}`
+  - `{"name": "john@example.com", "email": "john@example.com", "provider": "email"}`
 
----
+### title (String)
+- **minLength**: 3 characters
+- **Purpose**: Event headline
+- **Examples**: `Major Earthquake Strikes Turkey`, `Earthquake`
 
-### source
-**Type**: String
-**Format**: Alphanumeric with hyphens, lowercase
-**Purpose**: Identifies the origin/publisher of event information
-**Rules**:
-- Non-empty
-- Machine-readable format (no spaces)
-- Represents publisher/reporter (news outlet, social platform, official source)
-- Used for source attribution and filtering
+### summary (String)
+- **minLength**: 10 characters
+- **Purpose**: Brief event summary
+- **Examples**: `A major 7.8 magnitude earthquake struck Turkey and Syria`
 
-**Examples**:
-- `reuters`
-- `bbc-news`
-- `ap-news`
-- `twitter`
-- `official-gov`
-- `twitter-@username`
-- `facebook-page`
+### details (String)
+- **minLength**: 20 characters
+- **Purpose**: Comprehensive event description
+- **Examples**: `Full narrative with context, impact, response...`
 
----
+### date_published (ISO 8601)
+- **Format**: `date-time` (RFC 3339)
+- **Purpose**: Publication timestamp
+- **Examples**: `2024-02-06T04:45:00Z`
 
-### title
-**Type**: String
-**Length**: 1-500 characters
-**Purpose**: Event headline/summary title
-**Rules**:
-- Non-empty
-- Plain text (no HTML/markup)
-- Should be descriptive but concise
-- Typically a news headline
-- Used for event identification and display
+### links (Array of Objects)
+- **Type**: Array
+- **Item Schema**:
+  - `url` (required, string, format: uri)
+  - `label` (optional, string)
+  - `additionalProperties`: false
+- **Default**: `[]`
+- **Purpose**: Source URLs with labels
+- **Examples**:
+  ```json
+  [
+    {"url": "https://reuters.com/...", "label": "Reuters"}
+  ]
+  ```
 
-**Examples**:
-- `Earthquake Hits Turkey, Magnitude 7.8`
-- `Protest Erupts in Downtown District`
-- `New Climate Policy Announced by EU`
-
----
-
-### summary
-**Type**: String
-**Length**: 1-2000 characters
-**Purpose**: Brief narrative summary of the event
-**Rules**:
-- Non-empty
-- Plain text or markdown
-- Should answer: Who, What, When, Where, Why
-- Condensed version of full details
-- Used for preview/overview displays
-
-**Examples**:
-```
-A major 7.8 magnitude earthquake struck Turkey and Syria on February 6, 2023, 
-causing widespread damage and thousands of casualties. The epicenter was located 
-in Gaziantep Province. Emergency response efforts are underway.
-```
-
----
-
-### details
-**Type**: String
-**Length**: 1-10000 characters
-**Purpose**: Comprehensive event description
-**Rules**:
-- Non-empty
-- Plain text or markdown with newlines
-- Full narrative with context and background
-- May include: impact assessment, response actions, quotes, analysis
-- Primary content for analysis and archival
-- Used for detailed reporting and AI analysis
-
-**Examples**:
-```
-A major 7.8 magnitude earthquake struck Turkey and Syria at 04:17 UTC on Monday, 
-February 6, 2023. The epicenter was located in Gaziantep Province, Turkey at 
-coordinates 37.27°N, 37.02°E. 
-
-Seismic activity: Strong aftershocks (5.0+) continued throughout the day.
-
-Impact: 
-- Estimated 5,000+ casualties
-- 20,000+ buildings destroyed or severely damaged
-- Thousands displaced
-
-Response:
-- Turkish Red Crescent deployed rescue teams
-- International aid coordination initiated
-- Airports reopened for relief supplies
-```
-
----
-
-### date_published
-**Type**: ISO 8601 timestamp
-**Format**: `YYYY-MM-DDTHH:mm:ssZ` (UTC timezone required)
-**Purpose**: When the event information was published/reported
-**Rules**:
-- Must be valid ISO 8601 timestamp
-- Timezone must be specified (typically Z for UTC)
-- Used for timeline ordering and recency filtering
-- May differ from when event actually occurred
-
-**Examples**:
-- `2023-02-06T04:45:00Z`
-- `2023-02-07T12:30:00Z`
-- `2023-02-08T16:22:30Z`
-
----
-
-### links
-**Type**: Array of strings (URLs)
-**Minimum**: At least 1 URL required
-**Purpose**: References to source articles/reports
-**Rules**:
-- Must contain valid HTTP/HTTPS URLs
-- Should link to original/authoritative sources
-- Used for citation, verification, and further reading
-- Multiple sources from different outlets recommended
-
-**Examples**:
-```json
-[
-  "https://www.reuters.com/world/middle-east/earthquake-deaths-2023-02-06/",
-  "https://www.bbc.com/news/world-middle-east-64553314",
-  "https://www.aljazeera.com/news/middleeast/2023/2/6/live-turkey-earthquake"
-]
-```
-
----
-
-### image_urls
-**Type**: Array of strings (URLs)
-**Minimum**: 0 (may be empty)
-**Purpose**: URLs to images of the event
-**Rules**:
-- Must be valid HTTP/HTTPS URLs
-- Should point to images (jpg, png, gif, webp)
-- May be empty if no images available
-- Used for visual documentation and reporting
-
-**Examples**:
-```json
-[
-  "https://example.com/earthquake-damage-01.jpg",
-  "https://example.com/rescue-operations.jpg",
-  "https://example.com/satellite-image.png"
-]
-```
-
----
+### image_urls (Array of Strings)
+- **Type**: Array of strings (URIs)
+- **Default**: `[]`
+- **Purpose**: Image references
+- **Examples**: `["https://example.com/image.jpg"]`
 
 ## Optional Fields
 
-### date_occurred
-**Type**: ISO 8601 timestamp
+### date_event (ISO 8601 or null)
+- **Type**: string (format: date-time) or null
+- **Purpose**: Event occurrence timestamp
+- **Examples**: `2024-02-06T04:17:00Z` or `null`
+
+### geo (Object)
+- **Required Properties**: `lat`, `lon`
+- **Other Properties**: `country`, `region`, `city`
+- **additionalProperties**: false
+- **lat**: number or null, range: -90 to 90
+- **lon**: number or null, range: -180 to 180
+- **Purpose**: Geographic information
+- **Examples**:
+  ```json
+  {
+    "lat": 37.27,
+    "lon": 37.02,
+    "country": "Turkey",
+    "region": "Gaziantep",
+    "city": "Gaziantep"
+  }
+  ```
+
+### topics (Array of Strings)
+- **Type**: Array of strings
+- **Default**: `[]`
+- **Purpose**: Event keywords/topics
+- **Examples**: `["earthquake", "disaster", "turkey"]`
+
+### confidence (Number)
+- **Type**: number
+- **Range**: 0 to 1 (decimal)
+- **Purpose**: Data confidence score
+- **Examples**: `0.95`, `0.65`, `0.35`
+
+### raw_email_ref (Object)
+- **Type**: Object
+- **Properties**: `message_id`, `thread_id`, `subject` (all optional strings)
+- **additionalProperties**: true (allows extra fields)
+- **Purpose**: Email source reference
+- **Examples**:
+  ```json
+  {
+    "message_id": "CADc-_xyz@mail.gmail.com",
+    "thread_id": "thread-123",
+    "subject": "Event Alert"
+  }
+  ```
+
+### ingested_at (ISO 8601)
+- **Type**: string (format: date-time)
+- **Purpose**: System ingestion timestamp
+- **Examples**: `2024-02-06T04:50:00Z`
+
+## Validation Checklist
+
+### Required Field Presence
+- [ ] `id` present with minLength 8
+- [ ] `source` object with required `name` property
+- [ ] `title` present with minLength 3
+- [ ] `summary` present with minLength 10
+- [ ] `details` present with minLength 20
+- [ ] `date_published` valid ISO 8601 datetime
+- [ ] `links` array with valid URL objects
+- [ ] `image_urls` array with URI strings
+
+### Optional Field Validation (if present)
+- [ ] `date_event` is ISO 8601 or null
+- [ ] `geo.lat` is number (-90 to 90) or null
+- [ ] `geo.lon` is number (-180 to 180) or null
+- [ ] `geo.lat` and `geo.lon` paired (both or neither)
+- [ ] `confidence` is 0.0 to 1.0
+- [ ] `ingested_at` is valid ISO 8601
+
+### Type Validation
+- [ ] All string fields are strings
+- [ ] All arrays are arrays
+- [ ] All objects are objects
+- [ ] All numbers are numeric
+
+### Content Validation
+- [ ] No HTML/JavaScript in text fields
+- [ ] URLs are valid HTTP/HTTPS format
+- [ ] Timestamps are valid ISO 8601
+- [ ] Coordinates in valid ranges
+
+### No Extra Properties
+- [ ] No properties outside defined schema (additionalProperties: false)
+- [ ] Exception: `raw_email_ref` allows additional properties
+
+## ISO 8601 Date-Time Format
+
 **Format**: `YYYY-MM-DDTHH:mm:ssZ`
-**Purpose**: When the event actually occurred
-**Rules**:
-- If present, must be valid ISO 8601
-- Typically occurs before or at `date_published`
-- May differ significantly for delayed reporting
-- Useful for distinguishing event timing from news cycle
 
-**Example**: `2023-02-06T04:17:00Z` (event time) vs `2023-02-06T04:45:00Z` (publication time)
-
----
-
-### event_type
-**Type**: String (enumerated)
-**Purpose**: Categorize the type of event
-**Valid Values**:
-- `natural-disaster` (earthquake, hurricane, flood, volcano, drought)
-- `conflict` (armed conflict, war, military action)
-- `protest` (demonstration, march, civil unrest)
-- `accident` (traffic, industrial, aviation)
-- `crime` (murder, robbery, terrorism)
-- `health` (epidemic, pandemic, health crisis)
-- `infrastructure` (power outage, bridge collapse, pipeline failure)
-- `environmental` (pollution, spill, air quality)
-- `policy` (law, regulation, announcement)
-- `economic` (market crash, bankruptcy, layoffs)
-- `other`
-
-**Example**: `natural-disaster`, `conflict`, `protest`
-
----
-
-### severity
-**Type**: Integer
-**Range**: 1-10
-**Purpose**: Impact severity level of the event
-**Rules**:
-- Integer only (no decimals)
-- 1 = minimal impact
-- 10 = catastrophic impact
-- Used for prioritization and filtering
-
-**Scale**:
-- 1-2: Minor incident, limited impact
-- 3-4: Noticeable incident, local impact
-- 5-6: Significant incident, regional impact
-- 7-8: Major incident, widespread impact
-- 9-10: Catastrophic incident, national/global impact
+**Components**:
+- `YYYY`: 4-digit year (2024)
+- `MM`: 2-digit month (01-12)
+- `DD`: 2-digit day (01-31)
+- `T`: Literal separator
+- `HH`: 2-digit hour (00-23)
+- `mm`: 2-digit minute (00-59)
+- `ss`: 2-digit second (00-59)
+- `Z`: UTC timezone indicator
 
 **Examples**:
-- Earthquake magnitude 7.8 = severity 9
-- Local power outage = severity 3
-- Global pandemic = severity 10
+- `2024-02-06T04:45:00Z` - February 6, 2024 at 4:45 AM UTC
+- `2024-02-06T04:17:00Z` - February 6, 2024 at 4:17 AM UTC
 
----
+## Confidence Score Interpretation
 
-### status
-**Type**: String (enumerated)
-**Valid Values**:
-- `active` - Event is currently ongoing
-- `developing` - Situation still evolving, information changing
-- `ongoing` - Event continues but stabilized
-- `resolved` - Event has ended
-- `closed` - Event archived/no longer tracked
+| Range | Interpretation | Use Case |
+|-------|-----------------|----------|
+| 0.8-1.0 | Highly confident | Multiple authoritative sources |
+| 0.6-0.8 | Good confidence | Most details verified |
+| 0.4-0.6 | Moderate confidence | Some sources, developing |
+| 0.2-0.4 | Low confidence | Limited sources, unverified |
+| 0.0-0.2 | Very low confidence | Single source, preliminary |
 
-**Purpose**: Current state of the event
+## Source Provider Types
 
-**Example**: `developing` → `ongoing` → `resolved`
+Common `source.provider` values:
+- `news-outlet` (Reuters, BBC, AP, etc.)
+- `email` (Email-based intelligence)
+- `social-media` (Twitter, Facebook, etc.)
+- `official` (Government, institutional sources)
+- `eyewitness` (First-hand reports)
+- `wire-service` (News wires)
+- `other` (Other sources)
 
----
+## Common Entity Patterns
 
-### keywords
-**Type**: Array of strings
-**Purpose**: Relevant tags/keywords for indexing and searching
-**Rules**:
-- Free-form text tags
-- Lowercase recommended for consistency
-- May include: location names, people names, organizations, concepts
-
-**Examples**:
-```json
-["earthquake", "turkey", "disaster", "rescue", "february-2023"]
-```
-
----
-
-### entities
-**Type**: Array of objects
-**Object Structure**:
+### Full Natural Disaster Event
 ```json
 {
-  "type": "person|location|organization|product|event",
-  "name": "entity name"
+  "id": "event-2024-001",
+  "source": {"name": "Reuters", "provider": "news-outlet"},
+  "title": "7.8 Magnitude Earthquake Strikes Turkey",
+  "summary": "A major earthquake causes widespread damage",
+  "details": "Full description with context...",
+  "date_published": "2024-02-06T04:45:00Z",
+  "date_event": "2024-02-06T04:17:00Z",
+  "geo": {
+    "lat": 37.27,
+    "lon": 37.02,
+    "country": "Turkey",
+    "region": "Gaziantep",
+    "city": "Gaziantep"
+  },
+  "links": [
+    {"url": "https://reuters.com/...", "label": "Reuters Coverage"}
+  ],
+  "image_urls": [
+    "https://example.com/damage.jpg"
+  ],
+  "topics": ["earthquake", "disaster", "turkey"],
+  "confidence": 0.95,
+  "ingested_at": "2024-02-06T04:50:00Z"
 }
 ```
-**Purpose**: Named entities referenced in the event
 
-**Examples**:
+### Minimal Email Event
 ```json
-[
-  {"type": "location", "name": "Turkey"},
-  {"type": "location", "name": "Syria"},
-  {"type": "organization", "name": "Turkish Red Crescent"},
-  {"type": "person", "name": "President Recep Tayyip Erdogan"}
-]
+{
+  "id": "event-email-001",
+  "source": {
+    "name": "john@example.com",
+    "email": "john@example.com",
+    "provider": "email"
+  },
+  "title": "Alert",
+  "summary": "Incident reported",
+  "details": "Details from email...",
+  "date_published": "2024-02-06T08:30:00Z",
+  "links": [],
+  "image_urls": [],
+  "raw_email_ref": {
+    "message_id": "msg-123",
+    "subject": "Alert"
+  },
+  "ingested_at": "2024-02-06T08:35:00Z"
+}
 ```
 
----
-
-### related_event_ids
-**Type**: Array of strings (UUIDs)
-**Purpose**: References to related events
-**Rules**:
-- Contains UUIDs of other events
-- Indicates causal, sequential, or thematic relationships
-- Used to construct event chains or clusters
-
-**Example**:
+### Event with Null Geographic Coordinates
 ```json
-["550e8400-e29b-41d4-a716-446655440001", "550e8400-e29b-41d4-a716-446655440002"]
+{
+  "id": "event-policy-001",
+  "source": {"name": "EU Commission"},
+  "title": "New Policy Announced",
+  "summary": "Policy affecting multiple countries",
+  "details": "Details...",
+  "date_published": "2024-02-06T10:00:00Z",
+  "geo": {
+    "lat": null,
+    "lon": null,
+    "country": "European Union"
+  },
+  "links": [
+    {"url": "https://ec.europa.eu/..."}
+  ],
+  "image_urls": [],
+  "confidence": 0.98,
+  "ingested_at": "2024-02-06T10:05:00Z"
+}
 ```
 
----
+## Schema Compliance
 
-## Geographic Fields (geo object)
+**JSON Schema**: https://json-schema.org/draft/2020-12/schema
+**$id**: https://github.com/Zettersten/osint-/schemas/world_event.entity.schema.json
+**Title**: WorldEventEntity
+**Type**: object
+**additionalProperties**: false (strict schema, no extra fields)
 
-### geo.latitude
-**Type**: Decimal
-**Range**: -90 to 90
-**Purpose**: Event latitude coordinate
-**Nullable**: Yes
-**Example**: `37.27`
+## Error Handling
 
----
+### Common Validation Errors
 
-### geo.longitude
-**Type**: Decimal
-**Range**: -180 to 180
-**Purpose**: Event longitude coordinate
-**Nullable**: Yes
-**Example**: `37.02`
+| Error | Cause | Fix |
+|-------|-------|-----|
+| Missing required field | Field not present | Add required field |
+| Value too short | String below minLength | Increase string length |
+| Invalid URL format | Malformed URL | Fix URL format to http/https |
+| Invalid date format | Wrong datetime format | Use ISO 8601 format |
+| Out of range | Number outside valid range | Keep within range |
+| Extra properties | Field not in schema | Remove extra fields |
+| Wrong type | Value is wrong type | Convert to correct type |
 
----
+## Testing & Validation
 
-### geo.country
-**Type**: String
-**Format**: ISO 3166-1 alpha-3 code or full name
-**Purpose**: Country where event occurred
-**Nullable**: Yes
-**Examples**: `TUR`, `SYR`, `USA`, `Turkey`, `Syria`
+To validate an entity against the schema:
 
----
+```bash
+# Using jq
+jq 'keys == ["date_event", "date_published", "details", "geo", "id", "image_urls", "ingested_at", "links", "raw_email_ref", "source", "summary", "confidence", "title", "topics"] | sort' entity.json
+```
 
-### geo.region
-**Type**: String
-**Purpose**: State/province/region name
-**Nullable**: Yes
-**Examples**: `Gaziantep`, `California`, `Île-de-France`
-
----
-
-### geo.city
-**Type**: String
-**Purpose**: City/municipality name
-**Nullable**: Yes
-**Examples**: `Gaziantep`, `Los Angeles`, `Paris`
-
----
-
-### geo.location_name
-**Type**: String
-**Purpose**: Human-readable location description
-**Nullable**: Yes
-**Examples**: `Gaziantep Province, Turkey`, `San Francisco Bay Area`, `English Channel`
-
----
-
-## Metadata Fields (metadata object)
-
-### metadata.confidence
-**Type**: Decimal
-**Range**: 0.0 to 1.0
-**Purpose**: Confidence/quality score for the event data
-**Rules**:
-- 0.0 = no confidence
-- 1.0 = complete confidence
-- Higher values indicate better corroboration and source quality
-
-**Interpretation**:
-- 0.8-1.0: Multiple sources, official confirmation
-- 0.5-0.8: Mixed sources, some uncertainty
-- 0.0-0.5: Single source, unverified
-
-**Example**: `0.95`
-
----
-
-### metadata.updated_at
-**Type**: ISO 8601 timestamp
-**Format**: `YYYY-MM-DDTHH:mm:ssZ`
-**Purpose**: When the event record was last updated
-**Rules**:
-- Must be >= `date_published`
-- Updated when any field changes
-- Tracks data freshness
-
-**Example**: `2023-02-07T12:30:00Z`
-
----
-
-### metadata.contributor
-**Type**: String
-**Purpose**: Who added/updated the event
-**Examples**: `analyst-123`, `system-crawler-001`, `user-name`
-
----
-
-## Complete Field Validation Checklist
-
-### Required Fields
-- [ ] `id`: Valid UUID v4 format
-- [ ] `source`: Non-empty alphanumeric string
-- [ ] `title`: 1-500 characters, non-empty
-- [ ] `summary`: 1-2000 characters, non-empty
-- [ ] `details`: 1-10000 characters, non-empty
-- [ ] `date_published`: Valid ISO 8601, UTC timezone
-- [ ] `links`: Array with minimum 1 valid URL
-- [ ] `image_urls`: Array (may be empty)
-
-### Geographic Fields (if present)
-- [ ] `geo.latitude`: -90 to 90 or null
-- [ ] `geo.longitude`: -180 to 180 or null
-- [ ] If latitude/longitude present, both must be present
-- [ ] If any geo field present, `geo.country` recommended
-
-### Temporal Fields (if present)
-- [ ] `date_occurred`: Valid ISO 8601 or not present
-- [ ] `date_occurred` <= `date_published` (if both present)
-- [ ] `metadata.updated_at` >= `date_published`
-
-### Enumerated Fields (if present)
-- [ ] `event_type`: Valid from enumeration list
-- [ ] `status`: One of: active, developing, ongoing, resolved, closed
-- [ ] `severity`: Integer 1-10
-
-### Numeric Fields (if present)
-- [ ] `metadata.confidence`: 0.0 to 1.0
-
-## Usage in AI Systems
-
-### For AI Analysis
-- Use `details` + `summary` for context
-- Use `entities` to understand participants
-- Use `geo` for spatial context
-- Use `keywords` for topic clustering
-- Use `metadata.confidence` for reliability assessment
-
-### For Timeline Construction
-- Sort by `date_occurred` or `date_published`
-- Use `related_event_ids` to link events
-- Track status changes over time
-
-### For Source Attribution
-- Follow `links` to primary sources
-- Check `source` for publisher credibility
-- Verify `date_published` for currency
-
-### For Verification
-- Compare `summary` and `details` for consistency
-- Cross-reference `links` and `image_urls`
-- Check `metadata.confidence` and source count
+For strict JSON Schema validation, use a validator tool with the schema URL.
