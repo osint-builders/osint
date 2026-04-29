@@ -2,14 +2,25 @@
   "version": "1.0.0",
   "last_updated": "2026-04-29",
   "description": "Master registry of all OSINT data sources for world event collection",
-  "sources": [],
+  "sources": [
+    {
+      "id": "twitter-tanker-trackers",
+      "name": "TankerTrackers - Oil & Gas Tanker Movement Tracking",
+      "type": "twitter",
+      "status": "testing",
+      "reliability": "high",
+      "priority": "high",
+      "file": "sources/twitter-tanker-trackers.md",
+      "added_date": "2026-04-29"
+    }
+  ],
   "statistics": {
-    "total_sources": 0,
+    "total_sources": 1,
     "active_sources": 0,
-    "testing_sources": 0,
+    "testing_sources": 1,
     "inactive_sources": 0,
     "by_type": {
-      "twitter": 0,
+      "twitter": 1,
       "webpage": 0,
       "api": 0,
       "email": 0,
@@ -21,12 +32,12 @@
       "other": 0
     },
     "by_priority": {
-      "high": 0,
+      "high": 1,
       "medium": 0,
       "low": 0
     },
     "by_reliability": {
-      "high": 0,
+      "high": 1,
       "medium": 0,
       "low": 0,
       "unverified": 0
