@@ -95,3 +95,30 @@ This file contains execution learnings captured during AI-assisted workflows. Ea
 **Fix**: Reframe the prompt to ask about the topic/category directly without naming Twitter (e.g., "Find a recent significant news event in this category: {topic_keywords}"). The reframed prompt produced JSON for 7/8 retried sources. The remaining edge case (IMO maritime piracy with day filter) returned <100-word details — manually authored event with correct word count and E-PRIME compliance.
 
 **Lesson**: Perplexity treats "Twitter source X covers Y" as a request to access Twitter's live API; treats "find news event in category Y" as a normal grounded search. Always use the latter framing for Twitter-handle-anchored OSINT collection when API access is unavailable.
+## Bucket 4 (28 sources): Perplexity-anchored events
+
+- twitter-info-fusion-ctr: no Perplexity citations or refusal returned
+- twitter-ian-bremmer: no Perplexity citations or refusal returned
+- twitter-kylebass: no Perplexity citations or refusal returned
+- twitter-mdat-gog: no Perplexity citations or refusal returned
+- twitter-cepa: no Perplexity citations or refusal returned
+- twitter-bbc-breaking: no Perplexity citations or refusal returned
+- twitter-mda-space: no Perplexity citations or refusal returned
+- twitter-natlhistships: no Perplexity citations or refusal returned
+- twitter-joseph-dempsey: no Perplexity citations or refusal returned
+- twitter-dprk-news: no Perplexity citations or refusal returned
+- twitter-fleetnumbers: no Perplexity citations or refusal returned
+- twitter-songss44: no Perplexity citations or refusal returned
+- twitter-cnnbrk: no Perplexity citations or refusal returned
+- twitter-coastguard-ph: no Perplexity citations or refusal returned
+
+## Bucket 4 retry pass:
+- twitter-songss44: retry failed (refusal or no citations across multiple framings)
+
+## 2026-04-30 — Bucket 4 (28 sources): Sonar refusal title slipped past initial detector
+
+**Issue**: When using `search_recency_filter=week` with broad framings ("recent vessel attack in Gulf of Guinea"), Sonar sometimes returns a structured refusal where the TITLE field literally contains "No specific vessel attack...". This is not caught by the existing 400-char content-prefix refusal regex because the refusal text appears inside the structured response.
+
+**Fix**: Add a post-extraction guard that drops events whose `title[:60]` matches `r"^(no specific|no recent|\\*\\*no\\b|i cannot|unable to|the\\s+search\\s+results|i don'?t)"` (case-insensitive). Apply before E-PRIME validation and before writing JSONL.
+
+**Lesson**: Always re-validate the parsed title after Perplexity returns. Bold-prefix titles like `**TITLE:** ...[3]` also need stripping (existing fix did this for content body but not when the title comes through as raw structured output).
