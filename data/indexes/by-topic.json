@@ -1,11 +1,19 @@
 [
   {
     "topic": "iran",
-    "count": 60
+    "count": 67
   },
   {
     "topic": "china",
-    "count": 30
+    "count": 33
+  },
+  {
+    "topic": "sanctions",
+    "count": 27
+  },
+  {
+    "topic": "russia",
+    "count": 25
   },
   {
     "topic": "military",
@@ -20,20 +28,12 @@
     "count": 21
   },
   {
-    "topic": "russia",
-    "count": 21
-  },
-  {
-    "topic": "sanctions",
-    "count": 20
-  },
-  {
     "topic": "blockade",
     "count": 20
   },
   {
     "topic": "taiwan",
-    "count": 16
+    "count": 19
   },
   {
     "topic": "kharg-island",
@@ -45,11 +45,19 @@
   },
   {
     "topic": "ukraine",
-    "count": 13
+    "count": 14
   },
   {
     "topic": "tanker-tracking",
-    "count": 12
+    "count": 13
+  },
+  {
+    "topic": "ofac",
+    "count": 11
+  },
+  {
+    "topic": "japan",
+    "count": 11
   },
   {
     "topic": "philippines",
@@ -68,6 +76,10 @@
     "count": 10
   },
   {
+    "topic": "shadow-fleet",
+    "count": 9
+  },
+  {
     "topic": "us",
     "count": 9
   },
@@ -80,6 +92,10 @@
     "count": 8
   },
   {
+    "topic": "nato",
+    "count": 8
+  },
+  {
     "topic": "south",
     "count": 8
   },
@@ -88,15 +104,19 @@
     "count": 8
   },
   {
-    "topic": "shadow-fleet",
-    "count": 7
-  },
-  {
-    "topic": "ofac",
-    "count": 7
-  },
-  {
     "topic": "tanker-trackers",
+    "count": 7
+  },
+  {
+    "topic": "north-korea",
+    "count": 7
+  },
+  {
+    "topic": "dprk",
+    "count": 7
+  },
+  {
+    "topic": "deployment",
     "count": 7
   },
   {
@@ -108,15 +128,7 @@
     "count": 6
   },
   {
-    "topic": "japan",
-    "count": 6
-  },
-  {
     "topic": "centcom",
-    "count": 6
-  },
-  {
-    "topic": "dprk",
     "count": 6
   },
   {
@@ -141,10 +153,6 @@
   },
   {
     "topic": "equipment",
-    "count": 6
-  },
-  {
-    "topic": "deployment",
     "count": 6
   },
   {
@@ -177,10 +185,6 @@
   },
   {
     "topic": "world-events",
-    "count": 5
-  },
-  {
-    "topic": "nato",
     "count": 5
   },
   {
@@ -228,6 +232,26 @@
     "count": 4
   },
   {
+    "topic": "somalia",
+    "count": 4
+  },
+  {
+    "topic": "piracy",
+    "count": 4
+  },
+  {
+    "topic": "us-navy",
+    "count": 4
+  },
+  {
+    "topic": "vietnam",
+    "count": 4
+  },
+  {
+    "topic": "shadow-banking",
+    "count": 4
+  },
+  {
     "topic": "aircraft",
     "count": 4
   },
@@ -264,15 +288,19 @@
     "count": 3
   },
   {
+    "topic": "deterrence",
+    "count": 3
+  },
+  {
     "topic": "ceasefire",
     "count": 3
   },
   {
-    "topic": "north-korea",
+    "topic": "indo-pacific",
     "count": 3
   },
   {
-    "topic": "shadow-banking",
+    "topic": "trilateral",
     "count": 3
   },
   {
@@ -496,10 +524,6 @@
     "count": 2
   },
   {
-    "topic": "deterrence",
-    "count": 2
-  },
-  {
     "topic": "dark-activity",
     "count": 2
   },
@@ -516,14 +540,6 @@
     "count": 2
   },
   {
-    "topic": "somalia",
-    "count": 2
-  },
-  {
-    "topic": "piracy",
-    "count": 2
-  },
-  {
     "topic": "arabian-sea",
     "count": 2
   },
@@ -536,6 +552,10 @@
     "count": 2
   },
   {
+    "topic": "iran-war",
+    "count": 2
+  },
+  {
     "topic": "drone",
     "count": 2
   },
@@ -545,6 +565,54 @@
   },
   {
     "topic": "uae",
+    "count": 2
+  },
+  {
+    "topic": "gulf-of-aden",
+    "count": 2
+  },
+  {
+    "topic": "missile-defense",
+    "count": 2
+  },
+  {
+    "topic": "korean-peninsula",
+    "count": 2
+  },
+  {
+    "topic": "oil-exports",
+    "count": 2
+  },
+  {
+    "topic": "baltic-states",
+    "count": 2
+  },
+  {
+    "topic": "hybrid-warfare",
+    "count": 2
+  },
+  {
+    "topic": "aircraft-carrier",
+    "count": 2
+  },
+  {
+    "topic": "red-sea",
+    "count": 2
+  },
+  {
+    "topic": "maximum-pressure",
+    "count": 2
+  },
+  {
+    "topic": "takaichi",
+    "count": 2
+  },
+  {
+    "topic": "eisenhower",
+    "count": 2
+  },
+  {
+    "topic": "taiwan-strait",
     "count": 2
   },
   {
@@ -624,10 +692,6 @@
     "count": 2
   },
   {
-    "topic": "trilateral",
-    "count": 2
-  },
-  {
     "topic": "adiz",
     "count": 2
   },
@@ -657,10 +721,6 @@
   },
   {
     "topic": "national",
-    "count": 2
-  },
-  {
-    "topic": "vietnam",
     "count": 2
   },
   {
@@ -812,10 +872,6 @@
     "count": 1
   },
   {
-    "topic": "iran-war",
-    "count": 1
-  },
-  {
     "topic": "ateela-1",
     "count": 1
   },
@@ -880,10 +936,6 @@
     "count": 1
   },
   {
-    "topic": "gulf-of-aden",
-    "count": 1
-  },
-  {
     "topic": "hijacking",
     "count": 1
   },
@@ -901,6 +953,242 @@
   },
   {
     "topic": "ofac-sanctions",
+    "count": 1
+  },
+  {
+    "topic": "un-security-council",
+    "count": 1
+  },
+  {
+    "topic": "missile-tests",
+    "count": 1
+  },
+  {
+    "topic": "kim-jong-un",
+    "count": 1
+  },
+  {
+    "topic": "nuclear-arsenal",
+    "count": 1
+  },
+  {
+    "topic": "poland",
+    "count": 1
+  },
+  {
+    "topic": "threat-assessment",
+    "count": 1
+  },
+  {
+    "topic": "cyber-security",
+    "count": 1
+  },
+  {
+    "topic": "congressional-action",
+    "count": 1
+  },
+  {
+    "topic": "gerald-r-ford",
+    "count": 1
+  },
+  {
+    "topic": "military-sealift",
+    "count": 1
+  },
+  {
+    "topic": "fleet-replenishment",
+    "count": 1
+  },
+  {
+    "topic": "carrier-support",
+    "count": 1
+  },
+  {
+    "topic": "force-sustainment",
+    "count": 1
+  },
+  {
+    "topic": "penghu-islands",
+    "count": 1
+  },
+  {
+    "topic": "south-china-sea",
+    "count": 1
+  },
+  {
+    "topic": "pla-navy",
+    "count": 1
+  },
+  {
+    "topic": "maritime-incident",
+    "count": 1
+  },
+  {
+    "topic": "fuel-tanker",
+    "count": 1
+  },
+  {
+    "topic": "puntland",
+    "count": 1
+  },
+  {
+    "topic": "nuclear-program",
+    "count": 1
+  },
+  {
+    "topic": "alliance-coordination",
+    "count": 1
+  },
+  {
+    "topic": "nordic-baltic",
+    "count": 1
+  },
+  {
+    "topic": "european-security",
+    "count": 1
+  },
+  {
+    "topic": "theodore-roosevelt",
+    "count": 1
+  },
+  {
+    "topic": "unmanned-surface-vessel",
+    "count": 1
+  },
+  {
+    "topic": "carrier-strike-group",
+    "count": 1
+  },
+  {
+    "topic": "eu",
+    "count": 1
+  },
+  {
+    "topic": "shipping",
+    "count": 1
+  },
+  {
+    "topic": "transatlantic-coordination",
+    "count": 1
+  },
+  {
+    "topic": "sea-trials",
+    "count": 1
+  },
+  {
+    "topic": "carrier-tracker",
+    "count": 1
+  },
+  {
+    "topic": "7th-fleet",
+    "count": 1
+  },
+  {
+    "topic": "george-washington",
+    "count": 1
+  },
+  {
+    "topic": "australia",
+    "count": 1
+  },
+  {
+    "topic": "ran",
+    "count": 1
+  },
+  {
+    "topic": "maritime-security",
+    "count": 1
+  },
+  {
+    "topic": "abduction-issue",
+    "count": 1
+  },
+  {
+    "topic": "trump",
+    "count": 1
+  },
+  {
+    "topic": "us-japan-alliance",
+    "count": 1
+  },
+  {
+    "topic": "pacific-islands",
+    "count": 1
+  },
+  {
+    "topic": "kiribati",
+    "count": 1
+  },
+  {
+    "topic": "aviation",
+    "count": 1
+  },
+  {
+    "topic": "regional-observer",
+    "count": 1
+  },
+  {
+    "topic": "spillover",
+    "count": 1
+  },
+  {
+    "topic": "counter-terrorism",
+    "count": 1
+  },
+  {
+    "topic": "sdn-list",
+    "count": 1
+  },
+  {
+    "topic": "economic-fury",
+    "count": 1
+  },
+  {
+    "topic": "teapot-refineries",
+    "count": 1
+  },
+  {
+    "topic": "us-fleet-forces",
+    "count": 1
+  },
+  {
+    "topic": "atlantic-fleet",
+    "count": 1
+  },
+  {
+    "topic": "carrier-rotation",
+    "count": 1
+  },
+  {
+    "topic": "gerald-ford",
+    "count": 1
+  },
+  {
+    "topic": "force-generation",
+    "count": 1
+  },
+  {
+    "topic": "jmsdf",
+    "count": 1
+  },
+  {
+    "topic": "ikazuchi",
+    "count": 1
+  },
+  {
+    "topic": "diplomatic-protest",
+    "count": 1
+  },
+  {
+    "topic": "al-shabaab",
+    "count": 1
+  },
+  {
+    "topic": "horn-of-africa",
+    "count": 1
+  },
+  {
+    "topic": "conflict-monitoring",
     "count": 1
   },
   {
@@ -1132,23 +1420,11 @@
     "count": 1
   },
   {
-    "topic": "korean-peninsula",
-    "count": 1
-  },
-  {
     "topic": "plaaf",
     "count": 1
   },
   {
     "topic": "plan",
-    "count": 1
-  },
-  {
-    "topic": "taiwan-strait",
-    "count": 1
-  },
-  {
-    "topic": "missile-defense",
     "count": 1
   },
   {
