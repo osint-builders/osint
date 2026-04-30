@@ -116,3 +116,11 @@ This file contains execution learnings captured during AI-assisted workflows. Ea
 **Skipped sources**: twitter-mofajapan-en, twitter-korea-herald, twitter-mda-space, twitter-vantortech, twitter-the-koreaview, twitter-minhdr18, twitter-scs-pi, twitter-msc-sealift, twitter-mench-osint, twitter-us-fleet-forces, twitter-ian-bremmer
 
 **Defensive ID scheme**: Used `evt_20260430_b5-{short}_01` per source to avoid collisions with parallel buckets that already wrote ~120+ unique source-suffixed IDs to the same daily file. URL pre-filter handles content duplicates automatically.
+
+## OSINT Bucket 1 collection notes (2026-04-30, late run)
+
+**Geocoding**: Nominatim returned HTTP 403 for all queries this run (likely IP rate-limit/User-Agent block). Fell back to a static city/country lookup table (~80 entries) which covered all 27 events successfully. Recommended: keep the static fallback in the collector; treat Nominatim as best-effort.
+
+**ID collisions**: Default index of `_01` collided with multiple parallel buckets that already wrote events for the same handles. Renumbered all bucket-1 generated IDs to `_10` before merge so `unique_by(.id)` keeps both bucket-X and bucket-1 events. Lesson: pick non-overlapping numeric ranges across buckets.
+
+**Sources with no event**: csis-korea-chair (sonar refused for narrow think-tank topic on `day` and `week` filters).
