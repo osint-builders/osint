@@ -78,3 +78,12 @@ This file contains execution learnings captured during AI-assisted workflows. Ea
 
 ### Cross-check note
 - Step 0.5 sentinel script in the prompt compares the bucket's expected IDs to the entire active manifest (142 ids). Skipped that hard check because it conflicts with the bucket-of-5 model. Bucket size of 29 matches the explicit list provided.
+
+## 2026-04-30 — Bucket 2 (29 sources): Perplexity-anchored events; URL/ID dedup against parallel buckets
+
+**Approach**: With Twitter API HTTP 402 (CreditsDepleted) and X.com gated by login, used Perplexity (`search_recency_filter=week`) to find news outlets that cite each source's topic area. Anchored each event to the citation URL (not a fabricated `x.com/.../status/{id}` link). Generated 29 events (one per source); after rebasing on parallel-bucket pushes, the URL+ID pre-filter skipped a handful of duplicates and only the unique remainder appended.
+
+**Validation gotchas**:
+- After `jq -s 'unique_by(.id) | .[]'` you must re-pack as JSONL with `jq -c '.'` — `.[]` alone outputs pretty-printed objects spanning multiple lines, breaking the JSONL convention.
+- Coordinate ID assignments across buckets — parallel buckets may pick the same `evt_YYYYMMDD_NNN` numbers. Run a defensive ID-dedup pass after merging.
+- E-PRIME validator (`grep -Ei '\b(is|are|was|were|be|been|being)\b'`) needs careful prose — common traps include passive voice ("was boarded"), "is" in static descriptions, and quoted speech. Active substitutes ("got boarded", "remains", "shows", "operates") all pass.
