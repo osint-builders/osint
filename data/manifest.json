@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-04-30T19:38:30Z",
+  "last_updated": "2026-04-30T19:48:43Z",
   "schema_version": "2020-12",
   "retention_days": 90,
   "data_range": {
@@ -8,12 +8,12 @@
     "newest_date": "2026-04-30T19:24:00Z"
   },
   "statistics": {
-    "total_events": 169,
+    "total_events": 236,
     "events_by_month": {
-      "2026-04": 169
+      "2026-04": 236
     },
     "events_by_source": {
-      "unknown": 169
+      "unknown": 236
     },
     "media_files": {
       "images": 5,

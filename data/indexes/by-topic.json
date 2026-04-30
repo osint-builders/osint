@@ -9,7 +9,7 @@
   },
   {
     "topic": "sanctions",
-    "count": 27
+    "count": 31
   },
   {
     "topic": "russia",
@@ -120,8 +120,16 @@
     "count": 7
   },
   {
+    "topic": "cybersecurity",
+    "count": 7
+  },
+  {
     "topic": "israel",
     "count": 7
+  },
+  {
+    "topic": "piracy",
+    "count": 6
   },
   {
     "topic": "osint",
@@ -161,10 +169,6 @@
   },
   {
     "topic": "vessel",
-    "count": 6
-  },
-  {
-    "topic": "cybersecurity",
     "count": 6
   },
   {
@@ -236,10 +240,6 @@
     "count": 4
   },
   {
-    "topic": "piracy",
-    "count": 4
-  },
-  {
     "topic": "us-navy",
     "count": 4
   },
@@ -249,6 +249,14 @@
   },
   {
     "topic": "shadow-banking",
+    "count": 4
+  },
+  {
+    "topic": "shadow fleet",
+    "count": 4
+  },
+  {
+    "topic": "hackers",
     "count": 4
   },
   {
@@ -293,6 +301,10 @@
   },
   {
     "topic": "ceasefire",
+    "count": 3
+  },
+  {
+    "topic": "gulf-of-aden",
     "count": 3
   },
   {
@@ -464,10 +476,6 @@
     "count": 3
   },
   {
-    "topic": "hackers",
-    "count": 3
-  },
-  {
     "topic": "data",
     "count": 3
   },
@@ -568,7 +576,7 @@
     "count": 2
   },
   {
-    "topic": "gulf-of-aden",
+    "topic": "hijacking",
     "count": 2
   },
   {
@@ -613,6 +621,22 @@
   },
   {
     "topic": "taiwan-strait",
+    "count": 2
+  },
+  {
+    "topic": "satellite imagery",
+    "count": 2
+  },
+  {
+    "topic": "sanctions evasion",
+    "count": 2
+  },
+  {
+    "topic": "US-ROK alliance",
+    "count": 2
+  },
+  {
+    "topic": "Strait of Hormuz",
     "count": 2
   },
   {
@@ -936,10 +960,6 @@
     "count": 1
   },
   {
-    "topic": "hijacking",
-    "count": 1
-  },
-  {
     "topic": "security-risk",
     "count": 1
   },
@@ -1189,6 +1209,474 @@
   },
   {
     "topic": "conflict-monitoring",
+    "count": 1
+  },
+  {
+    "topic": "wildfire",
+    "count": 1
+  },
+  {
+    "topic": "Earth observation",
+    "count": 1
+  },
+  {
+    "topic": "AI Warfare",
+    "count": 1
+  },
+  {
+    "topic": "Iran Conflict",
+    "count": 1
+  },
+  {
+    "topic": "Pentagon Intelligence",
+    "count": 1
+  },
+  {
+    "topic": "AIS evasion",
+    "count": 1
+  },
+  {
+    "topic": "sanctions circumvention",
+    "count": 1
+  },
+  {
+    "topic": "Iran-Russia oil trade",
+    "count": 1
+  },
+  {
+    "topic": "China cyber operations",
+    "count": 1
+  },
+  {
+    "topic": "critical infrastructure",
+    "count": 1
+  },
+  {
+    "topic": "Kim Jong Un",
+    "count": 1
+  },
+  {
+    "topic": "Military Inspection",
+    "count": 1
+  },
+  {
+    "topic": "Russia-NK Arms Deal",
+    "count": 1
+  },
+  {
+    "topic": "HMS Victory",
+    "count": 1
+  },
+  {
+    "topic": "conservation project",
+    "count": 1
+  },
+  {
+    "topic": "Royal Navy heritage",
+    "count": 1
+  },
+  {
+    "topic": "US Navy",
+    "count": 1
+  },
+  {
+    "topic": "Balikatan Exercise",
+    "count": 1
+  },
+  {
+    "topic": "Subic Bay Port Call",
+    "count": 1
+  },
+  {
+    "topic": "maritime OSINT",
+    "count": 1
+  },
+  {
+    "topic": "Russia oil tankers",
+    "count": 1
+  },
+  {
+    "topic": "COMPTUEX",
+    "count": 1
+  },
+  {
+    "topic": "Carrier Strike Group",
+    "count": 1
+  },
+  {
+    "topic": "Navy Training",
+    "count": 1
+  },
+  {
+    "topic": "ADF",
+    "count": 1
+  },
+  {
+    "topic": "AUKUS",
+    "count": 1
+  },
+  {
+    "topic": "Indo-Pacific",
+    "count": 1
+  },
+  {
+    "topic": "military exercise",
+    "count": 1
+  },
+  {
+    "topic": "South China Sea",
+    "count": 1
+  },
+  {
+    "topic": "Territorial Dispute",
+    "count": 1
+  },
+  {
+    "topic": "Maritime Incursion",
+    "count": 1
+  },
+  {
+    "topic": "defense talks",
+    "count": 1
+  },
+  {
+    "topic": "data breach",
+    "count": 1
+  },
+  {
+    "topic": "DPRK threat",
+    "count": 1
+  },
+  {
+    "topic": "armed robbery",
+    "count": 1
+  },
+  {
+    "topic": "Gulf of Guinea",
+    "count": 1
+  },
+  {
+    "topic": "Iran nuclear enrichment",
+    "count": 1
+  },
+  {
+    "topic": "Natanz",
+    "count": 1
+  },
+  {
+    "topic": "IAEA",
+    "count": 1
+  },
+  {
+    "topic": "North Korea",
+    "count": 1
+  },
+  {
+    "topic": "Sanctions Evasion",
+    "count": 1
+  },
+  {
+    "topic": "Shadow Fleet",
+    "count": 1
+  },
+  {
+    "topic": "Iran oil exports",
+    "count": 1
+  },
+  {
+    "topic": "ship-to-ship transfers",
+    "count": 1
+  },
+  {
+    "topic": "Chinese Navy",
+    "count": 1
+  },
+  {
+    "topic": "Aircraft Carrier",
+    "count": 1
+  },
+  {
+    "topic": "Port Visit",
+    "count": 1
+  },
+  {
+    "topic": "DPRK missile test",
+    "count": 1
+  },
+  {
+    "topic": "cluster-bomb warheads",
+    "count": 1
+  },
+  {
+    "topic": "nuclear conviction",
+    "count": 1
+  },
+  {
+    "topic": "Iran-US conflict",
+    "count": 1
+  },
+  {
+    "topic": "Seafarer stranding",
+    "count": 1
+  },
+  {
+    "topic": "Israel",
+    "count": 1
+  },
+  {
+    "topic": "Lebanon",
+    "count": 1
+  },
+  {
+    "topic": "Airstrike",
+    "count": 1
+  },
+  {
+    "topic": "disinformation",
+    "count": 1
+  },
+  {
+    "topic": "cyber influence campaign",
+    "count": 1
+  },
+  {
+    "topic": "intelligence service",
+    "count": 1
+  },
+  {
+    "topic": "Iran",
+    "count": 1
+  },
+  {
+    "topic": "Russia",
+    "count": 1
+  },
+  {
+    "topic": "oil exports",
+    "count": 1
+  },
+  {
+    "topic": "drought",
+    "count": 1
+  },
+  {
+    "topic": "wheat shortage",
+    "count": 1
+  },
+  {
+    "topic": "food security",
+    "count": 1
+  },
+  {
+    "topic": "electronic warfare",
+    "count": 1
+  },
+  {
+    "topic": "military aircraft",
+    "count": 1
+  },
+  {
+    "topic": "radar jamming",
+    "count": 1
+  },
+  {
+    "topic": "Ukraine Russia conflict",
+    "count": 1
+  },
+  {
+    "topic": "frontline offensive",
+    "count": 1
+  },
+  {
+    "topic": "territorial capture",
+    "count": 1
+  },
+  {
+    "topic": "China US relations",
+    "count": 1
+  },
+  {
+    "topic": "Taiwan arms sales",
+    "count": 1
+  },
+  {
+    "topic": "SAR",
+    "count": 1
+  },
+  {
+    "topic": "Coast Guard",
+    "count": 1
+  },
+  {
+    "topic": "Maritime Rescue",
+    "count": 1
+  },
+  {
+    "topic": "Leopard tanks",
+    "count": 1
+  },
+  {
+    "topic": "Ukraine deployment",
+    "count": 1
+  },
+  {
+    "topic": "OFAC Sanctions",
+    "count": 1
+  },
+  {
+    "topic": "Iran SDN Designations",
+    "count": 1
+  },
+  {
+    "topic": "Treasury Enforcement",
+    "count": 1
+  },
+  {
+    "topic": "HawkEye 360",
+    "count": 1
+  },
+  {
+    "topic": "RF Geolocation",
+    "count": 1
+  },
+  {
+    "topic": "Maritime Dark Vessels",
+    "count": 1
+  },
+  {
+    "topic": "Iran tanker",
+    "count": 1
+  },
+  {
+    "topic": "Iran nuclear sanctions",
+    "count": 1
+  },
+  {
+    "topic": "IRGC evasion",
+    "count": 1
+  },
+  {
+    "topic": "U.S. Treasury designations",
+    "count": 1
+  },
+  {
+    "topic": "conflict mapping",
+    "count": 1
+  },
+  {
+    "topic": "crisis visualization",
+    "count": 1
+  },
+  {
+    "topic": "ArcGIS Story Maps",
+    "count": 1
+  },
+  {
+    "topic": "Han Kuang exercises",
+    "count": 1
+  },
+  {
+    "topic": "Taiwan military drills",
+    "count": 1
+  },
+  {
+    "topic": "MND announcement",
+    "count": 1
+  },
+  {
+    "topic": "grounding",
+    "count": 1
+  },
+  {
+    "topic": "Ukraine Russia war",
+    "count": 1
+  },
+  {
+    "topic": "military advance",
+    "count": 1
+  },
+  {
+    "topic": "frontline change",
+    "count": 1
+  },
+  {
+    "topic": "JASDF",
+    "count": 1
+  },
+  {
+    "topic": "Air Scrambles",
+    "count": 1
+  },
+  {
+    "topic": "Senkaku Islands",
+    "count": 1
+  },
+  {
+    "topic": "Navy Logistics",
+    "count": 1
+  },
+  {
+    "topic": "Ship Inactivation",
+    "count": 1
+  },
+  {
+    "topic": "Military Sealift Command",
+    "count": 1
+  },
+  {
+    "topic": "cyberattack",
+    "count": 1
+  },
+  {
+    "topic": "APT",
+    "count": 1
+  },
+  {
+    "topic": "cyber security",
+    "count": 1
+  },
+  {
+    "topic": "military training",
+    "count": 1
+  },
+  {
+    "topic": "medical readiness",
+    "count": 1
+  },
+  {
+    "topic": "drone technology",
+    "count": 1
+  },
+  {
+    "topic": "interoperability",
+    "count": 1
+  },
+  {
+    "topic": "North Korea missile",
+    "count": 1
+  },
+  {
+    "topic": "failed launch",
+    "count": 1
+  },
+  {
+    "topic": "Korean Peninsula security",
+    "count": 1
+  },
+  {
+    "topic": "international conflict",
+    "count": 1
+  },
+  {
+    "topic": "Africa",
+    "count": 1
+  },
+  {
+    "topic": "humanitarian crisis",
+    "count": 1
+  },
+  {
+    "topic": "maritime security",
     "count": 1
   },
   {
