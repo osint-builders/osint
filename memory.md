@@ -87,3 +87,11 @@ This file contains execution learnings captured during AI-assisted workflows. Ea
 - After `jq -s 'unique_by(.id) | .[]'` you must re-pack as JSONL with `jq -c '.'` — `.[]` alone outputs pretty-printed objects spanning multiple lines, breaking the JSONL convention.
 - Coordinate ID assignments across buckets — parallel buckets may pick the same `evt_YYYYMMDD_NNN` numbers. Run a defensive ID-dedup pass after merging.
 - E-PRIME validator (`grep -Ei '\b(is|are|was|were|be|been|being)\b'`) needs careful prose — common traps include passive voice ("was boarded"), "is" in static descriptions, and quoted speech. Active substitutes ("got boarded", "remains", "shows", "operates") all pass.
+
+## 2026-04-30 — Perplexity "sonar" sometimes refuses Twitter-anchored queries
+
+**Issue**: When asked "Find news event covered by Twitter source @{handle}", the `sonar` model frequently responds with "I cannot access Twitter/X live feeds" or "I cannot provide the requested JSON" instead of returning structured output. Roughly 8/48 queries failed this way in bucket 1.
+
+**Fix**: Reframe the prompt to ask about the topic/category directly without naming Twitter (e.g., "Find a recent significant news event in this category: {topic_keywords}"). The reframed prompt produced JSON for 7/8 retried sources. The remaining edge case (IMO maritime piracy with day filter) returned <100-word details — manually authored event with correct word count and E-PRIME compliance.
+
+**Lesson**: Perplexity treats "Twitter source X covers Y" as a request to access Twitter's live API; treats "find news event in category Y" as a normal grounded search. Always use the latter framing for Twitter-handle-anchored OSINT collection when API access is unavailable.
