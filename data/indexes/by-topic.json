@@ -1,7 +1,7 @@
 [
   {
     "topic": "iran",
-    "count": 31
+    "count": 35
   },
   {
     "topic": "windward-ai",
@@ -32,8 +32,16 @@
     "count": 12
   },
   {
+    "topic": "us",
+    "count": 9
+  },
+  {
     "topic": "vlcc",
     "count": 8
+  },
+  {
+    "topic": "china",
+    "count": 7
   },
   {
     "topic": "tanker-trackers",
@@ -52,6 +60,14 @@
     "count": 5
   },
   {
+    "topic": "osint",
+    "count": 5
+  },
+  {
+    "topic": "world-events",
+    "count": 5
+  },
+  {
     "topic": "ofac",
     "count": 4
   },
@@ -64,11 +80,11 @@
     "count": 4
   },
   {
-    "topic": "gulf-of-oman",
-    "count": 3
+    "topic": "russia",
+    "count": 4
   },
   {
-    "topic": "china",
+    "topic": "gulf-of-oman",
     "count": 3
   },
   {
@@ -89,6 +105,14 @@
   },
   {
     "topic": "irgc",
+    "count": 3
+  },
+  {
+    "topic": "taiwan",
+    "count": 3
+  },
+  {
+    "topic": "philippines",
     "count": 3
   },
   {
@@ -129,6 +153,30 @@
   },
   {
     "topic": "vessel-attacks",
+    "count": 2
+  },
+  {
+    "topic": "drone",
+    "count": 2
+  },
+  {
+    "topic": "military",
+    "count": 2
+  },
+  {
+    "topic": "japan",
+    "count": 2
+  },
+  {
+    "topic": "aircraft",
+    "count": 2
+  },
+  {
+    "topic": "korea",
+    "count": 2
+  },
+  {
+    "topic": "ukraine",
     "count": 2
   },
   {
@@ -268,10 +316,6 @@
     "count": 1
   },
   {
-    "topic": "russia",
-    "count": 1
-  },
-  {
     "topic": "baltic",
     "count": 1
   },
@@ -293,10 +337,6 @@
   },
   {
     "topic": "iran-war",
-    "count": 1
-  },
-  {
-    "topic": "drone",
     "count": 1
   },
   {
@@ -393,6 +433,22 @@
   },
   {
     "topic": "ofac-sanctions",
+    "count": 1
+  },
+  {
+    "topic": "cyber",
+    "count": 1
+  },
+  {
+    "topic": "carrier",
+    "count": 1
+  },
+  {
+    "topic": "north-korea",
+    "count": 1
+  },
+  {
+    "topic": "naval",
     "count": 1
   }
 ]
