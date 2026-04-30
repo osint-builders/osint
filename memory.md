@@ -49,3 +49,19 @@ This file contains execution learnings captured during AI-assisted workflows. Ea
 **Working approach**: Use `perplexity-search` with `search_recency_filter=week` to find news outlets that quote TankerTrackers reports, then fetch those citation URLs with `fetch_web_pages`. Extract the TankerTrackers-attributed claims from the news article bodies. Always validate that Perplexity returned non-empty `.citations[]` — when citations are empty, the model is hallucinating tweet IDs/URLs and content cannot be trusted.
 
 **Lesson**: For Twitter sources with paywalled API access, treat news outlets that cite the source as the authoritative ingestion path. Anchor each event to the citation URL, not a fabricated `x.com/.../status/{id}` link.
+
+## 2026-04-30 — Perplexity URL field often contains citation markers like [1]
+
+**Issue**: Perplexity sonar/sonar-pro responses include source URLs with appended citation markers (e.g., `https://example.com/[1]`). A naive `.split()[0].rstrip(".,)")` strip doesn't remove the bracketed marker, leading to invalid links in the events file.
+
+**Fix**: Apply `re.sub(r"\[\d+\]", "", candidate)` after splitting on whitespace and before stripping trailing punctuation.
+
+## 2026-04-30 — Sonar responses sometimes use **TITLE:** bold markdown for labels
+
+**Issue**: When the model decides to format its TITLE/WHEN/WHERE/etc. block as Markdown headings, it wraps each label with `**...**` (e.g., `**TITLE:**`). A simple `^([A-Z]+):` regex misses these.
+
+**Fix**: Pre-normalize the response with `re.sub(r"\*\*(TITLE|WHEN|WHERE|WHAT|DETAILS|URL)\*\*:", r"\1:", content)` and a sibling pattern for `**TITLE:**` → `TITLE:` before parsing.
+
+## 2026-04-30 — Sonar often replies "no recent news matches" for narrow topics with day filter
+
+**Observation**: With `search_recency_filter:"day"` on niche source topics (e.g., Esri defense GIS, NATO Arctic on a quiet day), Sonar returns explicit refusals like "No specific news story matching the criteria was found" or "I cannot provide a specific news event from the past 7 days based on the search results provided." Treat these as legitimate empty results — don't synthesize content. Detection regex: `r"no (specific|recent) news (story )?(matching|matches|was found)|cannot provide a specific|no concrete recent|no information (on|about)"`.
