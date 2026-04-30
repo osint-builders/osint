@@ -388,3 +388,38 @@ Total events: 8
 - [twitter-inside-nk] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
 - [twitter-us-pacific-fleet] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
 - [twitter-cnnbrk] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+
+## bucket 3 run (2026-04-30T22:11:39.032Z UTC)
+
+- Window: 2026-04-30T21:11:39.032Z to 2026-04-30T22:11:39.032Z
+- Total events: 0
+- Per-source notes:
+  - twitter-iran-spectrum: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-shipnews: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-chinese-emb-in-us: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-the-diplomat: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-yortukisgk: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-mda-space: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-seawatch-intl: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-scs-pi: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-japan-joint-staff: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-aurora-intel: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-us-navy: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-esri-water: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-imo-hq: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-united-nations: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - webpage-satellite-today-gov-mil: 30 article URLs found on category page; 3 most-recent inspected (2026-04-30T20:10:29Z, 2026-04-29T21:36:21Z, 2026-04-29T19:08:20Z); all article:published_time values fall before window start 2026-04-30T21:11:39.032Z; 0 in-window events
+  - twitter-the-lookout-north: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-iran-observer: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-sindikasyontek: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-chadobcnews: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-us-5th-fleet: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-the-pacific-brief: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-vantortech: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-hawkeye360: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-gcaptain: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-cnn: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-mylordbebo: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-middle-east-eye: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-natalierevolts: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+  - twitter-faa-south: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
