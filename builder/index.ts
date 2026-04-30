@@ -2,9 +2,17 @@
 /**
  * OSINT Builder
  *
- * Reads active sources from source/manifest.json, constructs a collection
- * prompt, and spawns a single Warp cloud agent via oz-agent-sdk to perform
- * the full collection workflow (collect → validate → write JSONL → commit).
+ * Reads sources from source/manifest.json (every source whose status is NOT
+ * in EXCLUDED_STATUSES), constructs a collection prompt, and spawns a single
+ * Warp cloud agent via oz-agent-sdk to perform the full collection workflow
+ * (collect → validate → write JSONL → commit).
+ *
+ * IMPORTANT: this builder uses a deny-list, not an allow-list. New sources
+ * (including ones with status "testing" or "unverified") are automatically
+ * included in every run. To skip a source, set its status to one of
+ * EXCLUDED_STATUSES (e.g. "inactive", "archived", "deprecated"). The prompt
+ * also embeds an explicit cross-check step that fails if the source list
+ * embedded in the prompt does not match the live manifest.
  *
  * Required environment variables:
  *   WARP_API_KEY          — Warp API key
@@ -22,6 +30,11 @@ import { execSync } from "child_process";
 const POLL_INTERVAL_MS = 10_000;
 const TERMINAL_STATES = new Set(["SUCCEEDED", "FAILED", "CANCELLED"]);
 
+// Statuses that should be EXCLUDED from a collection run.
+// Anything else (active, testing, unverified, etc.) is processed so that
+// new sources are never silently dropped from the prompt.
+const EXCLUDED_STATUSES = new Set(["inactive", "archived", "deprecated"]);
+
 interface Source {
   id: string;
   name: string;
@@ -34,10 +47,19 @@ interface Manifest {
   sources: Source[];
 }
 
-function loadActiveSources(repoRoot: string): Source[] {
+/**
+ * Returns every source from source/manifest.json whose status is NOT in
+ * EXCLUDED_STATUSES. We explicitly opt out of an allow-list (e.g. status ===
+ * "active") so a freshly-added source with status "testing" cannot silently
+ * disappear from the collection run. To skip a source, set its status to one
+ * of the EXCLUDED_STATUSES values.
+ */
+function loadProcessableSources(repoRoot: string): Source[] {
   const manifestPath = path.join(repoRoot, "source", "manifest.json");
   const manifest: Manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
-  return manifest.sources.filter((s) => s.status === "active");
+  return manifest.sources.filter(
+    (s) => !EXCLUDED_STATUSES.has((s.status ?? "").toLowerCase())
+  );
 }
 
 function readSourceFile(repoRoot: string, source: Source): string {
@@ -74,6 +96,13 @@ function buildCollectionPrompt(
     })
     .join("\n\n---\n\n");
 
+  // Sentinel list of expected source IDs. The agent MUST cross-check this
+  // against source/manifest.json at runtime and abort if they disagree, so
+  // a newly-added source can never be silently dropped from a collection run.
+  const expectedIds = sources.map((s) => s.id);
+  const expectedIdsBash = expectedIds.map((id) => `"${id}"`).join(" ");
+  const expectedIdsList = expectedIds.map((id) => `- ${id}`).join("\n");
+
   return `# OSINT World Event Collection Task
 
 You are an AI agent tasked with collecting OSINT world events.
@@ -84,7 +113,13 @@ You are an AI agent tasked with collecting OSINT world events.
 
 ## Your Mission
 
-Collect world events from each active source listed below, structure them as World Event Entities, and commit the results to the repository.
+Collect world events from **every** source listed in the "Sources to Process"
+section below, structure them as World Event Entities, and commit the results
+to the repository.
+
+You MUST process every source. The orchestrator already pre-filtered sources
+from \`source/manifest.json\`; the section below is the authoritative worklist.
+If you skip a source, the run is considered failed.
 
 ## Step 0: Clone and Enter the Repository
 
@@ -101,11 +136,51 @@ REPO_ROOT=$(pwd)
 
 All subsequent steps must run from **inside the cloned repo directory**.
 
-## Active Sources (${sources.length} total — process ONE AT A TIME)
+## Sources to Process (${sources.length} total — process ONE AT A TIME, do NOT skip any)
+
+Expected source IDs for this run (sentinel — used by the cross-check below):
+
+${expectedIdsList}
+
+Full source definitions follow. The agent must process **every** one of them.
 
 ${sourceBlocks}
 
 ## Step-by-Step Execution
+
+### Step 0.5: Cross-Check Source List Against Live Manifest
+
+Before collecting anything, verify that the sentinel list above matches the
+set of processable sources in \`source/manifest.json\` (everything whose status
+is NOT in {inactive, archived, deprecated}). This is a hard guard against the
+builder template silently dropping a source.
+
+\`\`\`bash
+# IDs the orchestrator embedded in this prompt
+EXPECTED_IDS=(${expectedIdsBash})
+
+# IDs currently in the manifest with a processable status
+MANIFEST_IDS=$(jq -r '.sources[] | select((.status // "") | ascii_downcase | IN("inactive","archived","deprecated") | not) | .id' source/manifest.json | sort)
+
+EXPECTED_SORTED=$(printf "%s\\n" "\${EXPECTED_IDS[@]}" | sort)
+
+if [ "$EXPECTED_SORTED" != "$MANIFEST_IDS" ]; then
+  echo "ERROR: Source list mismatch between prompt and source/manifest.json" >&2
+  echo "Expected (from prompt):" >&2
+  printf "  %s\\n" "\${EXPECTED_IDS[@]}" | sort >&2
+  echo "Found in manifest (processable):" >&2
+  echo "$MANIFEST_IDS" | sed 's/^/  /' >&2
+  echo "Aborting collection so no source is silently skipped." >&2
+  exit 1
+fi
+
+echo "Source list cross-check passed: \${#EXPECTED_IDS[@]} sources to process."
+\`\`\`
+
+If this check fails, do NOT continue. Investigate the mismatch and either
+(a) regenerate the prompt with the missing source, or (b) update the manifest
+status to one of {inactive, archived, deprecated} if the source genuinely
+should be skipped.
 
 ### Step 1: Validate Prerequisites
 
@@ -298,23 +373,26 @@ async function main(): Promise<void> {
 
   const client = new OzAPI({ apiKey: warpApiKey });
 
-  // Load active sources
-  let activeSources: Source[];
+  // Load every processable source (deny-list, not allow-list, so new
+  // sources are never silently dropped — see loadProcessableSources docstring).
+  let processableSources: Source[];
   try {
-    activeSources = loadActiveSources(repoRoot);
+    processableSources = loadProcessableSources(repoRoot);
   } catch (err) {
     console.error(`Error loading source manifest: ${err}`);
     process.exit(1);
   }
 
-  if (activeSources.length === 0) {
-    console.log("No active sources found in source/manifest.json. Exiting.");
+  if (processableSources.length === 0) {
+    console.log(
+      "No processable sources found in source/manifest.json. Exiting."
+    );
     process.exit(0);
   }
 
   console.log(
-    `Found ${activeSources.length} active source(s): ${activeSources
-      .map((s) => s.id)
+    `Found ${processableSources.length} processable source(s): ${processableSources
+      .map((s) => `${s.id} [${s.status}]`)
       .join(", ")}`
   );
 
@@ -323,7 +401,7 @@ async function main(): Promise<void> {
   console.log(`Repository: ${originUrl}`);
 
   // Build collection prompt
-  const prompt = buildCollectionPrompt(repoRoot, activeSources, originUrl);
+  const prompt = buildCollectionPrompt(repoRoot, processableSources, originUrl);
 
   // Spawn Warp cloud agent
   console.log("Spawning Warp cloud agent...");

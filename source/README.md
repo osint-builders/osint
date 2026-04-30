@@ -192,6 +192,27 @@ The `manifest.json` file maintains a registry of all sources:
 }
 ```
 
+### Status Semantics for Collection Runs
+
+The collection orchestrator (`builder/index.ts`) uses a **deny-list**, not an
+allow-list, when picking which sources to send to the cloud agent. The rule is:
+
+> A source is included in every collection run **unless** its `status` is one of
+> `inactive`, `archived`, or `deprecated` (case-insensitive).
+
+That means `active`, `testing`, `unverified`, and any other status value all
+result in the source being processed. This is intentional: when you add a new
+source, the default `status: testing` lets it ride along on the next run
+immediately so you find collection bugs early, rather than silently dropping it.
+
+If you genuinely want a source skipped, set its status to `inactive`,
+`archived`, or `deprecated`.
+
+The builder also embeds a sentinel list of expected source IDs in the prompt
+and instructs the agent to abort if that list disagrees with the live manifest,
+so a source can never be silently dropped between prompt construction and
+execution.
+
 ## Validation Rules
 
 Source files are considered valid when:
@@ -209,13 +230,17 @@ Source files are considered valid when:
 When evaluating or processing a source:
 
 1. **Read the source file** to understand collection criteria
-2. **Check the status** - only process active sources
-3. **Review priority** - process high-priority sources first
-4. **Follow type-specific instructions** in the body
-5. **Apply filters and extraction rules** as specified
-6. **Transform data** according to processing instructions
-7. **Validate quality** using quality indicators
-8. **Update last_updated** when source is modified
+2. **Check the status** - process every source whose status is NOT `inactive`,
+   `archived`, or `deprecated` (see "Status Semantics for Collection Runs"
+   above). `testing` sources are in scope.
+3. **Cross-check the worklist** - if you receive a pre-built collection prompt,
+   diff its source list against `source/manifest.json` and abort on mismatch.
+4. **Review priority** - process high-priority sources first
+5. **Follow type-specific instructions** in the body
+6. **Apply filters and extraction rules** as specified
+7. **Transform data** according to processing instructions
+8. **Validate quality** using quality indicators
+9. **Update last_updated** when source is modified
 
 ## Best Practices
 

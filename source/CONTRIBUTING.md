@@ -289,6 +289,13 @@ Add your source to the manifest:
 }
 ```
 
+> **Heads-up:** As soon as you commit this manifest entry, the next run of
+> `builder/index.ts` will include your new source in the collection prompt,
+> even with `status: testing`. The orchestrator uses a deny-list (`inactive`,
+> `archived`, `deprecated`) — *not* an allow-list of `active`. If you don't
+> want the source picked up yet, set its status to `inactive` until you're
+> ready.
+
 Update statistics:
 ```json
 {
