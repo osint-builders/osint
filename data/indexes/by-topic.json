@@ -1,7 +1,15 @@
 [
   {
     "topic": "iran",
-    "count": 35
+    "count": 46
+  },
+  {
+    "topic": "china",
+    "count": 27
+  },
+  {
+    "topic": "military",
+    "count": 25
   },
   {
     "topic": "windward-ai",
@@ -12,6 +20,10 @@
     "count": 19
   },
   {
+    "topic": "sanctions",
+    "count": 18
+  },
+  {
     "topic": "blockade",
     "count": 16
   },
@@ -20,11 +32,15 @@
     "count": 15
   },
   {
-    "topic": "sanctions",
+    "topic": "hormuz",
     "count": 15
   },
   {
-    "topic": "hormuz",
+    "topic": "russia",
+    "count": 15
+  },
+  {
+    "topic": "taiwan",
     "count": 15
   },
   {
@@ -32,7 +48,27 @@
     "count": 12
   },
   {
+    "topic": "philippines",
+    "count": 11
+  },
+  {
+    "topic": "defense",
+    "count": 11
+  },
+  {
+    "topic": "korea",
+    "count": 10
+  },
+  {
+    "topic": "irgc",
+    "count": 9
+  },
+  {
     "topic": "us",
+    "count": 9
+  },
+  {
+    "topic": "pla",
     "count": 9
   },
   {
@@ -40,15 +76,67 @@
     "count": 8
   },
   {
-    "topic": "china",
-    "count": 7
+    "topic": "south",
+    "count": 8
+  },
+  {
+    "topic": "north",
+    "count": 8
   },
   {
     "topic": "tanker-trackers",
     "count": 7
   },
   {
+    "topic": "ukraine",
+    "count": 7
+  },
+  {
     "topic": "shadow-fleet",
+    "count": 6
+  },
+  {
+    "topic": "news",
+    "count": 6
+  },
+  {
+    "topic": "security",
+    "count": 6
+  },
+  {
+    "topic": "indo",
+    "count": 6
+  },
+  {
+    "topic": "pacific",
+    "count": 6
+  },
+  {
+    "topic": "satellite",
+    "count": 6
+  },
+  {
+    "topic": "equipment",
+    "count": 6
+  },
+  {
+    "topic": "deployment",
+    "count": 6
+  },
+  {
+    "topic": "chinese",
+    "count": 6
+  },
+  {
+    "topic": "vessel",
+    "count": 6
+  },
+  {
+    "topic": "cybersecurity",
+    "count": 6
+  },
+  {
+    "topic": "apt",
     "count": 6
   },
   {
@@ -68,6 +156,46 @@
     "count": 5
   },
   {
+    "topic": "japan",
+    "count": 5
+  },
+  {
+    "topic": "sea",
+    "count": 5
+  },
+  {
+    "topic": "missile",
+    "count": 5
+  },
+  {
+    "topic": "nuclear",
+    "count": 5
+  },
+  {
+    "topic": "weapons",
+    "count": 5
+  },
+  {
+    "topic": "israel",
+    "count": 5
+  },
+  {
+    "topic": "middle",
+    "count": 5
+  },
+  {
+    "topic": "east",
+    "count": 5
+  },
+  {
+    "topic": "conflict",
+    "count": 5
+  },
+  {
+    "topic": "asia",
+    "count": 4
+  },
+  {
     "topic": "ofac",
     "count": 4
   },
@@ -80,7 +208,19 @@
     "count": 4
   },
   {
-    "topic": "russia",
+    "topic": "aircraft",
+    "count": 4
+  },
+  {
+    "topic": "carrier",
+    "count": 4
+  },
+  {
+    "topic": "naval",
+    "count": 4
+  },
+  {
+    "topic": "strait",
     "count": 4
   },
   {
@@ -104,15 +244,223 @@
     "count": 3
   },
   {
-    "topic": "irgc",
+    "topic": "africa",
     "count": 3
   },
   {
-    "topic": "taiwan",
+    "topic": "breaking",
     "count": 3
   },
   {
-    "topic": "philippines",
+    "topic": "politics",
+    "count": 3
+  },
+  {
+    "topic": "coup",
+    "count": 3
+  },
+  {
+    "topic": "west",
+    "count": 3
+  },
+  {
+    "topic": "european",
+    "count": 3
+  },
+  {
+    "topic": "nato",
+    "count": 3
+  },
+  {
+    "topic": "procurement",
+    "count": 3
+  },
+  {
+    "topic": "budget",
+    "count": 3
+  },
+  {
+    "topic": "geopolitical",
+    "count": 3
+  },
+  {
+    "topic": "risk",
+    "count": 3
+  },
+  {
+    "topic": "international",
+    "count": 3
+  },
+  {
+    "topic": "relations",
+    "count": 3
+  },
+  {
+    "topic": "enrichment",
+    "count": 3
+  },
+  {
+    "topic": "iiss",
+    "count": 3
+  },
+  {
+    "topic": "imagery",
+    "count": 3
+  },
+  {
+    "topic": "dprk",
+    "count": 3
+  },
+  {
+    "topic": "alliance",
+    "count": 3
+  },
+  {
+    "topic": "economy",
+    "count": 3
+  },
+  {
+    "topic": "hong",
+    "count": 3
+  },
+  {
+    "topic": "kong",
+    "count": 3
+  },
+  {
+    "topic": "yuan",
+    "count": 3
+  },
+  {
+    "topic": "financial",
+    "count": 3
+  },
+  {
+    "topic": "russian",
+    "count": 3
+  },
+  {
+    "topic": "technology",
+    "count": 3
+  },
+  {
+    "topic": "hypersonic",
+    "count": 3
+  },
+  {
+    "topic": "exercises",
+    "count": 3
+  },
+  {
+    "topic": "regional",
+    "count": 3
+  },
+  {
+    "topic": "political",
+    "count": 3
+  },
+  {
+    "topic": "developments",
+    "count": 3
+  },
+  {
+    "topic": "protests",
+    "count": 3
+  },
+  {
+    "topic": "demonstrations",
+    "count": 3
+  },
+  {
+    "topic": "heritage",
+    "count": 3
+  },
+  {
+    "topic": "warship",
+    "count": 3
+  },
+  {
+    "topic": "preservation",
+    "count": 3
+  },
+  {
+    "topic": "advisory",
+    "count": 3
+  },
+  {
+    "topic": "vulnerability",
+    "count": 3
+  },
+  {
+    "topic": "nation",
+    "count": 3
+  },
+  {
+    "topic": "state",
+    "count": 3
+  },
+  {
+    "topic": "maritime",
+    "count": 3
+  },
+  {
+    "topic": "tracking",
+    "count": 3
+  },
+  {
+    "topic": "hackers",
+    "count": 3
+  },
+  {
+    "topic": "data",
+    "count": 3
+  },
+  {
+    "topic": "losses",
+    "count": 3
+  },
+  {
+    "topic": "tanks",
+    "count": 3
+  },
+  {
+    "topic": "korean",
+    "count": 3
+  },
+  {
+    "topic": "peninsula",
+    "count": 3
+  },
+  {
+    "topic": "inter",
+    "count": 3
+  },
+  {
+    "topic": "dmz",
+    "count": 3
+  },
+  {
+    "topic": "deployments",
+    "count": 3
+  },
+  {
+    "topic": "navy",
+    "count": 3
+  },
+  {
+    "topic": "strike",
+    "count": 3
+  },
+  {
+    "topic": "group",
+    "count": 3
+  },
+  {
+    "topic": "xinhua",
+    "count": 3
+  },
+  {
+    "topic": "official",
     "count": 3
   },
   {
@@ -160,31 +508,43 @@
     "count": 2
   },
   {
-    "topic": "military",
+    "topic": "kcna",
     "count": 2
   },
   {
-    "topic": "japan",
+    "topic": "kim",
     "count": 2
   },
   {
-    "topic": "aircraft",
+    "topic": "intelligence",
     "count": 2
   },
   {
-    "topic": "korea",
+    "topic": "systems",
     "count": 2
   },
   {
-    "topic": "ukraine",
+    "topic": "syria",
+    "count": 2
+  },
+  {
+    "topic": "ministry",
+    "count": 2
+  },
+  {
+    "topic": "national",
+    "count": 2
+  },
+  {
+    "topic": "vietnam",
+    "count": 2
+  },
+  {
+    "topic": "coast",
     "count": 2
   },
   {
     "topic": "exfiltration",
-    "count": 1
-  },
-  {
-    "topic": "asia",
     "count": 1
   },
   {
@@ -440,15 +800,19 @@
     "count": 1
   },
   {
-    "topic": "carrier",
-    "count": 1
-  },
-  {
     "topic": "north-korea",
     "count": 1
   },
   {
-    "topic": "naval",
+    "topic": "adiz",
+    "count": 1
+  },
+  {
+    "topic": "incursion",
+    "count": 1
+  },
+  {
+    "topic": "cross",
     "count": 1
   }
 ]
