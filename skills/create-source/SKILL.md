@@ -250,13 +250,21 @@ node scripts/test-source.js twitter-breaking-news.md --full
 **Update Manifest:**
 
 ```bash
-# Add to manifest automatically
-node scripts/update-manifest.js add twitter-breaking-news.md
+# Update manifest with all sources automatically (recommended)
+python3 skills/create-source/scripts/update-manifest.py
 
 # Manifest updated:
-# - Added source entry
-# - Updated statistics
-# - Validated JSON structure
+# - Scans all source files
+# - Extracts metadata from frontmatter
+# - Updates statistics
+# - Validates JSON structure
+# - Reports summary (total sources, by type, priority, reliability)
+```
+
+Alternative (individual source):
+```bash
+# Add single source to manifest (if update-manifest.js exists)
+node scripts/update-manifest.js add twitter-breaking-news.md
 ```
 
 **Mark as Active:**
