@@ -122,3 +122,9 @@ This file contains execution learnings captured during AI-assisted workflows. Ea
 **Fix**: Add a post-extraction guard that drops events whose `title[:60]` matches `r"^(no specific|no recent|\\*\\*no\\b|i cannot|unable to|the\\s+search\\s+results|i don'?t)"` (case-insensitive). Apply before E-PRIME validation and before writing JSONL.
 
 **Lesson**: Always re-validate the parsed title after Perplexity returns. Bold-prefix titles like `**TITLE:** ...[3]` also need stripping (existing fix did this for content body but not when the title comes through as raw structured output).
+# Bucket 2 collection log
+
+Run started: 2026-04-30T19:53:08Z
+- twitter-clash-report: Perplexity returned no parseable JSON; content[:200]="I don't have access to real-time news data or events from the past day (April 29-30, 2026). My training data has a cutoff date, and I cannot browse the internet to retrieve current news events.\n\nTo fi"
+
+Total events written: 29/29
