@@ -1,7 +1,7 @@
 [
   {
     "topic": "iran",
-    "count": 74
+    "count": 76
   },
   {
     "topic": "osint",
@@ -13,19 +13,19 @@
   },
   {
     "topic": "sanctions",
-    "count": 39
+    "count": 40
   },
   {
     "topic": "military",
-    "count": 34
+    "count": 35
+  },
+  {
+    "topic": "russia",
+    "count": 31
   },
   {
     "topic": "taiwan",
     "count": 31
-  },
-  {
-    "topic": "russia",
-    "count": 30
   },
   {
     "topic": "defense",
@@ -68,15 +68,15 @@
     "count": 17
   },
   {
+    "topic": "ukraine",
+    "count": 17
+  },
+  {
     "topic": "south",
     "count": 17
   },
   {
     "topic": "irgc",
-    "count": 16
-  },
-  {
-    "topic": "ukraine",
     "count": 16
   },
   {
@@ -128,6 +128,10 @@
     "count": 12
   },
   {
+    "topic": "nuclear",
+    "count": 11
+  },
+  {
     "topic": "dprk",
     "count": 10
   },
@@ -137,10 +141,6 @@
   },
   {
     "topic": "sea",
-    "count": 10
-  },
-  {
-    "topic": "nuclear",
     "count": 10
   },
   {
@@ -172,6 +172,10 @@
     "count": 9
   },
   {
+    "topic": "israel",
+    "count": 9
+  },
+  {
     "topic": "vlcc",
     "count": 8
   },
@@ -196,6 +200,10 @@
     "count": 8
   },
   {
+    "topic": "conflict",
+    "count": 8
+  },
+  {
     "topic": "deployments",
     "count": 8
   },
@@ -212,7 +220,11 @@
     "count": 8
   },
   {
-    "topic": "israel",
+    "topic": "world-news",
+    "count": 8
+  },
+  {
+    "topic": "yahoo-news",
     "count": 8
   },
   {
@@ -273,10 +285,6 @@
   },
   {
     "topic": "us-rok",
-    "count": 6
-  },
-  {
-    "topic": "conflict",
     "count": 6
   },
   {
@@ -492,6 +500,10 @@
     "count": 4
   },
   {
+    "topic": "diplomacy",
+    "count": 4
+  },
+  {
     "topic": "africa",
     "count": 4
   },
@@ -605,6 +617,10 @@
   },
   {
     "topic": "jihadists",
+    "count": 3
+  },
+  {
+    "topic": "energy",
     "count": 3
   },
   {
@@ -1049,10 +1065,6 @@
   },
   {
     "topic": "asean",
-    "count": 2
-  },
-  {
-    "topic": "diplomacy",
     "count": 2
   },
   {
