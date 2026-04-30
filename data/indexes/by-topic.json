@@ -1,7 +1,7 @@
 [
   {
     "topic": "iran",
-    "count": 76
+    "count": 85
   },
   {
     "topic": "osint",
@@ -13,7 +13,7 @@
   },
   {
     "topic": "sanctions",
-    "count": 40
+    "count": 41
   },
   {
     "topic": "military",
@@ -36,20 +36,20 @@
     "count": 23
   },
   {
+    "topic": "dark-fleet",
+    "count": 22
+  },
+  {
     "topic": "breaking-news",
     "count": 22
   },
   {
-    "topic": "dark-fleet",
+    "topic": "blockade",
     "count": 21
   },
   {
     "topic": "windward-ai",
     "count": 21
-  },
-  {
-    "topic": "blockade",
-    "count": 20
   },
   {
     "topic": "news",
@@ -68,16 +68,16 @@
     "count": 17
   },
   {
+    "topic": "irgc",
+    "count": 17
+  },
+  {
     "topic": "ukraine",
     "count": 17
   },
   {
     "topic": "south",
     "count": 17
-  },
-  {
-    "topic": "irgc",
-    "count": 16
   },
   {
     "topic": "pla",
@@ -88,11 +88,11 @@
     "count": 15
   },
   {
-    "topic": "tanker-tracking",
-    "count": 13
+    "topic": "nato",
+    "count": 14
   },
   {
-    "topic": "nato",
+    "topic": "tanker-tracking",
     "count": 13
   },
   {
@@ -105,6 +105,10 @@
   },
   {
     "topic": "ofac",
+    "count": 12
+  },
+  {
+    "topic": "strait-of-hormuz",
     "count": 12
   },
   {
@@ -156,6 +160,14 @@
     "count": 10
   },
   {
+    "topic": "us",
+    "count": 10
+  },
+  {
+    "topic": "israel",
+    "count": 10
+  },
+  {
     "topic": "shadow-fleet",
     "count": 9
   },
@@ -168,19 +180,7 @@
     "count": 9
   },
   {
-    "topic": "us",
-    "count": 9
-  },
-  {
-    "topic": "israel",
-    "count": 9
-  },
-  {
     "topic": "vlcc",
-    "count": 8
-  },
-  {
-    "topic": "strait-of-hormuz",
     "count": 8
   },
   {
@@ -304,6 +304,14 @@
     "count": 6
   },
   {
+    "topic": "lebanon",
+    "count": 6
+  },
+  {
+    "topic": "oil-prices",
+    "count": 6
+  },
+  {
     "topic": "indo",
     "count": 6
   },
@@ -317,6 +325,10 @@
   },
   {
     "topic": "asia",
+    "count": 5
+  },
+  {
+    "topic": "us-navy",
     "count": 5
   },
   {
@@ -337,6 +349,10 @@
   },
   {
     "topic": "identification",
+    "count": 5
+  },
+  {
+    "topic": "terrorism",
     "count": 5
   },
   {
@@ -368,7 +384,11 @@
     "count": 5
   },
   {
-    "topic": "oil-prices",
+    "topic": "hezbollah",
+    "count": 5
+  },
+  {
+    "topic": "escalation",
     "count": 5
   },
   {
@@ -396,11 +416,11 @@
     "count": 4
   },
   {
-    "topic": "korean-peninsula",
+    "topic": "uae",
     "count": 4
   },
   {
-    "topic": "us-navy",
+    "topic": "korean-peninsula",
     "count": 4
   },
   {
@@ -468,10 +488,6 @@
     "count": 4
   },
   {
-    "topic": "terrorism",
-    "count": 4
-  },
-  {
     "topic": "attacks",
     "count": 4
   },
@@ -501,6 +517,14 @@
   },
   {
     "topic": "diplomacy",
+    "count": 4
+  },
+  {
+    "topic": "naval-blockade",
+    "count": 4
+  },
+  {
+    "topic": "uk",
     "count": 4
   },
   {
@@ -548,6 +572,10 @@
     "count": 3
   },
   {
+    "topic": "drone",
+    "count": 3
+  },
+  {
     "topic": "gulf-of-aden",
     "count": 3
   },
@@ -557,6 +585,10 @@
   },
   {
     "topic": "trilateral",
+    "count": 3
+  },
+  {
+    "topic": "trump",
     "count": 3
   },
   {
@@ -576,11 +608,19 @@
     "count": 3
   },
   {
+    "topic": "casualties",
+    "count": 3
+  },
+  {
     "topic": "evasion",
     "count": 3
   },
   {
     "topic": "vessels",
+    "count": 3
+  },
+  {
+    "topic": "multi-domain",
     "count": 3
   },
   {
@@ -596,15 +636,15 @@
     "count": 3
   },
   {
-    "topic": "hezbollah",
-    "count": 3
-  },
-  {
     "topic": "secondary-sanctions",
     "count": 3
   },
   {
-    "topic": "naval-blockade",
+    "topic": "persian-gulf",
+    "count": 3
+  },
+  {
+    "topic": "idf",
     "count": 3
   },
   {
@@ -617,6 +657,10 @@
   },
   {
     "topic": "jihadists",
+    "count": 3
+  },
+  {
+    "topic": "brent-crude",
     "count": 3
   },
   {
@@ -772,15 +816,11 @@
     "count": 2
   },
   {
-    "topic": "drone",
-    "count": 2
-  },
-  {
     "topic": "usv",
     "count": 2
   },
   {
-    "topic": "uae",
+    "topic": "iraq",
     "count": 2
   },
   {
@@ -828,11 +868,11 @@
     "count": 2
   },
   {
-    "topic": "eisenhower",
+    "topic": "carrier-strike-group",
     "count": 2
   },
   {
-    "topic": "trump",
+    "topic": "eisenhower",
     "count": 2
   },
   {
@@ -877,10 +917,6 @@
   },
   {
     "topic": "hardware",
-    "count": 2
-  },
-  {
-    "topic": "casualties",
     "count": 2
   },
   {
@@ -945,10 +981,6 @@
   },
   {
     "topic": "all-source",
-    "count": 2
-  },
-  {
-    "topic": "multi-domain",
     "count": 2
   },
   {
@@ -1076,15 +1108,7 @@
     "count": 2
   },
   {
-    "topic": "persian-gulf",
-    "count": 2
-  },
-  {
     "topic": "jef",
-    "count": 2
-  },
-  {
-    "topic": "uk",
     "count": 2
   },
   {
@@ -1108,15 +1132,31 @@
     "count": 2
   },
   {
-    "topic": "lebanon",
-    "count": 2
-  },
-  {
     "topic": "sahel",
     "count": 2
   },
   {
-    "topic": "brent-crude",
+    "topic": "dataminr",
+    "count": 2
+  },
+  {
+    "topic": "air-defense",
+    "count": 2
+  },
+  {
+    "topic": "gulf-states",
+    "count": 2
+  },
+  {
+    "topic": "opec",
+    "count": 2
+  },
+  {
+    "topic": "strategic-analysis",
+    "count": 2
+  },
+  {
+    "topic": "war-powers",
     "count": 2
   },
   {
@@ -1352,10 +1392,6 @@
     "count": 1
   },
   {
-    "topic": "iraq",
-    "count": 1
-  },
-  {
     "topic": "sanctioned-tankers",
     "count": 1
   },
@@ -1473,10 +1509,6 @@
   },
   {
     "topic": "unmanned-surface-vessel",
-    "count": 1
-  },
-  {
-    "topic": "carrier-strike-group",
     "count": 1
   },
   {
@@ -2460,10 +2492,6 @@
     "count": 1
   },
   {
-    "topic": "idf",
-    "count": 1
-  },
-  {
     "topic": "sim-nasr",
     "count": 1
   },
@@ -2496,15 +2524,7 @@
     "count": 1
   },
   {
-    "topic": "escalation",
-    "count": 1
-  },
-  {
     "topic": "fox-news",
-    "count": 1
-  },
-  {
-    "topic": "dataminr",
     "count": 1
   },
   {
@@ -2557,6 +2577,122 @@
   },
   {
     "topic": "aes",
+    "count": 1
+  },
+  {
+    "topic": "tehran",
+    "count": 1
+  },
+  {
+    "topic": "us-iran-war",
+    "count": 1
+  },
+  {
+    "topic": "khamenei",
+    "count": 1
+  },
+  {
+    "topic": "sovereignty",
+    "count": 1
+  },
+  {
+    "topic": "drone-strike",
+    "count": 1
+  },
+  {
+    "topic": "northern-front",
+    "count": 1
+  },
+  {
+    "topic": "southern-lebanon",
+    "count": 1
+  },
+  {
+    "topic": "airstrike",
+    "count": 1
+  },
+  {
+    "topic": "multi-front",
+    "count": 1
+  },
+  {
+    "topic": "travel-ban",
+    "count": 1
+  },
+  {
+    "topic": "regional-realignment",
+    "count": 1
+  },
+  {
+    "topic": "london",
+    "count": 1
+  },
+  {
+    "topic": "antisemitic-attack",
+    "count": 1
+  },
+  {
+    "topic": "threat-level",
+    "count": 1
+  },
+  {
+    "topic": "jtac",
+    "count": 1
+  },
+  {
+    "topic": "iran-spillover",
+    "count": 1
+  },
+  {
+    "topic": "saudi-arabia",
+    "count": 1
+  },
+  {
+    "topic": "alliance-fracture",
+    "count": 1
+  },
+  {
+    "topic": "warning",
+    "count": 1
+  },
+  {
+    "topic": "us-warships",
+    "count": 1
+  },
+  {
+    "topic": "ground-forces",
+    "count": 1
+  },
+  {
+    "topic": "uranium",
+    "count": 1
+  },
+  {
+    "topic": "congress",
+    "count": 1
+  },
+  {
+    "topic": "oil",
+    "count": 1
+  },
+  {
+    "topic": "uani",
+    "count": 1
+  },
+  {
+    "topic": "all-source-intelligence",
+    "count": 1
+  },
+  {
+    "topic": "threat-convergence",
+    "count": 1
+  },
+  {
+    "topic": "defense-analysis",
+    "count": 1
+  },
+  {
+    "topic": "marcom",
     "count": 1
   },
   {
@@ -2905,10 +3041,6 @@
   },
   {
     "topic": "stealth-missile",
-    "count": 1
-  },
-  {
-    "topic": "air-defense",
     "count": 1
   },
   {
