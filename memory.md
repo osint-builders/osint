@@ -242,3 +242,33 @@ Window: 2026-04-30T18:53:08.021Z - 2026-04-30T19:53:08.021Z
 ## Summary
 
 Collected 15 events written to /tmp/osint-collection-bucket3/events/all-events.jsonl
+# Bucket 3 collection log
+
+- twitter-jkgarokgov: no events in last hour
+- twitter-chinapower: no events in last hour
+- twitter-korea-econ-inst: no events in last hour
+- twitter-sim-nasr: primary citation already seen or empty; skipping
+- twitter-esri-training: no events in last hour
+- twitter-jnb-summary: no events in last hour
+- twitter-jasdf-pao-eng: no events in last hour
+- twitter-us-treasury: 1 event (id=evt_20260430_313)
+- twitter-pizzainwatch: 1 event (id=evt_20260430_314)
+- twitter-platracker: no events in last hour
+- twitter-tatarigamiua: 1 event (id=evt_20260430_315)
+- twitter-nguyenthiho88: no events in last hour
+- twitter-bbc-world: 1 event (id=evt_20260430_316)
+- twitter-nato-marcom: no events in last hour
+- twitter-armed-forces-phil: 1 event (id=evt_20260430_317)
+- webpage-windward-ai-blog: no events in last hour
+- twitter-ianellisjones: no events in last hour
+- twitter-the-diplomat: no events in last hour
+- twitter-xinhua-news: 1 event (id=evt_20260430_318)
+- twitter-osaindawg: no events in last hour
+- twitter-oilcfd: no events in last hour
+- twitter-the-koreaview: no events in last hour
+- twitter-kl-summary: no events in last hour
+- twitter-dataminr: no events in last hour
+- twitter-msc-sealift: 1 event (id=evt_20260430_319)
+- twitter-uani: 1 event (id=evt_20260430_320)
+- twitter-us-pacific-fleet: no events in last hour
+- twitter-bates-gill: no events in last hour

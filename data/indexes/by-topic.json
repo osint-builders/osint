@@ -1,15 +1,15 @@
 [
   {
     "topic": "iran",
-    "count": 73
+    "count": 74
   },
   {
     "topic": "china",
-    "count": 46
+    "count": 48
   },
   {
     "topic": "sanctions",
-    "count": 37
+    "count": 39
   },
   {
     "topic": "osint",
@@ -25,7 +25,7 @@
   },
   {
     "topic": "russia",
-    "count": 29
+    "count": 30
   },
   {
     "topic": "defense",
@@ -49,6 +49,10 @@
   },
   {
     "topic": "news",
+    "count": 20
+  },
+  {
+    "topic": "philippines",
     "count": 19
   },
   {
@@ -56,11 +60,11 @@
     "count": 18
   },
   {
-    "topic": "philippines",
-    "count": 18
+    "topic": "hormuz",
+    "count": 17
   },
   {
-    "topic": "hormuz",
+    "topic": "south",
     "count": 17
   },
   {
@@ -68,7 +72,7 @@
     "count": 16
   },
   {
-    "topic": "south",
+    "topic": "ukraine",
     "count": 16
   },
   {
@@ -77,10 +81,6 @@
   },
   {
     "topic": "kharg-island",
-    "count": 15
-  },
-  {
-    "topic": "ukraine",
     "count": 15
   },
   {
@@ -96,15 +96,19 @@
     "count": 13
   },
   {
+    "topic": "vessel",
+    "count": 13
+  },
+  {
+    "topic": "ofac",
+    "count": 12
+  },
+  {
     "topic": "chinese",
     "count": 12
   },
   {
     "topic": "analysis",
-    "count": 12
-  },
-  {
-    "topic": "vessel",
     "count": 12
   },
   {
@@ -120,10 +124,6 @@
     "count": 12
   },
   {
-    "topic": "ofac",
-    "count": 11
-  },
-  {
     "topic": "dprk",
     "count": 10
   },
@@ -132,7 +132,19 @@
     "count": 10
   },
   {
+    "topic": "maritime",
+    "count": 10
+  },
+  {
+    "topic": "nuclear",
+    "count": 10
+  },
+  {
     "topic": "satellite",
+    "count": 10
+  },
+  {
+    "topic": "sea",
     "count": 10
   },
   {
@@ -148,15 +160,7 @@
     "count": 9
   },
   {
-    "topic": "maritime",
-    "count": 9
-  },
-  {
-    "topic": "nuclear",
-    "count": 9
-  },
-  {
-    "topic": "sea",
+    "topic": "breaking",
     "count": 9
   },
   {
@@ -189,10 +193,6 @@
   },
   {
     "topic": "deployments",
-    "count": 8
-  },
-  {
-    "topic": "breaking",
     "count": 8
   },
   {
@@ -244,6 +244,10 @@
     "count": 7
   },
   {
+    "topic": "equipment",
+    "count": 7
+  },
+  {
     "topic": "apt",
     "count": 7
   },
@@ -264,6 +268,10 @@
     "count": 6
   },
   {
+    "topic": "xinhua",
+    "count": 6
+  },
+  {
     "topic": "coast",
     "count": 6
   },
@@ -276,6 +284,10 @@
     "count": 6
   },
   {
+    "topic": "international",
+    "count": 6
+  },
+  {
     "topic": "aircraft",
     "count": 6
   },
@@ -285,10 +297,6 @@
   },
   {
     "topic": "pacific",
-    "count": 6
-  },
-  {
-    "topic": "equipment",
     "count": 6
   },
   {
@@ -308,7 +316,7 @@
     "count": 5
   },
   {
-    "topic": "xinhua",
+    "topic": "dark",
     "count": 5
   },
   {
@@ -316,11 +324,11 @@
     "count": 5
   },
   {
-    "topic": "fleet",
+    "topic": "world",
     "count": 5
   },
   {
-    "topic": "international",
+    "topic": "fleet",
     "count": 5
   },
   {
@@ -432,10 +440,6 @@
     "count": 4
   },
   {
-    "topic": "dark",
-    "count": 4
-  },
-  {
     "topic": "guard",
     "count": 4
   },
@@ -444,7 +448,7 @@
     "count": 4
   },
   {
-    "topic": "world",
+    "topic": "bbc",
     "count": 4
   },
   {
@@ -476,11 +480,19 @@
     "count": 4
   },
   {
+    "topic": "forces",
+    "count": 4
+  },
+  {
     "topic": "africa",
     "count": 4
   },
   {
     "topic": "south-korea",
+    "count": 4
+  },
+  {
+    "topic": "losses",
     "count": 4
   },
   {
@@ -497,6 +509,10 @@
   },
   {
     "topic": "oman",
+    "count": 3
+  },
+  {
+    "topic": "ais",
     "count": 3
   },
   {
@@ -540,10 +556,6 @@
     "count": 3
   },
   {
-    "topic": "bbc",
-    "count": 3
-  },
-  {
     "topic": "royal",
     "count": 3
   },
@@ -552,7 +564,7 @@
     "count": 3
   },
   {
-    "topic": "forces",
+    "topic": "armed",
     "count": 3
   },
   {
@@ -684,10 +696,6 @@
     "count": 3
   },
   {
-    "topic": "losses",
-    "count": 3
-  },
-  {
     "topic": "tanks",
     "count": 3
   },
@@ -709,10 +717,6 @@
   },
   {
     "topic": "india",
-    "count": 2
-  },
-  {
-    "topic": "ais",
     "count": 2
   },
   {
@@ -964,15 +968,19 @@
     "count": 2
   },
   {
+    "topic": "united",
+    "count": 2
+  },
+  {
+    "topic": "against",
+    "count": 2
+  },
+  {
     "topic": "gulf",
     "count": 2
   },
   {
     "topic": "guinea",
-    "count": 2
-  },
-  {
-    "topic": "armed",
     "count": 2
   },
   {
@@ -2136,14 +2144,6 @@
     "count": 1
   },
   {
-    "topic": "united",
-    "count": 1
-  },
-  {
-    "topic": "against",
-    "count": 1
-  },
-  {
     "topic": "enforcement",
     "count": 1
   },
@@ -3105,6 +3105,14 @@
   },
   {
     "topic": "middle-east-tensions",
+    "count": 1
+  },
+  {
+    "topic": "treasury",
+    "count": 1
+  },
+  {
+    "topic": "agency",
     "count": 1
   }
 ]
