@@ -257,11 +257,24 @@ mkdir -p "data/events/$YEAR_MONTH"
 TARGET="data/events/$YEAR_MONTH/$DATE.jsonl"
 touch "$TARGET"
 
-# Combine all collected JSONL files
-find "$WORK_DIR" -name "events.jsonl" -type f -exec cat {} \\; >> "$TARGET"
+# Phase A: URL pre-filter — skip events whose primary URL already exists in today's file
+if [ -f "$TARGET" ]; then
+  SEEN_URLS=$(jq -r '.links[0].url // empty' "$TARGET" 2>/dev/null | sort -u)
+else
+  SEEN_URLS=""
+fi
 
-# Deduplicate by ID
-sort -t'"' -k4,4 -u "$TARGET" > "$TARGET.tmp" && mv "$TARGET.tmp" "$TARGET"
+find "$WORK_DIR" -name "events.jsonl" -type f | while read f; do
+  while IFS= read -r line; do
+    EVENT_URL=$(printf '%s' "$line" | jq -r '.links[0].url // empty')
+    if [ -z "$EVENT_URL" ] || ! printf '%s\\n' "$SEEN_URLS" | grep -qF "$EVENT_URL"; then
+      printf '%s\\n' "$line"
+    fi
+  done < "$f"
+done >> "$TARGET"
+
+# Phase B: ID post-dedup — collapse any ID collisions within the merged file
+jq -s 'unique_by(.id) | .[]' "$TARGET" > "$TARGET.tmp" && mv "$TARGET.tmp" "$TARGET"
 \`\`\`
 
 ### Step 6: Handle Media Files
