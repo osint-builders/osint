@@ -44,6 +44,10 @@
     "count": 20
   },
   {
+    "topic": "osint",
+    "count": 20
+  },
+  {
     "topic": "news",
     "count": 19
   },
@@ -112,6 +116,10 @@
     "count": 12
   },
   {
+    "topic": "news-monitoring",
+    "count": 12
+  },
+  {
     "topic": "ofac",
     "count": 11
   },
@@ -177,10 +185,6 @@
   },
   {
     "topic": "political",
-    "count": 8
-  },
-  {
-    "topic": "osint",
     "count": 8
   },
   {
@@ -453,6 +457,10 @@
   },
   {
     "topic": "adiz",
+    "count": 4
+  },
+  {
+    "topic": "cepa",
     "count": 4
   },
   {
@@ -924,10 +932,6 @@
     "count": 2
   },
   {
-    "topic": "cepa",
-    "count": 2
-  },
-  {
     "topic": "transatlantic",
     "count": 2
   },
@@ -1044,6 +1048,10 @@
     "count": 2
   },
   {
+    "topic": "cnnbrk",
+    "count": 2
+  },
+  {
     "topic": "kcna",
     "count": 2
   },
@@ -1052,7 +1060,19 @@
     "count": 2
   },
   {
+    "topic": "hawkeye360",
+    "count": 2
+  },
+  {
     "topic": "syria",
+    "count": 2
+  },
+  {
+    "topic": "riskstaff",
+    "count": 2
+  },
+  {
+    "topic": "thewarzonewire",
     "count": 2
   },
   {
@@ -2272,11 +2292,67 @@
     "count": 1
   },
   {
+    "topic": "aurora-intel",
+    "count": 1
+  },
+  {
+    "topic": "auroraintel",
+    "count": 1
+  },
+  {
+    "topic": "ca-jc",
+    "count": 1
+  },
+  {
+    "topic": "ca_jc",
+    "count": 1
+  },
+  {
+    "topic": "coastguard-ph",
+    "count": 1
+  },
+  {
+    "topic": "coastguardph",
+    "count": 1
+  },
+  {
+    "topic": "imo-hq",
+    "count": 1
+  },
+  {
+    "topic": "imohq",
+    "count": 1
+  },
+  {
+    "topic": "kang-daily",
+    "count": 1
+  },
+  {
+    "topic": "kangdaily",
+    "count": 1
+  },
+  {
+    "topic": "mofajapan-en",
+    "count": 1
+  },
+  {
+    "topic": "mofajapan_en",
+    "count": 1
+  },
+  {
     "topic": "incursion",
     "count": 1
   },
   {
     "topic": "cross",
+    "count": 1
+  },
+  {
+    "topic": "united-nations",
+    "count": 1
+  },
+  {
+    "topic": "un",
     "count": 1
   }
 ]
