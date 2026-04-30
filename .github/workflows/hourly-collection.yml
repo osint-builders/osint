@@ -47,6 +47,12 @@ jobs:
         run: npm ci
         working-directory: builder
 
+      - name: Debug environment
+        run: |
+          echo "PARALLEL_AGENT_COUNT from vars: ${{ vars.PARALLEL_AGENT_COUNT }}"
+          echo "PARALLEL_AGENT_COUNT env var: ${PARALLEL_AGENT_COUNT}"
+        working-directory: builder
+
       - name: Run OSINT collection
         run: npm run collect
         working-directory: builder
