@@ -1414,6 +1414,36 @@
       "added_date": "2026-04-30"
     },
     {
+      "id": "webpage-breaking-defense-global",
+      "name": "Breaking Defense - Global Coverage",
+      "type": "webpage",
+      "status": "testing",
+      "reliability": "high",
+      "priority": "high",
+      "file": "sources/webpage-breaking-defense-global.md",
+      "added_date": "2026-04-30"
+    },
+    {
+      "id": "webpage-cuashub-defense",
+      "name": "CUASHUB - Defense Content",
+      "type": "webpage",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/webpage-cuashub-defense.md",
+      "added_date": "2026-04-30"
+    },
+    {
+      "id": "webpage-satellite-today-gov-mil",
+      "name": "Satellite Today - Government & Military",
+      "type": "webpage",
+      "status": "testing",
+      "reliability": "high",
+      "priority": "medium",
+      "file": "sources/webpage-satellite-today-gov-mil.md",
+      "added_date": "2026-04-30"
+    },
+    {
       "id": "webpage-windward-ai-blog",
       "name": "Windward AI Blog - Maritime Intelligence & Risk Analytics",
       "type": "webpage",
@@ -1422,16 +1452,26 @@
       "priority": "medium",
       "file": "sources/webpage-windward-ai-blog.md",
       "added_date": "2026-04-30"
+    },
+    {
+      "id": "webpage-yahoo-world-news",
+      "name": "Yahoo News - World Section",
+      "type": "webpage",
+      "status": "testing",
+      "reliability": "high",
+      "priority": "high",
+      "file": "sources/webpage-yahoo-world-news.md",
+      "added_date": "2026-04-30"
     }
   ],
   "statistics": {
-    "total_sources": 142,
+    "total_sources": 146,
     "active_sources": 142,
-    "testing_sources": 0,
+    "testing_sources": 4,
     "inactive_sources": 0,
     "by_type": {
       "twitter": 141,
-      "webpage": 1,
+      "webpage": 5,
       "api": 0,
       "email": 0,
       "rss": 0,
@@ -1442,13 +1482,13 @@
       "other": 0
     },
     "by_priority": {
-      "high": 71,
-      "medium": 63,
+      "high": 73,
+      "medium": 65,
       "low": 2
     },
     "by_reliability": {
-      "high": 80,
-      "medium": 61,
+      "high": 83,
+      "medium": 62,
       "low": 0,
       "unverified": 0
     }
