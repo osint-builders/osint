@@ -124,3 +124,121 @@ This file contains execution learnings captured during AI-assisted workflows. Ea
 **ID collisions**: Default index of `_01` collided with multiple parallel buckets that already wrote events for the same handles. Renumbered all bucket-1 generated IDs to `_10` before merge so `unique_by(.id)` keeps both bucket-X and bucket-1 events. Lesson: pick non-overlapping numeric ranges across buckets.
 
 **Sources with no event**: csis-korea-chair (sonar refused for narrow think-tank topic on `day` and `week` filters).
+# Bucket 3 collection log
+
+Window: 2026-04-30T18:53:08.021Z - 2026-04-30T19:53:08.021Z
+
+## Processing twitter-esri-training (@EsriTraining)
+  - No events parsed
+
+## Processing twitter-coastguard-ph (@CoastGuardPH)
+  - No events parsed
+
+## Processing twitter-jkgarokgov (@jkgarokgov)
+  - Parsed 2 candidate events
+    [snap] 2026-04-30T18:45:00.000Z -> mid-window
+  -> 2 events kept
+
+## Processing twitter-cepa (@cepa)
+  - Parsed 3 candidate events
+    [skip] outside window: 2026-04-20T10:00:00.000Z
+    [snap] 2026-04-30T14:30:00.000Z -> mid-window
+    [skip] outside window: 2026-04-29T16:45:00.000Z
+  -> 1 events kept
+
+## Processing twitter-us-5th-fleet (@US5thFleet)
+  - No events parsed
+
+## Processing twitter-borrowed7time (@Borrowed7Time)
+  - Parsed 2 candidate events
+    [snap] 2026-04-30T18:45:00.000Z -> mid-window
+    [skip] dup url: https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-29-2026/
+  -> 1 events kept
+
+## Processing twitter-jasdf-pao-eng (@JASDF_PAO_ENG)
+  - No events parsed
+
+## Processing twitter-claudefb (@Claudefb)
+  - Parsed 3 candidate events
+    [snap] 2026-04-30T20:30:00.000Z -> mid-window
+    [snap] 2026-04-30T21:01:00.000Z -> mid-window
+    [snap] 2026-04-30T20:15:00.000Z -> mid-window
+  -> 3 events kept
+
+## Processing twitter-jaime-ocon (@JaimeOcon)
+  - No events parsed
+
+## Processing twitter-joseph-dempsey (@JosephDempsey)
+  - Parsed 2 candidate events
+    [snap] 2026-04-30T18:45:00.000Z -> mid-window
+    [skip] dup url: https://sof.news/drones/20260430/
+  -> 1 events kept
+
+## Processing twitter-the-dailynk (@TheDailyNK)
+  - No events parsed
+
+## Processing twitter-korea-times-alt (@TheKoreaTimes)
+  - No events parsed
+
+## Processing twitter-raytoribo (@RayToribo)
+  - Parsed 3 candidate events
+    [skip] dup url: https://www.csis.org/analysis/assessing-impact-china-russia-security-coordination-latin-america-and-caribbean
+  -> 2 events kept
+
+## Processing twitter-yortukisgk (@YortukIsgk)
+  - Parsed 3 candidate events
+    [snap] 2026-04-30T18:47:00.000Z -> mid-window
+    [skip] dup url: https://www.cbsnews.com/live-updates/iran-war-trump-oil-prices-hegseth-costs-strait-of-hormuz/
+    [skip] dup url: https://www.cbsnews.com/live-updates/iran-war-trump-oil-prices-hegseth-costs-strait-of-hormuz/
+  -> 1 events kept
+
+## Processing twitter-c4ads (@C4ADS)
+  - No events parsed
+
+## Processing twitter-mdat-gog (@MDAT_GoG)
+  - No events parsed
+
+## Processing twitter-bbc-breaking (@BBCBreaking)
+  - Parsed 3 candidate events
+    [skip] missing required field
+  -> 2 events kept
+
+## Processing twitter-tanker-trackers (@TankerTrackers)
+  - No events parsed
+
+## Processing twitter-pizzainwatch (@pizzainwatch)
+  - No events parsed
+
+## Processing twitter-esri (@Esri)
+  - No events parsed
+
+## Processing twitter-japan-joint-staff (@JapanJointStaff)
+  - No events parsed
+
+## Processing twitter-foxnews (@FoxNews)
+  - Parsed 2 candidate events
+    [skip] dup url: https://www.youtube.com/watch?v=dmEMR46IRDE
+  -> 1 events kept
+
+## Processing twitter-gcaptain (@gCaptain)
+  - No events parsed
+
+## Processing twitter-kang-daily (@KAngDaily)
+  - No events parsed
+
+## Processing twitter-ntonc (@ntonc)
+  - Parsed 1 candidate events
+  -> 1 events kept
+
+## Processing twitter-korea-econ-inst (@KoreaEconInst)
+  - No events parsed
+
+## Processing twitter-warshipcam (@WarshipCam)
+  - No events parsed
+
+## Processing twitter-kc-nwt (@KC_NWT)
+  - No events parsed
+
+## Summary
+
+Collected 15 events written to /tmp/osint-collection-bucket3/events/all-events.jsonl
