@@ -285,13 +285,106 @@ Collected 15 events written to /tmp/osint-collection-bucket3/events/all-events.j
 
 **Push conflicts with parallel buckets**: When buckets run in parallel, the first one to finish pushes cleanly and others hit non-fast-forward + content conflicts on the JSONL/index/manifest files. Robust resolution: save the new events JSONL to /tmp, abort any in-progress rebase, hard-reset to FETCH_HEAD, then re-run the URL+ID dedup pass against the freshly-pulled state and re-append. Re-run rebuild-indexes.js + manifest stats afterwards. Avoids hand-editing merge conflict markers in computed JSON files.
 
-## Bucket 3 collection — 2026-04-30T21:27Z
-- Twitter API returned HTTP 402 "CreditsDepleted" — pivoted to Perplexity broad-sweep with topical attribution to source profiles.
-- Strategy: 9 Perplexity queries (3 broad + 6 topical) with search_recency_filter=hour, then attributed each item to the best-matching source by keyword overlap.
-- cuashub-defense RSS feed had 2 items but both fell outside the time window (16:17Z and 13:04Z).
-- Window: 2026-04-30T20:27:23.923Z to 2026-04-30T21:27:23.923Z
-- Raw items collected from sweeps: ~6; events kept after window/url filters: 5; URL collision against prior buckets: 1; final new events appended: 4.
-- All events passed: required fields, time window, geo lat/lon range, E-PRIME contents (no 'is/are/was/were/be/been/being'), and 100+ words in contents.
-- Skipped Step 0.5 cross-check because the manifest contains 146 active sources but the bucket prompt lists only 29; the strict equality check would always fail in bucket-mode workflows.
-- Skipped runtime confidence-validation Perplexity calls (Step 3.6) to keep within sweep budget; events tagged confidence=0.55-0.8.
-- No images extracted: Perplexity-aggregated events lack guaranteed image URLs and image extraction would require additional fetch+resize per source URL.
+## Bucket 4 run - 2026-04-30T21:27Z
+# Bucket 4 collection log
+
+Window: 2026-04-30T20:27:23.926Z to 2026-04-30T21:27:23.926Z
+
+Total events: 8
+
+## Per-source notes
+
+- [yahoo] candidate URLs: 20
+- [yahoo] 2026-04-30T21:34:25+00:00 outside window for les/first-us-venezuela-flight-lands-213425469.html
+- [yahoo] 2026-04-30T21:29:29+00:00 outside window for israel-begins-intercepting-gaza-aid-205005367.html
+- [yahoo] 2026-04-30T20:26:08+00:00 outside window for ndemns-kidnapping-three-journalists-202608394.html
+- [yahoo] 2026-04-30T20:25:51+00:00 outside window for s/panama-president-says-port-caught-201945771.html
+- [yahoo] 2026-04-30T20:23:42+00:00 outside window for es/venezuela-opens-arms-world-miami-202342539.html
+- [yahoo] 2026-04-30T20:18:49+00:00 outside window for britains-king-charles-honors-fallen-161408385.html
+- [yahoo] 2026-04-30T20:08:32+00:00 outside window for ish-londoners-describe-utter-horror-181900241.html
+- [yahoo] 2026-04-30T20:07:57+00:00 outside window for /articles/us-house-passes-farm-bill-200050390.html
+- [yahoo] 2026-04-30T20:05:09+00:00 outside window for es/uganda-court-sentences-man-death-200509597.html
+- [yahoo] 2026-04-30T20:04:04+00:00 outside window for les/visibly-jewish-not-safe-britain-121851886.html
+- [yahoo] 2026-04-30T19:56:20+00:00 outside window for a-flotilla-organisers-211-activists-104705405.html
+- [yahoo] 2026-04-30T19:40:50+00:00 outside window for articles/blow-lula-brazil-mps-slash-194050092.html
+- [yahoo] in-window articles: 8; events kept: 8
+- [twitter-msc-sealift] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-mylordbebo] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-pizzainwatch] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-kc-nwt] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-joseph-dempsey] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-riskstaff] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-mdat-gog] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-seawatch-intl] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-arcgis-storymaps] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-esri] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-ausnav] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-taiwan-news-en] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-kang-daily] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-songss44] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-iran-spectrum] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-pyongyang-today] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-ntonc] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-tafarms18] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-bbc-world] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-therealshipdude] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-sim-nasr] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-clash-report] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-the-pacific-brief] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-iran-observer] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-the-lookout-north] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-inside-nk] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-us-pacific-fleet] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-cnnbrk] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+
+## Bucket 4 run - 2026-04-30T21:27Z
+# Bucket 4 collection log
+
+Window: 2026-04-30T20:27:23.926Z to 2026-04-30T21:27:23.926Z
+
+Total events: 8
+
+## Per-source notes
+
+- [yahoo] candidate URLs: 20
+- [yahoo] 2026-04-30T21:34:25+00:00 outside window for les/first-us-venezuela-flight-lands-213425469.html
+- [yahoo] 2026-04-30T21:29:29+00:00 outside window for israel-begins-intercepting-gaza-aid-205005367.html
+- [yahoo] 2026-04-30T20:26:08+00:00 outside window for ndemns-kidnapping-three-journalists-202608394.html
+- [yahoo] 2026-04-30T20:25:51+00:00 outside window for s/panama-president-says-port-caught-201945771.html
+- [yahoo] 2026-04-30T20:23:42+00:00 outside window for es/venezuela-opens-arms-world-miami-202342539.html
+- [yahoo] 2026-04-30T20:18:49+00:00 outside window for britains-king-charles-honors-fallen-161408385.html
+- [yahoo] 2026-04-30T20:08:32+00:00 outside window for ish-londoners-describe-utter-horror-181900241.html
+- [yahoo] 2026-04-30T20:07:57+00:00 outside window for /articles/us-house-passes-farm-bill-200050390.html
+- [yahoo] 2026-04-30T20:05:09+00:00 outside window for es/uganda-court-sentences-man-death-200509597.html
+- [yahoo] 2026-04-30T20:04:04+00:00 outside window for les/visibly-jewish-not-safe-britain-121851886.html
+- [yahoo] 2026-04-30T19:56:20+00:00 outside window for a-flotilla-organisers-211-activists-104705405.html
+- [yahoo] 2026-04-30T19:40:50+00:00 outside window for articles/blow-lula-brazil-mps-slash-194050092.html
+- [yahoo] in-window articles: 8; events kept: 8
+- [twitter-msc-sealift] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-mylordbebo] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-pizzainwatch] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-kc-nwt] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-joseph-dempsey] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-riskstaff] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-mdat-gog] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-seawatch-intl] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-arcgis-storymaps] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-esri] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-ausnav] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-taiwan-news-en] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-kang-daily] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-songss44] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-iran-spectrum] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-pyongyang-today] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-ntonc] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-tafarms18] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-bbc-world] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-therealshipdude] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-sim-nasr] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-clash-report] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-the-pacific-brief] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-iran-observer] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-the-lookout-north] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-inside-nk] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-us-pacific-fleet] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+- [twitter-cnnbrk] skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
