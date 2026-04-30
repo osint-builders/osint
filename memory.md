@@ -423,3 +423,37 @@ Total events: 8
   - twitter-middle-east-eye: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
   - twitter-natalierevolts: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
   - twitter-faa-south: skipped: Twitter API credits depleted (HTTP 402); X.com requires login; cannot verify time-windowed posts
+
+## Bucket 2 run - 2026-04-30T22:11Z
+- Window: 2026-04-30T21:11:39.028Z to 2026-04-30T22:11:39.028Z
+- Total events: 0
+- [twitter-ausnav] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-mt-anderson] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-scpandura] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-inside-nk] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-key-to-med] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-mofajapan-en] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-bates-gill] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-xkorea] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-scmpnews] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-the-dailynk] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-tatarigamiua] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-warshipcam] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-therealshipdude] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-elint-news] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-nsa-gov] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-kl-summary] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-taiwan-news-en] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-opennuclear] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-esri-training] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-oilcfd] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-cepa] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-us-pacific-fleet] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-southkoreapro] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-sim-nasr] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-sanctions-watch] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-kylebass] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-joseph-dempsey] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [twitter-nasa] Twitter API credits depleted (HTTP 402); cannot fetch timeline
+- [webpage-cuashub-defense] HTTP 200; 9 candidate articles found, all published outside window. Latest in-window candidate: 2026-04-30T13:04:58Z (still 8h before window start). 0 articles in-window.
+- Perplexity sonar-pro recency=hour: cross-domain search confirmed no significant defense/military/intelligence events reported in window 21:11-22:11Z; routine activity only.
