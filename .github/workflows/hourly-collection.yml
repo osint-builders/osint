@@ -24,6 +24,7 @@ permissions:
 env:
   WARP_API_KEY: ${{ secrets.WARP_API_KEY }}
   WARP_ENVIRONMENT_ID: ${{ secrets.WARP_ENVIRONMENT_ID }}
+  PARALLEL_AGENT_COUNT: 5
 
 jobs:
   collect:

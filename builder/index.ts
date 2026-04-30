@@ -30,6 +30,7 @@ import { DateTime } from "luxon";
 
 const POLL_INTERVAL_MS = 10_000;
 const TERMINAL_STATES = new Set(["SUCCEEDED", "FAILED", "CANCELLED"]);
+const PARALLEL_AGENT_COUNT = parseInt(process.env.PARALLEL_AGENT_COUNT || "5");
 
 // Statuses that should be EXCLUDED from a collection run.
 // Anything else (active, testing, unverified, etc.) is processed so that
@@ -81,10 +82,24 @@ function getOriginUrl(repoRoot: string): string {
   }
 }
 
+function partitionSources(sources: Source[], bucketCount: number): Source[][] {
+  // Shuffle sources to distribute high-priority sources across buckets
+  const shuffled = [...sources].sort(() => Math.random() - 0.5);
+
+  const buckets: Source[][] = Array.from({ length: bucketCount }, () => []);
+  shuffled.forEach((source, index) => {
+    buckets[index % bucketCount].push(source);
+  });
+
+  return buckets.filter(bucket => bucket.length > 0);
+}
+
 function buildCollectionPrompt(
   repoRoot: string,
   sources: Source[],
-  originUrl: string
+  originUrl: string,
+  bucketNum: number,
+  totalBuckets: number
 ): string {
   const executionTime = DateTime.now().setZone("UTC");
   const extractionTime = executionTime.minus({ hours: 1 }).setZone("America/New_York");
@@ -107,14 +122,16 @@ function buildCollectionPrompt(
   const expectedIdsBash = expectedIds.map((id) => `"${id}"`).join(" ");
   const expectedIdsList = expectedIds.map((id) => `- ${id}`).join("\n");
 
-  return `# OSINT World Event Collection Task
+  return `# OSINT World Event Collection Task (Bucket ${bucketNum} of ${totalBuckets})
 
 You are an AI agent tasked with collecting OSINT world events.
+This agent is processing **bucket ${bucketNum} of ${totalBuckets}**.
 
 **Execution time**: ${executionTimestamp} (UTC)
 **Extraction time**: ${extractionTimestamp} (EST)
 **Target date**: ${extractionDate} (EST)
 **Repository**: ${originUrl}
+**Bucket**: ${bucketNum} / ${totalBuckets} (${sources.length} sources in this bucket)
 
 This agent collects events from approximately **${extractionTime.toFormat('HH:mm')} EST** on **${extractionDate}** (1 hour lookback from execution).
 
@@ -143,7 +160,7 @@ REPO_ROOT=$(pwd)
 
 All subsequent steps must run from **inside the cloned repo directory**.
 
-## Sources to Process (${sources.length} total — process ONE AT A TIME, do NOT skip any)
+## Sources to Process (${sources.length} in this bucket — process ONE AT A TIME, do NOT skip any)
 
 Expected source IDs for this run (sentinel — used by the cross-check below):
 
@@ -206,7 +223,8 @@ command -v jq >/dev/null 2>&1 || exit 1
 
 \`\`\`bash
 TIMESTAMP=$(date +%Y%m%d-%H%M%S)
-WORK_DIR="/tmp/osint-collection-$TIMESTAMP"
+BUCKET_ID="bucket${bucketNum}"
+WORK_DIR="/tmp/osint-collection-$TIMESTAMP-$BUCKET_ID"
 mkdir -p "$WORK_DIR/raw" "$WORK_DIR/media/images" "$WORK_DIR/media/videos"
 \`\`\`
 
@@ -345,6 +363,56 @@ Storage: data/events/$YEAR_MONTH/$DATE.jsonl
 fi
 \`\`\`
 
+### Step 8.5: Update Indexes and Statistics
+
+\`\`\`bash
+# Rebuild all indexes from collected data
+echo "Rebuilding data indexes..."
+node data/scripts/rebuild-indexes.js
+
+# Generate statistics and update manifest
+echo "Updating manifest statistics..."
+STATS_JSON=$(node data/scripts/stats-report.js)
+TOTAL_EVENTS=$(echo "$STATS_JSON" | jq -r '.total_events')
+OLDEST_DATE=$(jq -s 'map(.date_published) | sort | .[0] // null' data/events/*/*.jsonl 2>/dev/null || echo "null")
+NEWEST_DATE=$(jq -s 'map(.date_published) | sort | .[-1] // null' data/events/*/*.jsonl 2>/dev/null || echo "null")
+
+# Update manifest.json with fresh statistics
+jq --arg updated "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \\
+   --arg oldest "$OLDEST_DATE" \\
+   --arg newest "$NEWEST_DATE" \\
+   --argjson total "$TOTAL_EVENTS" \\
+   --argjson by_month "$(echo "$STATS_JSON" | jq '.by_month')" \\
+   --argjson by_source "$(echo "$STATS_JSON" | jq '.by_source')" \\
+   --argjson media "$(echo "$STATS_JSON" | jq '.media')" \\
+   '.last_updated = $updated |
+    .data_range.oldest_date = $oldest |
+    .data_range.newest_date = $newest |
+    .statistics.total_events = $total |
+    .statistics.events_by_month = $by_month |
+    .statistics.events_by_source = $by_source |
+    .statistics.media_files = $media' \\
+   data/manifest.json > data/manifest.json.tmp && mv data/manifest.json.tmp data/manifest.json
+
+# Commit index and manifest updates
+git add data/indexes/*.json data/manifest.json
+if ! git diff --cached --quiet; then
+  git commit -m "Update data indexes and statistics
+
+Generated indexes:
+- by-source.json
+- by-topic.json
+- by-location.json
+- stats.json
+
+Updated manifest.json with latest statistics
+
+[skip ci]"
+
+  git push "$PUSH_URL" main 2>&1 | sed -E "$REDACT"
+fi
+\`\`\`
+
 ### Step 9: Cleanup
 
 \`\`\`bash
@@ -397,8 +465,7 @@ async function main(): Promise<void> {
 
   const client = new OzAPI({ apiKey: warpApiKey });
 
-  // Load every processable source (deny-list, not allow-list, so new
-  // sources are never silently dropped — see loadProcessableSources docstring).
+  // Load every processable source
   let processableSources: Source[];
   try {
     processableSources = loadProcessableSources(repoRoot);
@@ -408,53 +475,83 @@ async function main(): Promise<void> {
   }
 
   if (processableSources.length === 0) {
-    console.log(
-      "No processable sources found in source/manifest.json. Exiting."
-    );
+    console.log("No processable sources found. Exiting.");
     process.exit(0);
   }
 
-  console.log(
-    `Found ${processableSources.length} processable source(s): ${processableSources
-      .map((s) => `${s.id} [${s.status}]`)
-      .join(", ")}`
-  );
+  console.log(`Found ${processableSources.length} processable source(s)`);
 
-  // Read git origin URL so the cloud agent pushes to the right repo
+  // Read git origin URL
   const originUrl = getOriginUrl(repoRoot);
   console.log(`Repository: ${originUrl}`);
 
-  // Build collection prompt
-  const prompt = buildCollectionPrompt(repoRoot, processableSources, originUrl);
+  // Partition sources into buckets
+  const bucketCount = Math.min(PARALLEL_AGENT_COUNT, processableSources.length);
+  const buckets = partitionSources(processableSources, bucketCount);
 
-  // Spawn Warp cloud agent
-  console.log("Spawning Warp cloud agent...");
-  const runParams: OzAPI.AgentRunParams = {
-    prompt,
-    config: {
-      name: `osint-collection-${new Date().toISOString()}`,
-      ...(environmentId ? { environment_id: environmentId } : {}),
-    },
-  };
+  console.log(`\nPartitioning ${processableSources.length} sources into ${buckets.length} parallel agents:`);
+  buckets.forEach((bucket, i) => {
+    const sourceIds = bucket.map(s => s.id).join(', ');
+    console.log(`  Bucket ${i + 1}: ${bucket.length} sources (${sourceIds.slice(0, 60)}...)`);
+  });
 
-  let runResponse: OzAPI.AgentRunResponse;
+  // Spawn all agents in parallel
+  console.log(`\nSpawning ${buckets.length} Warp cloud agents...`);
+  const runPromises = buckets.map(async (bucket, bucketIndex) => {
+    const bucketNum = bucketIndex + 1;
+    const prompt = buildCollectionPrompt(repoRoot, bucket, originUrl, bucketNum, buckets.length);
+
+    const runParams: OzAPI.AgentRunParams = {
+      prompt,
+      config: {
+        name: `osint-collection-bucket${bucketNum}-${new Date().toISOString()}`,
+        ...(environmentId ? { environment_id: environmentId } : {}),
+      },
+    };
+
+    try {
+      const runResponse = await client.agent.run(runParams);
+      console.log(`  Bucket ${bucketNum}: spawned (run ID: ${runResponse.run_id})`);
+      return { bucketNum, runId: runResponse.run_id, bucket };
+    } catch (err) {
+      console.error(`  Bucket ${bucketNum}: failed to spawn - ${err}`);
+      throw err;
+    }
+  });
+
+  let runs: { bucketNum: number; runId: string; bucket: Source[] }[];
   try {
-    runResponse = await client.agent.run(runParams);
+    runs = await Promise.all(runPromises);
   } catch (err) {
-    console.error(`Error spawning agent: ${err}`);
+    console.error(`Error spawning agents: ${err}`);
     process.exit(1);
   }
 
-  console.log(`Agent run created. Run ID: ${runResponse.run_id}`);
+  // Poll all agents concurrently
+  console.log(`\nPolling ${runs.length} agents for completion...`);
+  const pollPromises = runs.map(async ({ bucketNum, runId, bucket }) => {
+    const finalState = await pollUntilComplete(client, runId);
+    return { bucketNum, finalState, sourceCount: bucket.length };
+  });
 
-  // Poll until terminal state
-  const finalState = await pollUntilComplete(client, runResponse.run_id);
+  const results = await Promise.all(pollPromises);
 
-  if (finalState === "SUCCEEDED") {
-    console.log("Collection run succeeded.");
+  // Report results
+  console.log(`\n=== Collection Results ===`);
+  let allSucceeded = true;
+  results.forEach(({ bucketNum, finalState, sourceCount }) => {
+    const status = finalState === "SUCCEEDED" ? "✓" : "✗";
+    console.log(`  ${status} Bucket ${bucketNum}: ${finalState} (${sourceCount} sources)`);
+    if (finalState !== "SUCCEEDED") {
+      allSucceeded = false;
+    }
+  });
+
+  if (allSucceeded) {
+    console.log("\n✓ All collection buckets succeeded.");
     process.exit(0);
   } else {
-    console.error(`Collection run ended with state: ${finalState}`);
+    console.error("\n✗ One or more collection buckets failed.");
     process.exit(1);
   }
 }
