@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-04-30T20:11:03Z",
+  "last_updated": "2026-04-30T20:14:44Z",
   "schema_version": "2020-12",
   "retention_days": 90,
   "data_range": {
@@ -8,17 +8,17 @@
     "newest_date": "2026-04-30T19:51:05Z"
   },
   "statistics": {
-    "total_events": 385,
+    "total_events": 407,
     "events_by_month": {
-      "2026-04": 383,
       "2024-12": 1,
-      "2026-02": 1
+      "2026-02": 1,
+      "2026-04": 405
     },
     "events_by_source": {
-      "unknown": 385
+      "unknown": 407
     },
     "media_files": {
-      "images": 5,
+      "images": 0,
       "videos": 0
     }
   },
