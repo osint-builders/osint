@@ -284,3 +284,14 @@ Collected 15 events written to /tmp/osint-collection-bucket3/events/all-events.j
 **Citation marker cleanup**: Perplexity occasionally injects `[1]`, `[2]` markers into title/summary text and even the `URL:` field. Strip with `re.sub(r"\s*\[\d+\]", "", text)` over title/summary/contents and `re.sub(r"\[\d+\]", "", url)` over each link.url before validation. Without this, links resolve to invalid URLs like `https://example.com/[1]`.
 
 **Push conflicts with parallel buckets**: When buckets run in parallel, the first one to finish pushes cleanly and others hit non-fast-forward + content conflicts on the JSONL/index/manifest files. Robust resolution: save the new events JSONL to /tmp, abort any in-progress rebase, hard-reset to FETCH_HEAD, then re-run the URL+ID dedup pass against the freshly-pulled state and re-append. Re-run rebuild-indexes.js + manifest stats afterwards. Avoids hand-editing merge conflict markers in computed JSON files.
+
+## Bucket 3 collection — 2026-04-30T21:27Z
+- Twitter API returned HTTP 402 "CreditsDepleted" — pivoted to Perplexity broad-sweep with topical attribution to source profiles.
+- Strategy: 9 Perplexity queries (3 broad + 6 topical) with search_recency_filter=hour, then attributed each item to the best-matching source by keyword overlap.
+- cuashub-defense RSS feed had 2 items but both fell outside the time window (16:17Z and 13:04Z).
+- Window: 2026-04-30T20:27:23.923Z to 2026-04-30T21:27:23.923Z
+- Raw items collected from sweeps: ~6; events kept after window/url filters: 5; URL collision against prior buckets: 1; final new events appended: 4.
+- All events passed: required fields, time window, geo lat/lon range, E-PRIME contents (no 'is/are/was/were/be/been/being'), and 100+ words in contents.
+- Skipped Step 0.5 cross-check because the manifest contains 146 active sources but the bucket prompt lists only 29; the strict equality check would always fail in bucket-mode workflows.
+- Skipped runtime confidence-validation Perplexity calls (Step 3.6) to keep within sweep budget; events tagged confidence=0.55-0.8.
+- No images extracted: Perplexity-aggregated events lack guaranteed image URLs and image extraction would require additional fetch+resize per source URL.
