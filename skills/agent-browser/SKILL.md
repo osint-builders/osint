@@ -7,7 +7,6 @@ metadata:
   author: osint-builders
   version: "1.0.0"
   provider: vercel-labs
-  cli-location: "../../bin/agent-browser"
   upstream: "https://github.com/vercel-labs/agent-browser"
 ---
 
@@ -143,14 +142,6 @@ brew install agent-browser
 agent-browser install
 ```
 
-### Project Wrapper
-
-From the project root, use the Node.js wrapper:
-
-```bash
-node bin/agent-browser/cli.js open https://example.com
-```
-
 ## Key Commands
 
 ### Navigation
@@ -279,12 +270,6 @@ BROWSERBASE_API_KEY                Browserbase API key (when using -p browserbas
 
 ## Related Tools & Skills
 
-### Bin CLIs
-- **bin/imagemagick** - Process screenshots (resize, annotate, watermark)
-- **bin/ffmpeg** - Record browser sessions, process video
-- **bin/data-to-markdown** - Convert scraped HTML to clean Markdown
-- **bin/perplexity** - Research sites before scraping
-
 ### Skills
 - **data-to-markdown** - Convert scraped content to structured Markdown
 - **imagemagick** - Post-process screenshots and visual assets
@@ -299,7 +284,7 @@ BROWSERBASE_API_KEY                Browserbase API key (when using -p browserbas
 ```bash
 # Scrape → Convert → Format pipeline
 agent-browser get html @e1 > page.html
-node bin/data-to-markdown/cli.js convert page.html output.md
+pandoc page.html -t markdown -o output.md
 
 # Screenshot → Annotate workflow
 agent-browser screenshot page.png

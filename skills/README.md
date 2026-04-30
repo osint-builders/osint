@@ -27,22 +27,15 @@ Transform any data source into clean, semantic, concise Markdown following E-PRI
 
 ```bash
 # Convert HTML to Markdown
-node bin/data-to-markdown/cli.js convert input.html output.md
-
-# Apply E-PRIME principles
-node bin/data-to-markdown/cli.js convert input.txt output.md --eprime
-
-# Validate Markdown structure
-node bin/data-to-markdown/cli.js validate document.md
+pandoc input.html -t markdown -o output.md
 
 # Check E-PRIME compliance
-node bin/data-to-markdown/cli.js check-eprime document.md
+grep -Ein '\b(is|are|was|were|be|been|being)\b' output.md && echo "Violation" || echo "Compliant"
 ```
 
 **See also:**
 - `data-to-markdown/SKILL.md` - Full conversion framework
 - `data-to-markdown/references/` - Detailed conversion guides
-- `bin/data-to-markdown/` - CLI tool and documentation
 
 ---
 
@@ -50,52 +43,6 @@ node bin/data-to-markdown/cli.js check-eprime document.md
 FFmpeg CLI for media processing and transformation. Convert formats, resize and pad, extract audio, trim, generate thumbnails, create slideshows, overlay graphics, burn subtitles.
 
 **Location:** `ffmpeg-cli/`
-
----
-
-### sandcastle
-Run AI coding agents in isolated sandbox environments. Execute TypeScript/JavaScript code, prototype solutions, parallelize development tasks, and orchestrate multi-agent workflows using Docker, Podman, or Vercel providers. Perfect for on-the-fly code execution when AI needs to test implementations.
-
-**Location:** `sandcastle/`
-
-**Key Features:**
-- Isolated sandbox execution (Docker, Podman, Vercel)
-- Parallel agent orchestration on separate branches
-- Multi-iteration workflows with automatic merging
-- Git-based version control integration
-- Claude Code agent support (Opus, Sonnet, Haiku)
-
-**Quick Start:**
-
-```bash
-# Initialize sandcastle
-cd bin/sandcastle && npm install
-sandcastle init
-
-# Run agent with prompt
-sandcastle run --prompt "Create a function to calculate Fibonacci numbers with tests"
-
-# Parallel agents
-sandcastle parallel \
-  --task "auth:Implement authentication" \
-  --task "api:Build REST API" \
-  --task "tests:Write test suite"
-
-# Interactive session
-sandcastle interactive --prompt "Help me debug this issue"
-```
-
-**Common Use Cases:**
-- Prototype and test algorithms
-- Validate solutions before merging
-- Run multiple feature branches in parallel
-- Test code in isolation without affecting host
-- Multi-stage development pipelines (plan → implement → test)
-
-**See also:**
-- `sandcastle/SKILL.md` - Complete framework documentation
-- `sandcastle/scripts/` - Example workflows
-- `bin/sandcastle/` - CLI tool and usage guide
 
 ---
 
@@ -253,16 +200,6 @@ skill-name/
 └── assets/           # Static resources (optional)
 ```
 
-## Related Binaries
-
-Each skill has corresponding binaries and setup in the `bin/` folder:
-- `bin/agent-browser/` - Agent browser CLI and wrapper
-- `bin/data-to-markdown/` - Data-to-Markdown CLI utility
-- `bin/ffmpeg/` - FFmpeg binary setup
-- `bin/imagemagick/` - ImageMagick binary setup
-- `bin/perplexity/` - Perplexity AI CLI wrapper
-- `bin/sandcastle/` - Sandcastle CLI for isolated code execution
-
 ## Environment Configuration
 
 Create `.env` file in project root with API keys:
@@ -282,8 +219,7 @@ To add a new skill:
 2. Create `SKILL.md` with frontmatter
 3. Add executable scripts in `scripts/`
 4. Add reference docs in `references/`
-5. Create `bin/my-skill/` (if CLI tool)
-6. Update this README
+5. Update this README
 
 Validate skills:
 ```bash

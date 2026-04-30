@@ -113,24 +113,25 @@ Without `-path`, original files are permanently overwritten.
 **Example**:
 ```bash
 # Repeated across multiple sessions
-node bin/perplexity/cli.js --ask "query"
-# Error: PERPLEXITY_API_KEY not set
+curl -s https://api.perplexity.ai/chat/completions \
+  -H "Authorization: Bearer $PERPLEXITY_API_KEY" ...
+# Error: 401 Unauthorized
 
-export PERPLEXITY_API_KEY="..."
-node bin/perplexity/cli.js --ask "query"  # Works
+export PERPLEXITY_API_KEY="pplx-..."
+# Retry — succeeds
 ```
 
 **Memory entry**:
 ```markdown
-## Perplexity CLI Requires API Key Export
+## Perplexity API Requires PERPLEXITY_API_KEY
 
-Before using perplexity CLI, must export API key:
+Before calling the Perplexity API, export the key:
 ```bash
 export PERPLEXITY_API_KEY="your_key_here"
 ```
 
 Add to `~/.zshrc` or `~/.bashrc` for persistence.
-Error: "PERPLEXITY_API_KEY environment variable not set"
+Error symptom: HTTP 401 Unauthorized response.
 ```
 
 ## When NOT to Create Memory
@@ -326,10 +327,6 @@ Add entry to root `memory.md` file with separator.
 **Remember**: Permission policies, format-specific quirks
 **Skip**: Standard resize/convert operations
 
-### sandcastle
-**Remember**: Docker daemon issues, Git configuration requirements
-**Skip**: Standard sandbox runs
-
 ### data-to-markdown
 **Remember**: Format-specific edge cases, E-PRIME validation patterns
 **Skip**: Standard conversions
@@ -380,33 +377,36 @@ Choose based on need for precision vs speed.
 
 ### Entry 3: Environment Setup
 ```markdown
-## Node.js bin Scripts Require Executable Permissions
+## agent-browser Requires Chrome Installation After Global Install
 
-Custom Node.js CLI wrappers fail with "permission denied" if not executable.
+Running `agent-browser open` immediately after `npm install -g agent-browser` fails because Chrome for Testing hasn't been downloaded yet.
 
 Fix:
 ```bash
-chmod +x bin/*/cli.js
+agent-browser install
 ```
 
-Verify: `ls -l bin/*/cli.js` shows `rwxr-xr-x`
+Verify: `agent-browser open https://example.com` should launch without error.
 
-Context: Applies to all custom bin CLIs in this project.
+Context: One-time setup per machine or container image.
 
 ---
 ```
 
 ### Entry 4: Tool Interaction
 ```markdown
-## Agent-Browser + Data-to-Markdown HTML Encoding
+## Agent-Browser HTML Contains Encoded Entities — Use pandoc
 
-HTML extracted with `agent-browser get html` contains entity encoding that breaks data-to-markdown conversion.
+HTML extracted with `agent-browser get html` may contain entity encoding that disrupts `pandoc` conversion.
 
-Solution: Decode entities before conversion:
+Solution: Prefer `get text` for plain extraction; use `pandoc` when Markdown structure matters:
 ```bash
+# Preferred: plain text (no encoding issues)
+agent-browser get text "article" > content.txt
+
+# When structure matters: let pandoc handle encoding
 agent-browser get html @e1 > raw.html
-node -e "console.log(require('he').decode(require('fs').readFileSync('raw.html','utf8')))" > decoded.html
-node bin/data-to-markdown/cli.js convert decoded.html output.md
+pandoc raw.html -t markdown -o output.md
 ```
 
 Alternative: Use `get text` instead of `get html` when structure isn't needed.

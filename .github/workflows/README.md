@@ -19,12 +19,10 @@ Automated OSINT collection and data release workflows for continuous intelligenc
 
 **Steps**:
 1. Checkout repository
-2. Setup Node.js 20 and Python 3.11
-3. Setup Docker for Sandcastle containers
-4. Install dependencies (Node + Python)
-5. Run Python orchestrator (`python -m orchestrator.main`)
-6. Upload data artifacts (90-day retention)
-7. Commit and push results (with `[skip ci]` to avoid loops)
+2. Setup Node.js 20
+3. Install builder dependencies (`npm ci` in `builder/`)
+4. Run collection (`npm run collect` in `builder/`) — spawns a Warp cloud agent via oz-agent-sdk
+5. The cloud agent collects data, writes JSONL, and commits/pushes directly to the repo
 
 **Outputs**:
 - JSONL event files in `data/events/YYYY-MM/YYYY-MM-DD.jsonl`
@@ -32,10 +30,9 @@ Automated OSINT collection and data release workflows for continuous intelligenc
 - Updated `memory.md` with learnings
 - GitHub Actions artifacts (90-day retention)
 
-**Environment Variables**:
-- `ANTHROPIC_API_KEY` (required)
-- `TWITTER_BEARER_TOKEN` (optional, for Twitter sources)
-- `PERPLEXITY_API_KEY` (optional, for Perplexity searches)
+**Secrets required**:
+- `WARP_API_KEY` (required) — Warp API key for oz-agent-sdk
+- `WARP_ENVIRONMENT_ID` (required) — UID of a pre-configured Warp cloud environment with the repo, tools, and API keys
 
 ### 2. Create Data Release (`create-release.yml`)
 
@@ -68,14 +65,12 @@ Configure in: **Settings → Secrets and variables → Actions → Repository se
 
 | Secret Name | Description | Required |
 |-------------|-------------|----------|
-| `ANTHROPIC_API_KEY` | Claude API key for AI agents | ✅ Yes |
-| `TWITTER_BEARER_TOKEN` | Twitter API authentication | ⚠️ If Twitter sources active |
-| `PERPLEXITY_API_KEY` | Perplexity AI search API | ⬜ Optional |
+| `WARP_API_KEY` | Warp API key for oz-agent-sdk | ✅ Yes |
+| `WARP_ENVIRONMENT_ID` | UID of pre-configured Warp cloud environment | ✅ Yes |
 
 **Get API Keys**:
-- **Anthropic**: https://console.anthropic.com/
-- **Twitter**: https://developer.twitter.com/
-- **Perplexity**: https://www.perplexity.ai/settings/api
+- **Warp API key**: https://app.warp.dev/ → Settings → API
+- **Warp environment UID**: Create an environment in the Warp dashboard with the osint repo cloned, `agent-browser` installed globally, and required API keys (`ANTHROPIC_API_KEY`, `TWITTER_BEARER_TOKEN`, `PERPLEXITY_API_KEY`) configured as environment variables
 
 ### Required Permissions
 
@@ -139,17 +134,18 @@ Check status badge in root README.md:
 **Symptoms**: Workflow fails in "Run OSINT collection" step
 
 **Possible Causes**:
-- Missing `ANTHROPIC_API_KEY` secret
+- Missing `WARP_API_KEY` or `WARP_ENVIRONMENT_ID` secret
 - Invalid API key
-- Python dependencies not installed
+- `builder/node_modules` not installed (check `npm ci` step)
 
 **Solutions**:
 ```bash
 # Check secrets configured
 gh secret list
 
-# Set missing secret
-gh secret set ANTHROPIC_API_KEY
+# Set missing secrets
+gh secret set WARP_API_KEY
+gh secret set WARP_ENVIRONMENT_ID
 
 # Check workflow logs
 gh run view --log
@@ -193,19 +189,19 @@ cat memory.md | tail -50
    - Or disable "Require pull request reviews" for bot commits
 3. **Retry**: Workflow automatically retries with `git pull --rebase`
 
-#### 4. Sandcastle Timeout
+#### 4. Warp Agent Timeout or Failure
 
-**Symptoms**: "Sandcastle agent failed with exit code 124"
+**Symptoms**: Collection run ends with state `FAILED` or `CANCELLED`
 
 **Possible Causes**:
-- Source taking longer than 10 minutes (idle timeout)
-- Network issues
-- Docker container problems
+- Warp environment not configured correctly (missing repo, tools, or API keys)
+- Source taking too long
+- Network issues in the cloud environment
 
 **Solutions**:
-- Check memory.md for specific errors
-- Increase timeout in orchestrator (currently 600s)
-- Test source locally: `node bin/sandcastle/cli.js run --prompt "test"`
+- Check `memory.md` for specific errors logged by the agent
+- Verify the Warp environment has `agent-browser` installed and the repo cloned
+- Trigger a manual run and inspect logs: `gh run view --log`
 
 #### 5. Validation Errors
 
@@ -267,20 +263,19 @@ gh run watch
 
 ### Test Locally
 
-Before pushing workflow changes, test orchestrator locally:
+Before pushing workflow changes, test the builder locally:
 
 ```bash
-# Setup
-pip install -r requirements.txt
-export ANTHROPIC_API_KEY="your-key"
-export REPO_ROOT=$(pwd)
+# Install dependencies
+cd builder && npm install
 
-# Run orchestrator
-python -m orchestrator.main
+# Set required env vars
+export WARP_API_KEY="your-warp-api-key"
+export WARP_ENVIRONMENT_ID="your-environment-uid"
+export REPO_ROOT=$(pwd)/..
 
-# Verify output
-ls -lh data/events/$(date +%Y-%m)/$(date +%Y-%m-%d).jsonl
-node data/scripts/validate-events.js --from $(date +%Y-%m-%d)
+# Run builder
+npm run collect
 ```
 
 ---
@@ -290,44 +285,30 @@ node data/scripts/validate-events.js --from $(date +%Y-%m-%d)
 ```
 ┌─────────────────────────────────────────────────────┐
 │         GitHub Actions (Hourly Trigger)             │
-└────────────────┬────────────────────────────────────┘
+└────────────────┤─────────────────────────────────────┘
                  │
-                 ▼
+                 ↓
 ┌─────────────────────────────────────────────────────┐
-│         Python Orchestrator (LangGraph)             │
+│     builder/index.ts (oz-agent-sdk)                 │
 │                                                      │
-│  Nodes:                                              │
-│  1. Load sources from manifest                       │
-│  2. Create work directory                            │
-│  3. Process sources (Sandcastle + Claude)            │
-│  4. Validate events (schema + E-PRIME)               │
-│  5. Move data to storage                             │
-│  6. Update memory                                    │
-│  7. Commit and push                                  │
-│  8. Cleanup                                          │
-└────────────────┬────────────────────────────────────┘
+│  1. Load active sources from source/manifest.json   │
+│  2. Build collection prompt with source details      │
+│  3. client.agent.run() → spawn Warp cloud agent     │
+│  4. Poll runs.retrieve() until SUCCEEDED/FAILED      │
+└────────────────┤─────────────────────────────────────┘
                  │
-                 ▼
+                 ↓ (cloud)
 ┌─────────────────────────────────────────────────────┐
-│            Sandcastle (Docker Isolation)            │
+│     Warp Cloud Agent (oz-agent-sdk environment)     │
 │                                                      │
-│  Claude Code Agent:                                  │
-│  - Reads source file (source/sources/*.md)           │
-│  - Uses skills (agent-browser, perplexity, etc.)     │
-│  - Collects raw data                                 │
-│  - Transforms to World Event Entities                │
-│  - Applies E-PRIME via data-to-markdown              │
+│  - Reads source files (source/sources/*.md)          │
+│  - Uses skills (agent-browser, perplexity-search)    │
+│  - Collects raw data per source                      │
+│  - Structures World Event Entities (E-PRIME)         │
+│  - Validates and writes JSONL to data/               │
 │  - Downloads media                                   │
-│  - Outputs JSONL                                     │
-└────────────────┬────────────────────────────────────┘
-                 │
-                 ▼
-┌─────────────────────────────────────────────────────┐
-│              Data Storage (Repository)              │
-│                                                      │
-│  data/events/YYYY-MM/YYYY-MM-DD.jsonl                │
-│  data/media/YYYY-MM/{images,videos}/YYYY-MM-DD/     │
-│  memory.md                                           │
+│  - Updates memory.md                                 │
+│  - Commits and pushes to repo                        │
 └─────────────────────────────────────────────────────┘
 ```
 
@@ -337,16 +318,9 @@ node data/scripts/validate-events.js --from $(date +%Y-%m-%d)
 
 ### Update Dependencies
 
-**Node dependencies**:
+**Builder dependencies**:
 ```bash
-cd bin/sandcastle && npm update && cd ../..
-cd bin/agent-browser && npm update && cd ../..
-```
-
-**Python dependencies**:
-```bash
-pip install --upgrade -r requirements.txt
-pip freeze > requirements.txt
+cd builder && npm update && npm install
 ```
 
 ### Adjust Schedule
@@ -381,8 +355,8 @@ GitHub Actions free tier limits:
 
 ## Related Documentation
 
-- **Orchestrator**: `orchestrator/README.md`
-- **Automation Instructions**: Root `README.md` (lines 49-786)
+- **Builder**: `builder/index.ts`
+- **Automation Instructions**: Root `README.md` (Automation Instructions section)
 - **Data Schema**: `data/SCHEMA.md`
 - **Skills**: `skills/README.md`
 - **Sources**: `source/README.md`

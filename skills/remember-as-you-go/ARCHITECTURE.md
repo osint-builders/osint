@@ -57,8 +57,8 @@
 │                    Existing Skills                         │
 ├────────────────────────────────────────────────────────────┤
 │  agent-browser     │  perplexity-search  │  ffmpeg-cli    │
-│  imagemagick       │  sandcastle         │  data-to-md    │
-│  word-event-entities                                       │
+│  imagemagick       │  data-to-markdown   │  word-events   │
+│  create-source                                       │
 └────────────────────────────────────────────────────────────┘
                               ↓
               ┌──────────────────────────────┐
@@ -194,7 +194,6 @@ Examples:
 - **perplexity**: API key setup, rate limiting patterns
 - **ffmpeg**: Codec issues, container constraints
 - **imagemagick**: Policy restrictions, format delegates
-- **sandcastle**: Docker daemon, Git config requirements
 - **data-to-markdown**: Format edge cases, encoding issues
 - **word-event-entities**: Schema validation failures
 

@@ -3,14 +3,14 @@
 Automated intelligence gathering system that collects, structures, and archives world event data from multiple OSINT sources. Runs hourly via GitHub Actions using AI agents to transform raw intelligence into structured World Event Entities stored as JSONL with 90-day retention.
 
 **Key Capabilities**:
-- **Automated Collection**: Hourly GitHub Actions workflow orchestrating AI agents via Sandcastle
+- **Automated Collection**: Hourly GitHub Actions workflow triggering Warp cloud agents via `oz-agent-sdk`
 - **Multi-Source**: Twitter, news websites, APIs, RSS feeds, email digests, webhooks
 - **Structured Output**: World Event Entities following strict schema with Markdown content
 - **E-PRIME Enforcement**: Objective, precise language without "to be" verbs
 - **Persistent Learning**: remember-as-you-go pattern improves collection over time
 - **Data Retention**: 90-day rolling window with JSONL storage and media archival
 
-**Architecture**: GitHub Actions → Sandcastle (Docker) → Claude Code Agents → Skills (agent-browser, perplexity-search, data-to-markdown) → World Event Entities → Data Folder (JSONL + Media)
+**Architecture**: GitHub Actions → `builder/` (oz-agent-sdk) → Warp Cloud Agent → Skills (agent-browser, perplexity-search, data-to-markdown) → World Event Entities → Data Folder (JSONL + Media)
 
 ---
 
@@ -21,19 +21,18 @@ Automated intelligence gathering system that collects, structures, and archives 
 git clone https://github.com/your-org/osint.git
 cd osint
 
-# Install dependencies
-cd bin/sandcastle && npm install && cd ../..
-cd bin/agent-browser && npm install && cd ../..
-cd bin/perplexity && npm install && cd ../..
-cd bin/data-to-markdown && npm install && cd ../..
+# Install builder dependencies
+cd builder && npm install && cd ..
 
 # Configure environment variables
-export ANTHROPIC_API_KEY="your-claude-api-key"
-export TWITTER_BEARER_TOKEN="your-twitter-token"  # If Twitter sources active
-export PERPLEXITY_API_KEY="your-perplexity-key"   # Optional
+export WARP_API_KEY="your-warp-api-key"
+export WARP_ENVIRONMENT_ID="your-warp-environment-uid"
 
 # View current sources
 cat source/manifest.json | jq '.sources'
+
+# Run collection manually
+cd builder && npm run collect
 
 # View collected data (after first run)
 cat data/events/$(date +%Y-%m)/$(date +%Y-%m-%d).jsonl | jq .
@@ -51,7 +50,7 @@ See [Local Development](#local-development) for manual collection workflow.
 ![Hourly Collection](https://github.com/osint-builders/osint/actions/workflows/hourly-collection.yml/badge.svg)
 ![Data Release](https://github.com/osint-builders/osint/actions/workflows/create-release.yml/badge.svg)
 
-**Automation**: Collection runs hourly via GitHub Actions. Python orchestrator (LangGraph) executes instructions below, invoking Sandcastle agents to collect events from active sources.
+**Automation**: Collection runs hourly via GitHub Actions. The `builder/index.ts` script (using `oz-agent-sdk`) spawns a Warp cloud agent that executes the instructions below, collecting events from active sources.
 
 **Workflows**:
 - **Hourly Collection** (`.github/workflows/hourly-collection.yml`): Runs every hour, collects events, commits to data/
@@ -78,10 +77,9 @@ Before execution, verify:
    test -d data/events || exit 1
    test -f data/SCHEMA.md || exit 1
    test -d skills || exit 1
-   test -d bin || exit 1
    ```
 
-2. **Environment Variables Set**:
+2. **Environment Variables Set** (configured in the Warp cloud environment):
    ```bash
    test -n "$ANTHROPIC_API_KEY" || { echo "ANTHROPIC_API_KEY required"; exit 1; }
    # TWITTER_BEARER_TOKEN, PERPLEXITY_API_KEY optional depending on sources
@@ -92,7 +90,6 @@ Before execution, verify:
    command -v node >/dev/null 2>&1 || exit 1
    command -v git >/dev/null 2>&1 || exit 1
    command -v jq >/dev/null 2>&1 || exit 1
-   command -v docker >/dev/null 2>&1 || exit 1
    ```
 
 4. **Git Configuration**:
@@ -188,284 +185,31 @@ echo "$SOURCES" | jq -c '.[]' | while read -r source; do
     continue
   fi
   
-  # Use Sandcastle to orchestrate AI collection agent
-  # The agent will:
-  # 1. Read source file for collection instructions
-  # 2. Use appropriate skills (agent-browser, perplexity-search)
-  # 3. Extract and structure World Event Entities
-  # 4. Transform contents to E-PRIME via data-to-markdown
-  # 5. Save JSONL to SOURCE_WORK_DIR/events.jsonl
-  # 6. Download media to SOURCE_WORK_DIR/media/
+  # The Warp cloud agent (spawned by builder/index.ts) processes this source.
+  # It reads the collection prompt, uses skills, collects data, and writes JSONL.
+  # On failure, it logs to memory.md and continues to the next source.
   
   cd "$REPO_ROOT"
   
-  # Create inline prompt for Sandcastle agent
-  cat > "$SOURCE_WORK_DIR/collection-prompt.md" <<'PROMPT_EOF'
-# World Event Collection Task
-
-You are an AI agent collecting world events from an OSINT source.
-
-## Context
-
-- **Source File**: Read detailed collection instructions from source file
-- **Work Directory**: Save all output to work directory
-- **Schema**: World Event Entity specification in data/SCHEMA.md
-- **Memory**: Log learnings to work directory for later consolidation
-
-## Your Mission
-
-### 1. Read Source Instructions
-
-Open and thoroughly read the source file. Extract:
-- Collection method (Twitter timeline, web scraping, API calls, RSS parsing)
-- Authentication requirements
-- Data extraction rules (selectors, API endpoints, filters)
-- Rate limits and update frequency
-- Quality indicators
-
-### 2. Collect Raw Data
-
-Use appropriate skill based on source type:
-
-**Twitter sources**:
-```bash
-# Use agent-browser to fetch Twitter timeline or search
-# See bin/agent-browser/ and skills/agent-browser/SKILL.md
-```
-
-**Webpage sources**:
-```bash
-# Use agent-browser with CSS selectors from source file
-# Extract articles, headlines, content
-```
-
-**API sources**:
-```bash
-# Make HTTP requests following source API documentation
-# Use curl or node-fetch
-```
-
-**RSS feeds**:
-```bash
-# Parse RSS/Atom XML
-# Extract feed items with titles, links, descriptions
-```
-
-Store raw responses in: `work-dir/raw/`
-
-### 3. Extract World Events
-
-Read schema from `data/SCHEMA.md`. For each distinct event, extract:
-
-**Required Fields**:
-- `id`: Generate unique ID like `evt_YYYYMMDD_NNN` (e.g., `evt_20260429_001`)
-- `source`: Object with `name` (source name) and `provider` (type: "twitter", "news", "api", etc.)
-- `title`: Concise event headline (3+ characters, under 200 chars)
-- `summary`: 2-4 sentence narrative overview (10+ characters, 50-300 words)
-- `contents`: **Comprehensive Markdown description** (20+ characters, 100+ words minimum)
-- `date_published`: ISO 8601 timestamp when event info was published
-- `links`: Array of objects with `url` (required) and optional `label`
-- `image_urls`: Array of strings (URLs or relative paths)
-
-**Optional Fields** (include if available):
-- `date_event`: ISO 8601 timestamp when event actually occurred
-- `geo`: Object with `lat`, `lon` (numbers or null), `country`, `region`, `city` (strings)
-- `topics`: Array of keyword strings for categorization
-- `confidence`: Number 0.0-1.0 indicating data quality/reliability
-- `ingested_at`: ISO 8601 timestamp when ingested (use current time)
-
-### 4. Transform Contents to E-PRIME
-
-**CRITICAL REQUIREMENT**: The `contents` field MUST use E-PRIME.
-
-**E-PRIME Definition**: English without "to be" verbs (is, are, was, were, be, been, being)
-
-**Why**: Eliminates ambiguous, passive language; enforces precise, objective writing.
-
-**How to Transform**:
-
-```bash
-# Use data-to-markdown skill
-node bin/data-to-markdown/cli.js convert \
-  --input raw-content.txt \
-  --output contents.md \
-  --eprime
-
-# Verify E-PRIME compliance
-node bin/data-to-markdown/cli.js check-eprime contents.md
-```
-
-**E-PRIME Rules**:
-- ❌ "The earthquake is devastating" → ✅ "The earthquake devastated the region"
-- ❌ "This is important" → ✅ "This matters significantly"
-- ❌ "The tanker was loaded" → ✅ "The tanker loaded 2 million barrels"
-- ❌ "Reports are emerging" → ✅ "Reports emerge from multiple sources"
-
-Use active, specific verbs. Write objectively without personal/marketing tone.
-
-See `skills/data-to-markdown/SKILL.md` for complete E-PRIME guidance.
-
-### 5. Structure as JSONL
-
-Create `work-dir/events.jsonl` with one complete JSON object per line (no pretty-printing):
-
-```jsonl
-{"id":"evt_20260429_001","source":{"name":"TankerTrackers","provider":"twitter"},"title":"Iran VLCC sanctions evasion via dark fleet","summary":"VLCC Horse loaded approximately 2 million barrels of Iranian crude at Kharg Island terminal. Vessel departed 2024-04-27, currently positioned at 25.3N 55.1E heading toward Strait of Hormuz. AIS transponder inactive for 72 hours, consistent with sanctions evasion pattern.","contents":"## Sanctions Evasion Event\n\n### Overview\n\nVLCC Horse (IMO 9584956) loaded approximately 2 million barrels of crude oil at Iran's Kharg Island terminal. The vessel departed on 2024-04-27 and currently occupies position 25.3N 55.1E, proceeding southeast toward the Strait of Hormuz. The ship's AIS transponder ceased transmission 72 hours ago.\n\n### Vessel Details\n\n- **Name**: Horse\n- **IMO Number**: 9584956\n- **Type**: VLCC (Very Large Crude Carrier)\n- **Flag**: Marshall Islands\n- **Operator**: Front company linked to NITC\n\n### Activity Pattern\n\nThe vessel displays characteristics consistent with Iranian sanctions evasion:\n\n1. Loading at Iranian terminal (Kharg Island)\n2. AIS transponder deactivation (dark sailing)\n3. Route toward international waters via Strait of Hormuz\n4. Front company operation masking Iranian ownership\n\n### Destination Assessment\n\nAnalysts assess the vessel will likely proceed to China, which continues purchasing Iranian crude despite international sanctions. The 2 million barrel cargo represents significant sanctions circumvention.\n\n### Intelligence Significance\n\nThis operation demonstrates ongoing Iranian capability to export crude oil through dark fleet operations. The Marshall Islands flag registration and front company structure enable sanctions evasion while maintaining plausible deniability.","date_published":"2026-04-29T10:30:00Z","date_event":"2026-04-27T08:00:00Z","geo":{"lat":25.3,"lon":55.1,"country":"Iran","region":"Persian Gulf"},"links":[{"url":"https://twitter.com/TankerTrackers/status/1234567890","label":"TankerTrackers Tweet"}],"image_urls":["./media/2026-04/images/2026-04-29/evt_20260429_001_img1.jpg"],"topics":["sanctions","iran","oil","tanker","dark-fleet","evasion"],"confidence":0.9,"ingested_at":"2026-04-29T10:35:00Z"}
-```
-
-**Validation**:
-- Each line must parse as valid JSON
-- No line breaks within JSON objects
-- All required fields present
-- Dates in ISO 8601 format
-- Contents field minimum 100 words
-- Contents uses E-PRIME (no "to be" verbs)
-
-### 6. Download and Organize Media
-
-For each `image_urls` entry that references external media:
-
-```bash
-# Download to work directory
-cd work-dir/media/
-
-# Naming pattern: evt_{eventid}_img{N}.{ext} or evt_{eventid}_vid{N}.{ext}
-# Examples:
-#   evt_20260429_001_img1.jpg
-#   evt_20260429_001_img2.png
-#   evt_20260429_002_vid1.mp4
-
-# Update image_urls in JSONL to use relative paths:
-#   "./media/2026-04/images/2026-04-29/evt_20260429_001_img1.jpg"
-```
-
-**Media Handling Rules**:
-- Preserve original format (JPG, PNG, WebP, MP4, etc.)
-- Maximum 10 images or 2 videos per event
-- Skip if download fails (log error, continue)
-- Update JSONL with final relative paths
-
-### 7. Validate Output
-
-Before completing:
-
-```bash
-# Check JSONL file exists
-test -f work-dir/events.jsonl || exit 1
-
-# Validate each line is valid JSON
-cat work-dir/events.jsonl | while read -r line; do
-  echo "$line" | jq empty || { echo "Invalid JSON"; exit 1; }
-done
-
-# Check required fields in each event
-cat work-dir/events.jsonl | jq -e '.id and .source and .title and .summary and .contents and .date_published and .links and .image_urls' >/dev/null
-
-# Verify dates are valid ISO 8601
-cat work-dir/events.jsonl | jq -r '.date_published' | while read -r date; do
-  date -d "$date" >/dev/null 2>&1 || { echo "Invalid date: $date"; exit 1; }
-done
-
-# Check E-PRIME compliance in contents
-cat work-dir/events.jsonl | jq -r '.contents' | \
-  grep -Ei '\b(is|are|was|were|be|been|being)\b' && \
-  { echo "ERROR: Contents violates E-PRIME (contains 'to be' verbs)"; exit 1; }
-
-echo "Validation passed"
-```
-
-### 8. Log Learnings (Remember-As-You-Go)
-
-If errors or non-obvious issues occurred, document in `work-dir/new-memory.md`:
-
-**Log ONLY**:
-- API authentication failures
-- Unexpected data format changes
-- Rate limit issues
-- Selector/extraction problems
-- Source-specific quirks
-
-**Don't Log**:
-- Successful operations
-- Expected behavior
-- Standard processing steps
-
-**Format**:
-```markdown
-## {Source Name} - {Date}
-
-{Brief description of issue}
-
-**Problem**: {What went wrong}
-**Solution**: {How you fixed it}
-**Context**: {Why this happened and how to prevent}
-
----
-```
-
-### 9. Signal Completion
-
-When finished:
-- Success: Output `<promise>COMPLETE</promise>`
-- Unrecoverable error: Output `<promise>ERROR: [description]</promise>`
-
-## Iteration Strategy
-
-You have up to 3 iterations:
-1. **Initial attempt**: Collect, extract, transform, validate
-2. **Error recovery**: Fix issues, retry failed operations
-3. **Final validation**: Ensure all quality requirements met
-
-## Quality Requirements Checklist
-
-- [ ] Contents field: 100+ words minimum
-- [ ] Contents uses E-PRIME (no "to be" verbs)
-- [ ] All URLs valid and accessible
-- [ ] Geographic coordinates in valid ranges (lat: -90 to 90, lon: -180 to 180)
-- [ ] Dates valid ISO 8601 format
-- [ ] No HTML in text fields (Markdown only in contents)
-- [ ] Objective, non-personal, non-marketing tone throughout
-- [ ] Each event has unique ID
-- [ ] JSONL file: one event per line, valid JSON
-
-## Skills Reference
-
-- **agent-browser**: `bin/agent-browser/` + `skills/agent-browser/SKILL.md`
-- **perplexity-search**: `bin/perplexity/` + `skills/perplexity-search/SKILL.md`
-- **data-to-markdown**: `bin/data-to-markdown/` + `skills/data-to-markdown/SKILL.md`
-- **world-event-entities**: `skills/world-event-entities/SKILL.md`
-- **remember-as-you-go**: `skills/remember-as-you-go/SKILL.md`
-PROMPT_EOF
-
-  # Replace placeholder paths in prompt with actual values
-  sed -i.bak "s|Read detailed collection instructions from source file|Read from $SOURCE_PATH|g" "$SOURCE_WORK_DIR/collection-prompt.md"
-  sed -i.bak "s|Save all output to work directory|Save to $SOURCE_WORK_DIR|g" "$SOURCE_WORK_DIR/collection-prompt.md"
-  sed -i.bak "s|work-dir/|$SOURCE_WORK_DIR/|g" "$SOURCE_WORK_DIR/collection-prompt.md"
-  rm "$SOURCE_WORK_DIR/collection-prompt.md.bak"
+  # Collect raw data using the appropriate method for each source type:
   
-  # Execute Sandcastle agent
-  echo "Starting Sandcastle agent for $SOURCE_NAME..."
+  # Twitter sources: Use agent-browser to fetch timeline or Twitter API with curl
+  # Webpage sources: Use agent-browser with CSS selectors from source file
+  # API sources: Use curl with appropriate auth headers
+  # RSS feeds: Fetch with curl and parse XML
   
-  node "$REPO_ROOT/bin/sandcastle/cli.js" run \
-    --agent "claude-sonnet-4-5" \
-    --sandbox docker \
-    --branch-strategy head \
-    --prompt-file "$SOURCE_WORK_DIR/collection-prompt.md" \
-    --max-iterations 3 \
-    --idle-timeout 600 \
-    --cwd "$REPO_ROOT" || {
-      EXIT_CODE=$?
-      echo "ERROR: Source $SOURCE_ID collection failed with exit code $EXIT_CODE"
-      
-      # Log failure to memory
-      echo "## Source $SOURCE_ID Failed - $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$REPO_ROOT/memory.md"
-      echo "Sandcastle agent failed with exit code $EXIT_CODE" >> "$REPO_ROOT/memory.md"
-      echo "Review Sandcastle logs for details." >> "$REPO_ROOT/memory.md"
-      echo "---" >> "$REPO_ROOT/memory.md"
-      
-      # Continue to next source (don't fail entire workflow)
-      continue
-    }
+  # E-PRIME Rules for contents field:
+  # ❌ "The earthquake is devastating" → ✅ "The earthquake devastated the region"
+  # ❌ "This is important" → ✅ "This matters significantly"
+  # ❌ "The tanker was loaded" → ✅ "The tanker loaded 2 million barrels"
+  # Verify E-PRIME: grep -Ei '\b(is|are|was|were|be|been|being)\b' contents.md
+  
+  # Skills reference:
+  # - agent-browser: skills/agent-browser/SKILL.md
+  # - perplexity-search: skills/perplexity-search/SKILL.md
+  # - data-to-markdown: skills/data-to-markdown/SKILL.md
+  # - world-event-entities: skills/world-event-entities/SKILL.md
+  # - remember-as-you-go: skills/remember-as-you-go/SKILL.md
   
   echo "✓ Completed processing $SOURCE_NAME"
 done
@@ -476,7 +220,7 @@ cd "$REPO_ROOT"
 **Key Points**:
 - Sources processed sequentially to prevent rate limit violations
 - Each source gets isolated work directory
-- Sandcastle provides agent isolation and iteration support
+- Warp cloud agent handles data collection, validation, and writing
 - Failures logged to memory.md, workflow continues
 - Agent has access to all skills and source documentation
 
@@ -791,7 +535,7 @@ echo "Storage: data/events/$YEAR_MONTH/$DATE.jsonl"
 After completing all 9 steps:
 1. Active sources loaded from manifest ✓
 2. Temporary work directory created ✓
-3. Each source processed via Sandcastle agent ✓
+3. Each source processed via Warp cloud agent ✓
 4. Events validated against schema ✓
 5. Events moved to data folder (JSONL) ✓
 6. Media organized by date ✓
@@ -940,9 +684,8 @@ AI agents use these skills during collection:
 
 | Skill | Purpose | Location |
 |-------|---------|----------|
-| **sandcastle** | AI agent orchestration in isolated Docker environments | `skills/sandcastle/` |
 | **agent-browser** | Browser automation for web scraping (Rust CLI, ref-based selection) | `skills/agent-browser/` |
-| **perplexity-search** | AI-powered web search and research | `skills/perplexity-search/` |
+| **perplexity-search** | AI-powered web search via Perplexity API (direct `curl` calls) | `skills/perplexity-search/` |
 | **data-to-markdown** | Convert data to Markdown with **E-PRIME** enforcement | `skills/data-to-markdown/` |
 | **world-event-entities** | World Event Entity schema and validation | `skills/world-event-entities/` |
 | **create-source** | Source creation, validation, testing tools | `skills/create-source/` |
@@ -952,12 +695,6 @@ AI agents use these skills during collection:
 
 **Complete Skills Documentation**: See [skills/README.md](skills/README.md)
 
-**Bin CLIs**:
-- `bin/sandcastle/` - Sandcastle CLI wrapper
-- `bin/agent-browser/` - Agent browser CLI
-- `bin/perplexity/` - Perplexity API wrapper
-- `bin/data-to-markdown/` - Data-to-Markdown CLI
-
 ---
 
 ## Local Development
@@ -966,52 +703,21 @@ AI agents use these skills during collection:
 
 ```bash
 # 1. Set environment variables
-export ANTHROPIC_API_KEY="your-claude-api-key"
-export TWITTER_BEARER_TOKEN="your-twitter-token"  # If Twitter sources active
-export PERPLEXITY_API_KEY="your-perplexity-key"   # Optional
+export WARP_API_KEY="your-warp-api-key"
+export WARP_ENVIRONMENT_ID="your-warp-environment-uid"
 
 # 2. Set repository root
 export REPO_ROOT=$(pwd)
 
-# 3. Create inline script with automation instructions
-# Copy the entire "Execution Workflow" section from above
-# Or create .github/workflows/collect.sh with that content
+# 3. Install builder dependencies
+cd builder && npm install
 
-# 4. Execute
-bash .github/workflows/collect.sh
+# 4. Run collection
+npm run collect
 
 # 5. Verify results
 ls -lh data/events/$(date +%Y-%m)/$(date +%Y-%m-%d).jsonl
 cat data/events/$(date +%Y-%m)/$(date +%Y-%m-%d).jsonl | jq .
-```
-
-### Test Single Source
-
-```bash
-# Create test work directory
-mkdir -p /tmp/osint-test
-cd /tmp/osint-test
-
-# Run Sandcastle agent for specific source
-node /path/to/osint/bin/sandcastle/cli.js run \
-  --agent "claude-sonnet-4-5" \
-  --sandbox docker \
-  --prompt "
-Read source file at /path/to/osint/source/sources/twitter-tanker-trackers.md
-
-Collect world events following the instructions in that file.
-
-Use agent-browser for Twitter data collection.
-Use data-to-markdown to ensure contents field uses E-PRIME.
-Output events to /tmp/osint-test/events.jsonl
-
-Follow the World Event Entity schema at /path/to/osint/data/SCHEMA.md
-" \
-  --max-iterations 3
-
-# Validate output
-cat /tmp/osint-test/events.jsonl | jq .
-node /path/to/osint/data/scripts/validate-events.js /tmp/osint-test/events.jsonl
 ```
 
 ### Validate Collected Data
@@ -1037,84 +743,22 @@ cat data/events/*/$(date +%Y-%m-%d).jsonl | jq -r '.contents' | \
 
 ## GitHub Actions Setup
 
-### Create Workflow File
-
-Create `.github/workflows/hourly-collection.yml`:
-
-```yaml
-name: Hourly OSINT Collection
-
-on:
-  schedule:
-    - cron: '0 * * * *'  # Every hour at :00
-  workflow_dispatch:      # Manual trigger
-
-env:
-  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-  TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
-  PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
-
-jobs:
-  collect:
-    runs-on: ubuntu-latest
-    timeout-minutes: 50
-    
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-      
-      - name: Setup Docker
-        uses: docker/setup-buildx-action@v3
-      
-      - name: Configure Git
-        run: |
-          git config user.name "OSINT Collector Bot"
-          git config user.email "osint-bot@github-actions"
-      
-      - name: Install dependencies
-        run: |
-          cd bin/sandcastle && npm ci
-          cd ../agent-browser && npm ci
-          cd ../perplexity && npm ci
-          cd ../data-to-markdown && npm ci
-      
-      - name: Run collection
-        run: bash .github/workflows/collect.sh
-        env:
-          REPO_ROOT: ${{ github.workspace }}
-      
-      - name: Push results
-        if: success()
-        run: |
-          git push origin main || {
-            git pull --rebase origin main
-            git push origin main
-          }
-```
-
-### Create Execution Script
-
-Create `.github/workflows/collect.sh` containing the entire **Execution Workflow** from the [Automation Instructions](#automation-instructions) section above.
-
-Make it executable:
-```bash
-chmod +x .github/workflows/collect.sh
-```
+The workflow file already exists at `.github/workflows/hourly-collection.yml`.
 
 ### Configure Secrets
 
-Add to repository Settings → Secrets and variables → Actions:
+Add to repository **Settings → Secrets and variables → Actions**:
 
 | Secret Name | Description | Required |
 |-------------|-------------|----------|
-| `ANTHROPIC_API_KEY` | Claude API key | Yes |
-| `TWITTER_BEARER_TOKEN` | Twitter API bearer token | If Twitter sources active |
-| `PERPLEXITY_API_KEY` | Perplexity API key | Optional |
+| `WARP_API_KEY` | Warp API key for `oz-agent-sdk` | Yes |
+| `WARP_ENVIRONMENT_ID` | UID of Warp cloud environment | Yes |
+
+**Setting up the Warp environment**: In the Warp dashboard, create an environment with:
+- Repository: `osint-builders/osint` cloned
+- `agent-browser` installed globally (`npm install -g agent-browser && agent-browser install`)
+- Environment variables: `ANTHROPIC_API_KEY`, `TWITTER_BEARER_TOKEN` (if needed), `PERPLEXITY_API_KEY` (if needed)
+- Git configured with push credentials
 
 ### Enable Actions
 
@@ -1254,8 +898,8 @@ cat source/manifest.json | jq '.sources[] | .status'
 # Review memory for errors
 tail -50 memory.md
 
-# Test single source manually
-node bin/sandcastle/cli.js run --prompt "Collect from twitter-tanker-trackers" --max-iterations 3
+# Test collection manually
+cd builder && WARP_API_KEY=your-key WARP_ENVIRONMENT_ID=your-env npm run collect
 ```
 
 ### Validation Errors
@@ -1314,22 +958,22 @@ git pull --rebase origin main
 git push origin main
 ```
 
-### Sandcastle Errors
+### Warp Agent Errors
 
-**Symptoms**: "Docker not found", "Sandcastle failed"  
+**Symptoms**: Run ends with state `FAILED` or `CANCELLED`  
 **Solutions**:
 ```bash
-# Check Docker running
-docker ps
+# Check WARP_API_KEY is set
+test -n "$WARP_API_KEY" || echo "WARP_API_KEY not set"
 
-# Check Sandcastle installation
-cd bin/sandcastle && npm install
+# Check WARP_ENVIRONMENT_ID is set
+test -n "$WARP_ENVIRONMENT_ID" || echo "WARP_ENVIRONMENT_ID not set"
 
-# Check API key
-test -n "$ANTHROPIC_API_KEY" || echo "ANTHROPIC_API_KEY not set"
+# Test builder locally
+cd builder && npm run collect
 
-# Run with debug output
-node bin/sandcastle/cli.js run --prompt "test" --max-iterations 1 --verbose
+# Check memory.md for error details logged by the agent
+tail -50 memory.md
 ```
 
 ### E-PRIME Violations
@@ -1342,20 +986,16 @@ cat data/events/$(date +%Y-%m)/$(date +%Y-%m-%d).jsonl | \
   jq -r '.contents' | \
   grep -Ein '\b(is|are|was|were|be|been|being)\b'
 
-# Re-process with data-to-markdown
-echo "content" | node bin/data-to-markdown/cli.js convert --eprime
-
-# Update event manually or re-run collection
+# Update event manually or re-run collection with corrected source instructions
 ```
 
-### High Memory Usage
+### High Resource Usage
 
-**Symptoms**: GitHub Actions timeout, out of memory  
+**Symptoms**: GitHub Actions timeout  
 **Solutions**:
 - Process fewer sources per run
-- Reduce Sandcastle max-iterations (default 3)
 - Increase GitHub Actions timeout (max 360 minutes on paid plan)
-- Check for memory leaks in agent-browser or skills
+- Check `memory.md` for errors indicating long-running operations
 
 ### Source-Specific Issues
 
@@ -1376,84 +1016,26 @@ grep "twitter-tanker-trackers" memory.md
 ┌─────────────────────────────────────────────────────────────────┐
 │                        GitHub Actions                            │
 │                    (Hourly Cron Trigger)                         │
-└────────────────────────────┬────────────────────────────────────┘
+└────────────────────────────┤────────────────────────────────────┘
                              │
-                             ▼
+                             ↓
 ┌─────────────────────────────────────────────────────────────────┐
-│                       README.md                                  │
-│              (Automation Instructions)                           │
-│  1. Load sources   2. Create temp dir   3. Process sources      │
-│  4. Validate       5. Move to data      6. Handle media         │
-│  7. Update memory  8. Commit            9. Cleanup              │
-└────────────────────────────┬────────────────────────────────────┘
+│                  builder/index.ts (oz-agent-sdk)                 │
+│          Loads sources → client.agent.run() → polls state        │
+└────────────────────────────┤────────────────────────────────────┘
                              │
-                             ▼
+                             ↓ (cloud)
 ┌─────────────────────────────────────────────────────────────────┐
-│                      Sandcastle                                  │
-│              (Docker-isolated Agent Orchestration)               │
-│                                                                   │
-│  ┌────────────────────────────────────────────────────────────┐ │
-│  │              Claude Code Agent                             │ │
-│  │          (Sonnet 4.5, 3 iterations)                        │ │
-│  │                                                            │ │
-│  │  Skills Available:                                         │ │
-│  │  • agent-browser    (web scraping)                        │ │
-│  │  • perplexity       (research)                            │ │
-│  │  • data-to-markdown (E-PRIME transformation)              │ │
-│  │  • world-entities   (schema validation)                   │ │
-│  │  • remember-go      (learning)                            │ │
-│  └────────────────────────────────────────────────────────────┘ │
-└────────────────────────────┬────────────────────────────────────┘
+│              Warp Cloud Agent (oz-agent-sdk)                     │
+│  Skills: agent-browser, perplexity-search, data-to-markdown      │
+│  Reads sources → collects data → writes JSONL → commits          │
+└────────────────────────────┤────────────────────────────────────┘
                              │
-                             ▼
+                             ↓
 ┌─────────────────────────────────────────────────────────────────┐
-│                    Source Files                                  │
-│              (source/sources/*.md)                               │
-│                                                                   │
-│  Collection Instructions:                                        │
-│  • Authentication                                                │
-│  • Extraction rules                                              │
-│  • Quality indicators                                            │
-│  • Rate limits                                                   │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                   Data Collection                                │
-│                                                                   │
-│  Twitter  →  agent-browser  →  Extract tweets                   │
-│  Webpage  →  agent-browser  →  Scrape articles                  │
-│  API      →  HTTP requests  →  Fetch structured data            │
-│  RSS      →  XML parsing    →  Extract feed items               │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────────────┐
-│              World Event Entity Transformation                   │
-│                                                                   │
-│  Raw Data  →  Extract fields  →  Validate schema                │
-│  Contents  →  data-to-markdown (E-PRIME)  →  Markdown           │
-│  Media     →  Download  →  Organize by date                     │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                      Data Storage                                │
-│                                                                   │
-│  JSONL:  data/events/YYYY-MM/YYYY-MM-DD.jsonl                   │
-│  Media:  data/media/YYYY-MM/{images,videos}/YYYY-MM-DD/         │
-│  Memory: memory.md (learnings)                                   │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                      Git Commit & Push                           │
-│                                                                   │
-│  Commit message includes:                                        │
-│  • Event count                                                   │
-│  • Timestamp                                                     │
-│  • Source IDs processed                                          │
-│  • Co-authored-by: Claude                                        │
+│  data/events/YYYY-MM/YYYY-MM-DD.jsonl (World Event Entities)     │
+│  data/media/YYYY-MM/{images,videos}/YYYY-MM-DD/                  │
+│  memory.md (agent learnings)                                      │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -1461,6 +1043,7 @@ grep "twitter-tanker-trackers" memory.md
 
 ## Related Documentation
 
+- **Builder**: [builder/index.ts](builder/index.ts) - Warp SDK agent trigger
 - **Data Folder**: [data/README.md](data/README.md) - Storage organization, JSONL format, retention policy
 - **Data Schema**: [data/SCHEMA.md](data/SCHEMA.md) - World Event Entity complete specification
 - **Sources**: [source/README.md](source/README.md) - Source system overview and schema
@@ -1470,7 +1053,7 @@ grep "twitter-tanker-trackers" memory.md
 - **Create Source**: [skills/create-source/SKILL.md](skills/create-source/SKILL.md) - Source creation framework
 - **Data to Markdown**: [skills/data-to-markdown/SKILL.md](skills/data-to-markdown/SKILL.md) - E-PRIME transformation
 - **Agent Browser**: [skills/agent-browser/SKILL.md](skills/agent-browser/SKILL.md) - Browser automation
-- **Sandcastle**: [skills/sandcastle/SKILL.md](skills/sandcastle/SKILL.md) - Agent orchestration
+- **GitHub Actions**: [.github/workflows/README.md](.github/workflows/README.md) - Workflow configuration
 
 ---
 

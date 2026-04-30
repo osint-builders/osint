@@ -7,7 +7,6 @@ metadata:
   author: osint-builders
   version: "1.0.0"
   conversion-framework: data-to-markdown
-  cli-location: "../../bin/data-to-markdown"
 ---
 
 # Data-to-Markdown Skill
@@ -320,24 +319,22 @@ Content begins here...
 
 ## Tools and Utilities
 
-### CLI Tool: `bin/data-to-markdown`
-Command-line utility for automated conversion:
+### CLI Tool: `pandoc`
+Universal document converter for automated conversion:
 
 ```bash
 # Convert HTML file to Markdown
-node bin/data-to-markdown/cli.js convert input.html output.md
+pandoc input.html -t markdown -o output.md
 
-# Convert with E-PRIME validation
-node bin/data-to-markdown/cli.js convert input.txt output.md --validate-eprime
+# Convert plain text to Markdown
+pandoc input.txt -t markdown -o output.md
 
 # Batch convert multiple files
-node bin/data-to-markdown/cli.js batch *.html --output-dir ./markdown
+for f in *.html; do pandoc "$f" -t markdown -o "${f%.html}.md"; done
 
-# Validate existing Markdown
-node bin/data-to-markdown/cli.js validate document.md
-
-# Check for E-PRIME violations
-node bin/data-to-markdown/cli.js check-eprime document.md
+# Check for E-PRIME violations ("to be" verbs)
+grep -Ein '\b(is|are|was|were|be|been|being)\b' document.md && \
+  echo "E-PRIME violation found" || echo "E-PRIME compliant"
 ```
 
 ### Python Conversion Library
@@ -448,11 +445,6 @@ function doSomething() { ... }
 
 ## Related Tools & Skills
 
-### Bin CLIs
-- **bin/agent-browser** - Scrape web content for conversion to Markdown
-- **bin/perplexity** - Research content that needs formatting
-- **bin/imagemagick** - Process images referenced in documents
-
 ### Skills
 - **agent-browser** - Extract HTML content for Markdown conversion
 - **perplexity-search** - Gather research for Markdown report generation
@@ -469,19 +461,22 @@ function doSomething() { ... }
 ```bash
 # Scrape → Convert → Validate → Format
 agent-browser get html "article" > article.html
-node bin/data-to-markdown/cli.js convert article.html output.md
-node bin/data-to-markdown/cli.js check-eprime output.md
+pandoc article.html -t markdown -o output.md
+grep -Ein '\b(is|are|was|were|be|been|being)\b' output.md && echo "E-PRIME violation" || echo "Compliant"
 prettier --write output.md
 
 # Research → Extract → Structure → Convert
-node bin/perplexity/cli.js --research "topic" > research.txt
+curl -s https://api.perplexity.ai/chat/completions \
+  -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"sonar-pro","messages":[{"role":"user","content":"topic"}]}' \
+  | jq -r '.choices[0].message.content' > research.md
 agent-browser open https://source.com/article
-agent-browser get text "body" > source.txt
-cat research.txt source.txt | node bin/data-to-markdown/cli.js convert - report.md
+agent-browser get text "body" >> research.md
 ```
 
 ## References
 
 - See [REFERENCE.md](references/REFERENCE.md) for complete conversion specifications
 - See [E-PRIME Guide](references/eprime-guide.md) for detailed language examples
-- CLI tool documentation: `../../bin/data-to-markdown/README.md`
+- `pandoc` documentation: https://pandoc.org/MANUAL.html

@@ -6,7 +6,6 @@ compatibility: Requires ImageMagick CLI installed globally. Works on macOS, Linu
 metadata:
   author: osint-builders
   version: "1.0.0"
-  binaries: "../../bin/imagemagick"
   upstream: "https://imagemagick.org"
 ---
 
@@ -98,12 +97,6 @@ choco install imagemagick
 magick -version
 # or (legacy)
 convert -version
-```
-
-Or use the setup script:
-```bash
-cd bin/imagemagick
-node setup.js
 ```
 
 ## Quick Start Examples
@@ -414,10 +407,6 @@ sudo nano /etc/ImageMagick-7/policy.xml
 
 ## Related Tools & Skills
 
-### Bin CLIs
-- **bin/ffmpeg** - Extract video frames for batch image processing
-- **bin/agent-browser** - Capture screenshots for processing
-
 ### Skills
 - **ffmpeg-cli** - Extract video frames, generate thumbnails
 - **agent-browser** - Capture web screenshots for annotation/processing
@@ -439,8 +428,8 @@ magick resized.jpg watermark.png -gravity southeast -composite final.jpg
 
 # Video frames → Batch process → Contact sheet
 ffmpeg -i video.mp4 -vf fps=1 frame_%03d.png
-mogrify -resize 800x600 -quality 90 frame_*.png
-montage frame_*.png -geometry 200x200+2+2 sheet.jpg
+mogrify -path ./processed -resize 800x600 -quality 90 frame_*.png
+montage processed/frame_*.png -geometry 200x200+2+2 sheet.jpg
 ```
 
 ## References

@@ -7,7 +7,6 @@ metadata:
   author: osint-builders
   version: "1.0.0"
   provider: ffmpeg
-  binaries: "../../bin/ffmpeg"
   upstream: "https://ffmpeg.org"
 ---
 
@@ -90,12 +89,6 @@ choco install ffmpeg
 ```bash
 ffmpeg -version
 ffprobe -version
-```
-
-Or use the setup script:
-```bash
-cd bin/ffmpeg
-node setup.js
 ```
 
 ## Quick Start Examples
@@ -312,10 +305,6 @@ export FFMPEG_HWACCEL=videotoolbox  # macOS Metal
 - **Quality loss** — Check CRF value and codec settings
 
 ## Related Tools & Skills
-
-### Bin CLIs
-- **bin/imagemagick** - Process video frames as images, create contact sheets
-- **bin/agent-browser** - Capture web video for processing
 
 ### Skills
 - **imagemagick** - Process extracted frames, generate thumbnails

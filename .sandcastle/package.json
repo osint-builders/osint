@@ -1,9 +1,0 @@
-{
-  "name": "osint-sandcastle",
-  "version": "1.0.0",
-  "type": "module",
-  "private": true,
-  "dependencies": {
-    "@ai-hero/sandcastle": "^0.5.6"
-  }
-}

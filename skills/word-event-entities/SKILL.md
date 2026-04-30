@@ -447,11 +447,6 @@ Entities must validate against the JSON schema specification for strict complian
 
 ## Related Tools & Skills
 
-### Bin CLIs
-- **bin/perplexity** - Research events for entity creation
-- **bin/agent-browser** - Scrape event information from sources
-- **bin/data-to-markdown** - Format `contents` field as structured Markdown
-
 ### Skills
 - **perplexity-search** - Gather event context and verification
 - **agent-browser** - Extract event data from web sources
@@ -467,10 +462,14 @@ Entities must validate against the JSON schema specification for strict complian
 ### Integration Hints
 ```bash
 # Research → Scrape → Structure → Validate
-node bin/perplexity/cli.js --research "breaking event" --json > context.json
+curl -s https://api.perplexity.ai/chat/completions \
+  -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"sonar-pro","messages":[{"role":"user","content":"breaking event context"}]}' \
+  | jq -r '.choices[0].message.content' > context.md
 agent-browser open https://news-source.com/event
 agent-browser get text "article" > event-text.txt
-node bin/data-to-markdown/cli.js convert event-text.txt event-details.md
+pandoc event-text.txt -t markdown -o event-details.md
 # Create event JSON with event-details.md as contents field
 jq . event.json | jsonschema -i - world-event-schema.json
 

@@ -111,7 +111,6 @@ Every skill can trigger remember-as-you-go when execution issues arise:
 - **perplexity**: API key config, rate limiting
 - **ffmpeg**: Codec requirements, format constraints
 - **imagemagick**: Policy restrictions, format delegates
-- **sandcastle**: Docker daemon, Git configuration
 - **data-to-markdown**: Format edge cases, encoding issues
 - **word-event-entities**: Schema validation, field requirements
 

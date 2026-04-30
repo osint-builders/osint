@@ -7,7 +7,6 @@ metadata:
   author: osint-builders
   version: "1.0.0"
   provider: perplexity-ai
-  cli-location: "../../bin/perplexity"
   upstream: "https://www.perplexity.ai/api"
 ---
 
@@ -67,204 +66,134 @@ export PERPLEXITY_API_KEY="your_api_key_here"
 ### 3. Verify Setup
 
 ```bash
-cd bin/perplexity
-node setup.js
+# Test a quick query to confirm the key works
+curl -s https://api.perplexity.ai/chat/completions \
+  -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"sonar","messages":[{"role":"user","content":"ping"}]}' \
+  | jq -r '.choices[0].message.content'
 ```
 
 ## Quick Start Examples
 
+All examples use direct `curl` calls to the Perplexity API. Set `PERPLEXITY_API_KEY` first.
+
 ### Quick Question
 ```bash
-node bin/perplexity/cli.js --ask "What is the latest version of Python?"
+curl -s https://api.perplexity.ai/chat/completions \
+  -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"sonar","messages":[{"role":"user","content":"What is the latest version of Python?"}]}' \
+  | jq -r '.choices[0].message.content'
 ```
 
 Output: AI-generated answer with sources
 
-### Web Search
-```bash
-node bin/perplexity/cli.js --search "SQLite graph patterns" --max-results 5
-```
-
-Output: Ranked search results without AI synthesis
-
 ### AI Research
 ```bash
-node bin/perplexity/cli.js --research "compare FastAPI vs Django for microservices"
+curl -s https://api.perplexity.ai/chat/completions \
+  -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"sonar-pro","messages":[{"role":"user","content":"compare FastAPI vs Django for microservices"}]}' \
+  | jq -r '.choices[0].message.content'
 ```
 
 Output: Synthesized comparison from multiple sources
 
-### Chain-of-Thought Reasoning
+### Deep Research
 ```bash
-node bin/perplexity/cli.js --reason "should I use Neo4j or SQLite for small graphs under 10k nodes?"
-```
-
-Output: Structured reasoning analysis
-
-### Deep Comprehensive Research
-```bash
-node bin/perplexity/cli.js --deep "state of AI agent observability 2025"
+curl -s https://api.perplexity.ai/chat/completions \
+  -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"sonar-deep-research","messages":[{"role":"user","content":"state of AI agent observability 2025"}]}' \
+  | jq -r '.choices[0].message.content'
 ```
 
 Output: Exhaustive report from expert sources
 
-## Core Commands
+## Core Usage
 
-### Modes
+All requests go to `https://api.perplexity.ai/chat/completions` using the `PERPLEXITY_API_KEY` environment variable.
 
-#### --ask (Quick Question)
-Fast AI answer with grounding.
+### Models
+
+| Model | Use Case |
+|-------|----------|
+| `sonar` | Quick facts, lightweight |
+| `sonar-pro` | Complex research, synthesis |
+| `sonar-reasoning-pro` | Decision making, chain-of-thought |
+| `sonar-deep-research` | Comprehensive, multi-source reports |
+
+### Request Pattern
 
 ```bash
-node bin/perplexity/cli.js --ask "What is Python?"
+curl -s https://api.perplexity.ai/chat/completions \
+  -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d "$(jq -n \
+    --arg model "sonar-pro" \
+    --arg content "YOUR QUERY HERE" \
+    '{model: $model, messages: [{role: "user", content: $content}]}')" \
+  | jq -r '.choices[0].message.content'
 ```
 
-**Model**: sonar
-**Best for**: Quick facts, straightforward questions
-
-#### --search (Web Search)
-Direct web search with ranked results, no AI synthesis.
+### With recency filter
 
 ```bash
-node bin/perplexity/cli.js --search "AI agent frameworks"
+curl -s https://api.perplexity.ai/chat/completions \
+  -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"sonar","search_recency_filter":"week","messages":[{"role":"user","content":"latest AI agent news"}]}' \
+  | jq '{answer: .choices[0].message.content, citations: .citations}'
 ```
 
-**Model**: Direct search
-**Best for**: Raw results, current information
-
-#### --research (AI Research)
-AI-synthesized research from multiple sources.
+### Full JSON response (with citations)
 
 ```bash
-node bin/perplexity/cli.js --research "best practices for microservices"
-```
-
-**Model**: sonar-pro
-**Best for**: Complex topics, synthesized answers
-
-#### --reason (Chain-of-Thought)
-Complex reasoning with step-by-step analysis.
-
-```bash
-node bin/perplexity/cli.js --reason "monolith vs microservices for startup MVP?"
-```
-
-**Model**: sonar-reasoning-pro
-**Best for**: Decision making, complex analysis
-
-#### --deep (Deep Research)
-Expert-level exhaustive research.
-
-```bash
-node bin/perplexity/cli.js --deep "comprehensive guide to building feedback loops for autonomous agents"
-```
-
-**Model**: sonar-deep-research
-**Best for**: Comprehensive reports, expert analysis
-
-### Options
-
-```bash
---max-results N              Number of results (1-20, default: 10)
---recency [day|week|month|year]  Filter by recency
---domains [domain1,domain2]  Limit to specific domains
---json                       Output as JSON
---help, -h                   Show help message
+curl -s https://api.perplexity.ai/chat/completions \
+  -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"sonar-pro","messages":[{"role":"user","content":"YOUR QUERY"}]}'
 ```
 
 ## Common Workflows
 
 ### Recent News Search
 ```bash
-node bin/perplexity/cli.js --search "AI agent frameworks" \
-  --recency week --max-results 5
-```
-
-### Domain-Specific Research
-```bash
-node bin/perplexity/cli.js --research "Python async/await" \
-  --domains github.com,stackoverflow.com
+curl -s https://api.perplexity.ai/chat/completions \
+  -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"sonar","search_recency_filter":"week","messages":[{"role":"user","content":"AI agent frameworks"}]}' \
+  | jq -r '.choices[0].message.content'
 ```
 
 ### Decision Analysis
 ```bash
-node bin/perplexity/cli.js --reason \
-  "GraphQL vs REST for new API project?" \
-  --json
+curl -s https://api.perplexity.ai/chat/completions \
+  -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"sonar-reasoning-pro","messages":[{"role":"user","content":"GraphQL vs REST for new API project?"}]}' \
+  | jq -r '.choices[0].message.content'
 ```
 
 ### Comprehensive Report
 ```bash
-node bin/perplexity/cli.js --deep \
-  "state of LLM fine-tuning techniques 2025"
+curl -s https://api.perplexity.ai/chat/completions \
+  -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"sonar-deep-research","messages":[{"role":"user","content":"state of LLM fine-tuning techniques 2025"}]}' \
+  | jq -r '.choices[0].message.content'
 ```
 
-### Tech Stack Evaluation
+### Batch Queries
 ```bash
-node bin/perplexity/cli.js --reason \
-  "PostgreSQL vs MongoDB for fintech startup? Consider: transactions, scaling, team expertise"
-```
-
-## Model Selection Guide
-
-| Need | Use | Why |
-|------|-----|-----|
-| Quick fact | `--ask` | Fast, lightweight, sufficient for simple questions |
-| Find sources | `--search` | Raw results without AI overhead |
-| Synthesized answer | `--research` | AI combines multiple sources |
-| Complex decision | `--reason` | Chain-of-thought reasoning |
-| Comprehensive report | `--deep` | Exhaustive multi-source research |
-
-## Output Formats
-
-### Default (Text)
-```bash
-node bin/perplexity/cli.js --ask "Python version?"
-```
-
-Returns: Plain text answer with optional citations
-
-### JSON Output
-```bash
-node bin/perplexity/cli.js --ask "Python version?" --json
-```
-
-Returns: Structured JSON with full response metadata
-
-## Advanced Features
-
-### Batch Searches
-Process multiple queries by creating script file:
-
-```bash
-# queries.txt
-What is Python 3.12?
-How to use async/await?
-Best practices for web scraping?
-```
-
-Then loop through queries:
-
-```bash
-while read query; do
-  node bin/perplexity/cli.js --ask "$query"
-done < queries.txt
-```
-
-### Filtering by Time Range
-```bash
-# Search only past week
-node bin/perplexity/cli.js --search "AI agents" --recency week
-
-# Search past month
-node bin/perplexity/cli.js --search "machine learning" --recency month
-```
-
-### Domain Filtering
-```bash
-# Limit to trusted sources
-node bin/perplexity/cli.js --research "crypto risks" \
-  --domains investopedia.com,sec.gov,forbes.com
+for query in "topic one" "topic two" "topic three"; do
+  curl -s https://api.perplexity.ai/chat/completions \
+    -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d "$(jq -n --arg q "$query" '{model:"sonar",messages:[{role:"user",content:$q}]}')" \
+    | jq -r '.choices[0].message.content'
+done
 ```
 
 ## Error Handling
@@ -296,24 +225,20 @@ Error: Query too short or invalid
 
 ## Best Practices
 
-1. **Choose appropriate model** — Use `--ask` for quick facts, `--deep` for comprehensive research
-2. **Set reasonable result limits** — 5-10 results usually sufficient
-3. **Use recency filters** — Add `--recency week` for current information
-4. **Filter by domain** — Restrict searches to trusted sources
-5. **Batch related queries** — Group similar searches for efficiency
-6. **Check citations** — Verify sources in synthesized answers
-7. **Use JSON for processing** — Parse structured output for automation
-8. **Handle rate limits** — Implement backoff for batch operations
+1. **Choose appropriate model** — Use `sonar` for quick facts, `sonar-deep-research` for comprehensive reports
+2. **Use recency filters** — Add `"search_recency_filter":"week"` to the JSON body for current information
+3. **Filter by domain** — Use `"search_domain_filter":["domain.com"]` in the request body
+4. **Batch related queries** — Group similar searches using a shell loop
+5. **Check citations** — Parse `.citations[]` from the response to verify sources
+6. **Use `jq` for processing** — Pipe responses through `jq` for structured extraction
+7. **Handle rate limits** — Add `sleep 1` between batch requests or implement exponential backoff
 
 ## Troubleshooting
 
 ### Setup Issues
 ```bash
-# Verify API key
-echo $PERPLEXITY_API_KEY
-
-# Run setup script
-node bin/perplexity/setup.js
+# Verify API key is set
+test -n "$PERPLEXITY_API_KEY" && echo "Key set" || echo "Key missing"
 ```
 
 ### API Errors
@@ -328,10 +253,6 @@ node bin/perplexity/setup.js
 
 ## Related Tools & Skills
 
-### Bin CLIs
-- **bin/agent-browser** - Visit cited URLs to verify sources
-- **bin/data-to-markdown** - Format search results as structured reports
-
 ### Skills
 - **agent-browser** - Navigate to search results for verification
 - **data-to-markdown** - Convert research output to clean Markdown
@@ -344,15 +265,21 @@ node bin/perplexity/setup.js
 ### Integration Hints
 ```bash
 # Research → Visit sources → Extract pipeline
-node bin/perplexity/cli.js --research "topic" --json > results.json
-jq -r '.citations[].url' results.json | head -3 | while read url; do
+curl -s https://api.perplexity.ai/chat/completions \
+  -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"sonar-pro","messages":[{"role":"user","content":"topic"}]}' > results.json
+jq -r '.citations[]?' results.json | head -3 | while read url; do
   agent-browser open "$url"
-  agent-browser get text "article" > "source_$(echo $url | md5).txt"
+  agent-browser get text "article" > "source_$(echo $url | md5sum | cut -c1-8).txt"
 done
 
-# Deep research → Format → Report
-node bin/perplexity/cli.js --deep "topic" > research.txt
-node bin/data-to-markdown/cli.js convert research.txt report.md
+# Deep research → Save as Markdown
+curl -s https://api.perplexity.ai/chat/completions \
+  -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"sonar-deep-research","messages":[{"role":"user","content":"topic"}]}' \
+  | jq -r '.choices[0].message.content' > report.md
 ```
 
 ## Related
