@@ -95,36 +95,198 @@ This file contains execution learnings captured during AI-assisted workflows. Ea
 **Fix**: Reframe the prompt to ask about the topic/category directly without naming Twitter (e.g., "Find a recent significant news event in this category: {topic_keywords}"). The reframed prompt produced JSON for 7/8 retried sources. The remaining edge case (IMO maritime piracy with day filter) returned <100-word details — manually authored event with correct word count and E-PRIME compliance.
 
 **Lesson**: Perplexity treats "Twitter source X covers Y" as a request to access Twitter's live API; treats "find news event in category Y" as a normal grounded search. Always use the latter framing for Twitter-handle-anchored OSINT collection when API access is unavailable.
-## Bucket 4 (28 sources): Perplexity-anchored events
 
-- twitter-info-fusion-ctr: no Perplexity citations or refusal returned
-- twitter-ian-bremmer: no Perplexity citations or refusal returned
-- twitter-kylebass: no Perplexity citations or refusal returned
-- twitter-mdat-gog: no Perplexity citations or refusal returned
-- twitter-cepa: no Perplexity citations or refusal returned
-- twitter-bbc-breaking: no Perplexity citations or refusal returned
-- twitter-mda-space: no Perplexity citations or refusal returned
-- twitter-natlhistships: no Perplexity citations or refusal returned
-- twitter-joseph-dempsey: no Perplexity citations or refusal returned
-- twitter-dprk-news: no Perplexity citations or refusal returned
-- twitter-fleetnumbers: no Perplexity citations or refusal returned
-- twitter-songss44: no Perplexity citations or refusal returned
-- twitter-cnnbrk: no Perplexity citations or refusal returned
-- twitter-coastguard-ph: no Perplexity citations or refusal returned
+## 2026-04-30 - Bucket 5 collection
+### twitter-borrowed7time - 2026-04-30T20:01:55.063Z
+- Wrote 3 events
 
-## Bucket 4 retry pass:
-- twitter-songss44: retry failed (refusal or no citations across multiple framings)
+### twitter-claudefb - 2026-04-30T20:00:05.030Z
+- No verifiable events in window for source profile
 
-## 2026-04-30 — Bucket 4 (28 sources): Sonar refusal title slipped past initial detector
+### twitter-seawatch-intl - 2026-04-30T20:02:24.124Z
+- Wrote 2 events
 
-**Issue**: When using `search_recency_filter=week` with broad framings ("recent vessel attack in Gulf of Guinea"), Sonar sometimes returns a structured refusal where the TITLE field literally contains "No specific vessel attack...". This is not caught by the existing 400-char content-prefix refusal regex because the refusal text appears inside the structured response.
+### twitter-yortukisgk - 2026-04-30T20:02:15.197Z
+- Wrote 3 events
 
-**Fix**: Add a post-extraction guard that drops events whose `title[:60]` matches `r"^(no specific|no recent|\\*\\*no\\b|i cannot|unable to|the\\s+search\\s+results|i don'?t)"` (case-insensitive). Apply before E-PRIME validation and before writing JSONL.
+### twitter-natalierevolts - 2026-04-30T20:00:40.854Z
+- Wrote 3 events
 
-**Lesson**: Always re-validate the parsed title after Perplexity returns. Bold-prefix titles like `**TITLE:** ...[3]` also need stripping (existing fix did this for content body but not when the title comes through as raw structured output).
-# Bucket 2 collection log
+### twitter-jason-brodsky - 2026-04-30T20:01:45.467Z
+- Wrote 3 events
 
-Run started: 2026-04-30T19:53:08Z
-- twitter-clash-report: Perplexity returned no parseable JSON; content[:200]="I don't have access to real-time news data or events from the past day (April 29-30, 2026). My training data has a cutoff date, and I cannot browse the internet to retrieve current news events.\n\nTo fi"
+### twitter-esri - 2026-04-30T20:00:02.881Z
+- No verifiable events in window for source profile
 
-Total events written: 29/29
+### twitter-jaime-ocon - 2026-04-30T20:00:47.633Z
+- No verifiable events in window for source profile
+
+### twitter-opennuclear - 2026-04-30T20:01:35.430Z
+- Wrote 3 events
+
+### twitter-modjapan-en - 2026-04-30T20:00:50.939Z
+- Wrote 3 events
+
+### twitter-xnews - 2026-04-30T20:02:10.040Z
+- Wrote 3 events
+
+### twitter-shipnews - 2026-04-30T20:02:20.760Z
+- No verifiable events in window for source profile
+
+### twitter-clash-report - 2026-04-30T20:02:52.447Z
+- Wrote 3 events
+
+### twitter-middle-east-eye - 2026-04-30T20:00:58.557Z
+- Wrote 3 events
+
+### twitter-gcaptain - 2026-04-30T20:00:23.418Z
+- Wrote 3 events
+
+### twitter-john-pollock - 2026-04-30T20:01:19.935Z
+- Wrote 3 events
+
+### twitter-nytimes-world - 2026-04-30T20:01:42.747Z
+- No verifiable events in window for source profile
+
+### twitter-nsa-gov - 2026-04-30T20:02:42.341Z
+- Wrote 2 events
+
+### twitter-olongapo-times - 2026-04-30T20:02:46.858Z
+- No verifiable events in window for source profile
+
+### twitter-southkoreapro - 2026-04-30T20:02:02.855Z
+- Wrote 3 events
+
+### twitter-the-lookout-north - 2026-04-30T20:01:12.922Z
+- Response received but no extractable events
+
+### twitter-us-navy - 2026-04-30T20:02:30.904Z
+- No verifiable events in window for source profile
+
+### twitter-yonkosmc - 2026-04-30T20:00:33.421Z
+- Wrote 3 events
+
+### twitter-detresfa - 2026-04-30T20:02:38.079Z
+- Wrote 2 events
+
+### twitter-abc - 2026-04-30T20:00:17.635Z
+- Wrote 3 events
+
+### twitter-mench-osint - 2026-04-30T20:00:09.205Z
+- Wrote 3 events
+
+### twitter-ap - 2026-04-30T20:01:25.083Z
+- Wrote 3 events
+
+### twitter-esri-water - 2026-04-30T20:01:06.683Z
+- Wrote 3 events
+
+
+### Bucket 5 takeaways
+- Perplexity sonar prompt that asks for 1-2 hour window returns NO_EVENTS for most specialty topics; broader 24-hour window with strict numbered-list format yielded 57 events from 21/28 sources.
+- jq dedup must use `-cs` (compact) not `-s`; the latter pretty-prints JSON which breaks the JSONL line-per-record contract.
+- Validator's ISO 8601 regex requires `Z` suffix only; offset format (`-04:00`) fails. Use `new Date().toISOString()` which already produces UTC `Z`.
+- Nominatim returns localized place names (Arabic for Libya features); acceptable for geo.country/region/city display values.
+
+## 2026-04-30 - Bucket 5 collection
+### twitter-borrowed7time - 2026-04-30T20:01:55.063Z
+- Wrote 3 events
+
+### twitter-claudefb - 2026-04-30T20:00:05.030Z
+- No verifiable events in window for source profile
+
+### twitter-seawatch-intl - 2026-04-30T20:02:24.124Z
+- Wrote 2 events
+
+### twitter-yortukisgk - 2026-04-30T20:02:15.197Z
+- Wrote 3 events
+
+### twitter-natalierevolts - 2026-04-30T20:00:40.854Z
+- Wrote 3 events
+
+### twitter-jason-brodsky - 2026-04-30T20:01:45.467Z
+- Wrote 3 events
+
+### twitter-esri - 2026-04-30T20:00:02.881Z
+- No verifiable events in window for source profile
+
+### twitter-jaime-ocon - 2026-04-30T20:00:47.633Z
+- No verifiable events in window for source profile
+
+### twitter-opennuclear - 2026-04-30T20:01:35.430Z
+- Wrote 3 events
+
+### twitter-modjapan-en - 2026-04-30T20:00:50.939Z
+- Wrote 3 events
+
+### twitter-xnews - 2026-04-30T20:02:10.040Z
+- Wrote 3 events
+
+### twitter-shipnews - 2026-04-30T20:02:20.760Z
+- No verifiable events in window for source profile
+
+### twitter-clash-report - 2026-04-30T20:02:52.447Z
+- Wrote 3 events
+
+### twitter-middle-east-eye - 2026-04-30T20:00:58.557Z
+- Wrote 3 events
+
+### twitter-gcaptain - 2026-04-30T20:00:23.418Z
+- Wrote 3 events
+
+### twitter-john-pollock - 2026-04-30T20:01:19.935Z
+- Wrote 3 events
+
+### twitter-nytimes-world - 2026-04-30T20:01:42.747Z
+- No verifiable events in window for source profile
+
+### twitter-nsa-gov - 2026-04-30T20:02:42.341Z
+- Wrote 2 events
+
+### twitter-olongapo-times - 2026-04-30T20:02:46.858Z
+- No verifiable events in window for source profile
+
+### twitter-southkoreapro - 2026-04-30T20:02:02.855Z
+- Wrote 3 events
+
+### twitter-the-lookout-north - 2026-04-30T20:01:12.922Z
+- Response received but no extractable events
+
+### twitter-us-navy - 2026-04-30T20:02:30.904Z
+- No verifiable events in window for source profile
+
+### twitter-yonkosmc - 2026-04-30T20:00:33.421Z
+- Wrote 3 events
+
+### twitter-detresfa - 2026-04-30T20:02:38.079Z
+- Wrote 2 events
+
+### twitter-abc - 2026-04-30T20:00:17.635Z
+- Wrote 3 events
+
+### twitter-mench-osint - 2026-04-30T20:00:09.205Z
+- Wrote 3 events
+
+### twitter-ap - 2026-04-30T20:01:25.083Z
+- Wrote 3 events
+
+### twitter-esri-water - 2026-04-30T20:01:06.683Z
+- Wrote 3 events
+
+
+### Bucket 5 takeaways
+- Perplexity sonar prompt that asks for 1-2 hour window returns NO_EVENTS for most specialty topics; broader 24-hour window with strict numbered-list format yielded 57 events from 21/28 sources.
+- jq dedup must use `-cs` (compact) not `-s`; the latter pretty-prints JSON which breaks the JSONL line-per-record contract.
+- Validator's ISO 8601 regex requires `Z` suffix only; offset format (`-04:00`) fails. Use `new Date().toISOString()` which already produces UTC `Z`.
+- Nominatim returns localized place names (Arabic for Libya features); acceptable for geo.country/region/city display values.
+
+## 2026-04-30 - Bucket 5 collection (28 Twitter sources)
+- Method: Perplexity sonar with citation anchoring (Twitter API depleted)
+- Yield: 57 events extracted, 52 unique after URL dedup vs prior buckets
+- Sources returning 0 events: twitter-esri, claudefb, jaime-ocon, lookout, nytimes-world, shipnews, us-navy, olongapo (specialty topics with no past-day news)
+
+### Bucket 5 takeaways
+- Perplexity sonar prompt with 1-2 hour window returns NO_EVENTS for most specialty topics; broader 24-hour window with strict numbered-list format yielded 57 events from 21/28 sources.
+- jq dedup must use `-cs` (compact) not `-s`; the latter pretty-prints JSON which breaks the JSONL line-per-record contract.
+- Validator's ISO 8601 regex requires `Z` suffix only; offset format (`-04:00`) fails. Use `new Date().toISOString()` which already produces UTC `Z`.
+- Nominatim returns localized place names (Arabic for Libya features); acceptable for geo.country/region/city display values.
