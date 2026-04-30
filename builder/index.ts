@@ -320,7 +320,7 @@ For each source listed above:
 
 9. **Log issues** to \`$WORK_DIR/{source_id}/new-memory.md\`: errors, rate limits, rejected events (outside time window), geocoding failures, research findings
 
-**Required JSONL fields per event**: \`id\`, \`source\`, \`title\`, \`summary\`, \`contents\` (100+ words, E-PRIME), \`date_published\`, \`links\`, \`image_urls\`
+**Required JSONL fields per event**: \`id\`, \`source\`, \`title\`, \`summary\`, \`contents\` (100+ words, E-PRIME), \`date_published\`, \`links\`, \`image_urls\`, **\`geo\` (with lat/lon)**
 
 **ID format**: \`evt_YYYYMMDD_NNN\` using extraction date (e.g., \`evt_${extractionDate.replace(/-/g, "")}_001\`)
 
@@ -331,6 +331,134 @@ For each source listed above:
 - \`skills/world-event-entities/SKILL.md\` — entity schema reference
 - \`skills/remember-as-you-go/SKILL.md\` — when and how to log learnings
 
+### Geocoding Helper Function (for Step 3.5)
+
+\`\`\`bash
+# Initialize geocoding cache
+GEOCODING_CACHE="/tmp/geocoding-cache-${bucketNum}.json"
+echo '{}' > "$GEOCODING_CACHE"
+
+# Function to geocode a location using OpenStreetMap Nominatim (free, no API key)
+geocode_location() {
+  local location="$1"
+
+  # Check cache first
+  cached=$(jq -r --arg loc "$location" '.[$loc] // empty' "$GEOCODING_CACHE" 2>/dev/null)
+  if [ -n "$cached" ]; then
+    echo "$cached"
+    return 0
+  fi
+
+  # URL encode location
+  local encoded=$(printf '%s' "$location" | jq -sRr @uri)
+
+  # Rate limit: 1 request/second for Nominatim
+  sleep 1
+
+  # Query Nominatim API
+  result=$(curl -s "https://nominatim.openstreetmap.org/search?q=$encoded&format=json&limit=1" \\\\
+    | jq -r 'if length > 0 then {lat: .[0].lat, lon: .[0].lon, display_name: .[0].display_name} else {lat: null, lon: null, display_name: null} end')
+
+  # Cache result
+  tmp_cache=$(jq --arg loc "$location" --argjson res "$result" '. + {($loc): $res}' "$GEOCODING_CACHE")
+  echo "$tmp_cache" > "$GEOCODING_CACHE"
+
+  echo "$result"
+}
+
+# Usage example:
+# LOCATION="Gaziantep, Turkey"
+# GEO_RESULT=$(geocode_location "$LOCATION")
+# LAT=$(echo "$GEO_RESULT" | jq -r '.lat')
+# LON=$(echo "$GEO_RESULT" | jq -r '.lon')
+# Then add to event JSON with: jq --argjson geo "{lat: $LAT, lon: $LON, city: \\"Gaziantep\\", country: \\"Turkey\\"}" '. + {geo: $geo}'
+\`\`\`
+
+### Runtime Confidence Validation Helper Function (for Step 3.6)
+
+\`\`\`bash
+# Track research API calls
+RESEARCH_COUNT=0
+MAX_RESEARCH_CALLS=50
+
+# Function to research and validate event confidence
+validate_event_confidence() {
+  local event_json="$1"
+  local event_id=$(echo "$event_json" | jq -r '.id')
+  local title=$(echo "$event_json" | jq -r '.title')
+  local summary=$(echo "$event_json" | jq -r '.summary')
+  local priority=$(echo "$event_json" | jq -r '.priority // "medium"')
+  local topics=$(echo "$event_json" | jq -r '.topics // [] | join(",")')
+  local initial_confidence=$(echo "$event_json" | jq -r '.confidence // 0.7')
+
+  # Check if event qualifies for research
+  if [[ "$priority" != "high" ]] && ! echo "$topics" | grep -qiE "(conflict|military|attack|disaster|sanctions|nuclear)"; then
+    echo "$event_json"
+    return 0
+  fi
+
+  # Check research budget
+  if [[ $RESEARCH_COUNT -ge $MAX_RESEARCH_CALLS ]]; then
+    echo "$event_json"
+    return 0
+  fi
+
+  RESEARCH_COUNT=$((RESEARCH_COUNT + 1))
+
+  # Construct research query
+  RESEARCH_QUERY="Verify this OSINT event from the last hour. Provide confirmation or contradictions with recent sources. Event: $title. Details: $summary. Search only sources from the last few hours."
+
+  # Query Perplexity API if key is available
+  if [ -n "$PERPLEXITY_API_KEY" ]; then
+    research_result=$(curl -s https://api.perplexity.ai/chat/completions \\\\
+      -H "Authorization: Bearer $PERPLEXITY_API_KEY" \\\\
+      -H "Content-Type: application/json" \\\\
+      -d "$(jq -n \\\\
+        --arg model "sonar-pro" \\\\
+        --arg content "$RESEARCH_QUERY" \\\\
+        --arg recency "hour" \\\\
+        '{model: $model, search_recency_filter: $recency, messages: [{role: "user", content: $content}]}')" \\\\
+      | jq -r '.choices[0].message.content // "Research unavailable"')
+
+    # Analyze research and adjust confidence
+    confidence_adjustment=0
+    if echo "$research_result" | grep -qi "confirmed\\|verified\\|corroborated"; then
+      confidence_adjustment=$(echo "$confidence_adjustment + 0.1" | bc)
+    fi
+    if echo "$research_result" | grep -qi "contradicts\\|disputed\\|false"; then
+      confidence_adjustment=$(echo "$confidence_adjustment - 0.3" | bc)
+    fi
+    if echo "$research_result" | grep -qi "no information\\|unconfirmed\\|unable to verify"; then
+      confidence_adjustment=$(echo "$confidence_adjustment - 0.1" | bc)
+    fi
+    # Check for multiple major sources
+    source_count=$(echo "$research_result" | grep -oiE "(reuters|bbc|ap|cnn|nyt)" | sort -u | wc -l)
+    if [ "$source_count" -ge 3 ]; then
+      confidence_adjustment=$(echo "$confidence_adjustment + 0.2" | bc)
+    fi
+
+    final_confidence=$(echo "$initial_confidence + $confidence_adjustment" | bc)
+    # Clamp to 0.0-1.0
+    if (( $(echo "$final_confidence > 1.0" | bc -l) )); then
+      final_confidence="1.0"
+    elif (( $(echo "$final_confidence < 0.0" | bc -l) )); then
+      final_confidence="0.0"
+    fi
+
+    # Append confidence assessment to contents
+    confidence_section="\\\\n\\\\n## Confidence Assessment\\\\n\\\\nInitial confidence: $initial_confidence\\\\nRuntime research: Perplexity API verification\\\\nAdjustment: $confidence_adjustment\\\\n\\\\nResearch summary (first 500 chars):\\\\n$(echo \\"$research_result\\" | head -c 500)...\\\\n\\\\nFinal confidence: $final_confidence"
+
+    echo "$event_json" | jq --arg conf "$final_confidence" --arg section "$confidence_section" \\\\
+      '.confidence = ($conf | tonumber) | .contents += $section'
+  else
+    # No API key, return original
+    echo "$event_json"
+  fi
+}
+
+# Usage: updated_event=$(validate_event_confidence "$original_event_json")
+\`\`\`
+
 ### Step 4: Validate Collected Events
 
 For each \`events.jsonl\` file found:
@@ -340,8 +468,37 @@ while IFS= read -r line; do
   echo "$line" | jq empty || { echo "Invalid JSON"; exit 1; }
 done < events.jsonl
 
-# Check required fields
-cat events.jsonl | jq -e '.id and .source and .title and .summary and .contents and .date_published and .links and .image_urls' >/dev/null
+# Check required fields (including geo)
+cat events.jsonl | jq -e '.id and .source and .title and .summary and .contents and .date_published and .links and .image_urls and .geo' >/dev/null
+
+# Validate date_published is within time window
+cat events.jsonl | jq -r '.date_published' | while read ts; do
+  if [[ "$ts" < "$TIME_WINDOW_START" ]] || [[ "$ts" > "$TIME_WINDOW_END" ]]; then
+    echo "ERROR: Event timestamp $ts outside time window [$TIME_WINDOW_START, $TIME_WINDOW_END]" >&2
+    exit 1
+  fi
+done
+
+# Validate geo field has lat and lon
+cat events.jsonl | jq -e '.geo.lat and .geo.lon' >/dev/null || {
+  echo "ERROR: Event missing required geo.lat or geo.lon" >&2
+  exit 1
+}
+
+# Validate coordinate ranges
+cat events.jsonl | jq -r '.geo.lat' | while read lat; do
+  if (( $(echo "$lat < -90 || $lat > 90" | bc -l) )); then
+    echo "ERROR: Invalid latitude: $lat (must be -90 to 90)" >&2
+    exit 1
+  fi
+done
+
+cat events.jsonl | jq -r '.geo.lon' | while read lon; do
+  if (( $(echo "$lon < -180 || $lon > 180" | bc -l) )); then
+    echo "ERROR: Invalid longitude: $lon (must be -180 to 180)" >&2
+    exit 1
+  fi
+done
 
 # Check E-PRIME in contents (fail if "to be" verbs found)
 cat events.jsonl | jq -r '.contents' | \\
