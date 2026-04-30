@@ -136,6 +136,11 @@ function buildCollectionPrompt(
   const extractionDate = extractionTime.toISODate(); // YYYY-MM-DD
   const yearMonth = extractionDate.slice(0, 7);
 
+  // Time window for 1-hour lookback (UTC)
+  const oneHourAgo = executionTime.minus({ hours: 1 });
+  const timeWindowStart = oneHourAgo.toISO();
+  const timeWindowEnd = executionTime.toISO();
+
   const sourceBlocks = sources
     .map((s) => {
       const content = readSourceFile(repoRoot, s);
@@ -158,10 +163,13 @@ This agent is processing **bucket ${bucketNum} of ${totalBuckets}**.
 **Execution time**: ${executionTimestamp} (UTC)
 **Extraction time**: ${extractionTimestamp} (EST)
 **Target date**: ${extractionDate} (EST)
+**Time window**: ${timeWindowStart} to ${timeWindowEnd} (UTC, 1 hour)
 **Repository**: ${originUrl}
 **Bucket**: ${bucketNum} / ${totalBuckets} (${sources.length} sources in this bucket)
 
 This agent collects events from approximately **${extractionTime.toFormat('HH:mm')} EST** on **${extractionDate}** (1 hour lookback from execution).
+
+**CRITICAL**: Only collect events with \`date_published\` within the time window above. Events outside this window must be rejected and logged.
 
 ## Your Mission
 
@@ -254,6 +262,12 @@ TIMESTAMP=$(date +%Y%m%d-%H%M%S)
 BUCKET_ID="bucket${bucketNum}"
 WORK_DIR="/tmp/osint-collection-$TIMESTAMP-$BUCKET_ID"
 mkdir -p "$WORK_DIR/raw" "$WORK_DIR/media/images" "$WORK_DIR/media/videos"
+
+# Time window for filtering events (1-hour lookback)
+TIME_WINDOW_START="${timeWindowStart}"
+TIME_WINDOW_END="${timeWindowEnd}"
+
+echo "Time window: $TIME_WINDOW_START to $TIME_WINDOW_END"
 \`\`\`
 
 ### Step 3: Process Each Source Sequentially
@@ -261,16 +275,50 @@ mkdir -p "$WORK_DIR/raw" "$WORK_DIR/media/images" "$WORK_DIR/media/videos"
 For each source listed above:
 
 1. **Read source file** — understand collection method, selectors, auth requirements, quality indicators
-2. **Collect raw data** using the appropriate approach:
+
+2. **Collect raw data with time filtering** using the appropriate approach:
    - **Twitter/X**: Use \`agent-browser\` to navigate and extract tweets, or use Twitter API with \`curl\` and \`$TWITTER_BEARER_TOKEN\`
+     - **Add time filtering**: For Twitter API, add \`start_time=$TIME_WINDOW_START&end_time=$TIME_WINDOW_END\` to queries
+     - **Filter by timestamp**: If using agent-browser, parse tweet timestamps and keep only those within window
    - **Webpage**: Use \`agent-browser\` with CSS selectors from the source file
+     - **Parse published dates**: Extract article publication timestamps
+     - **Filter before processing**: Skip articles published outside time window
    - **API**: Use \`curl\` with appropriate auth headers
+     - **Add time range parameters**: Include date/time filters in API queries where supported
    - **RSS**: Fetch with \`curl\` and parse XML
+     - **Filter by pubDate**: Parse RSS pubDate fields and filter to time window
+   - **Time window validation**: After collecting raw data, verify all items have timestamps within \`$TIME_WINDOW_START\` to \`$TIME_WINDOW_END\`. Reject and log any items outside the window to memory.md.
+
 3. **Extract World Event Entities** from raw data following the schema in \`data/SCHEMA.md\`
+
 4. **Transform contents to E-PRIME** — rewrite \`contents\` field removing all "to be" verbs (is, are, was, were, be, been, being). Use active, specific verbs. See \`skills/data-to-markdown/SKILL.md\` for guidance.
-5. **Save to \`$WORK_DIR/{source_id}/events.jsonl\`** — one JSON object per line
-6. **Download media** to \`$WORK_DIR/{source_id}/media/\` and update \`image_urls\` to relative paths
-7. **Log non-obvious issues** to \`$WORK_DIR/{source_id}/new-memory.md\` (errors, rate limits, unexpected formats only)
+
+5. **Geocode all events** (REQUIRED - every event must have geo.lat and geo.lon):
+   - **Extract location**: Identify city, region, country from title/summary/contents
+   - **Geocode to coordinates**: Use Nominatim API (see geocoding function below)
+   - **Add geo field**: Set \`geo.lat\`, \`geo.lon\`, \`geo.country\`, \`geo.region\`, \`geo.city\`
+   - **Fallback**: If specific location unavailable, use country-level coordinates
+   - **Rate limiting**: Respect 1 request/second limit for Nominatim
+   - **Caching**: Cache results in \`/tmp/geocoding-cache-${bucketNum}.json\` to avoid repeated lookups
+
+6. **Runtime confidence validation** (for high-priority events only):
+   - **Criteria**: Event has \`priority="high"\` OR topics contain ["conflict", "military", "attack", "disaster", "sanctions", "nuclear"]
+   - **Research**: Use Perplexity API (\`sonar-pro\` model with \`search_recency_filter: "hour"\`) to verify key claims
+   - **Adjust confidence**: Based on corroboration (see function below)
+   - **Limit**: Maximum 50 research calls per bucket to control costs
+   - **Document**: Add "Confidence Assessment" section to contents field with research findings
+
+7. **Save to \`$WORK_DIR/{source_id}/events.jsonl\`** — one JSON object per line
+
+8. **Extract and process media** using \`skills/image-extraction/SKILL.md\`:
+   - Identify all images in source data (social media attachments, webpage hero images, video thumbnails)
+   - Download/screenshot using appropriate method (curl for direct URLs, agent-browser for protected images, ffmpeg for video frames)
+   - Process each image to 720x720 PNG: \`magick image -resize 720x720^ -gravity center -extent 720x720 +repage -strip -define png:compression-level=9 output.png\`
+   - Save to \`$WORK_DIR/{source_id}/media/images/{event_id}_img{N}.png\`
+   - Update \`image_urls\` array with relative paths: \`./media/YYYY-MM/images/YYYY-MM-DD/{event_id}_img{N}.png\`
+   - Limit to 3-5 images per event (first is primary), handle failures gracefully
+
+9. **Log issues** to \`$WORK_DIR/{source_id}/new-memory.md\`: errors, rate limits, rejected events (outside time window), geocoding failures, research findings
 
 **Required JSONL fields per event**: \`id\`, \`source\`, \`title\`, \`summary\`, \`contents\` (100+ words, E-PRIME), \`date_published\`, \`links\`, \`image_urls\`
 

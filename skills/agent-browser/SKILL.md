@@ -271,6 +271,7 @@ BROWSERBASE_API_KEY                Browserbase API key (when using -p browserbas
 ## Related Tools & Skills
 
 ### Skills
+- **image-extraction** - Standardized workflow for webpage screenshot capture and processing
 - **data-to-markdown** - Convert scraped content to structured Markdown
 - **imagemagick** - Post-process screenshots and visual assets
 - **ffmpeg-cli** - Create video recordings of browser automation sessions

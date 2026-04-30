@@ -408,6 +408,7 @@ sudo nano /etc/ImageMagick-7/policy.xml
 ## Related Tools & Skills
 
 ### Skills
+- **image-extraction** - Standardized workflow for extracting and normalizing images for world event entities
 - **ffmpeg-cli** - Extract video frames, generate thumbnails
 - **agent-browser** - Capture web screenshots for annotation/processing
 - **remember-as-you-go** - Capture policy restrictions, format delegate issues, permission problems

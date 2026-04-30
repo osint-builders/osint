@@ -245,6 +245,8 @@ at 04:17 UTC on Monday, February 6, 2024.
 ]
 ```
 
+**See also**: `skills/image-extraction/SKILL.md` for standardized image extraction and processing workflow
+
 ---
 
 ### geo

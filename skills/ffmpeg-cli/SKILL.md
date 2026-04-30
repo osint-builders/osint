@@ -307,6 +307,7 @@ export FFMPEG_HWACCEL=videotoolbox  # macOS Metal
 ## Related Tools & Skills
 
 ### Skills
+- **image-extraction** - Standardized workflow for video frame extraction and normalization
 - **imagemagick** - Process extracted frames, generate thumbnails
 - **agent-browser** - Record browser sessions, capture web media
 - **remember-as-you-go** - Capture codec issues, container constraints, format-specific quirks

@@ -46,6 +46,36 @@ FFmpeg CLI for media processing and transformation. Convert formats, resize and 
 
 ---
 
+### image-extraction
+Extract, process, and normalize images from any data source for world event entities. Find images in social media, webpages, videos, and interactive content. Normalize to 720x720 PNG format with compression. Handle multiple images per event.
+
+**Location:** `image-extraction/`
+
+**Key Features:**
+- Universal image extraction from any source type
+- 720x720 PNG normalization with compression
+- Video frame extraction with FFmpeg
+- Web screenshot capture with agent-browser
+- Batch processing support
+- Multiple images per event handling
+
+**Quick Start:**
+```bash
+# Download and process social media image
+curl -o /tmp/img.jpg "https://example.com/image.jpg"
+magick /tmp/img.jpg -resize 720x720^ -gravity center -extent 720x720 +repage -strip -define png:compression-level=9 final.png
+
+# Extract video frame and process
+ffmpeg -i video.mp4 -ss 00:00:05 -vframes 1 /tmp/frame.jpg
+magick /tmp/frame.jpg -resize 720x720^ -gravity center -extent 720x720 +repage -strip -define png:compression-level=9 final.png
+```
+
+**See also:**
+- `image-extraction/SKILL.md` - Complete extraction workflow
+- Dependencies: `imagemagick`, `ffmpeg-cli`, `agent-browser`
+
+---
+
 ### imagemagick
 ImageMagick CLI for comprehensive image processing. Convert formats, resize and crop, apply effects and filters, adjust colors, create thumbnails, batch process, composite images, add text and watermarks.
 
