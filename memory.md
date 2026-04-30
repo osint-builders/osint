@@ -37,3 +37,15 @@ This file contains execution learnings captured during AI-assisted workflows. Ea
 **Validation gotcha**: The E-PRIME validator uses `grep -Ei '\b(is|are|was|were|be|been|being)\b'`. The `\b` word boundaries make it safe to use words like "this", "ships", "between", "before", "begin", "beyond", "Washington", and "based" — only standalone forbidden tokens fail. Quoted speech remains a common trap; rewrite it in active voice.
 
 **Substitutes that pass validation**: `is → remains/shows/stays`, `was/were → got + past participle / operated / showed`, `are → remain / show`, `be → continue / function / serve`. Avoid passive `is/was/were boarded` — use `got boarded` or rewrite with active subject.
+
+## 2026-04-30 — Twitter API credits depleted; X.com requires login for live timeline access
+
+**Issue**: The Twitter API v2 endpoint `/2/users/{id}/tweets` returned HTTP 402 `CreditsDepleted` for the configured `TWITTER_BEARER_TOKEN`. Direct browsing of `https://x.com/{handle}` via `agent-browser` works but only displays a small set of "Top" historical tweets (sorted by engagement, not recency); the `https://x.com/search?q=from%3A{handle}&f=live` endpoint redirects to a login page.
+
+**Fallbacks tried**:
+- Nitter mirrors (nitter.net, nitter.privacydev.net, nitter.poast.org): all returned HTTP 503 or empty bodies. xcancel.com presents an antibot verification screen that does not auto-clear.
+- Source-owned subscription site (tankertrackers.com/articles): Most articles are paywalled; only the title + publication date are visible publicly.
+
+**Working approach**: Use `perplexity-search` with `search_recency_filter=week` to find news outlets that quote TankerTrackers reports, then fetch those citation URLs with `fetch_web_pages`. Extract the TankerTrackers-attributed claims from the news article bodies. Always validate that Perplexity returned non-empty `.citations[]` — when citations are empty, the model is hallucinating tweet IDs/URLs and content cannot be trusted.
+
+**Lesson**: For Twitter sources with paywalled API access, treat news outlets that cite the source as the authoritative ingestion path. Anchor each event to the citation URL, not a fabricated `x.com/.../status/{id}` link.
