@@ -30,7 +30,35 @@ import { DateTime } from "luxon";
 
 const POLL_INTERVAL_MS = 10_000;
 const TERMINAL_STATES = new Set(["SUCCEEDED", "FAILED", "CANCELLED"]);
-const PARALLEL_AGENT_COUNT = parseInt(process.env.PARALLEL_AGENT_COUNT || "5");
+
+// Warp's prompt size limit (1 MB = 1,048,576 bytes)
+// We target 80% of limit for safety (838,860 bytes)
+const MAX_PROMPT_SIZE_BYTES = 838_860;
+
+// Calculate optimal bucket count based on source count
+// Average: ~14,500 bytes per source (based on 2.06 MB / 142 sources)
+const BYTES_PER_SOURCE = 14_500;
+const BASE_PROMPT_OVERHEAD = 50_000; // Base prompt without sources
+
+function calculateOptimalBucketCount(sourceCount: number): number {
+  const configuredCount = parseInt(process.env.PARALLEL_AGENT_COUNT || "0");
+
+  // Calculate minimum buckets needed to stay under size limit
+  const totalSizeEstimate = BASE_PROMPT_OVERHEAD + (sourceCount * BYTES_PER_SOURCE);
+  const minBucketsNeeded = Math.ceil(totalSizeEstimate / MAX_PROMPT_SIZE_BYTES);
+
+  // Use the larger of: configured count or minimum needed
+  const optimalCount = Math.max(configuredCount, minBucketsNeeded);
+
+  console.log(`\nBucket calculation:`);
+  console.log(`  Sources: ${sourceCount}`);
+  console.log(`  Estimated total prompt size: ${(totalSizeEstimate / 1024).toFixed(0)} KB`);
+  console.log(`  Configured PARALLEL_AGENT_COUNT: ${configuredCount}`);
+  console.log(`  Minimum buckets needed: ${minBucketsNeeded}`);
+  console.log(`  Using: ${optimalCount} buckets (max of configured vs minimum)\n`);
+
+  return optimalCount;
+}
 
 // Statuses that should be EXCLUDED from a collection run.
 // Anything else (active, testing, unverified, etc.) is processed so that
@@ -485,8 +513,8 @@ async function main(): Promise<void> {
   const originUrl = getOriginUrl(repoRoot);
   console.log(`Repository: ${originUrl}`);
 
-  // Partition sources into buckets
-  const bucketCount = Math.min(PARALLEL_AGENT_COUNT, processableSources.length);
+  // Calculate optimal bucket count based on source count and size limits
+  const bucketCount = calculateOptimalBucketCount(processableSources.length);
   const buckets = partitionSources(processableSources, bucketCount);
 
   console.log(`\nPartitioning ${processableSources.length} sources into ${buckets.length} parallel agents:`);
@@ -496,10 +524,23 @@ async function main(): Promise<void> {
   });
 
   // Spawn all agents in parallel
-  console.log(`\nSpawning ${buckets.length} Warp cloud agents...`);
+  console.log(`Spawning ${buckets.length} Warp cloud agents...`);
   const runPromises = buckets.map(async (bucket, bucketIndex) => {
     const bucketNum = bucketIndex + 1;
     const prompt = buildCollectionPrompt(repoRoot, bucket, originUrl, bucketNum, buckets.length);
+
+    // Validate prompt size before sending
+    const promptSizeBytes = Buffer.byteLength(prompt, 'utf8');
+    const promptSizeKB = (promptSizeBytes / 1024).toFixed(1);
+    const promptSizeMB = (promptSizeBytes / 1024 / 1024).toFixed(2);
+
+    console.log(`  Bucket ${bucketNum}: ${bucket.length} sources, prompt size: ${promptSizeKB} KB (${promptSizeMB} MB)`);
+
+    if (promptSizeBytes > 1_048_576) {
+      const errorMsg = `Bucket ${bucketNum} prompt exceeds 1 MB limit: ${promptSizeMB} MB (${promptSizeBytes} bytes). Need more buckets!`;
+      console.error(`  ❌ ${errorMsg}`);
+      throw new Error(errorMsg);
+    }
 
     const runParams: OzAPI.AgentRunParams = {
       prompt,
@@ -511,10 +552,10 @@ async function main(): Promise<void> {
 
     try {
       const runResponse = await client.agent.run(runParams);
-      console.log(`  Bucket ${bucketNum}: spawned (run ID: ${runResponse.run_id})`);
+      console.log(`  ✓ Bucket ${bucketNum}: spawned (run ID: ${runResponse.run_id})`);
       return { bucketNum, runId: runResponse.run_id, bucket };
     } catch (err) {
-      console.error(`  Bucket ${bucketNum}: failed to spawn - ${err}`);
+      console.error(`  ✗ Bucket ${bucketNum}: failed to spawn - ${err}`);
       throw err;
     }
   });
