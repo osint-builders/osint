@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-04-29",
+  "last_updated": "2026-04-30",
   "description": "Master registry of all OSINT data sources for world event collection",
   "sources": [
     {
@@ -12,16 +12,26 @@
       "priority": "high",
       "file": "sources/twitter-tanker-trackers.md",
       "added_date": "2026-04-29"
+    },
+    {
+      "id": "webpage-windward-ai-blog",
+      "name": "Windward AI Blog - Maritime Intelligence & Risk Analytics",
+      "type": "webpage",
+      "status": "testing",
+      "reliability": "high",
+      "priority": "medium",
+      "file": "sources/webpage-windward-ai-blog.md",
+      "added_date": "2026-04-30"
     }
   ],
   "statistics": {
-    "total_sources": 1,
+    "total_sources": 2,
     "active_sources": 1,
-    "testing_sources": 0,
+    "testing_sources": 1,
     "inactive_sources": 0,
     "by_type": {
       "twitter": 1,
-      "webpage": 0,
+      "webpage": 1,
       "api": 0,
       "email": 0,
       "rss": 0,
@@ -33,11 +43,11 @@
     },
     "by_priority": {
       "high": 1,
-      "medium": 0,
+      "medium": 1,
       "low": 0
     },
     "by_reliability": {
-      "high": 1,
+      "high": 2,
       "medium": 0,
       "low": 0,
       "unverified": 0
