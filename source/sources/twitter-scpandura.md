@@ -2,7 +2,7 @@
 id: twitter-scpandura
 name: Pandura - Security Analysis & Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   Pandura provides security analysis and intelligence covering cybersecurity,
   threat intelligence, information operations, and regional security developments.

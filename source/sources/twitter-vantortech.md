@@ -2,7 +2,7 @@
 id: twitter-vantortech
 name: Vantor Technologies - Geospatial Intelligence & Analytics
 type: twitter
-status: testing
+status: active
 description: |
   Vantor Technologies provides advanced geospatial intelligence analytics, mapping solutions,
   and location-based intelligence for government and defense sectors. Specializes in

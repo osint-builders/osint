@@ -2,7 +2,7 @@
 id: twitter-etienne-lh
 name: Etienne - Defense and Security Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Defense analyst providing expert analysis on European defense policy, military
   capabilities, NATO affairs, and transatlantic security. Focuses on defense

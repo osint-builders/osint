@@ -2,7 +2,7 @@
 id: twitter-us-7th-fleet
 name: US 7th Fleet - Indo-Pacific Naval Operations Command
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account of US 7th Fleet, the largest forward-deployed numbered fleet in the 
   US Navy operating in the Indo-Pacific. Provides real-time operational updates on carrier strike 

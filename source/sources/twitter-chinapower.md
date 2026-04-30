@@ -2,7 +2,7 @@
 id: twitter-chinapower
 name: China Power Project - CSIS China Analysis Platform
 type: twitter
-status: testing
+status: active
 description: |
   CSIS China Power Project provides data-driven analysis of China's global influence through
   comprehensive assessments of military capabilities, economic power, diplomatic reach, and

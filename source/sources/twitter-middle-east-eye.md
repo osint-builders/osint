@@ -2,7 +2,7 @@
 id: twitter-middle-east-eye
 name: Middle East Eye - Regional News & Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Middle East Eye is an independent news organization covering politics, security,
   conflicts, and social developments across the Middle East and North Africa. Provides

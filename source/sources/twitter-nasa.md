@@ -2,7 +2,7 @@
 id: twitter-nasa
 name: NASA - Official National Aeronautics and Space Administration
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account for the National Aeronautics and Space Administration. Provides 
   announcements on space missions, satellite operations, Earth observation data, space weather 

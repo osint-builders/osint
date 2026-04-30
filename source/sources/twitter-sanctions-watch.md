@@ -2,7 +2,7 @@
 id: twitter-sanctions-watch
 name: Sanctions Watch - International Sanctions Monitoring
 type: twitter
-status: testing
+status: active
 description: |
   International sanctions monitoring covering US, EU, UK, UN, and other jurisdictions.
   Tracks sanctions designations, enforcement, evasion, compliance developments across

@@ -2,7 +2,7 @@
 id: twitter-inside-nk
 name: Inside North Korea Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Independent analysis account focused on North Korean developments, military activities, and
   regime behavior. Provides expert commentary on DPRK missile tests, nuclear program, leadership

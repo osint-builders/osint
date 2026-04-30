@@ -2,7 +2,7 @@
 id: twitter-dprk-news
 name: DPRK News Aggregator
 type: twitter
-status: testing
+status: active
 description: |
   News aggregation account focused on North Korea developments, compiling reports from multiple
   sources including KCNA, state media, and international coverage. Useful for comprehensive

@@ -2,7 +2,7 @@
 id: twitter-gcaptain
 name: gCaptain - Maritime News and Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   Leading maritime news and intelligence platform covering breaking maritime incidents,
   vessel casualties, port disruptions, maritime security events, and shipping industry

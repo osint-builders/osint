@@ -2,7 +2,7 @@
 id: twitter-mdat-gog
 name: MDAT GoG - Maritime Domain Awareness Gulf of Guinea
 type: twitter
-status: testing
+status: active
 description: |
   Official Maritime Domain Awareness for Trade (MDAT) Gulf of Guinea account providing
   real-time maritime security alerts, piracy incidents, and threat assessments for the

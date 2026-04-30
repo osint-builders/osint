@@ -2,7 +2,7 @@
 id: twitter-yonkosmc
 name: YonkosMC - Philippines Maritime Security & Naval Operations
 type: twitter
-status: testing
+status: active
 description: |
   Philippines maritime security and naval operations monitoring account. Tracks Philippine Coast Guard,
   Philippine Navy activities, South China Sea incidents, maritime territorial disputes, and regional

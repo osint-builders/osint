@@ -2,7 +2,7 @@
 id: twitter-korea-econ-inst
 name: Korea Economic Institute - Economic & Security Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Korea Economic Institute of America (KEI) provides authoritative analysis on Korean
   economic, political, and security affairs from Washington DC perspective. Think tank

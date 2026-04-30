@@ -2,7 +2,7 @@
 id: twitter-sindikasyontek
 name: Sindikasyon Teknolohiya - Philippines Technology & Security News
 type: twitter
-status: testing
+status: active
 description: |
   Philippines technology news and security analysis account covering cybersecurity, information
   operations, digital security, and technology policy in the Philippines. Tracks cyber threats,

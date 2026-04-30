@@ -2,7 +2,7 @@
 id: twitter-ca-jc
 name: CA JC - Regional Security & Political Analysis
 type: twitter
-status: testing
+status: active
 description: |
   CA JC provides regional security and political analysis covering security
   developments, political situations, and regional dynamics. Focus on analytical

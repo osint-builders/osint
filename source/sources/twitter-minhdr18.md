@@ -2,7 +2,7 @@
 id: twitter-minhdr18
 name: Minhdr18 - Defense Research and Military Technology Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Defense research analyst providing technical analysis of military systems,
   emerging defense technologies, and weapons development. Focuses on advanced

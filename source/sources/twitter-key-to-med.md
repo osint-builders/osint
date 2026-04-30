@@ -2,7 +2,7 @@
 id: twitter-key-to-med
 name: Key to Middle East Defense - Military & Defense Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   Key to Middle East Defense provides specialized intelligence and analysis on military
   capabilities, defense systems, arms transfers, and security developments across the

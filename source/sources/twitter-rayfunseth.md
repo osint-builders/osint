@@ -2,7 +2,7 @@
 id: twitter-rayfunseth
 name: Ray Funseth - Maritime OSINT Analyst
 type: twitter
-status: testing
+status: active
 description: |
   Individual maritime OSINT analyst focusing on vessel tracking, maritime security,
   and commercial shipping intelligence. Provides analysis of vessel movements, port

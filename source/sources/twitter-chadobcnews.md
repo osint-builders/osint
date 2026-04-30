@@ -2,7 +2,7 @@
 id: twitter-chadobcnews
 name: Chad O'Brien - Korea News & Military Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Chad O'Brien provides Korea-focused news coverage and military analysis with emphasis
   on security developments, defense policy, and Korean Peninsula military affairs. Individual

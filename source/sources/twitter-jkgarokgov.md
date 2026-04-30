@@ -2,7 +2,7 @@
 id: twitter-jkgarokgov
 name: JKGA ROK Gov - Korea Government Affairs & Policy
 type: twitter
-status: testing
+status: active
 description: |
   Korea government-related account providing coverage of ROK government policies, official
   statements, and administrative developments. Valuable for tracking official government

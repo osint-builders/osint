@@ -2,7 +2,7 @@
 id: twitter-tatarigamiua
 name: Tatarigami - Ukraine Conflict Analysis & Military Tracking
 type: twitter
-status: testing
+status: active
 description: |
   Tatarigami provides detailed analysis of the Ukraine conflict, tracking
   Russian and Ukrainian military operations, equipment losses, tactical

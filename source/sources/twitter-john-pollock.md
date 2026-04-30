@@ -2,7 +2,7 @@
 id: twitter-john-pollock
 name: John Pollock - Defense Analysis & Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   John Pollock provides professional defense analysis covering global military
   operations, strategic developments, and intelligence assessments. Focuses on

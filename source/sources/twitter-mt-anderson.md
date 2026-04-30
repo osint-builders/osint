@@ -2,7 +2,7 @@
 id: twitter-mt-anderson
 name: M.T. Anderson - Regional Security & Intelligence Analysis
 type: twitter
-status: testing
+status: active
 description: |
   M.T. Anderson provides regional security and intelligence analysis covering
   geopolitical developments, security threats, conflict zones, and strategic

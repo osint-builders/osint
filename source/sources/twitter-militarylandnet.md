@@ -2,7 +2,7 @@
 id: twitter-militarylandnet
 name: Military Land - Conflict Mapping and Territorial Control Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Military Land provides detailed conflict mapping, territorial control analysis,
   and military situation updates. Specializes in visual cartography of active

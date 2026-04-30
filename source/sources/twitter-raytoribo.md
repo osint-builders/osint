@@ -2,7 +2,7 @@
 id: twitter-raytoribo
 name: Ray Toribo - Regional Analysis & Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   Ray Toribo provides regional analysis and intelligence commentary covering
   geopolitical developments, security situations, and regional dynamics. Focus

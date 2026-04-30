@@ -2,7 +2,7 @@
 id: twitter-detresfa
 name: Detresfa - Maritime Distress & Search and Rescue Monitoring
 type: twitter
-status: testing
+status: active
 description: |
   Detresfa monitors maritime distress situations, search and rescue (SAR)
   operations, and emergency response activities. Tracks DETRESFA declarations

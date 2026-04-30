@@ -2,7 +2,7 @@
 id: twitter-tradewindsnews
 name: TradeWinds News - Shipping Trade Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   Leading shipping industry news publication covering commercial maritime trade, vessel
   transactions, charter markets, sanctions enforcement, and shipping finance. Essential

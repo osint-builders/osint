@@ -2,7 +2,7 @@
 id: twitter-pizzainwatch
 name: Pizza in Watch - Maritime Vessel Tracking & AIS Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   Independent maritime tracking account providing real-time vessel movements, AIS data analysis,
   and maritime intelligence. Focuses on tracking commercial vessels, naval movements, and suspicious

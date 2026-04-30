@@ -2,7 +2,7 @@
 id: twitter-scmpnews
 name: South China Morning Post - Asia-Pacific Regional News and Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Leading Hong Kong-based English-language news outlet providing comprehensive coverage of
   China, Asia-Pacific regional affairs, geopolitical developments, military activities, and

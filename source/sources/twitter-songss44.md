@@ -2,7 +2,7 @@
 id: twitter-songss44
 name: Songss44 - OSINT Analyst and Regional Security Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   OSINT analyst providing regional security intelligence with focus on Asia-Pacific
   conflicts, military movements, and geopolitical developments. Specializes in

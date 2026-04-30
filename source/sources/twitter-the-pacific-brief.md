@@ -2,7 +2,7 @@
 id: twitter-the-pacific-brief
 name: The Pacific Brief - Defense Intelligence and Regional Security Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Specialized defense intelligence and analysis platform focused on Indo-Pacific region military
   developments, strategic competition, naval operations, and regional security dynamics. Provides

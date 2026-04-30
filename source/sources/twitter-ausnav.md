@@ -2,7 +2,7 @@
 id: twitter-ausnav
 name: Royal Australian Navy - Indo-Pacific Naval Operations
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account of the Royal Australian Navy providing authoritative reporting on
   Australian naval operations in Indo-Pacific region, freedom of navigation operations, regional

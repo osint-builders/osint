@@ -2,7 +2,7 @@
 id: twitter-megatronlion
 name: Megatron Lion - Independent OSINT Analyst
 type: twitter
-status: testing
+status: active
 description: |
   Independent OSINT analyst providing detailed open-source intelligence analysis focused
   on military operations, conflict zones, geopolitical developments, and strategic events.

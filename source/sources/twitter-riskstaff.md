@@ -2,7 +2,7 @@
 id: twitter-riskstaff
 name: Risk Staff - Global Security and Risk Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   Leading security and risk intelligence analysis platform providing real-time monitoring and
   assessment of global security threats, geopolitical developments, and crisis situations.

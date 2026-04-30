@@ -2,7 +2,7 @@
 id: twitter-tafarms18
 name: TaFarms18 - Agriculture & Regional Security Analysis
 type: twitter
-status: testing
+status: active
 description: |
   TaFarms18 provides analysis on agricultural developments, food security,
   and regional security issues with focus on how agricultural factors

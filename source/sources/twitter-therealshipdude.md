@@ -2,7 +2,7 @@
 id: twitter-therealshipdude
 name: TheRealShipDude - Ship Identification and Maritime OSINT
 type: twitter
-status: testing
+status: active
 description: |
   Expert ship identification specialist providing detailed vessel analysis, maritime OSINT,
   and commercial/naval ship tracking. Known for rapid vessel identification from limited

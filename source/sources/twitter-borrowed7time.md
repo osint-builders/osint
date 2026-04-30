@@ -2,7 +2,7 @@
 id: twitter-borrowed7time
 name: Borrowed7Time - OSINT Analyst and Conflict Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   OSINT analyst providing conflict intelligence, military analysis, and
   geopolitical insights. Focuses on real-time conflict monitoring, military

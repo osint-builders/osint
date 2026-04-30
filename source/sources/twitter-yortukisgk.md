@@ -2,7 +2,7 @@
 id: twitter-yortukisgk
 name: Yortuk Intelligence - Regional Monitoring
 type: twitter
-status: testing
+status: active
 description: |
   Regional intelligence monitoring account focused on Middle East, Central Asia, and Eastern
   Europe security developments. Provides analysis of military movements, conflict updates,

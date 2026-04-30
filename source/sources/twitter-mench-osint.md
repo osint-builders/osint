@@ -2,7 +2,7 @@
 id: twitter-mench-osint
 name: Mench OSINT - Visual Intelligence and Equipment Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Mench OSINT provides detailed visual intelligence analysis, military equipment
   identification, and conflict documentation. Specializes in analyzing imagery from

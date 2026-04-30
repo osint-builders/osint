@@ -2,7 +2,7 @@
 id: twitter-iran-spectrum
 name: Iran Spectrum - Technical Iran Analysis & Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   Iran Spectrum provides technical analysis of Iranian nuclear program, military
   capabilities, IRGC operations, and regional activities. Focuses on detailed technical

@@ -2,7 +2,7 @@
 id: twitter-xkorea
 name: X Korea - Korea-Focused News & Updates
 type: twitter
-status: testing
+status: active
 description: |
   X Korea provides focused updates and news coverage on Korean Peninsula developments
   with emphasis on breaking news, military activities, and security incidents. Real-time

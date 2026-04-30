@@ -2,7 +2,7 @@
 id: twitter-jason-brodsky
 name: Jason Brodsky - Iran Policy Expert
 type: twitter
-status: testing
+status: active
 description: |
   Jason Brodsky is Iran policy expert and Policy Director at United Against Nuclear Iran
   (UANI). Provides expert analysis on Iranian nuclear program, sanctions policy, regional

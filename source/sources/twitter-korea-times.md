@@ -2,7 +2,7 @@
 id: twitter-korea-times
 name: The Korea Times - Established Korean News & Analysis
 type: twitter
-status: testing
+status: active
 description: |
   The Korea Times is one of the oldest and most established English-language newspapers in
   South Korea, providing comprehensive coverage of Korean politics, security, economy, and

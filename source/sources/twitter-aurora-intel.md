@@ -2,7 +2,7 @@
 id: twitter-aurora-intel
 name: Aurora Intel - Geopolitical Intelligence and Security Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Aurora Intel provides comprehensive geopolitical intelligence, security analysis,
   and conflict monitoring. Collaborative OSINT collective covering global conflicts,

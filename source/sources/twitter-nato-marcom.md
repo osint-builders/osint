@@ -2,7 +2,7 @@
 id: twitter-nato-marcom
 name: NATO Maritime Command - Official Account
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account for NATO Maritime Command (MARCOM), headquartered in Northwood, UK. 
   Provides updates on NATO maritime operations, naval exercises, maritime security missions, 

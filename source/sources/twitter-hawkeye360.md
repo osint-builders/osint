@@ -2,7 +2,7 @@
 id: twitter-hawkeye360
 name: HawkEye360 - Satellite RF Detection & Geolocation Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   Commercial satellite constellation providing radio frequency (RF) geolocation intelligence.
   HawkEye360 detects and geolocates RF transmissions globally using space-based sensors,

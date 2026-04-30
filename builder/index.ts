@@ -26,6 +26,7 @@ import OzAPI from "oz-agent-sdk";
 import * as fs from "fs";
 import * as path from "path";
 import { execSync } from "child_process";
+import { DateTime } from "luxon";
 
 const POLL_INTERVAL_MS = 10_000;
 const TERMINAL_STATES = new Set(["SUCCEEDED", "FAILED", "CANCELLED"]);
@@ -85,9 +86,12 @@ function buildCollectionPrompt(
   sources: Source[],
   originUrl: string
 ): string {
-  const timestamp = new Date().toISOString();
-  const date = timestamp.slice(0, 10);
-  const yearMonth = date.slice(0, 7);
+  const executionTime = DateTime.now().setZone("UTC");
+  const extractionTime = executionTime.minus({ hours: 1 }).setZone("America/New_York");
+  const executionTimestamp = executionTime.toISO();
+  const extractionTimestamp = extractionTime.toISO();
+  const extractionDate = extractionTime.toISODate(); // YYYY-MM-DD
+  const yearMonth = extractionDate.slice(0, 7);
 
   const sourceBlocks = sources
     .map((s) => {
@@ -107,9 +111,12 @@ function buildCollectionPrompt(
 
 You are an AI agent tasked with collecting OSINT world events.
 
-**Run timestamp**: ${timestamp}
-**Target date**: ${date}
+**Execution time**: ${executionTimestamp} (UTC)
+**Extraction time**: ${extractionTimestamp} (EST)
+**Target date**: ${extractionDate} (EST)
 **Repository**: ${originUrl}
+
+This agent collects events from approximately **${extractionTime.toFormat('HH:mm')} EST** on **${extractionDate}** (1 hour lookback from execution).
 
 ## Your Mission
 
@@ -221,7 +228,7 @@ For each source listed above:
 
 **Required JSONL fields per event**: \`id\`, \`source\`, \`title\`, \`summary\`, \`contents\` (100+ words, E-PRIME), \`date_published\`, \`links\`, \`image_urls\`
 
-**ID format**: \`evt_YYYYMMDD_NNN\` (e.g., \`evt_${date.replace(/-/g, "")}_001\`)
+**ID format**: \`evt_YYYYMMDD_NNN\` using extraction date (e.g., \`evt_${extractionDate.replace(/-/g, "")}_001\`)
 
 **Skills available** (read the SKILL.md for each before using):
 - \`skills/agent-browser/SKILL.md\` — web scraping, Twitter data
@@ -252,7 +259,8 @@ cat events.jsonl | jq -r '.contents' | \\
 
 \`\`\`bash
 YEAR_MONTH="${yearMonth}"
-DATE="${date}"
+DATE="${extractionDate}"
+# Note: Use extraction date (EST), not execution date (UTC)
 mkdir -p "data/events/$YEAR_MONTH"
 TARGET="data/events/$YEAR_MONTH/$DATE.jsonl"
 touch "$TARGET"
@@ -302,7 +310,10 @@ if ! git diff --cached --quiet; then
   EVENT_COUNT=$(wc -l < "data/events/$YEAR_MONTH/$DATE.jsonl")
   git commit -m "Collect $EVENT_COUNT world events on $DATE
 
-Automated OSINT collection run at ${timestamp}
+Automated OSINT collection run
+- Execution time: ${executionTimestamp} (UTC)
+- Extraction time: ${extractionTimestamp} (EST)
+- Data collected from 1-hour lookback window
 
 Data format: JSONL (JSON Lines)
 Storage: data/events/$YEAR_MONTH/$DATE.jsonl

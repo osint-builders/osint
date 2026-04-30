@@ -2,7 +2,7 @@
 id: twitter-info-fusion-ctr
 name: Info Fusion Center - Multi-Source Intelligence Fusion and Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Info Fusion Center provides multi-source intelligence fusion, combining OSINT,
   SIGINT, IMINT, and HUMINT reporting into comprehensive situational assessments.

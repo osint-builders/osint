@@ -2,7 +2,7 @@
 id: twitter-mofajapan-en
 name: Japan Ministry of Foreign Affairs (English)
 type: twitter
-status: testing
+status: active
 description: |
   Official English account of Japan's Ministry of Foreign Affairs (MOFA), providing
   authoritative information on Japanese foreign policy, diplomatic engagements, international

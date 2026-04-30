@@ -2,7 +2,7 @@
 id: twitter-natalierevolts
 name: Natalie Revolts - Conflict Tracking & Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Natalie Revolts provides conflict tracking and analysis covering armed conflicts,
   civil wars, insurgencies, and political violence. Focus on real-time conflict

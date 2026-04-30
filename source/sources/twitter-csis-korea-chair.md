@@ -2,7 +2,7 @@
 id: twitter-csis-korea-chair
 name: CSIS Korea Chair - Strategic Think Tank Analysis
 type: twitter
-status: testing
+status: active
 description: |
   CSIS Korea Chair at the Center for Strategic and International Studies provides authoritative
   think tank analysis on Korean Peninsula security, defense policy, and regional strategic

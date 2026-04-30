@@ -2,7 +2,7 @@
 id: twitter-oilcfd
 name: OilCfd - Oil Shipping and Commodities Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   Oil shipping and commodities analyst tracking crude oil tanker movements, petroleum
   product flows, energy sanctions enforcement, and oil market dynamics. Specialized focus

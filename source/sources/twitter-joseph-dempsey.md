@@ -2,7 +2,7 @@
 id: twitter-joseph-dempsey
 name: Joseph Dempsey - IISS Military Systems Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Joseph Dempsey is Research Associate for Defence and Military Analysis at the
   International Institute for Strategic Studies (IISS). Provides expert technical

@@ -2,7 +2,7 @@
 id: twitter-natlhistships
 name: National Historic Ships - Naval Heritage & Ship Preservation
 type: twitter
-status: testing
+status: active
 description: |
   UK National Historic Ships organization documenting historic vessels, naval heritage,
   and maritime preservation. While focused on heritage, provides valuable context for

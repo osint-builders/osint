@@ -2,7 +2,7 @@
 id: twitter-sim-nasr
 name: Sim Nasr - Middle East Regional Analyst
 type: twitter
-status: testing
+status: active
 description: |
   Sim Nasr provides expert analysis and commentary on Middle East geopolitics, conflicts,
   and security dynamics. Focuses on Iran, Hezbollah, regional conflicts, and US Middle

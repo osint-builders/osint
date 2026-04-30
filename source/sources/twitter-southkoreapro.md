@@ -2,7 +2,7 @@
 id: twitter-southkoreapro
 name: South Korea Pro - Professional Korea Analysis & Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   South Korea Pro provides professional-grade analysis and intelligence on Korean Peninsula
   affairs, specializing in defense, security, politics, and economic developments. Premium

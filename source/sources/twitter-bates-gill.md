@@ -2,7 +2,7 @@
 id: twitter-bates-gill
 name: Bates Gill - Asia Security Expert and China Scholar
 type: twitter
-status: testing
+status: active
 description: |
   Renowned Asia security expert and China scholar providing authoritative analysis on Chinese
   foreign policy, regional security dynamics, U.S.-China relations, and Indo-Pacific strategic

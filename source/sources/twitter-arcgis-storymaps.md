@@ -2,7 +2,7 @@
 id: twitter-arcgis-storymaps
 name: ArcGIS Story Maps - Geospatial Narrative Intelligence & Visualization
 type: twitter
-status: testing
+status: active
 description: |
   Official ArcGIS Story Maps account showcasing narrative mapping, geospatial storytelling,
   and intelligence visualization techniques. Features conflict mapping, crisis analysis,

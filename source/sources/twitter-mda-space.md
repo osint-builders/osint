@@ -2,7 +2,7 @@
 id: twitter-mda-space
 name: MDA Space - Commercial Satellite Intelligence & Earth Observation
 type: twitter
-status: testing
+status: active
 description: |
   MDA Space (formerly MDA Ltd.) is a leading provider of advanced satellite systems, robotics,
   and geospatial intelligence solutions. Operates RADARSAT constellation and provides SAR

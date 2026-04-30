@@ -2,7 +2,7 @@
 id: twitter-the-lookout-north
 name: The Lookout North - Regional Military Monitoring
 type: twitter
-status: testing
+status: active
 description: |
   The Lookout North monitors military movements and security developments
   across northern regions. Tracks aircraft movements, naval operations,

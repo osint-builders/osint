@@ -2,7 +2,7 @@
 id: twitter-kc-nwt
 name: KC NWT - Korea Security & Defense Watch
 type: twitter
-status: testing
+status: active
 description: |
   Korea-focused security and defense monitoring account providing real-time updates on Korean
   Peninsula military developments, security incidents, and geopolitical tensions. Valuable source

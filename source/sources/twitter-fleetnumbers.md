@@ -2,7 +2,7 @@
 id: twitter-fleetnumbers
 name: Fleetnumbers - Naval Fleet Tracking & Ship Pennant Numbers
 type: twitter
-status: testing
+status: active
 description: |
   Specialized naval fleet tracking account monitoring warship movements, fleet compositions,
   commissioning/decommissioning events, and pennant number assignments globally. Provides

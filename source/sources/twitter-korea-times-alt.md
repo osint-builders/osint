@@ -2,7 +2,7 @@
 id: twitter-korea-times-alt
 name: The Korea Times (Alt) - Secondary Korean News Feed
 type: twitter
-status: testing
+status: active
 description: |
   Alternative Twitter handle for The Korea Times newspaper, potentially serving as secondary
   feed or regional office account. Provides additional coverage stream of Korean news and

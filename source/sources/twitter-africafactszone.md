@@ -2,7 +2,7 @@
 id: twitter-africafactszone
 name: Africa Facts Zone
 type: twitter
-status: testing
+status: active
 description: |
   Popular African news and information aggregator providing breaking news, current events,
   and developments across the African continent. High-volume account covering politics,

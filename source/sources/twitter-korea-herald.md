@@ -2,7 +2,7 @@
 id: twitter-korea-herald
 name: The Korea Herald - Major Korean English Daily
 type: twitter
-status: testing
+status: active
 description: |
   The Korea Herald is a leading English-language daily newspaper in South Korea providing
   comprehensive coverage of Korean politics, security, economy, and society. Major established

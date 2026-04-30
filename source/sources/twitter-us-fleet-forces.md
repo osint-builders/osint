@@ -2,7 +2,7 @@
 id: twitter-us-fleet-forces
 name: US Fleet Forces Command - Atlantic Fleet Operations
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account of US Fleet Forces Command (formerly US Fleet Forces Command/US 2nd 
   Fleet), responsible for Navy forces operating in the Atlantic Ocean, Caribbean, and providing 

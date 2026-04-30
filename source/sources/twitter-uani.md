@@ -2,7 +2,7 @@
 id: twitter-uani
 name: United Against Nuclear Iran - Iran Policy & Advocacy
 type: twitter
-status: testing
+status: active
 description: |
   United Against Nuclear Iran (UANI) is a non-partisan advocacy organization focused
   on preventing Iran from acquiring nuclear weapons. Provides research, sanctions

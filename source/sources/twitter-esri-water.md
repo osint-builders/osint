@@ -2,7 +2,7 @@
 id: twitter-esri-water
 name: Esri Water - Water Resources & Environmental GEOINT
 type: twitter
-status: testing
+status: active
 description: |
   Official Esri Water Resources account covering water monitoring, hydrology analysis,
   and environmental intelligence using GIS. Relevant for environmental security monitoring,

@@ -2,7 +2,7 @@
 id: twitter-seawatch-intl
 name: Sea Watch International - Maritime Search and Rescue Operations
 type: twitter
-status: testing
+status: active
 description: |
   Sea Watch International humanitarian organization conducting search and rescue operations
   for migrants and refugees in the Mediterranean Sea. Provides real-time intelligence on

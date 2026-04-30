@@ -2,7 +2,7 @@
 id: twitter-nsa-cyber
 name: NSA Cybersecurity - Official Cybersecurity Directorate
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account for the NSA Cybersecurity Directorate. Provides authoritative 
   cybersecurity guidance, threat intelligence, vulnerability advisories, and defensive 

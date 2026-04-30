@@ -2,7 +2,7 @@
 id: twitter-schizoint-rel
 name: SchizointReL - Intelligence Relations and Information Warfare Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Intelligence relations analyst covering information warfare, intelligence
   operations, cyber activities, and strategic communications. Analyzes

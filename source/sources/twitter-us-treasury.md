@@ -2,7 +2,7 @@
 id: twitter-us-treasury
 name: US Department of Treasury - Official Account
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account for the US Department of Treasury. Provides authoritative announcements 
   on economic sanctions, foreign asset controls, financial regulations, terrorist financing 

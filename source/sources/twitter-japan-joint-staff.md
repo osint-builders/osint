@@ -2,7 +2,7 @@
 id: twitter-japan-joint-staff
 name: Japan Joint Staff Office - Multi-Domain Defense Operations
 type: twitter
-status: testing
+status: active
 description: |
   Official account of the Japan Joint Staff Office (JSO), the supreme operational command
   for the Japan Self-Defense Forces coordinating ground, maritime, and air operations.

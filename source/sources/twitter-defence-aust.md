@@ -2,7 +2,7 @@
 id: twitter-defence-aust
 name: Australian Department of Defence - Regional Security and Defense Policy
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account of the Australian Department of Defence providing authoritative
   reporting on Australian defense policy, regional security operations, international partnerships,

@@ -2,7 +2,7 @@
 id: twitter-claudefb
 name: Claude FB - Regional Observer & Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Claude FB provides regional observation and analysis covering political
   developments, security situations, and regional events. Focus on on-the-ground

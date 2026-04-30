@@ -2,7 +2,7 @@
 id: twitter-us-pacific-fleet
 name: US Pacific Fleet - Theater Naval Command
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account of US Pacific Fleet, the largest numbered fleet command in the Navy 
   operating across the Pacific and Indian Oceans. Provides strategic-level announcements on fleet 

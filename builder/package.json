@@ -8,11 +8,12 @@
     "collect": "tsx index.ts"
   },
   "dependencies": {
+    "luxon": "^3.7.2",
     "oz-agent-sdk": "^1.3.0"
   },
   "devDependencies": {
-    "tsx": "^4.19.0",
     "@types/node": "^20.0.0",
+    "tsx": "^4.19.0",
     "typescript": "^5.8.0"
   },
   "engines": {

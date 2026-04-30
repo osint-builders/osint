@@ -2,7 +2,7 @@
 id: twitter-esri-training
 name: Esri Training - GIS Education & Geospatial Analysis Techniques
 type: twitter
-status: testing
+status: active
 description: |
   Official Esri training account sharing GIS education content, geospatial analysis
   techniques, ArcGIS tutorials, and spatial intelligence methodologies. Valuable for

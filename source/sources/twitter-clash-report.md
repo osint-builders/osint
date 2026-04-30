@@ -2,7 +2,7 @@
 id: twitter-clash-report
 name: Clash Report - Middle East Conflict & Security Reporting
 type: twitter
-status: testing
+status: active
 description: |
   Clash Report provides real-time monitoring of military conflicts, security incidents,
   and armed clashes across the Middle East and North Africa. Aggregates frontline reports,

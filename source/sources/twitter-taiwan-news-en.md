@@ -2,7 +2,7 @@
 id: twitter-taiwan-news-en
 name: Taiwan News English - Taiwan Regional News and Cross-Strait Relations
 type: twitter
-status: testing
+status: active
 description: |
   Leading English-language news outlet covering Taiwan domestic affairs, cross-strait relations,
   regional security, and geopolitical developments. Provides essential ground truth reporting from

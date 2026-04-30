@@ -2,7 +2,7 @@
 id: twitter-msc-sealift
 name: Military Sealift Command - Strategic Logistics and Support
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account of Military Sealift Command (MSC), operating approximately 125 
   civilian-crewed ships providing strategic sealift, logistics support, and special mission 

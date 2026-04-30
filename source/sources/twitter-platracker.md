@@ -2,7 +2,7 @@
 id: twitter-platracker
 name: PLATracker - Chinese Military Movement Monitoring
 type: twitter
-status: testing
+status: active
 description: |
   PLATracker monitors People's Liberation Army (PLA) military movements,
   deployments, and activities. Tracks Chinese military aircraft, naval vessels,

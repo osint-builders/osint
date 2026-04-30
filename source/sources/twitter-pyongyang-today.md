@@ -2,7 +2,7 @@
 id: twitter-pyongyang-today
 name: Pyongyang Today - Daily DPRK Updates
 type: twitter
-status: testing
+status: active
 description: |
   Daily updates and coverage of North Korean developments focusing on Pyongyang activities,
   leadership movements, state media monitoring, and official announcements. Provides regular

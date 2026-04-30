@@ -2,7 +2,7 @@
 id: twitter-ofac-alert
 name: OFAC Alert - US Treasury Sanctions Announcements
 type: twitter
-status: testing
+status: active
 description: |
   Official and curated alerts for US Treasury Office of Foreign Assets Control (OFAC)
   sanctions designations, enforcement actions, and compliance updates. Tracks sanctions

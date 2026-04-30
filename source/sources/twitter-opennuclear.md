@@ -2,7 +2,7 @@
 id: twitter-opennuclear
 name: OpenNuclear - Nuclear Facilities & Weapons Monitoring
 type: twitter
-status: testing
+status: active
 description: |
   OpenNuclear provides monitoring and analysis of nuclear facilities, weapons
   programs, and nuclear-related developments using open-source intelligence.

@@ -2,7 +2,7 @@
 id: twitter-iran-observer
 name: Iran Observer - Iranian Intelligence & Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Iran Observer monitors and analyzes Iranian political, military, economic, and social developments.
   Provides real-time intelligence on Iranian regime activities, IRGC operations, nuclear program,

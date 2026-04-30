@@ -2,7 +2,7 @@
 id: twitter-the-dailynk
 name: The Daily NK - North Korea News and Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Independent news outlet specializing in North Korea coverage with network of sources inside
   DPRK. Provides investigative reporting on internal conditions, regime activities, human rights,

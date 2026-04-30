@@ -2,7 +2,7 @@
 id: twitter-us-forces-japan
 name: US Forces Japan - Official Military Command Account
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account for US Forces Japan (USFJ), the unified command responsible for all US 
   military forces in Japan. Provides authoritative announcements on deployments, exercises, joint 

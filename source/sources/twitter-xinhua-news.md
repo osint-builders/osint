@@ -2,7 +2,7 @@
 id: twitter-xinhua-news
 name: Xinhua News Agency
 type: twitter
-status: testing
+status: active
 description: |
   Official English-language Twitter account of Xinhua News Agency, China's state-run press agency.
   Major source for Chinese government news, breaking stories, official announcements, and state

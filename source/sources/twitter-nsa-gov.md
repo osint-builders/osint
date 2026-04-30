@@ -2,7 +2,7 @@
 id: twitter-nsa-gov
 name: National Security Agency - Official Account
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account for the National Security Agency (NSA). Provides announcements on 
   signals intelligence operations, cybersecurity initiatives, cryptologic activities, national 

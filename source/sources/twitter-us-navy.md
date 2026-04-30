@@ -2,7 +2,7 @@
 id: twitter-us-navy
 name: US Navy Official - Department of the Navy Primary Account
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account of the United States Navy, serving as the primary communications 
   channel for the Department of the Navy. Provides authoritative announcements on fleet 

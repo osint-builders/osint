@@ -2,7 +2,7 @@
 id: webpage-windward-ai-blog
 name: Windward AI Blog - Maritime Intelligence & Risk Analytics
 type: webpage
-status: testing
+status: active
 description: |
   Windward AI's official blog covering maritime intelligence, trade analytics,
   shipping risk, sanctions compliance, and AI-driven insights into global vessel

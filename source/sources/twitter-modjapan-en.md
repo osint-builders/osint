@@ -2,7 +2,7 @@
 id: twitter-modjapan-en
 name: Japan Ministry of Defense (English)
 type: twitter
-status: testing
+status: active
 description: |
   Official English account of Japan's Ministry of Defense (MOD), providing authoritative
   information on Japanese defense policy, military modernization programs, strategic doctrine,

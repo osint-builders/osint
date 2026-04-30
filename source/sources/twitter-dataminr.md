@@ -2,7 +2,7 @@
 id: twitter-dataminr
 name: Dataminr - Real-Time Event Detection
 type: twitter
-status: testing
+status: active
 description: |
   Dataminr is a leading real-time information discovery platform that uses AI to detect high-impact
   events and emerging risks from publicly available data sources. Their Twitter account shares alerts

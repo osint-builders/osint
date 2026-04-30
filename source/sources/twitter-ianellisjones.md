@@ -2,7 +2,7 @@
 id: twitter-ianellisjones
 name: Ian Ellis-Jones - Maritime Intelligence & Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Ian Ellis-Jones provides maritime intelligence and analysis covering naval
   operations, shipping developments, maritime security, and sea-based geopolitical

@@ -2,7 +2,7 @@
 id: twitter-mndchina
 name: China Ministry of National Defense
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account of the Ministry of National Defense of the People's Republic of China.
   Primary source for Chinese military announcements, defense policy statements, military exercises,

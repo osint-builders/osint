@@ -2,7 +2,7 @@
 id: twitter-ian-bremmer
 name: Ian Bremmer - Eurasia Group Political Risk Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Ian Bremmer is President of Eurasia Group, a leading political risk research and
   consulting firm. Provides expert analysis on geopolitical developments, international

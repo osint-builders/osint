@@ -2,7 +2,7 @@
 id: twitter-faa-south
 name: Focus on Africa South - Regional Security & Defense
 type: twitter
-status: testing
+status: active
 description: |
   Focus on Africa South monitors security, military, and defense developments across
   southern Africa and broader continent. While Africa-focused, provides relevant coverage

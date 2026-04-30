@@ -2,7 +2,7 @@
 id: twitter-ntonc
 name: ntonc - OSINT Collector and Military Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   OSINT collector providing military intelligence on global conflicts, troop
   movements, and security developments. Focuses on visual intelligence gathering,

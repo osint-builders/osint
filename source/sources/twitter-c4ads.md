@@ -2,7 +2,7 @@
 id: twitter-c4ads
 name: C4ADS - Conflict and Illicit Networks Research
 type: twitter
-status: testing
+status: active
 description: |
   Leading conflict and transnational security research organization providing data-driven analysis
   of cross-border conflict, illicit networks, and gray zone threats. C4ADS uses cutting-edge

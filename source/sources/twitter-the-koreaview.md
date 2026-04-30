@@ -2,7 +2,7 @@
 id: twitter-the-koreaview
 name: The Korea View - Korean Peninsula News
 type: twitter
-status: testing
+status: active
 description: |
   News and analysis account covering Korean Peninsula developments including both North and
   South Korea. Provides comprehensive coverage of inter-Korean relations, regional security,

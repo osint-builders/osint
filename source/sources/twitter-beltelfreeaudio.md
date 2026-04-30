@@ -2,7 +2,7 @@
 id: twitter-beltelfreeaudio
 name: Belteleradio Free Audio - Philippines Security & Regional News
 type: twitter
-status: testing
+status: active
 description: |
   Philippines security and regional news outlet providing coverage of defense developments,
   security incidents, political-security issues, and regional affairs. Sister account to

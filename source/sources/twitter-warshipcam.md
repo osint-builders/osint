@@ -2,7 +2,7 @@
 id: twitter-warshipcam
 name: WarshipCam - Naval Vessel Photography and Identification
 type: twitter
-status: testing
+status: active
 description: |
   Specialized naval photography account providing high-quality images and identification
   of warships, naval vessels, and military maritime activity worldwide. Valuable for

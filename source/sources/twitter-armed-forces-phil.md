@@ -2,7 +2,7 @@
 id: twitter-armed-forces-phil
 name: Armed Forces of the Philippines - Official Military Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account of the Armed Forces of the Philippines providing authoritative
   reporting on military operations, South China Sea activities, territorial defense,

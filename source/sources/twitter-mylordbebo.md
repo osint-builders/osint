@@ -2,7 +2,7 @@
 id: twitter-mylordbebo
 name: MyLordBebo - Regional Observer & Developments
 type: twitter
-status: testing
+status: active
 description: |
   MyLordBebo provides regional observation and reporting on political, security,
   and social developments. Focus on regional events, local perspectives, political

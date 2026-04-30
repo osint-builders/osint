@@ -2,7 +2,7 @@
 id: twitter-jnb-summary
 name: Japan-North Korea Bridge Summary
 type: twitter
-status: testing
+status: active
 description: |
   Analysis and summary account covering Japan-North Korea relations and regional security from
   Japanese perspective. Provides insights on DPRK missile threats to Japan, Japanese defense

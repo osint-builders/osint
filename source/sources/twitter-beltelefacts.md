@@ -2,7 +2,7 @@
 id: twitter-beltelefacts
 name: Belteleradio Facts - Philippines Defense & Security News
 type: twitter
-status: testing
+status: active
 description: |
   Philippines defense and security news monitoring account providing fact-based coverage of
   military developments, security incidents, defense policy, and regional security issues.

@@ -2,7 +2,7 @@
 id: twitter-kl-summary
 name: Korea-related Summaries and Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Summary and analysis account providing comprehensive coverage of Korea-related developments
   including North-South dynamics, regional security, diplomatic initiatives, and military

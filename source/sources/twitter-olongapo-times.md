@@ -2,7 +2,7 @@
 id: twitter-olongapo-times
 name: Olongapo Times - Philippines Regional News & Military Activity
 type: twitter
-status: testing
+status: active
 description: |
   Regional news outlet covering Olongapo City and Zambales Province in the Philippines.
   Strategic intelligence source for US-Philippines military cooperation, activities around

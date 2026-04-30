@@ -2,7 +2,7 @@
 id: twitter-war-tv7890
 name: WarTV - Real-Time Conflict Monitoring and War Updates
 type: twitter
-status: testing
+status: active
 description: |
   WarTV provides real-time conflict monitoring, war updates, and combat footage
   analysis. Focuses on active conflicts worldwide with rapid reporting of military

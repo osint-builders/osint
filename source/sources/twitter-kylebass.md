@@ -2,7 +2,7 @@
 id: twitter-kylebass
 name: Kyle Bass - Asia/China Economic & Geopolitical Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Kyle Bass provides expert analysis on Asian markets with particular focus on
   China's economic conditions, currency policies, Hong Kong developments, and

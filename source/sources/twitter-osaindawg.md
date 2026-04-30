@@ -2,7 +2,7 @@
 id: twitter-osaindawg
 name: OsainDawg - Maritime OSINT & Vessel Tracking
 type: twitter
-status: testing
+status: active
 description: |
   OsainDawg provides maritime OSINT and vessel tracking intelligence covering
   ship movements, port activities, maritime incidents, and naval developments.

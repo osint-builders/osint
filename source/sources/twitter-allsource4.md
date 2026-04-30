@@ -2,7 +2,7 @@
 id: twitter-allsource4
 name: All Source Intelligence - Multi-Domain OSINT Aggregation
 type: twitter
-status: testing
+status: active
 description: |
   Comprehensive all-source intelligence aggregator synthesizing open-source intelligence
   across military, geopolitical, security, and strategic domains. Provides integrated

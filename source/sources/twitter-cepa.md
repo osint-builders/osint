@@ -2,7 +2,7 @@
 id: twitter-cepa
 name: CEPA - Center for European Policy Analysis
 type: twitter
-status: testing
+status: active
 description: |
   Leading transatlantic think tank focused on Central and Eastern Europe security policy,
   Russian influence operations, energy security, and democratic resilience. Provides expert

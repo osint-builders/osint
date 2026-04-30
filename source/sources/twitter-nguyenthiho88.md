@@ -2,7 +2,7 @@
 id: twitter-nguyenthiho88
 name: Nguyen Thi Ho - Vietnam Observer
 type: twitter
-status: testing
+status: active
 description: |
   Independent Vietnam-based observer monitoring regional developments in Southeast Asia with
   focus on Vietnam, South China Sea, and regional geopolitics. Provides ground-level perspective

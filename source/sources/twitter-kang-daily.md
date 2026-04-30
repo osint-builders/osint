@@ -2,7 +2,7 @@
 id: twitter-kang-daily
 name: Korea Ang Daily - Korean Military & Defense News
 type: twitter
-status: testing
+status: active
 description: |
   Korea Ang Daily provides focused coverage of Korean military and defense developments,
   offering daily updates on ROK armed forces activities, military policy, defense industry,

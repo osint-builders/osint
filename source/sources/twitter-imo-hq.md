@@ -2,7 +2,7 @@
 id: twitter-imo-hq
 name: International Maritime Organization - Official Account
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account for the International Maritime Organization (IMO), the UN specialized 
   agency responsible for maritime safety, security, and environmental protection. Provides 

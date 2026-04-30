@@ -2,7 +2,7 @@
 id: twitter-chinese-emb-in-us
 name: Chinese Embassy in the United States
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account of the Embassy of the People's Republic of China in the United States.
   Key source for Chinese diplomatic messaging, policy positions on US-China relations, responses

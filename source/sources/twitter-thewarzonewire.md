@@ -2,7 +2,7 @@
 id: twitter-thewarzonewire
 name: The War Zone Wire - Defense and Military News
 type: twitter
-status: testing
+status: active
 description: |
   Defense and military news aggregator providing real-time coverage of conflict zones,
   military operations, defense technology developments, and strategic military activities

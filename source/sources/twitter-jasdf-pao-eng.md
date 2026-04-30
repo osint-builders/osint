@@ -2,7 +2,7 @@
 id: twitter-jasdf-pao-eng
 name: Japan Air Self-Defense Force Public Affairs (English)
 type: twitter
-status: testing
+status: active
 description: |
   Official English language public affairs account of the Japan Air Self-Defense Force (JASDF).
   Primary source for Japanese air defense operations, readiness posture, joint exercises with

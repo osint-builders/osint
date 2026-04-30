@@ -2,7 +2,7 @@
 id: twitter-scs-pi
 name: SCS-PI - South China Sea Proactive Initiatives
 type: twitter
-status: testing
+status: active
 description: |
   Specialized research initiative focused exclusively on South China Sea developments including
   maritime incidents, territorial disputes, militarization, fishing activities, coast guard

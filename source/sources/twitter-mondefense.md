@@ -2,7 +2,7 @@
 id: twitter-mondefense
 name: Taiwan Ministry of National Defense - Official Defense Intelligence
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account of Taiwan's Ministry of National Defense providing authoritative
   reporting on PLA military activities near Taiwan, ADIZ incursions, defense policy, and Taiwan's

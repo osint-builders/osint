@@ -2,7 +2,7 @@
 id: twitter-jaime-ocon
 name: Jaime Ocon - GIS Analyst & Geospatial Intelligence Practitioner
 type: twitter
-status: testing
+status: active
 description: |
   Independent GIS analyst and geospatial intelligence professional sharing practical
   mapping techniques, spatial analysis methods, and real-world OSINT applications.

@@ -2,7 +2,7 @@
 id: twitter-us-5th-fleet
 name: US 5th Fleet - Middle East Naval Operations Command
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account of US 5th Fleet, commanding naval forces in the Middle East region 
   including the Arabian Gulf, Gulf of Oman, Red Sea, and parts of the Indian Ocean. Provides 

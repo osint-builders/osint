@@ -2,7 +2,7 @@
 id: twitter-bbgoriginals
 name: BBG Originals
 type: twitter
-status: testing
+status: active
 description: |
   BBG Originals produces investigative journalism and in-depth reporting on global affairs,
   with focus on underreported regions, conflict zones, human rights issues, and geopolitical

@@ -2,7 +2,7 @@
 id: twitter-coastguard-ph
 name: Philippine Coast Guard - Maritime Law Enforcement and Territorial Defense
 type: twitter
-status: testing
+status: active
 description: |
   Official Twitter account of the Philippine Coast Guard providing real-time reporting on
   maritime incidents in South China Sea/West Philippine Sea, Chinese Coast Guard confrontations,

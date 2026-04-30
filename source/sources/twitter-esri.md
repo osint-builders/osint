@@ -2,7 +2,7 @@
 id: twitter-esri
 name: Esri - GIS Technology & Geospatial Intelligence Platform
 type: twitter
-status: testing
+status: active
 description: |
   Official Esri corporate account covering GIS technology, ArcGIS platform updates,
   and geospatial intelligence applications across defense, intelligence, public safety,

@@ -2,7 +2,7 @@
 id: twitter-tanker-trackers
 name: TankerTrackers - Oil & Gas Tanker Movement Tracking
 type: twitter
-status: testing
+status: active
 description: |
   TankerTrackers monitors global oil and gas tanker movements, providing
   real-time intelligence on energy shipments, strategic reserves, and
