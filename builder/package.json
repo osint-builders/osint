@@ -1,0 +1,21 @@
+{
+  "name": "osint-builder",
+  "version": "1.0.0",
+  "description": "Triggers Warp cloud agents for OSINT collection via oz-agent-sdk",
+  "type": "commonjs",
+  "private": true,
+  "scripts": {
+    "collect": "tsx index.ts"
+  },
+  "dependencies": {
+    "oz-agent-sdk": "^1.3.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.8.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
