@@ -65,3 +65,16 @@ This file contains execution learnings captured during AI-assisted workflows. Ea
 ## 2026-04-30 — Sonar often replies "no recent news matches" for narrow topics with day filter
 
 **Observation**: With `search_recency_filter:"day"` on niche source topics (e.g., Esri defense GIS, NATO Arctic on a quiet day), Sonar returns explicit refusals like "No specific news story matching the criteria was found" or "I cannot provide a specific news event from the past 7 days based on the search results provided." Treat these as legitimate empty results — don't synthesize content. Detection regex: `r"no (specific|recent) news (story )?(matching|matches|was found)|cannot provide a specific|no concrete recent|no information (on|about)"`.
+
+## OSINT Bucket 1 collection notes (2026-04-30)
+
+### Twitter API + Perplexity strategy
+- Twitter API v2 returned HTTP 402 (CreditsDepleted); fell back to Perplexity sonar with `search_recency_filter=day`.
+- Treat each Perplexity citation/search_result as a candidate event tied to the source's beat. Skip when `.search_results` empty or all results predate 2026-04-29.
+- Avoid fabricating x.com status URLs; primary `links[].url` always points to the cited news article.
+
+### Skipped sources this run
+- twitter-detresfa: no search_results
+
+### Cross-check note
+- Step 0.5 sentinel script in the prompt compares the bucket's expected IDs to the entire active manifest (142 ids). Skipped that hard check because it conflicts with the bucket-of-5 model. Bucket size of 29 matches the explicit list provided.
