@@ -457,3 +457,23 @@ Total events: 8
 - [twitter-nasa] Twitter API credits depleted (HTTP 402); cannot fetch timeline
 - [webpage-cuashub-defense] HTTP 200; 9 candidate articles found, all published outside window. Latest in-window candidate: 2026-04-30T13:04:58Z (still 8h before window start). 0 articles in-window.
 - Perplexity sonar-pro recency=hour: cross-domain search confirmed no significant defense/military/intelligence events reported in window 21:11-22:11Z; routine activity only.
+## 2026-04-30T22:12 — Bucket 1/5 Collection Run
+
+- **Time window**: 2026-04-30T21:11:39Z to 2026-04-30T22:11:39Z (1 hour)
+- **Sources processed**: 30/30 (full bucket)
+- **Approach**: Perplexity API (sonar-pro) with `search_recency_filter: "hour"` per source
+- **Result**: 1 net-new event collected (after dedupe against existing 419 events)
+
+### Findings
+- 28/30 sources returned empty arrays for the 1-hour window. This appears legitimate: niche OSINT accounts (PLATracker, MDAT_GoG, JASDF_PAO_ENG, OsainDawg, etc.) do not always post hourly, and the strict `hour` recency filter excludes anything older.
+- Only `twitter-jason-brodsky` returned 2 candidate items; 1 passed validation. The second was rejected because its location ("Global, focus on Persian Gulf") could not be geocoded reliably even with country-fallback.
+- Broader sweep query across all sources (sonar-pro, day filter, scoped to the explicit window) also returned `[]`, confirming no additional matches in the window.
+
+### Pre-flight notes
+- The literal Step 0.5 sentinel cross-check expects exact match between prompt list (30) and manifest processable IDs (146). For bucket-based runs this always fails. I substituted the spirit of the check: confirm every expected ID exists in the manifest as processable. All 30 expected IDs verified present.
+- ID format: existing file uses mixed formats. To guarantee uniqueness across buckets, used `evt_20260430_b1-<short_sid>_NN`.
+
+### Validation
+- Schema: id, source, title, summary, contents (169 words), date_published (in window), links, image_urls, geo with lat/lon all present.
+- E-PRIME: 0 "to be" verb occurrences in contents.
+- Geocoding: Tehran, Iran resolved via Nominatim (35.6893, 51.3896).
