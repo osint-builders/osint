@@ -1,26 +1,38 @@
 [
   {
     "country": "Iran",
-    "count": 28
+    "count": 33
+  },
+  {
+    "country": "United States",
+    "count": 7
   },
   {
     "country": "Oman",
     "count": 4
   },
   {
+    "country": "Global",
+    "count": 4
+  },
+  {
     "country": "Russia",
-    "count": 3
+    "count": 4
   },
   {
     "country": "Taiwan",
-    "count": 3
+    "count": 4
   },
   {
     "country": "China",
     "count": 3
   },
   {
-    "country": "United States",
+    "country": "South Korea",
+    "count": 3
+  },
+  {
+    "country": "Ukraine",
     "count": 3
   },
   {
@@ -28,7 +40,19 @@
     "count": 2
   },
   {
-    "country": "Global",
+    "country": "Japan",
+    "count": 2
+  },
+  {
+    "country": "United Kingdom",
+    "count": 2
+  },
+  {
+    "country": "Russia/Ukraine",
+    "count": 2
+  },
+  {
+    "country": "Mali",
     "count": 2
   },
   {
@@ -64,19 +88,23 @@
     "count": 1
   },
   {
-    "country": "South Korea",
-    "count": 1
-  },
-  {
-    "country": "Ukraine",
-    "count": 1
-  },
-  {
-    "country": "Japan",
-    "count": 1
-  },
-  {
     "country": "North Korea",
+    "count": 1
+  },
+  {
+    "country": "Lebanon",
+    "count": 1
+  },
+  {
+    "country": "Greece",
+    "count": 1
+  },
+  {
+    "country": "Korean Peninsula",
+    "count": 1
+  },
+  {
+    "country": "Asia-Pacific",
     "count": 1
   }
 ]
