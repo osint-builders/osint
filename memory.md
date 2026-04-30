@@ -24,19 +24,13 @@ This file contains execution learnings captured during AI-assisted workflows. Ea
 
 ## 2026-04-30 — Windward AI blog index returns near-empty body without JS rendering
 
-**Issue**: `https://windward.ai/blog/` renders the article listing client-side via React/Next.js. The bare HTML fetch returns only the page chrome (title, footer, subscribe form) with no article cards inside `/html/body/div[3]`. With no `agent-browser` available in the sandbox, headless rendering was not an option.
+**Issue**: `https://windward.ai/blog/` renders the article listing client-side via React/Next.js. A bare HTTP fetch returns only page chrome — no article cards inside `/html/body/div[3]`. Headless rendering via `agent-browser` is required.
 
-**Workaround**: Used Exa search (`site:windward.ai/blog ...`) to discover individual article URLs and `fetch_web_pages` to retrieve fully-rendered article bodies. Exa's snapshot service appears to render the JS pages, so the article body, author, and publish date come through cleanly without needing Playwright/Puppeteer locally.
+**Primary approach**: Use `agent-browser open https://windward.ai/blog/` + `wait --load networkidle`, then `eval "return [...document.querySelectorAll('a[href*=\"/blog/\"]')].map(a => a.href)"` to extract article URLs. Navigate to each and extract `h1`, `time[datetime]`, and article body.
 
-**Lesson**: For SPA-rendered blogs (Windward, similar Next.js sites), prefer Exa search + page-fetch combo over the raw blog index when no headless browser is present. Confirm article URLs match the `/blog/{slug}/` include pattern before extracting.
+**Fallback** (if `agent-browser` unavailable): Exa search (`site:windward.ai/blog ...`) + `fetch_web_pages` — Exa's snapshot service renders JS pages, so article body, author, and publish date come through cleanly.
 
-## 2026-04-30 — Twitter timeline collection without API access
-
-**Issue**: Sandbox lacked `curl`, `wget`, `python`, `node`, and `agent-browser`. Twitter API requires `TWITTER_BEARER_TOKEN`, which was not set. Public Nitter instances did not respond from this environment.
-
-**Workaround**: Used Exa search + `fetch_web_pages` to collect verified TankerTrackers tweet content via mainstream outlets (Bloomberg, gCaptain, Iran International, Caliber.Az, Marine Insight, Voice of Emirates, WANA, Pars Today). Each event preserves the original tweet substance, posting timestamp, and a link back to `https://twitter.com/TankerTrackers` plus the citing outlet(s).
-
-**Lesson**: When `TWITTER_BEARER_TOKEN` is missing, prefer authoritative outlets that quote and embed the original tweet (often with the tweet's exact text + permalink). They generally provide enough context to reconstruct a high-confidence World Event Entity even without direct API access.
+**Lesson**: Always confirm discovered URLs match the `/blog/{slug}/` include pattern before extracting. Exclude `/blog/` root and tag/category URLs.
 
 ## 2026-04-30 — E-PRIME validator word-boundary behaviour
 
