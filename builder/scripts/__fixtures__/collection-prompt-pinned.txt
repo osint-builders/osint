@@ -511,14 +511,16 @@ fi
 echo "Rebuilding data indexes..."
 node data/scripts/rebuild-indexes.js
 
-# Generate statistics and update manifest
-echo "Updating manifest statistics..."
+# Generate statistics and update data/stats.json
+echo "Updating data/stats.json..."
 STATS_JSON=$(node data/scripts/stats-report.js)
 TOTAL_EVENTS=$(echo "$STATS_JSON" | jq -r '.total_events')
 OLDEST_DATE=$(jq -s 'map(.date_published) | sort | .[0] // null' data/events/*/*.jsonl 2>/dev/null || echo "null")
 NEWEST_DATE=$(jq -s 'map(.date_published) | sort | .[-1] // null' data/events/*/*.jsonl 2>/dev/null || echo "null")
 
-# Update manifest.json with fresh statistics
+# data/stats.json schema (PR-F):
+#   { last_updated, data_range:{oldest_date,newest_date},
+#     statistics:{total_events, events_by_month, events_by_source, media_files} }
 jq --arg updated "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
    --arg oldest "$OLDEST_DATE" \
    --arg newest "$NEWEST_DATE" \
@@ -533,10 +535,10 @@ jq --arg updated "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
     .statistics.events_by_month = $by_month |
     .statistics.events_by_source = $by_source |
     .statistics.media_files = $media' \
-   data/manifest.json > data/manifest.json.tmp && mv data/manifest.json.tmp data/manifest.json
+   data/stats.json > data/stats.json.tmp && mv data/stats.json.tmp data/stats.json
 
-# Commit index and manifest updates
-git add data/indexes/*.json data/manifest.json
+# Commit index and stats updates
+git add data/indexes/*.json data/stats.json
 if ! git diff --cached --quiet; then
   git commit -m "Update data indexes and statistics
 

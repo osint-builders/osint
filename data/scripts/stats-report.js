@@ -42,11 +42,13 @@ async function readAllEvents() {
 }
 
 function calculateStats(events) {
-  // By source
+  // By source. Events store `source: {name: "...", provider: "..."}` per
+  // data/SCHEMA.md, so key off `name`. Earlier versions used `evt.source?.id`
+  // which silently mapped every event to "unknown".
   const bySource = {};
   events.forEach(evt => {
-    const sourceId = evt.source?.id || 'unknown';
-    bySource[sourceId] = (bySource[sourceId] || 0) + 1;
+    const sourceName = evt.source?.name || 'unknown';
+    bySource[sourceName] = (bySource[sourceName] || 0) + 1;
   });
 
   // By topic (top 20)
@@ -172,10 +174,12 @@ function formatMarkdown(stats) {
 }
 
 async function main() {
-  console.log('=== Generating Statistics Report ===\n');
+  // Banners go to stderr so callers like `STATS_JSON=$(node stats-report.js)`
+  // can capture clean JSON on stdout.
+  console.error('=== Generating Statistics Report ===\n');
 
   const events = await readAllEvents();
-  console.log(`Loaded ${events.length} events\n`);
+  console.error(`Loaded ${events.length} events\n`);
 
   const stats = calculateStats(events);
 
