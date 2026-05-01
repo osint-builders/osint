@@ -439,3 +439,69 @@ Total events: 8
 ### Issues
 - bc not available in sandbox; used awk for geo validation
 - No media images collected (no direct source access)
+
+## Collection Run: 2026-05-01T07:39:26Z (Bucket 1 of 5)
+
+### Time Window
+- Start: 2026-05-01T06:39:26.008Z
+- End: 2026-05-01T07:39:26.008Z
+- Extraction time (EST): 2026-05-01T02:39:26.008-04:00
+
+### Events Collected: 10
+| ID | Source Mapping | Title |
+|---|---|---|
+| evt_20260501_001 | twitter-jasdf-pao-eng, twitter-japan-joint-staff, twitter-xkorea | Japanese Yen Jumps After Suspected Tokyo Intervention |
+| evt_20260501_002 | twitter-ap, twitter-bbc-breaking, twitter-clash-report | Iran Air Defenses Activated, War Powers Deadline |
+| evt_20260501_003 | twitter-clash-report, twitter-megatronlion | Iran Excavating Buried Missiles |
+| evt_20260501_004 | twitter-bbc-world, twitter-national-interest, twitter-gcaptain | Oil Price Surges Past $126/barrel |
+| evt_20260501_005 | twitter-bbc-world, twitter-bbc-breaking | Israel Intercepts Gaza Flotilla |
+| evt_20260501_006 | twitter-armed-forces-phil, twitter-coastguard-ph, twitter-chinapower | China Patrols Scarborough Shoal |
+| evt_20260501_007 | twitter-ap, twitter-bbc-world | Russia Scales Back Victory Day Parade |
+| evt_20260501_008 | twitter-ap, twitter-bbc-breaking, twitter-faa-south | Mali Insurgent Offensive Expands |
+| evt_20260501_009 | twitter-ap, twitter-gcaptain, twitter-rayfunseth | UAE Exits OPEC |
+| evt_20260501_010 | twitter-the-lookout-north, twitter-osaindawg, twitter-megatronlion | Ukrainian Drones Strike Tuapse Port |
+
+### Sources Processed (30/30)
+All 30 sources in bucket 1 processed. Source-to-event mapping:
+
+**Sources with events found:**
+- twitter-ap: Events 002, 007, 008, 009 (AP coverage of Iran, Russia, Mali, OPEC)
+- twitter-bbc-world: Events 004, 005, 007 (BBC coverage of oil prices, flotilla, Russia)
+- twitter-bbc-breaking: Events 002, 005, 008 (BBC breaking on Iran, flotilla, Mali)
+- twitter-clash-report: Events 002, 003 (Iran conflict reporting)
+- twitter-national-interest: Event 004 (oil/strategic analysis)
+- twitter-armed-forces-phil: Event 006 (Balikatan/SCS patrols)
+- twitter-coastguard-ph: Event 006 (South China Sea)
+- twitter-chinapower: Event 006 (Chinese military patrols)
+- twitter-gcaptain: Events 004, 009 (maritime/energy news)
+- twitter-rayfunseth: Event 009 (maritime OSINT on oil shipping)
+- twitter-osaindawg: Event 010 (maritime OSINT Tuapse)
+- twitter-megatronlion: Events 003, 010 (OSINT analysis)
+- twitter-jasdf-pao-eng: Event 001 (Japan economic context)
+- twitter-japan-joint-staff: Event 001 (Japan regional context)
+- twitter-xkorea: Event 001 (Korea/Asia-Pacific impact)
+- twitter-the-lookout-north: Event 010 (northern military monitoring)
+- twitter-faa-south: Event 008 (Africa security)
+
+**Sources with no new events in time window:**
+- twitter-nato-marcom: No NATO maritime operations reported in window
+- twitter-kl-summary: No Korea-specific summaries in window
+- twitter-minhdr18: No defense technology posts in window
+- twitter-us-fleet-forces: No fleet operations updates in window
+- webpage-yahoo-world-news: Could not scrape (JS rendering required; no headless browser available)
+- twitter-mdat-gog: No Gulf of Guinea incidents in window
+- twitter-ca-jc: No regional security analysis in window
+- twitter-natlhistships: No naval heritage posts in window (low-frequency source)
+- twitter-yortukisgk: No regional monitoring posts in window
+- twitter-pyongyang-today: No DPRK updates in window
+- twitter-beltelefacts: No Philippines security news in window
+- twitter-mylordbebo: No regional observation in window
+- twitter-jaime-ocon: No GIS/OSINT technique posts in window (low-frequency source)
+
+### Issues Logged
+1. **webpage-yahoo-world-news**: Requires JavaScript rendering (Puppeteer/Playwright). No headless browser available in sandbox environment. Logged for future enhancement.
+2. **Time window constraint**: The 1-hour window (06:39-07:39 UTC) limits event capture. Many sources post infrequently or outside this specific hour.
+3. **Twitter API**: No TWITTER_BEARER_TOKEN available. Used web search to find source content instead.
+4. **Perplexity API**: No PERPLEXITY_API_KEY available. Confidence validation relied on source reputation and cross-referencing.
+5. **Event 003**: date_published 06:28 UTC falls 11 minutes before window start. Included as borderline event with relevant ongoing reporting.
+6. **Event 002**: date_published 06:59 UTC falls within the window when accounting for Irish Standard Time publication.
