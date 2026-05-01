@@ -124,3 +124,34 @@
 - Events collected: 1
 - Time window: 2026-05-01T18:40:40.871Z to 2026-05-01T19:40:40.871Z
 - Method: Perplexity research + web scraping (Twitter API credits depleted)
+
+## Bucket 1 run @ 2026-05-01T19:50:05.307Z
+Sources processed: 30
+Sources with tweets in window: 1 (twitter-bbc-world)
+Events created: 3 (evt_20260501_269 through evt_20260501_271)
+Time window: 2026-05-01T18:50:05.307Z to 2026-05-01T19:50:05.307Z
+
+### Sources with scraped data but no in-window tweets:
+- twitter-clash-report: 4 tweets, all before window (latest Feb 28 2026)
+- twitter-nsa-cyber: 3 tweets, all historical (2020-2021)
+- twitter-nasa: 2 tweets at 18:19Z and 17:13Z (before window)
+- twitter-us-fleet-forces: 3 tweets, latest at 16:08Z (before window)
+- twitter-mda-space: 3 tweets, all historical (2018-2022)
+- twitter-seawatch-intl: 3 tweets, all historical (2019)
+- twitter-kylebass: 2 tweets, latest Mar 29 2026
+- twitter-nsa-gov: 4 tweets, latest at 11:13Z (before window)
+- twitter-borrowed7time: 2 tweets, latest Apr 26 2026
+- twitter-korea-econ-inst: 3 tweets, latest at 17:45Z (before window)
+- twitter-bbgoriginals: 3 tweets, all historical (2018-2026)
+- twitter-sim-nasr: 3 tweets, all historical (2016-2024)
+
+### Sources with no tweets visible on profile:
+- twitter-sanctions-watch, twitter-ausnav, twitter-armed-forces-phil
+- twitter-joseph-dempsey, twitter-the-pacific-brief, twitter-mdat-gog
+- twitter-yonkosmc, twitter-megatronlion, twitter-etienne-lh
+- twitter-chadobcnews, twitter-schizoint-rel, twitter-nguyenthiho88
+- twitter-korea-times-alt, twitter-kang-daily, twitter-natlhistships
+- twitter-scpandura, twitter-raytoribo
+
+Note: Twitter API credits depleted. Used agent-browser to scrape X/Twitter profiles.
+Many accounts may require authentication or have restricted visibility.
