@@ -24,6 +24,19 @@ You MUST process every source. The orchestrator already pre-filtered sources
 from `source/manifest.json`; the section below is the authoritative worklist.
 If you skip a source, the run is considered failed.
 
+## Prior Learnings (from previous runs)
+
+The following findings from earlier runs apply to this run. Treat them as
+authoritative unless they contradict the source files in this prompt. They
+have been pre-filtered by the orchestrator (expired entries dropped, capped
+at 100 entries / 30 KB).
+
+_No prior learnings recorded yet._
+
+If any of these are stale, contradicted by what you observe this run, or
+have been resolved upstream, do NOT silently ignore them — write a new
+LEARNINGS entry that supersedes the stale one (see Step 7).
+
 ## Step 0: Clone and Enter the Repository
 
 Before doing anything else, ensure you are working inside the correct repository:
@@ -152,7 +165,7 @@ For each source listed above:
      - **Add time range parameters**: Include date/time filters in API queries where supported
    - **RSS**: Fetch with `curl` and parse XML
      - **Filter by pubDate**: Parse RSS pubDate fields and filter to time window
-   - **Time window validation**: After collecting raw data, verify all items have timestamps within `$TIME_WINDOW_START` to `$TIME_WINDOW_END`. Reject and log any items outside the window to memory.md.
+   - **Time window validation**: After collecting raw data, verify all items have timestamps within `$TIME_WINDOW_START` to `$TIME_WINDOW_END`. Reject and log any items outside the window to `$WORK_DIR/{source_id}/new-memory.md` (consolidated into `data/run-logs/` in Step 7a; never goes into `LEARNINGS.md`).
 
 3. **Extract World Event Entities** from raw data following the schema in `data/SCHEMA.md`
 
@@ -411,16 +424,63 @@ find "$WORK_DIR/media" -type f \( -name "*.mp4" -o -name "*.webm" -o -name "*.mo
   -exec mv {} "data/media/$YEAR_MONTH/videos/$DATE/" \; 2>/dev/null || true
 ```
 
-### Step 7: Update memory.md
+### Step 7: Write the run log + maybe a learning
 
-Append any `new-memory.md` files from the work directory to `memory.md`. Trim `memory.md` to last 500 lines if it exceeds that.
+You write to **two** files at the end of the run. Don't conflate them.
+
+#### 7a. `data/run-logs/2026-05/2026-05-01.log` — the firehose
+
+Append per-source operational telemetry: `## Processing <id>` blocks,
+`Created event: …` lines, `[skip] dup url`, `[snap]`, parse counts, time-window
+outcomes. The next run does **not** read this file.
+
+```bash
+mkdir -p "data/run-logs/$YEAR_MONTH"
+RUN_LOG="data/run-logs/$YEAR_MONTH/$DATE.log"
+{
+  echo ""
+  echo "## Bucket 2 run @ 2026-05-01T15:34:55.000Z"
+  cat "$WORK_DIR"/*/new-memory.md 2>/dev/null || true
+} >> "$RUN_LOG"
+```
+
+#### 7b. `LEARNINGS.md` — cross-run knowledge, **only when justified**
+
+Append a new entry to `LEARNINGS.md` (at the repo root) **only** when at
+least one of these triggers:
+
+1. A source's selectors / handle / auth changed and you found a working approach.
+2. A non-obvious shortcut that saved time or API calls.
+3. A repeated failure pattern across ≥3 runs with a known mitigation.
+4. A schema or validation gap that bit you, plus the workaround.
+5. A cost or budget signal worth surfacing to the next run.
+
+Do **not** write per-source telemetry, dedup skips, or "no events parsed"
+into LEARNINGS.md. Those go in 7a.
+
+Required entry format (append to the end of the file, after the
+`<!-- entries below this line; newest first -->` marker):
+
+```markdown
+## YYYY-MM-DD HH:MMZ — <one-line topic>
+**Trigger:** <what surfaced this — failure, repeated pattern, optimization spotted>
+**Finding:** <what is true, in 1-3 sentences>
+**Action for next run:** <concrete instruction the next agent should follow>
+**Expires:** YYYY-MM-DD | permanent
+```
+
+The orchestrator prunes expired entries before the next run. Do not modify
+or delete existing entries; only append new ones (use entries to *supersede*
+older ones rather than editing them).
+
+If nothing this run met the criteria, leave LEARNINGS.md untouched.
 
 ### Step 8: Commit and Push
 
 ```bash
 git config user.name "OSINT Collector Bot"
 git config user.email "osint-bot@github-actions"
-git add "data/events/$YEAR_MONTH/$DATE.jsonl" "data/media/$YEAR_MONTH/" "memory.md" 2>/dev/null || true
+git add "data/events/$YEAR_MONTH/$DATE.jsonl" "data/media/$YEAR_MONTH/" "data/run-logs/$YEAR_MONTH/" "LEARNINGS.md" 2>/dev/null || true
 
 if ! git diff --cached --quiet; then
   EVENT_COUNT=$(wc -l < "data/events/$YEAR_MONTH/$DATE.jsonl")
@@ -519,7 +579,7 @@ rm -rf "$WORK_DIR"
 
 ## Error Handling
 
-- **Source fails**: Log to memory.md, continue to next source (do not abort)
+- **Source fails**: Log to `$WORK_DIR/{source_id}/new-memory.md` (rolls up to `data/run-logs/` in Step 7a), continue to next source (do not abort)
 - **Validation fails**: Stop and exit with error (do not commit invalid data)
 - **Git push fails**: Retry once with pull/rebase
 - **Zero events**: Commit is skipped; exit 0 (no new data is normal)

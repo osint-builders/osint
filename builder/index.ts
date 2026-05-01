@@ -135,6 +135,106 @@ function loadPromptTemplate(): string {
   return cachedTemplate;
 }
 
+// LEARNINGS.md cap: 100 entries OR 30 KB, whichever first.
+const LEARNINGS_MAX_ENTRIES = 100;
+const LEARNINGS_MAX_BYTES = 30 * 1024;
+
+interface LearningEntry {
+  raw: string;        // full markdown of the entry, including its `## ...` header
+  date: string | null; // YYYY-MM-DD parsed from the header, for ordering
+  expires: string | null; // YYYY-MM-DD or "permanent"
+}
+
+/**
+ * Parses LEARNINGS.md into individual entries, drops expired ones, and caps
+ * the result at LEARNINGS_MAX_ENTRIES / LEARNINGS_MAX_BYTES (oldest
+ * non-permanent entries fall off first).
+ *
+ * Returns the markdown to inject into the prompt as `${learnings}`. If the
+ * file is missing or has no entries, returns a sentinel string so the agent
+ * can recognize an empty knowledge base.
+ */
+function loadLearnings(repoRoot: string): string {
+  const learningsPath = path.join(repoRoot, "LEARNINGS.md");
+  if (!fs.existsSync(learningsPath)) {
+    return "_No prior learnings recorded yet._";
+  }
+  const text = fs.readFileSync(learningsPath, "utf-8");
+
+  // Split on `## ` headers that look like dated entries. The file's own
+  // doc headers (`## Rules…`, `## Required entry format`, `## Maintenance`)
+  // are above the `<!-- entries below this line; newest first -->` marker.
+  const marker = "<!-- entries below this line; newest first -->";
+  const idx = text.indexOf(marker);
+  const body = idx >= 0 ? text.slice(idx + marker.length) : text;
+
+  const entryRe = /^## (\d{4}-\d{2}-\d{2})[^\n]*$/gm;
+  const matches: { headerStart: number }[] = [];
+  let m: RegExpExecArray | null;
+  while ((m = entryRe.exec(body)) !== null) {
+    matches.push({ headerStart: m.index });
+  }
+  const entries: LearningEntry[] = [];
+  for (let i = 0; i < matches.length; i++) {
+    const start = matches[i].headerStart;
+    const end = i + 1 < matches.length ? matches[i + 1].headerStart : body.length;
+    const raw = body.slice(start, end).trim();
+    const dateMatch = raw.match(/^## (\d{4}-\d{2}-\d{2})/);
+    const expiresMatch = raw.match(/\*\*Expires:\*\*\s*([^\n]+)/i);
+    const expiresRaw = expiresMatch ? expiresMatch[1].trim() : null;
+    entries.push({
+      raw,
+      date: dateMatch ? dateMatch[1] : null,
+      expires: expiresRaw,
+    });
+  }
+
+  if (entries.length === 0) {
+    return "_No prior learnings recorded yet._";
+  }
+
+  // Drop expired entries.
+  const todayIso = new Date().toISOString().slice(0, 10);
+  const live = entries.filter((e) => {
+    if (!e.expires) return true; // missing expiry → keep, treated as permanent
+    if (/^permanent$/i.test(e.expires)) return true;
+    // Anything other than YYYY-MM-DD → keep (don't silently drop weird input).
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(e.expires)) return true;
+    return e.expires >= todayIso;
+  });
+
+  // Sort newest-first by date for the agent's reading order. Permanent /
+  // undated entries sort to the end.
+  live.sort((a, b) => {
+    if (a.date && b.date) return b.date.localeCompare(a.date);
+    if (a.date) return -1;
+    if (b.date) return 1;
+    return 0;
+  });
+
+  // Cap: keep all permanent entries, then fill remaining quota with newest
+  // non-permanent until we hit either limit.
+  const isPermanent = (e: LearningEntry) =>
+    !e.expires || /^permanent$/i.test(e.expires);
+  const permanent = live.filter(isPermanent);
+  const dated = live.filter((e) => !isPermanent(e));
+
+  const kept: LearningEntry[] = [...permanent];
+  let bytes = kept.reduce((n, e) => n + e.raw.length + 2, 0);
+  for (const e of dated) {
+    if (kept.length >= LEARNINGS_MAX_ENTRIES) break;
+    if (bytes + e.raw.length + 2 > LEARNINGS_MAX_BYTES) break;
+    kept.push(e);
+    bytes += e.raw.length + 2;
+  }
+
+  // Re-sort kept entries newest-first for output, with permanent at top.
+  const out = [...permanent, ...dated.filter((e) => kept.includes(e))]
+    .map((e) => e.raw)
+    .join("\n\n");
+  return out || "_No prior learnings recorded yet._";
+}
+
 /**
  * Substitutes `${KEY}` placeholders in the template with values from `vars`.
  * Throws on unknown placeholder OR unfilled placeholder, so drift between
@@ -207,6 +307,7 @@ function buildCollectionPrompt(
     expectedIdsList,
     expectedIdsBash,
     sourceBlocks,
+    learnings: loadLearnings(repoRoot),
   });
 }
 
