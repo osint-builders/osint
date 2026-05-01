@@ -279,3 +279,16 @@ Web search returned no recent posts from @yortukisgk within the collection windo
 Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
 No events found within time window 21:36-22:36 UTC for this source.
 Breaking Defense Global section had no articles published within the 1-hour window.
+
+## Bucket 3 run @ 2026-05-01T22:36:33.828Z
+
+### Execution Summary
+- Bucket: 3 of 5
+- Sources processed: 29/29
+- Events created: 31 (11 new after dedup with existing data)
+- Time window: 2026-05-01T21:36:33.828Z to 2026-05-01T22:36:33.828Z
+- Collection: exa_web_search primary, Perplexity API secondary
+- Twitter API: Credits depleted (confirmed)
+
+### Key Events
+Pentagon troop withdrawal from Germany, Trump rejects Iran proposal, Wang Yi-Rubio Taiwan call, OFAC Hormuz advisory, Israeli strikes Lebanon, Hezbollah drone attack Israel, NCIS Iranian hackers, IDF Iron Beam disclosure, DPRK UN briefing, Yoon appeal, OSC satellite evidence
