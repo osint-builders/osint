@@ -35,3 +35,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 ---
 
 <!-- entries below this line; newest first -->
+
+## 2026-05-01 19:41Z — Twitter API credits depleted mid-run
+**Trigger:** Twitter API returned HTTP 402 (CreditsDepleted) for all search/recent queries during bucket 4 processing.
+**Finding:** The Twitter API v2 account (ID 1420048076681715717) exhausted its credit allocation, preventing direct tweet collection from all 26 Twitter sources in this bucket. Perplexity sonar-pro API with search_recency_filter served as an effective fallback for event discovery, while CNN.com homepage scraping provided real-time headline verification.
+**Action for next run:** Check Twitter API credit balance before dispatching buckets. If credits depleted, prioritize agent-browser scraping of X.com (requires login) or nitter instances, and use Perplexity API as primary event discovery mechanism. Consider splitting Twitter API usage across buckets to avoid exhaustion.
+**Expires:** 2026-06-01
