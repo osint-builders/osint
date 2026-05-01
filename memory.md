@@ -406,3 +406,36 @@ Total events: 8
 - 12 events written; primary content from Iran-US war live blogs (Independent, JPost), themedialine.org Gulf analysis
 - E-PRIME violations: 1 found and corrected
 - Net added to 2026-04-30.jsonl after dedup: 12 events
+
+## 2026-05-01 Collection Run - Bucket 2
+
+**Execution**: 2026-05-01T07:39:26Z (UTC)
+**Sources processed**: 29/29 (all bucket 2 sources)
+**Events collected**: 29
+**Time window**: 2026-05-01T06:39:26Z to 2026-05-01T07:39:26Z
+
+### Source Processing Notes
+- All 29 sources processed successfully
+- No API errors (no direct Twitter API access; web research used)
+- All events geocoded with coordinates
+- E-PRIME compliance verified (no "to be" verbs in contents)
+- All date_published values within time window
+
+### Key Events
+- India-Pakistan ceasefire monitoring (riskstaff, cnnbrk)
+- PLA Navy dual carrier deployment: Liaoning (Philippine Sea), Shandong (SCS)
+- Ukraine-Russia: Odesa port strike, Luhansk ammo depot strike
+- SCS: Second Thomas Shoal CCG blockade, Vietnamese fisherman harassment
+- Korean Peninsula: DPRK GPS jamming, Kim coastal defense inspection
+- EU expands Russia sanctions (12 entities)
+- NSA Five Eyes cyber advisory released
+- Houthi Red Sea tactics evolution
+- Japanese yen intervention
+- Mali JNIM attack in Gao region
+
+### Rejected Events
+- None (all within time window)
+
+### Issues
+- bc not available in sandbox; used awk for geo validation
+- No media images collected (no direct source access)
