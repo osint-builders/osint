@@ -2,20 +2,20 @@ name: Hourly OSINT Collection
 
 on:
   schedule:
-    # Runs every hour at :00 UTC
-    # Examples (converting to EST):
-    #   UTC 14:00 = EST 10:00 (EDT) / 09:00 (standard time)
-    #   UTC 18:00 = EST 14:00 (EDT) / 13:00 (standard time)
-    # Data extraction targets 1 hour before execution (handled in builder/index.ts)
+    # :00 UTC every hour. The orchestrator (builder/index.ts) targets a
+    # 1-hour lookback window relative to the run's actual start time.
     - cron: '0 * * * *'
   workflow_dispatch:      # Manual trigger for testing
   push:
     branches:
       - main
     paths-ignore:
-      - 'data/**'         # Don't trigger on data changes
-      - 'memory.md'       # Don't trigger on memory updates
-      - '**/*.md'         # Don't trigger on documentation changes
+      # The cloud agent's own commits shouldn't re-trigger the workflow.
+      - 'data/**'
+      - 'docs/search-index/**'
+      - 'LEARNINGS.md'
+      # Documentation changes don't affect runtime behavior.
+      - '**/*.md'
 
 permissions:
   contents: read
@@ -29,9 +29,7 @@ env:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    # Increased timeout to accommodate 5 parallel agents processing 142 sources
     timeout-minutes: 60
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -45,12 +43,6 @@ jobs:
 
       - name: Install builder dependencies
         run: npm ci
-        working-directory: builder
-
-      - name: Debug environment
-        run: |
-          echo "PARALLEL_AGENT_COUNT from vars: ${{ vars.PARALLEL_AGENT_COUNT }}"
-          echo "PARALLEL_AGENT_COUNT env var: ${PARALLEL_AGENT_COUNT}"
         working-directory: builder
 
       - name: Run OSINT collection
@@ -93,9 +85,12 @@ jobs:
           git config user.name "OSINT Embeddings Bot"
           git config user.email "embeddings-bot@github-actions"
           git add docs/search-index/
+          # [skip ci] prevents this push from re-triggering the workflow
+          # (paths-ignore on docs/search-index/** is the belt; this is the
+          # suspenders).
           git diff-index --quiet HEAD || git commit -m "Update search index with new embeddings
 
           Generated embeddings for events collected at $(date -u +%Y-%m-%dT%H:%M:%SZ)
 
-          Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
+          [skip ci]"
           git push
