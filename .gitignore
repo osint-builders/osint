@@ -3,6 +3,7 @@ node_modules/
 npm-debug.log
 
 # Bin folder dependencies (keep structure, ignore node_modules)
+# NOTE: bin/ is being phased out — CLIs will install into the Warp env image.
 bin/*/node_modules/
 
 # Python
@@ -17,6 +18,7 @@ dist/
 downloads/
 eggs/
 .eggs/
+lib/
 lib64/
 parts/
 sdist/
@@ -63,3 +65,7 @@ docs/search-index/*.bin
 
 # Verifier transient output
 builder/scripts/__fixtures__/*.actual
+
+# Hermes Agent
+.hermes/cache/
+.hermes/.session*
