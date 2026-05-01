@@ -2,7 +2,7 @@
 
 **Schema Version**: 2020-12 (JSON Schema)  
 **Entity Type**: world-event  
-**Last Updated**: 2026-04-29
+**Last Updated**: 2026-05-01
 
 ## Overview
 
@@ -16,17 +16,19 @@ The World Event Entity is a structured data model for representing real-world ev
 | `source` | object | required: `name` | Event source/provider information |
 | `title` | string | minLength: 3 | Event headline/summary title |
 | `summary` | string | minLength: 10 | Brief narrative summary of the event |
-| `contents` | string | minLength: 20 | Comprehensive markdown-formatted event description |
+| `contents` | string | minLength: 20, **E-PRIME** (no forms of "to be") | Comprehensive markdown-formatted event description |
 | `date_published` | ISO 8601 | format: date-time | When the event information was published/reported |
 | `links` | array | type: object[] | Source URLs with optional labels |
 | `image_urls` | array | type: string[] | Image/video URLs or relative paths |
+| `geo` | object | required: `lat` (number), `lon` (number); also `country`, `region`, `city` | Geographic information about the event |
+
+> **Validator**: every constraint above is enforced by `data/scripts/validate-events.js --strict`. The runtime collection prompt invokes that script at Step 4 — keep both sides in lockstep by editing the validator and treating SCHEMA.md as documentation of what the validator does.
 
 ## Optional Fields
 
 | Field | Type | Constraints | Description |
 |-------|------|-------------|-------------|
 | `date_event` | ISO 8601 or null | format: date-time | When the event actually occurred |
-| `geo` | object | properties: lat, lon, country, region, city | Geographic information about the event |
 | `topics` | array | type: string[] | Event topics/keywords for categorization |
 | `confidence` | number | min: 0, max: 1 | Data confidence/quality score (0.0-1.0) |
 | `ingested_at` | ISO 8601 | format: date-time | When the event was ingested into the system |

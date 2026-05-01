@@ -2,238 +2,289 @@
 
 /**
  * validate-events.js
- * Validate JSONL files against World Event Entity schema
+ *
+ * Validates JSONL files against the World Event Entity schema.
+ *
+ * This is the canonical validation logic. The runtime collection prompt
+ * (builder/prompts/collection-prompt.md) invokes this script in strict
+ * mode at Step 4 instead of inlining its own bash. Keep them in sync by
+ * routing every check through here.
+ *
+ * Modes:
+ *   default                 baseline: required fields, types, ISO dates,
+ *                           geo-coordinate ranges. Does NOT require a
+ *                           geo object — historical events emitted before
+ *                           the geo gate was tightened are tolerated.
+ *   --strict                runtime mode: ALSO requires geo.lat/geo.lon
+ *                           and rejects E-PRIME violations in `contents`.
+ *   --time-window START END both ISO-8601; rejects events whose
+ *                           `date_published` falls outside [START, END].
+ *
+ * Inputs:
+ *   <file>                  validate one specific JSONL file
+ *   --from YYYY-MM-DD       validate events/YYYY-MM/YYYY-MM-DD.jsonl from
+ *                           that date forward
+ *   --to YYYY-MM-DD         (with --from) up to and including this date
+ *   --all                   validate every events/**.jsonl
+ *
+ * Exits 0 on all-valid, 1 on any failure or argument error.
  */
 
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
 
-// World Event Entity Schema Validation Rules
-const SCHEMA = {
-  required: ['id', 'source', 'title', 'summary', 'contents', 'date_published', 'links', 'image_urls'],
-  types: {
-    id: 'string',
-    source: 'object',
-    title: 'string',
-    summary: 'string',
-    contents: 'string',
-    date_published: 'string',
-    date_event: ['string', 'null'],
-    links: 'array',
-    image_urls: 'array',
-    geo: 'object',
-    topics: 'array',
-    confidence: 'number',
-    ingested_at: 'string'
-  },
-  constraints: {
-    id: { minLength: 8 },
-    title: { minLength: 3 },
-    summary: { minLength: 10 },
-    contents: { minLength: 20 },
-    confidence: { min: 0, max: 1 }
-  }
+// ---------------------------------------------------------------------------
+// Schema
+// ---------------------------------------------------------------------------
+
+const REQUIRED_BASE = [
+  'id', 'source', 'title', 'summary', 'contents',
+  'date_published', 'links', 'image_urls'
+];
+
+// Strict mode also requires geo.
+const REQUIRED_STRICT = REQUIRED_BASE.concat(['geo']);
+
+const TYPES = {
+  id: 'string',
+  source: 'object',
+  title: 'string',
+  summary: 'string',
+  contents: 'string',
+  date_published: 'string',
+  date_event: ['string', 'null'],
+  links: 'array',
+  image_urls: 'array',
+  geo: 'object',
+  topics: 'array',
+  confidence: 'number',
+  ingested_at: 'string',
 };
 
-// Parse command line arguments
+const CONSTRAINTS = {
+  id: { minLength: 8 },
+  title: { minLength: 3 },
+  summary: { minLength: 10 },
+  contents: { minLength: 20 },
+  confidence: { min: 0, max: 1 },
+};
+
+// E-PRIME: forms of "to be" that must not appear in `contents`. Word-boundary
+// matched, case-insensitive. The runtime prompt enforces the same set.
+const EPRIME_RE = /\b(is|are|was|were|be|been|being)\b/i;
+
+// ---------------------------------------------------------------------------
+// Args
+// ---------------------------------------------------------------------------
+
 const args = process.argv.slice(2);
 let targetFile = null;
 let fromDate = null;
 let toDate = null;
 let validateAll = false;
+let strict = false;
+let timeWindowStart = null;
+let timeWindowEnd = null;
 
-for (let i = 0; i < args.length; i++) {
-  if (args[i] === '--from' && args[i + 1]) {
-    fromDate = args[++i];
-  } else if (args[i] === '--to' && args[i + 1]) {
-    toDate = args[++i];
-  } else if (args[i] === '--all') {
-    validateAll = true;
-  } else if (args[i] === '--help' || args[i] === '-h') {
-    console.log(`Usage: node validate-events.js [file] [options]
+function usage() {
+  console.log(`Usage: node validate-events.js [file] [options]
 
 Validate JSONL files against World Event Entity schema.
 
 Options:
-  --from YYYY-MM-DD    Validate from date
-  --to YYYY-MM-DD      Validate to date
-  --all                Validate all events (expensive)
-  --help, -h           Show this help message
+  --from YYYY-MM-DD               validate events/YYYY-MM/<date>.jsonl from this date
+  --to YYYY-MM-DD                 (with --from) up to and including this date
+  --all                           validate every events/**.jsonl
+  --strict                        require geo.lat/geo.lon and reject E-PRIME violations
+  --time-window START END         both ISO-8601; reject events whose date_published
+                                  falls outside [START, END] (used by the runtime)
+  --help, -h                      show this help
 
 Examples:
-  node validate-events.js data/events/2026-04/2026-04-29.jsonl
-  node validate-events.js --from 2026-04-01 --to 2026-04-29
-  node validate-events.js --all
+  node validate-events.js data/events/2026-05/2026-05-01.jsonl
+  node validate-events.js --from 2026-05-01 --strict
+  node validate-events.js events.jsonl --strict \\
+      --time-window 2026-05-01T14:00:00.000Z 2026-05-01T15:00:00.000Z
 `);
+}
+
+for (let i = 0; i < args.length; i++) {
+  const a = args[i];
+  if (a === '--from' && args[i + 1]) {
+    fromDate = args[++i];
+  } else if (a === '--to' && args[i + 1]) {
+    toDate = args[++i];
+  } else if (a === '--all') {
+    validateAll = true;
+  } else if (a === '--strict') {
+    strict = true;
+  } else if (a === '--time-window' && args[i + 1] && args[i + 2]) {
+    timeWindowStart = args[++i];
+    timeWindowEnd = args[++i];
+  } else if (a === '--help' || a === '-h') {
+    usage();
     process.exit(0);
+  } else if (a.startsWith('--')) {
+    console.error(`Unknown flag: ${a}`);
+    usage();
+    process.exit(2);
   } else if (!targetFile) {
-    targetFile = args[i];
+    targetFile = a;
+  } else {
+    console.error(`Unexpected positional arg: ${a}`);
+    process.exit(2);
   }
 }
 
-// Validation state
-let totalEvents = 0;
-let validEvents = 0;
-let invalidEvents = 0;
-const errors = [];
+// ---------------------------------------------------------------------------
+// Per-event validation
+// ---------------------------------------------------------------------------
 
-/**
- * Validate a single event object
- */
+function isValidISO8601(s) {
+  if (typeof s !== 'string') return false;
+  if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,6})?(Z|[+\-]\d{2}:?\d{2})$/.test(s)) {
+    return false;
+  }
+  return !isNaN(new Date(s).getTime());
+}
+
 function validateEvent(event, filename, lineNumber) {
   const issues = [];
+  const required = strict ? REQUIRED_STRICT : REQUIRED_BASE;
 
-  // Check required fields
-  for (const field of SCHEMA.required) {
+  // Required fields
+  for (const field of required) {
     if (!(field in event)) {
       issues.push(`Missing required field: ${field}`);
     }
   }
 
-  // Validate types
-  for (const [field, expectedType] of Object.entries(SCHEMA.types)) {
-    if (field in event) {
-      const value = event[field];
-      const actualType = Array.isArray(value) ? 'array' : value === null ? 'null' : typeof value;
-
-      if (Array.isArray(expectedType)) {
-        if (!expectedType.includes(actualType)) {
-          issues.push(`Field '${field}' has type '${actualType}', expected one of: ${expectedType.join(', ')}`);
-        }
-      } else if (actualType !== expectedType) {
-        issues.push(`Field '${field}' has type '${actualType}', expected '${expectedType}'`);
+  // Types
+  for (const [field, expectedType] of Object.entries(TYPES)) {
+    if (!(field in event)) continue;
+    const value = event[field];
+    const actualType =
+      Array.isArray(value) ? 'array' :
+      value === null ? 'null' :
+      typeof value;
+    if (Array.isArray(expectedType)) {
+      if (!expectedType.includes(actualType)) {
+        issues.push(`Field '${field}' has type '${actualType}', expected one of: ${expectedType.join(', ')}`);
       }
+    } else if (actualType !== expectedType) {
+      issues.push(`Field '${field}' has type '${actualType}', expected '${expectedType}'`);
     }
   }
 
-  // Validate constraints
-  if (SCHEMA.constraints.id && event.id) {
-    if (event.id.length < SCHEMA.constraints.id.minLength) {
-      issues.push(`Field 'id' must be at least ${SCHEMA.constraints.id.minLength} characters`);
+  // String-length constraints
+  for (const [field, c] of Object.entries(CONSTRAINTS)) {
+    if (!(field in event)) continue;
+    const v = event[field];
+    if (c.minLength != null && typeof v === 'string' && v.length < c.minLength) {
+      issues.push(`Field '${field}' must be at least ${c.minLength} characters`);
+    }
+    if (c.min != null && typeof v === 'number' && v < c.min) {
+      issues.push(`Field '${field}' must be ≥ ${c.min}`);
+    }
+    if (c.max != null && typeof v === 'number' && v > c.max) {
+      issues.push(`Field '${field}' must be ≤ ${c.max}`);
     }
   }
 
-  if (SCHEMA.constraints.title && event.title) {
-    if (event.title.length < SCHEMA.constraints.title.minLength) {
-      issues.push(`Field 'title' must be at least ${SCHEMA.constraints.title.minLength} characters`);
+  // source.name
+  if (event.source && typeof event.source === 'object' && !event.source.name) {
+    issues.push("Field 'source' must have required property 'name'");
+  }
+
+  // ISO dates
+  if (event.date_published && !isValidISO8601(event.date_published)) {
+    issues.push(`Field 'date_published' is not a valid ISO 8601 datetime`);
+  }
+  if (event.date_event != null && !isValidISO8601(event.date_event)) {
+    issues.push(`Field 'date_event' is not a valid ISO 8601 datetime`);
+  }
+  if (event.ingested_at && !isValidISO8601(event.ingested_at)) {
+    issues.push(`Field 'ingested_at' is not a valid ISO 8601 datetime`);
+  }
+
+  // Time-window enforcement (runtime mode)
+  if (timeWindowStart && timeWindowEnd && event.date_published) {
+    if (event.date_published < timeWindowStart || event.date_published > timeWindowEnd) {
+      issues.push(
+        `Field 'date_published' (${event.date_published}) outside time window ` +
+        `[${timeWindowStart}, ${timeWindowEnd}]`
+      );
     }
   }
 
-  if (SCHEMA.constraints.summary && event.summary) {
-    if (event.summary.length < SCHEMA.constraints.summary.minLength) {
-      issues.push(`Field 'summary' must be at least ${SCHEMA.constraints.summary.minLength} characters`);
-    }
-  }
-
-  if (SCHEMA.constraints.contents && event.contents) {
-    if (event.contents.length < SCHEMA.constraints.contents.minLength) {
-      issues.push(`Field 'contents' must be at least ${SCHEMA.constraints.contents.minLength} characters`);
-    }
-  }
-
-  if (SCHEMA.constraints.confidence && typeof event.confidence === 'number') {
-    if (event.confidence < SCHEMA.constraints.confidence.min || event.confidence > SCHEMA.constraints.confidence.max) {
-      issues.push(`Field 'confidence' must be between ${SCHEMA.constraints.confidence.min} and ${SCHEMA.constraints.confidence.max}`);
-    }
-  }
-
-  // Validate source object
-  if (event.source && typeof event.source === 'object') {
-    if (!event.source.name) {
-      issues.push("Field 'source' must have required property 'name'");
-    }
-  }
-
-  // Validate ISO 8601 dates
-  if (event.date_published) {
-    if (!isValidISO8601(event.date_published)) {
-      issues.push(`Field 'date_published' is not a valid ISO 8601 datetime`);
-    }
-  }
-
-  if (event.date_event && event.date_event !== null) {
-    if (!isValidISO8601(event.date_event)) {
-      issues.push(`Field 'date_event' is not a valid ISO 8601 datetime`);
-    }
-  }
-
-  if (event.ingested_at) {
-    if (!isValidISO8601(event.ingested_at)) {
-      issues.push(`Field 'ingested_at' is not a valid ISO 8601 datetime`);
-    }
-  }
-
-  // Validate geo coordinates
+  // geo
   if (event.geo && typeof event.geo === 'object') {
-    if (event.geo.lat !== null && typeof event.geo.lat === 'number') {
-      if (event.geo.lat < -90 || event.geo.lat > 90) {
-        issues.push(`Field 'geo.lat' must be between -90 and 90`);
+    if (typeof event.geo.lat === 'number' && (event.geo.lat < -90 || event.geo.lat > 90)) {
+      issues.push(`Field 'geo.lat' must be between -90 and 90`);
+    }
+    if (typeof event.geo.lon === 'number' && (event.geo.lon < -180 || event.geo.lon > 180)) {
+      issues.push(`Field 'geo.lon' must be between -180 and 180`);
+    }
+    if (strict) {
+      if (typeof event.geo.lat !== 'number') {
+        issues.push(`Field 'geo.lat' is required (--strict) and must be a number`);
+      }
+      if (typeof event.geo.lon !== 'number') {
+        issues.push(`Field 'geo.lon' is required (--strict) and must be a number`);
       }
     }
-    if (event.geo.lon !== null && typeof event.geo.lon === 'number') {
-      if (event.geo.lon < -180 || event.geo.lon > 180) {
-        issues.push(`Field 'geo.lon' must be between -180 and 180`);
-      }
-    }
+  } else if (strict) {
+    issues.push(`Field 'geo' is required (--strict)`);
   }
 
-  // Validate links array
-  if (event.links && Array.isArray(event.links)) {
+  // links[*].url
+  if (Array.isArray(event.links)) {
     event.links.forEach((link, index) => {
-      if (!link.url) {
+      if (!link || !link.url) {
         issues.push(`Link at index ${index} missing required 'url' field`);
       }
     });
   }
 
-  if (issues.length > 0) {
-    errors.push({
-      file: filename,
-      line: lineNumber,
-      id: event.id || 'unknown',
-      issues
-    });
-    return false;
+  // E-PRIME (strict mode only — historical data predates the rule)
+  if (strict && typeof event.contents === 'string') {
+    const m = event.contents.match(EPRIME_RE);
+    if (m) {
+      issues.push(
+        `Field 'contents' contains E-PRIME violation: '${m[0]}' ` +
+        `(forms of 'to be' are forbidden)`
+      );
+    }
   }
 
+  if (issues.length > 0) {
+    errors.push({ file: filename, line: lineNumber, id: event.id || 'unknown', issues });
+    return false;
+  }
   return true;
 }
 
-/**
- * Check if string is valid ISO 8601 datetime
- */
-function isValidISO8601(dateString) {
-  // Accept ISO 8601 with or without milliseconds
-  const iso8601Regex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?Z$/;
-  if (!iso8601Regex.test(dateString)) {
-    return false;
-  }
-  const date = new Date(dateString);
-  return !isNaN(date.getTime());
-}
+// ---------------------------------------------------------------------------
+// File walking
+// ---------------------------------------------------------------------------
 
-/**
- * Validate a single JSONL file
- */
+let totalEvents = 0;
+let validEvents = 0;
+let invalidEvents = 0;
+const errors = [];
+
 async function validateFile(filepath) {
   return new Promise((resolve, reject) => {
-    const fileStream = fs.createReadStream(filepath);
     const rl = readline.createInterface({
-      input: fileStream,
-      crlfDelay: Infinity
+      input: fs.createReadStream(filepath),
+      crlfDelay: Infinity,
     });
-
     let lineNumber = 0;
-
     rl.on('line', (line) => {
       lineNumber++;
+      if (line.trim() === '') return;
       totalEvents++;
-
-      if (line.trim() === '') {
-        return;
-      }
-
       try {
         const event = JSON.parse(line);
         if (validateEvent(event, path.basename(filepath), lineNumber)) {
@@ -247,111 +298,97 @@ async function validateFile(filepath) {
           file: path.basename(filepath),
           line: lineNumber,
           id: 'parse-error',
-          issues: [`JSON parse error: ${err.message}`]
+          issues: [`JSON parse error: ${err.message}`],
         });
       }
     });
-
     rl.on('close', resolve);
     rl.on('error', reject);
   });
 }
 
-/**
- * Find JSONL files in date range
- */
 function findFilesInDateRange(baseDir, from, to) {
   const files = [];
-
-  if (!fs.existsSync(baseDir)) {
-    return files;
-  }
-
+  if (!fs.existsSync(baseDir)) return files;
   const monthDirs = fs.readdirSync(baseDir)
-    .filter(name => /^\d{4}-\d{2}$/.test(name))
+    .filter((n) => /^\d{4}-\d{2}$/.test(n))
     .sort();
-
   for (const monthDir of monthDirs) {
     const monthPath = path.join(baseDir, monthDir);
-    const jsonlFiles = fs.readdirSync(monthPath)
-      .filter(name => name.endsWith('.jsonl'))
-      .filter(name => {
-        const date = name.replace('.jsonl', '');
+    fs.readdirSync(monthPath)
+      .filter((n) => n.endsWith('.jsonl'))
+      .filter((n) => {
+        const date = n.replace('.jsonl', '');
         return (!from || date >= from) && (!to || date <= to);
       })
-      .map(name => path.join(monthPath, name));
-
-    files.push(...jsonlFiles);
+      .map((n) => path.join(monthPath, n))
+      .forEach((p) => files.push(p));
   }
-
   return files;
 }
 
-/**
- * Main validation logic
- */
+// ---------------------------------------------------------------------------
+// Main
+// ---------------------------------------------------------------------------
+
 async function main() {
-  const dataDir = path.join(__dirname, '..');
-  const eventsDir = path.join(dataDir, 'events');
+  const eventsDir = path.join(__dirname, '..', 'events');
 
   let filesToValidate = [];
-
   if (targetFile) {
-    // Validate single file
     if (!fs.existsSync(targetFile)) {
-      console.error(`Error: File not found: ${targetFile}`);
+      console.error(`Error: file not found: ${targetFile}`);
       process.exit(1);
     }
     filesToValidate = [targetFile];
   } else if (fromDate || toDate || validateAll) {
-    // Validate date range or all
     filesToValidate = findFilesInDateRange(eventsDir, fromDate, toDate);
-
     if (filesToValidate.length === 0) {
-      console.log('No files found in specified date range');
+      console.log('No files found in specified date range.');
       process.exit(0);
     }
   } else {
-    console.error('Error: No file specified and no date range provided');
-    console.error('Use --help for usage information');
-    process.exit(1);
+    console.error('Error: no file specified and no date range provided. See --help.');
+    process.exit(2);
   }
 
   console.log('=== Event Validation ===');
-  console.log(`Files to validate: ${filesToValidate.length}`);
+  console.log(`Mode:    ${strict ? 'strict (geo + E-PRIME enforced)' : 'baseline'}`);
+  if (timeWindowStart) {
+    console.log(`Window:  [${timeWindowStart}, ${timeWindowEnd}]`);
+  }
+  console.log(`Files:   ${filesToValidate.length}`);
   console.log('');
 
-  // Validate each file
   for (const file of filesToValidate) {
     console.log(`Validating: ${path.basename(file)}`);
     await validateFile(file);
   }
 
-  // Report results
   console.log('');
   console.log('=== Validation Results ===');
-  console.log(`Total events: ${totalEvents}`);
-  console.log(`Valid events: ${validEvents}`);
+  console.log(`Total events:   ${totalEvents}`);
+  console.log(`Valid events:   ${validEvents}`);
   console.log(`Invalid events: ${invalidEvents}`);
   console.log('');
 
   if (errors.length > 0) {
     console.log('=== Validation Errors ===');
-    errors.forEach(error => {
-      console.log(`\nFile: ${error.file}, Line: ${error.line}, ID: ${error.id}`);
-      error.issues.forEach(issue => {
+    for (const err of errors) {
+      console.log(`\nFile: ${err.file}, Line: ${err.line}, ID: ${err.id}`);
+      for (const issue of err.issues) {
         console.log(`  - ${issue}`);
-      });
-    });
+      }
+    }
     console.log('');
     process.exit(1);
-  } else {
-    console.log('✓ All events are valid');
-    process.exit(0);
   }
+
+  console.log('✓ All events are valid');
+  process.exit(0);
 }
 
-main().catch(err => {
+main().catch((err) => {
   console.error('Validation error:', err);
   process.exit(1);
 });

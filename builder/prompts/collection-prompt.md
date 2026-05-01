@@ -317,50 +317,25 @@ validate_event_confidence() {
 
 ### Step 4: Validate Collected Events
 
-For each `events.jsonl` file found:
+The canonical validator lives at `data/scripts/validate-events.js`. It enforces
+required fields, types, ISO-8601 dates, geo-coordinate ranges, time-window
+membership, and E-PRIME compliance — all in one place. Run it on every
+`events.jsonl` file in this bucket's work directory before consolidating:
+
 ```bash
-# Check valid JSON per line
-while IFS= read -r line; do
-  echo "$line" | jq empty || { echo "Invalid JSON"; exit 1; }
-done < events.jsonl
-
-# Check required fields (including geo)
-cat events.jsonl | jq -e '.id and .source and .title and .summary and .contents and .date_published and .links and .image_urls and .geo' >/dev/null
-
-# Validate date_published is within time window
-cat events.jsonl | jq -r '.date_published' | while read ts; do
-  if [[ "$ts" < "$TIME_WINDOW_START" ]] || [[ "$ts" > "$TIME_WINDOW_END" ]]; then
-    echo "ERROR: Event timestamp $ts outside time window [$TIME_WINDOW_START, $TIME_WINDOW_END]" >&2
-    exit 1
-  fi
+find "$WORK_DIR" -name "events.jsonl" -type f | while read f; do
+  echo "Validating $f"
+  node "$REPO_ROOT/data/scripts/validate-events.js" "$f" \
+    --strict \
+    --time-window "$TIME_WINDOW_START" "$TIME_WINDOW_END" \
+    || { echo "ERROR: validation failed for $f"; exit 1; }
 done
-
-# Validate geo field has lat and lon
-cat events.jsonl | jq -e '.geo.lat and .geo.lon' >/dev/null || {
-  echo "ERROR: Event missing required geo.lat or geo.lon" >&2
-  exit 1
-}
-
-# Validate coordinate ranges
-cat events.jsonl | jq -r '.geo.lat' | while read lat; do
-  if (( $(echo "$lat < -90 || $lat > 90" | bc -l) )); then
-    echo "ERROR: Invalid latitude: $lat (must be -90 to 90)" >&2
-    exit 1
-  fi
-done
-
-cat events.jsonl | jq -r '.geo.lon' | while read lon; do
-  if (( $(echo "$lon < -180 || $lon > 180" | bc -l) )); then
-    echo "ERROR: Invalid longitude: $lon (must be -180 to 180)" >&2
-    exit 1
-  fi
-done
-
-# Check E-PRIME in contents (fail if "to be" verbs found)
-cat events.jsonl | jq -r '.contents' | \
-  grep -Ei '\b(is|are|was|were|be|been|being)\b' && \
-  { echo "ERROR: E-PRIME violation in contents field"; exit 1; } || true
 ```
+
+`--strict` requires `geo.lat`/`geo.lon` and rejects forms of "to be" in
+`contents`. `--time-window` rejects events whose `date_published` falls
+outside the run's 1-hour window. Any failure aborts the bucket — do not
+proceed to Step 5 with invalid data.
 
 ### Step 5: Move Events to Data Folder
 
