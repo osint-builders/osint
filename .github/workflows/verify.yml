@@ -1,0 +1,70 @@
+name: Verify
+
+# Cheap, fast checks that run on every PR (and on push to main as a safety
+# net). They catch the categories of drift that have bitten this repo
+# before:
+#
+#   1. Runtime prompt drifts from its committed snapshot.
+#      => npm run verify-prompt against builder/scripts/__fixtures__/.
+#
+#   2. Source-of-truth validator (data/scripts/validate-events.js) drifts
+#      from the data already in git.
+#      => node data/scripts/validate-events.js --all (baseline mode).
+#
+#   3. skills/README.md drifts from the SKILL.md frontmatter it autogenerates.
+#      => regenerate and `git diff --exit-code`.
+#
+# Each check exits non-zero on failure, so a single red 'verify' job
+# prevents merges that introduce silent drift.
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'data/events/**'
+      - 'data/media/**'
+      - 'data/run-logs/**'
+      - 'docs/search-index/**'
+      - 'LEARNINGS.md'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: builder/package-lock.json
+
+      - name: Install builder dependencies
+        run: npm ci
+        working-directory: builder
+
+      - name: Verify prompt template matches snapshot
+        run: npm run verify-prompt
+        working-directory: builder
+
+      - name: Validate all committed events (baseline mode)
+        # Baseline (no --strict) so legacy events without geo don't fail.
+        # Strict-mode validation runs at collection time inside the cloud
+        # agent (Step 4 of collection-prompt.md), so any drift between the
+        # validator and the runtime gets caught at write time, not here.
+        run: node data/scripts/validate-events.js --all
+
+      - name: Confirm skills/README.md is up to date
+        run: |
+          ./skills/scripts/regenerate-skills-readme.sh
+          if ! git diff --exit-code skills/README.md; then
+            echo ""
+            echo "::error::skills/README.md is stale. Run ./skills/scripts/regenerate-skills-readme.sh and commit."
+            exit 1
+          fi
