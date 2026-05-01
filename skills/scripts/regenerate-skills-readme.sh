@@ -55,7 +55,7 @@ cat >> "$TMP" <<'FOOTER'
 
 1. Create `skills/<name>/SKILL.md` with YAML frontmatter (`name`, `description`, `license`, `metadata.author`, `metadata.version`, `compatibility`).
 2. Keep `SKILL.md` ≤ ~150 lines: Overview / When to use / Entry-point commands / Pitfalls / See also. Push deep content into `references/`.
-3. If the skill needs a CLI tool that isn't already in the Warp env image, update [`builder/WARP_ENVIRONMENT.md`](../builder/WARP_ENVIRONMENT.md) in the same PR and tag the env-image owner.
+3. If the skill needs a CLI tool that isn't already in the Warp env image, update the `## Configuration → Warp Cloud Agent environment image` section in [`../README.md`](../README.md) in the same PR and rebuild the image before merge.
 4. Run `./skills/scripts/regenerate-skills-readme.sh` and commit the regenerated `README.md`.
 FOOTER
 

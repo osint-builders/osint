@@ -16,7 +16,7 @@ For the human-friendly overview see [`README.md`](README.md). For the entity sch
 | Source registry | `source/manifest.json` |
 | Per-source spec | `source/sources/<id>.md` |
 | Entity schema | `data/SCHEMA.md` |
-| Cross-run learnings the next agent reads | `memory.md` |
+| Cross-run learnings the next agent reads | `LEARNINGS.md` (capped & expiry-filtered by `builder/index.ts::loadLearnings()`) |
 | CI entry point | `.github/workflows/hourly-collection.yml` |
 
 **Do not** treat `README.md` as agent documentation. It is humans-only.
@@ -45,25 +45,15 @@ For the human-friendly overview see [`README.md`](README.md). For the entity sch
 - Events with `date_published` outside the window must be rejected and logged.
 
 ### CLI tooling
-The Warp environment image — not this repo — installs the CLI tools the agent uses. The canonical install list is below; keep it in sync with whatever rebuilds the Warp env (configured outside this repo, gated by `WARP_ENVIRONMENT_ID`).
 
-```bash
-# Required globals in the Warp env image
-npm install -g agent-browser
-agent-browser install                  # pulls Chromium
-apt-get install -y ffmpeg imagemagick jq curl git nodejs
-# Optional: data-to-markdown CLI if used by the agent
-```
+The Warp Cloud Agent environment image (`WARP_ENVIRONMENT_ID`) installs every CLI the agent uses. The repo does **not** carry vendored binaries.
 
-Required env vars baked into the Warp env (not this repo's secrets):
-`ANTHROPIC_API_KEY`, optionally `PERPLEXITY_API_KEY`, `TWITTER_BEARER_TOKEN`.
+The canonical install list lives in [`README.md`](README.md#warp-cloud-agent-environment-image). When you add a skill that needs a new CLI, update that list in the same PR and rebuild the image before merge.
 
-This repo's `bin/` directory will be removed in a follow-up PR. Once the Warp env image carries the CLIs, in-repo vendored binaries are dead weight.
-
-### `memory.md` (the cross-run learnings file)
+### `LEARNINGS.md` (the cross-run learnings file)
 - The next run reads it. Write only when a finding will help the next agent.
 - Keep entries to: source-spec changes, non-obvious shortcuts, repeated failure patterns (≥3 occurrences) with mitigations, schema/validation gaps, cost/budget signals.
-- Do **not** dump per-source telemetry (`No events parsed`, `Created event: …`) into `memory.md`. That noise belongs in run logs (a follow-up PR will split it into `data/run-logs/`).
+- Do **not** dump per-source telemetry (`No events parsed`, `Created event: …`) into `LEARNINGS.md`. That noise belongs in `data/run-logs/YYYY-MM/YYYY-MM-DD.log`.
 - Format every entry:
   ```
   ## YYYY-MM-DD HH:MMZ — <topic>
@@ -85,7 +75,7 @@ The cloud agent reads `skills/<name>/SKILL.md` on demand. Skills currently in sc
 - `image-extraction` — full media pipeline (download → 720×720 PNG)
 - `imagemagick`, `ffmpeg-cli` — primitives the above leans on
 - `world-event-entities` — entity schema patterns (defers to `data/SCHEMA.md`)
-- `remember-as-you-go` — write rules for `memory.md`
+- `remember-as-you-go` — write rules for `LEARNINGS.md`
 - `create-source` — authoring tool, **not used at runtime**
 
 When editing skills:
@@ -102,6 +92,6 @@ When editing skills:
 ## Don't
 
 - Don't add agent-runtime instructions to `README.md`.
-- Don't hand-write entries to `memory.md` that aren't actionable for the next run.
+- Don't hand-write entries to `LEARNINGS.md` that aren't actionable for the next run.
 - Don't introduce `os.getenv`-style secret reading from the agent prompt; secrets flow through the Warp env, not the repo.
-- Don't commit `node_modules/` from `bin/*` or anywhere else.
+- Don't commit `node_modules/` to the repo. Skill `scripts/` directories should not pull in dependencies.

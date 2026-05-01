@@ -303,14 +303,6 @@ timeline: 2 weeks.
 
 ## Tools for E-PRIME Validation
 
-```bash
-# Check for E-PRIME violations
-node bin/data-to-markdown/cli.js check-eprime document.md
-
-# Get suggestions for E-PRIME improvements
-node bin/data-to-markdown/cli.js eprime-suggestions document.md
-```
-
 ## Notes and Exceptions
 
 ### When "To Be" is Acceptable

@@ -2,10 +2,6 @@
 node_modules/
 npm-debug.log
 
-# Bin folder dependencies (keep structure, ignore node_modules)
-# NOTE: bin/ is being phased out — CLIs will install into the Warp env image.
-bin/*/node_modules/
-
 # Python
 __pycache__/
 *.py[cod]

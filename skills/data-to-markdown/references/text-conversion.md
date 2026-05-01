@@ -511,17 +511,6 @@ All responses use JSON format. Successful responses include a `data` field. Erro
 
 ### CLI Usage
 
-```bash
-# Convert plain text
-node bin/data-to-markdown/cli.js convert input.txt output.md
-
-# Enable list detection
-node bin/data-to-markdown/cli.js convert input.txt output.md --detect-lists
-
-# Apply E-PRIME
-node bin/data-to-markdown/cli.js convert input.txt output.md --eprime
-```
-
 ### Programmatic Usage
 
 ```javascript

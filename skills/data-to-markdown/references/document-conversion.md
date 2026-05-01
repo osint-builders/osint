@@ -585,20 +585,6 @@ The combined optimization approach (Approach C) demonstrates superior performanc
 
 ### CLI Usage
 
-```bash
-# Convert Word document
-node bin/data-to-markdown/cli.js convert document.docx output.md
-
-# Convert PowerPoint
-node bin/data-to-markdown/cli.js convert presentation.pptx output.md
-
-# Convert PDF (specify page range for large files)
-node bin/data-to-markdown/cli.js convert paper.pdf output.md --pages 1-10
-
-# Include speaker notes from PowerPoint
-node bin/data-to-markdown/cli.js convert slides.pptx output.md --include-notes
-```
-
 ### Dependencies for Document Conversion
 
 **Node.js**:

@@ -433,17 +433,6 @@ Copyright © 2024
 
 ### CLI Usage
 
-```bash
-# Convert HTML file
-node bin/data-to-markdown/cli.js convert input.html output.md
-
-# Convert with E-PRIME validation
-node bin/data-to-markdown/cli.js convert input.html output.md --validate-eprime
-
-# Preview without saving
-node bin/data-to-markdown/cli.js preview input.html
-```
-
 ### Programmatic Usage
 
 ```javascript

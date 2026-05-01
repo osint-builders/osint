@@ -2,7 +2,7 @@
 name: image-extraction
 description: Extract, process, and normalize images from any data source for world event entities. Find images in social media, webpages, videos, and interactive content. Normalize to 720x720 PNG format with compression. Handle multiple images per event. Supports ImageMagick processing, FFmpeg video extraction, and agent-browser screenshots.
 license: MIT
-compatibility: 'Linux (Ubuntu base, runs inside the Warp Cloud Agent env image; see builder/WARP_ENVIRONMENT.md)'
+compatibility: 'Linux (Ubuntu base, runs inside the Warp Cloud Agent env image; see README.md → "Warp Cloud Agent environment image")'
 metadata:
   author: osint-builders
   version: "2.0.0"

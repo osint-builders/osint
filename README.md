@@ -94,15 +94,54 @@ Full schema: [`data/SCHEMA.md`](data/SCHEMA.md).
 
 ## Configuration
 
-Set these in GitHub Actions **Settings → Secrets and variables**:
+### GitHub Actions secrets/variables
 
-| Secret / Variable | Purpose |
-|---|---|
-| `WARP_API_KEY` | Authenticates oz-agent-sdk against Warp |
-| `WARP_ENVIRONMENT_ID` | Pre-built Warp env image (has `agent-browser`, `ffmpeg`, `imagemagick`, `jq`, plus `ANTHROPIC_API_KEY` / `PERPLEXITY_API_KEY` / `TWITTER_BEARER_TOKEN` baked in) |
-| `PARALLEL_AGENT_COUNT` (var) | Optional. Bucket count override; otherwise auto-sized from prompt budget. |
+Set these in **Settings → Secrets and variables → Actions**:
 
-The Warp environment image — not this repo — is responsible for installing CLI tools the agent uses. See [`AGENTS.md`](AGENTS.md) for the canonical install list.
+| Name | Type | Purpose |
+|---|---|---|
+| `WARP_API_KEY` | secret | Authenticates `oz-agent-sdk` against Warp. |
+| `WARP_ENVIRONMENT_ID` | secret | UID of the pre-built Warp Cloud Agent environment image (see below). |
+| `OSINT_GH_TOKEN` *or* `GH_TOKEN` | secret | Fine-grained PAT with `Contents: write` on this repo. The agent uses it to push each run's commits. |
+| `PARALLEL_AGENT_COUNT` | variable | Optional. Bucket count override; otherwise auto-sized to fit Warp's 1 MB prompt budget. |
+
+### Warp Cloud Agent environment image
+
+`WARP_ENVIRONMENT_ID` points at a pre-configured Warp environment that the orchestrator launches per bucket. **The image — not this repo — installs the CLI tools and bakes in API keys.** Rebuild the image with this install list:
+
+```bash
+# Node 20+ (LTS)
+npm install -g agent-browser
+agent-browser install                  # downloads Chrome for Testing
+
+apt-get install -y \
+    git curl jq bc \
+    ffmpeg imagemagick \
+    ca-certificates
+```
+
+Bake these env vars into the image as Warp environment-level secrets:
+
+| Variable | Required | Purpose |
+|---|---|---|
+| `ANTHROPIC_API_KEY` | ✅ | Claude API used by the agent. |
+| `OSINT_GH_TOKEN` *or* `GH_TOKEN` | ✅ | Push token (same value as the GitHub Actions secret). |
+| `PERPLEXITY_API_KEY` | optional | Runtime confidence-validation queries; degrades gracefully when absent. |
+| `TWITTER_BEARER_TOKEN` | optional | Twitter API path; the `agent-browser` scraping path doesn't need it. |
+
+Verify a freshly built image with this throwaway prompt before running production collection against it:
+
+```bash
+node --version            # ≥ 20
+agent-browser --version
+ffmpeg -version | head -1
+magick --version | head -1
+jq --version
+test -n "$ANTHROPIC_API_KEY" && echo "ANTHROPIC_API_KEY set"
+test -n "$OSINT_GH_TOKEN" -o -n "$GH_TOKEN" && echo "push token set"
+```
+
+When you add a CLI dependency in a new skill, update this section in the same PR and rebuild the image before merge. The collection prompt does not introspect the env at runtime — if a tool is missing, the agent fails partway through a bucket.
 
 ---
 

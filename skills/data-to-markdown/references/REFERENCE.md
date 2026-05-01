@@ -335,16 +335,6 @@ This approach aligns with documented best practices.
 ## Tools for Conversion
 
 ### Command Line
-```bash
-# Validate Markdown file
-node bin/data-to-markdown/cli.js validate document.md
-
-# Check E-PRIME compliance
-node bin/data-to-markdown/cli.js check-eprime document.md
-
-# Convert HTML to Markdown
-node bin/data-to-markdown/cli.js convert input.html output.md
-```
 
 ### Python
 ```python
