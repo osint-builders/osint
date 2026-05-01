@@ -1,11 +1,11 @@
 [
   {
     "country": "Iran",
-    "count": 71
+    "count": 74
   },
   {
     "country": "United States",
-    "count": 68
+    "count": 71
   },
   {
     "country": "South Korea",
@@ -13,7 +13,7 @@
   },
   {
     "country": "China",
-    "count": 20
+    "count": 21
   },
   {
     "country": "Philippines",
@@ -21,18 +21,26 @@
   },
   {
     "country": "Ukraine",
+    "count": 18
+  },
+  {
+    "country": "North Korea",
     "count": 17
   },
   {
     "country": "Taiwan",
-    "count": 15
-  },
-  {
-    "country": "North Korea",
-    "count": 12
+    "count": 16
   },
   {
     "country": "Russia",
+    "count": 13
+  },
+  {
+    "country": "Mali",
+    "count": 12
+  },
+  {
+    "country": "International Waters",
     "count": 11
   },
   {
@@ -40,19 +48,15 @@
     "count": 11
   },
   {
-    "country": "Mali",
+    "country": "United Kingdom",
     "count": 11
   },
   {
-    "country": "United Kingdom",
-    "count": 10
-  },
-  {
-    "country": "International Waters",
+    "country": "Oman",
     "count": 8
   },
   {
-    "country": "Oman",
+    "country": "Belgium",
     "count": 8
   },
   {
@@ -72,15 +76,15 @@
     "count": 6
   },
   {
-    "country": "Belgium",
-    "count": 6
-  },
-  {
     "country": "USA",
     "count": 6
   },
   {
     "country": "Somalia",
+    "count": 5
+  },
+  {
+    "country": "Greece",
     "count": 5
   },
   {
@@ -93,10 +97,6 @@
   },
   {
     "country": "Denmark",
-    "count": 4
-  },
-  {
-    "country": "Greece",
     "count": 4
   },
   {
@@ -117,6 +117,10 @@
   },
   {
     "country": "United Arab Emirates",
+    "count": 3
+  },
+  {
+    "country": "Singapore",
     "count": 3
   },
   {
@@ -161,10 +165,6 @@
   },
   {
     "country": "Korean Peninsula",
-    "count": 2
-  },
-  {
-    "country": "Singapore",
     "count": 2
   },
   {
@@ -349,6 +349,10 @@
   },
   {
     "country": "Bahrain",
+    "count": 1
+  },
+  {
+    "country": "Azerbaijan",
     "count": 1
   }
 ]

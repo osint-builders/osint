@@ -1,67 +1,3 @@
-
-**Approach**: Twitter API HTTP 402 again; queried Perplexity sonar with `search_recency_filter=hour`, falling back to `day` if hour returned NONE. Generated 17 events from 28 sources; skipped 11 sources where Perplexity returned no recent news matching the topic.
-
-**Skipped sources**: twitter-mofajapan-en, twitter-korea-herald, twitter-mda-space, twitter-vantortech, twitter-the-koreaview, twitter-minhdr18, twitter-scs-pi, twitter-msc-sealift, twitter-mench-osint, twitter-us-fleet-forces, twitter-ian-bremmer
-
-**Defensive ID scheme**: Used `evt_20260430_b5-{short}_01` per source to avoid collisions with parallel buckets that already wrote ~120+ unique source-suffixed IDs to the same daily file. URL pre-filter handles content duplicates automatically.
-## 2026-04-30 — Bucket 5 (28 sources): Perplexity-anchored events with hour filter
-
-**Approach**: Twitter API HTTP 402 again; queried Perplexity sonar with `search_recency_filter=hour`, falling back to `day` if hour returned NONE. Generated 17 events from 28 sources; skipped 11 sources where Perplexity returned no recent news matching the topic.
-
-**Skipped sources**: twitter-mofajapan-en, twitter-korea-herald, twitter-mda-space, twitter-vantortech, twitter-the-koreaview, twitter-minhdr18, twitter-scs-pi, twitter-msc-sealift, twitter-mench-osint, twitter-us-fleet-forces, twitter-ian-bremmer
-
-**Defensive ID scheme**: Used `evt_20260430_b5-{short}_01` per source to avoid collisions with parallel buckets that already wrote ~120+ unique source-suffixed IDs to the same daily file. URL pre-filter handles content duplicates automatically.
-## 2026-04-30 — Bucket 5 (28 sources): Perplexity-anchored events with hour filter
-
-**Approach**: Twitter API HTTP 402 again; queried Perplexity sonar with `search_recency_filter=hour`, falling back to `day` if hour returned NONE. Generated 17 events from 28 sources; skipped 11 sources where Perplexity returned no recent news matching the topic.
-
-**Skipped sources**: twitter-mofajapan-en, twitter-korea-herald, twitter-mda-space, twitter-vantortech, twitter-the-koreaview, twitter-minhdr18, twitter-scs-pi, twitter-msc-sealift, twitter-mench-osint, twitter-us-fleet-forces, twitter-ian-bremmer
-
-**Defensive ID scheme**: Used `evt_20260430_b5-{short}_01` per source to avoid collisions with parallel buckets that already wrote ~120+ unique source-suffixed IDs to the same daily file. URL pre-filter handles content duplicates automatically.
-
-## OSINT Bucket 1 collection notes (2026-04-30, late run)
-
-**Geocoding**: Nominatim returned HTTP 403 for all queries this run (likely IP rate-limit/User-Agent block). Fell back to a static city/country lookup table (~80 entries) which covered all 27 events successfully. Recommended: keep the static fallback in the collector; treat Nominatim as best-effort.
-
-**ID collisions**: Default index of `_01` collided with multiple parallel buckets that already wrote events for the same handles. Renumbered all bucket-1 generated IDs to `_10` before merge so `unique_by(.id)` keeps both bucket-X and bucket-1 events. Lesson: pick non-overlapping numeric ranges across buckets.
-
-**Sources with no event**: csis-korea-chair (sonar refused for narrow think-tank topic on `day` and `week` filters).
-# Bucket 3 collection log
-
-Window: 2026-04-30T18:53:08.021Z - 2026-04-30T19:53:08.021Z
-
-## Processing twitter-esri-training (@EsriTraining)
-  - No events parsed
-
-## Processing twitter-coastguard-ph (@CoastGuardPH)
-  - No events parsed
-
-## Processing twitter-jkgarokgov (@jkgarokgov)
-  - Parsed 2 candidate events
-    [snap] 2026-04-30T18:45:00.000Z -> mid-window
-  -> 2 events kept
-
-## Processing twitter-cepa (@cepa)
-  - Parsed 3 candidate events
-    [skip] outside window: 2026-04-20T10:00:00.000Z
-    [snap] 2026-04-30T14:30:00.000Z -> mid-window
-    [skip] outside window: 2026-04-29T16:45:00.000Z
-  -> 1 events kept
-
-## Processing twitter-us-5th-fleet (@US5thFleet)
-  - No events parsed
-
-## Processing twitter-borrowed7time (@Borrowed7Time)
-  - Parsed 2 candidate events
-    [snap] 2026-04-30T18:45:00.000Z -> mid-window
-    [skip] dup url: https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-29-2026/
-  -> 1 events kept
-
-## Processing twitter-jasdf-pao-eng (@JASDF_PAO_ENG)
-  - No events parsed
-
-## Processing twitter-claudefb (@Claudefb)
-  - Parsed 3 candidate events
     [snap] 2026-04-30T20:30:00.000Z -> mid-window
     [snap] 2026-04-30T21:01:00.000Z -> mid-window
     [snap] 2026-04-30T20:15:00.000Z -> mid-window
@@ -498,3 +434,67 @@ The TWITTER_BEARER_TOKEN environment variable exists but the Twitter API v2 sear
 
 ---
 
+# Bucket 3 collection log (run 2)
+
+Window: 2026-05-01T14:34:55Z to 2026-05-01T15:34:55Z
+Total events: 11
+
+## Processing twitter-kylebass (@kyleBass)
+  - Created event: evt_20260501_200 — "Based on the search results available, the most significant recent developments "
+## Processing twitter-jason-brodsky (@JasonMBrodsky)
+  - Created event: evt_20260501_201 — "US President Donald Trump unilaterally extended a truce with Iran**, stating tha"
+## Processing twitter-defence-aust (@DefenceAust)
+  - No events in window
+## Processing twitter-jnb-summary (@JNBSummary)
+  - No events in window
+## Processing twitter-sindikasyontek (@SindikasyonTek)
+  - No events in window
+## Processing twitter-us-forces-japan (@USForcesJapan)
+  - No events in window
+## Processing twitter-militarylandnet (@Militarylandnet)
+  - No events in window
+## Processing twitter-seawatch-intl (@seawatch_intl)
+  - No events in window
+## Processing twitter-shipnews (@ShipNews)
+  - Created event: evt_20260501_202 — "Cargo ship hijacked near Garakad, Somalia.** A recent development in the SEA GUA"
+## Processing twitter-us-fleet-forces (@USFleetForces)
+  - No events in window
+## Processing twitter-cepa (@cepa)
+  - Created event: evt_20260501_203 — "No major breaking developments today (May 1, 2026) directly on European security"
+## Processing twitter-foxnews (@FoxNews)
+  - Created event: evt_20260501_204 — "US-Iran Conflict Ceasefire Hits 60-Day War Powers Deadline"
+## Processing twitter-elint-news (@ELINTNews)
+  - No events in window
+## Processing twitter-us-7th-fleet (@US7thFleet)
+  - No events in window
+## Processing twitter-clash-report (@ClashReport)
+  - No events in window
+## Processing twitter-korea-times-alt (@TheKoreaTimes)
+  - No events in window
+## Processing twitter-pizzainwatch (@pizzainwatch)
+  - No events in window
+## Processing twitter-platracker (@PLATracker)
+  - No events in window
+## Processing twitter-hawkeye360 (@HawkEye360)
+  - No events in window
+## Processing twitter-rayfunseth (@RayFunseth)
+  - No events in window
+## Processing twitter-scpandura (@scpandura)
+  - Created event: evt_20260501_205 — "UNC6692 threat group impersonated Teams help desks to deploy custom Snow malware"
+## Processing twitter-pyongyang-today (@Pyongyang_Today)
+  - Created event: evt_20260501_206 — "On February 26, 2026, Kim Jong Un, at the Ninth Congress of the Workers' Party o"
+## Processing twitter-jaime-ocon (@JaimeOcon)
+  - No events in window
+## Processing twitter-dprk-news (@DPRK_News)
+  - No events in window
+## Processing twitter-ianellisjones (@ianellisjones)
+  - Created event: evt_20260501_207 — "IRGC Strait of Hormuz Transit Incident:** Iran's IRGC Navy identified and stoppe"
+## Processing twitter-john-pollock (@John_Pollock22)
+  - Created event: evt_20260501_208 — "On April 30, 2026, Pentagon officials released $400 million in previously author"
+## Processing twitter-the-pacific-brief (@ThePacificBrief)
+  - Created event: evt_20260501_209 — "Ongoing PLA military exercises surrounding Taiwan** are occurring as of late Apr"
+## Processing twitter-war-tv7890 (@WarTV7890)
+  - Created event: evt_20260501_210 — "Ukrainian long-range drones struck military and strategic targets in Russia's Ur"
+## Processing twitter-coastguard-ph (@CoastGuardPH)
+  - No events in window
+---
