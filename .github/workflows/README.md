@@ -1,15 +1,19 @@
 # GitHub Actions Workflows
 
-Two workflows live here. See [README.md](../../README.md) (top-level) for architecture and secrets setup.
+See [README.md](../../README.md) (top-level) for architecture and secrets setup.
 
 ## hourly-collection.yml
 
 - Cron: every `:00` UTC
 - Triggers: `schedule` | `workflow_dispatch` | `push` (with `paths-ignore`)
-- Two jobs:
-  - `collect` — runs `builder/index.ts` (the orchestrator that dispatches Warp Cloud Agents)
-  - `build-embeddings` — rebuilds the semantic search index from collected events
+- One job: `collect` — runs `builder/index.ts` (the orchestrator that dispatches Warp Cloud Agents).
 - See [../../README.md](../../README.md) "Configuration" for required secrets.
+
+## embeddings.yml
+
+- Trigger: `workflow_run` after every successful `Hourly OSINT Collection` (also `workflow_dispatch`).
+- Rebuilds the semantic search index from collected events and commits artifacts to `docs/search-index/`.
+- Decoupled from `hourly-collection.yml` so the two cadences can evolve independently.
 
 ## verify.yml
 
@@ -21,7 +25,7 @@ Drift-detection on every PR + push to main. Three checks:
 
 ## create-release.yml
 
-Weekly on Sunday at midnight UTC. Archives `data/` to a release tarball and runs the 90-day retention sweep.
+Weekly on Sunday at midnight UTC. Runs the 90-day retention sweep, then archives `data/` to a release tarball.
 
 ## Troubleshooting
 
