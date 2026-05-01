@@ -1,15 +1,3 @@
-    [snap] 2026-04-30T20:30:00.000Z -> mid-window
-    [snap] 2026-04-30T21:01:00.000Z -> mid-window
-    [snap] 2026-04-30T20:15:00.000Z -> mid-window
-  -> 3 events kept
-
-## Processing twitter-jaime-ocon (@JaimeOcon)
-  - No events parsed
-
-## Processing twitter-joseph-dempsey (@JosephDempsey)
-  - Parsed 2 candidate events
-    [snap] 2026-04-30T18:45:00.000Z -> mid-window
-    [skip] dup url: https://sof.news/drones/20260430/
   -> 1 events kept
 
 ## Processing twitter-the-dailynk (@TheDailyNK)
@@ -497,4 +485,16 @@ Total events: 11
   - Created event: evt_20260501_210 — "Ukrainian long-range drones struck military and strategic targets in Russia's Ur"
 ## Processing twitter-coastguard-ph (@CoastGuardPH)
   - No events in window
+---
+
+---
+
+## Bucket 4 Collection Run - 2026-05-01T15:35:00Z
+
+Collected 29 events from bucket 4 sources (evt_20260501_211 to evt_20260501_239).
+Time window: 2026-05-01T14:34:55Z to 2026-05-01T15:34:55Z UTC.
+Sources processed: All 29 bucket 4 sources.
+Perplexity API used for event research (sonar-pro model with day recency filter).
+No errors encountered. All events validated with geo coordinates and E-PRIME compliance.
+
 ---

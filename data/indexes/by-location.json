@@ -1,15 +1,15 @@
 [
   {
     "country": "Iran",
-    "count": 74
+    "count": 80
   },
   {
     "country": "United States",
-    "count": 71
+    "count": 74
   },
   {
     "country": "South Korea",
-    "count": 21
+    "count": 22
   },
   {
     "country": "China",
@@ -17,6 +17,10 @@
   },
   {
     "country": "Philippines",
+    "count": 19
+  },
+  {
+    "country": "Russia",
     "count": 18
   },
   {
@@ -29,14 +33,14 @@
   },
   {
     "country": "Taiwan",
-    "count": 16
-  },
-  {
-    "country": "Russia",
-    "count": 13
+    "count": 17
   },
   {
     "country": "Mali",
+    "count": 13
+  },
+  {
+    "country": "United Kingdom",
     "count": 12
   },
   {
@@ -48,15 +52,11 @@
     "count": 11
   },
   {
-    "country": "United Kingdom",
-    "count": 11
+    "country": "Belgium",
+    "count": 9
   },
   {
     "country": "Oman",
-    "count": 8
-  },
-  {
-    "country": "Belgium",
     "count": 8
   },
   {
@@ -65,6 +65,10 @@
   },
   {
     "country": "Lebanon",
+    "count": 8
+  },
+  {
+    "country": "Global",
     "count": 7
   },
   {
@@ -72,11 +76,11 @@
     "count": 6
   },
   {
-    "country": "Global",
+    "country": "USA",
     "count": 6
   },
   {
-    "country": "USA",
+    "country": "Greece",
     "count": 6
   },
   {
@@ -84,12 +88,12 @@
     "count": 5
   },
   {
-    "country": "Greece",
+    "country": "Yemen",
     "count": 5
   },
   {
-    "country": "Yemen",
-    "count": 5
+    "country": "Australia",
+    "count": 4
   },
   {
     "country": "DC",
@@ -108,15 +112,11 @@
     "count": 4
   },
   {
-    "country": "Australia",
-    "count": 3
+    "country": "United Arab Emirates",
+    "count": 4
   },
   {
     "country": "Україна",
-    "count": 3
-  },
-  {
-    "country": "United Arab Emirates",
     "count": 3
   },
   {
@@ -353,6 +353,22 @@
   },
   {
     "country": "Azerbaijan",
+    "count": 1
+  },
+  {
+    "country": "Palestine",
+    "count": 1
+  },
+  {
+    "country": "Pakistan",
+    "count": 1
+  },
+  {
+    "country": "Syria",
+    "count": 1
+  },
+  {
+    "country": "Italy",
     "count": 1
   }
 ]
