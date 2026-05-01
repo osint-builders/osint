@@ -57,3 +57,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** X.com (Twitter) requires authenticated sessions for timeline scraping. agent-browser open + snapshot yields login prompts, not tweet content. Nitter mirrors also return empty or blocked pages. The Perplexity API (sonar model with day recency filter) provides a reliable fallback for gathering intelligence about what each source covers.
 **Action for next run:** Skip agent-browser for Twitter sources entirely. Use Perplexity API search as the primary collection method for Twitter-type sources, or configure TWITTER_BEARER_TOKEN with the Twitter API v2 user-timeline endpoint via curl. Reserve agent-browser for webpage-type sources only.
 **Expires:** 2026-08-01
+
+## 2026-05-01 19:50Z — Twitter API v2 credits depleted; agent-browser fallback works but limited
+**Trigger:** Twitter API returned `CreditsDepleted` error on all v2 endpoints (user lookup, timeline).
+**Finding:** The Twitter bearer token exhausted its API credits. Unauthenticated agent-browser scraping of x.com profiles works as a fallback but returns limited tweet history (typically 3-10 tweets) and some accounts show no articles at all.
+**Action for next run:** Check Twitter API credit status first. If credits depleted, use Perplexity API for event discovery combined with agent-browser for verification.
+**Expires:** 2026-06-01

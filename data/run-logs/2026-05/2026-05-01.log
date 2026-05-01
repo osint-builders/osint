@@ -381,3 +381,9 @@ Many accounts may require authentication or have restricted visibility.
 - 2026-05-01T19:56:06.746Z: No tweets found in time window 2026-05-01T18:50:05.342Z to 2026-05-01T19:50:05.342Z for @XNews. Total scraped: 0
 - 2026-05-01T20:02:34.761Z: Created 2 events from Perplexity intelligence for X News
 - 2026-05-01T20:03:37.952Z: Created 2 events from Perplexity intelligence for Breaking Defense Global
+
+## Bucket 2 run @ 2026-05-01T19:50:05.333Z (final)
+Sources processed: 29
+Events generated: 29 (evt_20260501_298 through evt_20260501_326)
+Method: Perplexity API research + agent-browser Twitter scraping (Twitter API v2 credits depleted)
+Note: Initial IDs 269-297 conflicted with concurrent bucket runs; renumbered to 298-326.

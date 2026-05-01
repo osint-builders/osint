@@ -1,11 +1,15 @@
 [
   {
     "country": "Iran",
-    "count": 84
+    "count": 92
   },
   {
     "country": "United States",
-    "count": 83
+    "count": 91
+  },
+  {
+    "country": "China",
+    "count": 25
   },
   {
     "country": "Ukraine",
@@ -13,27 +17,23 @@
   },
   {
     "country": "South Korea",
-    "count": 22
-  },
-  {
-    "country": "China",
-    "count": 22
+    "count": 23
   },
   {
     "country": "Philippines",
-    "count": 21
+    "count": 23
   },
   {
     "country": "Russia",
     "count": 20
   },
   {
-    "country": "North Korea",
-    "count": 18
+    "country": "Taiwan",
+    "count": 20
   },
   {
-    "country": "Taiwan",
-    "count": 17
+    "country": "North Korea",
+    "count": 19
   },
   {
     "country": "International Waters",
@@ -52,16 +52,20 @@
     "count": 12
   },
   {
+    "country": "Global",
+    "count": 11
+  },
+  {
     "country": "Belgium",
     "count": 11
   },
   {
     "country": "Lebanon",
-    "count": 9
+    "count": 10
   },
   {
     "country": "Yemen",
-    "count": 9
+    "count": 10
   },
   {
     "country": "Oman",
@@ -72,7 +76,7 @@
     "count": 8
   },
   {
-    "country": "Global",
+    "country": "Australia",
     "count": 7
   },
   {
@@ -92,11 +96,11 @@
     "count": 5
   },
   {
-    "country": "Australia",
+    "country": "Israel",
     "count": 5
   },
   {
-    "country": "Israel",
+    "country": "United Arab Emirates",
     "count": 5
   },
   {
@@ -112,8 +116,8 @@
     "count": 4
   },
   {
-    "country": "United Arab Emirates",
-    "count": 4
+    "country": "Germany",
+    "count": 3
   },
   {
     "country": "Nigeria",
@@ -128,6 +132,10 @@
     "count": 3
   },
   {
+    "country": "Pakistan",
+    "count": 3
+  },
+  {
     "country": "UAE",
     "count": 2
   },
@@ -137,10 +145,6 @@
   },
   {
     "country": "Estonia",
-    "count": 2
-  },
-  {
-    "country": "Germany",
     "count": 2
   },
   {
@@ -188,7 +192,7 @@
     "count": 2
   },
   {
-    "country": "Pakistan",
+    "country": "Italy",
     "count": 2
   },
   {
@@ -368,11 +372,15 @@
     "count": 1
   },
   {
-    "country": "Italy",
+    "country": "Egypt",
     "count": 1
   },
   {
-    "country": "Egypt",
+    "country": "Россия",
+    "count": 1
+  },
+  {
+    "country": "Spain",
     "count": 1
   }
 ]
