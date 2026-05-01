@@ -70,3 +70,27 @@
 ## Bucket 2 (Oz agent) run @ 2026-05-01T19:55:18.779Z
 ### Events: 20 generated (evt_20260501_241-260), merged with parallel runs
 ### Method: Perplexity API + exa_web_search + agent-browser (Twitter API depleted)
+
+## Bucket 5 run @ 2026-05-01T19:55:18.788Z
+Sources processed: 29
+Events created: 11
+Collection method: Perplexity API (Twitter API credits depleted, browser scraping limited)
+
+### Collection Challenges
+- Twitter API v2: 402 CreditsDepleted for all endpoints
+- Browser scraping: X shows curated/popular old tweets without login
+- Resolution: Perplexity API (sonar-pro) with recency filters
+
+### Sources with Events (10 of 29)
+- twitter-cnni: War Powers Resolution deadline
+- twitter-clash-report: IRGC threat
+- twitter-middle-east-eye: Strait of Hormuz blockade
+- twitter-dataminr: May Day protests US
+- twitter-beltelfreeaudio: Philippines May Day
+- twitter-nasa: Crew-13 + ExoMars
+- twitter-elint-news: Iran peace proposal
+- twitter-xinhua-news: Global May Day
+- twitter-nsa-gov: Military options briefing
+- twitter-africafactszone: DHS shutdown
+
+### 19 sources with no qualifying events in time window
