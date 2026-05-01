@@ -47,3 +47,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** agent-browser can load X.com/@handle profiles without login and extract article elements containing tweet text, datetime attributes, and tweet URLs. JavaScript eval extracts structured data: `document.querySelectorAll('article')` exposes `<time datetime="">` attributes with ISO timestamps and tweet status URLs. However, most niche OSINT accounts show no tweets or only old pinned/historical tweets without auth — only high-traffic accounts like @BBCWorld reliably surface recent content. Of 30 sources scraped, only 1 (BBCWorld) had tweets within the 1-hour window.
 **Action for next run:** Use agent-browser as fallback for Twitter collection, but expect low yield from niche accounts without login. Prioritize high-traffic news accounts (BBCWorld, NASA) for agent-browser scraping. Consider authenticating agent-browser with Twitter credentials via `--profile` flag for better access to lower-traffic accounts.
 **Expires:** 2026-06-01
+
+## 2026-05-01 19:49Z — Twitter API credits depleted, fallback to Perplexity + browser
+**Trigger:** Twitter API v2 returned HTTP 402 (CreditsDepleted) for account 1420048076681715717 during bucket 2 collection.
+**Finding:** The Twitter API bearer token has zero remaining credits, making direct tweet collection impossible. Agent-browser can access X/Twitter profile pages but without login only shows pinned/promoted/old tweets, not the recent timeline. Perplexity API (sonar-pro with day recency filter) can find general world events but cannot retrieve specific tweets from specific handles.
+**Action for next run:** Check Twitter API credit balance before attempting API calls. If depleted, skip API and use Perplexity search with source-topic mapping as primary collection method. Consider authenticating agent-browser with an X session for timeline access. Rebuild/top-up Twitter API credits.
+**Expires:** 2026-06-01

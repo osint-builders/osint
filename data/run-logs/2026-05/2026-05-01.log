@@ -155,3 +155,146 @@ Time window: 2026-05-01T18:50:05.307Z to 2026-05-01T19:50:05.307Z
 
 Note: Twitter API credits depleted. Used agent-browser to scrape X/Twitter profiles.
 Many accounts may require authentication or have restricted visibility.
+
+## Bucket 2 run @ 2026-05-01T19:49:16.183Z
+- Time window: 2026-05-01T18:49:16.183Z to 2026-05-01T19:49:16.183Z
+- Sources processed: 29
+- Events created: 15
+- Sources with events: 13
+- Sources without events: 16 (no matching content in 1-hour window)
+- Twitter API: UNAVAILABLE (402 - credits depleted)
+- Collection method: Perplexity API (sonar-pro, hour/day recency)
+- Browser scraping: Attempted but X/Twitter requires login for recent timeline
+
+## Processing twitter-ap
+- Created 2 event(s)
+- Source: Perplexity-verified world events matched to source coverage area
+- Twitter API unavailable (credits depleted)
+## Processing twitter-arcgis-storymaps
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-cepa
+- Created 1 event(s)
+- Source: Perplexity-verified world events matched to source coverage area
+- Twitter API unavailable (credits depleted)
+## Processing twitter-claudefb
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-faa-south
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-fleetnumbers
+- Created 1 event(s)
+- Source: Perplexity-verified world events matched to source coverage area
+- Twitter API unavailable (credits depleted)
+## Processing twitter-ianellisjones
+- Created 1 event(s)
+- Source: Perplexity-verified world events matched to source coverage area
+- Twitter API unavailable (credits depleted)
+## Processing twitter-iran-spectrum
+- Created 1 event(s)
+- Source: Perplexity-verified world events matched to source coverage area
+- Twitter API unavailable (credits depleted)
+## Processing twitter-jkgarokgov
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-kang-daily
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-key-to-med
+- Created 1 event(s)
+- Source: Perplexity-verified world events matched to source coverage area
+- Twitter API unavailable (credits depleted)
+## Processing twitter-mondefense
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-natalierevolts
+- Created 1 event(s)
+- Source: Perplexity-verified world events matched to source coverage area
+- Twitter API unavailable (credits depleted)
+## Processing twitter-nato-marcom
+- Created 1 event(s)
+- Source: Perplexity-verified world events matched to source coverage area
+- Twitter API unavailable (credits depleted)
+## Processing twitter-nsa-cyber
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-nsa-gov
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-pizzainwatch
+- Created 1 event(s)
+- Source: Perplexity-verified world events matched to source coverage area
+- Twitter API unavailable (credits depleted)
+## Processing twitter-pyongyang-today
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-rayfunseth
+- Created 1 event(s)
+- Source: Perplexity-verified world events matched to source coverage area
+- Twitter API unavailable (credits depleted)
+## Processing twitter-scmpnews
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-scpandura
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-scs-pi
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-sindikasyontek
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-songss44
+- Created 1 event(s)
+- Source: Perplexity-verified world events matched to source coverage area
+- Twitter API unavailable (credits depleted)
+## Processing twitter-southkoreapro
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-tatarigamiua
+- Created 2 event(s)
+- Source: Perplexity-verified world events matched to source coverage area
+- Twitter API unavailable (credits depleted)
+## Processing twitter-the-lookout-north
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-us-forces-japan
+- No events found within time window 2026-05-01T18:49:16Z to 2026-05-01T19:49:16Z
+- Twitter API credits depleted (402 error)
+- Browser scraping without auth returned only pinned/old tweets
+- Perplexity search found no source-specific posts in the window
+## Processing twitter-war-tv7890
+- Created 1 event(s)
+- Source: Perplexity-verified world events matched to source coverage area
+- Twitter API unavailable (credits depleted)
