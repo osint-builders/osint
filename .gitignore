@@ -48,3 +48,13 @@ env/
 orchestrator/*.log
 orchestrator/.langgraph/
 .langgraph/
+
+# Frontend build artifacts
+frontend/node_modules/
+frontend/dist/
+
+# Search index binary files (keep JSON metadata in git)
+docs/search-index/*.bin
+
+# Keep generated search frontend in git for GitHub Pages
+# docs/search/ is committed

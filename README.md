@@ -9,6 +9,7 @@ Automated intelligence gathering system that collects, structures, and archives 
 - **E-PRIME Enforcement**: Objective, precise language without "to be" verbs
 - **Persistent Learning**: remember-as-you-go pattern improves collection over time
 - **Data Retention**: 90-day rolling window with JSONL storage and media archival
+- **Semantic Search**: Client-side ANN search powered by OpenAI embeddings and HNSW index
 
 **Architecture**: GitHub Actions → `builder/` (oz-agent-sdk) → Warp Cloud Agent → Skills (agent-browser, perplexity-search, data-to-markdown) → World Event Entities → Data Folder (JSONL + Media)
 
@@ -39,9 +40,46 @@ cat data/events/$(date +%Y-%m)/$(date +%Y-%m-%d).jsonl | jq .
 
 # Validate data format
 node data/scripts/validate-events.js --from $(date +%Y-%m-%d)
+
+# Build semantic search index (requires OPENAI_API_KEY)
+export OPENAI_API_KEY="sk-..."
+python builder/embeddings/build_index.py
+
+# Build and serve search frontend locally
+cd frontend && npm install && npm run dev
 ```
 
 See [Local Development](#local-development) for manual collection workflow.
+
+---
+
+## Semantic Search
+
+The system includes a **semantic search interface** that enables natural language queries over the entire world events corpus. Built with React and powered by OpenAI embeddings, the search runs entirely client-side after initial index load.
+
+**Features**:
+- **Semantic Understanding**: Search by meaning, not just keywords ("India Pakistan conflict" → Kashmir events)
+- **Rich Filtering**: Filter by date range, country, topics, and confidence score
+- **Fast Client-Side Search**: <30ms ANN lookup using HNSW index
+- **Cost-Effective**: ~$9/month for embedding generation (~150 events/day)
+- **Zero-Cost Hosting**: Static deployment via GitHub Pages
+
+**Access**: Visit `https://<username>.github.io/<repo>/search/` (after setup)
+
+**Architecture**:
+```
+Hourly Collection → Python Embedding Pipeline → HNSW Index + Metadata
+                                                        ↓
+                    GitHub Pages ← React Search UI ← Index Artifacts
+```
+
+**Pipeline Components**:
+- **Embeddings**: OpenAI `text-embedding-3-small` (1536 dims → PCA 384 dims)
+- **Quantization**: Int8 compression for 16× size reduction
+- **Index**: HNSW (M=16, ef=64) for fast approximate nearest neighbor search
+- **Incremental Updates**: Fingerprint-based change detection (only re-embed changed events)
+
+See `builder/embeddings/` for Python pipeline and `frontend/` for React search UI.
 
 ---
 
