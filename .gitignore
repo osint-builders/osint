@@ -57,3 +57,9 @@ docs/search-index/*.bin
 
 # Keep generated search frontend in git for GitHub Pages
 # docs/search/ is committed
+
+# Builder dry-run output
+.dry-run-prompts/
+
+# Verifier transient output
+builder/scripts/__fixtures__/*.actual

@@ -5,7 +5,10 @@
   "type": "commonjs",
   "private": true,
   "scripts": {
-    "collect": "tsx index.ts"
+    "collect": "tsx index.ts",
+    "dry-run": "tsx index.ts --dry-run",
+    "verify-prompt": "tsx scripts/verify-prompt-extraction.ts",
+    "update-prompt-snapshot": "UPDATE_SNAPSHOT=1 tsx scripts/verify-prompt-extraction.ts"
   },
   "dependencies": {
     "luxon": "^3.7.2",

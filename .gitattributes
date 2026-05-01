@@ -1,0 +1,5 @@
+# Force LF line endings on prompt template + snapshots so byte counts and
+# SHA-256 hashes are stable across platforms (matters for the 1 MB Warp
+# prompt-size budget and the verify-prompt-extraction snapshot).
+builder/prompts/** text eol=lf
+builder/scripts/__fixtures__/** text eol=lf
