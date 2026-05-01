@@ -505,3 +505,17 @@ All 30 sources in bucket 1 processed. Source-to-event mapping:
 4. **Perplexity API**: No PERPLEXITY_API_KEY available. Confidence validation relied on source reputation and cross-referencing.
 5. **Event 003**: date_published 06:28 UTC falls 11 minutes before window start. Included as borderline event with relevant ongoing reporting.
 6. **Event 002**: date_published 06:59 UTC falls within the window when accounting for Irish Standard Time publication.
+
+## Bucket 5 Collection Run - 2026-05-01T11:42:03Z
+
+**Time window**: 2026-05-01T10:42:03.239Z to 2026-05-01T11:42:03.239Z
+**Sources processed**: 29 (all assigned sources completed)
+**Events created**: 29 (evt_20260501_030 through evt_20260501_058)
+**Errors**: None
+**Rejected events**: None (all within time window)
+
+Sources processed: twitter-c4ads, twitter-bbgoriginals, twitter-imo-hq, twitter-sanctions-watch, twitter-borrowed7time, twitter-war-tv7890, twitter-msc-sealift, twitter-platracker, twitter-the-dailynk, twitter-us-pacific-fleet, twitter-scpandura, twitter-minhdr18, twitter-mondefense, twitter-vantortech, twitter-sim-nasr, twitter-jaime-ocon, twitter-therealshipdude, twitter-us-5th-fleet, webpage-windward-ai-blog, twitter-the-diplomat, twitter-etienne-lh, twitter-raytoribo, twitter-the-pacific-brief, twitter-kylebass, twitter-info-fusion-ctr, twitter-pyongyang-today, twitter-oilcfd, twitter-jnb-summary, twitter-us-fleet-forces
+
+Key themes covered: India-Pakistan ceasefire stability, PLA Taiwan ADIZ incursions (J-20 deployment), Red Sea Houthi attacks, Russia/Iran sanctions evasion via shadow fleet, North Korea food security and submarine program, ASEAN South China Sea diplomacy, European defense procurement, Sahel security fragmentation, APT41 cyber campaign, China property sector defaults.
+
+---

@@ -1,38 +1,42 @@
 [
   {
     "country": "Iran",
-    "count": 65
+    "count": 66
   },
   {
     "country": "United States",
-    "count": 58
+    "count": 59
+  },
+  {
+    "country": "China",
+    "count": 17
   },
   {
     "country": "South Korea",
     "count": 16
   },
   {
-    "country": "China",
-    "count": 14
-  },
-  {
     "country": "Taiwan",
-    "count": 13
+    "count": 15
   },
   {
     "country": "Philippines",
-    "count": 13
+    "count": 15
   },
   {
     "country": "Ukraine",
+    "count": 14
+  },
+  {
+    "country": "North Korea",
     "count": 12
   },
   {
     "country": "Russia",
-    "count": 10
+    "count": 11
   },
   {
-    "country": "North Korea",
+    "country": "Japan",
     "count": 10
   },
   {
@@ -40,23 +44,27 @@
     "count": 10
   },
   {
-    "country": "Japan",
-    "count": 9
-  },
-  {
     "country": "Unknown",
     "count": 8
+  },
+  {
+    "country": "Oman",
+    "count": 7
   },
   {
     "country": "Mali",
     "count": 7
   },
   {
-    "country": "Oman",
+    "country": "Global",
     "count": 6
   },
   {
-    "country": "Global",
+    "country": "Belgium",
+    "count": 6
+  },
+  {
+    "country": "Lebanon",
     "count": 6
   },
   {
@@ -64,20 +72,20 @@
     "count": 6
   },
   {
-    "country": "Somalia",
-    "count": 5
-  },
-  {
-    "country": "Belgium",
-    "count": 5
-  },
-  {
-    "country": "Lebanon",
+    "country": "International Waters",
     "count": 5
   },
   {
     "country": "India",
-    "count": 4
+    "count": 5
+  },
+  {
+    "country": "Somalia",
+    "count": 5
+  },
+  {
+    "country": "Yemen",
+    "count": 5
   },
   {
     "country": "DC",
@@ -88,15 +96,11 @@
     "count": 4
   },
   {
-    "country": "International Waters",
+    "country": "Denmark",
     "count": 3
   },
   {
     "country": "Україна",
-    "count": 3
-  },
-  {
-    "country": "Yemen",
     "count": 3
   },
   {
@@ -117,10 +121,6 @@
   },
   {
     "country": "Germany",
-    "count": 2
-  },
-  {
-    "country": "Denmark",
     "count": 2
   },
   {
@@ -161,6 +161,10 @@
   },
   {
     "country": "United Arab Emirates",
+    "count": 2
+  },
+  {
+    "country": "Singapore",
     "count": 2
   },
   {
@@ -312,11 +316,23 @@
     "count": 1
   },
   {
-    "country": "Singapore",
+    "country": "Georgia",
     "count": 1
   },
   {
-    "country": "Georgia",
+    "country": "Sudan",
+    "count": 1
+  },
+  {
+    "country": "Thailand",
+    "count": 1
+  },
+  {
+    "country": "France",
+    "count": 1
+  },
+  {
+    "country": "Niger",
     "count": 1
   }
 ]
