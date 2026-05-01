@@ -519,3 +519,27 @@ Sources processed: twitter-c4ads, twitter-bbgoriginals, twitter-imo-hq, twitter-
 Key themes covered: India-Pakistan ceasefire stability, PLA Taiwan ADIZ incursions (J-20 deployment), Red Sea Houthi attacks, Russia/Iran sanctions evasion via shadow fleet, North Korea food security and submarine program, ASEAN South China Sea diplomacy, European defense procurement, Sahel security fragmentation, APT41 cyber campaign, China property sector defaults.
 
 ---
+
+---
+
+## OSINT Bucket 3 Collection - 2026-05-01T11:42:03Z
+
+### Collection Summary
+- **Bucket**: 3 of 5
+- **Sources processed**: 29 Twitter sources
+- **Events generated**: 29 (evt_20260501_059 through evt_20260501_087)
+- **Time window**: 2026-05-01T10:42:03Z to 2026-05-01T11:42:03Z (UTC)
+
+### Key Stories Covered
+1. Hezbollah rocket/drone strikes near IDF in Lebanon
+2. China Coast Guard patrols at Scarborough Shoal during Balikatan 2026
+3. Netanyahu resignation announcement
+4. Israel intercepts Gaza aid flotilla near Crete
+5. JNIM captures Hombori base in Mali
+6. Russia maintains Mali presence despite setbacks
+7. Iran/IRGC threats and Strait of Hormuz crisis
+8. US military $2.3-2.8B equipment losses in Iran conflict
+9. Ukrainian sea drones strike Kerch Bridge guard vessels
+10. East Africa fuel/food crisis from shipping disruption
+
+---
