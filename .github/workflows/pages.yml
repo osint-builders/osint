@@ -1,0 +1,89 @@
+name: Deploy GitHub Pages
+
+# Builds the React search frontend and deploys docs/ to GitHub Pages.
+# The deployed site combines:
+#   - docs/search/        ← built from frontend/ in this workflow
+#   - docs/search-index/  ← committed to main by embeddings.yml after every
+#                           successful collection
+#
+# Pages source must be configured to "GitHub Actions" in
+# Settings → Pages → Source. (One-time manual step.)
+#
+# Triggers:
+#   1. push to main when frontend source OR the search index changes
+#   2. workflow_run after embeddings.yml completes (covers the case where
+#      the index was just updated but no frontend code changed)
+#   3. workflow_dispatch for manual rebuilds
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'frontend/**'
+      - 'docs/search-index/**'
+      - 'docs/README.md'
+      - '.github/workflows/pages.yml'
+  workflow_run:
+    workflows: ["Build Search Embeddings"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+# Single in-flight deploy at a time; cancel queued runs when superseded.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    # Only run if the upstream embeddings job actually succeeded (when
+    # triggered via workflow_run). Push and dispatch always run.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend dependencies
+        run: npm ci
+        working-directory: frontend
+
+      - name: Build frontend
+        # PAGES_BASE picks up the Pages URL prefix (e.g. /osint/search/) so
+        # Vite emits asset URLs that resolve correctly on the deployed site.
+        # `${{ github.event.repository.name }}` evaluates to the repo name.
+        run: PAGES_BASE="/${{ github.event.repository.name }}/search/" npm run build
+        working-directory: frontend
+
+      - name: Verify build output
+        run: |
+          test -f docs/search/index.html || { echo "::error::docs/search/index.html missing after build"; exit 1; }
+          if [ ! -d docs/search-index ] || [ -z "$(ls -A docs/search-index 2>/dev/null)" ]; then
+            echo "::warning::docs/search-index/ is empty. The site will deploy but searches will fail until embeddings.yml runs at least once."
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

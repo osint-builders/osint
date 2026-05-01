@@ -50,11 +50,14 @@ orchestrator/.langgraph/
 frontend/node_modules/
 frontend/dist/
 
-# Search index binary files (keep JSON metadata in git)
+# Search index binary files (keep JSON metadata in git so the deployed
+# Pages site can fetch it without a separate request to a CDN).
 docs/search-index/*.bin
 
-# Keep generated search frontend in git for GitHub Pages
-# docs/search/ is committed
+# Built frontend artifacts. The Pages workflow (.github/workflows/pages.yml)
+# builds these on demand and uploads them as a Pages artifact — no need to
+# commit. Local `npm run build` puts the output here too; ignore it.
+docs/search/
 
 # Builder dry-run output
 .dry-run-prompts/

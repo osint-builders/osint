@@ -1,10 +1,10 @@
-import * as ort from 'onnxruntime-web';
+// future: import * as ort from 'onnxruntime-web';
 import type { EventMetadata, SearchResult, SearchFilters } from '../types';
 
 export class SearchEngine {
-  private session: ort.InferenceSession | null = null;
+  // future: private session: ort.InferenceSession | null = null;
   private metadata: EventMetadata[] = [];
-  private embeddings: Float32Array[] = [];
+  // future: private embeddings: Float32Array[] = [];
   private isInitialized = false;
 
   async initialize(metadata: EventMetadata[]) {

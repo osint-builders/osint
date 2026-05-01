@@ -1,16 +1,11 @@
-# OSINT Search Interface
+# OSINT Search Interface — `docs/`
 
-This directory contains the static search interface deployed via GitHub Pages.
-
-## Directory Structure
+Static search UI deployed to GitHub Pages. Two halves live here:
 
 ```
 docs/
-├── search/              # React search UI (built from frontend/)
-│   ├── index.html
-│   ├── assets/
-│   └── models/          # ONNX models (future)
-└── search-index/        # Embedding artifacts
+├── search/         # built React UI (NOT committed; built by pages.yml)
+└── search-index/   # embedding artifacts (committed by embeddings.yml)
     ├── hnsw.bin
     ├── metadata.json
     ├── schema.json
@@ -18,50 +13,50 @@ docs/
     └── pca_transform.json
 ```
 
-## GitHub Pages Setup
+The site appears at `https://<owner>.github.io/<repo>/search/`.
 
-To enable the search interface:
+## How it deploys
 
-1. **Enable GitHub Pages**:
-   - Go to repository Settings → Pages
-   - Source: "Deploy from a branch"
-   - Branch: `main`, Folder: `/docs`
-   - Save
+```
+hourly-collection.yml succeeds
+        │
+        ▼
+embeddings.yml         ← rebuilds docs/search-index/ artifacts, commits to main
+        │
+        ▼   (workflow_run)
+pages.yml              ← builds frontend/, uploads docs/ as Pages artifact, deploys
+```
 
-2. **Add OpenAI API Secret**:
-   - Go to repository Settings → Secrets and variables → Actions
-   - Add secret: `OPENAI_API_KEY` with your OpenAI API key
+`pages.yml` also triggers on:
+- `push` to `main` touching `frontend/**`, `docs/search-index/**`, or the workflow itself
+- `workflow_dispatch` for manual rebuilds
 
-3. **Trigger Initial Build**:
-   ```bash
-   # Build embedding index locally
-   export OPENAI_API_KEY="sk-..."
-   python builder/embeddings/build_index.py
+## One-time setup
 
-   # Build React frontend
-   cd frontend
-   npm install
-   npm run build
+1. **Repo Settings → Pages → Source** → set to **`GitHub Actions`** (not "Deploy from a branch").
+2. Add `OPENAI_API_KEY` as a repo secret (used by `embeddings.yml`).
+3. Push a commit that touches `frontend/`. `pages.yml` runs and the URL appears under Settings → Pages.
 
-   # Commit artifacts
-   git add docs/
-   git commit -m "Initial search index and frontend build"
-   git push
-   ```
+After that, every successful collection rebuilds the index and re-deploys automatically.
 
-4. **Access Search UI**:
-   - Wait ~1 minute for GitHub Pages deployment
-   - Visit: `https://<username>.github.io/<repo>/search/`
+## Local preview
 
-## Automation
+```bash
+cd frontend
+npm install
+npm run dev          # http://localhost:5173/search/
+```
 
-After initial setup, the embedding pipeline runs automatically:
+The dev server expects `docs/search-index/` to exist locally (run `python builder/embeddings/build_index.py` once, with `OPENAI_API_KEY` set, to populate it).
 
-- **Trigger**: After each hourly collection (via GitHub Actions)
-- **Pipeline**: `builder/embeddings/build_index.py`
-- **Commit**: Artifacts committed by `build-embeddings` job
-- **Deploy**: GitHub Pages auto-deploys from `/docs` folder
+To preview the production build:
 
-## Local Development
+```bash
+cd frontend
+npm run build        # writes ../docs/search/
+npx serve ../docs    # http://localhost:3000/search/
+```
 
-See `frontend/README.md` for local development instructions.
+## Why not commit `docs/search/`?
+
+The previous flow (committed build output, Pages source = "main /docs") inflated git history with bundle hashes that change every build. The Actions deployment uploads exactly what gets served and skips the git churn.

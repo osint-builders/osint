@@ -23,6 +23,15 @@ Drift-detection on every PR + push to main. Three checks:
 2. `data/scripts/validate-events.js --all` (baseline schema validation)
 3. `skills/README.md` regeneration is clean
 
+## pages.yml
+
+Builds the React search frontend and deploys `docs/` to GitHub Pages.
+
+- Triggers on `push` to main touching `frontend/**` or `docs/search-index/**`,
+  on `workflow_run` after `embeddings.yml` succeeds, or `workflow_dispatch`.
+- Pages source must be set to **GitHub Actions** (not "Deploy from a branch").
+- See [`../../docs/README.md`](../../docs/README.md) for the deployment flow.
+
 ## create-release.yml
 
 Weekly on Sunday at midnight UTC. Runs the 90-day retention sweep, then archives `data/` to a release tarball.
