@@ -2,7 +2,7 @@
 name: word-event-entities
 description: Build and validate World Event Entity records (JSONL) representing real-world events with structured metadata, source attribution, and geographic context. Defers to data/SCHEMA.md as the canonical schema.
 license: MIT
-compatibility: 'Linux (Ubuntu base)'
+compatibility: linux (warp-cloud-agent-env-image)
 metadata:
   author: osint-builders
   version: "2.0.0"
@@ -49,5 +49,4 @@ node data/scripts/validate-events.js path/to/events.jsonl
 ## See also
 
 - **`data/SCHEMA.md`** — canonical schema (field types, constraints, JSON examples, validation rules). Always consult first.
-- `references/REFERENCE.md` — extended characterization notes, design rationale, and edge cases.
 - `../data-to-markdown/SKILL.md` — how to author the `contents` field.

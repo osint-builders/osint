@@ -10,14 +10,14 @@ Procedural references for the cloud agent. Each skill lives at `skills/<name>/SK
 |---|---|---|
 | [`agent-browser`](agent-browser/SKILL.md) | Native Rust CLI for browser automation by Vercel Labs. Automate web navigation, interact with page elements, extract ... | 297 |
 | [`create-source`](create-source/SKILL.md) 🛠 | Authoring tool for creating new OSINT data sources. Provides templates, validation, and tests for source files. Not u... | 67 |
-| [`data-to-markdown`](data-to-markdown/SKILL.md) | Transform raw scraped or API data into clean, semantic Markdown for the `contents` field of a World Event Entity. Enf... | 59 |
+| [`data-to-markdown`](data-to-markdown/SKILL.md) | Transform raw scraped or API data into clean, semantic Markdown for the `contents` field of a World Event Entity. Enf... | 58 |
 | [`ffmpeg-cli`](ffmpeg-cli/SKILL.md) | FFmpeg CLI for media processing and transformation. Convert video formats, resize and pad, extract audio, trim by tim... | 343 |
 | [`geocoding`](geocoding/SKILL.md) | Extract location mentions from text and convert to lat/lon coordinates using OpenStreetMap Nominatim (free) or Google... | 88 |
 | [`image-extraction`](image-extraction/SKILL.md) | Extract, process, and normalize images from any data source for world event entities. Find images in social media, we... | 95 |
 | [`imagemagick`](imagemagick/SKILL.md) | ImageMagick CLI for comprehensive image processing and manipulation. Convert formats, resize and crop, apply effects ... | 442 |
 | [`perplexity-search`](perplexity-search/SKILL.md) | Perplexity AI search for web search with AI-powered answers, deep research, and chain-of-thought reasoning. Perform d... | 290 |
-| [`remember-as-you-go`](remember-as-you-go/SKILL.md) | Strict criteria for what to write into LEARNINGS.md (the cross-run knowledge base read by the next Warp Cloud Agent).... | 102 |
-| [`word-event-entities`](word-event-entities/SKILL.md) | Build and validate World Event Entity records (JSONL) representing real-world events with structured metadata, source... | 53 |
+| [`remember-as-you-go`](remember-as-you-go/SKILL.md) | Strict criteria for what to write into LEARNINGS.md (the cross-run knowledge base read by the next Warp Cloud Agent).... | 103 |
+| [`word-event-entities`](word-event-entities/SKILL.md) | Build and validate World Event Entity records (JSONL) representing real-world events with structured metadata, source... | 52 |
 
 🛠 = authoring-only skill, not loaded by the cloud agent during collection runs.
 

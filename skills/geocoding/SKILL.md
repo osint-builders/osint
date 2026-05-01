@@ -2,7 +2,7 @@
 name: geocoding
 description: Extract location mentions from text and convert to lat/lon coordinates using OpenStreetMap Nominatim (free) or Google Maps API (backup). Required for all world events to ensure geo.lat and geo.lon fields are populated.
 license: MIT
-compatibility: Linux (Ubuntu base, runs inside the Warp Cloud Agent env image; see README.md → "Warp Cloud Agent environment image")
+compatibility: linux (warp-cloud-agent-env-image)
 metadata:
   author: osint-builders
   version: "2.0.0"

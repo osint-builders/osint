@@ -2,7 +2,7 @@
 name: ffmpeg-cli
 description: FFmpeg CLI for media processing and transformation. Convert video formats, resize and pad, extract audio, trim by time, generate thumbnails, create slideshows, overlay graphics, burn subtitles, and more. Use for video manipulation, media encoding, content creation, and OSINT media analysis.
 license: GPL-2.0
-compatibility: Requires ffmpeg CLI installed globally. Works on macOS, Linux, Windows. Install via Homebrew, apt-get, or download from ffmpeg.org.
+compatibility: linux (warp-cloud-agent-env-image)
 metadata:
   author: osint-builders
   version: "1.0.0"

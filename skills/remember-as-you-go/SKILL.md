@@ -2,6 +2,7 @@
 name: remember-as-you-go
 description: Strict criteria for what to write into LEARNINGS.md (the cross-run knowledge base read by the next Warp Cloud Agent). Distinguishes durable findings from per-run telemetry, which goes to data/run-logs/ instead. Use this skill at Step 7 of each collection run.
 license: MIT
+compatibility: linux (warp-cloud-agent-env-image)
 metadata:
   author: osint-builders
   version: "2.0.0"

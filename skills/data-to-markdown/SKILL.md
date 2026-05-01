@@ -2,7 +2,7 @@
 name: data-to-markdown
 description: Transform raw scraped or API data into clean, semantic Markdown for the `contents` field of a World Event Entity. Enforces E-PRIME (no forms of "to be") and a small set of structural conventions.
 license: MIT
-compatibility: 'Linux (Ubuntu base, runs inside the Warp Cloud Agent env image)'
+compatibility: linux (warp-cloud-agent-env-image)
 metadata:
   author: osint-builders
   version: "2.0.0"
@@ -55,5 +55,4 @@ Use ATX headings starting at `##` (the entity title supplies `#`); maintain hier
 - `references/html-conversion.md` — stripping HTML/scraper artifacts into clean Markdown.
 - `references/document-conversion.md` — Word, PowerPoint, PDF extraction workflows.
 - `references/text-conversion.md` — plain-text and freeform-notes normalization.
-- `references/REFERENCE.md` — consolidated quick-reference index across all formats.
 - `../word-event-entities/SKILL.md` and `../../data/SCHEMA.md` — the entity that consumes this Markdown.

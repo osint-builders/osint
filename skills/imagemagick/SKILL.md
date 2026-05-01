@@ -2,7 +2,7 @@
 name: imagemagick
 description: ImageMagick CLI for comprehensive image processing and manipulation. Convert formats, resize and crop, apply effects and filters, adjust colors, create thumbnails, batch process, composite images, add text and watermarks. Use for image transformation, media preparation, batch operations, and visual content processing.
 license: Apache-2.0
-compatibility: Requires ImageMagick CLI installed globally. Works on macOS, Linux, Windows. Install via Homebrew, apt-get, or download from imagemagick.org.
+compatibility: linux (warp-cloud-agent-env-image)
 metadata:
   author: osint-builders
   version: "1.0.0"

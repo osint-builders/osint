@@ -2,7 +2,7 @@
 name: perplexity-search
 description: Perplexity AI search for web search with AI-powered answers, deep research, and chain-of-thought reasoning. Perform direct web searches, get AI-synthesized research, conduct complex reasoning, and generate comprehensive reports. Use for fact-checking, research, decision-making, and finding current information with citations.
 license: MIT
-compatibility: Requires PERPLEXITY_API_KEY environment variable. Works on macOS, Linux, Windows with Node.js 16+.
+compatibility: linux (warp-cloud-agent-env-image)
 metadata:
   author: osint-builders
   version: "1.0.0"

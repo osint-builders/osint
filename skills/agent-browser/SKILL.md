@@ -2,7 +2,7 @@
 name: agent-browser
 description: Native Rust CLI for browser automation by Vercel Labs. Automate web navigation, interact with page elements, extract data, capture screenshots, and execute JavaScript. Use for web scraping, form automation, testing, and data extraction workflows. Optimal for AI agents with ref-based element selection and accessibility tree output.
 license: Apache-2.0
-compatibility: Requires native agent-browser CLI installed globally. Works on macOS, Linux, Windows. Node.js 18+ for wrapper scripts.
+compatibility: linux (warp-cloud-agent-env-image)
 metadata:
   author: osint-builders
   version: "1.0.0"

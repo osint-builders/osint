@@ -2,7 +2,7 @@
 name: create-source
 description: Authoring tool for creating new OSINT data sources. Provides templates, validation, and tests for source files. Not used during runtime collection.
 license: MIT
-compatibility: Linux/macOS (developer tool; not invoked by the cloud agent during collection)
+compatibility: developer tool — not invoked by the cloud agent during collection
 metadata:
   author: osint-builders
   version: "2.0.0"
