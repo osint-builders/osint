@@ -1,439 +1,169 @@
 # Contributing Sources
 
-This guide explains how to add new sources to the OSINT project.
+How to add a new OSINT source to the project. The canonical schema lives here;
+the top-level [README.md](../README.md) and [AGENTS.md](../AGENTS.md) cover the
+overall architecture.
 
 ## Quick Start
 
-1. **Choose the appropriate example** from `examples/` that matches your source type
-2. **Copy the example** to `sources/` with a descriptive name
-3. **Fill in the front matter** with accurate metadata
-4. **Complete all required sections** in the body
-5. **Add to manifest.json** to register the source
-6. **Test the source** before marking as active
-7. **Submit for review** (if working in a team)
+1. **Pick the matching example** in `examples/` (`twitter`, `webpage`, `api`, `email`, `rss`).
+2. **Copy** it to `sources/{type}-{identifier}.md` (kebab-case).
+3. **Fill in front matter** (see schema below) and the body sections.
+4. **Validate**: `node ../skills/create-source/scripts/validate-source.js sources/<your-file>.md`
+5. **Register**: `node ../skills/create-source/scripts/update-manifest.py`
 
-## Step-by-Step Guide
+> **Heads-up:** As soon as the manifest entry lands on `main`, the next hourly
+> run of `builder/index.ts` will include your source — even with
+> `status: testing`. The orchestrator uses a deny-list (`inactive`, `archived`,
+> `deprecated`), *not* an allow-list. To stage a source without collection,
+> set `status: inactive` until ready.
 
-### Step 1: Identify Source Type
+## Front Matter Schema
 
-Determine which type best describes your source:
+### Required
 
-- **twitter** - For Twitter/X accounts to monitor
-- **webpage** - For websites requiring scraping
-- **api** - For REST, GraphQL, or other APIs
-- **email** - For newsletters or email-based intel
-- **rss** - For RSS/Atom feeds
-- **webhook** - For incoming webhook data
-- **websocket** - For real-time streams
-- **file** - For file-based sources
-- **database** - For direct DB connections
-- **other** - For anything else
+| Field | Type | Notes |
+|---|---|---|
+| `id` | string | Unique slug or UUID |
+| `name` | string | Human-readable |
+| `type` | enum | `twitter` \| `webpage` \| `api` \| `email` \| `rss` \| `webhook` \| `websocket` \| `file` \| `database` \| `other` |
+| `status` | enum | `active` \| `testing` \| `inactive` \| `archived` \| `deprecated` |
+| `description` | string | What intel this source provides |
+| `created_date` | YYYY-MM-DD | |
+| `last_updated` | YYYY-MM-DD | Bump on every edit |
 
-### Step 2: Copy Relevant Example
+### Optional
 
-```bash
-# Example: Adding a Twitter source
-cp examples/twitter-example.md sources/twitter-your-source-name.md
-```
+| Field | Type | Notes |
+|---|---|---|
+| `tags` | array | Categorization (e.g., `world-events`, `breaking-news`) |
+| `reliability` | enum | `high` \| `medium` \| `low` \| `unverified` |
+| `confidence_score` | number | 0–100 |
+| `update_frequency` | string | e.g., `15m`, `1h`, `daily` |
+| `priority` | enum | `high` \| `medium` \| `low` |
+| `language` | array | ISO 639-1 codes |
+| `geographic_focus` | array | Regions/countries |
+| `cost` | enum | `free` \| `paid` \| `freemium` |
+| `rate_limits` | object | API rate limit info |
+| `requires_auth` | boolean | |
+| `maintainer` | string | Owner |
+| `alert_keywords` | array | Triggers high-priority alerts |
 
-### Step 3: Generate Unique ID
+## Body Sections
 
-Generate a unique identifier for your source:
+After the front matter, every source file should include:
 
-```bash
-# Option 1: Use UUID
-uuidgen | tr '[:upper:]' '[:lower:]'
+1. **Overview** — narrative description, relevance, typical content.
+2. **Data Collection Criteria** — type-specific (see below).
+3. **Expected Data Format** — structure of raw responses.
+4. **Processing Instructions** — how to transform raw data into world event entities.
+5. **Quality Indicators** — signals of high-quality / on-topic data.
+6. **Known Issues** — quirks, limitations, dropped fields.
+7. **Examples** — 2–3 raw → processed pairs.
 
-# Option 2: Use slug format
-# twitter-osint-updates
-# webpage-reuters-world
-```
+## Type-Specific Requirements
 
-### Step 4: Fill in Front Matter
-
-Edit your new source file and complete all required fields:
-
-```yaml
----
-id: your-unique-id
-name: Human Readable Name
-type: twitter  # Match your source type
-status: testing  # Start with testing, promote to active after validation
-description: |
-  Brief description of what intelligence this source provides.
-  Include relevance to world events and expected content types.
-created_date: 2026-04-29  # Today's date
-last_updated: 2026-04-29  # Today's date
----
-```
-
-#### Optional Fields to Consider
+### Twitter
 
 ```yaml
-tags:
-  - world-events
-  - breaking-news
-  - [add relevant tags]
-reliability: medium  # Start conservative, upgrade after observation
-confidence_score: 70  # 0-100, based on historical accuracy
-update_frequency: "15m"  # How often to check
-priority: medium  # high | medium | low
-language:
-  - en
-geographic_focus:
-  - global
-  - [specific regions if applicable]
-cost: free  # free | paid | freemium
-requires_auth: false  # true if authentication needed
-maintainer: your-name  # Who owns this source
-alert_keywords:
-  - breaking
-  - urgent
-  - [keywords that indicate critical events]
+handle: handle_name        # without @
+user_id: "1234567890"
+collection_method: timeline | search | stream
+filters:
+  include_retweets: false
+  include_replies: false
+  languages: [en]
+  hashtags: [worldnews, breaking]
 ```
 
-### Step 5: Complete Type-Specific Requirements
+### Webpage
 
-#### For Twitter Sources
-
-```markdown
-## Data Collection Criteria
-
-### Twitter Account Details
-- **Handle**: @handle_name (without @)
-- **User ID**: 1234567890
-- **Account Type**: News agency | Government | Analyst | Aggregator
-- **Follower Count**: ~XXX,XXX
-- **Verification**: Verified | Unverified
-
-### Collection Method
-- **Method**: timeline | search | stream
-- **Include Retweets**: yes | no
-- **Include Replies**: yes | no
-- **Include Quotes**: yes | no
-
-### Filters
-- **Language**: en, es, fr, etc.
-- **Minimum Engagement**: XXX likes or XXX retweets
-- **Hashtags**: #worldnews, #breaking, etc.
-- **Keywords**: keyword1, keyword2, etc.
+```yaml
+url: https://example.com/world-news
+crawl_pattern: /world-news/YYYY/MM/DD/*
+crawl_depth: 2
+exclusion_pattern: [/opinion/*, /sports/*]
+selectors:
+  article: .article-container
+  title: h1.article-title
+  date: time.publish-date
+  body: div.article-body
 ```
 
-#### For Webpage Sources
+### API
 
-```markdown
-## Data Collection Criteria
-
-### URL Configuration
-- **Base URL**: https://example.com/world-news
-- **URL Pattern**: https://example.com/world-news/YYYY/MM/DD/*
-- **Crawl Depth**: 2 (follow links up to 2 levels)
-- **Update Frequency**: Every 30 minutes
-
-### Extraction Rules
-- **Article Selector**: `.article-container`
-- **Title Selector**: `h1.article-title`
-- **Date Selector**: `time.publish-date`
-- **Content Selector**: `div.article-body`
-- **Author Selector**: `span.author-name`
-
-### Include Patterns
-- `/world-news/*`
-- `/international/*`
-- `/breaking/*`
-
-### Exclude Patterns
-- `/opinion/*`
-- `/sports/*`
-- `/entertainment/*`
+```yaml
+base_url: https://api.example.com/v1
+auth_method: none | api_key | oauth | bearer
+endpoints:
+  - path: /events
+    method: GET
+    params: { date: ISO8601, category: world-events, limit: 100 }
+response_format: json | xml | csv
 ```
 
-#### For Email Sources
+### Email
 
-```markdown
-## Data Collection Criteria
-
-### Email Configuration
-- **Monitor Address**: intel-digest@example.com
-- **IMAP/API**: IMAP | Gmail API | Office365
-- **Folder**: INBOX
-
-### Sender Allowlist
-- `newsletter@stratfor.com`
-- `updates@janes.com`
-- `alerts@osintinsider.com`
-
-### Subject Filters
-- Contains: "Daily Digest", "Breaking", "Alert"
-- Excludes: "Unsubscribe", "Spam"
-
-### Extraction Rules
-- **Title Extraction**: Subject line or first H1 in body
-- **Content Extraction**: Parse HTML body, extract plain text
-- **Date Extraction**: Sent date or date mentioned in subject
-- **Link Extraction**: Extract and follow links matching pattern
+```yaml
+email_address: intel-digest@example.com
+sender_allowlist:
+  - newsletter@stratfor.com
+subject_filters:
+  include: ["Daily Digest", "Breaking", "Alert"]
+  exclude: ["Unsubscribe"]
+extraction_rules:
+  title: subject_or_first_h1
+  content: html_body_to_text
 ```
 
-#### For API Sources
+### RSS
 
-```markdown
-## Data Collection Criteria
-
-### API Configuration
-- **Base URL**: https://api.example.com/v1
-- **Protocol**: REST | GraphQL | SOAP
-- **Auth Method**: api_key | oauth2 | bearer_token
-- **Rate Limit**: 1000 requests/hour
-
-### Endpoints
-1. **Events Endpoint**
-   - Path: `/events`
-   - Method: GET
-   - Parameters:
-     - `date`: ISO 8601 date
-     - `category`: world-events
-     - `limit`: 100
-   - Response Format: JSON
-
-2. **Search Endpoint**
-   - Path: `/search`
-   - Method: POST
-   - Body:
-     ```json
-     {
-       "query": "world events",
-       "filters": {
-         "date_range": "last_24h",
-         "region": "global"
-       }
-     }
-     ```
-
-### Response Mapping
-Map API response fields to world event entity fields:
-- `api.event.title` → `entity.title`
-- `api.event.timestamp` → `entity.date`
-- `api.event.location` → `entity.location`
+```yaml
+feed_url: https://example.com/feed.xml
+entry_filters:
+  min_pub_date: last_24h
+item_mapping:
+  title: entry.title
+  date: entry.published
+  body: entry.content
 ```
 
-### Step 6: Document Processing Instructions
+## Status Semantics (deny-list rule)
 
-Explain how to transform raw data into world event entities:
+The collection orchestrator (`builder/index.ts`) processes **every** source
+whose `status` is **not** one of `inactive`, `archived`, or `deprecated`
+(case-insensitive). That means `active`, `testing`, `unverified`, and any other
+value all ride along. This is intentional: new sources surface bugs early.
 
-```markdown
-## Processing Instructions
+The builder also embeds a sentinel list of expected source IDs in the prompt
+and instructs the agent to abort if that list disagrees with the live manifest,
+so a source can never be silently dropped between prompt construction and
+execution.
 
-### Data Extraction
-1. Parse raw data from source
-2. Extract key fields: title, date, location, content
-3. Identify event type: conflict, disaster, political, economic, etc.
+## Validation Rules
 
-### Validation
-- Verify date is within acceptable range (not future, not too old)
-- Confirm location is valid geographic entity
-- Check content meets minimum quality threshold
+A source file is valid when:
 
-### Transformation
-Convert to world event entity schema:
-- Title: Extract concise event description
-- Date: ISO 8601 format
-- Location: Standardized location object
-- Contents: Convert to Markdown format
-- Tags: Extract or infer relevant tags
-- Source reference: Link back to original
+1. File name matches `{type}-{identifier}.md` (kebab-case).
+2. All required front-matter fields are present.
+3. `type` is one of the enum values above.
+4. Type-specific keys (see tables) are present.
+5. The file is referenced in `manifest.json`.
+6. `created_date` and `last_updated` parse as ISO dates.
+7. Body contains all seven required sections.
 
-### Deduplication
-Check against existing events:
-- Compare titles (fuzzy match)
-- Compare dates (within time window)
-- Compare locations (same or nearby)
-```
-
-### Step 7: Add Examples
-
-Include sample data to illustrate what you expect:
-
-```markdown
-## Examples
-
-### Example 1: Breaking News Tweet
-
-**Raw Data:**
-```
-Tweet from @BBCBreaking:
-"BREAKING: Major earthquake strikes coastal region, 
-magnitude 7.2 - emergency services responding"
-Posted: 2026-04-29T14:32:00Z
-```
-
-**Extracted Event:**
-- **Title**: Major earthquake strikes coastal region (magnitude 7.2)
-- **Date**: 2026-04-29T14:32:00Z
-- **Type**: Natural Disaster
-- **Location**: [To be geocoded from context]
-- **Source**: Twitter @BBCBreaking
-```
-
-### Step 8: Update manifest.json
-
-Add your source to the manifest:
-
-```json
-{
-  "id": "your-unique-id",
-  "name": "Your Source Name",
-  "type": "twitter",
-  "status": "testing",
-  "file": "sources/twitter-your-source-name.md",
-  "added_date": "2026-04-29"
-}
-```
-
-> **Heads-up:** As soon as you commit this manifest entry, the next run of
-> `builder/index.ts` will include your new source in the collection prompt,
-> even with `status: testing`. The orchestrator uses a deny-list (`inactive`,
-> `archived`, `deprecated`) — *not* an allow-list of `active`. If you don't
-> want the source picked up yet, set its status to `inactive` until you're
-> ready.
-
-Update statistics:
-```json
-{
-  "statistics": {
-    "total_sources": X,
-    "active_sources": Y,
-    "by_type": {
-      "twitter": N,
-      ...
-    }
-  }
-}
-```
-
-### Step 9: Test Your Source
-
-Before marking as active:
-
-1. **Verify connectivity** - Can you reach the source?
-2. **Test authentication** - If required, confirm it works
-3. **Sample collection** - Fetch sample data
-4. **Validate extraction** - Confirm data extraction works
-5. **Check quality** - Review if data meets requirements
-6. **Test filters** - Verify filters work as expected
-7. **Monitor for errors** - Watch for issues over 24-48 hours
-
-### Step 10: Mark as Active
-
-Once validated:
-
-1. Update `status: active` in front matter
-2. Update `last_updated` date
-3. Update status in manifest.json
-4. Document any issues found in "Known Issues" section
-
-## Quality Checklist
-
-Before submitting, verify:
-
-- [ ] File name follows convention: `{type}-{identifier}.md`
-- [ ] All required front matter fields completed
-- [ ] Type-specific requirements included
-- [ ] Processing instructions are clear and actionable
-- [ ] Examples provided
-- [ ] Source tested and works
-- [ ] manifest.json updated
-- [ ] No sensitive credentials in file (use environment variables)
+Run `node ../skills/create-source/scripts/validate-source.js <file>` to check.
 
 ## Common Pitfalls
 
-### 1. Incomplete Front Matter
-**Problem**: Missing required fields  
-**Solution**: Copy from examples, they have all required fields
-
-### 2. Vague Collection Criteria
-**Problem**: "Monitor Twitter for news"  
-**Solution**: Be specific - handles, hashtags, keywords, filters
-
-### 3. No Examples
-**Problem**: Unclear what data looks like  
-**Solution**: Include 2-3 realistic examples with raw and processed data
-
-### 4. Hardcoded Credentials
-**Problem**: API keys in source file  
-**Solution**: Reference environment variables or config
-
-### 5. Untested Sources
-**Problem**: Source marked active but never tested  
-**Solution**: Always test in "testing" status first
+- **Incomplete front matter** — copy from `examples/`; they have every required field.
+- **Vague collection criteria** — "monitor Twitter for news" is not actionable. Specify handles, hashtags, keywords, and filters.
+- **No examples** — include 2–3 realistic raw → processed pairs.
+- **Hardcoded credentials** — never. Reference an env var name (e.g., `EXAMPLE_API_KEY`); secrets are configured per the top-level README.
+- **Marked active without testing** — use `status: testing` until you've seen at least one clean collection cycle.
 
 ## Getting Help
 
-- Review `examples/` directory for reference implementations
-- Read `README.md` for detailed schema documentation
-- Check existing sources in `sources/` for patterns
-- Test with "testing" status before going active
-
-## Advanced Topics
-
-### Custom Source Types
-
-If none of the standard types fit:
-1. Use `type: other`
-2. Add custom fields to front matter
-3. Document thoroughly in body
-4. Consider proposing new standard type
-
-### Rate Limiting
-
-For APIs with rate limits:
-```yaml
-rate_limits:
-  requests_per_hour: 1000
-  requests_per_day: 10000
-  burst_limit: 50
-  backoff_strategy: exponential
-```
-
-### Authentication
-
-Never store credentials in source files. Instead:
-```markdown
-## Authentication
-
-This source requires API key authentication.
-
-**Environment Variable**: `EXAMPLE_API_KEY`  
-**Header Format**: `Authorization: Bearer ${EXAMPLE_API_KEY}`
-
-Obtain credentials from: https://example.com/api/keys
-```
-
-### Multi-Step Collection
-
-For complex sources requiring multiple steps:
-```markdown
-## Data Collection Criteria
-
-### Step 1: List Recent Articles
-- Endpoint: `/api/articles/recent`
-- Extract article IDs
-
-### Step 2: Fetch Full Content
-- Endpoint: `/api/articles/{id}`
-- For each ID from Step 1
-
-### Step 3: Extract Entities
-- Parse article content
-- Extract events, dates, locations
-```
-
-## Maintenance
-
-Sources require ongoing maintenance:
-
-- **Weekly**: Review active sources for issues
-- **Monthly**: Update reliability scores based on performance
-- **Quarterly**: Audit for deprecated sources
-- **Annually**: Review all sources for relevance
-
-Update `last_updated` field whenever you make changes.
+- Reference implementations live in `examples/` and `sources/`.
+- The output schema is [`../data/SCHEMA.md`](../data/SCHEMA.md).
+- The CLI tooling lives in `../skills/create-source/scripts/` (each script has `--help`).
