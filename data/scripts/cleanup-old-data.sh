@@ -11,7 +11,7 @@ DRY_RUN=false
 DATA_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 EVENTS_DIR="$DATA_DIR/events"
 MEDIA_DIR="$DATA_DIR/media"
-MANIFEST_FILE="$DATA_DIR/manifest.json"
+MANIFEST_FILE="$DATA_DIR/stats.json"
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
@@ -118,27 +118,27 @@ if [ "$DRY_RUN" = false ]; then
     NEWEST_DATE=$(find "$EVENTS_DIR" -name "*.jsonl" -type f | sort | tail -1 | xargs basename | sed 's/\.jsonl$//')
 
     if [ -n "$OLDEST_DATE" ] && [ -n "$NEWEST_DATE" ]; then
-      # Update manifest using jq
+      # Update stats.json using jq. The schema (PR-F) is:
+      #   { last_updated, data_range:{oldest_date,newest_date}, statistics }
       TMP_FILE=$(mktemp)
       jq --arg oldest "$OLDEST_DATE" \
          --arg newest "$NEWEST_DATE" \
-         --arg cleanup "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+         --arg now "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
          '.data_range.oldest_date = $oldest |
           .data_range.newest_date = $newest |
-          .last_cleanup = $cleanup |
-          .last_updated = $cleanup' \
+          .last_updated = $now' \
          "$MANIFEST_FILE" > "$TMP_FILE"
 
       mv "$TMP_FILE" "$MANIFEST_FILE"
-      echo "✓ Manifest updated"
+      echo "✓ stats.json updated"
       echo "  Oldest date: $OLDEST_DATE"
       echo "  Newest date: $NEWEST_DATE"
     else
-      echo "No data files found, manifest not updated"
+      echo "No data files found, stats.json not updated"
     fi
   else
-    echo "⚠ jq not installed, manifest not updated"
-    echo "  Install jq to enable automatic manifest updates"
+    echo "⚠ jq not installed, stats.json not updated"
+    echo "  Install jq to enable automatic stats updates"
   fi
 fi
 
