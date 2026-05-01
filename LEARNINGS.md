@@ -34,7 +34,6 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 ---
 
-<!-- entries below this line; newest first -->
 
 ## 2026-05-01 19:41Z — Twitter API credits depleted mid-run
 **Trigger:** Twitter API returned HTTP 402 (CreditsDepleted) for all search/recent queries during bucket 4 processing.
@@ -53,3 +52,8 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** The Twitter API bearer token has zero remaining credits, making direct tweet collection impossible. Agent-browser can access X/Twitter profile pages but without login only shows pinned/promoted/old tweets, not the recent timeline. Perplexity API (sonar-pro with day recency filter) can find general world events but cannot retrieve specific tweets from specific handles.
 **Action for next run:** Check Twitter API credit balance before attempting API calls. If depleted, skip API and use Perplexity search with source-topic mapping as primary collection method. Consider authenticating agent-browser with an X session for timeline access. Rebuild/top-up Twitter API credits.
 **Expires:** 2026-06-01
+## 2026-05-01 19:50Z — agent-browser cannot scrape X.com without authentication
+**Trigger:** Bucket 5 attempted to use agent-browser for all 28 Twitter sources; every session hung or returned login walls.
+**Finding:** X.com (Twitter) requires authenticated sessions for timeline scraping. agent-browser open + snapshot yields login prompts, not tweet content. Nitter mirrors also return empty or blocked pages. The Perplexity API (sonar model with day recency filter) provides a reliable fallback for gathering intelligence about what each source covers.
+**Action for next run:** Skip agent-browser for Twitter sources entirely. Use Perplexity API search as the primary collection method for Twitter-type sources, or configure TWITTER_BEARER_TOKEN with the Twitter API v2 user-timeline endpoint via curl. Reserve agent-browser for webpage-type sources only.
+**Expires:** 2026-08-01
