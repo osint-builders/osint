@@ -1,262 +1,29 @@
 # Skills
 
-Agent skills for OSINT intelligence gathering and analysis. Each skill is a self-contained module that agents can activate and use.
-
-## Available Skills
-
-### agent-browser
-Native Rust CLI for browser automation by Vercel Labs. Fast, deterministic element selection with accessibility tree snapshots. Use for web scraping, form automation, data extraction, and testing workflows.
-
-**Location:** `agent-browser/`
-
----
-
-### data-to-markdown
-Transform any data source into clean, semantic, concise Markdown following E-PRIME principles. Convert plain text, HTML, code, documents (Word, PowerPoint, PDF) into well-structured Markdown with precision and clarity.
-
-**Location:** `data-to-markdown/`
-
-**Key Features:**
-- E-PRIME conversion (removes "to be" forms for precise language)
-- Semantic structure detection (headings, lists, tables, code blocks)
-- Multi-format support (HTML, plain text, documents)
-- Validation and quality checking
-- CLI tool for automated conversion
-
-**Quick Start:**
-
-```bash
-# Convert HTML to Markdown
-pandoc input.html -t markdown -o output.md
-
-# Check E-PRIME compliance
-grep -Ein '\b(is|are|was|were|be|been|being)\b' output.md && echo "Violation" || echo "Compliant"
-```
-
-**See also:**
-- `data-to-markdown/SKILL.md` - Full conversion framework
-- `data-to-markdown/references/` - Detailed conversion guides
-
----
-
-### ffmpeg-cli
-FFmpeg CLI for media processing and transformation. Convert formats, resize and pad, extract audio, trim, generate thumbnails, create slideshows, overlay graphics, burn subtitles.
-
-**Location:** `ffmpeg-cli/`
-
----
-
-### image-extraction
-Extract, process, and normalize images from any data source for world event entities. Find images in social media, webpages, videos, and interactive content. Normalize to 720x720 PNG format with compression. Handle multiple images per event.
-
-**Location:** `image-extraction/`
-
-**Key Features:**
-- Universal image extraction from any source type
-- 720x720 PNG normalization with compression
-- Video frame extraction with FFmpeg
-- Web screenshot capture with agent-browser
-- Batch processing support
-- Multiple images per event handling
-
-**Quick Start:**
-```bash
-# Download and process social media image
-curl -o /tmp/img.jpg "https://example.com/image.jpg"
-magick /tmp/img.jpg -resize 720x720^ -gravity center -extent 720x720 +repage -strip -define png:compression-level=9 final.png
-
-# Extract video frame and process
-ffmpeg -i video.mp4 -ss 00:00:05 -vframes 1 /tmp/frame.jpg
-magick /tmp/frame.jpg -resize 720x720^ -gravity center -extent 720x720 +repage -strip -define png:compression-level=9 final.png
-```
-
-**See also:**
-- `image-extraction/SKILL.md` - Complete extraction workflow
-- Dependencies: `imagemagick`, `ffmpeg-cli`, `agent-browser`
-
----
-
-### imagemagick
-ImageMagick CLI for comprehensive image processing. Convert formats, resize and crop, apply effects and filters, adjust colors, create thumbnails, batch process, composite images, add text and watermarks.
-
-**Location:** `imagemagick/`
-
----
-
-### perplexity-search
-Perplexity AI search for web search with AI-powered answers, deep research, and chain-of-thought reasoning. Multiple models from lightweight to expert-level analysis.
-
-**Location:** `perplexity-search/`
-
----
-
-### remember-as-you-go
-Adaptive memory system that observes execution patterns and stores learnings in memory.md. Only creates memories when guesswork, errors, or exceptions occur. Helps AI refine execution by remembering non-obvious solutions, environment quirks, and tool interactions.
-
-**Location:** `remember-as-you-go/`
-
-**Key Features:**
-- Reactive memory creation (only on errors or issues)
-- Stores learnings in root `memory.md` file
-- Captures non-obvious solutions and workarounds
-- Prevents repeating mistakes across sessions
-- Environment-specific quirk documentation
-
-**When to Remember:**
-- ✅ Errors, exceptions, workarounds
-- ✅ Non-obvious flags or parameters
-- ✅ Environment quirks, configuration issues
-- ✅ Tool interaction problems
-- ❌ Standard operations, documented behavior
-- ❌ First-time successes without issues
-
-**Quick Examples:**
-
-```markdown
-## FFmpeg MKV Requires Explicit Codecs
-
-Converting to MKV without explicit codecs fails with "codec not supported".
-
-Solution:
-```bash
-ffmpeg -i input.mp4 -c:v libx264 -c:a aac output.mkv
-```
-
-Context: MKV container requires explicit codec specification.
-
----
-```
-
-**See also:**
-- `remember-as-you-go/SKILL.md` - Complete memory framework
-- `remember-as-you-go/references/REFERENCE.md` - Memory patterns and templates
-- `memory.md` - Root memory storage file
-
----
-
-### create-source
-Create, validate, and test new OSINT data sources for world event collection. Interactive wizard, validation scripts, and comprehensive testing framework guide authors through the complete source creation lifecycle. Automate source generation, ensure quality standards, and maintain source registry.
-
-**Location:** `create-source/`
-
-**Key Features:**
-- Interactive source creation wizard
-- Type-specific templates (Twitter, webpage, API, email, RSS)
-- Front matter validation with quality scoring
-- Connectivity and extraction testing
-- AI helper prompts for guidance
-- Automatic manifest management
-
-**Quick Start:**
-
-```bash
-# Create new source interactively
-node skills/create-source/scripts/create-source.js
-
-# Validate source file
-node skills/create-source/scripts/validate-source.js source/sources/my-source.md
-
-# Test source connectivity and extraction
-node skills/create-source/scripts/test-source.js source/sources/my-source.md
-
-# Validate all sources
-node skills/create-source/scripts/validate-source.js --all
-```
-
-**Source Types:**
-- Twitter accounts (handles, timelines, searches)
-- Webpages (scraping, crawling, selectors)
-- APIs (REST, GraphQL, structured data)
-- Email newsletters (IMAP, digests, alerts)
-- RSS/Atom feeds (news feeds, blogs)
-- Webhooks, websockets, files, databases
-
-**See also:**
-- `create-source/SKILL.md` - Complete framework
-- `create-source/references/QUICK-REFERENCE.md` - Fast reference guide
-- `create-source/references/AI-HELPERS.md` - AI assistance prompts
-- `source/` - Source directory and examples
-
----
-
-### word-event-entities
-Characterize and analyze Word Event Entities - a comprehensive model for representing real-world events with structured data. Understand entity fields, properties, data types, and relationships. Use to inform AI systems about event model architecture.
-
-**Location:** `word-event-entities/`
-
-**Key Components:**
-- Complete field specification (required, optional, geographic, metadata)
-- Data type reference and validation rules
-- Field relationships and dependencies
-- Event type classification patterns
-- Confidence scoring guidelines
-- Example entities (natural disasters, policy, protests)
-- Analysis and characterization scripts
-
-**Quick Reference:**
-
-Required fields:
-- `id` (UUID)
-- `source` (publisher)
-- `title` (headline)
-- `summary` (brief narrative)
-- `details` (full narrative)
-- `date_published` (ISO 8601)
-- `links` (source URLs)
-- `image_urls` (media)
-
-Optional fields:
-- `date_occurred`, `event_type`, `severity`, `status`
-- `keywords`, `entities`, `related_event_ids`
-- `geo` (latitude, longitude, country, region, city)
-- `metadata` (confidence, updated_at, contributor)
-
-**See also:**
-- `word-event-entities/SKILL.md` - Full specification
-- `word-event-entities/references/REFERENCE.md` - Complete field reference
-- `word-event-entities/scripts/` - Analysis examples
-
----
-
-## Skill Structure
-
-Each skill follows the [Agent Skills Specification](https://agentskills.io/specification):
-
-```
-skill-name/
-├── SKILL.md          # Skill metadata and instructions
-├── scripts/          # Executable code examples
-├── references/       # Additional documentation
-└── assets/           # Static resources (optional)
-```
-
-## Environment Configuration
-
-Create `.env` file in project root with API keys:
-
-```bash
-# .env
-PERPLEXITY_API_KEY="your_api_key_here"
-```
-
-See `.env.sample` for template.
-
-## Adding New Skills
-
-To add a new skill:
-
-1. Create skill directory: `mkdir skills/my-skill`
-2. Create `SKILL.md` with frontmatter
-3. Add executable scripts in `scripts/`
-4. Add reference docs in `references/`
-5. Update this README
-
-Validate skills:
-```bash
-npx skills-ref validate ./skills/my-skill
-```
-
-## Resources
-
-- [Agent Skills Specification](https://agentskills.io/specification)
-- [Skills.sh](https://skills.sh)
+Procedural references for the cloud agent. Each skill lives at `skills/<name>/SKILL.md` with optional `references/` deep-dive files. The agent loads `SKILL.md` on demand from the runtime prompt.
+
+> This file is auto-generated. Do not edit by hand. Run `./skills/scripts/regenerate-skills-readme.sh` after editing any skill's frontmatter.
+
+## Skill index
+
+| Name | Description | Lines |
+|---|---|---|
+| [`agent-browser`](agent-browser/SKILL.md) | Native Rust CLI for browser automation by Vercel Labs. Automate web navigation, interact with page elements, extract ... | 297 |
+| [`create-source`](create-source/SKILL.md) 🛠 | Authoring tool for creating new OSINT data sources. Provides templates, validation, and tests for source files. Not u... | 67 |
+| [`data-to-markdown`](data-to-markdown/SKILL.md) | Transform raw scraped or API data into clean, semantic Markdown for the `contents` field of a World Event Entity. Enf... | 59 |
+| [`ffmpeg-cli`](ffmpeg-cli/SKILL.md) | FFmpeg CLI for media processing and transformation. Convert video formats, resize and pad, extract audio, trim by tim... | 343 |
+| [`geocoding`](geocoding/SKILL.md) | Extract location mentions from text and convert to lat/lon coordinates using OpenStreetMap Nominatim (free) or Google... | 88 |
+| [`image-extraction`](image-extraction/SKILL.md) | Extract, process, and normalize images from any data source for world event entities. Find images in social media, we... | 95 |
+| [`imagemagick`](imagemagick/SKILL.md) | ImageMagick CLI for comprehensive image processing and manipulation. Convert formats, resize and crop, apply effects ... | 442 |
+| [`perplexity-search`](perplexity-search/SKILL.md) | Perplexity AI search for web search with AI-powered answers, deep research, and chain-of-thought reasoning. Perform d... | 290 |
+| [`remember-as-you-go`](remember-as-you-go/SKILL.md) | Strict criteria for what to write into LEARNINGS.md (the cross-run knowledge base read by the next Warp Cloud Agent).... | 102 |
+| [`word-event-entities`](word-event-entities/SKILL.md) | Build and validate World Event Entity records (JSONL) representing real-world events with structured metadata, source... | 53 |
+
+🛠 = authoring-only skill, not loaded by the cloud agent during collection runs.
+
+## Adding a new skill
+
+1. Create `skills/<name>/SKILL.md` with YAML frontmatter (`name`, `description`, `license`, `metadata.author`, `metadata.version`, `compatibility`).
+2. Keep `SKILL.md` ≤ ~150 lines: Overview / When to use / Entry-point commands / Pitfalls / See also. Push deep content into `references/`.
+3. If the skill needs a CLI tool that isn't already in the Warp env image, update [`builder/WARP_ENVIRONMENT.md`](../builder/WARP_ENVIRONMENT.md) in the same PR and tag the env-image owner.
+4. Run `./skills/scripts/regenerate-skills-readme.sh` and commit the regenerated `README.md`.
