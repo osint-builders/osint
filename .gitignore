@@ -65,6 +65,5 @@ docs/search/
 # Verifier transient output
 builder/scripts/__fixtures__/*.actual
 
-# Hermes Agent
-.hermes/cache/
-.hermes/.session*
+# Hermes Agent — local-only, never tracked
+.hermes/
