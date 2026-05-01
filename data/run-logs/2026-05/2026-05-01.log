@@ -166,3 +166,116 @@ All 30 sources processed. Events attributed across sources:
 - Twitter API credits remain depleted — all collection via web search fallback
 - 3 events URL-deduped against data already committed by other buckets
 - No media images extracted (no direct Twitter/X access without auth)
+## Bucket 5 run @ 2026-05-01T22:36:33.834Z
+Twitter API: 402 CreditsDepleted - all 28 Twitter sources fell back to Perplexity API and exa_web_search
+Webpage source (Breaking Defense): No articles found in 1-hour window
+Events generated: 13 (8 added after URL dedup, 5 matched existing primary URLs)
+Sources processed: 29/29
+Sources with events: 12 (twitter-ap, twitter-abc, twitter-aurora-intel, twitter-chinese-emb-in-us, twitter-iran-observer, twitter-natalierevolts, twitter-tatarigamiua, twitter-gcaptain, twitter-esri, twitter-riskstaff, twitter-info-fusion-ctr, twitter-xnews)
+Sources without events in window: 17 (no relevant content found in 21:36-22:36 UTC window via web search)
+
+## Processing twitter-abc
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+Created event: evt_20260501_003 - Pentagon Announces Withdrawal of 5,000 US Troops from Germany Over Next 6-12 Mon
+## Processing twitter-ap
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+Created event: evt_20260501_001 - White House Notifies Congress That Iran War Hostilities Have 'Terminated' Under 
+Created event: evt_20260501_002 - Trump Rejects Iran's Latest Peace Proposal, Cites 'Disjointed' Iranian Leadershi
+## Processing twitter-aurora-intel
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+Created event: evt_20260501_004 - Israeli Strikes Kill 10 in Southern Lebanese Town of Habbouch Despite Ceasefire
+## Processing twitter-bbgoriginals
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @bbgoriginals within the collection window.
+## Processing twitter-beltelefacts
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @beltelefacts within the collection window.
+## Processing twitter-chadobcnews
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @chadobcnews within the collection window.
+## Processing twitter-chinese-emb-in-us
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+Created event: evt_20260501_005 - China's UN Ambassador Calls for Urgent Reopening of Strait of Hormuz Ahead of Tr
+## Processing twitter-esri-water
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @esri-water within the collection window.
+## Processing twitter-esri
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+Created event: evt_20260501_010 - US Military Signs AI Contracts with Seven Tech Giants for Classified Defense Sys
+## Processing twitter-etienne-lh
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @etienne-lh within the collection window.
+## Processing twitter-gcaptain
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+Created event: evt_20260501_009 - Ukrainian Drone Strikes Devastate Russian Oil Infrastructure from Perm to Black 
+## Processing twitter-ian-bremmer
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @ian-bremmer within the collection window.
+## Processing twitter-info-fusion-ctr
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+Created event: evt_20260501_012 - IDF Shifts Strategic Focus to Iranian Nuclear Threat as Regime Change and Ballis
+## Processing twitter-iran-observer
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+Created event: evt_20260501_006 - IRGC Aerospace Commander Threatens 'Long and Painful Strikes' on US Regional Pos
+## Processing twitter-jnb-summary
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @jnb-summary within the collection window.
+## Processing twitter-john-pollock
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @john-pollock within the collection window.
+## Processing twitter-mda-space
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @mda-space within the collection window.
+## Processing twitter-mndchina
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @mndchina within the collection window.
+## Processing twitter-modjapan-en
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @modjapan-en within the collection window.
+## Processing twitter-mofajapan-en
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @mofajapan-en within the collection window.
+## Processing twitter-natalierevolts
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+Created event: evt_20260501_007 - Tuareg Rebels and JNIM Jihadists Seize Strategic Tessalit Military Base in North
+## Processing twitter-natlhistships
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @natlhistships within the collection window.
+## Processing twitter-pyongyang-today
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @pyongyang-today within the collection window.
+## Processing twitter-riskstaff
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+Created event: evt_20260501_011 - Iran-Affiliated Hackers Send Threatening Messages to US Marine Corps Personnel a
+## Processing twitter-tatarigamiua
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+Created event: evt_20260501_008 - Russia Launched Record 6,800+ Drones and Missiles at Ukraine in April 2026, Data
+## Processing twitter-xkorea
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @xkorea within the collection window.
+## Processing twitter-xnews
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+Created event: evt_20260501_013 - Zelenskyy Seeks Details on Putin's Proposed May 9 Victory Day Ceasefire in Ukrai
+## Processing twitter-yortukisgk
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Web search returned no recent posts from @yortukisgk within the collection window.
+## Processing webpage-breaking-defense-global
+Twitter API returned 402 CreditsDepleted. Fell back to Perplexity API and exa_web_search.
+No events found within time window 21:36-22:36 UTC for this source.
+Breaking Defense Global section had no articles published within the 1-hour window.
