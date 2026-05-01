@@ -365,6 +365,41 @@ async function main(): Promise<void> {
   const bucketCount = calculateOptimalBucketCount(processableSources.length);
   const buckets = partitionSources(processableSources, bucketCount);
 
+  // Total-coverage guarantee: the union of all bucket IDs must exactly
+  // equal the set of processable manifest IDs. This is the real check the
+  // old per-bucket bash sentinel was trying (and failing) to do — see
+  // PR-D in .hermes/plans/2026-05-01_150225-osint-macro-review.md §1.6.
+  // Run it ONCE here in the orchestrator where we still have both sets.
+  {
+    const manifestIds = new Set(processableSources.map((s) => s.id));
+    const bucketIds = new Set<string>();
+    for (const b of buckets) {
+      for (const s of b) {
+        if (bucketIds.has(s.id)) {
+          throw new Error(
+            `Source ${s.id} appears in more than one bucket — partitionSources is broken.`
+          );
+        }
+        bucketIds.add(s.id);
+      }
+    }
+    if (bucketIds.size !== manifestIds.size) {
+      throw new Error(
+        `Bucket coverage mismatch: ${bucketIds.size} bucketed, ` +
+        `${manifestIds.size} processable in manifest.`
+      );
+    }
+    for (const id of manifestIds) {
+      if (!bucketIds.has(id)) {
+        throw new Error(`Source ${id} is in the manifest but not in any bucket.`);
+      }
+    }
+    console.log(
+      `✓ Total-coverage check: ${bucketIds.size} sources across ${buckets.length} buckets ` +
+      `equals manifest's processable set.`
+    );
+  }
+
   console.log(`\nPartitioning ${processableSources.length} sources into ${buckets.length} parallel agents:`);
   buckets.forEach((bucket, i) => {
     const sourceIds = bucket.map(s => s.id).join(', ');

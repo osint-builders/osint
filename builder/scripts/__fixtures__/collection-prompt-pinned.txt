@@ -86,39 +86,47 @@ Webpage fixture content.
 
 ## Step-by-Step Execution
 
-### Step 0.5: Cross-Check Source List Against Live Manifest
+### Step 0.5: Confirm This Bucket's Source IDs Are Still in the Manifest
 
-Before collecting anything, verify that the sentinel list above matches the
-set of processable sources in `source/manifest.json` (everything whose status
-is NOT in {inactive, archived, deprecated}). This is a hard guard against the
-builder template silently dropping a source.
+The orchestrator has already verified that the union of every bucket equals
+the manifest's processable set, so no source can be silently dropped between
+prompt construction and dispatch. What remains for *this* bucket: confirm
+that none of its assigned IDs were removed from `source/manifest.json`
+between dispatch and your run, and that none flipped to a skip status
+(`inactive`, `archived`, `deprecated`). This catches the rare race where
+someone edits the manifest mid-run.
 
 ```bash
-# IDs the orchestrator embedded in this prompt
+# IDs the orchestrator embedded in this prompt for THIS bucket
 EXPECTED_IDS=("twitter-fixture" "webpage-fixture")
 
-# IDs currently in the manifest with a processable status
-MANIFEST_IDS=$(jq -r '.sources[] | select((.status // "") | ascii_downcase | IN("inactive","archived","deprecated") | not) | .id' source/manifest.json | sort)
+# IDs currently in the manifest with a processable status, as a set we
+# can grep against in O(1).
+MANIFEST_PROCESSABLE=$(jq -r \
+  '.sources[] | select((.status // "") | ascii_downcase | IN("inactive","archived","deprecated") | not) | .id' \
+  source/manifest.json)
 
-EXPECTED_SORTED=$(printf "%s\n" "${EXPECTED_IDS[@]}" | sort)
+MISSING=()
+for id in "${EXPECTED_IDS[@]}"; do
+  if ! printf "%s\n" "$MANIFEST_PROCESSABLE" | grep -Fxq "$id"; then
+    MISSING+=("$id")
+  fi
+done
 
-if [ "$EXPECTED_SORTED" != "$MANIFEST_IDS" ]; then
-  echo "ERROR: Source list mismatch between prompt and source/manifest.json" >&2
-  echo "Expected (from prompt):" >&2
-  printf "  %s\n" "${EXPECTED_IDS[@]}" | sort >&2
-  echo "Found in manifest (processable):" >&2
-  echo "$MANIFEST_IDS" | sed 's/^/  /' >&2
-  echo "Aborting collection so no source is silently skipped." >&2
+if [ "${#MISSING[@]}" -gt 0 ]; then
+  echo "ERROR: bucket 2 contains source IDs that are no longer processable" >&2
+  echo "in source/manifest.json (status changed or entry removed):" >&2
+  printf "  %s\n" "${MISSING[@]}" >&2
+  echo "Aborting bucket so no agent processes a stale source list." >&2
   exit 1
 fi
 
-echo "Source list cross-check passed: ${#EXPECTED_IDS[@]} sources to process."
+echo "Bucket 2 subset check passed: ${#EXPECTED_IDS[@]} sources verified."
 ```
 
 If this check fails, do NOT continue. Investigate the mismatch and either
-(a) regenerate the prompt with the missing source, or (b) update the manifest
-status to one of {inactive, archived, deprecated} if the source genuinely
-should be skipped.
+(a) re-dispatch this bucket from a fresh orchestrator run, or (b) update
+the manifest status if the source genuinely should be skipped now.
 
 ### Step 1: Validate Prerequisites
 
