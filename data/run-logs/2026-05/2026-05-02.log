@@ -44,3 +44,17 @@ All 29 sources in bucket 5 processed:
 - One E-PRIME violation fixed in event 14 ("have been effective" → "proved effective")
 - webpage-cuashub-defense: No defense-specific content from CUASHUB in time window; assigned related DPRK cyber event
 - webpage-yahoo-world-news: Yahoo world news aggregation mapped to major wire service stories
+
+## Bucket 1 run @ 2026-05-02T06:23:10.054Z
+
+### Configuration
+- Time window: 2026-05-02T05:23:10.054Z to 2026-05-02T06:23:10.054Z
+- Sources assigned: 30 (all Twitter)
+- Strategy: exa_web_search fallback (Twitter API credits depleted)
+
+### Results
+- Events created: 15 (validated, E-PRIME compliant, geocoded)
+- Sources with no events in window: 6 (natlhistships, sindikasyontek, seawatch-intl, esri, nguyenthiho88, jasdf-pao-eng)
+
+### Event IDs
+evt_20260502_001 through evt_20260502_015
