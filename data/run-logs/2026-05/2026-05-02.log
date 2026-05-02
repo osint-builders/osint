@@ -168,3 +168,157 @@ Created event: evt_20260502_229 - Bahrain King Threatens Traitors
 Sources processed: 29/29. Events created: 29.
 Strategy: exa_web_search (Twitter API credits depleted).
 Key coverage: Iran-US War Powers, Ukraine drones, SCS Balikatan, Somalia piracy, USS Higgins, Pakistan submarine, Mali rebels.
+
+## Bucket 3 run @ 2026-05-02T14:15:55.439Z
+- Execution: 2026-05-02T14:15:55.439Z (UTC)
+- Sources processed: 29/29
+- Events generated: 29
+- Events after dedup: 28 (1 URL duplicate filtered)
+- Twitter API: Credits depleted (confirmed prior learning)
+- Fallback strategy: exa_web_search primary, Perplexity validation
+
+## Processing twitter-abc
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_434 - Trump declares Iran hostilities terminated in letter to Congress as 60-day deadline passes
+## Processing twitter-allsource4
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_441 - Multi-source assessment: Iran war Day 64 shows convergence of military, diplomatic, and legal pressures
+## Processing twitter-ca-jc
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_440 - US approves $8.6 billion in expedited arms sales to Israel, Kuwait, Qatar, and UAE
+## Processing twitter-chinapower
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_448 - CSIS analysis: PLA Navy conducts dual deployments in South China Sea and West Pacific during Balikatan
+## Processing twitter-dataminr
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_433 - Fourteen IRGC members killed in unexploded ordnance explosion near Zanjan, Iran
+## Processing twitter-defence-aust
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_431 - PLAN deploys major naval task group near Philippines during Balikatan 2026 exercises
+## Processing twitter-dprk-news
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_445 - Russia calls UN Security Council sanctions on North Korea irrelevant at UNSC meeting
+## Processing twitter-ianellisjones
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_446 - US warns ships paying Iran transit fees in Hormuz face sanctions
+## Processing twitter-japan-joint-staff
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_437 - Japan holds off on naval deployment to Strait of Hormuz ahead of Trump summit
+## Processing twitter-joseph-dempsey
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_444 - PLAN Type 055 destroyer leads task group exercises east of Luzon Strait in Balikatan response
+## Processing twitter-korea-times
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_456 - South Korea exports surge 48% in April as Iran war energy disruption boosts petrochemical revenues
+## Processing twitter-mda-space
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_457 - North Korea missile technology transfer to Iran spans 40+ years, Hudson Institute analysis reveals
+## Processing twitter-mdat-gog
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_432 - Yemen reports oil tanker hijacked off Shabwa coast heading toward Somali waters
+## Processing twitter-megatronlion
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_450 - Ukraine strikes Russian oil infrastructure in Perm for second consecutive day as deep-strike campaign intensifies
+## Processing twitter-middle-east-eye
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_439 - Israeli strikes kill 12 in southern Lebanon as speaker Berri accuses Israel of using ceasefire as cover
+## Processing twitter-militarylandnet
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_452 - Russia launches 163 drones against Ukraine overnight as frontline combat intensifies
+## Processing twitter-mondefense
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_436 - Taiwan MND reports 29 PLA aircraft detected with 15 crossing median line in joint patrol
+## Processing twitter-national-interest
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_455 - Pentagon withdraws 5,000 troops from Germany amid transatlantic rift over Iran war
+## Processing twitter-raytoribo
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_435 - Peru launches trafficking probe into citizens recruited to fight for Russia in Ukraine
+## Processing twitter-riskstaff
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_429 - IRGC warns of resumed US-Iran war as Trump rejects Tehran peace proposal
+## Processing twitter-sanctions-watch
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_447 - US Treasury sanctions Chinese oil terminal and Iranian exchange firms in coordinated enforcement
+## Processing twitter-schizoint-rel
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_453 - IRGC Navy announces 'new rules' for Persian Gulf waters amid information operations campaign
+## Processing twitter-sim-nasr
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_430 - Iran's fractured leadership complicates peace negotiations as IRGC and diplomats diverge
+## Processing twitter-sindikasyontek
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_442 - Balikatan 2026 features enhanced cyber defense component with Philippine participation
+## Processing twitter-taiwan-news-en
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_454 - Taiwan defense budget gridlock continues as US pressure intensifies ahead of May 6 negotiations
+## Processing twitter-therealshipdude
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_449 - Cargo ships observed near Strait of Hormuz as Iran categorizes vessels into hostile, neutral, and friendly
+## Processing twitter-us-5th-fleet
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_438 - USS Gerald Ford carrier strike group departs Middle East as US maintains two-carrier posture
+## Processing twitter-vantortech
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_451 - Satellite imagery tracks PLAN carrier group and surface combatants in South China Sea
+## Processing twitter-xkorea
+- Twitter API credits depleted (prior learning confirmed)
+- Fallback: exa_web_search + Perplexity for event discovery
+- Events found: 1
+- Created event: evt_20260502_443 - USFK proposes South Korea as Regional Sustainment Hub for Taiwan contingency operations
