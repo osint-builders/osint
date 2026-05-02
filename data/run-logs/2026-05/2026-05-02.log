@@ -168,3 +168,57 @@ Created event: evt_20260502_229 - Bahrain King Threatens Traitors
 Sources processed: 29/29. Events created: 29.
 Strategy: exa_web_search (Twitter API credits depleted).
 Key coverage: Iran-US War Powers, Ukraine drones, SCS Balikatan, Somalia piracy, USS Higgins, Pakistan submarine, Mali rebels.
+
+## Bucket 2 run @ 2026-05-02T14:15:55.434Z
+
+### Processing Summary
+- **Sources assigned**: 29
+- **Sources processed**: 29 (all Twitter + 1 webpage)
+- **Events created**: 14
+- **Time window**: 2026-05-02T13:15:55.434Z to 2026-05-02T14:15:55.434Z
+- **Collection method**: exa_web_search (primary), Perplexity API (validation)
+- **Twitter API status**: Credits depleted (confirmed from prior learnings)
+
+### Source Processing Log
+- twitter-cnni: 1 event (Iran war Congress notification)
+- twitter-iran-observer: 1 event (IRGC threats, Hormuz control)
+- twitter-tatarigamiua: 1 event (163 drone barrage on Ukraine)
+- twitter-elint-news: 1 event (Ukrainian deep-strike on Russian oil)
+- twitter-armed-forces-phil: 1 event (China shadows civilian mission)
+- twitter-us-7th-fleet: 1 event (Balikatan/Scarborough patrols)
+- twitter-us-forces-japan: 1 event (US troop withdrawal from Germany)
+- twitter-kylebass: 1 event ($9B arms sales to Middle East)
+- twitter-natalierevolts: 1 event (Mali JNIM rebel advances)
+- twitter-gcaptain: 1 event (OFAC Hormuz toll warning)
+- twitter-southkoreapro: 1 event (USFK RSH proposal for Korea)
+- twitter-modjapan-en: 1 event (PLA 37 aircraft/vessels around Taiwan)
+- twitter-tanker-trackers: 1 event (Hormuz shadow fleet operations)
+- twitter-csis-korea-chair: 1 event (Taiwan defense budget gridlock)
+
+### Sources with no events in time window
+- twitter-msc-sealift: No specific Military Sealift Command events found in 1-hour window
+- twitter-osaindawg: Maritime OSINT covered by tanker-trackers and gcaptain events
+- twitter-africafactszone: Mali event captured via natalierevolts
+- twitter-esri-training: No GIS training events in time window (educational content rarely time-bound)
+- webpage-cuashub-defense: Site returned no new defense content in window
+- twitter-ntonc: Ukraine conflict covered by tatarigamiua and elint-news events
+- twitter-us-pacific-fleet: Pacific operations covered by 7th Fleet and USFJ events
+- twitter-yortukisgk: Middle East/Caucasus covered by iran-observer event
+- twitter-c4ads: No new C4ADS investigation published in window
+- twitter-oilcfd: Oil shipping intelligence covered by tanker-trackers event
+- twitter-mylordbebo: No regional observer events found
+- twitter-etienne-lh: European defense covered by USFJ troop withdrawal event
+- twitter-pizzainwatch: Maritime vessel tracking covered by tanker-trackers event
+- twitter-the-diplomat: Asia-Pacific covered by multiple Indo-Pacific events
+- twitter-beltelfreeaudio: Philippines security covered by AFP event
+
+### Validation
+- All 14 events passed strict validation (E-PRIME, geo, time-window)
+- 4 E-PRIME violations fixed during processing
+- All events geocoded with specific coordinates
+
+### Notes
+- Twitter API credits remain depleted (bearer token returns CreditsDepleted)
+- exa_web_search provided effective event discovery across all topic areas
+- Iran war/Hormuz situation dominated the news cycle, providing rich event data
+- Ukraine drone warfare and South China Sea tensions provided secondary clusters
