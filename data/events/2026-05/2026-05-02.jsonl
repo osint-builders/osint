@@ -6418,3 +6418,531 @@
   "confidence": 0.85,
   "ingested_at": "2026-05-02T20:03:00Z"
 }
+{
+  "id": "evt_20260502_801",
+  "source": {
+    "name": "Twitter @AP (via Reuters)",
+    "provider": "news-wire"
+  },
+  "title": "Trump Signals Possibility of Restarting Military Strikes on Iran",
+  "summary": "U.S. President Donald Trump told reporters on Saturday evening that the United States could restart strikes on Iran, escalating rhetoric as ceasefire negotiations remain stalled and Tehran warns of renewed conflict.",
+  "contents": "## Trump Signals Possible Restart of Iran Military Strikes\n\n### Escalating Rhetoric\nU.S. President Donald Trump told reporters on Saturday, May 2, 2026, that the possibility exists for the United States to restart strikes on Iran. The statement came hours after a senior Iranian military officer warned that renewed fighting between the two nations appeared \"likely.\"\n\n### Context of Stalled Negotiations\nTrump expressed dissatisfaction with Iran's latest negotiating proposal, delivered via mediator Pakistan on Thursday evening. \"At this moment I'm not satisfied with what they're offering,\" Trump stated, blaming \"tremendous discord\" within Iran's leadership for the stalemate.\n\n### Military Options Under Review\nThe president received an updated briefing on military options from U.S. Central Command earlier in the week. Pentagon officials confirmed American military forces remain on standby to resume attacks if peace talks break down. Approximately 50,000 U.S. troops remain stationed across the Middle East, with 20 Navy ships including aircraft carriers USS Abraham Lincoln and USS George H.W. Bush still in the region.\n\n### Iranian Response\nMohammad Jafar Asadi, a senior figure in the Iranian military's central command, declared earlier Saturday that \"a renewed conflict between Iran and the United States remains likely,\" adding that \"evidence has shown that the United States holds no commitment to any promises or agreements.\"\n\n### Strait of Hormuz Standoff\nThe Strait of Hormuz remains effectively closed, with Iran blocking nearly all shipping since the war erupted on February 28. The U.S. imposed its own counter-blockade of Iranian ports on April 13. Oil prices hover approximately 50 percent above pre-war levels, with Brent crude settling near $108 per barrel.",
+  "date_published": "2026-05-02T22:40:00Z",
+  "date_event": "2026-05-02T22:40:00Z",
+  "links": [
+    {
+      "url": "https://www.reuters.com/world/trump-says-possibility-us-restart-strikes-iran-2026-05-02/",
+      "label": "Reuters Report"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 38.8977,
+    "lon": -77.0365,
+    "country": "United States",
+    "region": "District of Columbia",
+    "city": "Washington"
+  },
+  "topics": [
+    "iran-war",
+    "us-military",
+    "diplomacy",
+    "middle-east",
+    "strait-of-hormuz",
+    "ceasefire",
+    "sanctions"
+  ],
+  "confidence": 0.95,
+  "ingested_at": "2026-05-02T23:27:19Z"
+}
+{
+  "id": "evt_20260502_804",
+  "source": {
+    "name": "Twitter @NatalieRevolts (via Reuters)",
+    "provider": "conflict-monitoring"
+  },
+  "title": "Russian Forces Reach Outskirts of Ukraine's Kostiantynivka Fortress City",
+  "summary": "Russian troops reached the outskirts of Kostiantynivka in Ukraine's eastern Donetsk region, attempting to establish a foothold near a heavily fortified Ukrainian defensive position, with 83 assaults recorded since Monday.",
+  "contents": "## Russian Forces Approach Kostiantynivka\n\n### Frontline Developments\nUkraine's army chief Oleksandr Syrskyi reported on Saturday that Russian forces have reached the outskirts of Kostiantynivka in the eastern Donetsk region. The city forms part of a so-called \"fortress belt\" — an area heavily fortified by the Ukrainian military.\n\n### Combat Activity\n\"We repel the Russian occupiers' persistent attempts to gain a foothold in the outskirts of Kostiantynivka using infiltration tactics. Counter-sabotage measures continue in the city,\" Syrskyi stated on Telegram. Since Monday, Russian troops carried out 83 assaults in this sector using small infantry groups.\n\n### Territorial Situation\nThe Ukrainian battlefield mapping project DeepState shows Russian troops controlling an area approximately one kilometer from the city's southern outskirts. Small sections of Kostiantynivka in the southeast appear marked as a grey zone, indicating neither Ukraine nor Russia holds full control.\n\n### Strategic Context\nRussia's defense ministry claimed its forces captured Novodmytrivka, just north of Kostiantynivka. Syrskyi noted Russian offensive attempts rose noticeably in April. U.S.-brokered peace talks remain stalled over Russian demands that Ukraine withdraw from areas in the Donetsk and Luhansk regions that Moscow failed to capture during its four-year full-scale invasion.\n\n### Broader Ukraine Operations\nUkrainian drones continued striking deep into Russian territory, hitting oil facilities in the Perm region and the Black Sea port of Tuapse. President Zelenskyy stated Russia has lost at least $7 billion since the start of the year from attacks on its oil sector.",
+  "date_published": "2026-05-02T22:30:00Z",
+  "date_event": "2026-05-02T11:09:00Z",
+  "links": [
+    {
+      "url": "https://www.thestar.com.my/news/world/2026/05/02/fighting-reaches-outskirts-of-ukraine039s-stronghold-kostiantynivka",
+      "label": "Reuters via The Star"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 48.527,
+    "lon": 37.705,
+    "country": "Ukraine",
+    "region": "Donetsk Oblast",
+    "city": "Kostiantynivka"
+  },
+  "topics": [
+    "ukraine",
+    "russia",
+    "conflict",
+    "donetsk",
+    "military-operations",
+    "territorial-control"
+  ],
+  "confidence": 0.9,
+  "ingested_at": "2026-05-02T23:27:19Z"
+}
+{
+  "id": "evt_20260502_805",
+  "source": {
+    "name": "Twitter @WarTV7890 (via Newsweek/Romania MOD)",
+    "provider": "conflict-monitoring"
+  },
+  "title": "NATO Scrambles Fighter Jets After Russian Drones Breach Romanian Airspace",
+  "summary": "Romanian F-16 fighter jets scrambled after Russian drones breached NATO airspace near the Ukraine border, with one drone confirmed entering Romanian territory in the Chilia area before continuing toward Ukrainian targets.",
+  "contents": "## NATO Scrambles Jets Over Russian Drone Incursion\n\n### Incident Details\nTwo Romanian F-16 fighter jets launched from the 86th Air Base in Fetesti around 02:00 local time on Saturday, May 2, 2026, after Russian drones approached NATO airspace. Military radar systems tracked approximately 20 Russian aerial drones operating near NATO airspace, moving towards the Ukrainian city of Ismail.\n\n### Airspace Violation Confirmed\nRomania's National Military Command Center confirmed that one drone briefly entered Romanian national airspace in the Chilia area before continuing its trajectory toward Ismail. Explosions subsequently occurred on the Ukrainian side of the Danube River.\n\n### Emergency Response\nAuthorities issued RO-Alert warnings to residents in northern Tulcea County at 02:03. The air alert lifted at 02:50. Romanian defense authorities reported that allied military structures received real-time information throughout the incident.\n\n### Pattern of Escalation\nThis incident follows a similar episode the previous week, when NATO scrambled fighter jets after Russia carried out airborne operations near the borders of Poland and Romania. Together, these back-to-back incidents reflect mounting pressure along NATO's eastern flank.\n\n### NATO Response\nRomanian and Polish officials confirmed air defense units remain ready for immediate response. NATO allies continue monitoring the region closely, signaling that any future airspace violations will trigger swift defensive action.",
+  "date_published": "2026-05-02T22:35:00Z",
+  "date_event": "2026-05-02T00:00:00Z",
+  "links": [
+    {
+      "url": "https://www.newsweek.com/nato-scrambles-fighter-jets-as-russian-drones-breach-airspace-11905712",
+      "label": "Newsweek Report"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 45.425,
+    "lon": 29.56,
+    "country": "Romania",
+    "region": "Tulcea County",
+    "city": "Chilia"
+  },
+  "topics": [
+    "nato",
+    "russia",
+    "ukraine",
+    "drone-incursion",
+    "airspace-violation",
+    "romania",
+    "f-16",
+    "military"
+  ],
+  "confidence": 0.93,
+  "ingested_at": "2026-05-02T23:27:19Z"
+}
+{
+  "id": "evt_20260502_807",
+  "source": {
+    "name": "Twitter @YonkosMC (via Reuters/The Sun)",
+    "provider": "maritime-security"
+  },
+  "title": "U.S. and Philippines Deploy NMESIS Anti-Ship Missile System in Batanes Near Taiwan",
+  "summary": "Philippine and U.S. forces showcased the NMESIS anti-ship missile system in Batanes province, approximately 100 miles south of Taiwan, during Balikatan 2026 exercises as tensions persist over Taiwan and South China Sea disputes.",
+  "contents": "## NMESIS Anti-Ship Missile Deployed Near Taiwan\n\n### Deployment Details\nPhilippine and U.S. forces on Saturday showcased the Navy-Marine Expeditionary Ship Interdiction System (NMESIS) anti-ship missile system in Batanes province during annual Balikatan war games. The system arrived via a U.S. C-130 transport aircraft and took position in the capital Basco.\n\n### Strategic Location\nBatanes, the Philippines' northernmost province with approximately 20,000 residents, sits roughly 100 miles south of Taiwan along the Luzon Strait — a strategic corridor on the frontline of U.S.-China competition for dominance in the Asia-Pacific.\n\n### System Capabilities\nThe NMESIS provides a highly mobile coastal anti-ship missile capability designed to target surface vessels from land-based positions at ranges of approximately 185 km (115 miles). U.S. Staff Sergeant Darren Gibbs described the system as \"fully autonomous\" in operation: \"We tell it where to go and then we program what it needs to do.\"\n\n### Balikatan 2026 Context\nThe deployment occurs during the largest-ever Balikatan exercises, involving 17,000 troops from seven countries: the Philippines, United States, Japan, Australia, New Zealand, Canada, and France. Chinese vessels shadowed the multinational maritime drills but maintained distance without conducting dangerous maneuvers.\n\n### Analyst Assessment\nSecurity analyst Chester Cabalza noted the NMESIS \"can spark a powder keg for Beijing and asymmetric deterrence for Manila and Taipei in the Bashi Channel along the Luzon Strait.\"",
+  "date_published": "2026-05-02T22:40:00Z",
+  "date_event": "2026-05-02T10:09:00Z",
+  "links": [
+    {
+      "url": "https://thesun.my/news/world-news/us-philippines-anti-ship-missile-system/",
+      "label": "The Sun Malaysia Report"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 20.452,
+    "lon": 121.97,
+    "country": "Philippines",
+    "region": "Batanes",
+    "city": "Basco"
+  },
+  "topics": [
+    "philippines",
+    "us-military",
+    "nmesis",
+    "anti-ship-missile",
+    "taiwan",
+    "south-china-sea",
+    "balikatan",
+    "china",
+    "indo-pacific"
+  ],
+  "confidence": 0.92,
+  "ingested_at": "2026-05-02T23:27:19Z"
+}
+{
+  "id": "evt_20260502_809",
+  "source": {
+    "name": "Twitter @cepa (via AA/Poland)",
+    "provider": "think-tank"
+  },
+  "title": "Poland Condemns NATO 'Disintegration' as Alliance Fractures Over Iran War",
+  "summary": "Poland's government slammed what it described as the 'ongoing disintegration' of the NATO alliance as a 'disastrous trend,' amid deepening rifts between the United States and European allies over the Iran war and U.S. troop withdrawal from Germany.",
+  "contents": "## Poland Warns of NATO Alliance Fractures\n\n### Polish Statement\nPoland condemned what it characterized as the \"ongoing disintegration\" of the NATO alliance as a \"disastrous trend,\" reflecting growing European alarm over transatlantic defense cohesion amid the Iran war.\n\n### Trigger Events\nThe statement followed two developments: the Pentagon's announcement of withdrawing 5,000 U.S. troops from Germany, and continued disagreement between the U.S. and European allies over Iran war strategy. German Chancellor Friedrich Merz's criticism that the U.S. appeared \"humiliated\" by Iranian leadership prompted Trump's retaliation through the troop withdrawal.\n\n### European Defense Response\nGermany urged stronger European defence capabilities in response to the withdrawal announcement. European allies have expected U.S. troop reductions since Trump took office, with Washington warning that Europe would need to manage its own security, including Ukraine-related matters, going forward.\n\n### NATO Working to Understand\nNATO officials stated the alliance remains \"working with the US to understand details\" of the troop reduction decision in Germany. The withdrawal affects 14 percent of the 36,000 American service members stationed there.\n\n### Broader Alliance Tensions\nTrump has repeatedly criticized NATO allies for declining to assist Washington in the Iran war. The U.S. launched its own \"Maritime Freedom Construct\" coalition to restart shipping through the Strait of Hormuz, separate from European-led efforts that conditioned involvement on achieving peace first.",
+  "date_published": "2026-05-02T23:00:00Z",
+  "date_event": "2026-05-02T18:00:00Z",
+  "links": [
+    {
+      "url": "https://www.aa.com.tr/en/europe/poland-slams-ongoing-disintegration-of-alliance-as-disastrous-trend-amid-nato-rift-over-iran-war/3924895",
+      "label": "Anadolu Agency Report"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 52.2297,
+    "lon": 21.0122,
+    "country": "Poland",
+    "region": "Masovia",
+    "city": "Warsaw"
+  },
+  "topics": [
+    "nato",
+    "poland",
+    "european-security",
+    "iran-war",
+    "germany",
+    "transatlantic",
+    "alliance",
+    "defense-policy"
+  ],
+  "confidence": 0.88,
+  "ingested_at": "2026-05-02T23:27:19Z"
+}
+{
+  "id": "evt_20260502_810",
+  "source": {
+    "name": "Twitter @WarshipCam (via CGTN/US Official)",
+    "provider": "naval-intelligence"
+  },
+  "title": "USS Gerald R. Ford Aircraft Carrier Departs Middle East After Iran Operations",
+  "summary": "The USS Gerald R. Ford aircraft carrier departed the Middle East after participating in operations against Iran, reducing U.S. carrier presence in the region to two ships while 20 Navy vessels remain deployed.",
+  "contents": "## USS Gerald R. Ford Leaves Middle East Theater\n\n### Departure Confirmed\nThe USS Gerald R. Ford aircraft carrier departed the Middle East, currently positioned in the U.S. European Command area of responsibility. A U.S. official confirmed approximately 20 Navy ships remain in the Middle East, including aircraft carriers USS Abraham Lincoln and USS George H.W. Bush.\n\n### Extended Deployment\nThe Ford has operated at sea for more than 10 months, during which it participated in U.S. operations in the Caribbean — including strikes on alleged drug-smuggling boats, interception of sanctioned tankers, and a raid to seize Venezuelan leader Nicolas Maduro — before joining the Iran war effort.\n\n### Operational Assessment\nMark Cancian of the Center for Strategic and International Studies assessed that U.S. military capability \"has not changed\" as Washington returns to its typical posture of two carrier groups. \"The Ford carrier group had left the United States last June, and its deployment extended twice. The crew and the ship exhibit fatigue, so the United States sends the group home,\" Cancian noted.\n\n### Carrier Challenges\nDuring deployment, a fire broke out in a laundry room aboard the carrier on March 12, injuring two sailors and causing major damage to approximately 100 beds. The ship also experienced persistent issues with its toilet system.\n\n### Strategic Context\nThe Ford's departure comes as Trump signals possible resumption of strikes against Iran and the 60-day War Powers Resolution deadline passes without congressional authorization for the continued conflict.",
+  "date_published": "2026-05-02T22:28:00Z",
+  "date_event": "2026-05-02T18:00:00Z",
+  "links": [
+    {
+      "url": "https://news.cgtn.com/news/2026-05-02/Trump-tells-Congress-Iran-war-terminated-as-60-day-clock-runs-out-1MOm0gccim4/p.html",
+      "label": "CGTN Report"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 36.0,
+    "lon": 33.0,
+    "country": "International Waters",
+    "region": "Eastern Mediterranean",
+    "city": ""
+  },
+  "topics": [
+    "us-navy",
+    "aircraft-carrier",
+    "gerald-r-ford",
+    "middle-east",
+    "iran-war",
+    "deployment",
+    "naval-operations"
+  ],
+  "confidence": 0.9,
+  "ingested_at": "2026-05-02T23:27:19Z"
+}
+{
+  "id": "evt_20260502_811",
+  "source": {
+    "name": "Twitter @gCaptain (via Bloomberg/Boston Globe)",
+    "provider": "maritime-news"
+  },
+  "title": "India-Linked Supertanker Attempts Rare Strait of Hormuz Transit Amid Dual Blockade",
+  "summary": "An India-linked supertanker carrying liquefied petroleum gas attempted a rare transit through the Strait of Hormuz, underscoring India's struggle to alleviate an energy crisis caused by the ongoing Iran-U.S. dual maritime blockade.",
+  "contents": "## Rare Hormuz Transit Attempt Highlights Energy Crisis\n\n### Transit Attempt\nAn India-linked supertanker laden with liquefied petroleum gas (LPG) attempted to transit the Strait of Hormuz on May 2, 2026. The crossing represents a rare attempt to navigate the waterway amid ongoing dual blockades by Iran and the United States.\n\n### Energy Crisis Context\nThe Strait of Hormuz — through which approximately one-fifth of the world's oil and liquefied natural gas normally flows — has remained effectively closed since Iran blocked shipping after the U.S.-Israeli strikes on February 28. The U.S. imposed its own counter-blockade of Iranian ports on April 13.\n\n### Market Impact\nOil prices hover approximately 50 percent above pre-war levels. Brent crude settled near $108 per barrel, with U.S. gasoline pump prices surging well above $4 per gallon. News of Iran's latest negotiating proposal briefly pushed oil prices down nearly five percent before recovering.\n\n### India's Vulnerability\nIndia, as a major energy importer, faces particular vulnerability from the Hormuz closure. The attempted transit highlights the country's desperate search for energy supplies as the blockade disrupts global supply chains.\n\n### Sanctions Warning\nWashington warned that ships paying tolls or fees to Iran for safe passage through Hormuz could face U.S. sanctions, potentially complicating future transit attempts by vessels from any nation.",
+  "date_published": "2026-05-02T23:05:00Z",
+  "date_event": "2026-05-02T20:00:00Z",
+  "links": [
+    {
+      "url": "https://www.bostonglobe.com/2026/05/02/world/trump-says-prefers-not-to-strike-iran-as-frustration-mounts/",
+      "label": "Bloomberg via Boston Globe"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 26.56,
+    "lon": 56.25,
+    "country": "International Waters",
+    "region": "Strait of Hormuz",
+    "city": ""
+  },
+  "topics": [
+    "maritime-security",
+    "strait-of-hormuz",
+    "india",
+    "energy-crisis",
+    "oil-prices",
+    "blockade",
+    "iran-war",
+    "shipping"
+  ],
+  "confidence": 0.85,
+  "ingested_at": "2026-05-02T23:27:19Z"
+}
+{
+  "id": "evt_20260502_812",
+  "source": {
+    "name": "Twitter @seawatch_intl (via AA)",
+    "provider": "humanitarian"
+  },
+  "title": "Oil Tanker Hijacked Off Yemen Coast, Heads Toward Somali Waters",
+  "summary": "An oil tanker was hijacked off the coast of Yemen and directed toward Somali waters, adding to maritime security concerns in the region amid ongoing Houthi activity and the broader Iran war's impact on Red Sea shipping.",
+  "contents": "## Oil Tanker Hijacked Near Yemen\n\n### Incident Report\nAn oil tanker operating off the coast of Yemen fell under the control of hijackers who redirected it toward Somali waters on May 2, 2026. The incident represents a continued threat to maritime security in the region.\n\n### Regional Maritime Context\nThe hijacking occurs against the backdrop of ongoing Houthi militant activity in the Red Sea and Gulf of Aden, which has disrupted global shipping patterns since the Iran-backed group began targeting commercial vessels. The broader Iran war has further complicated maritime security across the Middle East.\n\n### Shipping Disruptions\nGlobal shipping faces unprecedented challenges, with the Strait of Hormuz effectively closed due to the Iran-U.S. conflict and Red Sea routes compromised by Houthi attacks. These combined disruptions have forced major shipping companies to reroute vessels around the Cape of Good Hope, adding weeks to journey times and significantly increasing costs.\n\n### International Response\nCoalition naval forces maintain presence in the region to protect commercial shipping, though resources remain stretched across multiple maritime security challenges simultaneously. The incident underscores the cascading effects of regional instability on global trade routes.",
+  "date_published": "2026-05-02T22:50:00Z",
+  "date_event": "2026-05-02T18:00:00Z",
+  "links": [
+    {
+      "url": "https://thesun.my/news/world-news/",
+      "label": "The Sun Malaysia Headlines"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 12.8,
+    "lon": 47.5,
+    "country": "Yemen",
+    "region": "Gulf of Aden",
+    "city": ""
+  },
+  "topics": [
+    "maritime-security",
+    "piracy",
+    "yemen",
+    "houthis",
+    "oil-tanker",
+    "hijacking",
+    "shipping",
+    "red-sea"
+  ],
+  "confidence": 0.75,
+  "ingested_at": "2026-05-02T23:27:19Z"
+}
+{
+  "id": "evt_20260502_813",
+  "source": {
+    "name": "Twitter @KC_NWT (via AA)",
+    "provider": "regional-security"
+  },
+  "title": "Japan and Vietnam Agree to Boost Bilateral Trade to $60 Billion by 2030",
+  "summary": "Japan and Vietnam reached an agreement to increase bilateral trade to $60 billion by 2030, strengthening economic ties as both nations navigate regional security challenges in the Indo-Pacific.",
+  "contents": "## Japan-Vietnam Trade Agreement\n\n### Trade Target\nJapan and Vietnam agreed to boost bilateral trade to $60 billion by 2030, according to an announcement on May 2, 2026. The agreement strengthens economic cooperation between two key Indo-Pacific nations.\n\n### Strategic Significance\nThe trade agreement comes as Japan pursues deeper engagement across Southeast Asia, complementing its expanding security partnerships in the region. Japan's defense budget continues to grow toward the 2 percent GDP target, while its participation in Balikatan 2026 marks a historic expansion of its military footprint in Southeast Asia.\n\n### Regional Context\nBoth Japan and Vietnam share concerns over China's assertive behavior in the South China Sea and broader Indo-Pacific region. Vietnam maintains territorial disputes with China in the South China Sea, while Japan faces Chinese pressure over the Senkaku Islands and Taiwan Strait.\n\n### Economic Dimensions\nThe agreement reflects Japan's strategy of using economic engagement to build resilient partnerships that complement security cooperation. Vietnam's growing economy and strategic location make it a key partner in Japan's Indo-Pacific strategy.\n\n### Japanese PM's Vision\nJapan's Prime Minister has pledged increased effort toward maintaining a \"free and open Indo-Pacific,\" with economic diplomacy serving as a foundation for the broader strategic framework.",
+  "date_published": "2026-05-02T23:10:00Z",
+  "date_event": "2026-05-02T12:00:00Z",
+  "links": [
+    {
+      "url": "https://www.aa.com.tr/en/asia-pacific/japan-vietnam-agree-to-boost-bilateral-trade-to-60b-by-2030/3924885",
+      "label": "AA Report"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 35.6762,
+    "lon": 139.6503,
+    "country": "Japan",
+    "region": "Kanto",
+    "city": "Tokyo"
+  },
+  "topics": [
+    "japan",
+    "vietnam",
+    "trade",
+    "indo-pacific",
+    "bilateral-agreement",
+    "economic-cooperation",
+    "southeast-asia"
+  ],
+  "confidence": 0.85,
+  "ingested_at": "2026-05-02T23:27:19Z"
+}
+{
+  "id": "evt_20260502_814",
+  "source": {
+    "name": "Twitter @borrowed7time (via AA)",
+    "provider": "conflict-monitoring"
+  },
+  "title": "Russian Drone Strike Kills Two Civilians in Kherson Bus Attack",
+  "summary": "A Russian drone strike killed two people and injured others after hitting a bus in Ukraine's Kherson region, continuing the pattern of attacks on civilian infrastructure in southern Ukraine.",
+  "contents": "## Russian Drone Strike Targets Kherson Bus\n\n### Attack Details\nA Russian drone strike hit a bus in Ukraine's Kherson region on May 2, 2026, killing two civilians. The attack represents part of Russia's continued campaign targeting civilian infrastructure in southern Ukraine.\n\n### Broader Attacks\nThe Kherson bus attack occurred alongside wider Russian aerial operations across Ukraine. In Kharkiv and Kherson regions, Russian drone strikes killed 2 and injured 13 people. Ukrainian authorities continued documenting civilian casualties from indiscriminate Russian attacks.\n\n### Ukrainian Countermeasures\nUkraine's air defenses engaged incoming Russian drones across multiple regions. Ukrainian forces also continued their own deep-strike drone campaign against Russian oil infrastructure, targeting facilities in the Perm region and the Black Sea port of Tuapse.\n\n### Humanitarian Impact\nThe ongoing strikes against civilian targets in Kherson highlight the daily reality facing residents of southern Ukraine, where Russian forces maintain positions across the Dnipro River and regularly launch attacks against the city and surrounding areas.\n\n### Context\nKherson city, liberated by Ukrainian forces in November 2022, remains under constant Russian fire from positions on the east bank of the Dnipro River. The city's civilian population continues to endure regular shelling and drone attacks.",
+  "date_published": "2026-05-02T23:15:00Z",
+  "date_event": "2026-05-02T14:00:00Z",
+  "links": [
+    {
+      "url": "https://www.aa.com.tr/en/russia-ukraine-war/ukraine-says-2-killed-13-injured-in-russian-drone-strikes-in-kharkiv-kherson-regions/3924887",
+      "label": "AA Report"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 46.636,
+    "lon": 32.617,
+    "country": "Ukraine",
+    "region": "Kherson Oblast",
+    "city": "Kherson"
+  },
+  "topics": [
+    "ukraine",
+    "russia",
+    "drone-strike",
+    "civilian-casualties",
+    "kherson",
+    "conflict"
+  ],
+  "confidence": 0.88,
+  "ingested_at": "2026-05-02T23:27:19Z"
+}
+{
+  "id": "evt_20260502_815",
+  "source": {
+    "name": "Twitter @EtienneLH (via AA/Reuters)",
+    "provider": "defense-analysis"
+  },
+  "title": "Germany Urges Stronger European Defence After U.S. Announces Troop Drawdown",
+  "summary": "Germany called for stronger European defence capabilities following the U.S. announcement to withdraw 5,000 troops, as European nations confront the reality of reduced American military commitment to the continent.",
+  "contents": "## Europe Confronts Reduced U.S. Military Presence\n\n### German Response\nGermany urged stronger European defence capabilities following the Pentagon's announcement of a 5,000-troop withdrawal. The call reflects growing European recognition that reliance on U.S. security guarantees may diminish under the current administration.\n\n### European Defence Momentum\nThe U.S. troop withdrawal has accelerated discussions about European strategic autonomy and defence self-sufficiency. European nations have increased defense spending in response to the Russia-Ukraine war, but the Iran conflict has exposed deeper fissures in transatlantic unity.\n\n### NATO Under Strain\nThe alliance faces unprecedented pressure as member states diverge over the Iran war. While the U.S. prosecutes its campaign against Iran, European allies have largely declined to participate directly, instead focusing on diplomatic solutions and an international coalition to reopen the Strait of Hormuz peacefully.\n\n### Defence Industrial Implications\nThe withdrawal announcement coincides with broader European efforts to strengthen domestic defence production capabilities. Multiple EU member states have announced significant defense budget increases, with Germany's spending approaching NATO's 2 percent GDP target.\n\n### UK-France Security Pact\nBritain and France recently signed a declaration of intent to deploy troops in Ukraine in case of a peace deal with Russia, demonstrating European willingness to assume greater security responsibilities independent of U.S. leadership.",
+  "date_published": "2026-05-02T23:20:00Z",
+  "date_event": "2026-05-02T16:00:00Z",
+  "links": [
+    {
+      "url": "https://thesun.my/news/world-news/",
+      "label": "European Defence Headlines"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 50.1109,
+    "lon": 8.6821,
+    "country": "Germany",
+    "region": "Hesse",
+    "city": "Frankfurt"
+  },
+  "topics": [
+    "european-defense",
+    "germany",
+    "nato",
+    "strategic-autonomy",
+    "us-troop-withdrawal",
+    "defense-spending",
+    "transatlantic"
+  ],
+  "confidence": 0.82,
+  "ingested_at": "2026-05-02T23:27:19Z"
+}
+{
+  "id": "evt_20260502_817",
+  "source": {
+    "name": "Twitter @AP (via AA/Defense Post)",
+    "provider": "news-wire"
+  },
+  "title": "U.S. Approves $8.6 Billion in Military Sales to Israel, Qatar, Kuwait, and UAE",
+  "summary": "The U.S. State Department cleared more than $8.6 billion in military sales to Middle East allies, including a $4 billion Patriot missile deal with Qatar and nearly $1 billion in precision weapons systems to Israel, bypassing standard congressional review.",
+  "contents": "## Massive U.S. Arms Sales to Middle East Allies\n\n### Sales Approved\nU.S. Secretary of State Marco Rubio approved expedited arms transfers to Israel, Kuwait, Qatar, and the United Arab Emirates, totaling more than $8.6 billion. The secretary bypassed standard congressional review to rush air defense missiles and laser guidance systems to the Middle East.\n\n### Key Components\nThe approved sales include a $4 billion Patriot missile deal with Qatar, representing one of the largest single defense transactions with the Gulf state. Nearly $1 billion in precision weapons systems will transfer to Israel. Additional defense equipment and systems go to Kuwait and the UAE.\n\n### Expedited Process\nRubio's decision to bypass standard congressional review underscores the urgency Washington places on bolstering allied defenses in the Middle East amid the ongoing Iran war. The expedited process allows faster delivery of critical air defense capabilities to regional partners.\n\n### Strategic Context\nThe arms sales occur against the backdrop of the Iran-U.S. war, stalled peace negotiations, and continued closure of the Strait of Hormuz. Regional allies face heightened security threats from Iranian retaliation capabilities and the broader instability generated by the conflict.\n\n### Congressional Concerns\nThe bypassing of standard review processes may draw criticism from lawmakers already concerned about the administration's conduct of the Iran war without formal congressional authorization.",
+  "date_published": "2026-05-02T23:10:00Z",
+  "date_event": "2026-05-02T22:00:00Z",
+  "links": [
+    {
+      "url": "https://www.aa.com.tr/en/americas/us-approves-possible-military-sales-to-qatar-kuwait-uae/3924646",
+      "label": "AA Report"
+    },
+    {
+      "url": "https://thedefensepost.com/2026/05/02/iran-pakistan-us-talks/",
+      "label": "Defense Post"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 38.8977,
+    "lon": -77.0365,
+    "country": "United States",
+    "region": "District of Columbia",
+    "city": "Washington"
+  },
+  "topics": [
+    "arms-sales",
+    "united-states",
+    "qatar",
+    "israel",
+    "kuwait",
+    "uae",
+    "patriot-missile",
+    "defense-procurement",
+    "middle-east"
+  ],
+  "confidence": 0.92,
+  "ingested_at": "2026-05-02T23:27:19Z"
+}
+{
+  "id": "evt_20260502_818",
+  "source": {
+    "name": "Twitter @allsource4 (via AA)",
+    "provider": "intelligence-aggregation"
+  },
+  "title": "Pakistan Reports 9 Killed as Afghanistan Allegedly Targets Civilians in Border Clashes",
+  "summary": "Pakistan reported 9 killed and 15 injured as Afghanistan allegedly targeted civilians in new border clashes, escalating tensions along the Durand Line amid a broader period of regional instability.",
+  "contents": "## Pakistan-Afghanistan Border Violence Escalates\n\n### Casualty Report\nPakistan reported that 9 people died and 15 sustained injuries as Afghanistan allegedly targeted civilians in new border clashes on May 2, 2026. Pakistani officials accused Afghan forces of directing fire toward civilian areas.\n\n### Border Tensions\nThe clashes represent a continued deterioration of Pakistan-Afghanistan relations along the disputed Durand Line. Border incidents have increased in frequency and intensity, with both sides trading accusations of cross-border attacks.\n\n### Pakistan's Diplomatic Role\nThe violence comes at a particularly sensitive time for Pakistan, which serves as the primary mediator between the United States and Iran in ongoing peace negotiations. Pakistan's dual role — managing its own border security while facilitating international diplomacy — places significant strain on Islamabad's resources and diplomatic bandwidth.\n\n### Regional Implications\nThe Pakistan-Afghanistan border represents one of several active conflict zones in the broader region. The escalation adds to a complex security picture that includes the Iran war, continued instability in Afghanistan under Taliban governance, and Pakistan's internal security challenges.\n\n### International Response\nThe international community has called for restraint from both sides, though attention remains largely focused on the higher-profile Iran conflict. The border violence highlights often-overlooked security challenges in South Asia.",
+  "date_published": "2026-05-02T23:15:00Z",
+  "date_event": "2026-05-02T14:00:00Z",
+  "links": [
+    {
+      "url": "https://www.aa.com.tr/en/asia-pacific/pakistan-says-9-killed-15-injured-as-afghanistan-allegedly-targets-civilians-in-new-border-clashes/3924660",
+      "label": "AA Report"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 34.0,
+    "lon": 70.0,
+    "country": "Pakistan",
+    "region": "Khyber Pakhtunkhwa",
+    "city": ""
+  },
+  "topics": [
+    "pakistan",
+    "afghanistan",
+    "border-clashes",
+    "civilian-casualties",
+    "durand-line",
+    "regional-security"
+  ],
+  "confidence": 0.78,
+  "ingested_at": "2026-05-02T23:27:19Z"
+}
+{
+  "id": "evt_20260502_820",
+  "source": {
+    "name": "Twitter @kyleBass (via Bloomberg/CNA)",
+    "provider": "economic-analysis"
+  },
+  "title": "Oil Prices Remain Elevated as Iran-U.S. Blockade Standoff Continues",
+  "summary": "Brent crude settled near $108 per barrel with prices approximately 50% above pre-war levels, as the dual Iran-U.S. blockade of the Strait of Hormuz continues to disrupt global energy markets and fuel worldwide inflation.",
+  "contents": "## Energy Markets Reflect Prolonged Hormuz Crisis\n\n### Price Levels\nBrent crude settled near $108 per barrel on May 2, 2026, with prices approximately 50 percent above pre-war levels. U.S. gasoline pump prices have surged well above $4 per gallon, placing significant pressure on American consumers ahead of midterm elections.\n\n### Dual Blockade Impact\nIran maintains its stranglehold on the Strait of Hormuz, through which approximately one-fifth of global oil and gas normally flows. The U.S. counter-blockade of Iranian ports, imposed April 13, compounds the disruption. The Pentagon reports the U.S. naval blockade has prevented $6 billion in Iranian oil exports.\n\n### Brief Relief\nNews of Iran's latest negotiating proposal briefly pushed oil prices down nearly five percent, though they quickly recovered as Trump expressed dissatisfaction with the terms. The Wall Street Journal reported Trump instructed security officials to prepare for the blockade to last months.\n\n### Iranian Economic Toll\nIranian inflation has surged past 50 percent, with ordinary citizens reporting severe difficulty affording basic necessities. Iran's Supreme Leader Khamenei urged businesses to avoid layoffs despite the economic pressure.\n\n### Global Consequences\nThe energy crisis has cascading effects worldwide: the European Central Bank held interest rates amid fears of soaring inflation; U.S. economic growth slowed with inflation hitting 3.5 percent; India attempted a rare Hormuz transit to alleviate its energy crisis; and Spirit Aviation ceased operations after fuel prices made its business model unsustainable.",
+  "date_published": "2026-05-02T23:00:00Z",
+  "date_event": "2026-05-02T20:00:00Z",
+  "links": [
+    {
+      "url": "https://www.bostonglobe.com/2026/05/02/world/trump-says-prefers-not-to-strike-iran-as-frustration-mounts/",
+      "label": "Bloomberg via Boston Globe"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 51.5074,
+    "lon": -0.1278,
+    "country": "United Kingdom",
+    "region": "England",
+    "city": "London"
+  },
+  "topics": [
+    "oil-prices",
+    "energy-crisis",
+    "strait-of-hormuz",
+    "iran-war",
+    "blockade",
+    "inflation",
+    "global-economy",
+    "brent-crude"
+  ],
+  "confidence": 0.9,
+  "ingested_at": "2026-05-02T23:27:19Z"
+}

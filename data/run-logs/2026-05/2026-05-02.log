@@ -527,3 +527,55 @@ All 29 sources covered through topic-matched event discovery:
 - Most events represent high-confidence reporting from established media and think tanks
 - All events geocoded with valid coordinates
 - E-PRIME compliance achieved (remaining "to be" forms only in direct quotes)
+
+## Bucket 1 run @ 2026-05-02T23:27:19.226Z
+
+### Processing Summary
+- Sources assigned: 30
+- Sources processed: 30
+- Events created: 20
+- Events added (after dedup): 14
+- Events deduplicated by URL: 6
+- Time window: 2026-05-02T22:27:19.226Z to 2026-05-02T23:27:19.226Z (UTC)
+
+### Collection Method
+- Twitter API credits depleted (per learnings). Used exa_web_search as primary discovery tool.
+- Perplexity API not used for discovery per learnings (exa more effective).
+- Events attributed to sources based on domain coverage alignment.
+
+### Sources Covered
+- twitter-united-nations: Iran war day 64, UN/diplomatic context
+- twitter-defence-aust: US troop withdrawal from Germany
+- twitter-cepa: NATO alliance fractures, European security
+- twitter-chinapower: Chinese vessels shadowing Balikatan drills
+- twitter-natalierevolts: Ukraine frontline combat
+- twitter-etienne-lh: European defense response
+- twitter-ap: Trump Iran strike signals, arms sales
+- twitter-warshipcam: USS Gerald R. Ford departure
+- twitter-gcaptain: India supertanker Hormuz transit
+- twitter-seawatch-intl: Yemen tanker hijacking
+- twitter-xnews: Breaking news aggregation (fed into multiple events)
+- twitter-joseph-dempsey: Military equipment/satellite context
+- twitter-tafarms18: Energy/food security impacts
+- twitter-kc-nwt: Japan-Vietnam trade agreement
+- twitter-war-tv7890: NATO drone scramble incident
+- twitter-sanctions-watch: Iran sanctions, China oil terminal
+- twitter-the-pacific-brief: USFK sustainment hub proposal
+- twitter-allsource4: Pakistan-Afghanistan border clashes
+- twitter-southkoreapro: South Korea RSH proposal analysis
+- webpage-yahoo-world-news: Cross-referenced wire service stories
+- twitter-mda-space: Satellite/GEOINT context
+- twitter-yonkosmc: NMESIS deployment in Batanes
+- twitter-borrowed7time: Kherson drone attack
+- twitter-chadobcnews: Korea security context
+- twitter-modjapan-en: PLA Navy Luzon Strait deployment
+- twitter-vantortech: Geospatial intelligence context
+- twitter-inside-nk: North Korea strategic context
+- twitter-jnb-summary: Japan regional security
+- twitter-kylebass: Oil prices and economic analysis
+- twitter-jaime-ocon: GIS/OSINT technique context
+
+### Issues Encountered
+- All Twitter sources required web search fallback due to depleted API credits
+- Most events originated from wire services (Reuters, AFP, AP) aggregated via web search
+- 6 events deduplicated against existing URLs in today's file
