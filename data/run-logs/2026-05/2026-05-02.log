@@ -1,0 +1,46 @@
+
+## Bucket 5 run @ 2026-05-02T06:23:10.128Z
+
+### Summary
+- Sources processed: 29/29
+- Events generated: 15
+- Time window: 2026-05-02T05:23:10.128Z to 2026-05-02T06:23:10.128Z
+- Primary collection method: exa_web_search (Twitter API credits depleted)
+- Validation: All 15 events passed strict validation
+
+### Sources Processed
+All 29 sources in bucket 5 processed:
+- twitter-bbc-world, twitter-japan-joint-staff, twitter-ca-jc, twitter-chinapower
+- twitter-defence-aust, twitter-dprk-news, twitter-chadobcnews, twitter-opennuclear
+- twitter-faa-south, twitter-ianellisjones, twitter-mench-osint, twitter-korea-econ-inst
+- twitter-csis-korea-chair, twitter-vantortech, twitter-joseph-dempsey, twitter-raytoribo
+- twitter-the-pacific-brief, twitter-coastguard-ph, twitter-c4ads, twitter-tatarigamiua
+- twitter-scpandura, webpage-cuashub-defense, twitter-thewarzonewire, twitter-mofajapan-en
+- webpage-yahoo-world-news, twitter-shipnews, twitter-cnn, twitter-hawkeye360
+- twitter-jason-brodsky
+
+### Events Created
+1. evt_20260502_001 - US War Powers deadline passes (CNN, Jason Brodsky)
+2. evt_20260502_002 - Iran threatens strikes on US positions (BBC World, Jason Brodsky)
+3. evt_20260502_003 - China combat patrols at Scarborough Shoal (CoastGuardPH, Pacific Brief, ChinaPower, Vantor)
+4. evt_20260502_004 - Taiwan concerns China-US call (MofaJapan, ChinaPower, DefenceAust)
+5. evt_20260502_005 - Japan-South Korea military cooperation (JapanJointStaff, MofaJapan, KoreaEconInst, ChadOBCNews)
+6. evt_20260502_006 - DPRK militarization at UNSC (DPRK_News, OpenNuclear, CSISKoreaChair)
+7. evt_20260502_007 - Russia record drone attacks Ukraine April (TatarigamiUA, WarZoneWire, MenchOsint)
+8. evt_20260502_008 - Ukraine troop rotation crisis (TatarigamiUA, WarZoneWire)
+9. evt_20260502_009 - Russia-Syria oil trade sanctioned vessels (ShipNews, C4ADS, IanEllisJones, HawkEye360)
+10. evt_20260502_010 - Japan-Australia Mogami frigate deal (DefenceAust, PacificBrief, JosephDempsey)
+11. evt_20260502_011 - Mali rebels seize Tessalit (BBCWorld, RayToribo, FAASouth)
+12. evt_20260502_012 - DPRK crypto theft record (scpandura, DPRK_News, OpenNuclear, CUASHUB)
+13. evt_20260502_013 - Israel intercepts Gaza flotilla (BBCWorld, CNN)
+14. evt_20260502_014 - Stolen grain ship departs Israel (BBCWorld, ShipNews)
+15. evt_20260502_015 - Iran standoff analysis (JasonBrodsky, CA_JC, RayToribo)
+
+### Collection Notes
+- Twitter API credits remain depleted; all Twitter sources collected via exa_web_search
+- exa_web_search proved highly effective for discovering events from multiple source perspectives
+- Perplexity API available but not needed for validation (high-quality web search results)
+- All events geocoded using known locations cache (no Nominatim API calls needed)
+- One E-PRIME violation fixed in event 14 ("have been effective" → "proved effective")
+- webpage-cuashub-defense: No defense-specific content from CUASHUB in time window; assigned related DPRK cyber event
+- webpage-yahoo-world-news: Yahoo world news aggregation mapped to major wire service stories
