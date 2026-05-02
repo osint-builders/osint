@@ -168,3 +168,51 @@ Created event: evt_20260502_229 - Bahrain King Threatens Traitors
 Sources processed: 29/29. Events created: 29.
 Strategy: exa_web_search (Twitter API credits depleted).
 Key coverage: Iran-US War Powers, Ukraine drones, SCS Balikatan, Somalia piracy, USS Higgins, Pakistan submarine, Mali rebels.
+
+## Bucket 5 run @ 2026-05-02T14:15:55.447Z
+
+### Processing Summary
+- **Sources assigned**: 29
+- **Events generated**: 21
+- **Events added after dedup**: 15
+- **Events deduplicated**: 6 (URLs already collected by other buckets)
+- **Time window**: 2026-05-02T13:15:55Z to 2026-05-02T14:15:55Z
+- **Collection method**: exa_web_search (Twitter API credits depleted per learnings)
+
+### Source Coverage
+All 29 sources processed. Events attributed to bucket 5 sources:
+- twitter-iran-spectrum: evt_20260502_501 (Iran military readiness), evt_20260502_516 (Hormuz access)
+- twitter-cepa: evt_20260502_502 (US troop withdrawal Germany)
+- twitter-xinhua-news: evt_20260502_503 (PLA Taiwan operations)
+- twitter-coastguard-ph: evt_20260502_504 (CCG shadows civilian ship)
+- twitter-united-nations: evt_20260502_505 (DPRK nuclear - DEDUP)
+- twitter-platracker: evt_20260502_506 (PLAN carrier ops - DEDUP)
+- twitter-mofajapan-en: evt_20260502_507 (Japan-Vietnam summit)
+- twitter-clash-report: evt_20260502_508 (Mali rebel advance)
+- twitter-tradewindsnews: evt_20260502_509 ($9B arms sales)
+- twitter-the-koreaview: evt_20260502_510 (Taiwan China concern - DEDUP)
+- twitter-thewarzonewire: evt_20260502_511 (Peru trafficking probe)
+- twitter-jasdf-pao-eng: evt_20260502_512 (JASDF PLA monitoring)
+- twitter-us-fleet-forces: evt_20260502_513 (Maritime Freedom Construct)
+- twitter-ian-bremmer: evt_20260502_514 (War Powers deadline)
+- twitter-olongapo-times: evt_20260502_515 (Balikatan maritime exercise)
+- twitter-nsa-gov: evt_20260502_517 (Gulf interceptor crisis)
+- twitter-the-dailynk: evt_20260502_518 (DPRK nuclear Yongbyon - DEDUP)
+- twitter-beltelefacts: evt_20260502_519 (Balikatan coastal defense - DEDUP)
+- twitter-jnb-summary: evt_20260502_520 (USFK RSH proposal)
+- twitter-korea-times-alt: evt_20260502_521 (NZ P-8A sanctions patrol)
+
+### Sources with no unique events this window
+The following sources had coverage already captured by other bucket events or no events within the strict 1-hour window:
+- twitter-mench-osint, twitter-john-pollock, twitter-chadobcnews: No unique recent OSINT analysis tweets found in window
+- twitter-the-lookout-north, twitter-the-pacific-brief: Analysis covered through existing carrier/PLA tracking events
+- twitter-war-tv7890, twitter-esri: No events found within the target hour
+- webpage-windward-ai-blog, webpage-yahoo-world-news: Webpage sources checked but no articles timestamped within the 1-hour window
+- twitter-beltelefacts (event 519 deduplicated with existing)
+
+### Notes
+- Twitter API remains depleted per existing learnings
+- exa_web_search proved effective for broad event discovery
+- High-confidence events corroborated across multiple sources (Al Jazeera, Reuters, AP, Bloomberg, UN News)
+- All events geocoded using known coordinates for major world locations
+- All contents fields verified for E-PRIME compliance (remaining 'is'/'be' are inside direct quotes, which are exempt)
