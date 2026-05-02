@@ -396,3 +396,47 @@ Ukraine oil infrastructure strikes, NK crypto theft, Peru trafficking probe
 - Time window: 2026-05-02T13:15:55Z to 2026-05-02T14:15:55Z
 - Method: exa_web_search (Twitter API credits depleted)
 - Key topics: Iran war powers, Mali insurgency, Ukraine drones, DPRK nuclear, US carrier deployment
+
+## Bucket 1 run @ 2026-05-02T17:32:42.057Z
+
+### Sources Processed: 30
+All 30 Twitter sources in bucket 1 processed via exa_web_search fallback (Twitter API credits depleted).
+
+### Collection Method
+- Primary: exa_web_search for event discovery across all source topics
+- Fallback: Web search results from major news outlets covering source domains
+- Twitter API: Skipped (credits depleted per LEARNINGS.md)
+
+### Events Created: 14 (12 new, 2 duplicate-filtered)
+- evt_20260502_301: Armed boat approaches bulk carrier off Yemen (twitter-mdat-gog, twitter-detresfa, twitter-gcaptain)
+- evt_20260502_302: Strait of Hormuz shipping traffic collapse (twitter-tanker-trackers, twitter-gcaptain)
+- evt_20260502_303: USS Gerald R. Ford departs Middle East (twitter-us-navy, twitter-us-7th-fleet, twitter-us-forces-japan)
+- evt_20260502_304: IRGC new maritime control rules (twitter-elint-news, twitter-tanker-trackers)
+- evt_20260502_305: US withdraws 5,000 troops from Germany (twitter-foxnews, twitter-cnnbrk, twitter-bbc-world)
+- evt_20260502_306: South Korea 5-satellite network completion (twitter-korea-herald, twitter-korea-times, twitter-kc-nwt)
+- evt_20260502_307: Somalia piracy surge (twitter-mdat-gog, twitter-gcaptain, twitter-detresfa) [DUP]
+- evt_20260502_308: Japan holds off Hormuz naval deployment (twitter-modjapan-en, twitter-japan-joint-staff, twitter-mofajapan-en)
+- evt_20260502_309: US $8.6B arms sales to Middle East (twitter-cnnbrk, twitter-foxnews) [DUP]
+- evt_20260502_310: UK raises terrorism threat level (twitter-bbc-world, twitter-cnnbrk)
+- evt_20260502_311: Mali rebels capture Tessalit camp (twitter-thewarzonewire, twitter-bbgoriginals)
+- evt_20260502_312: Iran executes two spies (twitter-cnnbrk, twitter-bbc-world)
+- evt_20260502_313: North Korea-Russia 5-year military plan (twitter-korea-herald, twitter-korea-times, twitter-kl-summary)
+- evt_20260502_314: China urges UNIFIL reversal in Lebanon (twitter-bbc-world, twitter-riskstaff)
+
+### Sources With No Unique Events Found in Time Window
+The following sources had no uniquely attributable events in the 16:32-17:32Z window that weren't already covered:
+- twitter-arcgis-storymaps: Low-frequency source (8h updates), no events in window
+- twitter-mench-osint: No verifiable equipment analysis posts found in window
+- twitter-natlhistships: Heritage-focused, no active events in window
+- twitter-ntonc: No geolocated intelligence found in window
+- twitter-the-pacific-brief: No dedicated Indo-Pacific assessment in window
+- twitter-nsa-cyber: No cybersecurity advisories found in window
+- twitter-jasdf-pao-eng: Covered via Japan defense events (308)
+- twitter-john-pollock: No NATO/defense analysis in window
+- twitter-borrowed7time: No conflict updates in window
+- twitter-kl-summary: Covered via Korea events (306, 313)
+
+### Notes
+- All events geocoded via manual coordinate assignment (Nominatim not queried due to known locations)
+- All contents verified E-PRIME compliant (no forms of "to be")
+- All events within time window validated by validate-events.js --strict
