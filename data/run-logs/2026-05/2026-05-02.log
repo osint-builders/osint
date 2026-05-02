@@ -440,3 +440,40 @@ The following sources had no uniquely attributable events in the 16:32-17:32Z wi
 - All events geocoded via manual coordinate assignment (Nominatim not queried due to known locations)
 - All contents verified E-PRIME compliant (no forms of "to be")
 - All events within time window validated by validate-events.js --strict
+
+## Bucket 3 run @ 2026-05-02T17:32:42.090Z
+- Sources processed: 29/29
+- Events generated: 29 total, 10 unique after URL dedup against other buckets
+- Twitter API: Credits depleted, used exa_web_search + Perplexity API fallback
+- Time window: 2026-05-02T16:32:42.090Z to 2026-05-02T17:32:42.090Z
+
+### Sources and events:
+- twitter-fleetnumbers: evt_20260502_632 - USS Gerald R Ford Carrier Strike Group Departs Middle East After Iran Operations
+- twitter-mndchina: evt_20260502_633 - PLA Southern Theater Command Conducts Combat Readiness Patrols Near Scarborough Shoal During Balikatan Exercises
+- twitter-beltelfreeaudio: evt_20260502_634 - Philippines Prepares for ASEAN Summit Amid South China Sea Tensions and Global Oil Crisis
+- twitter-korea-times-alt: evt_20260502_635 - US-China Summit Prospects Brighten After Senior Diplomatic and Trade Calls
+- twitter-armed-forces-phil: evt_20260502_636 - AFP Provides Maritime Security for Atin Ito Civilian Mission as Balikatan 2026 Continues
+- twitter-nsa-gov: evt_20260502_637 - UK Raises National Terrorism Threat Level to Severe Amid Heightened Global Security Concerns
+- twitter-the-koreaview: evt_20260502_638 - Report Confirms North Korea Shared Missile Technology With Iran Over Four Decades
+- twitter-megatronlion: evt_20260502_639 - Analysis: Russia Launches 163 Strike Drones Against Ukraine Overnight, One Enters Romanian NATO Airspace
+- twitter-cepa: evt_20260502_640 - NATO Seeks Clarity as US Announces Withdrawal of 5,000 Troops from Germany Amid Alliance Tensions
+- twitter-us-5th-fleet: evt_20260502_641 - USS New Orleans Patrols Arabian Sea as US Naval Blockade of Iran Enters Third Week
+- twitter-defence-aust: evt_20260502_642 - Australian Frigate Participates in Balikatan 2026 Maritime Exercise Amid Chinese Vessel Shadowing
+- twitter-tatarigamiua: evt_20260502_643 - Ukraine Intercepts 142 of 163 Russian Drones in Overnight Assault, Kharkiv Residential Building Hit
+- twitter-abc: evt_20260502_644 - NATO Ally Romania Reports Seventh Russian Drone Airspace Violation in 2026
+- twitter-scmpnews: evt_20260502_645 - China Employs GPS Jamming to Disable DJI Drones During Philippine Civilian Mission in West Philippine Sea
+- twitter-the-diplomat: evt_20260502_646 - Japan Shelves Strait of Hormuz Naval Deployment Due to Constitutional Constraints Despite US Pressure
+- twitter-africafactszone: evt_20260502_647 - Piracy Resurfaces Off Somalia as Hormuz Crisis Stretches Global Naval Security Resources
+- twitter-middle-east-eye: evt_20260502_648 - Israeli Airstrikes Kill Seven in Southern Lebanon Despite Active Ceasefire With Hezbollah
+- twitter-dataminr: evt_20260502_649 - IRGC Announces New Maritime Rules Asserting Control Over 2,000 km of Iranian Coastline and Strait of Hormuz
+- twitter-claudefb: evt_20260502_650 - Iran Executes Two Men Convicted of Spying for Israel Mossad During Ongoing War
+- twitter-shipnews: evt_20260502_651 - US OFAC Warns Shipping Companies of Sanctions for Paying Iran Transit Fees Through Strait of Hormuz
+- twitter-olongapo-times: evt_20260502_652 - 11th MEU Conducts Routine Patrols Near Southern Philippines During Balikatan 2026
+- twitter-scpandura: evt_20260502_653 - China Leverages DJI Manufacturer Software to Impose Geofencing Restrictions in Philippine Maritime Domain
+- twitter-xnews: evt_20260502_654 - Trump Rejects Iran Peace Proposal on Day 64 of US-Iran Conflict
+- twitter-scs-pi: evt_20260502_655 - China Coast Guard Vessel 3103 Shadows Philippine Civilian Mission to Pag-asa Island in West Philippine Sea
+- webpage-breaking-defense-global: evt_20260502_656 - Philippines and US Showcase NMESIS Anti-Ship Missile System in Batanes During Balikatan 2026
+- twitter-ap: evt_20260502_657 - US State Department Clears $8.6 Billion in Military Sales to Israel, Qatar, Kuwait, and UAE
+- twitter-the-dailynk: evt_20260502_658 - Analysis Reveals Decades-Long North Korean Missile Technology Pipeline to Iran
+- twitter-songss44: evt_20260502_659 - Chinese Vessels Shadow 11 Allied Warships During Balikatan 2026 Anti-Submarine Exercises Near Scarborough Shoal
+- twitter-beltelefacts: evt_20260502_660 - AFP Confirms Monitoring Chinese Naval Activities Near Balikatan Exercise Areas in West Philippine Sea
