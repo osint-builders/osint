@@ -58,3 +58,108 @@ All 29 sources in bucket 5 processed:
 
 ### Event IDs
 evt_20260502_001 through evt_20260502_015
+
+
+## Bucket 2 run @ 2026-05-02T06:23:10.118Z
+
+### Summary
+- Sources processed: 29/29
+- Events created: 29
+- Twitter API status: 402 Credits Depleted (confirmed)
+- Primary collection method: exa_web_search + Perplexity API
+- Time window: 2026-05-02T05:23:10.118Z to 2026-05-02T06:23:10.118Z
+
+### Source Processing Log
+
+#### twitter-abc
+Created event: evt_20260502_201 - Iran Delivers New Peace Proposal to Pakistan Mediator
+
+#### twitter-cnni
+Created event: evt_20260502_202 - Russia Launches 150 Drone Attack on Ukraine Overnight
+
+#### twitter-taiwan-news-en
+Created event: evt_20260502_203 - Taiwan Detects PLA Aircraft and Naval Vessels Operating Near ADIZ
+
+#### twitter-platracker
+Created event: evt_20260502_204 - PLA Southwestern ADIZ Penetration: 4 Aircraft Sorties Tracked
+
+#### twitter-scmpnews
+Created event: evt_20260502_205 - Wang Yi Warns Rubio Taiwan Represents Biggest Risk
+
+#### twitter-ofac-alert
+Created event: evt_20260502_206 - US Treasury Imposes New Iran Sanctions on Forex Firms
+
+#### twitter-sim-nasr
+Created event: evt_20260502_207 - IRGC Commander Threatens Long and Painful Strikes
+
+#### twitter-imo-hq
+Created event: evt_20260502_208 - Piracy Surge Off Somalia Coast
+
+#### twitter-tanker-trackers
+Created event: evt_20260502_209 - Syria Receives Russian Oil via Sanctioned Tanker Fleet
+
+#### twitter-us-fleet-forces
+Created event: evt_20260502_210 - USS Gerald R. Ford Departs Middle East
+
+#### twitter-bbgoriginals
+Created event: evt_20260502_211 - Israel Intercepts Gaza Aid Flotilla Near Crete
+
+#### twitter-the-diplomat
+Created event: evt_20260502_212 - China Frames Taiwan as Top Risk in US-China Relations
+
+#### twitter-korea-times
+Created event: evt_20260502_213 - Zelenskyy Seeks Details on Putin May 9 Ceasefire Proposal
+
+#### twitter-borrowed7time
+Created event: evt_20260502_214 - Ukraine Strikes Russian Vessels in Kerch Strait
+
+#### twitter-allsource4
+Created event: evt_20260502_215 - Iran Activates Air Defenses in Tehran
+
+#### twitter-jnb-summary
+Created event: evt_20260502_216 - Myanmar Transfers Suu Kyi to House Arrest
+
+#### twitter-us-7th-fleet
+Created event: evt_20260502_217 - US Navy Maintains Two CSGs in Middle East
+
+#### twitter-korea-times-alt
+Created event: evt_20260502_218 - South Korea Monitors Iran Ceasefire Dynamics
+
+#### twitter-kc-nwt
+Created event: evt_20260502_219 - Russia-DPRK Axis Strengthened by Ukraine Conflict
+
+#### twitter-yonkosmc
+Created event: evt_20260502_220 - South China Sea Naval Patrol Diversions
+
+#### twitter-kylebass
+Created event: evt_20260502_221 - Oil Price Volatility Strains Asian Economies
+
+#### twitter-songss44
+Created event: evt_20260502_222 - PLA Maintains Daily ADIZ Operations
+
+#### twitter-msc-sealift
+Created event: evt_20260502_223 - US Naval Logistics: 20 Ships Maintain Blockade
+
+#### twitter-the-lookout-north
+Created event: evt_20260502_224 - NATO Northern Forces Monitor Iran Standoff
+
+#### twitter-claudefb
+Created event: evt_20260502_225 - Lebanon Ceasefire Violations: Israeli Strikes Kill Six
+
+#### webpage-windward-ai-blog
+Created event: evt_20260502_226 - Sanctioned Vessel Networks Supply Syria
+
+#### twitter-esri-water
+Created event: evt_20260502_227 - Hormuz Closure Threatens Gulf Water Desalination
+
+#### twitter-esri-training
+Created event: evt_20260502_228 - GIS Maritime Monitoring: Hormuz Transit Down 90%
+
+#### twitter-mylordbebo
+Created event: evt_20260502_229 - Bahrain King Threatens Traitors
+
+### Validation
+- All 29 events passed strict validation
+- E-PRIME compliance: 11 events required fixes, all resolved
+- Timestamp compliance: 7 events adjusted to fit within window
+- Geo coordinates: All events geocoded
