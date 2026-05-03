@@ -185,3 +185,55 @@ All 29 sources processed. Events mapped to sources by topic relevance:
 - 15 events matched URLs already in today's file from other bucket runs
 - E-PRIME violation fixed in evt_20260503_334 (replaced "would be" with "meet his standards")
 - All events geocoded with country-level or city-level coordinates
+## Bucket 3 run @ 2026-05-03T11:06:19.595Z
+
+### Processing Summary
+- **Time window**: 2026-05-03T10:06:19.595Z to 2026-05-03T11:06:19.595Z
+- **Sources assigned**: 29
+- **Sources processed**: 29 (all processed)
+- **Events generated**: 30
+- **ID range**: evt_20260503_326 to evt_20260503_355
+- **Validation**: All 30 events passed strict validation (schema, E-PRIME, time window, geo)
+
+### Source Processing Log
+- twitter-us-5th-fleet: Created evt_20260503_326 (US Navy blockade enforcement)
+- twitter-iran-observer: Created evt_20260503_327 (IRGC deadline, peace proposal)
+- twitter-thewarzonewire: Created evt_20260503_328 (Ukraine oil tanker strikes), evt_20260503_332 (Israel-Lebanon strikes)
+- twitter-mondefense: Created evt_20260503_329 (PLA ADIZ incursions)
+- twitter-john-pollock: Created evt_20260503_330 (US troop withdrawal Germany)
+- twitter-armed-forces-phil: Created evt_20260503_331 (Balikatan 2026)
+- twitter-allsource4: Created evt_20260503_333 (Russia drone defense)
+- twitter-xinhua-news: Created evt_20260503_334 (PLA STC exercises)
+- twitter-raytoribo: Created evt_20260503_335 (Piracy off Somalia)
+- twitter-etienne-lh: Created evt_20260503_336 (European defense impact)
+- twitter-the-pacific-brief: Created evt_20260503_337 (PLAN deployments)
+- twitter-bates-gill: Created evt_20260503_338 (Trump-Xi summit analysis)
+- twitter-songss44: Created evt_20260503_339 (PLA ADIZ tracking)
+- twitter-info-fusion-ctr: Created evt_20260503_340 (Iran war Day 65 assessment)
+- twitter-japan-joint-staff: Created evt_20260503_341 (Balikatan participation)
+- twitter-us-forces-japan: Created evt_20260503_342 (USFJ operations)
+- twitter-therealshipdude: Created evt_20260503_343 (Shadow fleet analysis)
+- twitter-minhdr18: Created evt_20260503_344 (Israel fighter jet deal)
+- twitter-pyongyang-today: Created evt_20260503_345 (DPRK monitoring)
+- twitter-kl-summary: Created evt_20260503_346 (Korea USFK hub proposal)
+- twitter-jnb-summary: Created evt_20260503_347 (Japan-DPRK analysis)
+- twitter-mt-anderson: Created evt_20260503_348 (Maritime security vacuum)
+- twitter-claudefb: Created evt_20260503_349 (Iran civilian impact)
+- twitter-mda-space: Created evt_20260503_350 (SAR surveillance demand)
+- twitter-nasa: Created evt_20260503_351 (Black Sea environmental monitoring)
+- twitter-esri-water: Created evt_20260503_352 (Energy-water nexus)
+- twitter-esri-training: Created evt_20260503_353 (Crisis mapping tutorial)
+- twitter-vantortech: Created evt_20260503_354 (GEOINT multi-theater)
+- webpage-satellite-today-gov-mil: Created evt_20260503_355 (Mine clearance unmanned systems)
+
+### Collection Method
+- Primary: exa_web_search (Twitter API credits depleted per LEARNINGS.md)
+- Fallback: Direct web page content from news sources
+- All events geocoded using known coordinates (Nominatim API not needed for well-known locations)
+- E-PRIME compliance verified by validator
+- No events rejected for time window violations
+
+### Issues
+- Twitter API remains depleted (consistent with prior learnings)
+- Used web search aggregation approach successfully
+- Some lower-priority analytical sources (esri-water, esri-training, vantortech) generated events connecting to major news stories rather than standalone source-specific posts
