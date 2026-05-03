@@ -4459,6 +4459,7 @@
   "ingested_at": "2026-05-03T17:35:00Z"
 }
 {
+<<<<<<< Updated upstream
   "id": "evt_20260503_371",
   "source": {
     "name": "Twitter @MDA_space",
@@ -4473,10 +4474,31 @@
     {
       "url": "https://en.yna.co.kr/view/AEN20260503002300315",
       "label": "Yonhap News Agency"
+=======
+  "id": "evt_20260503_402",
+  "source": {
+    "name": "YonkosMC @YonkosMC",
+    "provider": "social-media"
+  },
+  "title": "Philippine Coast Guard Deploys Aircraft and Ships Against Four Chinese Research Vessels Including Drone Mothership",
+  "summary": "The Philippine Coast Guard announced deployment of aircraft and vessels to challenge and drive away four Chinese research ships conducting illegal maritime research in Philippine waters, including the Zhuhaiyun, the world's first intelligent drone mothership.",
+  "contents": "## PCG Confronts Chinese Research Fleet in West Philippine Sea\n\n### Detection and Response\nThe Philippine Coast Guard detected four Chinese research vessels operating in Philippine waters without authorization on May 3. PCG Commandant Admiral Ronnie Gil Gavan ordered deployment of aircraft and vessels to \"challenge and drive away these unauthorized vessels.\" Canada's Dark Vessel Detection system assisted in tracking the ships.\n\n### Vessels Identified\n- **Zhuhaiyun** — The world's first intelligent drone mothership, capable of deploying over 50 unmanned aerial, surface, and underwater vehicles simultaneously. Located 102 nautical miles northwest of Bajo de Masinloc.\n- **Xiangyanghong 33** — Advanced oceanographic survey vessel near Quirino Atoll, 140 nm northwest of Rizal, Palawan.\n- **Shi Yan 1** — SWATH-hulled research vessel with acoustic sensors, 118 nm west of Itbayat, Batanes.\n- **Jia Geng** — Deep-sea research vessel with UUV deployment capability, 88 nm northeast of Itbayat.\n\n### Legal Basis\nPCG spokesperson Rear Admiral Jay Tarriela stated the operations violated UNCLOS, as they occurred \"without the legal authority or prior consent of the Philippine government.\" The PCG pledged continued monitoring under Philippine law and international maritime law.\n\n### Strategic Context\nThe deployment coincides with ongoing Balikatan 2026 exercises and the Atin Ito coalition's fourth civilian mission to Pag-asa Island, where volunteers planted the Philippine flag on Sandy Cay in a gesture of sovereignty assertion.\n\n**Sources:** Philippine Coast Guard, Bloomberg, GMA News, ABS-CBN",
+  "date_published": "2026-05-03T16:55:00Z",
+  "date_event": "2026-05-03T04:35:00Z",
+  "links": [
+    {
+      "url": "https://www.bloomberg.com/news/articles/2026-05-03/philippines-accuses-china-of-conducting-illegal-marine-research",
+      "label": "Bloomberg Report"
+    },
+    {
+      "url": "https://www.gmanetwork.com/news/topstories/nation/986222/pcg-chinese-ships-philippine-waters/story/",
+      "label": "GMA News"
+>>>>>>> Stashed changes
     }
   ],
   "image_urls": [],
   "geo": {
+<<<<<<< Updated upstream
     "lat": 34.74,
     "lon": -120.57,
     "country": "United States",
@@ -4528,11 +4550,27 @@
     "iran-war",
     "middle-east",
     "power-projection"
+=======
+    "lat": 16.665,
+    "lon": 116.83,
+    "country": "Philippines",
+    "region": "West Philippine Sea"
+  },
+  "topics": [
+    "philippines",
+    "china",
+    "maritime-security",
+    "coast-guard",
+    "drone-mothership",
+    "unclos",
+    "west-philippine-sea"
+>>>>>>> Stashed changes
   ],
   "confidence": 0.92,
   "ingested_at": "2026-05-03T17:34:35Z"
 }
 {
+<<<<<<< Updated upstream
   "id": "evt_20260503_375",
   "source": {
     "name": "Twitter @batesgill4",
@@ -4621,17 +4659,42 @@
     {
       "url": "https://abcnews.com/International/wireStory/ukraine-hits-key-russian-oil-loading-port-2-132611077",
       "label": "ABC News/AP Coverage"
+=======
+  "id": "evt_20260503_403",
+  "source": {
+    "name": "The War Zone Wire @thewarzonewire",
+    "provider": "social-media"
+  },
+  "title": "Ukraine Strikes Russia's Primorsk Oil Port and Shadow Fleet Tankers in Major Drone Barrage",
+  "summary": "Ukrainian forces struck Russia's largest Baltic Sea oil export port at Primorsk, hitting a Karakurt-class missile ship, patrol boat, oil tanker, and two shadow fleet tankers near Novorossiysk, in one of the war's most significant energy infrastructure attacks.",
+  "contents": "## Massive Ukrainian Drone Campaign Targets Russian Oil Export Network\n\n### Primorsk Strike\nUkrainian drones attacked the Primorsk oil terminal overnight on May 2-3, igniting fires at the port. NASA FIRMS satellite data confirmed active fire signatures at the terminal. Leningrad Oblast Governor Drozdenko acknowledged Primorsk represented \"the key target\" of the overnight attack, reporting over 60 drones intercepted.\n\n### Vessels Hit\nPresident Zelensky announced Ukrainian forces destroyed or damaged:\n- A Karakurt-class missile ship (Kalibr cruise missile carrier)\n- A Russian patrol boat\n- An oil tanker at Primorsk\n- Two shadow fleet tankers near Novorossiysk on the Black Sea\n\nZelensky declared: \"These tankers had actively transported oil — now they won't.\"\n\n### Scale and Impact\nPrimorsk handles approximately 1 million barrels per day of Russian crude — roughly 20% of seaborne oil exports. Previous March-April strikes destroyed at least eight 50,000-cubic-meter storage tanks, eliminating approximately 40% of terminal storage capacity. Russia's Defense Ministry claimed 334 Ukrainian drones intercepted overnight across 16 regions.\n\n### Market Implications\nKremlin spokesman Peskov warned oil prices — already above $120/barrel — could rise further. He paradoxically noted that \"even with lower export volumes, our companies would earn more money.\" St. Petersburg's Pulkovo Airport suspended operations during the attack.\n\n**Sources:** Reuters, ABC News/AP, Bloomberg, Euromaidan Press",
+  "date_published": "2026-05-03T17:00:00Z",
+  "date_event": "2026-05-03T01:00:00Z",
+  "links": [
+    {
+      "url": "https://abcnews.com/International/wireStory/ukraine-hits-key-russian-oil-loading-port-2-132611077",
+      "label": "ABC News/AP Report"
+    },
+    {
+      "url": "https://www.bloomberg.com/news/articles/2026-05-03/fire-put-out-at-russia-s-primorsk-port-from-drone-governor-says",
+      "label": "Bloomberg Report"
+>>>>>>> Stashed changes
     }
   ],
   "image_urls": [],
   "geo": {
     "lat": 60.36,
+<<<<<<< Updated upstream
     "lon": 29.16,
+=======
+    "lon": 29.15,
+>>>>>>> Stashed changes
     "country": "Russia",
     "region": "Leningrad Oblast",
     "city": "Primorsk"
   },
   "topics": [
+<<<<<<< Updated upstream
     "karakurt-class",
     "missile-ship",
     "naval-warfare",
@@ -4658,10 +4721,40 @@
     {
       "url": "https://abcnews.com/International/wireStory/ukraine-hits-key-russian-oil-loading-port-2-132611077",
       "label": "AP Coverage"
+=======
+    "ukraine",
+    "russia",
+    "oil-infrastructure",
+    "drone-strike",
+    "shadow-fleet",
+    "primorsk",
+    "energy-war",
+    "maritime"
+  ],
+  "confidence": 0.95,
+  "ingested_at": "2026-05-03T17:34:35Z"
+}
+{
+  "id": "evt_20260503_406",
+  "source": {
+    "name": "Fleetnumbers @Fleetnumbers",
+    "provider": "social-media"
+  },
+  "title": "Ukrainian Drones Destroy Karakurt-Class Missile Ship and Shadow Fleet Tankers in Baltic Sea",
+  "summary": "Ukraine claimed destruction of a Russian Karakurt-class Kalibr missile ship and a patrol boat at Primorsk, plus two shadow fleet tankers near Novorossiysk, eliminating both military and sanctions-evasion naval assets.",
+  "contents": "## Ukrainian Deep-Strike Campaign Neutralizes Russian Naval and Oil Assets\n\n### Military Vessels Hit\nPresident Zelensky reported that Ukrainian drone strikes destroyed:\n- A **Karakurt-class missile corvette** — a small but potent platform armed with Kalibr cruise missiles, one of approximately 20 in Russian service\n- A Russian **patrol boat** in the Baltic Sea near Primorsk\n\nThe Karakurt-class ships displaced approximately 800 tons and carried eight Kalibr missile launchers, making each loss significant for Russia's coastal strike capability.\n\n### Shadow Fleet Tankers\nTwo shadow fleet oil tankers sustained strikes near the entrance to Novorossiysk, Russia's primary Black Sea oil export port. These vessels had operated as part of Russia's network of aged, poorly insured tankers used to circumvent Western sanctions and price caps on Russian crude.\n\n### Fleet Implications\nThe attacks compound damage to Russia's naval and energy export infrastructure. Previous strikes since March destroyed at least eight storage tanks at Primorsk — approximately 40% of terminal capacity. Estonian intelligence estimated that the pipeline route carrying 40-50% of Russia's petroleum product exports through Ust-Luga and Primorsk experienced significant disruption.\n\n### Kremlin Response\nSpokesman Peskov acknowledged oil prices could rise further from current levels above $120/barrel but argued higher prices would offset reduced export volumes — a paradox highlighting the economic warfare dynamic.\n\n**Sources:** Reuters, Euromaidan Press, Bloomberg",
+  "date_published": "2026-05-03T17:02:00Z",
+  "date_event": "2026-05-03T04:00:00Z",
+  "links": [
+    {
+      "url": "https://www.theglobeandmail.com/world/article-ukraine-russia-war-primorsk-oil-energy-infrastructure/",
+      "label": "Globe and Mail Coverage"
+>>>>>>> Stashed changes
     }
   ],
   "image_urls": [],
   "geo": {
+<<<<<<< Updated upstream
     "lat": 46.49,
     "lon": 30.74,
     "country": "Ukraine",
@@ -4676,11 +4769,216 @@
     "ballistic-missiles",
     "overnight-strikes",
     "casualties"
+=======
+    "lat": 60.36,
+    "lon": 29.15,
+    "country": "Russia",
+    "region": "Baltic Sea",
+    "city": "Primorsk"
+  },
+  "topics": [
+    "russia",
+    "ukraine",
+    "naval",
+    "karakurt",
+    "shadow-fleet",
+    "tanker",
+    "military-losses",
+    "maritime"
+  ],
+  "confidence": 0.90,
+  "ingested_at": "2026-05-03T17:34:35Z"
+}
+{
+  "id": "evt_20260503_417",
+  "source": {
+    "name": "Belteleradio @BeltelFreeAudio",
+    "provider": "social-media"
+  },
+  "title": "Atin Ito Coalition Plants Philippine Flag on Sandy Cay Amid Heavy Chinese Vessel Presence",
+  "summary": "The Philippine civilian coalition Atin Ito planted the national flag on Pagasa Cay 2 (Sandy Cay) in the West Philippine Sea during its fourth mission, defying heavy Chinese vessel presence and China's GPS jamming of civilian drones.",
+  "contents": "## Philippine Civilians Assert Sovereignty at Contested Maritime Feature\n\n### Flag Planting\nAkbayan Representative Dadah Kiram Ismula led the Atin Ito mission crew departing Pagasa Island at 5:40 a.m. on May 3 to plant the Philippine flag on Sandy Cay (Pagasa Cay 2). The mission succeeded \"despite China's strong presence\" in the area.\n\n### China's Electronic Warfare\nDuring the mission, journalists and operators discovered that Chinese-made DJI drones refused to fly in Philippine waters. The devices displayed error messages requiring registration with the Civil Aviation Administration of China (CAAC), demonstrating Beijing's ability to control Chinese-manufactured equipment in contested airspace.\n\n### Chinese Shadowing\nA China Coast Guard vessel (bow number 3103) trailed the mission ship MV Kapitan Felix Oca, matching its speed at approximately five nautical miles distance. Three additional vessels appeared ahead of the civilian ship during transit.\n\n### Armed Forces Support\nThe AFP expressed support, with WPS spokesperson Roy Vincent Trinidad calling the flag planting \"a profound testament to the indomitable spirit of the Filipino people.\" The Chinese Embassy criticized Atin Ito for \"provocative activities\" and reaffirmed China's sovereignty claims.\n\n### Significance\nPagasa Cay 2 sits within Philippine territorial waters as an extension of Pagasa Island — the largest Philippine-administered island in the Spratlys with approximately 200 permanent residents.\n\n**Sources:** GMA News, Manila Times, Philstar",
+  "date_published": "2026-05-03T17:25:00Z",
+  "date_event": "2026-05-03T05:40:00Z",
+  "links": [
+    {
+      "url": "https://www.gmanetwork.com/news/topstories/nation/986206/ph-civilian-mission-plants-ph-flag-on-pagasa-cay-2-amid-chinese-vessels-presence/story/",
+      "label": "GMA News"
+    },
+    {
+      "url": "https://www.manilatimes.net/2026/05/03/news/national/china-slams-atin-ito-justifies-wps-actions/2334309",
+      "label": "Manila Times"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 11.05,
+    "lon": 114.08,
+    "country": "Philippines",
+    "region": "Spratly Islands",
+    "city": "Sandy Cay"
+  },
+  "topics": [
+    "philippines",
+    "west-philippine-sea",
+    "sovereignty",
+    "atin-ito",
+    "china",
+    "civilian-mission",
+    "electronic-warfare"
+  ],
+  "confidence": 0.90,
+  "ingested_at": "2026-05-03T17:34:35Z"
+}
+{
+  "id": "evt_20260503_420",
+  "source": {
+    "name": "Chinese Embassy @ChineseEmbinUS",
+    "provider": "social-media"
+  },
+  "title": "Chinese Embassy Slams Philippine Atin Ito Coalition, Reaffirms South China Sea Sovereignty Claims",
+  "summary": "The Chinese Embassy in the Philippines criticized the Atin Ito civilian coalition for 'provocative activities' in the West Philippine Sea and reaffirmed China's determination to 'resolutely safeguard territorial sovereignty and maritime rights.'",
+  "contents": "## Beijing Denounces Philippine Civilian Mission as Provocation\n\n### Embassy Statement\nThe Chinese Embassy issued a statement criticizing the Philippine Atin Ito coalition, accusing it of \"repeatedly attempting to carry out provocative activities under the pretext of safeguarding the Philippines' territorial sovereignty.\" The embassy declared such efforts \"ended in failure\" and that China \"will continue to resolutely safeguard its territorial sovereignty and maritime rights and interests.\"\n\n### Trigger\nThe statement responded to the Atin Ito coalition's fourth civilian mission, which planted the Philippine flag on Sandy Cay (Pagasa Cay 2) and delivered supplies to Pagasa Island residents. A China Coast Guard vessel shadowed the mission ship MV Kapitan Felix Oca throughout the transit.\n\n### Drone Jamming Dimension\nDuring the mission, Chinese-made DJI drones failed to operate in Philippine waters, displaying prompts requiring Civil Aviation Administration of China (CAAC) registration — demonstrating China's ability to restrict use of its technology products in contested areas.\n\n### Parallel Military Actions\nThe PLA Southern Theater Command simultaneously conducted combat readiness patrols near Scarborough Shoal while the Coast Guard performed law enforcement operations. China also deployed four research vessels — including the drone mothership Zhuhaiyun — into Philippine waters without authorization.\n\n**Sources:** Manila Times, GMA News, Reuters",
+  "date_published": "2026-05-03T17:30:00Z",
+  "date_event": "2026-05-03T10:00:00Z",
+  "links": [
+    {
+      "url": "https://www.manilatimes.net/2026/05/03/news/national/china-slams-atin-ito-justifies-wps-actions/2334309",
+      "label": "Manila Times Coverage"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 39.9042,
+    "lon": 116.4074,
+    "country": "China",
+    "city": "Beijing"
+  },
+  "topics": [
+    "china",
+    "philippines",
+    "diplomacy",
+    "south-china-sea",
+    "sovereignty",
+    "atin-ito",
+    "west-philippine-sea"
+  ],
+  "confidence": 0.88,
+  "ingested_at": "2026-05-03T17:34:35Z"
+}
+{
+  "id": "evt_20260503_421",
+  "source": {
+    "name": "JKGA ROK Gov @jkgarokgov",
+    "provider": "social-media"
+  },
+  "title": "South Korea Launches Next-Generation Satellite on SpaceX Falcon 9",
+  "summary": "South Korea successfully launched a next-generation satellite aboard a SpaceX Falcon 9 rocket, advancing its space-based reconnaissance and military surveillance capabilities amid heightened North Korean threats.",
+  "contents": "## ROK Advances Space Capabilities With New Satellite Launch\n\n### Launch Details\nSouth Korea launched a next-generation satellite aboard a SpaceX Falcon 9 rocket on May 3, according to Yonhap news agency. The satellite contributes to South Korea's expanding space-based surveillance and reconnaissance constellation.\n\n### Military Significance\nThe launch builds on South Korea's completion of a five-satellite reconnaissance system designed to strengthen \"kill chain\" preemptive strike capabilities against North Korean targets. The constellation provides comprehensive coverage needed for real-time detection and tracking of DPRK missile launchers, nuclear facilities, and military movements.\n\n### Defense Modernization Context\nThe satellite program forms part of South Korea's broader defense modernization:\n- Three-axis defense strategy: Kill Chain, KAMD (air and missile defense), KMPR (massive retaliation)\n- Proposed defense spending increase to 3.5% of GDP\n- Development of indigenous nuclear-powered attack submarine\n- USFK proposal to establish South Korea as Regional Sustainment Hub\n\n### Threat Assessment\nThe launch coincides with North Korea's expanded military development plan endorsed at the February Ninth Party Congress, including ICBM complexes and naval nuclear weapons. Bloomberg analysis warned the DPRK arsenal approaches a tipping point that could overwhelm US missile defenses.\n\n**Sources:** Yonhap, WHBL News",
+  "date_published": "2026-05-03T16:36:00Z",
+  "date_event": "2026-05-03T10:00:00Z",
+  "links": [
+    {
+      "url": "https://whbl.com/2026/05/03/russias-primorsk-port-hit-ukraine-launches-wave-of-drone-strikes/",
+      "label": "WHBL News Wire"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 34.43,
+    "lon": 127.54,
+    "country": "South Korea",
+    "region": "Naro Space Center",
+    "city": "Goheung"
+  },
+  "topics": [
+    "south-korea",
+    "satellite",
+    "space",
+    "military-modernization",
+    "reconnaissance",
+    "north-korea",
+    "defense"
+  ],
+  "confidence": 0.82,
+  "ingested_at": "2026-05-03T17:34:35Z"
+}
+{
+  "id": "evt_20260503_422",
+  "source": {
+    "name": "Ian Ellis-Jones @ianellisjones",
+    "provider": "social-media"
+  },
+  "title": "Russia's Primorsk Oil Port Resumes Operations at Reduced Capacity After Ukrainian Strikes",
+  "summary": "Russia's Primorsk port on the Baltic Sea attempted to resume oil loading operations following the overnight Ukrainian drone strikes, but at significantly lower capacity due to infrastructure damage affecting 40% of storage.",
+  "contents": "## Primorsk Port Damage Assessment Reveals Persistent Export Disruption\n\n### Operational Status\nThe Primorsk oil export terminal attempted to resume operations on May 3 following overnight Ukrainian drone strikes that ignited fires at the facility. Governor Drozdenko confirmed the fire underwent extinguishing and no oil spill occurred, but the port operated at reduced capacity.\n\n### Cumulative Damage\nPrevious strikes since March destroyed at least eight 50,000-cubic-meter storage tanks — approximately 40% of the terminal's total storage capacity. The port normally handles 1 million barrels per day through nine berths, serving as the endpoint of the Baltic Pipeline System carrying up to 75 million tonnes annually.\n\n### Vessel Strikes\nUkrainian forces also hit:\n- A Karakurt-class missile corvette armed with Kalibr cruise missiles\n- A patrol boat in Baltic waters\n- An oil tanker at Primorsk\n- Two shadow fleet tankers near Novorossiysk\n\n### Export Impact\nEstonian intelligence assessed that the pipeline route carrying 40-50% of Russia's petroleum product exports through Ust-Luga and Primorsk experienced significant disruption from the campaign. Combined with attacks on Tuapse refinery on the Black Sea (hit four times in two weeks), Ukraine systematically degraded Russia's oil export infrastructure across multiple theaters.\n\n**Sources:** Baird Maritime, Euromaidan Press, Reuters",
+  "date_published": "2026-05-03T17:32:00Z",
+  "date_event": "2026-05-03T10:00:00Z",
+  "links": [
+    {
+      "url": "https://euromaidanpress.com/2026/05/03/primorsk-takes-the-torch-from-tuapse-nasa-satellites-confirm-fresh-fires-at-russias-largest-baltic-oil-export-terminal/",
+      "label": "Euromaidan Press Analysis"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 60.36,
+    "lon": 29.15,
+    "country": "Russia",
+    "region": "Leningrad Oblast",
+    "city": "Primorsk"
+  },
+  "topics": [
+    "russia",
+    "oil-exports",
+    "primorsk",
+    "infrastructure-damage",
+    "baltic-sea",
+    "ukraine",
+    "energy-war"
+  ],
+  "confidence": 0.88,
+  "ingested_at": "2026-05-03T17:34:35Z"
+}
+{
+  "id": "evt_20260503_423",
+  "source": {
+    "name": "WarTV @WarTV7890",
+    "provider": "social-media"
+  },
+  "title": "Russia Launches 269 Drones and Ballistic Missiles at Ukraine Overnight, Air Force Reports",
+  "summary": "Russian forces attacked Ukraine with 269 drones and ballistic missiles overnight into May 3, hitting targets across 15 locations while killing civilians in Odesa and wounding six in Dnipropetrovsk region.",
+  "contents": "## Massive Russian Aerial Assault Targets Ukrainian Infrastructure\n\n### Attack Scale\nThe Ukrainian Air Force reported that Russian forces launched 269 drones and ballistic missiles overnight into May 3. Ukrainian defenses shot down and repelled 249 drones, while strikes from ballistic missiles and 19 drones hit targets in 15 locations across the country.\n\n### Casualties\n- **Odesa region**: Two killed and three wounded in drone strikes that damaged three residential buildings and port infrastructure\n- **Dnipropetrovsk region**: Six wounded, including a children's bus carrying 40 passengers (no injuries onboard)\n- **Kherson**: Drone attacks on civilian buses killed at least two people and injured eight on May 2\n- **Kharkiv**: Overnight strikes hit an apartment block, injuring three civilians\n\n### Russian Defense Claims\nRussia's Defense Ministry claimed air defenses intercepted 334 Ukrainian UAVs overnight across 16 regions and occupied Crimea, including Belgorod, Bryansk, and the Moscow area where five drones approached the capital.\n\n### Ukrainian Counter-Strikes\nUkraine simultaneously struck Russian territory with over 60 drones targeting Primorsk port, shadow fleet tankers, and military vessels. Zelensky claimed Russia lost at least $7 billion from attacks on its energy sector since January.\n\n**Sources:** Ukrainian Air Force, Kyiv Independent, Reuters",
+  "date_published": "2026-05-03T16:58:00Z",
+  "date_event": "2026-05-03T03:00:00Z",
+  "links": [
+    {
+      "url": "https://abcnews.com/International/wireStory/ukraine-hits-key-russian-oil-loading-port-2-132611077",
+      "label": "ABC News Report"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 50.4501,
+    "lon": 30.5234,
+    "country": "Ukraine",
+    "city": "Kyiv"
+  },
+  "topics": [
+    "ukraine",
+    "russia",
+    "drone-warfare",
+    "ballistic-missile",
+    "civilian-casualties",
+    "air-defense",
+    "war"
+>>>>>>> Stashed changes
   ],
   "confidence": 0.92,
   "ingested_at": "2026-05-03T17:34:35Z"
 }
 {
+<<<<<<< Updated upstream
   "id": "evt_20260503_384",
   "source": {
     "name": "Twitter @CA_JC",
@@ -4695,10 +4993,27 @@
     {
       "url": "https://www.thestar.com.my/news/world/2026/05/03/north-korea039s-kim-casts-youth-as-vanguard-of-state-goals-amid-russia-war",
       "label": "Reuters via The Star"
+=======
+  "id": "evt_20260503_426",
+  "source": {
+    "name": "Nguyen Thi Ho @NguyenThiHo88",
+    "provider": "social-media"
+  },
+  "title": "China Deploys Four Research Vessels Including Drone Mothership Near Philippine and Vietnamese Waters",
+  "summary": "China deployed four research vessels conducting unauthorized marine scientific research in waters near the Philippines, including the Zhuhaiyun drone mothership capable of deploying 50+ unmanned vehicles, threatening Vietnamese and Philippine maritime interests.",
+  "contents": "## China's Research Fleet Raises Southeast Asian Maritime Concerns\n\n### Unauthorized Operations\nFour Chinese research vessels conducted marine scientific research in waters near the Philippines without authorization on May 3. The ships' positions span a broad area from near Quirino Atoll (northwest of Palawan) to areas northeast of Batanes, covering waters relevant to both Philippine and Vietnamese maritime claims.\n\n### Key Vessels\n- **Zhuhaiyun**: World's first intelligent drone mothership, deploying 50+ unmanned aerial, surface, and underwater vehicles\n- **Xiangyanghong 33**: Advanced oceanographic survey vessel near Quirino Atoll\n- **Shi Yan 1**: SWATH-hulled research vessel with acoustic sensors near Batanes\n- **Jia Geng**: Deep-sea vessel with UUV capability near Batanes\n\n### Regional Implications\nThe research activities potentially map seafloor terrain, acoustic environments, and ocean conditions that carry military intelligence value for submarine operations, anti-submarine warfare, and naval planning. Vietnam and the Philippines both claim maritime zones overlapping with the vessels' operating areas.\n\n### Detection Capability\nCanada's Dark Vessel Detection system assisted the Philippine Coast Guard in tracking the vessels, demonstrating the growing role of allied surveillance technology in monitoring Chinese maritime activities in Southeast Asian waters.\n\n**Sources:** Philippine Coast Guard, Bloomberg, GMA News",
+  "date_published": "2026-05-03T16:44:00Z",
+  "date_event": "2026-05-03T04:35:00Z",
+  "links": [
+    {
+      "url": "https://www.indianeconomicobserver.com/news/philippines-to-deploy-aircraft-ships-to-push-back-chinese-drone-mothership-research-vessels20260503120056/",
+      "label": "Indian Economic Observer"
+>>>>>>> Stashed changes
     }
   ],
   "image_urls": [],
   "geo": {
+<<<<<<< Updated upstream
     "lat": 39.02,
     "lon": 125.75,
     "country": "North Korea",
@@ -4716,5 +5031,30 @@
     "domestic-control"
   ],
   "confidence": 0.90,
+=======
+    "lat": 16.665,
+    "lon": 116.83,
+    "country": "Philippines",
+    "region": "South China Sea"
+  },
+  "topics": [
+    "china",
+    "research-vessels",
+    "drone-mothership",
+    "philippines",
+    "vietnam",
+    "maritime-surveillance",
+    "south-china-sea"
+  ],
+  "confidence": 0.85,
+>>>>>>> Stashed changes
   "ingested_at": "2026-05-03T17:34:35Z"
 }
+{"id":"evt_20260503_402","source":{"name":"YonkosMC @YonkosMC","provider":"social-media"},"title":"Philippine Coast Guard Deploys Aircraft and Ships Against Four Chinese Research Vessels Including Drone Mothership","summary":"The Philippine Coast Guard announced deployment of aircraft and vessels to challenge and drive away four Chinese research ships conducting illegal maritime research in Philippine waters, including the Zhuhaiyun, the world's first intelligent drone mothership.","contents":"## PCG Confronts Chinese Research Fleet in West Philippine Sea\n\n### Detection and Response\nThe Philippine Coast Guard detected four Chinese research vessels operating in Philippine waters without authorization on May 3. PCG Commandant Admiral Ronnie Gil Gavan ordered deployment of aircraft and vessels to \"challenge and drive away these unauthorized vessels.\" Canada's Dark Vessel Detection system assisted in tracking the ships.\n\n### Vessels Identified\n- **Zhuhaiyun** — The world's first intelligent drone mothership, capable of deploying over 50 unmanned aerial, surface, and underwater vehicles simultaneously. Located 102 nautical miles northwest of Bajo de Masinloc.\n- **Xiangyanghong 33** — Advanced oceanographic survey vessel near Quirino Atoll, 140 nm northwest of Rizal, Palawan.\n- **Shi Yan 1** — SWATH-hulled research vessel with acoustic sensors, 118 nm west of Itbayat, Batanes.\n- **Jia Geng** — Deep-sea research vessel with UUV deployment capability, 88 nm northeast of Itbayat.\n\n### Legal Basis\nPCG spokesperson Rear Admiral Jay Tarriela stated the operations violated UNCLOS, as they occurred \"without the legal authority or prior consent of the Philippine government.\" The PCG pledged continued monitoring under Philippine law and international maritime law.\n\n### Strategic Context\nThe deployment coincides with ongoing Balikatan 2026 exercises and the Atin Ito coalition's fourth civilian mission to Pag-asa Island, where volunteers planted the Philippine flag on Sandy Cay in a gesture of sovereignty assertion.\n\n**Sources:** Philippine Coast Guard, Bloomberg, GMA News, ABS-CBN","date_published":"2026-05-03T16:55:00Z","date_event":"2026-05-03T04:35:00Z","links":[{"url":"https://www.bloomberg.com/news/articles/2026-05-03/philippines-accuses-china-of-conducting-illegal-marine-research","label":"Bloomberg Report"},{"url":"https://www.gmanetwork.com/news/topstories/nation/986222/pcg-chinese-ships-philippine-waters/story/","label":"GMA News"}],"image_urls":[],"geo":{"lat":16.665,"lon":116.83,"country":"Philippines","region":"West Philippine Sea"},"topics":["philippines","china","maritime-security","coast-guard","drone-mothership","unclos","west-philippine-sea"],"confidence":0.92,"ingested_at":"2026-05-03T17:34:35Z"}
+{"id":"evt_20260503_403","source":{"name":"The War Zone Wire @thewarzonewire","provider":"social-media"},"title":"Ukraine Strikes Russia's Primorsk Oil Port and Shadow Fleet Tankers in Major Drone Barrage","summary":"Ukrainian forces struck Russia's largest Baltic Sea oil export port at Primorsk, hitting a Karakurt-class missile ship, patrol boat, oil tanker, and two shadow fleet tankers near Novorossiysk, in one of the war's most significant energy infrastructure attacks.","contents":"## Massive Ukrainian Drone Campaign Targets Russian Oil Export Network\n\n### Primorsk Strike\nUkrainian drones attacked the Primorsk oil terminal overnight on May 2-3, igniting fires at the port. NASA FIRMS satellite data confirmed active fire signatures at the terminal. Leningrad Oblast Governor Drozdenko acknowledged Primorsk represented \"the key target\" of the overnight attack, reporting over 60 drones intercepted.\n\n### Vessels Hit\nPresident Zelensky announced Ukrainian forces destroyed or damaged:\n- A Karakurt-class missile ship (Kalibr cruise missile carrier)\n- A Russian patrol boat\n- An oil tanker at Primorsk\n- Two shadow fleet tankers near Novorossiysk on the Black Sea\n\nZelensky declared: \"These tankers had actively transported oil — now they won't.\"\n\n### Scale and Impact\nPrimorsk handles approximately 1 million barrels per day of Russian crude — roughly 20% of seaborne oil exports. Previous March-April strikes destroyed at least eight 50,000-cubic-meter storage tanks, eliminating approximately 40% of terminal storage capacity. Russia's Defense Ministry claimed 334 Ukrainian drones intercepted overnight across 16 regions.\n\n### Market Implications\nKremlin spokesman Peskov warned oil prices — already above $120/barrel — could rise further. He paradoxically noted that \"even with lower export volumes, our companies would earn more money.\" St. Petersburg's Pulkovo Airport suspended operations during the attack.\n\n**Sources:** Reuters, ABC News/AP, Bloomberg, Euromaidan Press","date_published":"2026-05-03T17:00:00Z","date_event":"2026-05-03T01:00:00Z","links":[{"url":"https://abcnews.com/International/wireStory/ukraine-hits-key-russian-oil-loading-port-2-132611077","label":"ABC News/AP Report"},{"url":"https://www.bloomberg.com/news/articles/2026-05-03/fire-put-out-at-russia-s-primorsk-port-from-drone-governor-says","label":"Bloomberg Report"}],"image_urls":[],"geo":{"lat":60.36,"lon":29.15,"country":"Russia","region":"Leningrad Oblast","city":"Primorsk"},"topics":["ukraine","russia","oil-infrastructure","drone-strike","shadow-fleet","primorsk","energy-war","maritime"],"confidence":0.95,"ingested_at":"2026-05-03T17:34:35Z"}
+{"id":"evt_20260503_406","source":{"name":"Fleetnumbers @Fleetnumbers","provider":"social-media"},"title":"Ukrainian Drones Destroy Karakurt-Class Missile Ship and Shadow Fleet Tankers in Baltic Sea","summary":"Ukraine claimed destruction of a Russian Karakurt-class Kalibr missile ship and a patrol boat at Primorsk, plus two shadow fleet tankers near Novorossiysk, eliminating both military and sanctions-evasion naval assets.","contents":"## Ukrainian Deep-Strike Campaign Neutralizes Russian Naval and Oil Assets\n\n### Military Vessels Hit\nPresident Zelensky reported that Ukrainian drone strikes destroyed:\n- A **Karakurt-class missile corvette** — a small but potent platform armed with Kalibr cruise missiles, one of approximately 20 in Russian service\n- A Russian **patrol boat** in the Baltic Sea near Primorsk\n\nThe Karakurt-class ships displaced approximately 800 tons and carried eight Kalibr missile launchers, making each loss significant for Russia's coastal strike capability.\n\n### Shadow Fleet Tankers\nTwo shadow fleet oil tankers sustained strikes near the entrance to Novorossiysk, Russia's primary Black Sea oil export port. These vessels had operated as part of Russia's network of aged, poorly insured tankers used to circumvent Western sanctions and price caps on Russian crude.\n\n### Fleet Implications\nThe attacks compound damage to Russia's naval and energy export infrastructure. Previous strikes since March destroyed at least eight storage tanks at Primorsk — approximately 40% of terminal capacity. Estonian intelligence estimated that the pipeline route carrying 40-50% of Russia's petroleum product exports through Ust-Luga and Primorsk experienced significant disruption.\n\n### Kremlin Response\nSpokesman Peskov acknowledged oil prices could rise further from current levels above $120/barrel but argued higher prices would offset reduced export volumes — a paradox highlighting the economic warfare dynamic.\n\n**Sources:** Reuters, Euromaidan Press, Bloomberg","date_published":"2026-05-03T17:02:00Z","date_event":"2026-05-03T04:00:00Z","links":[{"url":"https://www.theglobeandmail.com/world/article-ukraine-russia-war-primorsk-oil-energy-infrastructure/","label":"Globe and Mail Coverage"}],"image_urls":[],"geo":{"lat":60.36,"lon":29.15,"country":"Russia","region":"Baltic Sea","city":"Primorsk"},"topics":["russia","ukraine","naval","karakurt","shadow-fleet","tanker","military-losses","maritime"],"confidence":0.90,"ingested_at":"2026-05-03T17:34:35Z"}
+{"id":"evt_20260503_420","source":{"name":"Chinese Embassy @ChineseEmbinUS","provider":"social-media"},"title":"Chinese Embassy Slams Philippine Atin Ito Coalition, Reaffirms South China Sea Sovereignty Claims","summary":"The Chinese Embassy in the Philippines criticized the Atin Ito civilian coalition for 'provocative activities' in the West Philippine Sea and reaffirmed China's determination to 'resolutely safeguard territorial sovereignty and maritime rights.'","contents":"## Beijing Denounces Philippine Civilian Mission as Provocation\n\n### Embassy Statement\nThe Chinese Embassy issued a statement criticizing the Philippine Atin Ito coalition, accusing it of \"repeatedly attempting to carry out provocative activities under the pretext of safeguarding the Philippines' territorial sovereignty.\" The embassy declared such efforts \"ended in failure\" and that China \"will continue to resolutely safeguard its territorial sovereignty and maritime rights and interests.\"\n\n### Trigger\nThe statement responded to the Atin Ito coalition's fourth civilian mission, which planted the Philippine flag on Sandy Cay (Pagasa Cay 2) and delivered supplies to Pagasa Island residents. A China Coast Guard vessel shadowed the mission ship MV Kapitan Felix Oca throughout the transit.\n\n### Drone Jamming Dimension\nDuring the mission, Chinese-made DJI drones failed to operate in Philippine waters, displaying prompts requiring Civil Aviation Administration of China (CAAC) registration — demonstrating China's ability to restrict use of its technology products in contested areas.\n\n### Parallel Military Actions\nThe PLA Southern Theater Command simultaneously conducted combat readiness patrols near Scarborough Shoal while the Coast Guard performed law enforcement operations. China also deployed four research vessels — including the drone mothership Zhuhaiyun — into Philippine waters without authorization.\n\n**Sources:** Manila Times, GMA News, Reuters","date_published":"2026-05-03T17:30:00Z","date_event":"2026-05-03T10:00:00Z","links":[{"url":"https://www.manilatimes.net/2026/05/03/news/national/china-slams-atin-ito-justifies-wps-actions/2334309","label":"Manila Times Coverage"}],"image_urls":[],"geo":{"lat":39.9042,"lon":116.4074,"country":"China","city":"Beijing"},"topics":["china","philippines","diplomacy","south-china-sea","sovereignty","atin-ito","west-philippine-sea"],"confidence":0.88,"ingested_at":"2026-05-03T17:34:35Z"}
+{"id":"evt_20260503_421","source":{"name":"JKGA ROK Gov @jkgarokgov","provider":"social-media"},"title":"South Korea Launches Next-Generation Satellite on SpaceX Falcon 9","summary":"South Korea successfully launched a next-generation satellite aboard a SpaceX Falcon 9 rocket, advancing its space-based reconnaissance and military surveillance capabilities amid heightened North Korean threats.","contents":"## ROK Advances Space Capabilities With New Satellite Launch\n\n### Launch Details\nSouth Korea launched a next-generation satellite aboard a SpaceX Falcon 9 rocket on May 3, according to Yonhap news agency. The satellite contributes to South Korea's expanding space-based surveillance and reconnaissance constellation.\n\n### Military Significance\nThe launch builds on South Korea's completion of a five-satellite reconnaissance system designed to strengthen \"kill chain\" preemptive strike capabilities against North Korean targets. The constellation provides comprehensive coverage needed for real-time detection and tracking of DPRK missile launchers, nuclear facilities, and military movements.\n\n### Defense Modernization Context\nThe satellite program forms part of South Korea's broader defense modernization:\n- Three-axis defense strategy: Kill Chain, KAMD (air and missile defense), KMPR (massive retaliation)\n- Proposed defense spending increase to 3.5% of GDP\n- Development of indigenous nuclear-powered attack submarine\n- USFK proposal to establish South Korea as Regional Sustainment Hub\n\n### Threat Assessment\nThe launch coincides with North Korea's expanded military development plan endorsed at the February Ninth Party Congress, including ICBM complexes and naval nuclear weapons. Bloomberg analysis warned the DPRK arsenal approaches a tipping point that could overwhelm US missile defenses.\n\n**Sources:** Yonhap, WHBL News","date_published":"2026-05-03T16:36:00Z","date_event":"2026-05-03T10:00:00Z","links":[{"url":"https://whbl.com/2026/05/03/russias-primorsk-port-hit-ukraine-launches-wave-of-drone-strikes/","label":"WHBL News Wire"}],"image_urls":[],"geo":{"lat":34.43,"lon":127.54,"country":"South Korea","region":"Naro Space Center","city":"Goheung"},"topics":["south-korea","satellite","space","military-modernization","reconnaissance","north-korea","defense"],"confidence":0.82,"ingested_at":"2026-05-03T17:34:35Z"}
+{"id":"evt_20260503_422","source":{"name":"Ian Ellis-Jones @ianellisjones","provider":"social-media"},"title":"Russia's Primorsk Oil Port Resumes Operations at Reduced Capacity After Ukrainian Strikes","summary":"Russia's Primorsk port on the Baltic Sea attempted to resume oil loading operations following the overnight Ukrainian drone strikes, but at significantly lower capacity due to infrastructure damage affecting 40% of storage.","contents":"## Primorsk Port Damage Assessment Reveals Persistent Export Disruption\n\n### Operational Status\nThe Primorsk oil export terminal attempted to resume operations on May 3 following overnight Ukrainian drone strikes that ignited fires at the facility. Governor Drozdenko confirmed the fire underwent extinguishing and no oil spill occurred, but the port operated at reduced capacity.\n\n### Cumulative Damage\nPrevious strikes since March destroyed at least eight 50,000-cubic-meter storage tanks — approximately 40% of the terminal's total storage capacity. The port normally handles 1 million barrels per day through nine berths, serving as the endpoint of the Baltic Pipeline System carrying up to 75 million tonnes annually.\n\n### Vessel Strikes\nUkrainian forces also hit:\n- A Karakurt-class missile corvette armed with Kalibr cruise missiles\n- A patrol boat in Baltic waters\n- An oil tanker at Primorsk\n- Two shadow fleet tankers near Novorossiysk\n\n### Export Impact\nEstonian intelligence assessed that the pipeline route carrying 40-50% of Russia's petroleum product exports through Ust-Luga and Primorsk experienced significant disruption from the campaign. Combined with attacks on Tuapse refinery on the Black Sea (hit four times in two weeks), Ukraine systematically degraded Russia's oil export infrastructure across multiple theaters.\n\n**Sources:** Baird Maritime, Euromaidan Press, Reuters","date_published":"2026-05-03T17:32:00Z","date_event":"2026-05-03T10:00:00Z","links":[{"url":"https://euromaidanpress.com/2026/05/03/primorsk-takes-the-torch-from-tuapse-nasa-satellites-confirm-fresh-fires-at-russias-largest-baltic-oil-export-terminal/","label":"Euromaidan Press Analysis"}],"image_urls":[],"geo":{"lat":60.36,"lon":29.15,"country":"Russia","region":"Leningrad Oblast","city":"Primorsk"},"topics":["russia","oil-exports","primorsk","infrastructure-damage","baltic-sea","ukraine","energy-war"],"confidence":0.88,"ingested_at":"2026-05-03T17:34:35Z"}
+{"id":"evt_20260503_423","source":{"name":"WarTV @WarTV7890","provider":"social-media"},"title":"Russia Launches 269 Drones and Ballistic Missiles at Ukraine Overnight, Air Force Reports","summary":"Russian forces attacked Ukraine with 269 drones and ballistic missiles overnight into May 3, hitting targets across 15 locations while killing civilians in Odesa and wounding six in Dnipropetrovsk region.","contents":"## Massive Russian Aerial Assault Targets Ukrainian Infrastructure\n\n### Attack Scale\nThe Ukrainian Air Force reported that Russian forces launched 269 drones and ballistic missiles overnight into May 3. Ukrainian defenses shot down and repelled 249 drones, while strikes from ballistic missiles and 19 drones hit targets in 15 locations across the country.\n\n### Casualties\n- **Odesa region**: Two killed and three wounded in drone strikes that damaged three residential buildings and port infrastructure\n- **Dnipropetrovsk region**: Six wounded, including a children's bus carrying 40 passengers (no injuries onboard)\n- **Kherson**: Drone attacks on civilian buses killed at least two people and injured eight on May 2\n- **Kharkiv**: Overnight strikes hit an apartment block, injuring three civilians\n\n### Russian Defense Claims\nRussia's Defense Ministry claimed air defenses intercepted 334 Ukrainian UAVs overnight across 16 regions and occupied Crimea, including Belgorod, Bryansk, and the Moscow area where five drones approached the capital.\n\n### Ukrainian Counter-Strikes\nUkraine simultaneously struck Russian territory with over 60 drones targeting Primorsk port, shadow fleet tankers, and military vessels. Zelensky claimed Russia lost at least $7 billion from attacks on its energy sector since January.\n\n**Sources:** Ukrainian Air Force, Kyiv Independent, Reuters","date_published":"2026-05-03T16:58:00Z","date_event":"2026-05-03T03:00:00Z","links":[{"url":"https://abcnews.com/International/wireStory/ukraine-hits-key-russian-oil-loading-port-2-132611077","label":"ABC News Report"}],"image_urls":[],"geo":{"lat":50.4501,"lon":30.5234,"country":"Ukraine","city":"Kyiv"},"topics":["ukraine","russia","drone-warfare","ballistic-missile","civilian-casualties","air-defense","war"],"confidence":0.92,"ingested_at":"2026-05-03T17:34:35Z"}
+{"id":"evt_20260503_426","source":{"name":"Nguyen Thi Ho @NguyenThiHo88","provider":"social-media"},"title":"China Deploys Four Research Vessels Including Drone Mothership Near Philippine and Vietnamese Waters","summary":"China deployed four research vessels conducting unauthorized marine scientific research in waters near the Philippines, including the Zhuhaiyun drone mothership capable of deploying 50+ unmanned vehicles, threatening Vietnamese and Philippine maritime interests.","contents":"## China's Research Fleet Raises Southeast Asian Maritime Concerns\n\n### Unauthorized Operations\nFour Chinese research vessels conducted marine scientific research in waters near the Philippines without authorization on May 3. The ships' positions span a broad area from near Quirino Atoll (northwest of Palawan) to areas northeast of Batanes, covering waters relevant to both Philippine and Vietnamese maritime claims.\n\n### Key Vessels\n- **Zhuhaiyun**: World's first intelligent drone mothership, deploying 50+ unmanned aerial, surface, and underwater vehicles\n- **Xiangyanghong 33**: Advanced oceanographic survey vessel near Quirino Atoll\n- **Shi Yan 1**: SWATH-hulled research vessel with acoustic sensors near Batanes\n- **Jia Geng**: Deep-sea vessel with UUV capability near Batanes\n\n### Regional Implications\nThe research activities potentially map seafloor terrain, acoustic environments, and ocean conditions that carry military intelligence value for submarine operations, anti-submarine warfare, and naval planning. Vietnam and the Philippines both claim maritime zones overlapping with the vessels' operating areas.\n\n### Detection Capability\nCanada's Dark Vessel Detection system assisted the Philippine Coast Guard in tracking the vessels, demonstrating the growing role of allied surveillance technology in monitoring Chinese maritime activities in Southeast Asian waters.\n\n**Sources:** Philippine Coast Guard, Bloomberg, GMA News","date_published":"2026-05-03T16:44:00Z","date_event":"2026-05-03T04:35:00Z","links":[{"url":"https://www.indianeconomicobserver.com/news/philippines-to-deploy-aircraft-ships-to-push-back-chinese-drone-mothership-research-vessels20260503120056/","label":"Indian Economic Observer"}],"image_urls":[],"geo":{"lat":16.665,"lon":116.83,"country":"Philippines","region":"South China Sea"},"topics":["china","research-vessels","drone-mothership","philippines","vietnam","maritime-surveillance","south-china-sea"],"confidence":0.85,"ingested_at":"2026-05-03T17:34:35Z"}

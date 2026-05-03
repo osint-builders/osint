@@ -332,6 +332,7 @@ All 29 sources processed. Events mapped to sources by topic relevance:
 - twitter-minhdr18: No defense technology developments in window
 - webpage-windward-ai-blog: No new blog posts in time window
 
+<<<<<<< Updated upstream
 ## Bucket 4 run @ 2026-05-03T17:34:35.566Z
 
 ### Processing Summary
@@ -350,3 +351,12 @@ All 29 sources processed. Events mapped to sources by topic relevance:
 - North Korea: rejects cyber allegations, youth congress
 - Zaporizhzhia nuclear plant drone strike
 - US troop withdrawal from Germany
+=======
+## Bucket 3 run @ 2026-05-03T17:34:35.564Z
+Sources: 29/29 processed. Events: 30 created (IDs 400-429).
+Collection: exa_web_search (Twitter API depleted). All validated.
+>>>>>>> Stashed changes
+
+## Bucket 3 run @ 2026-05-03T17:34:35.564Z
+Sources: 29/29 processed. Events created: 30 (after URL dedup: unique additions merged).
+Collection: exa_web_search (Twitter API depleted). All validated.
