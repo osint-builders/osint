@@ -1678,6 +1678,276 @@
   "ingested_at": "2026-05-03T07:30:06Z"
 }
 {
+  "id": "evt_20260503_106",
+  "source": {
+    "name": "DW/Al Jazeera via twitter-militarylandnet/twitter-nytimes-world",
+    "provider": "social-media"
+  },
+  "title": "Israel Orders Evacuation of Southern Lebanese Towns and Launches Fresh Strikes Despite Ceasefire",
+  "summary": "Israel's military warned residents of eleven southern Lebanese towns to evacuate as it prepared strikes against Hezbollah targets, despite a ceasefire agreement, with a Hezbollah lawmaker warning his group could 'thwart' Israel-Lebanon peace talks.",
+  "contents": "## Israel Expands Operations in Southern Lebanon Amid Fragile Truce\n\n### Evacuation Orders\nIsrael's military instructed residents of eleven villages and towns in southern Lebanon — including several in the Nabatieh district north of the Litani River — to evacuate immediately. Arabic-language spokesman Avichay Adraee posted on X: \"For your safety, you must evacuate your homes immediately and move away from the villages and towns by at least 1,000 metres into open areas.\"\n\n### Continuing Strikes\nLebanese media reported Israeli strikes across southern Lebanon, including towns not covered by the evacuation warning. Israel's military stated it conducted operations against Iran-backed Hezbollah targets violating the April 17 ceasefire agreement. The ceasefire text grants Israel the right to act against \"planned, imminent or ongoing attacks.\"\n\n### Hezbollah Response\nHezbollah lawmaker Hassan Fadlallah warned that the group could \"thwart\" the objectives of direct negotiations between Lebanon and Israel. Speaking at an event honoring killed Hezbollah fighters, he stated: \"We have a free people and a steadfast resistance capable of thwarting all the objectives of these negotiations.\"\n\n### Diplomatic Tensions\nLebanon and Israel's US ambassadors have held two meetings in Washington in recent weeks — the first of their kind in decades. Hezbollah has strongly rejected the talks. Israeli strikes have killed more than 2,600 people in Lebanon and displaced over a million since March 2.\n\n**Sources:** DW News, Al Jazeera, Anadolu Agency",
+  "date_published": "2026-05-03T10:40:00Z",
+  "date_event": "2026-05-03T09:00:00Z",
+  "links": [
+    {
+      "url": "https://www.dw.com/en/iran-war-trump-says-reviewing-new-tehran-proposal-with-doubt/live-77021634",
+      "label": "DW Live Blog"
+    },
+    {
+      "url": "https://www.aljazeera.com/news/liveblog/2026/5/3/iran-war-live-trump-says-reviewing-14-point-plan-israel-pounds-lebanon",
+      "label": "Al Jazeera"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 33.38,
+    "lon": 35.48,
+    "country": "Lebanon",
+    "region": "Nabatieh"
+  },
+  "topics": [
+    "israel",
+    "lebanon",
+    "hezbollah",
+    "ceasefire",
+    "evacuation",
+    "military-strikes",
+    "middle-east"
+  ],
+  "confidence": 0.93,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
+  "id": "evt_20260503_107",
+  "source": {
+    "name": "AA via twitter-ca-jc/twitter-dataminr",
+    "provider": "social-media"
+  },
+  "title": "Jordan Conducts Airstrikes on Drug and Arms Smuggling Sites in Southern Syria",
+  "summary": "Jordan's military launched strikes targeting drug and arms smuggling operations in southern Syria, escalating its cross-border counter-narcotics campaign amid ongoing regional instability.",
+  "contents": "## Jordan Strikes Smuggling Infrastructure in Southern Syria\n\n### Military Action\nJordan's armed forces conducted airstrikes against drug and arms smuggling sites in southern Syria, according to Anadolu Agency reporting on May 3. The strikes targeted infrastructure used by trafficking networks operating along the Jordanian-Syrian border.\n\n### Counter-Narcotics Campaign\nThe action represents the latest escalation in Jordan's intensifying campaign against the captagon trade and weapons smuggling emanating from Syrian territory. Jordan has previously conducted similar cross-border operations, particularly targeting facilities linked to narcotics production and distribution networks.\n\n### Regional Security Context\nSouthern Syria has served as a hub for drug manufacturing and smuggling operations that threaten stability across the broader Middle East. The captagon trade — a multi-billion dollar industry — has expanded significantly, with production centered in areas of limited government control.\n\n### Strategic Implications\nJordan's willingness to conduct unilateral strikes in Syrian territory reflects both the severity of the cross-border threat and the security vacuum persisting in parts of Syria. The operations occur against the backdrop of wider regional turmoil, including the ongoing US-Iran conflict and its destabilizing effects on neighboring states.\n\n**Sources:** Anadolu Agency",
+  "date_published": "2026-05-03T10:45:00Z",
+  "date_event": "2026-05-03T07:00:00Z",
+  "links": [
+    {
+      "url": "https://www.aa.com.tr/en/middle-east/jordan-strikes-drug-arms-smuggling-sites-in-southern-syria/3925354",
+      "label": "Anadolu Agency"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 32.62,
+    "lon": 36.1,
+    "country": "Syria",
+    "region": "Daraa Governorate"
+  },
+  "topics": [
+    "jordan",
+    "syria",
+    "airstrikes",
+    "drug-smuggling",
+    "arms-trafficking",
+    "captagon",
+    "regional-security"
+  ],
+  "confidence": 0.85,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
+  "id": "evt_20260503_108",
+  "source": {
+    "name": "AA via twitter-the-lookout-north/twitter-dataminr",
+    "provider": "social-media"
+  },
+  "title": "US Military Aircraft Activity Surges Toward Middle East Amid Iran Tensions",
+  "summary": "Flight tracking data revealed a significant surge in US military aircraft activity heading toward the Middle East, as tensions remain elevated over Iran's blockade of the Strait of Hormuz and stalled peace negotiations.",
+  "contents": "## Increased US Military Aviation Movements Detected\n\n### Activity Surge\nFlight monitoring detected a notable increase in US military aircraft activity directed toward the Middle East, Anadolu Agency reported on May 3. The surge coincides with heightened tensions between Washington and Tehran over the Strait of Hormuz blockade and stalled ceasefire negotiations.\n\n### Force Posture Context\nThe increased aerial activity occurs against the backdrop of a significant US naval presence in the region. Two aircraft carriers — USS Abraham Lincoln and USS George H.W. Bush — remain among approximately 20 US ships operating in Middle Eastern waters, following the USS Gerald R. Ford's departure.\n\n### CENTCOM Operations\nUS Central Command confirmed ongoing blockade enforcement, with 48 commercial vessels redirected since April 13. The aerial movements may support surveillance, logistics, and readiness operations associated with the naval blockade and potential resumption of hostilities.\n\n### Escalation Indicators\nThe flight activity surge comes as the IRGC set a one-month deadline for the US to end its naval blockade, and Trump publicly contemplated options ranging from \"blast the hell out of them\" to pursuing a diplomatic deal. Military analysts noted such aerial movements typically precede operational preparations.\n\n**Sources:** Anadolu Agency, flight tracking data",
+  "date_published": "2026-05-03T10:50:00Z",
+  "date_event": "2026-05-03T08:00:00Z",
+  "links": [
+    {
+      "url": "https://www.aa.com.tr/en/world/us-military-aircraft-activity-surges-toward-middle-east-amid-iran-tensions-tracker/3925404",
+      "label": "Anadolu Agency"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 25.28,
+    "lon": 51.52,
+    "country": "Qatar",
+    "region": "Middle East",
+    "city": "Al Udeid"
+  },
+  "topics": [
+    "us-military",
+    "middle-east",
+    "iran",
+    "force-posture",
+    "military-aviation",
+    "escalation"
+  ],
+  "confidence": 0.82,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
+  "id": "evt_20260503_109",
+  "source": {
+    "name": "Yonhap via twitter-korea-herald/twitter-ausnav",
+    "provider": "social-media"
+  },
+  "title": "South Korean Navy and Marine Corps Conduct Large-Scale Amphibious Landing Drills in Pohang",
+  "summary": "The Republic of Korea Navy and Marine Corps held large-scale amphibious landing exercises in Pohang, demonstrating joint maritime assault capabilities amid heightened regional security concerns on the Korean Peninsula.",
+  "contents": "## ROK Navy Executes Major Amphibious Assault Exercise\n\n### Exercise Details\nThe Republic of Korea Navy and Marine Corps conducted large-scale amphibious landing drills in Pohang, as reported by Yonhap News Agency on May 3. The exercises demonstrated combined maritime assault capabilities involving naval vessels, amphibious craft, and marine infantry units.\n\n### Operational Scope\nThe drills practiced beach assault scenarios, coordinated naval fire support, and rapid troop deployment from sea to shore. Such exercises represent a core element of South Korea's defensive strategy against potential North Korean aggression along its extensive coastline.\n\n### Regional Security Context\nThe exercises occur amid continued North Korean missile testing — including recent SRBM cluster warhead demonstrations — and expanded nuclear material production at Yongbyon. The DPRK's Ninth Party Congress endorsed a new Five-Year Military Development Plan committing to ICBM complexes, naval nuclear weapons, and expanded conventional strike capabilities.\n\n### Alliance Dimension\nSouth Korea's defense modernization includes deployment of its full five-satellite reconnaissance constellation, proposals to increase defense spending to 3.5% of GDP, and development of an indigenous nuclear-powered attack submarine. USFK Commander Xavier Brunson recently proposed establishing South Korea as a Regional Sustainment Hub for Indo-Pacific operations.\n\n**Sources:** Yonhap News Agency",
+  "date_published": "2026-05-03T10:55:00Z",
+  "date_event": "2026-05-03T04:00:00Z",
+  "links": [
+    {
+      "url": "https://en.yna.co.kr/view/AEN20260503000600315",
+      "label": "Yonhap News Agency"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 36.019,
+    "lon": 129.3435,
+    "country": "South Korea",
+    "region": "Gyeongsang",
+    "city": "Pohang"
+  },
+  "topics": [
+    "south-korea",
+    "navy",
+    "marine-corps",
+    "amphibious-drills",
+    "korean-peninsula",
+    "defense",
+    "military-exercise"
+  ],
+  "confidence": 0.88,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
+  "id": "evt_20260503_110",
+  "source": {
+    "name": "USNI/multiple via twitter-us-pacific-fleet/twitter-olongapo-times",
+    "provider": "social-media"
+  },
+  "title": "Balikatan 2026 Enters Final Phase with US Missiles Deployed Near Taiwan and Chinese Naval Forces Shadowing",
+  "summary": "The 17,000-troop Balikatan 2026 exercise entered its final phase with US HIMARS and NMESIS anti-ship missiles deployed to Itbayat island 100 miles from Taiwan, while Chinese naval Task Force 107 conducted live-fire drills east of Luzon.",
+  "contents": "## Balikatan 2026 Reaches Peak Activity in Luzon Strait\n\n### Missile Deployments\nUS Marine Corps NMESIS anti-ship missile launchers and Army HIMARS rocket artillery systems deployed to Itbayat island in the Batanes Island Group — just 100 miles south of Taiwan — as part of the annual Balikatan 2026 exercise. These Hawaii-based ground units demonstrate rapid infiltration of long-range strike platforms into remote island positions, with engagement ranges covering 115 to 310 miles.\n\n### Seven-Nation Coalition\nThe exercise brings together 17,000 troops from the Philippines, United States, Japan, Australia, New Zealand, Canada, and France. Japan Ground Self-Defense Force units deployed Type 88 anti-ship missiles to the Batanes Islands alongside US systems — marking Japan's first active Balikatan participation.\n\n### Chinese Counter-Exercise\nPLA Southern Theater Command sortied Naval Task Force 107 — comprising Type 055 destroyer Zunyi, Type 052D destroyer Hefei, Type 054A frigate Xianning, and Type 903A replenishment ship — east of Luzon Island. The group conducted live-fire shooting, sea-air coordination, and rapid maneuver drills. Chinese vessels also shadowed the 11-warship multinational maritime exercise in the West Philippine Sea.\n\n### Strategic Assessment\nPLATracker founder Ben Lewis assessed the Chinese surface action group's placement east of Luzon provides a \"counter-intervention\" capability against US reinforcement routes from Guam. The carrier Liaoning operates in the South China Sea alongside multiple destroyers, signaling China can \"apply pressure on multiple axes simultaneously.\"\n\n**Sources:** USNI News, INDOPACOM, GMA News, Asia-Pacific Insights, Anadolu Agency",
+  "date_published": "2026-05-03T11:00:00Z",
+  "date_event": "2026-05-03T02:00:00Z",
+  "links": [
+    {
+      "url": "https://news.usni.org/2026/04/28/u-s-missiles-deploy-near-taiwan-during-balikatan-exercise-chinese-action-group-operates-nearby",
+      "label": "USNI News"
+    },
+    {
+      "url": "https://www.gmanetwork.com/news/topstories/nation/985929/balikatan-west-philippine-sea-naval-exercise/story/",
+      "label": "GMA News"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 20.45,
+    "lon": 121.97,
+    "country": "Philippines",
+    "region": "Batanes Islands",
+    "city": "Itbayat"
+  },
+  "topics": [
+    "balikatan",
+    "philippines",
+    "us-military",
+    "japan",
+    "china",
+    "south-china-sea",
+    "anti-ship-missile",
+    "indo-pacific",
+    "taiwan"
+  ],
+  "confidence": 0.92,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
+  "id": "evt_20260503_111",
+  "source": {
+    "name": "AA via twitter-mndchina/twitter-c4ads",
+    "provider": "social-media"
+  },
+  "title": "China Holds Combat Readiness Patrols Near Scarborough Shoal in Response to Balikatan Exercises",
+  "summary": "China's PLA Southern Theater Command announced naval and air combat readiness patrols near Scarborough Shoal in the South China Sea, directly responding to the ongoing multinational Balikatan exercises involving seven nations.",
+  "contents": "## PLA Asserts Presence at Scarborough Shoal During Allied Exercises\n\n### Patrol Announcement\nChina's PLA Southern Theater Command announced on April 30 that its naval and air forces held combat readiness patrols near Scarborough Shoal (Chinese name: Huangyan Dao) in the disputed South China Sea. The command stated these patrols \"serve as an effective countermeasure to cope with all sorts of rights-violation and provocative acts.\"\n\n### Rationale\nThe statement asserted that \"Huangyan Dao represents an inherent part of China's territory\" and that the patrols aimed to \"resolutely safeguard China's territorial sovereignty and uphold peace and stability in the South China Sea.\" Chinese Premier Li Qiang subsequently called for efforts to strengthen maritime capabilities and protect maritime rights.\n\n### Exercise Response\nThe patrols directly respond to the seven-nation Balikatan exercises running April 20 to May 8, which include live-fire drills and maritime strike exercises in waters approximately 230 kilometers from Scarborough Shoal. Chinese vessels shadowed the multinational maritime exercise but maintained safer distances without conducting dangerous maneuvers.\n\n### Coalition-Breaking Assessment\nISW-AEI analysts assessed that the PRC seeks to frame Philippine cooperation with the US and Japan as escalatory, aligning with coalition-breaking goals throughout the Indo-Pacific region. China's defense ministry spokesperson warned that participating nations engage in behavior \"akin to playing with fire.\"\n\n**Sources:** Anadolu Agency, AP, Straits Times",
+  "date_published": "2026-05-03T10:10:00Z",
+  "date_event": "2026-05-03T02:00:00Z",
+  "links": [
+    {
+      "url": "https://www.straitstimes.com/asia/china-holds-naval-air-patrols-near-scarborough-shoal-as-philippines-us-stage-drills",
+      "label": "Straits Times"
+    },
+    {
+      "url": "https://abcnews.com/International/wireStory/china-holds-combat-patrols-south-china-sea-us-philippines-conduct-drills-132538317",
+      "label": "ABC/AP"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 15.15,
+    "lon": 117.76,
+    "country": "Philippines",
+    "region": "South China Sea",
+    "city": "Scarborough Shoal"
+  },
+  "topics": [
+    "china",
+    "south-china-sea",
+    "scarborough-shoal",
+    "pla",
+    "combat-readiness",
+    "balikatan",
+    "philippines",
+    "territorial-dispute"
+  ],
+  "confidence": 0.93,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
+  "id": "evt_20260503_112",
+  "source": {
+    "name": "AA via twitter-bbgoriginals/twitter-schizoint-rel",
+    "provider": "social-media"
+  },
+  "title": "Russia and Ukraine Exchange Overnight Strikes Killing Civilians on Both Sides",
+  "summary": "Russia and Ukraine accused each other of killing civilians in overnight strikes on May 2-3, with Russian drones targeting Kyiv and other Ukrainian cities while Ukraine continued deep strikes on Russian energy infrastructure.",
+  "contents": "## Overnight Strikes Intensify Across Ukraine-Russia Frontlines\n\n### Russian Attacks on Ukraine\nRussian forces launched mass drone attacks against Kyiv late on May 2, continuing into early May 3. Mayor Vitali Klitschko reported multiple explosions across the capital and urged residents to seek shelter. Additional strikes hit targets in Mykolaiv, Kryvyi Rih, and Odesa oblasts, targeting critical and energy infrastructure.\n\n### Civilian Casualties\nRussian attacks killed at least three people and injured at least 42 across Ukraine on May 2. In Kherson, drone attacks on civilian buses killed at least two people and injured eight others. In Kharkiv, overnight drone strikes hit an apartment block, injuring three civilians.\n\n### Ukrainian Retaliation\nUkraine continued its campaign of striking deep into Russian territory. Ukrainian drones hit the Tuapse oil refinery on the Black Sea coast for the fourth time in two weeks, causing fires and evacuations. President Zelensky claimed Russia lost at least $7 billion from attacks on its energy sector since January.\n\n### Mutual Accusations\nAnadolu Agency reported that both Russia and Ukraine accused each other of killing civilians in the latest exchange of strikes. The General Staff of Ukraine's Armed Forces reported total Russian losses of 1,332,950 since February 2022, including 1,080 casualties in the latest 24-hour period.\n\n**Sources:** Anadolu Agency, Kyiv Independent",
+  "date_published": "2026-05-03T10:12:00Z",
+  "date_event": "2026-05-03T03:00:00Z",
+  "links": [
+    {
+      "url": "https://www.aa.com.tr/en/russia-ukraine-war/russia-ukraine-accuse-each-other-of-killing-civilians-in-overnight-strikes/3925473",
+      "label": "Anadolu Agency"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 50.4501,
+    "lon": 30.5234,
+    "country": "Ukraine",
+    "city": "Kyiv"
+  },
+  "topics": [
+    "ukraine",
+    "russia",
+    "drone-attack",
+    "civilian-casualties",
+    "war",
+    "energy-infrastructure",
+    "conflict"
+  ],
+  "confidence": 0.9,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
   "id": "evt_20260503_301",
   "source": {
     "name": "Twitter @sanctionswatch",

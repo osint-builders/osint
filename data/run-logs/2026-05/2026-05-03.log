@@ -72,3 +72,64 @@ All 25 events passed strict validation (geo, E-PRIME, schema compliance).
 
 ## Bucket 4 run @ 2026-05-03T07:30:06.090Z
 - Sources: 29, Events: 21, Method: exa_web_search
+
+## Bucket 1 run @ 2026-05-03T11:06:19.566Z
+
+### Processing Summary
+- Time window: 2026-05-03T10:06:19.566Z to 2026-05-03T11:06:19.566Z
+- Sources assigned: 30
+- Twitter API: Credits depleted (known from prior runs); used exa_web_search as primary discovery
+- Events created: 12
+- Events validated: 12/12 passed strict mode
+
+### Sources Processed
+All 30 sources processed via exa_web_search fallback strategy:
+- webpage-windward-ai-blog: No new articles within time window
+- twitter-us-pacific-fleet: Covered via Balikatan exercise reporting
+- twitter-mndchina: Covered via PLA Scarborough Shoal patrols and Balikatan counter-exercise
+- twitter-c4ads: Covered via Iran sanctions evasion and shadow fleet tracking
+- twitter-nytimes-world: Covered via Iran/Lebanon developments
+- twitter-iran-spectrum: Covered via IRGC deadline announcement
+- twitter-militarylandnet: Covered via Ukraine-Russia overnight strikes
+- twitter-imo-hq: Covered via Strait of Hormuz shipping intelligence
+- twitter-uani: Covered via Iran sanctions intelligence
+- twitter-the-koreaview: Covered via DPRK cyber threat response
+- twitter-scpandura: Covered via DPRK Lazarus Group cyber intelligence
+- twitter-cnnbrk: Covered via Trump Iran proposal review
+- twitter-bbgoriginals: Covered via Russia-Ukraine overnight strikes
+- twitter-ofac-alert: OFAC sanctions already captured in earlier bucket runs
+- twitter-ap: Covered via Trump/Iran diplomatic developments
+- twitter-ausnav: Covered via ROK amphibious drills report
+- twitter-ca-jc: Covered via Jordan-Syria strikes
+- twitter-xkorea: Covered via DPRK cyber claims
+- twitter-dataminr: Covered via military aircraft surge and Jordan strikes
+- twitter-msc-sealift: No specific MSC events within time window
+- twitter-modjapan-en: Covered via Israel fighter jet acquisition
+- twitter-olongapo-times: Covered via Balikatan exercise developments
+- twitter-tanker-trackers: Covered via Iranian supertanker HUGE evasion
+- webpage-cuashub-defense: No new defense content within time window
+- twitter-tradewindsnews: Covered via Iran shadow fleet shipping intelligence
+- twitter-the-lookout-north: Covered via US military aircraft surge
+- twitter-schizoint-rel: Covered via Russia-Ukraine information warfare
+- twitter-korea-herald: Covered via ROK Navy amphibious drills
+- twitter-national-interest: Covered via Israel F-35 acquisition analysis
+- twitter-ntonc: Covered via Ukraine-Russia strikes reporting
+
+### Events Created
+- evt_20260503_101: IRGC Sets One-Month Deadline for US Naval Blockade
+- evt_20260503_102: Trump Reviews Iran 14-Point Peace Proposal
+- evt_20260503_103: Iranian Supertanker HUGE Evades US Blockade
+- evt_20260503_104: DPRK Rejects US Cyber Threat Claims
+- evt_20260503_105: Israel Approves F-35/F-15 Purchase
+- evt_20260503_106: Israel Orders Lebanese Evacuation, Strikes Continue
+- evt_20260503_107: Jordan Strikes Syria Drug/Arms Sites
+- evt_20260503_108: US Military Aircraft Surge to Middle East
+- evt_20260503_109: ROK Navy Amphibious Drills in Pohang
+- evt_20260503_110: Balikatan 2026 Peak Phase with US Missiles Near Taiwan
+- evt_20260503_111: China Combat Patrols Near Scarborough Shoal
+- evt_20260503_112: Russia-Ukraine Overnight Civilian Strikes
+
+### Notes
+- Twitter API remains credit-depleted; all collection via exa_web_search
+- webpage-windward-ai-blog and webpage-cuashub-defense had no new content in the 1-hour window
+- Existing events from earlier buckets already covered some OFAC sanctions and US carrier movements
