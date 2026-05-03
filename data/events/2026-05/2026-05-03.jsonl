@@ -4195,6 +4195,43 @@
   "ingested_at": "2026-05-03T17:35:00Z"
 }
 {
+  "id": "evt_20260503_360",
+  "source": {
+    "name": "Twitter @ArmedForcesPhil",
+    "provider": "social-media"
+  },
+  "title": "Philippine Civilian Mission Plants Flag on Pagasa Cay 2 in West Philippine Sea Despite Chinese Vessel Presence",
+  "summary": "The Atin Ito coalition planted the Philippine flag on Sandy Cay (Pagasa Cay 2) in a sovereignty assertion, with AFP backing the mission as a 'profound testament to the indomitable spirit of the Filipino people.'",
+  "contents": "## Philippine Flag Planted on Pagasa Cay 2\n\n### Mission Details\nThe Atin Ito civilian coalition successfully planted the Philippine flag on Pagasa Cay 2 (Sandy Cay) in the West Philippine Sea during its fourth civilian mission. Led by Akbayan Representative Dadah Kiram Ismula, the mission crew departed Pagasa Island at 5:40 a.m. on May 3, 2026.\n\n### AFP Support\nThe Armed Forces of the Philippines expressed full support for the civilian initiative. AFP spokesperson for the West Philippine Sea, Roy Vincent Trinidad, called the flag planting a \"profound testament to the indomitable spirit of the Filipino people\" and \"a powerful assertion of our sovereign rights and a demonstration of active citizenship.\"\n\n### Chinese Presence\nThe mission proceeded despite heavy Chinese vessel presence in the area. A China Coast Guard vessel shadowed the Philippine civilian boat during the earlier transit to Pag-asa Island. Additionally, China-made drones carried by the mission crew failed to operate, as the devices required registration with China's Civil Aviation Authority before activation.\n\n### Broader Context\nThe mission, scheduled from April 30 to May 5, includes supply delivery, medical outreach, and community activities at Pagasa Island. Pagasa Cay 2 lies within Philippine territorial waters as an extension of Pagasa Island — the largest Philippine-administered feature in the Spratly Islands with approximately 400 civilian residents.\n\n### Significance\nThe flag planting reinforces Philippine sovereignty claims amid ongoing tensions. As Representative Ismula stated: \"The West Philippine Sea belongs to us. No amount of intimidation can erase that fact.\"",
+  "date_published": "2026-05-03T17:05:00Z",
+  "date_event": "2026-05-03T05:40:00Z",
+  "links": [
+    {
+      "url": "https://www.gmanetwork.com/news/topstories/nation/986206/ph-civilian-mission-plants-ph-flag-on-pagasa-cay-2-amid-chinese-vessels-presence/story/",
+      "label": "GMA News Coverage"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 11.05,
+    "lon": 114.08,
+    "country": "Philippines",
+    "region": "West Philippine Sea",
+    "city": "Pagasa Cay 2 (Sandy Cay)"
+  },
+  "topics": [
+    "south-china-sea",
+    "philippines",
+    "sovereignty",
+    "west-philippine-sea",
+    "pagasa",
+    "spratly-islands",
+    "civilian-mission"
+  ],
+  "confidence": 0.95,
+  "ingested_at": "2026-05-03T17:34:35Z"
+}
+{
   "id": "evt_20260503_361",
   "source": {
     "name": "BBC World @BBCWorld",
@@ -4420,4 +4457,264 @@
   ],
   "confidence": 0.94,
   "ingested_at": "2026-05-03T17:35:00Z"
+}
+{
+  "id": "evt_20260503_371",
+  "source": {
+    "name": "Twitter @MDA_space",
+    "provider": "social-media"
+  },
+  "title": "South Korea's CAS500-2 Earth Observation Satellite Successfully Launched on SpaceX Falcon 9 from Vandenberg",
+  "summary": "South Korea's next-generation CAS500-2 earth observation satellite launched successfully on a SpaceX Falcon 9 rocket from Vandenberg Space Force Base, designed for disaster monitoring and agricultural observation.",
+  "contents": "## South Korean Satellite Launch\n\n### Launch Details\nSpaceX launched a Falcon 9 rocket from Vandenberg Space Force Base in California at 11:59 p.m. local time on May 2, carrying 45 payloads including South Korea's Compact Advanced Satellite (CAS) 500-2.\n\n### Satellite Capabilities\nThe CAS500-2, developed by Korea Aerospace Industries, represents South Korea's next-generation midsized earth observation satellite:\n- **Primary mission**: Disaster monitoring and agricultural observation\n- **Orbit**: Low Earth Orbit (LEO)\n- **Resolution**: High-resolution optical imaging capability\n- **Applications**: Environmental monitoring, natural disaster response, precision agriculture\n\n### Launch History\nThe CAS500-2 originally scheduled for launch on a Russian Soyuz rocket in 2022, but deployment suffered delays following Russia's invasion of Ukraine. The transition to SpaceX's Falcon 9 platform reflects broader shifts in global launch services away from Russian providers.\n\n### Strategic Context\nThe successful deployment enhances South Korea's independent space-based observation capabilities, reducing dependence on allied satellite imagery for environmental and security applications. The satellite joins an expanding constellation of Korean earth observation assets.\n\n### Intelligence Relevance\nEarth observation satellites provide dual-use capabilities applicable to both civilian disaster monitoring and security-related tasks including infrastructure monitoring, change detection, and environmental intelligence gathering.",
+  "date_published": "2026-05-03T16:36:00Z",
+  "date_event": "2026-05-03T06:59:00Z",
+  "links": [
+    {
+      "url": "https://en.yna.co.kr/view/AEN20260503002300315",
+      "label": "Yonhap News Agency"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 34.74,
+    "lon": -120.57,
+    "country": "United States",
+    "region": "California",
+    "city": "Vandenberg Space Force Base"
+  },
+  "topics": [
+    "satellite",
+    "earth-observation",
+    "south-korea",
+    "spacex",
+    "falcon-9",
+    "remote-sensing",
+    "space-launch"
+  ],
+  "confidence": 0.95,
+  "ingested_at": "2026-05-03T17:34:35Z"
+}
+{
+  "id": "evt_20260503_374",
+  "source": {
+    "name": "Twitter @USFleetForces",
+    "provider": "social-media"
+  },
+  "title": "USS George H.W. Bush Carrier Strike Group Continues Deployment to Middle East Amid Iran War Operations",
+  "summary": "The George H.W. Bush Carrier Strike Group, deployed from Norfolk on March 31, continues transit to the US 5th Fleet area of operations in the Middle East, joining USS Abraham Lincoln for Iran war support.",
+  "contents": "## George H.W. Bush CSG Deployment Status\n\n### Deployment Overview\nThe Nimitz-class aircraft carrier USS George H.W. Bush (CVN 77) and its carrier strike group departed Naval Station Norfolk on March 31, 2026, heading to the US 5th Fleet area of operations in the Middle East. The deployment adds a second carrier presence to support ongoing Iran war operations alongside USS Abraham Lincoln.\n\n### Strike Group Composition\n- **USS George H.W. Bush** (CVN 77) — flagship, Nimitz-class aircraft carrier\n- **Carrier Air Wing 7** — nine aircraft squadrons including VFA-83, VFA-103, VFA-105, VFA-131\n- **USS Ross** (DDG 71) — Arleigh Burke-class destroyer, Norfolk\n- **USS Donald Cook** (DDG 75) — Arleigh Burke-class destroyer, Mayport\n- **USS Mason** (DDG 87) — Arleigh Burke-class destroyer, Air and Missile Defense Commander\n\n### Carrier Air Wing 7 Squadrons\nThe embarked air wing consists of Strike Fighter Squadrons (VFA) 83 \"Rampagers,\" 103 \"Jolly Rogers,\" 105 \"Gunslingers,\" and 131 \"Wildcats,\" plus Electronic Attack, Airborne Early Warning, and helicopter squadrons.\n\n### Mission Significance\nThe dual-carrier presence in the 5th Fleet AOR — Bush joining Lincoln — demonstrates the US Navy's commitment to sustained power projection during the Iran conflict, providing continuous air operations capability and naval dominance in the Persian Gulf region.\n\n### Force Provider Perspective\nUS Fleet Forces Command certified the strike group through COMPTUEX before deployment, ensuring full combat readiness for the demanding Middle East operational environment.",
+  "date_published": "2026-05-03T17:18:00Z",
+  "date_event": "2026-05-03T12:00:00Z",
+  "links": [
+    {
+      "url": "https://www.navaltoday.com/2026/04/02/us-navy-deploys-another-aircraft-carrier/",
+      "label": "Naval Today Coverage"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 25.3,
+    "lon": 55.3,
+    "country": "United States",
+    "region": "5th Fleet AOR",
+    "city": "Persian Gulf"
+  },
+  "topics": [
+    "carrier-deployment",
+    "us-navy",
+    "george-hw-bush",
+    "5th-fleet",
+    "iran-war",
+    "middle-east",
+    "power-projection"
+  ],
+  "confidence": 0.92,
+  "ingested_at": "2026-05-03T17:34:35Z"
+}
+{
+  "id": "evt_20260503_375",
+  "source": {
+    "name": "Twitter @batesgill4",
+    "provider": "social-media"
+  },
+  "title": "Taiwan President Lai Ching-te Visits Eswatini After Navigating Overflight Restrictions Amid Chinese Diplomatic Pressure",
+  "summary": "Taiwanese President Lai Ching-te arrived in Eswatini after previously cancelled travel plans due to overflight restrictions, affirming Taiwan's right to global engagement while Beijing condemned the visit.",
+  "contents": "## Taiwan Presidential Visit to Eswatini\n\n### Diplomatic Journey\nTaiwanese President Lai Ching-te reached Eswatini, one of Taiwan's few remaining diplomatic allies, after overcoming previously cancelled travel plans caused by overflight restrictions. The visit proceeded through what officials described as \"secret arrangements\" to circumvent Chinese pressure on transit nations.\n\n### Taiwan's Position\nPresident Lai affirmed Taiwan's right to engage globally, emphasizing that democratic Taiwan should not face isolation from the international community. Eswatini remains one of the shrinking number of countries maintaining official diplomatic relations with Taipei.\n\n### Beijing's Response\nChina condemned the visit, consistent with its longstanding opposition to any international activities that could confer sovereign status on Taiwan. Beijing views such visits as provocative and has pressured countries along potential transit routes to deny overflight or landing rights.\n\n### Strategic Context\nThe visit occurs amid broader concerns about China capitalizing on US focus in the Middle East to step up pressure and disinformation against Taiwan. Analysts have noted that the Iran war creates potential opportunities for Beijing to advance its Taiwan agenda while Washington remains distracted.\n\n### Expert Assessment\nThe logistical challenges of arranging presidential travel — requiring secret routing to avoid Chinese pressure — illustrates the narrowing diplomatic space Taiwan faces and the lengths required to maintain its international presence.",
+  "date_published": "2026-05-03T17:22:00Z",
+  "date_event": "2026-05-03T10:00:00Z",
+  "links": [
+    {
+      "url": "https://www.indianeconomicobserver.com/news/philippines-to-deploy-aircraft-ships-to-push-back-chinese-drone-mothership-research-vessels20260503120056/",
+      "label": "Coverage with Taiwan context"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": -26.52,
+    "lon": 31.47,
+    "country": "Eswatini",
+    "region": "Hhohho",
+    "city": "Mbabane"
+  },
+  "topics": [
+    "taiwan",
+    "china",
+    "diplomacy",
+    "eswatini",
+    "cross-strait-relations",
+    "diplomatic-allies",
+    "overflight-restrictions"
+  ],
+  "confidence": 0.85,
+  "ingested_at": "2026-05-03T17:34:35Z"
+}
+{
+  "id": "evt_20260503_376",
+  "source": {
+    "name": "Twitter @NSAGov",
+    "provider": "social-media"
+  },
+  "title": "US Intelligence Agencies Maintain Pressure on North Korean Cyber Operations as Pyongyang Denies Involvement",
+  "summary": "US intelligence agencies continue attributing state-sponsored cyber attacks and cryptocurrency theft to North Korean groups, with recent Treasury sanctions targeting DPRK IT worker networks amid Pyongyang's denials.",
+  "contents": "## US-DPRK Cyber Intelligence Standoff\n\n### Ongoing Attribution\nUS intelligence and law enforcement agencies maintain their assessment that North Korea conducts extensive state-sponsored cyber operations targeting governments, businesses, and critical infrastructure worldwide. The Lazarus hacking group remains the primary attributed threat actor.\n\n### Recent Sanctions\nThe US Treasury sanctioned six individuals and two entities in March linked to North Korean IT worker operations, identifying schemes that channel illicit earnings through digital assets to fund missile and nuclear development programs.\n\n### North Korean Denial\nPyongyang's foreign ministry categorically rejected all US cyber threat allegations on May 3, calling them \"absurd slander\" and warning of unspecified countermeasures. The DPRK characterized US claims as politically motivated extensions of hostile policy.\n\n### Threat Landscape\nUS cybersecurity firm Expel reported in April that \"HexagonalRodent\" — linked to Famous Chollima — stole over $12 million in cryptocurrency from individuals between January and March 2026. North Korean hackers increasingly target individuals and small firms with weaker security rather than major exchanges.\n\n### Intelligence Assessment\nThe cat-and-mouse dynamic between US attribution efforts and North Korean denials continues to define the cyber domain of the US-DPRK confrontation. North Korea's growing use of AI tools for identity fraud at scale represents an evolving threat vector requiring enhanced defensive measures.",
+  "date_published": "2026-05-03T16:58:00Z",
+  "date_event": "2026-05-03T12:00:00Z",
+  "links": [
+    {
+      "url": "https://d2443.cms.socastsrm.com/2026/05/02/north-korea-calls-u-s-cyber-threat-claims-disinformation-warns-of-countermeasures/",
+      "label": "Reuters Coverage"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 39.11,
+    "lon": -76.77,
+    "country": "United States",
+    "region": "Maryland",
+    "city": "Fort Meade"
+  },
+  "topics": [
+    "cybersecurity",
+    "north-korea",
+    "nsa",
+    "lazarus-group",
+    "cryptocurrency-theft",
+    "sanctions",
+    "cyber-operations"
+  ],
+  "confidence": 0.88,
+  "ingested_at": "2026-05-03T17:34:35Z"
+}
+{
+  "id": "evt_20260503_377",
+  "source": {
+    "name": "Twitter @WarshipCam",
+    "provider": "social-media"
+  },
+  "title": "Ukrainian Drones Disable Karakurt-Class Missile Ship at Primorsk Port in Baltic Sea Strike",
+  "summary": "Ukrainian forces reported destroying a Karakurt-class missile ship at Russia's Primorsk port during a coordinated drone barrage targeting oil infrastructure and naval vessels on the Baltic Sea.",
+  "contents": "## Karakurt-Class Missile Ship Neutralized\n\n### Naval Target\nUkrainian President Zelenskyy confirmed that a Karakurt-class missile ship at Russia's Primorsk port sustained sufficient damage to render it \"out of action\" following the overnight drone barrage. The Karakurt class (Project 22800) carries Kalibr cruise missiles capable of striking targets throughout Ukraine.\n\n### Vessel Classification\nThe Karakurt-class represents one of Russia's newer corvette-type missile ships:\n- **Displacement**: approximately 800 tons\n- **Primary armament**: 8x Kalibr cruise missiles (3M-54/3M-14)\n- **Role**: coastal defense and land-attack missions\n- **Significance**: capable of launching cruise missiles against Ukrainian targets from the Baltic Sea\n\n### Additional Naval Targets\nBeyond the Karakurt, Ukrainian drones also struck:\n- A patrol boat at Primorsk\n- A shadow fleet tanker at Primorsk\n- Two additional shadow fleet tankers near Novorossiysk\n\n### Operational Impact\nThe loss of a Kalibr-capable missile ship reduces Russia's ability to launch cruise missile strikes from the Baltic Fleet. Each Karakurt carries eight Kalibr missiles, and the neutralization of even one vessel removes a meaningful portion of Russia's Baltic-based precision strike capacity.\n\n### Visual Intelligence\nPhotographic and video evidence from the Primorsk strike circulates across naval tracking communities, enabling vessel identification and damage assessment through open-source methods.",
+  "date_published": "2026-05-03T17:28:00Z",
+  "date_event": "2026-05-03T05:00:00Z",
+  "links": [
+    {
+      "url": "https://abcnews.com/International/wireStory/ukraine-hits-key-russian-oil-loading-port-2-132611077",
+      "label": "ABC News/AP Coverage"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 60.36,
+    "lon": 29.16,
+    "country": "Russia",
+    "region": "Leningrad Oblast",
+    "city": "Primorsk"
+  },
+  "topics": [
+    "karakurt-class",
+    "missile-ship",
+    "naval-warfare",
+    "ukraine-war",
+    "primorsk",
+    "kalibr-missiles",
+    "baltic-sea"
+  ],
+  "confidence": 0.87,
+  "ingested_at": "2026-05-03T17:34:35Z"
+}
+{
+  "id": "evt_20260503_380",
+  "source": {
+    "name": "Twitter @The_Lookout_N",
+    "provider": "social-media"
+  },
+  "title": "Russia Launches 269 Drones and Ballistic Missiles Against Ukraine Overnight as Both Sides Escalate Air Campaigns",
+  "summary": "Russia attacked Ukraine with 269 drones and ballistic missiles overnight, killing two people in Odesa region, while Ukrainian air defenses shot down 249 drones and reported hits in 15 locations.",
+  "contents": "## Russia-Ukraine Overnight Air Campaign\n\n### Russian Strike Package\nRussia launched 269 drones and ballistic missiles against Ukraine overnight into May 3, according to the Ukrainian Air Force. The attack spread across multiple regions:\n- **Odesa region**: Two killed, three wounded; residential buildings and port infrastructure damaged\n- **Dnipropetrovsk region**: Six wounded; a passenger bus carrying 40 children damaged (no injuries aboard)\n- **Multiple regions**: Ballistic missile strikes and drone hits recorded in 15 locations\n\n### Ukrainian Air Defense Performance\nUkrainian forces shot down and repelled 249 of the 269 incoming threats. However, hits from ballistic missiles and 19 drones penetrated defenses at 15 locations across the country.\n\n### Simultaneous Ukrainian Counter-Strikes\nWhile absorbing the Russian barrage, Ukraine conducted its own coordinated campaign:\n- 60+ drones targeted Leningrad region (Primorsk)\n- Shadow fleet tankers struck at Novorossiysk\n- Karakurt missile ship disabled\n- Drone strike reached Moscow region, killing one civilian\n\n### Air War Dynamics\nBoth Russia and Ukraine deployed massive drone swarms overnight, establishing a pattern of simultaneous air campaigns across extended frontlines and deep into adversary territory. Russia reported downing 334 Ukrainian UAVs in total.\n\n### Assessment\nThe overnight exchange demonstrates the industrialized nature of drone warfare in the conflict's fifth year, with both sides launching hundreds of unmanned systems nightly in a war of attrition against military and infrastructure targets.",
+  "date_published": "2026-05-03T16:46:00Z",
+  "date_event": "2026-05-03T04:00:00Z",
+  "links": [
+    {
+      "url": "https://abcnews.com/International/wireStory/ukraine-hits-key-russian-oil-loading-port-2-132611077",
+      "label": "AP Coverage"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 46.49,
+    "lon": 30.74,
+    "country": "Ukraine",
+    "region": "Odesa Oblast",
+    "city": "Odesa"
+  },
+  "topics": [
+    "drone-warfare",
+    "ukraine-war",
+    "russia",
+    "air-defense",
+    "ballistic-missiles",
+    "overnight-strikes",
+    "casualties"
+  ],
+  "confidence": 0.92,
+  "ingested_at": "2026-05-03T17:34:35Z"
+}
+{
+  "id": "evt_20260503_384",
+  "source": {
+    "name": "Twitter @CA_JC",
+    "provider": "social-media"
+  },
+  "title": "North Korean Leader Kim Jong Un Mobilizes Youth as 'Vanguard' at Party Congress While Linking Loyalty to Russia War Deployment",
+  "summary": "Kim Jong Un met delegates at the ruling party's youth league congress, casting young people as central to state goals while the party explicitly linked youth loyalty to North Korean soldiers deployed in Russia's war against Ukraine.",
+  "contents": "## North Korea Youth Mobilization\n\n### Congress Overview\nNorth Korean leader Kim Jong Un met delegates to the Eleventh Congress of the Socialist Patriotic Youth League in Pyongyang, a once-in-five-years political gathering targeting citizens aged approximately 14 to 30. The congress concluded with mass rallies, torchlight parades, and a gala.\n\n### Kim's Message\nKim told delegates that youth represents the \"vanguard\" in advancing state goals, calling the league a key force for carrying out party decisions. He urged tighter organization and ideological discipline.\n\n### Russia War Connection\nIn a letter published during the congress, the ruling Workers' Party explicitly linked youth loyalty to Pyongyang's involvement in the Ukraine war, telling delegates that young soldiers sent on overseas operations had \"become bombs and flames\" in defending the country's honor.\n\n### Deployment Context\nNorth Korea sent an estimated 14,000 troops to fight alongside Russian forces in the Kursk region. South Korean, Ukrainian, and Western officials report more than 6,000 North Korean soldiers killed in the deployments. Kim recently unveiled a memorial in Pyongyang honoring soldiers killed during these operations.\n\n### Domestic Control\nThe emphasis on youth control accompanies intensified repression of foreign cultural influence, with exposure to South Korean music, films, and slang treated as serious political offenses under Kim's domestic security framework.\n\n### Assessment\nThe youth congress demonstrates Kim's strategy of converting war casualties into regime-legitimizing narratives while tightening ideological control over the generation most susceptible to outside information penetration.",
+  "date_published": "2026-05-03T16:54:00Z",
+  "date_event": "2026-05-03T06:31:00Z",
+  "links": [
+    {
+      "url": "https://www.thestar.com.my/news/world/2026/05/03/north-korea039s-kim-casts-youth-as-vanguard-of-state-goals-amid-russia-war",
+      "label": "Reuters via The Star"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 39.02,
+    "lon": 125.75,
+    "country": "North Korea",
+    "region": "Pyongyang",
+    "city": "Pyongyang"
+  },
+  "topics": [
+    "north-korea",
+    "kim-jong-un",
+    "youth-congress",
+    "russia-war",
+    "ukraine",
+    "military-deployment",
+    "propaganda",
+    "domestic-control"
+  ],
+  "confidence": 0.90,
+  "ingested_at": "2026-05-03T17:34:35Z"
 }
