@@ -473,3 +473,10 @@ Validation: All 18 events passed strict validation
 Sources processed: 29 | Events generated: 24 (14 new after URL dedup)
 Twitter API credits depleted — used exa_web_search as primary discovery
 All 24 events passed strict validation (geo, E-PRIME, time-window)
+
+## Bucket 1 run @ 2026-05-03T23:28:16.059Z
+- Time window: 2026-05-03T22:28:16.059Z to 2026-05-03T23:28:16.059Z
+- Sources processed: 30
+- Events generated: 17 (7 new after URL dedup)
+- Twitter API: Credits depleted, used exa_web_search
+- Validation: Strict mode passed

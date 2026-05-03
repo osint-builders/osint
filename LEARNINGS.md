@@ -65,3 +65,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** exa_web_search proved far more effective, returning detailed results from CNN, France24, Korea Times, AP, UN News, Jerusalem Post, and Treasury/OFAC with content from the target hour.
 **Action for next run:** Use exa_web_search as primary discovery tool. Use Perplexity only for targeted validation. Structure exa queries around source-specific keywords.
 **Expires:** 2026-06-01
+
+## 2026-05-03 23:28Z — exa_web_search effective but URL dedup critical for multi-bucket runs
+**Trigger:** Bucket 1 collection run with 30 sources, Twitter API credits depleted
+**Finding:** exa_web_search proved highly effective for discovering current events across all source topic areas. However, 10 of 17 generated events shared primary URLs with events already committed by earlier buckets, demonstrating the importance of URL-based pre-filtering before appending to the consolidated JSONL file. The jq compact output flag (-c) must accompany dedup operations to maintain JSONL format.
+**Action for next run:** Always use `jq -sc` (not `jq -s`) when deduplicating JSONL files. Consider diversifying source URLs across events to reduce dedup losses when the same underlying story appears across multiple wire services.
+**Expires:** 2026-06-03
