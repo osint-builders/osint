@@ -289,3 +289,45 @@ All 29 sources processed. Events mapped to sources by topic relevance:
 - Geocoding used Nominatim API with caching (17 locations cached)
 - All events passed E-PRIME validation (no "to be" verbs)
 - All events geocoded with lat/lon coordinates
+
+## Bucket 5 run @ 2026-05-03T17:34:35.569Z
+- **Execution time**: 2026-05-03T17:34:35.569Z UTC
+- **Time window**: 2026-05-03T16:34:35.569Z to 2026-05-03T17:34:35.569Z
+- **Sources assigned**: 29
+- **Sources with events**: 14
+- **Sources with no events in window**: 15 (twitter-beltelefacts, webpage-cuashub-defense, twitter-xnews, twitter-jnb-summary, twitter-arcgis-storymaps, twitter-kc-nwt, twitter-info-fusion-ctr, twitter-chadobcnews, twitter-mt-anderson, twitter-msc-sealift, twitter-songss44, twitter-korea-herald, twitter-yortukisgk, twitter-minhdr18, webpage-windward-ai-blog)
+- **Events created**: 14 (evt_20260503_356 through evt_20260503_369)
+- **Events added after dedup**: 10
+- **Collection method**: exa_web_search (primary), Twitter API credits depleted per learnings
+- **Validation**: All 14 events passed strict validation (E-PRIME + geo + time window)
+
+### Per-source log:
+- twitter-gcaptain: 1 event (cargo ship attack near Hormuz)
+- twitter-tradewindsnews: 1 event (shadow fleet tanker strikes at Novorossiysk)
+- twitter-bbc-breaking: 1 event (Zaporizhzhia nuclear plant drone strike)
+- twitter-iran-spectrum: 1 event (IRGC 30-day deadline ultimatum)
+- twitter-sanctions-watch: 1 event (OFAC Hormuz toll sanctions warning)
+- twitter-bbc-world: 1 event (Israel 50 air strikes on Lebanon)
+- twitter-the-dailynk: 1 event (North Korea rejects hacking allegations)
+- twitter-southkoreapro: 1 event (South Korea FM Hormuz call with Iran)
+- twitter-the-pacific-brief: 1 event (China coast guard Sandy Cay confrontation)
+- twitter-mondefense: 1 event (Taiwan 29 PLA sorties detection)
+- twitter-militarylandnet: 1 event (Russian advance toward Kostiantynivka)
+- twitter-dataminr: 1 event (Primorsk port drone strikes)
+- twitter-kylebass: 1 event (Iran rial currency crisis)
+- twitter-us-5th-fleet: 1 event (49 ships turned back under blockade)
+- twitter-beltelefacts: No Philippines defense events in time window
+- webpage-cuashub-defense: No new defense content in time window
+- twitter-xnews: No unique breaking news beyond other sources
+- twitter-jnb-summary: No Japan-DPRK specific events in window
+- twitter-arcgis-storymaps: No intelligence visualization stories in window
+- twitter-kc-nwt: No unique Korea security events beyond existing sources
+- twitter-info-fusion-ctr: No multi-source fusion assessments in window
+- twitter-chadobcnews: No unique Korea field reports in window
+- twitter-mt-anderson: No unique regional security analysis in window
+- twitter-msc-sealift: No MSC logistics events in window
+- twitter-songss44: No unique Asia-Pacific OSINT in window
+- twitter-korea-herald: Covered via southkoreapro (FM Hormuz call)
+- twitter-yortukisgk: No unique regional monitoring events in window
+- twitter-minhdr18: No defense technology developments in window
+- webpage-windward-ai-blog: No new blog posts in time window
