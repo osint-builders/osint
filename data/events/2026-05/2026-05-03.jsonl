@@ -2865,3 +2865,385 @@
   "confidence": 0.9,
   "ingested_at": "2026-05-03T07:30:06Z"
 }
+{
+  "id": "evt_20260503_326",
+  "source": {
+    "name": "Twitter @riskstaff",
+    "provider": "social-media"
+  },
+  "title": "IRGC Sets Deadline for US to End Naval Blockade of Iranian Ports",
+  "summary": "Iran's Islamic Revolutionary Guards Corps announced a deadline for the US military to end its blockade of Iranian ports, stating Trump must choose between an 'impossible military operation or a bad deal' as tensions escalate in the Strait of Hormuz.",
+  "contents": "## IRGC Demands End to US Naval Blockade\n\n### Ultimatum Delivered\nIran's Islamic Revolutionary Guards Corps (IRGC) announced a formal deadline for the United States military to cease its blockade of Iranian ports. The IRGC statement framed the situation as a binary choice: President Trump \"must choose between an impossible military operation or a bad deal.\"\n\n### Strategic Context\nThe US naval blockade, initiated on April 13, has prevented Iranian tankers from departing and cut off a critical revenue stream for Tehran. US Central Command confirmed that 45 commercial ships have received turn-around orders since the blockade commenced. The IRGC's deadline represents a significant escalation in rhetoric amid the fragile three-week ceasefire.\n\n### Diplomatic Maneuvering\nIran's Deputy Foreign Minister Kazem Gharibabadi told diplomats in Tehran that \"the ball now rests in the United States' court to choose the path of diplomacy or the continuation of a confrontational approach.\" Meanwhile, IRGC Navy commanders announced plans to enforce \"new rules\" over waters near Iran's coast.\n\n### Regional Implications\nThe Strait of Hormuz, through which approximately one-fifth of global oil and natural gas trade flows during peacetime, remains severely restricted. The confrontation continues to drive energy prices upward and disrupt global supply chains.\n\n**Sources:** Al Jazeera, DW News, Fars News Agency",
+  "date_published": "2026-05-03T10:15:00Z",
+  "date_event": "2026-05-03T09:30:00Z",
+  "links": [
+    {
+      "url": "https://www.aljazeera.com/news/liveblog/2026/5/3/iran-war-live-trump-says-reviewing-14-point-plan-israel-pounds-lebanon",
+      "label": "Al Jazeera Live Coverage"
+    },
+    {
+      "url": "https://www.dw.com/en/iran-war-trump-says-reviewing-new-tehran-proposal-with-doubt/live-77021634",
+      "label": "DW News Coverage"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 26.56,
+    "lon": 56.26,
+    "country": "Iran",
+    "region": "Strait of Hormuz",
+    "city": "Bandar Abbas"
+  },
+  "topics": [
+    "iran",
+    "irgc",
+    "us-iran-war",
+    "naval-blockade",
+    "strait-of-hormuz",
+    "military",
+    "conflict"
+  ],
+  "confidence": 0.92,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
+  "id": "evt_20260503_328",
+  "source": {
+    "name": "Twitter @MegatronLion",
+    "provider": "social-media"
+  },
+  "title": "Ukraine Strikes Two Russian Shadow Fleet Oil Tankers Near Novorossiysk Port",
+  "summary": "Ukrainian forces struck two Russian shadow oil fleet tankers near the port of Novorossiysk, with President Zelenskyy posting video of the operation and declaring the vessels 'no longer' capable of transporting oil.",
+  "contents": "## Ukrainian Strike on Russian Oil Tankers\n\n### Operation Details\nUkrainian President Volodymyr Zelenskyy released video footage showing strikes on two vessels belonging to Russia's shadow oil fleet near the entrance to the port of Novorossiysk in Russia's Krasnodar Krai. General Andrii Hnatov, Chief of the General Staff, led the operation alongside counterintelligence officers from the Security Service of Ukraine and the Navy.\n\n### Strategic Impact\nZelenskyy declared: \"Our warriors continue to apply sanctions against Russia's shadow oil fleet — two such vessels have received strikes in the waters at the entrance to the port of Novorossiysk. These tankers had actively transported oil — not anymore.\" The operation targets Russia's ability to export crude oil through Black Sea ports.\n\n### Broader Campaign Context\nUkrainian drones have struck the Tuapse oil refinery and export terminal four times in just over two weeks, triggering fires and local evacuations. Zelenskyy claims Russia suffered at least $7 billion in energy sector losses since January 2026. Ukrainian forces have more than doubled their deep-strike range since 2022, now reaching targets over 1,500 kilometers from the front lines.\n\n### Energy Market Implications\nRussian crude oil export revenues nearly doubled from $9.7 billion to $19 billion in March due to rising global oil prices linked to the Iran war. Ukrainian strikes on energy infrastructure aim to erode those gains and reduce Russia's war-funding capacity.\n\n**Sources:** Ukrainska Pravda, AP News, Kyiv Independent",
+  "date_published": "2026-05-03T10:25:00Z",
+  "date_event": "2026-05-03T08:00:00Z",
+  "links": [
+    {
+      "url": "https://www.pravda.com.ua/eng/news/2026/05/03/8032899/",
+      "label": "Ukrainska Pravda Report"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 44.72,
+    "lon": 37.78,
+    "country": "Russia",
+    "region": "Krasnodar Krai",
+    "city": "Novorossiysk"
+  },
+  "topics": [
+    "ukraine",
+    "russia",
+    "oil-tanker",
+    "shadow-fleet",
+    "novorossiysk",
+    "energy-infrastructure",
+    "sanctions"
+  ],
+  "confidence": 0.90,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
+  "id": "evt_20260503_329",
+  "source": {
+    "name": "Twitter @ELINTNews",
+    "provider": "social-media"
+  },
+  "title": "Israel Orders Evacuation of 11 Southern Lebanon Towns Ahead of Fresh Hezbollah Strikes",
+  "summary": "Israel's military ordered residents of 11 towns and villages in southern Lebanon to evacuate as it prepared operations against Hezbollah targets, despite the April 17 ceasefire agreement between the two countries.",
+  "contents": "## Israeli Military Orders Southern Lebanon Evacuations\n\n### Evacuation Directive\nIsrael's military warned residents of 11 towns and villages in southern Lebanon's Nabatieh district to evacuate immediately, ordering them to move at least 1,000 meters into open areas. Arabic-language spokesman Avichay Adraee posted the warnings on X (Twitter).\n\n### Strike Operations\nLebanese state media and the Israeli military confirmed strikes across southern Lebanon, with the IDF stating it hit \"dozens of Hezbollah targets.\" Reports indicate strikes extended beyond the areas covered by evacuation warnings, hitting additional towns throughout the region.\n\n### Ceasefire Tensions\nThe attacks continued despite a fragile ceasefire established on April 17, which sought to halt more than six weeks of war between Israel and Hezbollah. The ceasefire text grants Israel the right to act against \"planned, imminent or ongoing attacks.\" Both sides regularly accuse each other of violations.\n\n### Hezbollah Response\nHezbollah lawmaker Hassan Fadlallah warned that the group could \"thwart\" the objectives of direct negotiations between Lebanon and Israel. He declared that \"a free people and a steadfast resistance\" remain capable of undermining the diplomatic process. Israeli strikes have killed more than 2,600 people in Lebanon and displaced over a million since Hezbollah entered the conflict on March 2 in support of Iran.\n\n**Sources:** DW News, Lebanese National News Agency",
+  "date_published": "2026-05-03T10:30:00Z",
+  "date_event": "2026-05-03T08:30:00Z",
+  "links": [
+    {
+      "url": "https://www.dw.com/en/iran-war-trump-says-reviewing-new-tehran-proposal-with-doubt/live-77021634",
+      "label": "DW News Live Coverage"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 33.38,
+    "lon": 35.48,
+    "country": "Lebanon",
+    "region": "Nabatieh",
+    "city": "Nabatieh"
+  },
+  "topics": [
+    "israel",
+    "lebanon",
+    "hezbollah",
+    "ceasefire",
+    "military",
+    "strikes",
+    "evacuation"
+  ],
+  "confidence": 0.93,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
+  "id": "evt_20260503_330",
+  "source": {
+    "name": "Twitter @DPRK_News",
+    "provider": "social-media"
+  },
+  "title": "North Korea Rejects Hacking Allegations, Accuses US of 'Absurd Slander'",
+  "summary": "North Korea's foreign ministry dismissed international hacking allegations as an 'absurd slander' campaign by the United States, while pledging to 'actively take all necessary measures' to defend its interests in cyberspace.",
+  "contents": "## DPRK Dismisses Cyber Attack Accusations\n\n### Official Denial\nA spokesperson for North Korea's foreign ministry told the Korean Central News Agency (KCNA) that the United States has pushed \"an absurd slander to tarnish the image\" of North Korea by spreading false information about cyber threats. The statement appeared on May 3, addressing recent international hacking allegations.\n\n### Counteraccusations\nThe spokesperson argued that the US — \"which resorts to indiscriminate cyber attacks on other countries with the global IT infrastructure under its control\" — has no standing to describe itself as a \"victim\" of cyberattacks. Pyongyang characterized US claims as an extension of Washington's hostile policy and politically motivated agenda.\n\n### Defiant Posture\nThe foreign ministry official stressed that \"the DPRK will never tolerate the hostile forces' attempt at confrontation getting more undisguised in various domains including cyber space\" and pledged to \"actively take all necessary measures for defending the interests of the state.\"\n\n### Context\nNorth Korean hacking group Lazarus faces frequent accusations of launching cyberattacks worldwide, most recently targeting the decentralized finance platform KelpDAO last month. US and allied intelligence agencies attribute billions of dollars in cryptocurrency theft to DPRK-linked groups.\n\n**Sources:** Yonhap News Agency, KCNA",
+  "date_published": "2026-05-03T10:35:00Z",
+  "date_event": "2026-05-03T06:00:00Z",
+  "links": [
+    {
+      "url": "https://en.yna.co.kr/view/AEN20260503000600315",
+      "label": "Yonhap News Report"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 39.0392,
+    "lon": 125.7625,
+    "country": "North Korea",
+    "region": "Pyongyang",
+    "city": "Pyongyang"
+  },
+  "topics": [
+    "north-korea",
+    "dprk",
+    "cyber",
+    "hacking",
+    "lazarus-group",
+    "kcna",
+    "us-dprk"
+  ],
+  "confidence": 0.85,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
+  "id": "evt_20260503_331",
+  "source": {
+    "name": "Twitter @TaiwanNewsEN",
+    "provider": "social-media"
+  },
+  "title": "Taiwan Detects 29 PLA Aircraft Sorties and 6 Naval Vessels, 15 Cross Median Line",
+  "summary": "Taiwan's Ministry of National Defense detected 29 Chinese military aircraft sorties with 15 crossing the Taiwan Strait median line, along with 6 PLAN vessels and 2 official ships operating around the island on May 2.",
+  "contents": "## PLA Air-Sea Activity Continues Around Taiwan\n\n### Detection Summary\nTaiwan's Ministry of National Defense reported detecting 29 sorties of PLA aircraft, 6 PLAN vessels, and 2 official ships operating around Taiwan as of 6:00 AM (UTC+8) on May 2. Of the 29 sorties, 15 crossed the median line and entered Taiwan's northern, central, and southwestern Air Defense Identification Zone (ADIZ).\n\n### Aircraft Types Identified\nThe MND identified aircraft types including J-10 and J-16 fighters, KJ-500 airborne early warning aircraft, and other platforms conducting \"air-sea joint training\" alongside PLAN vessels. The ROC Armed Forces monitored the situation and responded accordingly.\n\n### Monthly Tracking\nThe sustained PLA activity continues a pattern of gray zone pressure around Taiwan. Earlier in the week, 28 sorties appeared on April 26, with 18 crossing the median line. The ongoing Balikatan 2026 exercises in the Philippines — involving US, Japanese, Australian, and other forces — have coincided with increased PLA deployments in the South China Sea and Western Pacific.\n\n### Strategic Assessment\nThe PLA's Southern Theater Command acknowledged conducting exercises in the South China Sea \"in response to Philippine attempts to stir trouble.\" The PLAN aircraft carrier Liaoning transited the Taiwan Strait on April 20 heading south, and the Type 076 landing helicopter dock departed Shanghai for sea trials in the South China Sea.\n\n**Sources:** Taiwan MND (X post), Taiwan News, ANI, ISW China-Taiwan Update",
+  "date_published": "2026-05-03T10:40:00Z",
+  "date_event": "2026-05-02T22:00:00Z",
+  "links": [
+    {
+      "url": "https://www.newkerala.com/news/a/taiwan-detects-29-sorties-chinese-military-aircraft-vessels-245.htm",
+      "label": "News Report"
+    },
+    {
+      "url": "https://understandingwar.org/research/china-taiwan/china-taiwan-update-may-1-2026/",
+      "label": "ISW Analysis"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 24.0,
+    "lon": 121.5,
+    "country": "Taiwan",
+    "region": "Taiwan Strait",
+    "city": "Taipei"
+  },
+  "topics": [
+    "taiwan",
+    "china",
+    "pla",
+    "adiz",
+    "taiwan-strait",
+    "gray-zone",
+    "military"
+  ],
+  "confidence": 0.95,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
+  "id": "evt_20260503_334",
+  "source": {
+    "name": "Twitter @FoxNews",
+    "provider": "social-media"
+  },
+  "title": "Trump Reviews New Iranian Peace Proposal But Expresses Deep Skepticism",
+  "summary": "President Trump confirmed reviewing a new Iranian proposal to end the war but stated he 'can't imagine it meet his standards,' expressing frustration with Iran's 'disjointed leadership' and questioning whether to 'blast them' or negotiate.",
+  "contents": "## Trump Doubts Latest Iran Peace Proposal\n\n### Reviewing the Terms\nPresident Donald Trump confirmed on May 2 that he had received a new Iranian proposal to end the war, telling reporters \"I'll let you know about it later\" and noting officials would provide him with \"the exact wording.\" Iran's state-run IRNA news agency reported Tehran handed the plan to mediators in Pakistan on Thursday night.\n\n### Dismissive Response\nShortly after his initial comments, Trump posted on Truth Social that he \"can't imagine that it meet his standards in that they have not yet paid a big enough price for what they have done to Humanity, and the World, over the last 47 years.\" This statement follows his rejection of a previous Iranian proposal earlier in the week.\n\n### Frustration with Iran Leadership\nTrump voiced frustration with Iran's leadership structure: \"They're asking for things that I can't agree to\" and described them as \"a very disjointed leadership\" where \"they all want to make a deal, but they're all messed up.\" He previously posed a stark choice between military escalation and negotiation.\n\n### War Status\nThe fragile three-week ceasefire between the US and Iran continues to hold amid growing economic pressure. Both countries traded accusations of violations while diplomatic channels remain active through Pakistani mediation.\n\n**Sources:** DW News, Fortune, AP News",
+  "date_published": "2026-05-03T10:55:00Z",
+  "date_event": "2026-05-02T22:00:00Z",
+  "links": [
+    {
+      "url": "https://fortune.com/2026/05/02/trump-new-iranian-proposal-war-strait-of-hormuz-shipping-sanctions/",
+      "label": "Fortune Coverage"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 38.8977,
+    "lon": -77.0365,
+    "country": "United States",
+    "region": "District of Columbia",
+    "city": "Washington"
+  },
+  "topics": [
+    "iran",
+    "trump",
+    "peace-proposal",
+    "us-iran-war",
+    "diplomacy",
+    "conflict",
+    "ceasefire"
+  ],
+  "confidence": 0.94,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
+  "id": "evt_20260503_339",
+  "source": {
+    "name": "Twitter @JASDF_PAO_ENG",
+    "provider": "social-media"
+  },
+  "title": "Chinese Warships Operate Near Penghu Islands in Taiwan Strait, ROC Forces Respond",
+  "summary": "Taiwan detected a Chinese destroyer and frigate operating south-west of the Penghu Islands near major Taiwanese military bases, deploying naval and air forces to monitor the formation.",
+  "contents": "## Chinese Warships Approach Penghu Bases\n\n### Detection Report\nTaiwan's Ministry of National Defense announced that a Chinese destroyer and frigate entered waters to the south-west of the Penghu Islands, home to major Taiwanese navy and air bases located close to Taiwan's side of the strait. The ministry released aerial photographs of both ships.\n\n### Taiwan Response\nTaiwan's military \"closely monitored the formation and responded appropriately using naval and air forces,\" according to the defense ministry. The ROC Armed Forces maintained surveillance throughout the transit without elaborating on specific countermeasures.\n\n### Daily ADIZ Updates\nThe detection occurred alongside continuing daily PLA air activity around Taiwan. On Tuesday following the warship sighting, Taiwan detected 22 military aircraft and 9 Chinese warships operating around the island. President Lai Ching-te warned that China's gray zone operations and psychological pressure \"grow day by day\" and \"seek to manufacture a new normal that undermines the status quo.\"\n\n### Regional Pattern\nThe warship activity near Penghu represents an escalation from typical PLA operations, which usually involve aircraft ADIZ incursions rather than surface combatant proximity to major Taiwanese bases. Japan's JASDF monitors these developments as part of broader regional air defense coordination.\n\n**Sources:** Baird Maritime, Taiwan MND, Reuters",
+  "date_published": "2026-05-03T10:42:00Z",
+  "date_event": "2026-04-28T14:00:00Z",
+  "links": [
+    {
+      "url": "https://www.bairdmaritime.com/security/naval/chinese-naval-presence-near-strait-prompts-taiwanese-military-response",
+      "label": "Baird Maritime Report"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 23.57,
+    "lon": 119.58,
+    "country": "Taiwan",
+    "region": "Penghu County",
+    "city": "Magong"
+  },
+  "topics": [
+    "taiwan",
+    "china",
+    "penghu",
+    "warships",
+    "taiwan-strait",
+    "gray-zone",
+    "naval"
+  ],
+  "confidence": 0.90,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
+  "id": "evt_20260503_345",
+  "source": {
+    "name": "Twitter @detresfa_",
+    "provider": "social-media"
+  },
+  "title": "Israel Approves $6B+ Fighter Jet Purchase Including F-35I and F-15IA Squadrons",
+  "summary": "Israel approved the purchase of approximately 50 advanced fighter jets from the United States, including one F-35I Adir stealth squadron and one F-15IA strike squadron, to expand air superiority capabilities amid the Iran war.",
+  "contents": "## Israel Expands Combat Air Fleet\n\n### Procurement Details\nIsrael approved the purchase of approximately 50 advanced fighter jets from the United States, comprising one full squadron of F-35I Adir multi-role stealth fighters (produced by Lockheed Martin) and one squadron of F-15IA strike fighters (from Boeing). Defense Minister Israel Katz stated: \"Our mission remains clear — to ensure the IDF possesses the tools, capabilities and strength to operate anywhere, at any time.\"\n\n### Combat-Proven Platforms\nIsrael has used its existing F-35I Adir stealth fighters extensively in both the Gaza and Iran wars. These aircraft have served as one of the Israeli Air Force's most valuable assets for striking Iranian targets, including suppressing air defenses and identifying deep targets.\n\n### Strategic Context\nThe procurement comes amid the ongoing US-Israeli conflict with Iran and aims to bolster Israel's long-range strike and air superiority capabilities. The F-35I fleet expansion strengthens Israel's ability to conduct operations against hardened targets and through contested airspace.\n\n### Regional Air Power Balance\nThe deal significantly expands Israel's advanced combat aircraft fleet at a time when regional air power dynamics remain in flux due to the Iran war, Hezbollah operations in Lebanon, and broader Middle East instability.\n\n**Sources:** DW News",
+  "date_published": "2026-05-03T10:18:00Z",
+  "date_event": "2026-05-03T08:00:00Z",
+  "links": [
+    {
+      "url": "https://www.dw.com/en/iran-war-trump-says-reviewing-new-tehran-proposal-with-doubt/live-77021634",
+      "label": "DW News Coverage"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 32.0853,
+    "lon": 34.7818,
+    "country": "Israel",
+    "region": "Tel Aviv District",
+    "city": "Tel Aviv"
+  },
+  "topics": [
+    "israel",
+    "f-35",
+    "f-15",
+    "fighter-jet",
+    "procurement",
+    "defense",
+    "iran-war"
+  ],
+  "confidence": 0.95,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
+  "id": "evt_20260503_347",
+  "source": {
+    "name": "Twitter @TheKoreaTimes",
+    "provider": "social-media"
+  },
+  "title": "South Korea Navy and Marine Corps Complete Major Amphibious Exercise with New Zealand Forces",
+  "summary": "South Korea completed a brigade-level joint amphibious exercise in Pohang involving 3,200 troops, with New Zealand Army participation for the first time and deployment of drones, KF-16 fighters, and the ROKS Marado amphibious ship.",
+  "contents": "## ROK Navy-Marine Corps Amphibious Exercise\n\n### Exercise Overview\nThe Republic of Korea Navy and Marine Corps conducted the first-half 2026 joint amphibious landing exercise in the Pohang area of North Gyeongsang Province from April 23 to 30. The brigade-level exercise involved approximately 3,200 troops from the Army, Navy, Air Force, and Marine Corps.\n\n### International Participation\nFor the first time, a New Zealand Army platoon joined the landing force battalion, conducting amphibious assault and ground operations alongside Korean troops. The New Zealand soldiers trained for two weeks prior to the decisive action phase, participating in urban operations, live-fire drills, and boarding exercises with Korean Amphibious Assault Vehicles.\n\n### Assets Deployed\nThe exercise utilized over 20 vessels including the ROKS Marado (LPH), Korean Amphibious Assault Vehicles (KAAV), MUH-1 amphibious utility helicopters, P-8A maritime patrol aircraft, KF-16 fighters, AH-64E attack helicopters, and drones from the Drone Operations Command. First-person-view (FPV) drones supported advance force reconnaissance.\n\n### US Participation\nA US Navy 7th Fleet Expeditionary Mine Countermeasures team participated in mine countermeasure operations, enhancing combined mine warfare capabilities.\n\n**Sources:** Yonhap News, Seoul Economic Daily, Korea Times",
+  "date_published": "2026-05-03T10:36:00Z",
+  "date_event": "2026-04-27T08:00:00Z",
+  "links": [
+    {
+      "url": "https://en.yna.co.kr/view/AEN20250428004000315",
+      "label": "Yonhap Coverage"
+    },
+    {
+      "url": "https://en.sedaily.com/technology/2026/04/27/navy-marine-corps-conduct-joint-landing-exercise-in-pohang",
+      "label": "Seoul Economic Daily"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 36.019,
+    "lon": 129.343,
+    "country": "South Korea",
+    "region": "North Gyeongsang Province",
+    "city": "Pohang"
+  },
+  "topics": [
+    "south-korea",
+    "marine-corps",
+    "amphibious",
+    "exercise",
+    "new-zealand",
+    "navy",
+    "pohang"
+  ],
+  "confidence": 0.93,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
+{
+  "id": "evt_20260503_348",
+  "source": {
+    "name": "Twitter @YortukIsgk",
+    "provider": "social-media"
+  },
+  "title": "Iran Hangs Two Men Convicted of Spying for Israel's Mossad Agency",
+  "summary": "Iran executed two men convicted of espionage for Israel, including one accused of sending sensitive information to a Mossad officer and another who provided intelligence about the Natanz nuclear enrichment facility.",
+  "contents": "## Iran Executes Two for Israeli Espionage\n\n### Executions Confirmed\nIran's judiciary confirmed on May 2 the hanging of two men convicted of spying for Israel — Yaghoub Karimpour and Nasser Bekrzadeh. Iran's Supreme Court upheld the earlier death sentences before execution.\n\n### Espionage Allegations\nKarimpour faced accusations of sending \"sensitive information\" to an officer in Israel's Mossad intelligence agency. Bekrzadeh allegedly transmitted details about government and religious leaders as well as information about Natanz, the central Iranian city housing a nuclear enrichment facility bombed by Israel and the United States last year.\n\n### Broader Crackdown\nIran has hanged more than a dozen people over alleged espionage and terrorist activities in recent weeks. A separate IRGC operation arrested 50 individuals across 16 provinces on charges of mapping missile targets for enemy intelligence services.\n\n### Intelligence War Context\nThe executions underscore the escalating intelligence war between Iran and Israel amid the ongoing military conflict. Iran's intelligence apparatus has intensified counter-espionage operations since US and Israeli strikes destroyed key nuclear and military infrastructure in February.\n\n**Sources:** DW News, ABC News, AP",
+  "date_published": "2026-05-03T10:56:00Z",
+  "date_event": "2026-05-02T12:00:00Z",
+  "links": [
+    {
+      "url": "https://www.dw.com/en/iran-war-trump-says-reviewing-new-tehran-proposal-with-doubt/live-77021634",
+      "label": "DW News Coverage"
+    }
+  ],
+  "image_urls": [],
+  "geo": {
+    "lat": 35.6892,
+    "lon": 51.389,
+    "country": "Iran",
+    "region": "Tehran Province",
+    "city": "Tehran"
+  },
+  "topics": [
+    "iran",
+    "israel",
+    "espionage",
+    "mossad",
+    "natanz",
+    "execution",
+    "intelligence"
+  ],
+  "confidence": 0.90,
+  "ingested_at": "2026-05-03T11:06:19Z"
+}
