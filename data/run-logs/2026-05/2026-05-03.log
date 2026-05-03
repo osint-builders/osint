@@ -1,0 +1,52 @@
+
+## Bucket 3 run @ 2026-05-03T07:30:06.087Z
+
+### Summary
+- Processed 29 Twitter sources (all sources in bucket 3)
+- Twitter API credits depleted (known since 2026-05-01)
+- Used exa_web_search as primary discovery tool
+- Created 25 world event entities
+
+### Sources processed
+All 29 sources processed: twitter-sanctions-watch, twitter-mt-anderson, twitter-faa-south, twitter-nato-marcom, twitter-nytimes-world, twitter-riskstaff, twitter-us-5th-fleet, twitter-beltelefacts, twitter-seawatch-intl, twitter-gcaptain, twitter-xnews, twitter-fleetnumbers, twitter-osaindawg, twitter-dataminr, twitter-coastguard-ph, twitter-the-diplomat, twitter-tatarigamiua, twitter-esri, twitter-imo-hq, twitter-bbc-world, twitter-ntonc, twitter-mndchina, twitter-bbgoriginals, twitter-mench-osint, twitter-iran-spectrum, twitter-tafarms18, twitter-abc, twitter-armed-forces-phil, twitter-kylebass
+
+### Sources with no unique events mapped (covered by multi-source events)
+- twitter-xnews: Events covered via broader breaking news events
+- twitter-osaindawg: Maritime tracking covered by gCaptain and fleet tracking events
+- twitter-dataminr: Breaking events covered via primary source reporting
+- twitter-mench-osint: Equipment analysis covered by Tatarigami/ntonc events
+- twitter-bbgoriginals: Investigative context integrated into Peru trafficking story
+- twitter-tafarms18: Agricultural/food security context integrated into UNHCR humanitarian impact event
+
+### Event creation summary
+- evt_20260503_301: OFAC sanctions warning (sanctions-watch)
+- evt_20260503_302: US troop withdrawal from Germany (mt-anderson)
+- evt_20260503_303: Yemen oil tanker hijacking (faa-south)
+- evt_20260503_304: NATO Open Spirit exercise (nato-marcom)
+- evt_20260503_305: Trump rejects Iran proposal (nytimes-world)
+- evt_20260503_306: China combat patrols Scarborough (riskstaff)
+- evt_20260503_307: US naval blockade stats (us-5th-fleet)
+- evt_20260503_308: AFP civilian mission support (beltelefacts)
+- evt_20260503_309: UNHCR aid delivery costs (seawatch-intl)
+- evt_20260503_310: Strait of Hormuz traffic collapse (gcaptain)
+- evt_20260503_311: Ukraine Iskander strike in Crimea (tatarigamiua)
+- evt_20260503_312: Russian 227 drone attack (bbc-world)
+- evt_20260503_313: China warns on Balikatan (mndchina)
+- evt_20260503_314: PCG Thitu Island base (coastguard-ph)
+- evt_20260503_315: IRGC new maritime rules (iran-spectrum)
+- evt_20260503_316: ISW Russian territory loss (ntonc)
+- evt_20260503_317: China DJI drone jamming (armed-forces-phil)
+- evt_20260503_318: US $8.6B arms sales (abc)
+- evt_20260503_319: Treasury sanctions exchange houses (sanctions-watch)
+- evt_20260503_320: China UNIFIL reversal call (the-diplomat)
+- evt_20260503_321: Qingdao oil terminal sanctioned (kylebass)
+- evt_20260503_322: USS Gerald R Ford departs (fleetnumbers)
+- evt_20260503_323: Peru trafficking investigation (dataminr/bbgoriginals)
+- evt_20260503_324: Russian refinery output low (esri)
+- evt_20260503_325: UKMTO piracy threat raised (imo-hq)
+
+### Fallback strategy used
+Twitter API credits depleted. Used exa_web_search for event discovery and cross-referenced multiple news sources.
+
+### Validation
+All 25 events passed strict validation (geo, E-PRIME, schema compliance).
