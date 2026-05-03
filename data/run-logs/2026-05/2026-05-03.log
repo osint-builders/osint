@@ -50,3 +50,22 @@ Twitter API credits depleted. Used exa_web_search for event discovery and cross-
 
 ### Validation
 All 25 events passed strict validation (geo, E-PRIME, schema compliance).
+
+## Bucket 1 run @ 2026-05-03T07:30:05.979Z
+
+### Summary
+- Sources processed: 30/30
+- Events created: 30 (24 new after URL dedup with other buckets)
+- Collection method: exa_web_search (Twitter API credits depleted)
+- Validation: All events passed strict mode
+
+### Key events collected
+- US-Iran war Day 64: Iran military warns renewed conflict likely
+- NATO jets scramble after Russian drones breach Romanian airspace
+- US announces 5,000 troop withdrawal from Germany
+- Oil tanker M/T Eureka hijacked off Yemen
+- Russia launches mass drone attack on Kyiv
+- Taiwan detects 37 PLA aircraft/vessels
+- UN warns of DPRK nuclear buildup
+- PLAN deploys carrier Liaoning for Balikatan response
+- Ukraine deep-strike drones hit Russian oil at 1,500km range
