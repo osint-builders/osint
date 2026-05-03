@@ -237,3 +237,55 @@ All 29 sources processed. Events mapped to sources by topic relevance:
 - Twitter API remains depleted (consistent with prior learnings)
 - Used web search aggregation approach successfully
 - Some lower-priority analytical sources (esri-water, esri-training, vantortech) generated events connecting to major news stories rather than standalone source-specific posts
+
+## Bucket 2 run @ 2026-05-03T14:38:15.507Z
+
+### Execution Summary
+- Bucket: 2 of 5 (29 sources assigned)
+- Time window: 2026-05-03T13:38:15.507Z to 2026-05-03T14:38:15.507Z (UTC)
+- Twitter API status: CreditsDepleted (confirmed from prior learnings)
+- Primary discovery: exa_web_search (3 broad queries)
+- Fallback: Perplexity API not used (exa_web_search sufficient)
+- Events created: 10 new events
+- Sources with events: 10 (twitter-cnn, twitter-cnni, twitter-militarylandnet, twitter-scs-pi, twitter-detresfa, twitter-fleetnumbers, twitter-john-pollock, twitter-scmpnews, twitter-etienne-lh, twitter-megatronlion)
+- Sources without events in window: 19 (no matching events found in 1-hour window via web search fallback)
+
+### Events Created
+- evt_20260503_001: Iran IRGC 30-day deadline to US (twitter-cnn)
+- evt_20260503_002: Pentagon 5,000 troop withdrawal from Germany (twitter-cnni)
+- evt_20260503_003: Israel evacuations/strikes in southern Lebanon (twitter-militarylandnet)
+- evt_20260503_004: Philippines deploys ships vs Chinese research vessels (twitter-scs-pi)
+- evt_20260503_005: MT Eureka hijacked by Somali pirates (twitter-detresfa)
+- evt_20260503_006: Ukraine strikes Russian shadow fleet tankers (twitter-fleetnumbers)
+- evt_20260503_007: Israel approves F-35/F-15 purchase (twitter-john-pollock)
+- evt_20260503_008: IAEA drone incident at Zaporizhzhia (twitter-scmpnews)
+- evt_20260503_009: NATO European defense posture shift (twitter-etienne-lh)
+- evt_20260503_010: USS Ford carrier group departs Middle East (twitter-megatronlion)
+
+### Sources Without Events (processed but no matching events in window)
+- twitter-mda-space: No satellite imagery news in window
+- twitter-beltelefacts: No Philippines security news in window
+- twitter-ca-jc: No regional security analysis in window
+- twitter-ausnav: No RAN operations news in window
+- twitter-kylebass: No Asia/China economic analysis in window
+- twitter-mndchina: No PLA announcements in window
+- twitter-faa-south: No Africa security news in window
+- twitter-mt-anderson: No security analysis in window
+- twitter-yortukisgk: No regional intel in window
+- twitter-southkoreapro: No Korea analysis in window
+- twitter-mofajapan-en: No Japan MOFA statements in window
+- twitter-taiwan-news-en: No Taiwan-specific news in window
+- twitter-shipnews: No shipping news in window (piracy covered by detresfa)
+- twitter-nsa-cyber: No cyber advisories in window
+- twitter-us-forces-japan: No USFJ announcements in window
+- twitter-us-fleet-forces: No fleet forces news in window (carrier covered by megatronlion)
+- twitter-pyongyang-today: No DPRK updates in window
+- webpage-yahoo-world-news: Coverage overlapped with Twitter source events
+- twitter-xkorea: No Korea breaking news in window
+
+### Notes
+- Several events from this bucket's sources already existed in today's JSONL from earlier bucket runs
+- ID conflicts resolved by unique_by(.id) deduplication (kept earlier entries)
+- Geocoding used Nominatim API with caching (17 locations cached)
+- All events passed E-PRIME validation (no "to be" verbs)
+- All events geocoded with lat/lon coordinates
