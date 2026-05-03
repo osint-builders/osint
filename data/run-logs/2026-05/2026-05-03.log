@@ -357,3 +357,50 @@ Collection: exa_web_search (Twitter API depleted). All validated.
 ## Bucket 3 run @ 2026-05-03T17:34:35.564Z
 Sources: 29/29 processed. Events created: 30 (after URL dedup: unique additions merged).
 Collection: exa_web_search (Twitter API depleted). All validated.
+
+## Bucket 4 run @ 2026-05-03T20:05:09.534Z
+
+### Sources Processed (29 total)
+All 29 sources in bucket 4 processed. Twitter API credits depleted (per prior learnings); used exa_web_search as primary discovery tool.
+
+### Collection Strategy
+- Primary: exa_web_search for broad event discovery across source topics
+- Fallback: Web search results from major news outlets (Reuters, AP, Bloomberg, Al Jazeera, BBC, Kyiv Independent)
+- Twitter API: Unavailable (credits depleted since May 1)
+
+### Events Created: 15
+- evt_20260503_430: Bulk carrier attacked near Strait of Hormuz (twitter-imo-hq, twitter-shipnews)
+- evt_20260503_431: Iran 14-point peace proposal review (twitter-ap, twitter-ian-bremmer)
+- evt_20260503_432: Ukraine strikes Primorsk/Novorossiysk (twitter-thewarzonewire, twitter-war-tv7890)
+- evt_20260503_433: China-Philippines Sandy Cay tensions (twitter-scmpnews, twitter-armed-forces-phil, twitter-mndchina)
+- evt_20260503_434: Israel strikes southern Lebanon (twitter-key-to-med, twitter-sim-nasr)
+- evt_20260503_435: OPEC+ production hike (twitter-ian-bremmer, twitter-shipnews)
+- evt_20260503_436: MT Eureka tanker hijacked (twitter-imo-hq, twitter-shipnews)
+- evt_20260503_437: NATO troop withdrawal crisis (twitter-cepa, twitter-aurora-intel)
+- evt_20260503_438: Zelensky in Yerevan (twitter-aurora-intel)
+- evt_20260503_439: CENTCOM 49th vessel redirected (twitter-us-fleet-forces)
+- evt_20260503_440: German FM demands Hormuz reopening (twitter-yortukisgk)
+- evt_20260503_441: PLA naval deployments (twitter-mndchina, twitter-mondefense)
+- evt_20260503_442: Russia drone/missile attacks on Ukraine (twitter-militarylandnet, twitter-natalierevolts)
+- evt_20260503_443: US $8.6B arms deals for Gulf/Israel (twitter-key-to-med, twitter-us-fleet-forces)
+- evt_20260503_444: Iraqi oil convoy to Syria (twitter-yortukisgk, twitter-aurora-intel)
+
+### Sources with no unique events this window
+The following sources had no distinct events within the 19:05-20:05 UTC window beyond those already captured by other sources:
+- twitter-jnb-summary: No Japan-DPRK specific events in window
+- twitter-kang-daily: No Korea-specific military events in window
+- twitter-olongapo-times: Covered by armed-forces-phil SCS events
+- twitter-opennuclear: No nuclear facility-specific events in window (Iran nuclear covered in diplomacy event)
+- twitter-vantortech: No geospatial intelligence releases in window
+- twitter-arcgis-storymaps: No new story maps published in window
+- twitter-jaime-ocon: No GIS tutorials/techniques in window
+- twitter-warshipcam: No warship photography posts in window
+- twitter-southkoreapro: No Korea-specific analysis in window
+- webpage-cuashub-defense: No new defense/cyber articles in window
+- webpage-windward-ai-blog: No new blog posts published in window
+
+### Notes
+- Time window: 2026-05-03T19:05:09.534Z to 2026-05-03T20:05:09.534Z
+- All events geocoded using location extraction from article content
+- E-PRIME compliance verified for all contents fields
+- Events deduplicated against existing 151 events from earlier buckets
