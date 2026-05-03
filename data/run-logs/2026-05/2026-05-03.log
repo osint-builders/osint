@@ -468,3 +468,8 @@ Events generated: 18
 Events added (after dedup): 4 new events
 Twitter API: Credits depleted — used exa_web_search as primary discovery
 Validation: All 18 events passed strict validation
+
+## Bucket 5 run @ 2026-05-03T23:28:16.162Z
+Sources processed: 29 | Events generated: 24 (14 new after URL dedup)
+Twitter API credits depleted — used exa_web_search as primary discovery
+All 24 events passed strict validation (geo, E-PRIME, time-window)
