@@ -1,128 +1,92 @@
-// future: import * as ort from 'onnxruntime-web';
 import type { EventMetadata, SearchResult, SearchFilters } from '../types';
 
 export class SearchEngine {
-  // future: private session: ort.InferenceSession | null = null;
   private metadata: EventMetadata[] = [];
-  // future: private embeddings: Float32Array[] = [];
   private isInitialized = false;
 
   async initialize(metadata: EventMetadata[]) {
-    if (this.isInitialized) {
-      return;
-    }
-
-    console.log('Initializing search engine...');
+    if (this.isInitialized) return;
     this.metadata = metadata;
-
-    // Note: For MVP, we'll use a simplified approach without full ONNX model
-    // In production, you would load the ONNX model here:
-    // this.session = await ort.InferenceSession.create('/models/MiniLM-L6-v2.onnx');
-
-    // For now, we'll use keyword-based search as fallback
-    console.log('Search engine initialized (keyword mode)');
     this.isInitialized = true;
+  }
+
+  /** Returns the most recent N events sorted by date_published descending. */
+  getLatest(topK = 100, filters: SearchFilters): SearchResult[] {
+    const filtered = this.metadata
+      .filter(e => this.matchesFilters(e, filters))
+      .sort((a, b) => {
+        const da = a.date_published ?? '';
+        const db = b.date_published ?? '';
+        return db.localeCompare(da);
+      })
+      .slice(0, topK);
+    return filtered.map(e => ({ ...e, score: 1 }));
   }
 
   async search(
     query: string,
     filters: SearchFilters,
-    topK: number = 20
+    topK = 100
   ): Promise<SearchResult[]> {
-    if (!this.isInitialized) {
-      throw new Error('Search engine not initialized');
-    }
+    if (!this.isInitialized) throw new Error('Search engine not initialized');
+    if (!query.trim()) return this.getLatest(topK, filters);
 
-    // Simple keyword-based search for MVP
-    const lowerQuery = query.toLowerCase();
-    const queryTokens = lowerQuery.split(/\s+/).filter(t => t.length > 2);
+    const queryTokens = query
+      .toLowerCase()
+      .split(/\s+/)
+      .filter(t => t.length > 1);
 
     const results: SearchResult[] = [];
-
     for (const event of this.metadata) {
-      // Apply filters first
-      if (!this.matchesFilters(event, filters)) {
-        continue;
-      }
-
-      // Compute simple relevance score
+      if (!this.matchesFilters(event, filters)) continue;
       const score = this.computeKeywordScore(event, queryTokens);
-
-      if (score > 0) {
-        results.push({ ...event, score });
-      }
+      if (score > 0) results.push({ ...event, score });
     }
 
-    // Sort by score descending
     results.sort((a, b) => b.score - a.score);
-
     return results.slice(0, topK);
   }
 
   private matchesFilters(event: EventMetadata, filters: SearchFilters): boolean {
-    // Date range filter
     if (filters.dateFrom || filters.dateTo) {
       const eventDate = event.date_event || event.date_published;
       if (!eventDate) return false;
-
       if (filters.dateFrom && eventDate < filters.dateFrom) return false;
       if (filters.dateTo && eventDate > filters.dateTo) return false;
     }
-
-    // Country filter
-    if (filters.country && event.geo?.country !== filters.country) {
-      return false;
-    }
-
-    // Topics filter
+    if (filters.country && event.geo?.country !== filters.country) return false;
     if (filters.topics.length > 0) {
-      const hasMatchingTopic = event.topics.some(t =>
-        filters.topics.includes(t)
-      );
-      if (!hasMatchingTopic) return false;
+      const hasMatch = event.topics.some(t => filters.topics.includes(t));
+      if (!hasMatch) return false;
     }
-
-    // Confidence filter
-    if (event.confidence !== null && event.confidence < filters.minConfidence) {
-      return false;
+    if (filters.minConfidence > 0) {
+      const conf = event.confidence ?? 0;
+      if (conf < filters.minConfidence) return false;
     }
-
     return true;
   }
 
-  private computeKeywordScore(event: EventMetadata, queryTokens: string[]): number {
-    const titleLower = event.title.toLowerCase();
-    const summaryLower = event.summary.toLowerCase();
-
+  private computeKeywordScore(event: EventMetadata, tokens: string[]): number {
+    const title = event.title.toLowerCase();
+    const summary = event.summary.toLowerCase();
+    const source = event.source_name.toLowerCase();
     let score = 0;
-
-    for (const token of queryTokens) {
-      // Title matches are worth more
-      if (titleLower.includes(token)) {
-        score += 3;
-      }
-
-      // Summary matches
-      if (summaryLower.includes(token)) {
-        score += 1;
-      }
-
-      // Topic matches
+    for (const token of tokens) {
+      if (title.includes(token)) score += 4;
+      if (summary.includes(token)) score += 1;
+      if (source.includes(token)) score += 2;
       for (const topic of event.topics) {
-        if (topic.toLowerCase().includes(token)) {
-          score += 2;
-        }
+        if (topic.toLowerCase().includes(token)) score += 3;
+      }
+      const geo = event.geo;
+      if (geo) {
+        const geoStr = [geo.country, geo.region, geo.city].filter(Boolean).join(' ').toLowerCase();
+        if (geoStr.includes(token)) score += 2;
       }
     }
-
     return score;
   }
 
-  getMetadata(): EventMetadata[] {
-    return this.metadata;
-  }
-
-  isReady(): boolean {
-    return this.isInitialized;
-  }
+  getMetadata(): EventMetadata[] { return this.metadata; }
+  isReady(): boolean { return this.isInitialized; }
 }

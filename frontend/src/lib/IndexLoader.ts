@@ -54,4 +54,16 @@ export class IndexLoader {
     }
     return response.arrayBuffer();
   }
+
+  async loadEventDetail(id: string): Promise<import('../types').EventDetail> {
+    const response = await fetch(`${this.baseUrl}/events/${id}.json`);
+    if (!response.ok) {
+      throw new Error(`Event detail not found: ${id}`);
+    }
+    return response.json();
+  }
+
+  getBaseUrl(): string {
+    return this.baseUrl;
+  }
 }

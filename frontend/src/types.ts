@@ -1,3 +1,8 @@
+export interface EventLink {
+  url: string;
+  label?: string;
+}
+
 export interface EventMetadata {
   id: string;
   title: string;
@@ -14,6 +19,7 @@ export interface EventMetadata {
   topics: string[];
   confidence: number | null;
   source_name: string;
+  links?: EventLink[];
 }
 
 export interface SearchFilters {
@@ -44,4 +50,23 @@ export interface IndexSchema {
   };
   event_count: number;
   last_updated: string;
+}
+
+export interface EventDetail extends EventMetadata {
+  contents: string;
+  image_urls: string[];
+  source: {
+    name: string;
+    provider?: string;
+    email?: string;
+  };
+  ingested_at?: string;
+}
+
+export interface SavedSearch {
+  id: string;
+  label: string;
+  query: string;
+  filters: SearchFilters;
+  savedAt: string;
 }

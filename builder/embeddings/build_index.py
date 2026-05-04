@@ -26,7 +26,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).parent))
 
 from embedder import Embedder, prepare_embedding_text
-from indexer import IndexBuilder, extract_metadata, save_metadata, save_schema
+from indexer import IndexBuilder, extract_metadata, save_metadata, save_schema, write_event_detail_files
 from utils import (
     compute_fingerprint,
     load_fingerprints,
@@ -169,6 +169,10 @@ def main():
     # Extract and save metadata
     metadata = extract_metadata(all_events)
     save_metadata(metadata, metadata_path)
+
+    # Write per-event detail files for lazy loading in the frontend
+    n_detail = write_event_detail_files(all_events, output_dir)
+    print(f"Written {n_detail} event detail files to {output_dir / 'events'}")
 
     # Save schema
     save_schema(

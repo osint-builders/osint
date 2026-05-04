@@ -74,9 +74,8 @@ class IndexBuilder:
 
 def extract_metadata(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
-    Extract searchable metadata from events
-
-    Returns: List of metadata dicts in same order as embeddings
+    Extract searchable metadata from events.
+    Includes links for inline display in the search UI.
     """
     metadata = []
 
@@ -90,11 +89,35 @@ def extract_metadata(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             'geo': event.get('geo'),
             'topics': event.get('topics', []),
             'confidence': event.get('confidence'),
-            'source_name': event['source']['name']
+            'source_name': event['source']['name'],
+            'links': event.get('links', []),
         }
         metadata.append(item)
 
     return metadata
+
+
+def write_event_detail_files(
+    events: List[Dict[str, Any]],
+    output_dir: Path
+) -> int:
+    """
+    Write one JSON file per event under output_dir/events/{id}.json.
+    These are lazy-loaded by the frontend for the detail panel.
+    Returns the count of files written.
+    """
+    events_dir = output_dir / 'events'
+    events_dir.mkdir(parents=True, exist_ok=True)
+
+    written = 0
+    for event in events:
+        event_id = event['id']
+        dest = events_dir / f'{event_id}.json'
+        with open(dest, 'w', encoding='utf-8') as f:
+            json.dump(event, f, ensure_ascii=False, separators=(',', ':'))
+        written += 1
+
+    return written
 
 
 def save_metadata(metadata: List[Dict[str, Any]], metadata_path: Path):

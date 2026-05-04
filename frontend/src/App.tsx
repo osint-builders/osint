@@ -1,159 +1,338 @@
-import { useState, useEffect, useCallback } from 'react';
-import { SearchBar } from './components/SearchBar';
-import { FilterPanel } from './components/FilterPanel';
-import { ResultsList } from './components/ResultsList';
+import {
+  useState,
+  useEffect,
+  useCallback,
+  useRef,
+  useMemo,
+} from 'react';
+import { CommandBar } from './components/CommandBar';
+import { FilterRail } from './components/FilterRail';
+import { ResultsPane } from './components/ResultsPane';
+import { MapView } from './components/MapView';
+import { EventDetail } from './components/EventDetail';
+import { StatusBar } from './components/StatusBar';
+import { ShortcutsHelp } from './components/ShortcutsHelp';
 import { IndexLoader } from './lib/IndexLoader';
 import { SearchEngine } from './lib/SearchEngine';
-import type { SearchResult, SearchFilters, EventMetadata } from './types';
+import { useSavedSearches } from './hooks/useSavedSearches';
+import { copyToClipboard } from './lib/utils';
+import type {
+  SearchResult,
+  SearchFilters,
+  EventMetadata,
+  EventDetail as EventDetailType,
+  IndexSchema,
+  SavedSearch,
+} from './types';
+
+// ── URL state helpers ─────────────────────────────────────────
+function getUrlParams(): { query: string; filters: SearchFilters } {
+  const p = new URLSearchParams(window.location.search);
+  return {
+    query: p.get('q') ?? '',
+    filters: {
+      dateFrom: p.get('from'),
+      dateTo: p.get('to'),
+      country: p.get('country'),
+      topics: p.get('topics')?.split(',').filter(Boolean) ?? [],
+      minConfidence: parseFloat(p.get('conf') ?? '0') / 100,
+    },
+  };
+}
+
+function syncUrl(query: string, filters: SearchFilters) {
+  const p = new URLSearchParams();
+  if (query) p.set('q', query);
+  if (filters.dateFrom) p.set('from', filters.dateFrom);
+  if (filters.dateTo) p.set('to', filters.dateTo);
+  if (filters.country) p.set('country', filters.country);
+  if (filters.topics.length) p.set('topics', filters.topics.join(','));
+  if (filters.minConfidence > 0) p.set('conf', String(Math.round(filters.minConfidence * 100)));
+  const qs = p.toString();
+  window.history.replaceState(null, '', window.location.pathname + (qs ? `?${qs}` : ''));
+}
+
+// ── Singletons (survive React strict-mode remounts) ───────────
+const loader = new IndexLoader();
+const engine = new SearchEngine();
+
+type RightPane = 'map' | 'detail';
+
+const DEFAULT_FILTERS: SearchFilters = {
+  dateFrom: null,
+  dateTo: null,
+  country: null,
+  topics: [],
+  minConfidence: 0,
+};
 
 function App() {
+  const initial = useMemo(getUrlParams, []);
+
   const [isInitializing, setIsInitializing] = useState(true);
-  const [isSearching, setIsSearching] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [results, setResults] = useState<SearchResult[]>([]);
   const [allMetadata, setAllMetadata] = useState<EventMetadata[]>([]);
-  const [searchEngine] = useState(() => new SearchEngine());
-  const [filters, setFilters] = useState<SearchFilters>({
-    dateFrom: null,
-    dateTo: null,
-    country: null,
-    topics: [],
-    minConfidence: 0
-  });
+  const [schema, setSchema] = useState<IndexSchema | null>(null);
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
 
-  // Initialize search engine
+  const [query, setQuery] = useState(initial.query);
+  const [filters, setFilters] = useState<SearchFilters>(initial.filters);
+  const [debouncedQuery, setDebouncedQuery] = useState(initial.query);
+
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [rightPane, setRightPane] = useState<RightPane>('map');
+  const [showHelp, setShowHelp] = useState(false);
+  const [filterCollapsed, setFilterCollapsed] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
+
+  const [eventDetail, setEventDetail] = useState<EventDetailType | null>(null);
+  const [isLoadingDetail, setIsLoadingDetail] = useState(false);
+
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const { searches: savedSearches, save: saveSearch, remove: removeSaved } = useSavedSearches();
+
+  const showToast = useCallback((msg: string, ms = 2000) => {
+    setToast(msg);
+    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    toastTimerRef.current = setTimeout(() => setToast(null), ms);
+  }, []);
+
+  // Initialize index
   useEffect(() => {
-    const init = async () => {
+    let cancelled = false;
+    (async () => {
       try {
-        setIsInitializing(true);
-        console.log('Loading search index...');
-
-        const loader = new IndexLoader();
-        const [schema, metadata] = await Promise.all([
+        const [sch, meta] = await Promise.all([
           loader.loadSchema(),
-          loader.loadMetadata()
+          loader.loadMetadata(),
         ]);
-
-        console.log(`Loaded ${metadata.length} events (index version ${schema.version})`);
-
-        await searchEngine.initialize(metadata);
-        setAllMetadata(metadata);
+        if (cancelled) return;
+        await engine.initialize(meta);
+        setSchema(sch);
+        setAllMetadata(meta);
         setIsInitializing(false);
       } catch (err) {
-        console.error('Failed to initialize search engine:', err);
-        setError(err instanceof Error ? err.message : 'Failed to load search index');
-        setIsInitializing(false);
+        if (!cancelled) {
+          setError(err instanceof Error ? err.message : 'Failed to load index');
+          setIsInitializing(false);
+        }
+      }
+    })();
+    return () => { cancelled = true; };
+  }, []);
+
+  // Debounce query
+  useEffect(() => {
+    const t = setTimeout(() => setDebouncedQuery(query), 250);
+    return () => clearTimeout(t);
+  }, [query]);
+
+  // Run search on query/filter change
+  useEffect(() => {
+    if (isInitializing) return;
+    let cancelled = false;
+    (async () => {
+      setIsSearching(true);
+      try {
+        const res = await engine.search(debouncedQuery, filters, 200);
+        if (!cancelled) {
+          setResults(res);
+          if (res.length > 0 && !selectedId) setSelectedId(res[0].id);
+        }
+      } catch (err) {
+        console.error('Search error', err);
+      } finally {
+        if (!cancelled) setIsSearching(false);
+      }
+    })();
+    return () => { cancelled = true; };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedQuery, filters, isInitializing]);
+
+  // Sync URL
+  useEffect(() => { syncUrl(query, filters); }, [query, filters]);
+
+  // Load event detail
+  useEffect(() => {
+    if (!selectedId) { setEventDetail(null); return; }
+    let cancelled = false;
+    setEventDetail(null);
+    setIsLoadingDetail(true);
+    loader.loadEventDetail(selectedId)
+      .then(d => { if (!cancelled) setEventDetail(d); })
+      .catch(() => {})
+      .finally(() => { if (!cancelled) setIsLoadingDetail(false); });
+    return () => { cancelled = true; };
+  }, [selectedId]);
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      const tag = (e.target as Element)?.tagName ?? '';
+      const isInput = ['INPUT', 'TEXTAREA', 'SELECT'].includes(tag);
+
+      if (e.key === '?' && !isInput) {
+        e.preventDefault();
+        setShowHelp(s => !s);
+        return;
+      }
+      if (e.key === 'Escape') {
+        if (showHelp) { setShowHelp(false); return; }
+        if (rightPane === 'detail') { setRightPane('map'); return; }
+        if (isInput) { (e.target as HTMLElement).blur(); return; }
+        if (query) { setQuery(''); return; }
+        return;
+      }
+      if (e.key === '/' && !isInput) {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+        return;
+      }
+      if (!isInput) {
+        if (e.key === 'j' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          setSelectedId(prev => {
+            const idx = results.findIndex(r => r.id === prev);
+            return results[Math.min(idx + 1, results.length - 1)]?.id ?? prev;
+          });
+        } else if (e.key === 'k' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          setSelectedId(prev => {
+            const idx = results.findIndex(r => r.id === prev);
+            return results[Math.max(idx - 1, 0)]?.id ?? prev;
+          });
+        } else if (e.key === 'Enter' && selectedId) {
+          setRightPane('detail');
+        } else if (e.key === 'm' || e.key === 'M') {
+          setRightPane(p => p === 'map' ? 'detail' : 'map');
+        } else if ((e.key === 'c' || e.key === 'C') && selectedId) {
+          const ev = results.find(r => r.id === selectedId);
+          if (ev) { copyToClipboard(JSON.stringify(ev, null, 2)); showToast('Copied JSON'); }
+        } else if (e.key === 's' || e.key === 'S') {
+          saveSearch(query, filters); showToast('Search saved');
+        } else if (e.key === 'f' || e.key === 'F') {
+          setFilterCollapsed(p => !p);
+        } else if (e.key === 'r' || e.key === 'R') {
+          setQuery(''); setFilters(DEFAULT_FILTERS);
+        }
       }
     };
+    document.addEventListener('keydown', handler);
+    return () => document.removeEventListener('keydown', handler);
+  }, [results, selectedId, showHelp, rightPane, query, filters, saveSearch, showToast]);
 
-    init();
-  }, [searchEngine]);
+  // Derived
+  const selectedIndex = useMemo(
+    () => results.findIndex(r => r.id === selectedId),
+    [results, selectedId]
+  );
+  const selectedMetadata = useMemo(
+    () => results.find(r => r.id === selectedId) ?? null,
+    [results, selectedId]
+  );
+  const filtersActive =
+    filters.dateFrom !== null || filters.dateTo !== null ||
+    filters.country !== null || filters.topics.length > 0 || filters.minConfidence > 0;
 
-  // Perform search
-  const handleSearch = useCallback(async (query: string) => {
-    if (!query.trim()) {
-      setResults([]);
-      return;
-    }
-
-    try {
-      setIsSearching(true);
-      const searchResults = await searchEngine.search(query, filters, 50);
-      setResults(searchResults);
-    } catch (err) {
-      console.error('Search error:', err);
-      setError(err instanceof Error ? err.message : 'Search failed');
-    } finally {
-      setIsSearching(false);
-    }
-  }, [searchEngine, filters]);
-
-  // Re-run search when filters change
-  useEffect(() => {
-    if (results.length > 0) {
-      // Re-search with current query would require storing query state
-      // For MVP, we'll just clear results when filters change
-      setResults([]);
-    }
-  }, [filters]);
-
-  if (isInitializing) {
-    return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin h-12 w-12 border-4 border-blue-500 border-t-transparent rounded-full mx-auto mb-4"></div>
-          <p className="text-gray-700 text-lg">Loading search index...</p>
-        </div>
-      </div>
-    );
-  }
+  const handleLoadSaved = useCallback((s: SavedSearch) => {
+    setQuery(s.query); setFilters(s.filters);
+  }, []);
+  const handleSelect = useCallback((id: string) => setSelectedId(id), []);
+  const handleOpen = useCallback((id: string) => {
+    setSelectedId(id); setRightPane('detail');
+  }, []);
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="bg-white p-8 rounded-lg shadow-md max-w-md">
-          <h2 className="text-xl font-semibold text-red-600 mb-2">Error</h2>
-          <p className="text-gray-700">{error}</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
-          >
-            Reload Page
-          </button>
-        </div>
+      <div className="h-full flex flex-col items-center justify-center bg-term-bg font-mono text-[9px] gap-3">
+        <span className="text-term-red text-[11px]">✗ LOAD ERROR</span>
+        <span className="text-term-secondary">{error}</span>
+        <button
+          onClick={() => window.location.reload()}
+          className="px-3 py-1 border border-term-border text-term-secondary hover:text-term-green hover:border-term-green transition-colors"
+        >
+          RELOAD
+        </button>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-gray-900">OSINT Semantic Search</h1>
-          <p className="text-gray-600 mt-1">
-            Search {allMetadata.length.toLocaleString()} world events from multiple intelligence sources
-          </p>
-        </div>
-      </header>
+    <div className="h-full flex flex-col bg-term-bg font-mono text-[9px] text-term-primary overflow-hidden scanlines">
+      <CommandBar
+        query={query}
+        onQueryChange={setQuery}
+        isLoading={isInitializing || isSearching}
+        eventCount={allMetadata.length}
+        resultCount={results.length}
+        lastUpdated={schema?.last_updated ?? null}
+        savedSearches={savedSearches}
+        onLoadSaved={handleLoadSaved}
+        onRemoveSaved={removeSaved}
+        onToggleHelp={() => setShowHelp(s => !s)}
+        onToggleFilters={() => setFilterCollapsed(s => !s)}
+        filtersActive={filtersActive}
+        searchInputRef={searchInputRef}
+      />
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        {/* Search Bar */}
-        <div className="mb-8">
-          <SearchBar
-            onSearch={handleSearch}
-            isLoading={isSearching}
-            resultCount={results.length}
-          />
+      {isInitializing && (
+        <div className="absolute inset-0 z-30 flex flex-col items-center justify-center bg-term-bg gap-3">
+          <span className="text-term-green text-[14px] animate-pulse-green">⟳</span>
+          <span className="text-[9px] text-term-secondary">INITIALIZING INDEX…</span>
         </div>
+      )}
 
-        {/* Filters and Results */}
-        <div className="flex gap-6">
-          {/* Filter Sidebar */}
-          <aside className="flex-shrink-0">
-            <FilterPanel
-              filters={filters}
-              onFiltersChange={setFilters}
-              allMetadata={allMetadata}
+      <div className="flex-1 flex min-h-0 overflow-hidden">
+        <FilterRail
+          filters={filters}
+          onFiltersChange={setFilters}
+          allMetadata={allMetadata}
+          collapsed={filterCollapsed}
+        />
+
+        <ResultsPane
+          results={results}
+          selectedId={selectedId}
+          isSearching={isSearching}
+          query={debouncedQuery}
+          onSelect={handleSelect}
+          onOpen={handleOpen}
+        />
+
+        <div className="w-[420px] flex-shrink-0 flex flex-col min-h-0">
+          {rightPane === 'map' ? (
+            <MapView
+              results={results}
+              selectedId={selectedId}
+              onSelectEvent={handleSelect}
+              onOpenEvent={handleOpen}
             />
-          </aside>
-
-          {/* Results */}
-          <div className="flex-1">
-            <ResultsList results={results} />
-          </div>
+          ) : (
+            <EventDetail
+              metadata={selectedMetadata}
+              detail={eventDetail}
+              isLoading={isLoadingDetail}
+              onClose={() => setRightPane('map')}
+              onShowMap={() => setRightPane('map')}
+            />
+          )}
         </div>
-      </main>
+      </div>
 
-      {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 mt-12">
-        <div className="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-gray-600">
-          <p>
-            Powered by OpenAI embeddings and client-side semantic search
-          </p>
-        </div>
-      </footer>
+      <StatusBar
+        isReady={!isInitializing && !error}
+        isSearching={isSearching}
+        eventCount={allMetadata.length}
+        resultCount={results.length}
+        selectedIndex={selectedIndex}
+        lastUpdated={schema?.last_updated ?? null}
+        toast={toast}
+      />
+
+      {showHelp && <ShortcutsHelp onClose={() => setShowHelp(false)} />}
     </div>
   );
 }
