@@ -24,7 +24,7 @@ Do **not** put per-source telemetry here (`No events parsed`, `Created event: �
 **Expires:** YYYY-MM-DD | permanent
 ```
 
-The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expires` date has passed, then injects the remaining entries into every per-bucket prompt as `## Prior Learnings`. If the file has more than **100 entries** or **30 KB**, the oldest non-`permanent` entries are dropped before injection.
+The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expires` date has passed, then injects the remaining entries into every per-bucket prompt as `## Prior Learnings`. If the file has more than **30 entries** or **10 KB**, the oldest non-`permanent` entries are dropped before injection.
 
 ## Maintenance
 
@@ -36,28 +36,10 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
-## 2026-05-01 19:55Z — Twitter API credits depleted; fallback collection strategy needed
-**Trigger:** Twitter Bearer Token returned "CreditsDepleted" error for all API v2 calls during bucket 2 run
-**Finding:** The TWITTER_BEARER_TOKEN has exhausted its monthly credits. All 28 Twitter source collections fell back to web search (Perplexity API, exa_web_search) and agent-browser scraping. X.com requires authentication for recent tweet timelines, limiting agent-browser's effectiveness on Twitter profiles (only showing old tweets for unauthenticated sessions).
-**Action for next run:** Check Twitter API credit status at run start. If depleted, immediately pivot to: (1) Perplexity API with `search_recency_filter: "hour"` for source-specific queries, (2) exa_web_search for broad event discovery, (3) agent-browser on non-Twitter web sources. Consider requesting credit top-up or rotating to a backup bearer token.
-**Expires:** 2026-06-01
-
-## 2026-05-01 19:55Z — Twitter API credits depleted; fallback collection strategy needed
-**Trigger:** Twitter Bearer Token returned "CreditsDepleted" error for all API v2 calls during bucket 2 run
-**Finding:** The TWITTER_BEARER_TOKEN has exhausted its monthly credits. All 28 Twitter source collections fell back to web search (Perplexity API, exa_web_search) and agent-browser scraping. X.com requires authentication for recent tweet timelines, limiting agent-browser's effectiveness on Twitter profiles (only showing old tweets for unauthenticated sessions).
-**Action for next run:** Check Twitter API credit status at run start. If depleted, immediately pivot to: (1) Perplexity API with search_recency_filter hour for source-specific queries, (2) exa_web_search for broad event discovery, (3) agent-browser on non-Twitter web sources. Consider requesting credit top-up or rotating to a backup bearer token.
-**Expires:** 2026-06-01
-
-## 2026-05-01 19:55Z — Twitter API credits depleted; fallback collection strategy needed
-**Trigger:** Twitter Bearer Token returned "CreditsDepleted" error for all API v2 calls during bucket 2 run
-**Finding:** The TWITTER_BEARER_TOKEN has exhausted its monthly credits. All 28 Twitter source collections fell back to web search (Perplexity API, exa_web_search) and agent-browser scraping.
-**Action for next run:** Check Twitter API credit status at run start. If depleted, pivot to Perplexity API and exa_web_search immediately.
-**Expires:** 2026-06-01
-
-## 2026-05-01 19:55Z — Twitter API credits depleted; X browser scraping unreliable without auth
-**Trigger:** All Twitter API v2 endpoints returned 402 CreditsDepleted across all 29 bucket 5 sources. Browser scraping via agent-browser showed curated/popular old tweets instead of latest timeline for non-authenticated sessions.
-**Finding:** Twitter/X API credits can deplete mid-collection run, affecting all subsequent buckets. Without authentication, X shows a curated "popular tweets" view rather than the chronological timeline for most profiles (some high-activity profiles like NASA showed recent retweets). Twitter search requires login. Nitter mirrors appear defunct.
-**Action for next run:** 1) Check API credit balance before starting collection (GET /2/usage/tweets). 2) If credits depleted, immediately switch to Perplexity API (sonar-pro with search_recency_filter: "hour") as fallback for event discovery. 3) Consider pre-authenticating agent-browser sessions for Twitter access via --session-name flag. 4) Request API credit replenishment between runs.
+## 2026-05-01 19:55Z — Twitter API credits depleted; fallback collection strategy
+**Trigger:** All Twitter API v2 endpoints returned 402 CreditsDepleted across all buckets.
+**Finding:** TWITTER_BEARER_TOKEN exhausted its monthly credits mid-run. Without auth, X shows curated/popular old tweets instead of chronological timeline. Twitter search requires login. Nitter mirrors defunct.
+**Action for next run:** Check credit balance first (GET /2/usage/tweets). If depleted: (1) use Perplexity API `sonar-pro` with `search_recency_filter: "hour"` for source-specific queries, (2) use exa_web_search for broad discovery, (3) skip Twitter sources and log. Request credit top-up between runs.
 **Expires:** 2026-06-01
 
 ## 2026-05-01 22:36Z — Perplexity API search_recency_filter returns empty; exa_web_search effective

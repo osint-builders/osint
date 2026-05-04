@@ -29,7 +29,7 @@ If you skip a source, the run is considered failed.
 The following findings from earlier runs apply to this run. Treat them as
 authoritative unless they contradict the source files in this prompt. They
 have been pre-filtered by the orchestrator (expired entries dropped, capped
-at 100 entries / 30 KB).
+at 30 entries / 10 KB).
 
 ${learnings}
 
@@ -419,6 +419,18 @@ least one of these triggers:
 
 Do **not** write per-source telemetry, dedup skips, or "no events parsed"
 into LEARNINGS.md. Those go in 7a.
+
+**Before appending, check for a duplicate** — parallel buckets run the same
+day and will each see the same failures. Scan existing headers first:
+
+```bash
+# Replace KEYWORD with 1-2 words from your topic (e.g. "Twitter" or "Perplexity")
+if grep -qi "KEYWORD" LEARNINGS.md 2>/dev/null; then
+  echo "[skip] Similar LEARNINGS entry already exists — not appending duplicate"
+else
+  # append your entry here
+fi
+```
 
 Required entry format (append to the end of the file, after the
 `<!-- entries below this line; newest first -->` marker):
