@@ -465,6 +465,520 @@ Twitter API: CreditsDepleted (402). Used exa_web_search and Perplexity fallback.
 Twitter API: CreditsDepleted (402). Used exa_web_search fallback.
 Validation: All 18 events passed strict validation
 
+## Bucket 4 run @ 2026-05-04T02:04:18.824Z
+
+### Execution Summary
+- **Bucket**: 4 of 5
+- **Sources assigned**: 29
+- **Time window**: 2026-05-04T01:04:18.824Z to 2026-05-04T02:04:18.824Z (UTC)
+- **Strategy**: exa_web_search primary discovery (Twitter API credits depleted)
+
+### Collection Results
+- Events generated: 17
+- Events after URL dedup: 4
+- Events committed: 4
+
+### Source Processing Notes
+All 29 sources processed. Twitter API credits remain depleted (known since 2026-05-01). 
+Used exa_web_search as primary discovery tool per prior learnings.
+13 events matched primary URLs already committed by buckets 1-3, confirming high overlap 
+rate for major world events covered by multiple buckets.
+
+### Unique Events Added
+- evt_20260503_602: Iranian supertanker HUGE evades US blockade (TankerTrackers)
+- evt_20260503_607: US cancels Tomahawk deployment to Germany (National Interest)
+- evt_20260503_609: IDF strikes 120 Hezbollah targets in Lebanon (WarshipCam)
+- evt_20260503_614: Airstrikes target militants in southern Syria (Yortuk Intelligence)
+
+### Sources Covered by Unique Events
+- twitter-tanker-trackers (evt_602)
+- twitter-therealshipdude (evt_602, related)
+- twitter-osaindawg (evt_602, related)
+- twitter-national-interest (evt_607)
+- twitter-korea-herald (evt_607, related)
+- twitter-warshipcam (evt_609)
+- twitter-clash-report (evt_609, related)
+- twitter-yortukisgk (evt_614)
+
+### Sources With No Unique Events (covered by earlier buckets)
+Remaining 21 sources produced events with URLs already committed:
+twitter-kl-summary, twitter-the-lookout-north, twitter-hawkeye360, 
+webpage-breaking-defense-global, twitter-the-diplomat, twitter-mondefense,
+twitter-africafactszone, twitter-songss44, twitter-borrowed7time,
+twitter-ofac-alert, twitter-us-pacific-fleet, twitter-esri-water,
+twitter-jaime-ocon, twitter-modjapan-en, twitter-csis-korea-chair,
+twitter-us-treasury, twitter-taiwan-news-en, twitter-ntonc,
+twitter-opennuclear, twitter-jasdf-pao-eng, twitter-mench-osint
+
+### Issues Encountered
+- Twitter API: Credits remain depleted; all collection via web search
+- High URL dedup rate (76%): Expected for late-running bucket sharing news cycle with earlier buckets
+- No Breaking Defense (webpage) unique content found within the 1-hour window
+- Several OSINT analyst accounts (Songss44, Jaime Ocon, Esri Water) tweet infrequently; 
+  no unique events found within narrow time window matching their topic areas
+## Bucket 2 run @ 2026-05-03T14:38:15.507Z
+## Bucket 2 run @ 2026-05-03T23:28:16.151Z
+## Bucket 3 run @ 2026-05-03T07:30:06.087Z
+## Bucket 3 run @ 2026-05-03T11:06:19.595Z
+## Bucket 3 run @ 2026-05-03T17:34:35.564Z
+## Bucket 3 run @ 2026-05-03T23:28:16.154Z
+## Bucket 4 run @ 2026-05-03T07:30:06.090Z
+## Bucket 4 run @ 2026-05-03T17:34:35.566Z
+## Bucket 4 run @ 2026-05-03T20:05:09.534Z
+## Bucket 4 run @ 2026-05-03T23:28:16.158Z
+## Bucket 5 run @ 2026-05-03T11:06:19.600Z
+## Bucket 5 run @ 2026-05-03T17:34:35.569Z
+## Bucket 5 run @ 2026-05-03T23:28:16.162Z
+## Processing twitter-beltelfreeaudio
+## Processing twitter-esri-training
+## Processing twitter-korea-econ-inst
+## Processing twitter-megatronlion
+## Processing twitter-msc-sealift
+## Processing twitter-nasa
+## Processing twitter-natlhistships
+## Processing twitter-scpandura
+## Processing twitter-us-7th-fleet
+## Processing twitter-us-forces-japan
+## Processing twitter-us-pacific-fleet
+## Processing twitter-yortukisgk
+### Collection Method
+### Collection Strategy
+### Event creation summary
+### Events Created
+### Events Created: 15
+### Events Created: 16 (evt_20260503_443 through evt_20260503_458)
+### Events created:
+### Execution Summary
+### Fallback strategy used
+### Issues
+### Key Events
+### Key Findings:
+### Key events collected
+### Methodology Notes:
+### Notes
+### Notes:
+### Per-source log:
+### Processing Summary
+### Source Attribution Map:
+### Source Coverage
+### Source Processing Log
+### Sources Processed
+### Sources Processed (29 total)
+### Sources Without Events (processed but no matching events in window)
+### Sources processed
+### Sources with No Unique Events in Window:
+### Sources with no specific events in this window:
+### Sources with no unique events mapped (covered by multi-source events)
+### Sources with no unique events this window
+### Sources without unique events (covered by shared topic events)
+### Summary
+### Validation
+- **Collection method**: exa_web_search (Twitter API credits depleted)
+- **Collection method**: exa_web_search (primary), Twitter API credits depleted per learnings
+- **Events added after dedup**: 10
+- **Events added to JSONL**: 10 (15 deduplicated as URL matches from other buckets)
+- **Events created**: 14 (evt_20260503_356 through evt_20260503_369)
+- **Events created**: 25
+- **Events generated**: 30
+- **Execution time**: 2026-05-03T11:06:19.600Z (UTC)
+- **Execution time**: 2026-05-03T17:34:35.569Z UTC
+- **ID range**: evt_20260503_326 to evt_20260503_355
+- **Sources assigned**: 29
+- **Sources assigned**: 29 Twitter sources
+- **Sources processed**: 29 (all processed)
+- **Sources with events**: 14
+- **Sources with no events in window**: 15 (twitter-beltelefacts, webpage-cuashub-defense, twitter-xnews, twitter-jnb-summary, twitter-arcgis-storymaps, twitter-kc-nwt, twitter-info-fusion-ctr, twitter-chadobcnews, twitter-mt-anderson, twitter-msc-sealift, twitter-songss44, twitter-korea-herald, twitter-yortukisgk, twitter-minhdr18, webpage-windward-ai-blog)
+- **Time window**: 2026-05-03T10:06:19.595Z to 2026-05-03T11:06:19.595Z
+- **Time window**: 2026-05-03T10:06:19.600Z to 2026-05-03T11:06:19.600Z
+- **Time window**: 2026-05-03T16:34:35.569Z to 2026-05-03T17:34:35.569Z
+- **Validation**: All 14 events passed strict validation (E-PRIME + geo + time window)
+- **Validation**: All 25 events passed strict validation (E-PRIME, geo, time-window)
+- **Validation**: All 30 events passed strict validation (schema, E-PRIME, time window, geo)
+- 15 events matched URLs already in today's file from other bucket runs
+- All events geocoded using known coordinates (Nominatim API not needed for well-known locations)
+- All events geocoded using location extraction from article content
+- All events geocoded with country-level or city-level coordinates
+- All events geocoded with lat/lon coordinates
+- All events geocoded with manual coordinate assignment based on known locations.
+- All events passed E-PRIME validation (no "to be" verbs)
+- Bucket: 2 of 5 (29 sources assigned)
+- Collection method: exa_web_search (Twitter API credits depleted)
+- Created 25 world event entities
+- E-PRIME compliance verified by validator
+- E-PRIME compliance verified for all contents fields
+- E-PRIME compliance: All contents fields avoid forms of "to be" (is, are, was, were, be, been, being).
+- E-PRIME violation fixed in evt_20260503_334 (replaced "would be" with "meet his standards")
+- Events added (after dedup): 8
+- Events created: 10 new events
+- Events created: 12
+- Events created: 30 (24 new after URL dedup with other buckets)
+- Events deduplicated against existing 151 events from earlier buckets
+- Events deduplicated: 21 (URLs/IDs from earlier buckets)
+- Events generated: 17 (7 new after URL dedup)
+- Events generated: 29
+- Events validated: 12/12 passed strict mode
+- Existing events from earlier buckets already covered some OFAC sanctions and US carrier movements
+- Fallback: Direct web page content from news sources
+- Fallback: Perplexity API not used (exa_web_search sufficient)
+- Fallback: Web search results from major news outlets (Reuters, AP, Bloomberg, Al Jazeera, BBC, Kyiv Independent)
+- Geocoding used Nominatim API with caching (17 locations cached)
+- Geocoding: 2 locations required manual coordinates (Scarborough Shoal, Gulf of Aden)
+- ID conflicts resolved by unique_by(.id) deduplication (kept earlier entries)
+- Iran war day 65: peace proposal, IRGC deadline, Treasury sanctions
+- Israel: Lebanon strikes (41 killed), F-35/F-15 fighter jet deal
+- NATO jets scramble after Russian drones breach Romanian airspace
+- No events rejected for time window violations
+- North Korea: rejects cyber allegations, youth congress
+- Oil tanker M/T Eureka hijacked off Yemen
+- PLAN deploys carrier Liaoning for Balikatan response
+- Perplexity API used for targeted validation of high-priority events.
+- Philippines: PCG vs Chinese research vessels, Pagasa Cay flag planting
+- Primary discovery: exa_web_search (3 broad queries)
+- Primary: exa_web_search (Twitter API credits depleted per LEARNINGS.md)
+- Primary: exa_web_search for broad event discovery across source topics
+- Processed 29 Twitter sources (all sources in bucket 3)
+- Russia launches mass drone attack on Kyiv
+- Several events from this bucket's sources already existed in today's JSONL from earlier bucket runs
+- Some lower-priority analytical sources (esri-water, esri-training, vantortech) generated events connecting to major news stories rather than standalone source-specific posts
+- Sources assigned: 30
+- Sources processed: 29/29
+- Sources processed: 30
+- Sources processed: 30/30
+- Sources with events: 10 (twitter-cnn, twitter-cnni, twitter-militarylandnet, twitter-scs-pi, twitter-detresfa, twitter-fleetnumbers, twitter-john-pollock, twitter-scmpnews, twitter-etienne-lh, twitter-megatronlion)
+- Sources without events in window: 19 (no matching events found in 1-hour window via web search fallback)
+- Sources: 29, Events: 21, Method: exa_web_search
+- Taiwan detects 37 PLA aircraft/vessels
+- Time window: 2026-05-03T10:06:19.566Z to 2026-05-03T11:06:19.566Z
+- Time window: 2026-05-03T13:38:15.507Z to 2026-05-03T14:38:15.507Z (UTC)
+- Time window: 2026-05-03T16:34:35.566Z to 2026-05-03T17:34:35.566Z
+- Time window: 2026-05-03T19:05:09.534Z to 2026-05-03T20:05:09.534Z
+- Time window: 2026-05-03T22:28:16.059Z to 2026-05-03T23:28:16.059Z
+- Time window: 2026-05-03T22:28:16.158Z to 2026-05-03T23:28:16.158Z
+- Twitter API credits depleted (confirmed). Used exa_web_search for broad event discovery.
+- Twitter API credits depleted (known since 2026-05-01)
+- Twitter API credits remain depleted (402 CreditsDepleted)
+- Twitter API credits remain depleted (per LEARNINGS.md entries from 2026-05-01)
+- Twitter API remains credit-depleted; all collection via exa_web_search
+- Twitter API remains depleted (consistent with prior learnings)
+- Twitter API status: CreditsDepleted (confirmed from prior learnings)
+- Twitter API: Credits depleted (known from prior runs); used exa_web_search as primary discovery
+- Twitter API: Credits depleted, used exa_web_search
+- Twitter API: Unavailable (credits depleted since May 1)
+- UN warns of DPRK nuclear buildup
+- US announces 5,000 troop withdrawal from Germany
+- US troop withdrawal from Germany
+- US-Iran war Day 64: Iran military warns renewed conflict likely
+- Ukraine deep-strike drones hit Russian oil at 1,500km range
+- Ukraine multi-theater drone strikes: Primorsk, Novorossiysk, shadow fleet
+- Used exa_web_search as primary discovery tool
+- Used exa_web_search as primary discovery tool per prior learnings
+- Used web search aggregation approach successfully
+- Validation: All events passed strict mode
+- Validation: Strict mode passed
+- Zaporizhzhia nuclear plant drone strike
+- evt_20260503_001: Iran IRGC 30-day deadline to US (twitter-cnn)
+- evt_20260503_001: Ukraine drone strikes damage Primorsk oil port (twitter-tradewindsnews)
+- evt_20260503_002: Pentagon 5,000 troop withdrawal from Germany (twitter-cnni)
+- evt_20260503_002: Shadow fleet tankers struck at Novorossiysk (twitter-tanker-trackers)
+- evt_20260503_003: Israel evacuations/strikes in southern Lebanon (twitter-militarylandnet)
+- evt_20260503_003: Trump Hormuz escort plan (twitter-dataminr)
+- evt_20260503_004: Iran 14-point peace proposal (twitter-nytimes-world)
+- evt_20260503_004: Philippines deploys ships vs Chinese research vessels (twitter-scs-pi)
+- evt_20260503_005: Israel-Lebanon direct talks (twitter-aurora-intel)
+- evt_20260503_005: MT Eureka hijacked by Somali pirates (twitter-detresfa)
+- evt_20260503_006: US Treasury B Iran sanctions evasion (twitter-sanctions-watch)
+- evt_20260503_006: Ukraine strikes Russian shadow fleet tankers (twitter-fleetnumbers)
+- evt_20260503_007: Israel approves F-35/F-15 purchase (twitter-john-pollock)
+- evt_20260503_007: PLA Navy deployment near Philippines (twitter-platracker)
+- evt_20260503_008: DPRK cyber threat denial (twitter-korea-herald)
+- evt_20260503_008: IAEA drone incident at Zaporizhzhia (twitter-scmpnews)
+- evt_20260503_009: Kim Jong Un youth mobilization (twitter-korea-times)
+- evt_20260503_009: NATO European defense posture shift (twitter-etienne-lh)
+- evt_20260503_010: NMESIS deployment Batanes (twitter-yonkosmc)
+- evt_20260503_010: USS Ford carrier group departs Middle East (twitter-megatronlion)
+- evt_20260503_011: .6B US arms sales (twitter-national-interest)
+- evt_20260503_012: Iranian supertanker evades blockade (twitter-c4ads)
+- evt_20260503_013: Taiwan PLA activity monitoring (twitter-elint-news)
+- evt_20260503_014: South Korea FM Hormuz call (twitter-csis-korea-chair)
+- evt_20260503_015: Yemen tanker hijacking (twitter-mdat-gog)
+- evt_20260503_016: Kenya flash floods (twitter-africafactszone)
+- evt_20260503_017: Scarborough Shoal patrols (twitter-info-fusion-ctr)
+- evt_20260503_101: IRGC Sets One-Month Deadline for US Naval Blockade
+- evt_20260503_102: Trump Reviews Iran 14-Point Peace Proposal
+- evt_20260503_103: Iranian Supertanker HUGE Evades US Blockade
+- evt_20260503_104: DPRK Rejects US Cyber Threat Claims
+- evt_20260503_105: Israel Approves F-35/F-15 Purchase
+- evt_20260503_106: Israel Orders Lebanese Evacuation, Strikes Continue
+- evt_20260503_107: Jordan Strikes Syria Drug/Arms Sites
+- evt_20260503_108: US Military Aircraft Surge to Middle East
+- evt_20260503_109: ROK Navy Amphibious Drills in Pohang
+- evt_20260503_110: Balikatan 2026 Peak Phase with US Missiles Near Taiwan
+- evt_20260503_111: China Combat Patrols Near Scarborough Shoal
+- evt_20260503_112: Russia-Ukraine Overnight Civilian Strikes
+- evt_20260503_301: OFAC sanctions warning (sanctions-watch)
+- evt_20260503_302: US troop withdrawal from Germany (mt-anderson)
+- evt_20260503_303: Yemen oil tanker hijacking (faa-south)
+- evt_20260503_304: NATO Open Spirit exercise (nato-marcom)
+- evt_20260503_305: Trump rejects Iran proposal (nytimes-world)
+- evt_20260503_306: China combat patrols Scarborough (riskstaff)
+- evt_20260503_307: US naval blockade stats (us-5th-fleet)
+- evt_20260503_308: AFP civilian mission support (beltelefacts)
+- evt_20260503_309: UNHCR aid delivery costs (seawatch-intl)
+- evt_20260503_310: Strait of Hormuz traffic collapse (gcaptain)
+- evt_20260503_311: Ukraine Iskander strike in Crimea (tatarigamiua)
+- evt_20260503_312: Russian 227 drone attack (bbc-world)
+- evt_20260503_313: China warns on Balikatan (mndchina)
+- evt_20260503_314: PCG Thitu Island base (coastguard-ph)
+- evt_20260503_315: IRGC new maritime rules (iran-spectrum)
+- evt_20260503_316: ISW Russian territory loss (ntonc)
+- evt_20260503_317: China DJI drone jamming (armed-forces-phil)
+- evt_20260503_318: US $8.6B arms sales (abc)
+- evt_20260503_319: Treasury sanctions exchange houses (sanctions-watch)
+- evt_20260503_320: China UNIFIL reversal call (the-diplomat)
+- evt_20260503_321: Qingdao oil terminal sanctioned (kylebass)
+- evt_20260503_322: USS Gerald R Ford departs (fleetnumbers)
+- evt_20260503_323: Peru trafficking investigation (dataminr/bbgoriginals)
+- evt_20260503_324: Russian refinery output low (esri)
+- evt_20260503_325: UKMTO piracy threat raised (imo-hq)
+- evt_20260503_430: Bulk carrier attacked near Strait of Hormuz (twitter-imo-hq, twitter-shipnews)
+- evt_20260503_431: Iran 14-point peace proposal review (twitter-ap, twitter-ian-bremmer)
+- evt_20260503_432: Ukraine strikes Primorsk/Novorossiysk (twitter-thewarzonewire, twitter-war-tv7890)
+- evt_20260503_433: China-Philippines Sandy Cay tensions (twitter-scmpnews, twitter-armed-forces-phil, twitter-mndchina)
+- evt_20260503_434: Israel strikes southern Lebanon (twitter-key-to-med, twitter-sim-nasr)
+- evt_20260503_435: OPEC+ production hike (twitter-ian-bremmer, twitter-shipnews)
+- evt_20260503_436: MT Eureka tanker hijacked (twitter-imo-hq, twitter-shipnews)
+- evt_20260503_437: NATO troop withdrawal crisis (twitter-cepa, twitter-aurora-intel)
+- evt_20260503_438: Zelensky in Yerevan (twitter-aurora-intel)
+- evt_20260503_439: CENTCOM 49th vessel redirected (twitter-us-fleet-forces)
+- evt_20260503_440: German FM demands Hormuz reopening (twitter-yortukisgk)
+- evt_20260503_441: PLA naval deployments (twitter-mndchina, twitter-mondefense)
+- evt_20260503_442: Russia drone/missile attacks on Ukraine (twitter-militarylandnet, twitter-natalierevolts)
+- evt_20260503_443: US $8.6B arms deals for Gulf/Israel (twitter-key-to-med, twitter-us-fleet-forces)
+- evt_20260503_444: Iraqi oil convoy to Syria (twitter-yortukisgk, twitter-aurora-intel)
+- exa_web_search effective as primary discovery tool
+- twitter-allsource4: Created evt_20260503_333 (Russia drone defense)
+- twitter-ap: Covered via Trump/Iran diplomatic developments
+- twitter-arcgis-storymaps: No geospatial story maps within window
+- twitter-arcgis-storymaps: No intelligence visualization stories in window
+- twitter-arcgis-storymaps: No new story maps published in window
+- twitter-armed-forces-phil → evt_20260503_446 (Philippines vs Chinese research vessels)
+- twitter-armed-forces-phil: Created evt_20260503_331 (Balikatan 2026)
+- twitter-ausnav: Covered via ROK amphibious drills report
+- twitter-ausnav: No RAN operations news in window
+- twitter-bates-gill: Created evt_20260503_338 (Trump-Xi summit analysis)
+- twitter-bbc-breaking: 1 event (Zaporizhzhia nuclear plant drone strike)
+- twitter-bbc-world: 1 event (Israel 50 air strikes on Lebanon)
+- twitter-bbgoriginals: Covered via Russia-Ukraine overnight strikes
+- twitter-bbgoriginals: Investigative context integrated into Peru trafficking story
+- twitter-bbgoriginals: No new investigations released in window
+- twitter-beltelefacts: No Philippines defense events in time window
+- twitter-beltelefacts: No Philippines security news in window
+- twitter-beltelefacts: evt_20260503_349 (Japan Balikatan Philippines)
+- twitter-c4ads: Covered via Iran sanctions evasion and shadow fleet tracking
+- twitter-ca-jc: Covered via Jordan-Syria strikes
+- twitter-ca-jc: No regional security analysis in window
+- twitter-chadobcnews: No unique Korea field reports in window
+- twitter-chinese-emb-in-us: Covered via IRGC/Iran diplomatic context (evt_443, evt_451)
+- twitter-claudefb: Created evt_20260503_349 (Iran civilian impact)
+- twitter-cnnbrk → evt_20260503_444 (Ukraine strikes Novorossiysk shadow fleet)
+- twitter-cnnbrk: Covered via Trump Iran proposal review
+- twitter-dataminr: 1 event (Primorsk port drone strikes)
+- twitter-dataminr: Breaking events covered via primary source reporting
+- twitter-dataminr: Covered via military aircraft surge and Jordan strikes
+- twitter-defence-aust: evt_20260503_337 (PLAN carrier deployment/Balikatan)
+- twitter-detresfa: evt_20260503_345 (Israel fighter jet purchase)
+- twitter-dprk-news → evt_20260503_455 (IAEA DPRK nuclear expansion)
+- twitter-dprk-news: evt_20260503_330 (DPRK hacking denial)
+- twitter-elint-news: evt_20260503_329 (Israel-Lebanon evacuations)
+- twitter-esri-training: Created evt_20260503_353 (Crisis mapping tutorial)
+- twitter-esri-training: No GIS training events in window
+- twitter-esri-water: Created evt_20260503_352 (Energy-water nexus)
+- twitter-etienne-lh: Created evt_20260503_336 (European defense impact)
+- twitter-faa-south: No Africa security news in window
+- twitter-faa-south: No Africa-specific security events in window
+- twitter-faa-south: No Africa-specific security events within window
+- twitter-foxnews → evt_20260503_443 (Trump Hormuz escort plan)
+- twitter-foxnews: evt_20260503_334 (Trump reviews Iran proposal)
+- twitter-gcaptain: 1 event (cargo ship attack near Hormuz)
+- twitter-ianellisjones: evt_20260503_341 (US naval blockade 45 ships)
+- twitter-imo-hq → evt_20260503_456 (Zelensky Yerevan summit - maritime diplomatic context)
+- twitter-imo-hq: Covered via Strait of Hormuz shipping intelligence
+- twitter-info-fusion-ctr: Created evt_20260503_340 (Iran war Day 65 assessment)
+- twitter-info-fusion-ctr: No multi-source fusion assessments in window
+- twitter-iran-observer: Created evt_20260503_327 (IRGC deadline, peace proposal)
+- twitter-iran-spectrum → evt_20260503_451 (IRGC war resumption warning)
+- twitter-iran-spectrum: 1 event (IRGC 30-day deadline ultimatum)
+- twitter-iran-spectrum: Covered via IRGC deadline announcement
+- twitter-jaime-ocon: No GIS tutorials/techniques in window
+- twitter-japan-joint-staff: Created evt_20260503_341 (Balikatan participation)
+- twitter-jasdf-pao-eng: evt_20260503_339 (Chinese warships near Penghu)
+- twitter-jnb-summary: Created evt_20260503_347 (Japan-DPRK analysis)
+- twitter-jnb-summary: Japan-DPRK content covered via evt_455
+- twitter-jnb-summary: No Japan-DPRK specific events in window
+- twitter-john-pollock → evt_20260503_450 (NATO disintegration, troop withdrawal)
+- twitter-john-pollock: Created evt_20260503_330 (US troop withdrawal Germany)
+- twitter-kang-daily: No Korea-specific military events in window
+- twitter-kc-nwt: No unique Korea security events beyond existing sources
+- twitter-kc-nwt: evt_20260503_336 (DPRK nuclear tipping point)
+- twitter-key-to-med → evt_20260503_457 (US $8.6B Gulf arms deals)
+- twitter-kl-summary: Created evt_20260503_346 (Korea USFK hub proposal)
+- twitter-korea-econ-inst: evt_20260503_340 (USFK Regional Sustainment Hub)
+- twitter-korea-herald: Covered via ROK Navy amphibious drills
+- twitter-korea-herald: Covered via southkoreapro (FM Hormuz call)
+- twitter-korea-times-alt: evt_20260503_347, evt_20260503_350 (ROK amphibious drills, DPRK-Iran tech)
+- twitter-kylebass: 1 event (Iran rial currency crisis)
+- twitter-kylebass: No Asia/China economic analysis in window
+- twitter-mda-space: Created evt_20260503_350 (SAR surveillance demand)
+- twitter-mda-space: No satellite imagery news in window
+- twitter-megatronlion: evt_20260503_328 (Ukraine strikes Russian tankers)
+- twitter-mench-osint: Equipment analysis covered by Tatarigami/ntonc events
+- twitter-mench-osint: evt_20260503_346 (DPRK cluster warhead tests)
+- twitter-militarylandnet: 1 event (Russian advance toward Kostiantynivka)
+- twitter-militarylandnet: Covered via Ukraine-Russia overnight strikes
+- twitter-minhdr18: Created evt_20260503_344 (Israel fighter jet deal)
+- twitter-minhdr18: No defense technology developments in window
+- twitter-mndchina: Covered via PLA Scarborough Shoal patrols and Balikatan counter-exercise
+- twitter-mndchina: No PLA announcements in window
+- twitter-modjapan-en: Covered via Israel fighter jet acquisition
+- twitter-mofajapan-en: No Japan MOFA statements in window
+- twitter-mofajapan-en: evt_20260503_338 (Japan Balikatan first participation)
+- twitter-mondefense → evt_20260503_447 (Taiwan PLA detection report)
+- twitter-mondefense: 1 event (Taiwan 29 PLA sorties detection)
+- twitter-mondefense: Created evt_20260503_329 (PLA ADIZ incursions)
+- twitter-msc-sealift: No MSC logistics events in window
+- twitter-msc-sealift: No specific MSC events within time window
+- twitter-mt-anderson: Created evt_20260503_348 (Maritime security vacuum)
+- twitter-mt-anderson: No security analysis in window
+- twitter-mt-anderson: No unique regional security analysis in window
+- twitter-mylordbebo: No regional observer events within window
+- twitter-nasa: Created evt_20260503_351 (Black Sea environmental monitoring)
+- twitter-nasa: No satellite imagery or space events in window
+- twitter-natalierevolts → evt_20260503_454 (Russia-Ukraine drone exchange)
+- twitter-national-interest: Covered via Israel F-35 acquisition analysis
+- twitter-natlhistships: No naval heritage events in window
+- twitter-natlhistships: No naval heritage events within time window
+- twitter-nato-marcom: NATO context covered via evt_450
+- twitter-nsa-cyber: No cyber advisories in window
+- twitter-nsa-gov: No NSA-specific announcements in window
+- twitter-ntonc: Covered via Ukraine-Russia strikes reporting
+- twitter-nytimes-world: Covered via Iran/Lebanon developments
+- twitter-ofac-alert: OFAC sanctions already captured in earlier bucket runs
+- twitter-oilcfd: Covered by evt_20260503_332 (Iran sanctions/oil)
+- twitter-olongapo-times: Covered by armed-forces-phil SCS events
+- twitter-olongapo-times: Covered via Balikatan exercise developments
+- twitter-opennuclear: DPRK nuclear content covered via evt_455
+- twitter-opennuclear: No nuclear facility-specific events in window (Iran nuclear covered in diplomacy event)
+- twitter-osaindawg → evt_20260503_458 (Hormuz navigation collapse)
+- twitter-osaindawg: Maritime tracking covered by gCaptain and fleet tracking events
+- twitter-pizzainwatch → evt_20260503_445 (Ukraine strikes Primorsk port)
+- twitter-pizzainwatch: evt_20260503_344 (Iran toll scheme exposed)
+- twitter-pyongyang-today: Created evt_20260503_345 (DPRK monitoring)
+- twitter-pyongyang-today: No DPRK updates in window
+- twitter-rayfunseth: Covered by evt_20260503_341 (maritime blockade tracking)
+- twitter-raytoribo: Created evt_20260503_335 (Piracy off Somalia)
+- twitter-riskstaff: evt_20260503_326 (IRGC blockade deadline)
+- twitter-sanctions-watch: 1 event (OFAC Hormuz toll sanctions warning)
+- twitter-schizoint-rel: Covered via Russia-Ukraine information warfare
+- twitter-scmpnews → evt_20260503_452 (Balikatan Chinese shadowing)
+- twitter-scpandura: Covered via DPRK Lazarus Group cyber intelligence
+- twitter-scpandura: No cybersecurity events in window
+- twitter-seawatch-intl: evt_20260503_343 (Hormuz humanitarian impact)
+- twitter-shipnews: No shipping news in window (piracy covered by detresfa)
+- twitter-songss44: Created evt_20260503_339 (PLA ADIZ tracking)
+- twitter-songss44: No unique Asia-Pacific OSINT in window
+- twitter-southkoreapro: 1 event (South Korea FM Hormuz call with Iran)
+- twitter-southkoreapro: No Korea analysis in window
+- twitter-southkoreapro: No Korea-specific analysis in window
+- twitter-southkoreapro: evt_20260503_335 (UN DPRK briefing)
+- twitter-tafarms18: Agricultural/food security context integrated into UNHCR humanitarian impact event
+- twitter-taiwan-news-en: No Taiwan-specific news in window
+- twitter-taiwan-news-en: evt_20260503_331 (Taiwan ADIZ 29 sorties)
+- twitter-tanker-trackers: Covered via Iranian supertanker HUGE evasion
+- twitter-the-dailynk: 1 event (North Korea rejects hacking allegations)
+- twitter-the-dailynk: DPRK news covered via evt_455
+- twitter-the-diplomat → evt_20260503_449 (Sandy Cay China-Philippines confrontation)
+- twitter-the-diplomat: evt_20260503_333 (PLAN surge near Philippines)
+- twitter-the-koreaview: Covered via DPRK cyber threat response
+- twitter-the-lookout-north: Covered via US military aircraft surge
+- twitter-the-pacific-brief: 1 event (China coast guard Sandy Cay confrontation)
+- twitter-the-pacific-brief: Created evt_20260503_337 (PLAN deployments)
+- twitter-therealshipdude → evt_20260503_453 (Iranian tanker evasion)
+- twitter-therealshipdude: Created evt_20260503_343 (Shadow fleet analysis)
+- twitter-thewarzonewire: Created evt_20260503_328 (Ukraine oil tanker strikes), evt_20260503_332 (Israel-Lebanon strikes)
+- twitter-tradewindsnews: 1 event (shadow fleet tanker strikes at Novorossiysk)
+- twitter-tradewindsnews: Covered via Iran shadow fleet shipping intelligence
+- twitter-uani: Covered via Iran sanctions intelligence
+- twitter-united-nations → evt_20260503_448 (Israel Lebanon strikes)
+- twitter-us-5th-fleet: 1 event (49 ships turned back under blockade)
+- twitter-us-5th-fleet: Created evt_20260503_326 (US Navy blockade enforcement)
+- twitter-us-fleet-forces: No fleet forces news in window (carrier covered by megatronlion)
+- twitter-us-fleet-forces: US fleet covered via Hormuz events (evt_443, evt_458)
+- twitter-us-forces-japan: Created evt_20260503_342 (USFJ operations)
+- twitter-us-forces-japan: No USFJ announcements in window
+- twitter-us-pacific-fleet: Covered via Balikatan exercise reporting
+- twitter-us-treasury: evt_20260503_327 (OFAC shipping sanctions), evt_20260503_332 (Iran exchange houses)
+- twitter-vantortech: Created evt_20260503_354 (GEOINT multi-theater)
+- twitter-vantortech: No geospatial intelligence releases in window
+- twitter-warshipcam: No warship photography posts in window
+- twitter-xinhua-news: Created evt_20260503_334 (PLA STC exercises)
+- twitter-xkorea: Covered via DPRK cyber claims
+- twitter-xkorea: No Korea breaking news in window
+- twitter-xnews: Breaking events covered via cnnbrk/foxnews
+- twitter-xnews: Events covered via broader breaking news events
+- twitter-xnews: No unique breaking news beyond other sources
+- twitter-yonkosmc: evt_20260503_342 (NMESIS deployment Batanes)
+- twitter-yortukisgk: No Middle East/Central Asia events specific to this source
+- twitter-yortukisgk: No regional intel in window
+- twitter-yortukisgk: No unique regional monitoring events in window
+- twitter-yortukisgk: evt_20260503_348 (Iran executes spies)
+- webpage-cuashub-defense: No new defense content in time window
+- webpage-cuashub-defense: No new defense content within time window
+- webpage-cuashub-defense: No new defense/cyber articles in window
+- webpage-satellite-today-gov-mil: Created evt_20260503_355 (Mine clearance unmanned systems)
+- webpage-satellite-today-gov-mil: No breaking gov-mil satellite news in window
+- webpage-windward-ai-blog and webpage-cuashub-defense had no new content in the 1-hour window
+- webpage-windward-ai-blog: No new articles within time window
+- webpage-windward-ai-blog: No new blog post in 1-hour window
+- webpage-windward-ai-blog: No new blog posts in time window
+- webpage-windward-ai-blog: No new blog posts published in window
+- webpage-yahoo-world-news: Coverage overlapped with Twitter source events
+1. Iran-US war day 65: Active diplomacy with 14-point proposal; IRGC warns of likely war resumption
+2. Ukraine massively escalated oil infrastructure strikes (Primorsk + Novorossiysk)
+3. South China Sea: Philippines confronts 4 Chinese research vessels + Sandy Cay flag incident
+4. NATO alliance crisis: Poland PM warns of "disintegration", Trump threatens extended troop withdrawal
+5. Strait of Hormuz navigation effectively halted
+6. IAEA warns of "very serious" DPRK nuclear expansion
+All 24 events passed strict validation (geo, E-PRIME, time-window)
+All 25 events passed strict validation (geo, E-PRIME, schema compliance).
+All 29 sources in bucket 4 processed. Twitter API credits depleted (per prior learnings); used exa_web_search as primary discovery tool.
+All 29 sources in bucket 4 processed. Twitter API credits remain depleted (confirmed from prior learnings). 
+All 29 sources processed. Events mapped to sources by topic relevance:
+All 29 sources processed: twitter-sanctions-watch, twitter-mt-anderson, twitter-faa-south, twitter-nato-marcom, twitter-nytimes-world, twitter-riskstaff, twitter-us-5th-fleet, twitter-beltelefacts, twitter-seawatch-intl, twitter-gcaptain, twitter-xnews, twitter-fleetnumbers, twitter-osaindawg, twitter-dataminr, twitter-coastguard-ph, twitter-the-diplomat, twitter-tatarigamiua, twitter-esri, twitter-imo-hq, twitter-bbc-world, twitter-ntonc, twitter-mndchina, twitter-bbgoriginals, twitter-mench-osint, twitter-iran-spectrum, twitter-tafarms18, twitter-abc, twitter-armed-forces-phil, twitter-kylebass
+All 30 sources processed via exa_web_search fallback strategy:
+Broader events from this source's topic area captured via related source entries.
+Collection: exa_web_search (Twitter API depleted). All validated.
+Events added (after dedup): 4 new events
+Events created: 17 unique events
+Events generated: 18
+No source-specific events discovered within the 1-hour time window via web search fallback.
+No source-specific events found within the 1-hour collection window.
+Primary discovery method: exa_web_search + Perplexity web search for event validation.
+Sources processed: 29
+Sources processed: 29 | Events generated: 24 (14 new after URL dedup)
+Sources: 29/29 processed. Events created: 30 (after URL dedup: unique additions merged).
+Sources: 29/29 processed. Events: 30 created (IDs 400-429).
+The following sources had content covered by other events or no new breaking news within the 1-hour window:
+The following sources had no distinct events within the 19:05-20:05 UTC window beyond those already captured by other sources:
+This source's focus area did not produce qualifying events during this specific hour.
+Time window: 2026-05-03T22:28:16Z to 2026-05-03T23:28:16Z
+Twitter API credits depleted — used exa_web_search as primary discovery
+Twitter API credits depleted. Used exa_web_search for event discovery and cross-referenced multiple news sources.
+Twitter API: Credits depleted — used exa_web_search as primary discovery
+Twitter API: CreditsDepleted (402) - used exa_web_search and Perplexity fallback
+Twitter API: CreditsDepleted (402). Used exa_web_search and Perplexity fallback.
+Twitter API: CreditsDepleted (402). Used exa_web_search fallback.
+Validation: All 18 events passed strict validation
+
 ## Bucket 2 run @ 2026-05-04T02:06:40.066Z
 - Processed 29 sources
 - Twitter API credits depleted; used exa_web_search as primary discovery tool

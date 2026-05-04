@@ -29,7 +29,7 @@ If you skip a source, the run is considered failed.
 The following findings from earlier runs apply to this run. Treat them as
 authoritative unless they contradict the source files in this prompt. They
 have been pre-filtered by the orchestrator (expired entries dropped, capped
-at 100 entries / 30 KB).
+at 30 entries / 10 KB).
 
 ${learnings}
 
@@ -393,7 +393,8 @@ You write to **two** files at the end of the run. Don't conflate them.
 
 Append per-source operational telemetry: `## Processing <id>` blocks,
 `Created event: …` lines, `[skip] dup url`, `[snap]`, parse counts, time-window
-outcomes. The next run does **not** read this file.
+outcomes. The next run does **not** read this file. This path is gitignored —
+write freely for in-run diagnostics; nothing here ever gets committed.
 
 ```bash
 mkdir -p "data/run-logs/$YEAR_MONTH"
@@ -419,6 +420,18 @@ least one of these triggers:
 Do **not** write per-source telemetry, dedup skips, or "no events parsed"
 into LEARNINGS.md. Those go in 7a.
 
+**Before appending, check for a duplicate** — parallel buckets run the same
+day and will each see the same failures. Scan existing headers first:
+
+```bash
+# Replace KEYWORD with 1-2 words from your topic (e.g. "Twitter" or "Perplexity")
+if grep -qi "KEYWORD" LEARNINGS.md 2>/dev/null; then
+  echo "[skip] Similar LEARNINGS entry already exists — not appending duplicate"
+else
+  # append your entry here
+fi
+```
+
 Required entry format (append to the end of the file, after the
 `<!-- entries below this line; newest first -->` marker):
 
@@ -441,7 +454,7 @@ If nothing this run met the criteria, leave LEARNINGS.md untouched.
 ```bash
 git config user.name "OSINT Collector Bot"
 git config user.email "osint-bot@github-actions"
-git add "data/events/$YEAR_MONTH/$DATE.jsonl" "data/media/$YEAR_MONTH/" "data/run-logs/$YEAR_MONTH/" "LEARNINGS.md" 2>/dev/null || true
+git add "data/events/$YEAR_MONTH/$DATE.jsonl" "data/media/$YEAR_MONTH/" "LEARNINGS.md" 2>/dev/null || true
 
 if ! git diff --cached --quiet; then
   EVENT_COUNT=$(wc -l < "data/events/$YEAR_MONTH/$DATE.jsonl")
@@ -542,7 +555,7 @@ rm -rf "$WORK_DIR"
 
 ## Error Handling
 
-- **Source fails**: Log to `$WORK_DIR/{source_id}/new-memory.md` (rolls up to `data/run-logs/` in Step 7a), continue to next source (do not abort)
+- **Source fails**: Log to `$WORK_DIR/{source_id}/new-memory.md` (rolls up to the gitignored `data/run-logs/` in Step 7a for in-run diagnostics), continue to next source (do not abort)
 - **Validation fails**: Stop and exit with error (do not commit invalid data)
 - **Git push fails**: Retry once with pull/rebase
 - **Zero events**: Commit is skipped; exit 0 (no new data is normal)
