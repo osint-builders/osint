@@ -83,3 +83,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** Late-running buckets (bucket 5) face diminishing unique URL returns because major stories covered by wire services appear across all source topic areas. exa_web_search continues to perform well as the primary discovery tool with Twitter API credits depleted, but URL diversity degrades in later buckets when the same underlying wire service stories (Reuters, AP, AFP) get surfaced repeatedly.
 **Action for next run:** Later buckets should prioritize niche/specialist sources and use source-specific search queries rather than broad topic queries. Consider assigning wire-service-heavy sources (cnni, yahoo-world-news) to earlier buckets and specialist sources (pizzainwatch, rayfunseth, opennuclear) to later ones to maximize unique URL yield per bucket.
 **Expires:** 2026-06-04
+
+## 2026-05-04 18:04Z — E-PRIME violations in generated contents require automated post-processing
+**Trigger:** 5 of 27 events in bucket 4 contained the word "been" in contents field, failing strict validation
+**Finding:** The word "been" (a form of "to be") frequently appears in generated event contents, especially in phrases like "has been," "had been," and "have been." Other E-PRIME violations (is, are, was, were) also occur but less frequently. A post-generation E-PRIME fix pass eliminates these efficiently.
+**Action for next run:** After generating events, run an automated E-PRIME cleanup pass replacing common "to be" forms before validation. Key substitutions: "has been X" → "has X" or "X'd"; "had been" → "had previously"; "have been" → "have remained/have." Build this into the generation script rather than running as a separate step.
+**Expires:** 2026-07-04
