@@ -16,7 +16,7 @@ import { ShortcutsHelp } from './components/ShortcutsHelp';
 import { IndexLoader } from './lib/IndexLoader';
 import { SearchEngine } from './lib/SearchEngine';
 import { useSavedSearches } from './hooks/useSavedSearches';
-import { copyToClipboard } from './lib/utils';
+import { copyToClipboard, todayISO, daysAgoISO } from './lib/utils';
 import type {
   SearchResult,
   SearchFilters,
@@ -32,11 +32,12 @@ import type {
 // ── URL state helpers ─────────────────────────────────────────
 function getUrlParams(): { query: string; filters: SearchFilters } {
   const p = new URLSearchParams(window.location.search);
+  const defaults = getDefaultFilters();
   return {
     query: p.get('q') ?? '',
     filters: {
-      dateFrom: p.get('from'),
-      dateTo: p.get('to'),
+      dateFrom: p.get('from') ?? defaults.dateFrom,
+      dateTo: p.get('to') ?? defaults.dateTo,
       country: p.get('country'),
       topics: p.get('topics')?.split(',').filter(Boolean) ?? [],
       minConfidence: parseFloat(p.get('conf') ?? '0') / 100,
@@ -62,13 +63,15 @@ const engine = new SearchEngine();
 
 type RightPane = 'map' | 'detail';
 
-const DEFAULT_FILTERS: SearchFilters = {
-  dateFrom: null,
-  dateTo: null,
-  country: null,
-  topics: [],
-  minConfidence: 0,
-};
+function getDefaultFilters(): SearchFilters {
+  return {
+    dateFrom: daysAgoISO(7),
+    dateTo: todayISO(),
+    country: null,
+    topics: [],
+    minConfidence: 0,
+  };
+}
 
 function applySort(results: SearchResult[], sorts: SortEntry[]): SearchResult[] {
   if (!sorts.length) return results;
@@ -236,7 +239,7 @@ function App() {
         } else if (e.key === 'f' || e.key === 'F') {
           setFilterCollapsed(p => !p);
         } else if (e.key === 'r' || e.key === 'R') {
-          setQuery(''); setFilters(DEFAULT_FILTERS); setSorts([]);
+          setQuery(''); setFilters(getDefaultFilters()); setSorts([]);
         }
       }
     };
