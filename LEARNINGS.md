@@ -89,3 +89,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** The word "been" (a form of "to be") frequently appears in generated event contents, especially in phrases like "has been," "had been," and "have been." Other E-PRIME violations (is, are, was, were) also occur but less frequently. A post-generation E-PRIME fix pass eliminates these efficiently.
 **Action for next run:** After generating events, run an automated E-PRIME cleanup pass replacing common "to be" forms before validation. Key substitutions: "has been X" → "has X" or "X'd"; "had been" → "had previously"; "have been" → "have remained/have." Build this into the generation script rather than running as a separate step.
 **Expires:** 2026-07-04
+
+## 2026-05-04 21:19Z — Bucket 2 URL dedup rate 92% indicates source overlap across all buckets during major breaking news cycles
+**Trigger:** 12 of 13 generated events (92%) shared primary URLs with events already committed by bucket 1 and other buckets
+**Finding:** During major breaking news cycles (US-Iran Hormuz confrontation, Ukraine strikes, China-Taiwan), virtually all wire service and major outlet URLs get captured by the first bucket to run. Bucket 2's 29 sources, despite covering diverse topics (maritime, Korea, Iran, Ukraine, GIS), all converged on the same handful of major stories. The only unique URL came from a niche maritime industry outlet (Baird Maritime). Source-specific niche outlets provide the only incremental URL value in later buckets.
+**Action for next run:** When running as bucket 2+, prioritize source-specific niche outlets (Baird Maritime, Shabelle Media, specialist defense blogs) over wire service aggregation. Use secondary/alternative URLs from the same story rather than primary wire URLs. Consider adding a pre-check step that fetches existing URLs before generating events to avoid wasted processing.
+**Expires:** 2026-06-04
