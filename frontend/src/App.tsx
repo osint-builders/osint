@@ -4,6 +4,7 @@ import {
   useCallback,
   useRef,
   useMemo,
+  useTransition,
 } from 'react';
 import { CommandBar } from './components/CommandBar';
 import { FilterRail } from './components/FilterRail';
@@ -23,6 +24,9 @@ import type {
   EventDetail as EventDetailType,
   IndexSchema,
   SavedSearch,
+  SortEntry,
+  SortField,
+  SortDirection,
 } from './types';
 
 // ── URL state helpers ─────────────────────────────────────────
@@ -66,6 +70,34 @@ const DEFAULT_FILTERS: SearchFilters = {
   minConfidence: 0,
 };
 
+function applySort(results: SearchResult[], sorts: SortEntry[]): SearchResult[] {
+  if (!sorts.length) return results;
+  return [...results].sort((a, b) => {
+    for (const s of sorts) {
+      let cmp = 0;
+      if (s.field === 'date') {
+        cmp = (a.date_published ?? '').localeCompare(b.date_published ?? '');
+      } else if (s.field === 'title') {
+        cmp = a.title.localeCompare(b.title);
+      } else if (s.field === 'confidence') {
+        cmp = (a.confidence ?? 0) - (b.confidence ?? 0);
+      }
+      if (cmp !== 0) return s.dir === 'asc' ? cmp : -cmp;
+    }
+    return 0;
+  });
+}
+
+function toggleSort(sorts: SortEntry[], field: SortField, dir: SortDirection): SortEntry[] {
+  const existing = sorts.find(s => s.field === field && s.dir === dir);
+  if (existing) {
+    // already active → remove
+    return sorts.filter(s => !(s.field === field && s.dir === dir));
+  }
+  // remove any existing entry for this field, then append new
+  return [...sorts.filter(s => s.field !== field), { field, dir }];
+}
+
 function App() {
   const initial = useMemo(getUrlParams, []);
 
@@ -85,6 +117,8 @@ function App() {
   const [showHelp, setShowHelp] = useState(false);
   const [filterCollapsed, setFilterCollapsed] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
+  const [sorts, setSorts] = useState<SortEntry[]>([]);
+  const [, startTransition] = useTransition();
 
   const [eventDetail, setEventDetail] = useState<EventDetailType | null>(null);
   const [isLoadingDetail, setIsLoadingDetail] = useState(false);
@@ -124,33 +158,19 @@ function App() {
     return () => { cancelled = true; };
   }, []);
 
-  // Debounce query
-  useEffect(() => {
-    const t = setTimeout(() => setDebouncedQuery(query), 250);
-    return () => clearTimeout(t);
-  }, [query]);
-
-  // Run search on query/filter change
+  // Real-time search via useTransition (no debounce needed — pure sync)
   useEffect(() => {
     if (isInitializing) return;
-    let cancelled = false;
-    (async () => {
-      setIsSearching(true);
-      try {
-        const res = await engine.search(debouncedQuery, filters);
-        if (!cancelled) {
-          setResults(res);
-          if (res.length > 0 && !selectedId) setSelectedId(res[0].id);
-        }
-      } catch (err) {
-        console.error('Search error', err);
-      } finally {
-        if (!cancelled) setIsSearching(false);
-      }
-    })();
-    return () => { cancelled = true; };
+    setDebouncedQuery(query); // keep debouncedQuery in sync for display logic
+    setIsSearching(true);
+    startTransition(() => {
+      const res = engine.searchSync(query, filters);
+      setResults(res);
+      if (res.length > 0 && !selectedId) setSelectedId(res[0].id);
+      setIsSearching(false);
+    });
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedQuery, filters, isInitializing]);
+  }, [query, filters, isInitializing]);
 
   // Sync URL
   useEffect(() => { syncUrl(query, filters); }, [query, filters]);
@@ -216,7 +236,7 @@ function App() {
         } else if (e.key === 'f' || e.key === 'F') {
           setFilterCollapsed(p => !p);
         } else if (e.key === 'r' || e.key === 'R') {
-          setQuery(''); setFilters(DEFAULT_FILTERS);
+          setQuery(''); setFilters(DEFAULT_FILTERS); setSorts([]);
         }
       }
     };
@@ -225,13 +245,14 @@ function App() {
   }, [results, selectedId, showHelp, rightPane, query, filters, saveSearch, showToast]);
 
   // Derived
+  const sortedResults = useMemo(() => applySort(results, sorts), [results, sorts]);
   const selectedIndex = useMemo(
-    () => results.findIndex(r => r.id === selectedId),
-    [results, selectedId]
+    () => sortedResults.findIndex(r => r.id === selectedId),
+    [sortedResults, selectedId]
   );
   const selectedMetadata = useMemo(
-    () => results.find(r => r.id === selectedId) ?? null,
-    [results, selectedId]
+    () => sortedResults.find(r => r.id === selectedId) ?? null,
+    [sortedResults, selectedId]
   );
   const filtersActive =
     filters.dateFrom !== null || filters.dateTo !== null ||
@@ -294,10 +315,13 @@ function App() {
         />
 
         <ResultsPane
-          results={results}
+          results={sortedResults}
           selectedId={selectedId}
           isSearching={isSearching}
           query={debouncedQuery}
+          sorts={sorts}
+          onSortChange={(field, dir) => setSorts(prev => toggleSort(prev, field, dir))}
+          onClearSorts={() => setSorts([])}
           onSelect={handleSelect}
           onOpen={handleOpen}
         />
@@ -326,7 +350,7 @@ function App() {
         isReady={!isInitializing && !error}
         isSearching={isSearching}
         eventCount={allMetadata.length}
-        resultCount={results.length}
+        resultCount={sortedResults.length}
         selectedIndex={selectedIndex}
         lastUpdated={schema?.last_updated ?? null}
         toast={toast}

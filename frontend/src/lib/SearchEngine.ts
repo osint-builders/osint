@@ -18,11 +18,9 @@ export class SearchEngine {
       .map(e => ({ ...e, score: 1 }));
   }
 
-  async search(
-    query: string,
-    filters: SearchFilters
-  ): Promise<SearchResult[]> {
-    if (!this.isInitialized) throw new Error('Search engine not initialized');
+  /** Synchronous version for use with React useTransition. */
+  searchSync(query: string, filters: SearchFilters): SearchResult[] {
+    if (!this.isInitialized) return [];
     if (!query.trim()) return this.getLatest(filters);
 
     const queryTokens = query
@@ -36,9 +34,12 @@ export class SearchEngine {
       const score = this.computeKeywordScore(event, queryTokens);
       if (score > 0) results.push({ ...event, score });
     }
-
     results.sort((a, b) => b.score - a.score);
     return results;
+  }
+
+  async search(query: string, filters: SearchFilters): Promise<SearchResult[]> {
+    return this.searchSync(query, filters);
   }
 
   private matchesFilters(event: EventMetadata, filters: SearchFilters): boolean {

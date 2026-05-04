@@ -51,40 +51,47 @@ input, select, textarea, button {
   z-index: 9999;
 }
 
-/* ── Leaflet dark overrides ─────────────────── */
-.leaflet-container {
-  background: #0a0a0a !important;
-  font-family: inherit;
-  font-size: 9px;
+/* ── MapLibre GL dark overrides ──────────────── */
+.maplibregl-map, .mapboxgl-map {
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace !important;
 }
-.leaflet-control-attribution {
-  background: rgba(10,10,10,0.85) !important;
+.maplibregl-ctrl-attrib, .mapboxgl-ctrl-attrib {
+  background: rgba(10,10,10,0.8) !important;
   color: #333 !important;
   font-size: 7px !important;
-  border: none !important;
+  font-family: inherit !important;
 }
-.leaflet-control-attribution a { color: #444 !important; }
-.leaflet-popup-content-wrapper {
+.maplibregl-ctrl-attrib a, .mapboxgl-ctrl-attrib a { color: #444 !important; }
+.maplibregl-popup-content, .mapboxgl-popup-content {
   background: #0d0d0d !important;
   border: 1px solid #1e1e1e !important;
   border-radius: 0 !important;
   box-shadow: none !important;
+  padding: 0 !important;
   color: #c8c8c8 !important;
 }
-.leaflet-popup-tip { background: #0d0d0d !important; }
-.leaflet-popup-close-button { color: #444 !important; }
-.leaflet-popup-close-button:hover { color: #00ff41 !important; }
-.leaflet-popup-content { margin: 8px 10px !important; }
-.leaflet-bar { border: 1px solid #1e1e1e !important; border-radius: 0 !important; }
-.leaflet-bar a {
-  background: #0d0d0d !important;
-  color: #666 !important;
-  border-bottom: 1px solid #1a1a1a !important;
-  width: 22px !important;
-  height: 22px !important;
-  line-height: 22px !important;
+.maplibregl-popup-tip, .mapboxgl-popup-tip {
+  border-top-color: #1e1e1e !important;
+  border-bottom-color: #1e1e1e !important;
 }
-.leaflet-bar a:hover { background: #111 !important; color: #00ff41 !important; }
+.maplibregl-ctrl-group, .mapboxgl-ctrl-group {
+  background: #0d0d0d !important;
+  border: 1px solid #1e1e1e !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.maplibregl-ctrl button, .mapboxgl-ctrl button {
+  background-color: #0d0d0d !important;
+  border-bottom: 1px solid #1a1a1a !important;
+}
+.maplibregl-ctrl button .maplibregl-ctrl-icon,
+.mapboxgl-ctrl button .mapboxgl-ctrl-icon {
+  filter: invert(0.4);
+}
+.maplibregl-ctrl button:hover .maplibregl-ctrl-icon,
+.mapboxgl-ctrl button:hover .mapboxgl-ctrl-icon {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(90deg);
+}
 
 /* ── Markdown content renderer ──────────────── */
 .evt-contents {
