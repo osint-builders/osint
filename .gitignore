@@ -49,6 +49,8 @@ orchestrator/.langgraph/
 # Frontend build artifacts
 frontend/node_modules/
 frontend/dist/
+# Exception: frontend source lib/ is not a Python lib dir
+!frontend/src/lib/
 
 # Built frontend artifacts. The Pages workflow (.github/workflows/pages.yml)
 # builds these on demand and uploads them as a Pages artifact — no need to
