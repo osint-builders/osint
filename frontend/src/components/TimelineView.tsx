@@ -361,7 +361,7 @@ export const TimelineView: React.FC<TimelineViewProps> = ({
       <div className="flex-shrink-0 border-t border-term-border bg-term-surface">
         <div className="flex items-center justify-between px-3 pt-1 text-[7px] text-term-dim">
           <span className="text-term-green">← NEWEST</span>
-          <span>{results.length} EVENTS · {groups.length} GROUPS · DRAG OR SCROLL</span>
+          <span>{results.length} EVENTS · {groups.length} GROUPS · DRAG/SCROLL · DBL-CLICK → DETAIL</span>
           <span className="text-term-dim">OLDEST →</span>
         </div>
         <div className="relative w-full" style={{ height: 28 }}>
