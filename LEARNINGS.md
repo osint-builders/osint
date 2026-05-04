@@ -71,3 +71,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** exa_web_search proved highly effective for discovering current events across all source topic areas. However, 10 of 17 generated events shared primary URLs with events already committed by earlier buckets, demonstrating the importance of URL-based pre-filtering before appending to the consolidated JSONL file. The jq compact output flag (-c) must accompany dedup operations to maintain JSONL format.
 **Action for next run:** Always use `jq -sc` (not `jq -s`) when deduplicating JSONL files. Consider diversifying source URLs across events to reduce dedup losses when the same underlying story appears across multiple wire services.
 **Expires:** 2026-06-03
+
+## 2026-05-04 02:06Z — Bucket 2 URL dedup confirms cross-bucket overlap pattern; exa_web_search remains best fallback
+**Trigger:** 5 of 11 generated events shared primary URLs with events committed by earlier buckets (45% dedup rate)
+**Finding:** exa_web_search continues to deliver effective results across all source topic areas (Philippines, Ukraine, Iran, North Korea). URL-based pre-filtering before JSONL append remains essential — 5 events would have duplicated existing entries. Cross-bucket overlap concentrated on Bloomberg, Al Jazeera, CBC, ISW, and similar high-profile outlets that multiple source topics converge on.
+**Action for next run:** Diversify discovery queries to target source-specific URLs (e.g., PCG Facebook posts, KCNA direct, MOFA press releases) rather than relying solely on major wire service coverage. This should reduce dedup losses and produce more unique intelligence per bucket.
+**Expires:** 2026-06-04

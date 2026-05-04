@@ -464,3 +464,175 @@ Twitter API: CreditsDepleted (402) - used exa_web_search and Perplexity fallback
 Twitter API: CreditsDepleted (402). Used exa_web_search and Perplexity fallback.
 Twitter API: CreditsDepleted (402). Used exa_web_search fallback.
 Validation: All 18 events passed strict validation
+
+## Bucket 2 run @ 2026-05-04T02:06:40.066Z
+- Processed 29 sources
+- Twitter API credits depleted; used exa_web_search as primary discovery tool
+- Generated 11 events total
+- 6 new events added (5 deduplicated against existing URLs from other buckets)
+- New events: evt_20260503_520, evt_20260503_523, evt_20260503_524, evt_20260503_525, evt_20260503_527, evt_20260503_528
+- Deduplicated: evt_20260503_518 (PCG/Bloomberg), evt_20260503_519 (Hormuz/AlJazeera), evt_20260503_521 (Ukraine/CBC), evt_20260503_522 (ISW), evt_20260503_526 (DPRK/Bloomberg)
+
+## Processing twitter-allsource4
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- Created event: evt_20260503_525 (Russian refinery output decline)
+## Processing twitter-aurora-intel
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- Created event: evt_20260503_520 (Project Freedom Hormuz)
+## Processing twitter-coastguard-ph
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- Created event: evt_20260503_518 (PCG deploys ships/aircraft vs Chinese vessels)
+## Processing twitter-fleetnumbers
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- Created event: evt_20260503_527 (Iranian tanker evades blockade)
+## Processing twitter-gcaptain
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- Created event: evt_20260503_519 (Hormuz cargo ship attack)
+## Processing twitter-iran-spectrum
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- Created event: evt_20260503_523 (Iran peace proposal review)
+## Processing twitter-japan-joint-staff
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-kc-nwt
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-key-to-med
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-kl-summary
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-militarylandnet
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- Created event: evt_20260503_522 (ISW Russia territorial loss)
+## Processing twitter-modjapan-en
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-mofajapan-en
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-mondefense
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-mylordbebo
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-natlhistships
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-nato-marcom
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-ntonc
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- Created event: evt_20260503_526 (DPRK nuclear arsenal assessment)
+## Processing twitter-opennuclear
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-pyongyang-today
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-raytoribo
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-riskstaff
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- Created event: evt_20260503_524 (CENTCOM blockade enforcement)
+## Processing twitter-the-diplomat
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-thewarzonewire
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- Created event: evt_20260503_521 (Ukraine strikes Primorsk)
+## Processing twitter-us-fleet-forces
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-us-forces-japan
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-war-tv7890
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
+## Processing twitter-xnews
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- Created event: evt_20260503_528 (Russia 269 drones overnight)
+## Processing webpage-cuashub-defense
+- Twitter API credits depleted; used exa_web_search for event discovery
+- Searched for events matching source topic areas within 1-hour time window
+- Cross-referenced with multiple news outlets for verification
+- No new events found within 1-hour time window for this source
+- Topics covered by events from other sources in this bucket
