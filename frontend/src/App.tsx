@@ -271,7 +271,9 @@ function App() {
   }, []);
   const handleSelect = useCallback((id: string) => setSelectedId(id), []);
   const handleOpen = useCallback((id: string) => {
-    setSelectedId(id); setRightPane('detail');
+    setSelectedId(id);
+    setRightPane('detail');
+    setView('search'); // ensure detail panel is visible (also covers timeline -> detail navigation)
   }, []);
   const handleTagClick = useCallback((tag: string) => {
     setFilters(prev => ({
