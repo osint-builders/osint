@@ -11,10 +11,11 @@ const shortcuts: [string, string][] = [
   ['K / ↑', 'Previous result'],
   ['Enter', 'Open event detail'],
   ['M', 'Toggle map / detail pane'],
+  ['T', 'Toggle timeline view'],
   ['C', 'Copy selected event JSON'],
   ['S', 'Save current search'],
   ['F', 'Toggle filter rail'],
-  ['R', 'Reset search'],
+  ['R', 'Reset search + filters'],
   ['?', 'Show this help'],
 ];
 

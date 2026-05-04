@@ -25,7 +25,7 @@ export const StatusBar: React.FC<StatusBarProps> = ({
       {/* Status indicator */}
       <span className="flex items-center gap-1.5 flex-shrink-0">
         <span
-          className={`inline-block w-1.5 h-1.5 rounded-full ${
+          className={`inline-block w-1.5 h-1.5 ${
             isSearching
               ? 'bg-term-yellow animate-pulse-green'
               : isReady
@@ -70,6 +70,7 @@ export const StatusBar: React.FC<StatusBarProps> = ({
         <span>[J/K] NAV</span>
         <span>[ENTER] OPEN</span>
         <span>[M] MAP</span>
+        <span>[T] TIMELINE</span>
         <span>[S] SAVE</span>
         <span>[?] HELP</span>
       </span>
