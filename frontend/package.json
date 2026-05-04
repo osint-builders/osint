@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-virtual": "^3.13.24",
     "@types/leaflet": "^1.9.21",
     "leaflet": "^1.9.4",
     "onnxruntime-web": "^1.17.0",

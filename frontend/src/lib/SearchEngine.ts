@@ -10,26 +10,20 @@ export class SearchEngine {
     this.isInitialized = true;
   }
 
-  /** Returns the most recent N events sorted by date_published descending. */
-  getLatest(topK = 100, filters: SearchFilters): SearchResult[] {
-    const filtered = this.metadata
+  /** Returns all events sorted by date_published descending. */
+  getLatest(filters: SearchFilters): SearchResult[] {
+    return this.metadata
       .filter(e => this.matchesFilters(e, filters))
-      .sort((a, b) => {
-        const da = a.date_published ?? '';
-        const db = b.date_published ?? '';
-        return db.localeCompare(da);
-      })
-      .slice(0, topK);
-    return filtered.map(e => ({ ...e, score: 1 }));
+      .sort((a, b) => (b.date_published ?? '').localeCompare(a.date_published ?? ''))
+      .map(e => ({ ...e, score: 1 }));
   }
 
   async search(
     query: string,
-    filters: SearchFilters,
-    topK = 100
+    filters: SearchFilters
   ): Promise<SearchResult[]> {
     if (!this.isInitialized) throw new Error('Search engine not initialized');
-    if (!query.trim()) return this.getLatest(topK, filters);
+    if (!query.trim()) return this.getLatest(filters);
 
     const queryTokens = query
       .toLowerCase()
@@ -44,7 +38,7 @@ export class SearchEngine {
     }
 
     results.sort((a, b) => b.score - a.score);
-    return results.slice(0, topK);
+    return results;
   }
 
   private matchesFilters(event: EventMetadata, filters: SearchFilters): boolean {

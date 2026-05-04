@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from 'react';
+import { useVirtualizer } from '@tanstack/react-virtual';
 import type { SearchResult } from '../types';
 import { EventRow } from './EventRow';
+
+// Each EventRow: px-3 py-2 + 4 lines ≈ 68px
+const ROW_HEIGHT = 68;
 
 interface ResultsPaneProps {
   results: SearchResult[];
@@ -19,17 +23,23 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
   onSelect,
   onOpen,
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const showScore = query.trim().length > 0;
 
-  // Scroll selected row into view
+  const virtualizer = useVirtualizer({
+    count: results.length,
+    getScrollElement: () => scrollRef.current,
+    estimateSize: () => ROW_HEIGHT,
+    overscan: 8,
+  });
+
+  // Scroll selected row into view via virtualizer
   useEffect(() => {
-    if (!selectedId || !containerRef.current) return;
+    if (!selectedId) return;
     const idx = results.findIndex(r => r.id === selectedId);
-    if (idx < 0) return;
-    const row = containerRef.current.querySelectorAll('[data-index]')[idx] as HTMLElement | null;
-    row?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-  }, [selectedId, results]);
+    if (idx >= 0) virtualizer.scrollToIndex(idx, { behavior: 'smooth', align: 'auto' });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedId]);
 
   if (isSearching) {
     return (
@@ -50,28 +60,47 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
   }
 
   return (
-    <div
-      ref={containerRef}
-      className="flex-1 overflow-y-auto min-w-0"
-    >
-      {/* Column header */}
-      <div className="sticky top-0 z-10 flex items-center gap-1.5 px-3 py-1 bg-term-bg border-b border-term-border text-[7px] text-term-dim tracking-widest">
+    <div className="flex-1 flex flex-col min-h-0 min-w-0">
+      {/* Sticky column header */}
+      <div className="flex-shrink-0 flex items-center gap-1.5 px-3 py-1 bg-term-bg border-b border-term-border text-[7px] text-term-dim tracking-widest">
         <span className="w-32 flex-shrink-0">DATE · GEO · SOURCE</span>
         <span className="flex-1">TITLE / SUMMARY</span>
         <span className="flex-shrink-0">CONF</span>
       </div>
 
-      {results.map((r, i) => (
-        <EventRow
-          key={r.id}
-          result={r}
-          index={i}
-          isSelected={r.id === selectedId}
-          showScore={showScore}
-          onSelect={onSelect}
-          onOpen={onOpen}
-        />
-      ))}
+      {/* Virtual scroll container */}
+      <div ref={scrollRef} className="flex-1 overflow-y-auto min-h-0">
+        <div
+          style={{
+            height: virtualizer.getTotalSize(),
+            width: '100%',
+            position: 'relative',
+          }}
+        >
+          {virtualizer.getVirtualItems().map(vRow => (
+            <div
+              key={vRow.key}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: `${vRow.size}px`,
+                transform: `translateY(${vRow.start}px)`,
+              }}
+            >
+              <EventRow
+                result={results[vRow.index]}
+                index={vRow.index}
+                isSelected={results[vRow.index].id === selectedId}
+                showScore={showScore}
+                onSelect={onSelect}
+                onOpen={onOpen}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

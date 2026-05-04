@@ -137,7 +137,7 @@ function App() {
     (async () => {
       setIsSearching(true);
       try {
-        const res = await engine.search(debouncedQuery, filters, 200);
+        const res = await engine.search(debouncedQuery, filters);
         if (!cancelled) {
           setResults(res);
           if (res.length > 0 && !selectedId) setSelectedId(res[0].id);
