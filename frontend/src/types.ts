@@ -70,3 +70,7 @@ export interface SavedSearch {
   filters: SearchFilters;
   savedAt: string;
 }
+
+export type SortField = 'date' | 'title' | 'confidence';
+export type SortDirection = 'asc' | 'desc';
+export interface SortEntry { field: SortField; dir: SortDirection; }

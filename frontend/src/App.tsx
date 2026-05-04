@@ -4,6 +4,7 @@ import {
   useCallback,
   useRef,
   useMemo,
+  useTransition,
 } from 'react';
 import { CommandBar } from './components/CommandBar';
 import { FilterRail } from './components/FilterRail';
@@ -15,7 +16,7 @@ import { ShortcutsHelp } from './components/ShortcutsHelp';
 import { IndexLoader } from './lib/IndexLoader';
 import { SearchEngine } from './lib/SearchEngine';
 import { useSavedSearches } from './hooks/useSavedSearches';
-import { copyToClipboard } from './lib/utils';
+import { copyToClipboard, todayISO, daysAgoISO } from './lib/utils';
 import type {
   SearchResult,
   SearchFilters,
@@ -23,16 +24,20 @@ import type {
   EventDetail as EventDetailType,
   IndexSchema,
   SavedSearch,
+  SortEntry,
+  SortField,
+  SortDirection,
 } from './types';
 
 // ── URL state helpers ─────────────────────────────────────────
 function getUrlParams(): { query: string; filters: SearchFilters } {
   const p = new URLSearchParams(window.location.search);
+  const defaults = getDefaultFilters();
   return {
     query: p.get('q') ?? '',
     filters: {
-      dateFrom: p.get('from'),
-      dateTo: p.get('to'),
+      dateFrom: p.get('from') ?? defaults.dateFrom,
+      dateTo: p.get('to') ?? defaults.dateTo,
       country: p.get('country'),
       topics: p.get('topics')?.split(',').filter(Boolean) ?? [],
       minConfidence: parseFloat(p.get('conf') ?? '0') / 100,
@@ -58,13 +63,43 @@ const engine = new SearchEngine();
 
 type RightPane = 'map' | 'detail';
 
-const DEFAULT_FILTERS: SearchFilters = {
-  dateFrom: null,
-  dateTo: null,
-  country: null,
-  topics: [],
-  minConfidence: 0,
-};
+function getDefaultFilters(): SearchFilters {
+  return {
+    dateFrom: daysAgoISO(7),
+    dateTo: todayISO(),
+    country: null,
+    topics: [],
+    minConfidence: 0,
+  };
+}
+
+function applySort(results: SearchResult[], sorts: SortEntry[]): SearchResult[] {
+  if (!sorts.length) return results;
+  return [...results].sort((a, b) => {
+    for (const s of sorts) {
+      let cmp = 0;
+      if (s.field === 'date') {
+        cmp = (a.date_published ?? '').localeCompare(b.date_published ?? '');
+      } else if (s.field === 'title') {
+        cmp = a.title.localeCompare(b.title);
+      } else if (s.field === 'confidence') {
+        cmp = (a.confidence ?? 0) - (b.confidence ?? 0);
+      }
+      if (cmp !== 0) return s.dir === 'asc' ? cmp : -cmp;
+    }
+    return 0;
+  });
+}
+
+function toggleSort(sorts: SortEntry[], field: SortField, dir: SortDirection): SortEntry[] {
+  const existing = sorts.find(s => s.field === field && s.dir === dir);
+  if (existing) {
+    // already active → remove
+    return sorts.filter(s => !(s.field === field && s.dir === dir));
+  }
+  // remove any existing entry for this field, then append new
+  return [...sorts.filter(s => s.field !== field), { field, dir }];
+}
 
 function App() {
   const initial = useMemo(getUrlParams, []);
@@ -85,6 +120,8 @@ function App() {
   const [showHelp, setShowHelp] = useState(false);
   const [filterCollapsed, setFilterCollapsed] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
+  const [sorts, setSorts] = useState<SortEntry[]>([]);
+  const [, startTransition] = useTransition();
 
   const [eventDetail, setEventDetail] = useState<EventDetailType | null>(null);
   const [isLoadingDetail, setIsLoadingDetail] = useState(false);
@@ -124,33 +161,19 @@ function App() {
     return () => { cancelled = true; };
   }, []);
 
-  // Debounce query
-  useEffect(() => {
-    const t = setTimeout(() => setDebouncedQuery(query), 250);
-    return () => clearTimeout(t);
-  }, [query]);
-
-  // Run search on query/filter change
+  // Real-time search via useTransition (no debounce needed — pure sync)
   useEffect(() => {
     if (isInitializing) return;
-    let cancelled = false;
-    (async () => {
-      setIsSearching(true);
-      try {
-        const res = await engine.search(debouncedQuery, filters);
-        if (!cancelled) {
-          setResults(res);
-          if (res.length > 0 && !selectedId) setSelectedId(res[0].id);
-        }
-      } catch (err) {
-        console.error('Search error', err);
-      } finally {
-        if (!cancelled) setIsSearching(false);
-      }
-    })();
-    return () => { cancelled = true; };
+    setDebouncedQuery(query); // keep debouncedQuery in sync for display logic
+    setIsSearching(true);
+    startTransition(() => {
+      const res = engine.searchSync(query, filters);
+      setResults(res);
+      if (res.length > 0 && !selectedId) setSelectedId(res[0].id);
+      setIsSearching(false);
+    });
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedQuery, filters, isInitializing]);
+  }, [query, filters, isInitializing]);
 
   // Sync URL
   useEffect(() => { syncUrl(query, filters); }, [query, filters]);
@@ -216,7 +239,7 @@ function App() {
         } else if (e.key === 'f' || e.key === 'F') {
           setFilterCollapsed(p => !p);
         } else if (e.key === 'r' || e.key === 'R') {
-          setQuery(''); setFilters(DEFAULT_FILTERS);
+          setQuery(''); setFilters(getDefaultFilters()); setSorts([]);
         }
       }
     };
@@ -225,13 +248,14 @@ function App() {
   }, [results, selectedId, showHelp, rightPane, query, filters, saveSearch, showToast]);
 
   // Derived
+  const sortedResults = useMemo(() => applySort(results, sorts), [results, sorts]);
   const selectedIndex = useMemo(
-    () => results.findIndex(r => r.id === selectedId),
-    [results, selectedId]
+    () => sortedResults.findIndex(r => r.id === selectedId),
+    [sortedResults, selectedId]
   );
   const selectedMetadata = useMemo(
-    () => results.find(r => r.id === selectedId) ?? null,
-    [results, selectedId]
+    () => sortedResults.find(r => r.id === selectedId) ?? null,
+    [sortedResults, selectedId]
   );
   const filtersActive =
     filters.dateFrom !== null || filters.dateTo !== null ||
@@ -294,10 +318,13 @@ function App() {
         />
 
         <ResultsPane
-          results={results}
+          results={sortedResults}
           selectedId={selectedId}
           isSearching={isSearching}
           query={debouncedQuery}
+          sorts={sorts}
+          onSortChange={(field, dir) => setSorts(prev => toggleSort(prev, field, dir))}
+          onClearSorts={() => setSorts([])}
           onSelect={handleSelect}
           onOpen={handleOpen}
         />
@@ -326,7 +353,7 @@ function App() {
         isReady={!isInitializing && !error}
         isSearching={isSearching}
         eventCount={allMetadata.length}
-        resultCount={results.length}
+        resultCount={sortedResults.length}
         selectedIndex={selectedIndex}
         lastUpdated={schema?.last_updated ?? null}
         toast={toast}

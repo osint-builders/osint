@@ -49,10 +49,59 @@ export function truncate(str: string, n: number): string {
   return str.length > n ? str.slice(0, n).trimEnd() + '…' : str;
 }
 
+export function todayISO(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
+export function daysAgoISO(days: number): string {
+  const d = new Date();
+  d.setDate(d.getDate() - days);
+  return d.toISOString().slice(0, 10);
+}
+
 export function getDomainFromUrl(url: string): string {
   try {
     return new URL(url).hostname.replace(/^www\./, '');
   } catch {
     return url;
   }
+}
+
+interface SourceIcon { symbol: string; color: string; }
+
+export function getSourceIcon(sourceName: string): SourceIcon {
+  const s = sourceName.toLowerCase();
+  if (s.includes('@') || s.startsWith('twitter') || s.includes('x.com') || s.includes('tweet'))
+    return { symbol: '𝕏', color: '#1d9bf0' };
+  if (s.includes('telegram'))
+    return { symbol: 'TG', color: '#26a5e4' };
+  if (s.includes('reuters'))
+    return { symbol: 'R', color: '#ff8c00' };
+  if (s.includes('bbc'))
+    return { symbol: 'BBC', color: '#b5121b' };
+  if (s.includes('cnn'))
+    return { symbol: 'CNN', color: '#cc0001' };
+  if (s.includes('fox'))
+    return { symbol: 'FOX', color: '#003e8a' };
+  if (s.includes('ap ') || s.includes('associated press'))
+    return { symbol: 'AP', color: '#007af5' };
+  if (s.includes('youtube') || s.includes('youtu.be'))
+    return { symbol: '▶', color: '#ff0000' };
+  if (s.includes('reddit'))
+    return { symbol: '◐', color: '#ff4500' };
+  if (s.includes('al jazeera'))
+    return { symbol: 'AJ', color: '#c5980e' };
+  if (s.includes('afp'))
+    return { symbol: 'AFP', color: '#0066cc' };
+  if (s.includes('guardian'))
+    return { symbol: 'GRD', color: '#005689' };
+  if (s.includes('bloomberg'))
+    return { symbol: 'BBG', color: '#ff7800' };
+  if (s.includes('nyt') || s.includes('new york times'))
+    return { symbol: 'NYT', color: '#dfdfdf' };
+  if (s.includes('perplexity'))
+    return { symbol: 'PPX', color: '#20b2aa' };
+  if (s.includes('gdelt'))
+    return { symbol: 'GDT', color: '#9b59b6' };
+  return { symbol: '◉', color: '#444' };
 }

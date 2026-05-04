@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import type { SearchResult } from '../types';
-import { formatDateShort, truncate, copyToClipboard } from '../lib/utils';
+import { formatDateShort, truncate, copyToClipboard, getSourceIcon } from '../lib/utils';
 
 interface EventRowProps {
   result: SearchResult;
@@ -22,6 +22,7 @@ export const EventRow: React.FC<EventRowProps> = React.memo(({
   const date = formatDateShort(result.date_event ?? result.date_published);
   const conf = result.confidence;
   const confPct = conf !== null ? Math.round(conf * 100) : null;
+  const srcIcon = getSourceIcon(result.source_name);
 
   const handleCopy = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
@@ -46,6 +47,13 @@ export const EventRow: React.FC<EventRowProps> = React.memo(({
     >
       {/* Line 1: meta */}
       <div className="flex items-center gap-1.5 text-[7px] text-term-dim leading-tight min-w-0">
+        <span
+          className="flex-shrink-0 font-bold text-[7px] px-0.5 leading-none"
+          style={{ color: srcIcon.color }}
+          title={result.source_name}
+        >
+          {srcIcon.symbol}
+        </span>
         <span className="text-term-secondary">{date}</span>
         {geoStr && <span>·</span>}
         {geoStr && <span className="text-term-dim truncate max-w-[80px]">{geoStr}</span>}

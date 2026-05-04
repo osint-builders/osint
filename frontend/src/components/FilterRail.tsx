@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import type { SearchFilters, EventMetadata } from '../types';
+import { todayISO, daysAgoISO } from '../lib/utils';
 
 interface FilterRailProps {
   filters: SearchFilters;
@@ -73,15 +74,43 @@ export const FilterRail: React.FC<FilterRailProps> = ({
         {/* Date range */}
         <div>
           <div className="text-[7px] text-term-dim tracking-widest mb-1">DATE RANGE</div>
+
+          {/* Shortcut buttons */}
+          <div className="flex flex-wrap gap-1 mb-2">
+            {([
+              { label: 'TODAY', from: todayISO(),    to: todayISO()    },
+              { label: '7D',    from: daysAgoISO(7), to: todayISO()    },
+              { label: '14D',   from: daysAgoISO(14),to: todayISO()    },
+              { label: '30D',   from: daysAgoISO(30),to: todayISO()    },
+            ] as const).map(({ label, from, to }) => {
+              const active = filters.dateFrom === from && filters.dateTo === to;
+              return (
+                <button
+                  key={label}
+                  onClick={() => onFiltersChange({ ...filters, dateFrom: from, dateTo: to })}
+                  className={`text-[7px] px-1.5 py-0.5 border transition-colors flex-1 ${
+                    active
+                      ? 'border-term-green text-term-green'
+                      : 'border-term-border text-term-dim hover:text-term-secondary hover:border-term-border-hi'
+                  }`}
+                >
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+
           <input
             type="date"
             value={filters.dateFrom ?? ''}
+            max={todayISO()}
             onChange={e => onFiltersChange({ ...filters, dateFrom: e.target.value || null })}
             className="w-full bg-term-panel border border-term-border text-[8px] text-term-primary px-1 py-0.5 mb-1 focus:border-term-border-hi focus:outline-none"
           />
           <input
             type="date"
             value={filters.dateTo ?? ''}
+            max={todayISO()}
             onChange={e => onFiltersChange({ ...filters, dateTo: e.target.value || null })}
             className="w-full bg-term-panel border border-term-border text-[8px] text-term-primary px-1 py-0.5 focus:border-term-border-hi focus:outline-none"
           />
