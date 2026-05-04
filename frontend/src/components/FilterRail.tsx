@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import type { SearchFilters, EventMetadata } from '../types';
-import { todayISO, daysAgoISO } from '../lib/utils';
+import { todayISO, daysAgoISO, getTagColor } from '../lib/utils';
 
 interface FilterRailProps {
   filters: SearchFilters;
@@ -30,9 +30,10 @@ export const FilterRail: React.FC<FilterRailProps> = ({
       if (e.geo?.country) countrySet.add(e.geo.country);
       for (const t of e.topics) topicCounts.set(t, (topicCounts.get(t) ?? 0) + 1);
     }
+    // Alphabetical, max 40
     const sortedTopics = [...topicCounts.entries()]
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 25);
+      .sort((a, b) => a[0].localeCompare(b[0]))
+      .slice(0, 40);
     return {
       countries: [...countrySet].sort(),
       topTopics: sortedTopics,
@@ -45,13 +46,6 @@ export const FilterRail: React.FC<FilterRailProps> = ({
     filters.country !== null ||
     filters.topics.length > 0 ||
     filters.minConfidence > 0;
-
-  const toggleTopic = (topic: string) => {
-    const next = filters.topics.includes(topic)
-      ? filters.topics.filter(t => t !== topic)
-      : [...filters.topics, topic];
-    onFiltersChange({ ...filters, topics: next });
-  };
 
   if (collapsed) return null;
 
@@ -71,6 +65,48 @@ export const FilterRail: React.FC<FilterRailProps> = ({
       </div>
 
       <div className="flex-1 overflow-y-auto px-2 py-2 space-y-3">
+        {/* Topics — facet surface, shown first */}
+        <div>
+          <div className="text-[7px] text-term-dim tracking-widest mb-1">
+            TAGS
+            {filters.topics.length > 0 && (
+              <button
+                onClick={() => onFiltersChange({ ...filters, topics: [] })}
+                className="ml-2 text-term-red hover:text-term-primary transition-colors"
+              >
+                CLEAR
+              </button>
+            )}
+          </div>
+          <div className="space-y-px">
+            {topTopics.map(([topic, count]) => {
+              const active = filters.topics.includes(topic);
+              const color = getTagColor(topic);
+              return (
+                <button
+                  key={topic}
+                  onClick={() => {
+                    const next = active
+                      ? filters.topics.filter(t => t !== topic)
+                      : [...filters.topics, topic];
+                    onFiltersChange({ ...filters, topics: next });
+                  }}
+                  className="w-full flex items-center gap-1.5 text-left py-0.5 pl-1 pr-1 transition-colors hover:bg-term-panel"
+                  style={{ borderLeft: `3px solid ${active ? color : '#1a1a1a'}` }}
+                >
+                  <span
+                    className="text-[8px] flex-1 truncate"
+                    style={{ color: active ? color : '#666' }}
+                  >
+                    {topic}
+                  </span>
+                  <span className="text-[7px] text-term-muted flex-shrink-0">{count}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
         {/* Date range */}
         <div>
           <div className="text-[7px] text-term-dim tracking-widest mb-1">DATE RANGE</div>
@@ -154,34 +190,6 @@ export const FilterRail: React.FC<FilterRailProps> = ({
           />
         </div>
 
-        {/* Topics */}
-        <div>
-          <div className="text-[7px] text-term-dim tracking-widest mb-1">TOPICS</div>
-          <div className="space-y-0.5 max-h-48 overflow-y-auto">
-            {topTopics.map(([topic, count]) => {
-              const active = filters.topics.includes(topic);
-              return (
-                <label
-                  key={topic}
-                  className={`flex items-center gap-1.5 cursor-pointer py-0.5 px-1 transition-colors ${
-                    active ? 'bg-term-green-dim' : 'hover:bg-term-panel'
-                  }`}
-                >
-                  <input
-                    type="checkbox"
-                    checked={active}
-                    onChange={() => toggleTopic(topic)}
-                    className="w-2 h-2 accent-[#00ff41]"
-                  />
-                  <span className={`text-[8px] flex-1 truncate ${active ? 'text-term-green' : 'text-term-secondary'}`}>
-                    {topic}
-                  </span>
-                  <span className="text-[7px] text-term-dim flex-shrink-0">{count}</span>
-                </label>
-              );
-            })}
-          </div>
-        </div>
       </div>
     </div>
   );

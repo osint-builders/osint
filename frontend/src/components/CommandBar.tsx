@@ -16,6 +16,8 @@ interface CommandBarProps {
   onToggleFilters: () => void;
   filtersActive: boolean;
   searchInputRef: React.RefObject<HTMLInputElement>;
+  view: 'search' | 'timeline';
+  onToggleView: () => void;
 }
 
 export const CommandBar: React.FC<CommandBarProps> = ({
@@ -32,6 +34,8 @@ export const CommandBar: React.FC<CommandBarProps> = ({
   onToggleFilters,
   filtersActive,
   searchInputRef,
+  view,
+  onToggleView,
 }) => {
   const [showSaved, setShowSaved] = useState(false);
   const savedRef = useRef<HTMLDivElement>(null);
@@ -169,6 +173,19 @@ export const CommandBar: React.FC<CommandBarProps> = ({
           </div>
         )}
       </div>
+
+      {/* Timeline / Search toggle */}
+      <button
+        onClick={onToggleView}
+        title={view === 'timeline' ? 'Search view [T]' : 'Timeline view [T]'}
+        className={`text-[8px] px-1.5 py-0.5 border transition-colors flex-shrink-0 ${
+          view === 'timeline'
+            ? 'border-term-cyan text-term-cyan'
+            : 'border-term-border text-term-secondary hover:text-term-primary hover:border-term-border-hi'
+        }`}
+      >
+        {view === 'timeline' ? '▦ SEARCH' : '▤ TIMELINE'}
+      </button>
 
       {/* Help */}
       <button

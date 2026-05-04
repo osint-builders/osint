@@ -13,6 +13,7 @@ import { MapView } from './components/MapView';
 import { EventDetail } from './components/EventDetail';
 import { StatusBar } from './components/StatusBar';
 import { ShortcutsHelp } from './components/ShortcutsHelp';
+import { TimelineView } from './components/TimelineView';
 import { IndexLoader } from './lib/IndexLoader';
 import { SearchEngine } from './lib/SearchEngine';
 import { useSavedSearches } from './hooks/useSavedSearches';
@@ -62,6 +63,7 @@ const loader = new IndexLoader();
 const engine = new SearchEngine();
 
 type RightPane = 'map' | 'detail';
+type AppView = 'search' | 'timeline';
 
 function getDefaultFilters(): SearchFilters {
   return {
@@ -117,6 +119,7 @@ function App() {
 
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [rightPane, setRightPane] = useState<RightPane>('map');
+  const [view, setView] = useState<AppView>('search');
   const [showHelp, setShowHelp] = useState(false);
   const [filterCollapsed, setFilterCollapsed] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
@@ -240,6 +243,8 @@ function App() {
           setFilterCollapsed(p => !p);
         } else if (e.key === 'r' || e.key === 'R') {
           setQuery(''); setFilters(getDefaultFilters()); setSorts([]);
+        } else if (e.key === 't' || e.key === 'T') {
+          setView(v => v === 'search' ? 'timeline' : 'search');
         }
       }
     };
@@ -267,6 +272,12 @@ function App() {
   const handleSelect = useCallback((id: string) => setSelectedId(id), []);
   const handleOpen = useCallback((id: string) => {
     setSelectedId(id); setRightPane('detail');
+  }, []);
+  const handleTagClick = useCallback((tag: string) => {
+    setFilters(prev => ({
+      ...prev,
+      topics: prev.topics.includes(tag) ? prev.topics : [...prev.topics, tag],
+    }));
   }, []);
 
   if (error) {
@@ -300,6 +311,8 @@ function App() {
         onToggleFilters={() => setFilterCollapsed(s => !s)}
         filtersActive={filtersActive}
         searchInputRef={searchInputRef}
+        view={view}
+        onToggleView={() => setView(v => v === 'search' ? 'timeline' : 'search')}
       />
 
       {isInitializing && (
@@ -317,36 +330,49 @@ function App() {
           collapsed={filterCollapsed}
         />
 
-        <ResultsPane
-          results={sortedResults}
-          selectedId={selectedId}
-          isSearching={isSearching}
-          query={debouncedQuery}
-          sorts={sorts}
-          onSortChange={(field, dir) => setSorts(prev => toggleSort(prev, field, dir))}
-          onClearSorts={() => setSorts([])}
-          onSelect={handleSelect}
-          onOpen={handleOpen}
-        />
-
-        <div className="w-[420px] flex-shrink-0 flex flex-col min-h-0">
-          {rightPane === 'map' ? (
-            <MapView
-              results={results}
+        {view === 'timeline' ? (
+          <TimelineView
+            results={sortedResults}
+            selectedId={selectedId}
+            onSelectEvent={handleSelect}
+            onOpenEvent={handleOpen}
+            onTagClick={handleTagClick}
+          />
+        ) : (
+          <>
+            <ResultsPane
+              results={sortedResults}
               selectedId={selectedId}
-              onSelectEvent={handleSelect}
-              onOpenEvent={handleOpen}
+              isSearching={isSearching}
+              query={debouncedQuery}
+              sorts={sorts}
+              onSortChange={(field, dir) => setSorts(prev => toggleSort(prev, field, dir))}
+              onClearSorts={() => setSorts([])}
+              onSelect={handleSelect}
+              onOpen={handleOpen}
+              onTagClick={handleTagClick}
             />
-          ) : (
-            <EventDetail
-              metadata={selectedMetadata}
-              detail={eventDetail}
-              isLoading={isLoadingDetail}
-              onClose={() => setRightPane('map')}
-              onShowMap={() => setRightPane('map')}
-            />
-          )}
-        </div>
+
+            <div className="w-[420px] flex-shrink-0 flex flex-col min-h-0">
+              {rightPane === 'map' ? (
+                <MapView
+                  results={results}
+                  selectedId={selectedId}
+                  onSelectEvent={handleSelect}
+                  onOpenEvent={handleOpen}
+                />
+              ) : (
+                <EventDetail
+                  metadata={selectedMetadata}
+                  detail={eventDetail}
+                  isLoading={isLoadingDetail}
+                  onClose={() => setRightPane('map')}
+                  onShowMap={() => setRightPane('map')}
+                />
+              )}
+            </div>
+          </>
+        )}
       </div>
 
       <StatusBar

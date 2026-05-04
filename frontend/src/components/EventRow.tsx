@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import type { SearchResult } from '../types';
-import { formatDateShort, truncate, copyToClipboard, getSourceIcon } from '../lib/utils';
+import { formatDateShort, truncate, copyToClipboard, getSourceIcon, getTagColor } from '../lib/utils';
 
 interface EventRowProps {
   result: SearchResult;
@@ -9,6 +9,7 @@ interface EventRowProps {
   showScore: boolean;
   onSelect: (id: string) => void;
   onOpen: (id: string) => void;
+  onTagClick: (tag: string) => void;
 }
 
 export const EventRow: React.FC<EventRowProps> = React.memo(({
@@ -18,6 +19,7 @@ export const EventRow: React.FC<EventRowProps> = React.memo(({
   showScore,
   onSelect,
   onOpen,
+  onTagClick,
 }) => {
   const date = formatDateShort(result.date_event ?? result.date_published);
   const conf = result.confidence;
@@ -46,7 +48,7 @@ export const EventRow: React.FC<EventRowProps> = React.memo(({
       ].join(' ')}
     >
       {/* Line 1: meta */}
-      <div className="flex items-center gap-1.5 text-[7px] text-term-dim leading-tight min-w-0">
+      <div className="flex items-center gap-1.5 text-[7px] leading-tight min-w-0">
         <span
           className="flex-shrink-0 font-bold text-[7px] px-0.5 leading-none"
           style={{ color: srcIcon.color }}
@@ -54,11 +56,11 @@ export const EventRow: React.FC<EventRowProps> = React.memo(({
         >
           {srcIcon.symbol}
         </span>
-        <span className="text-term-secondary">{date}</span>
+        <span className={isSelected ? 'text-[#c0c0c0]' : 'text-term-secondary'}>{date}</span>
         {geoStr && <span>·</span>}
-        {geoStr && <span className="text-term-dim truncate max-w-[80px]">{geoStr}</span>}
-        <span>·</span>
-        <span className="truncate min-w-0">{result.source_name}</span>
+        {geoStr && <span className={`truncate max-w-[80px] ${isSelected ? 'text-[#a0a0a0]' : 'text-term-dim'}`}>{geoStr}</span>}
+        <span className={isSelected ? 'text-[#a0a0a0]' : 'text-term-dim'}>·</span>
+        <span className={`truncate min-w-0 ${isSelected ? 'text-[#a0a0a0]' : 'text-term-dim'}`}>{result.source_name}</span>
         {showScore && result.score > 1 && (
           <span className="ml-auto text-term-green flex-shrink-0">
             ↑{result.score.toFixed(0)}
@@ -75,19 +77,22 @@ export const EventRow: React.FC<EventRowProps> = React.memo(({
       </div>
 
       {/* Line 3: summary */}
-      <div className="text-[8px] text-term-secondary leading-tight truncate">
+      <div className={`text-[8px] leading-tight truncate ${isSelected ? 'text-[#b0b0b0]' : 'text-term-secondary'}`}>
         {truncate(result.summary, 120)}
       </div>
 
       {/* Line 4: topics + confidence + links indicator */}
       <div className="flex items-center gap-1 mt-px min-w-0">
-        {result.topics.slice(0, 4).map(t => (
-          <span
+        {[...result.topics].sort().slice(0, 4).map(t => (
+          <button
             key={t}
-            className="text-[7px] px-1 border border-term-border text-term-dim leading-tight flex-shrink-0 truncate max-w-[60px]"
+            onClick={e => { e.stopPropagation(); onTagClick(t); }}
+            className="text-[7px] px-1 border leading-tight flex-shrink-0 truncate max-w-[60px] transition-opacity hover:opacity-80"
+            style={{ borderColor: getTagColor(t), color: getTagColor(t) }}
+            title={`Filter by: ${t}`}
           >
             {t}
-          </span>
+          </button>
         ))}
         {result.topics.length > 4 && (
           <span className="text-[7px] text-term-muted">+{result.topics.length - 4}</span>

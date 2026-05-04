@@ -16,6 +16,7 @@ interface ResultsPaneProps {
   onClearSorts: () => void;
   onSelect: (id: string) => void;
   onOpen: (id: string) => void;
+  onTagClick: (tag: string) => void;
 }
 
 // Compact sort toggle button
@@ -45,6 +46,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
   onClearSorts,
   onSelect,
   onOpen,
+  onTagClick,
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const showScore = query.trim().length > 0;
@@ -126,6 +128,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
                 showScore={showScore}
                 onSelect={onSelect}
                 onOpen={onOpen}
+                onTagClick={onTagClick}
               />
             </div>
           ))}

@@ -67,6 +67,23 @@ export function getDomainFromUrl(url: string): string {
   }
 }
 
+// ── Tag color ─────────────────────────────────────────────────
+const TAG_PALETTE = [
+  '#00cfff', '#ffd700', '#ff6b35', '#b06cff',
+  '#26a5e4', '#ff8c00', '#20b2aa', '#a8ff00',
+  '#ff3f8e', '#c5980e', '#00e5ff', '#9b59b6',
+];
+
+export function getTagColor(tag: string): string {
+  // FNV-1a 32-bit hash for deterministic, visually distinct colors per tag
+  let h = 2166136261;
+  for (let i = 0; i < tag.length; i++) {
+    h ^= tag.charCodeAt(i);
+    h = Math.imul(h, 16777619) >>> 0;
+  }
+  return TAG_PALETTE[h % TAG_PALETTE.length];
+}
+
 interface SourceIcon { symbol: string; color: string; }
 
 export function getSourceIcon(sourceName: string): SourceIcon {

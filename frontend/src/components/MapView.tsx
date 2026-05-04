@@ -64,7 +64,20 @@ export const MapView: React.FC<MapViewProps> = ({
   }, [selectedId, results]);
 
   const onClick = useCallback((e: MapMouseEvent) => {
-    const features = e.target.queryRenderedFeatures(e.point, { layers: ['events-circle'] });
+    const map = e.target;
+
+    // Cluster click — zoom in
+    const clusterFeatures = map.queryRenderedFeatures(e.point, { layers: ['cluster-circle'] });
+    if (clusterFeatures.length) {
+      const cluster = clusterFeatures[0];
+      const coords = (cluster.geometry as GeoJSON.Point).coordinates as [number, number];
+      const currentZoom = map.getZoom();
+      map.easeTo({ center: coords, zoom: currentZoom + 2, duration: 400 });
+      return;
+    }
+
+    // Individual marker click
+    const features = map.queryRenderedFeatures(e.point, { layers: ['events-circle'] });
     if (!features.length) { setPopupInfo(null); return; }
     const props = features[0].properties as Record<string, string>;
     const coords = (features[0].geometry as GeoJSON.Point).coordinates;
@@ -105,11 +118,49 @@ export const MapView: React.FC<MapViewProps> = ({
         >
           <NavigationControl position="bottom-right" showCompass={false} />
 
-          <Source id="events" type="geojson" data={geojson}>
-            {/* Glow ring for selected */}
+          <Source
+            id="events"
+            type="geojson"
+            data={geojson}
+            cluster={true}
+            clusterMaxZoom={12}
+            clusterRadius={40}
+          >
+            {/* Cluster circle */}
+            <Layer
+              id="cluster-circle"
+              type="circle"
+              filter={['has', 'point_count']}
+              paint={{
+                'circle-radius': [
+                  'step', ['get', 'point_count'],
+                  14, 10, 18, 50, 22
+                ],
+                'circle-color': '#0d0d0d',
+                'circle-stroke-width': 1.5,
+                'circle-stroke-color': '#00cfff',
+                'circle-opacity': 0.92,
+              }}
+            />
+            {/* Cluster count label */}
+            <Layer
+              id="cluster-count"
+              type="symbol"
+              filter={['has', 'point_count']}
+              layout={{
+                'text-field': ['get', 'point_count_abbreviated'],
+                'text-font': ['Noto Sans Regular'],
+                'text-size': 9,
+              }}
+              paint={{
+                'text-color': '#00cfff',
+              }}
+            />
+            {/* Glow ring for selected (unclustered only) */}
             <Layer
               id="events-glow"
               type="circle"
+              filter={['!', ['has', 'point_count']]}
               paint={{
                 'circle-radius': 12,
                 'circle-color': '#00ff41',
@@ -119,10 +170,11 @@ export const MapView: React.FC<MapViewProps> = ({
                 'circle-blur': 1,
               }}
             />
-            {/* Main dot */}
+            {/* Individual marker (unclustered only) */}
             <Layer
               id="events-circle"
               type="circle"
+              filter={['!', ['has', 'point_count']]}
               paint={{
                 'circle-radius': ['case', ['==', ['get', 'selected'], true], 7, 4],
                 'circle-color': ['case', ['==', ['get', 'selected'], true], '#00ff41', '#00cfff'],
