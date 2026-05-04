@@ -7,7 +7,7 @@ name: Build Search Embeddings
 
 on:
   workflow_run:
-    workflows: ["Hourly OSINT Collection"]
+    workflows: ["Daily OSINT Collection"]
     types: [completed]
     branches: [main]
   workflow_dispatch:
