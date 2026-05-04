@@ -61,5 +61,10 @@ docs/search/
 # Verifier transient output
 builder/scripts/__fixtures__/*.actual
 
+# Run logs — operational telemetry written by the cloud agent each run.
+# Never read by subsequent runs (see LEARNINGS.md for cross-run knowledge).
+# No need to version-control these.
+data/run-logs/
+
 # Hermes Agent — local-only, never tracked
 .hermes/

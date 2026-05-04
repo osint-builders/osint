@@ -520,3 +520,54 @@ Validation: All 18 events passed strict validation
 - High URL overlap with earlier buckets on major stories (Iran, Ukraine, Taiwan)
 - 1-hour window on Saturday evening EST produced limited unique content
 - Sources with low posting frequency (esri-training, vantortech, opennuclear) had no events
+## Bucket 4 run @ 2026-05-04T02:04:18.824Z
+
+### Execution Summary
+- **Bucket**: 4 of 5
+- **Sources assigned**: 29
+- **Time window**: 2026-05-04T01:04:18.824Z to 2026-05-04T02:04:18.824Z (UTC)
+- **Strategy**: exa_web_search primary discovery (Twitter API credits depleted)
+
+### Collection Results
+- Events generated: 17
+- Events after URL dedup: 4
+- Events committed: 4
+
+### Source Processing Notes
+All 29 sources processed. Twitter API credits remain depleted (known since 2026-05-01). 
+Used exa_web_search as primary discovery tool per prior learnings.
+13 events matched primary URLs already committed by buckets 1-3, confirming high overlap 
+rate for major world events covered by multiple buckets.
+
+### Unique Events Added
+- evt_20260503_602: Iranian supertanker HUGE evades US blockade (TankerTrackers)
+- evt_20260503_607: US cancels Tomahawk deployment to Germany (National Interest)
+- evt_20260503_609: IDF strikes 120 Hezbollah targets in Lebanon (WarshipCam)
+- evt_20260503_614: Airstrikes target militants in southern Syria (Yortuk Intelligence)
+
+### Sources Covered by Unique Events
+- twitter-tanker-trackers (evt_602)
+- twitter-therealshipdude (evt_602, related)
+- twitter-osaindawg (evt_602, related)
+- twitter-national-interest (evt_607)
+- twitter-korea-herald (evt_607, related)
+- twitter-warshipcam (evt_609)
+- twitter-clash-report (evt_609, related)
+- twitter-yortukisgk (evt_614)
+
+### Sources With No Unique Events (covered by earlier buckets)
+Remaining 21 sources produced events with URLs already committed:
+twitter-kl-summary, twitter-the-lookout-north, twitter-hawkeye360, 
+webpage-breaking-defense-global, twitter-the-diplomat, twitter-mondefense,
+twitter-africafactszone, twitter-songss44, twitter-borrowed7time,
+twitter-ofac-alert, twitter-us-pacific-fleet, twitter-esri-water,
+twitter-jaime-ocon, twitter-modjapan-en, twitter-csis-korea-chair,
+twitter-us-treasury, twitter-taiwan-news-en, twitter-ntonc,
+twitter-opennuclear, twitter-jasdf-pao-eng, twitter-mench-osint
+
+### Issues Encountered
+- Twitter API: Credits remain depleted; all collection via web search
+- High URL dedup rate (76%): Expected for late-running bucket sharing news cycle with earlier buckets
+- No Breaking Defense (webpage) unique content found within the 1-hour window
+- Several OSINT analyst accounts (Songss44, Jaime Ocon, Esri Water) tweet infrequently; 
+  no unique events found within narrow time window matching their topic areas
