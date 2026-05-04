@@ -464,3 +464,59 @@ Twitter API: CreditsDepleted (402) - used exa_web_search and Perplexity fallback
 Twitter API: CreditsDepleted (402). Used exa_web_search and Perplexity fallback.
 Twitter API: CreditsDepleted (402). Used exa_web_search fallback.
 Validation: All 18 events passed strict validation
+
+## Bucket 2 run @ 2026-05-04T02:06:38.556Z
+
+### Processing Summary
+- **Sources assigned:** 29
+- **Time window:** 2026-05-04T01:06:38.556Z to 2026-05-04T02:06:38.556Z (UTC)
+- **Twitter API status:** Credits depleted (as per prior learnings)
+- **Primary discovery method:** exa_web_search
+
+### Source Processing
+- twitter-mndchina: Covered via PLA activity search → evt_20260503_605 (dup URL skipped)
+- twitter-africafactszone: No unique Africa-specific events found in 1-hour window
+- twitter-us-7th-fleet: Covered via maritime/naval search → Hormuz escort story
+- twitter-faa-south: No unique Africa-South events found in 1-hour window
+- twitter-detresfa: Covered via maritime security search → piracy/Hormuz developments
+- twitter-xnews: Covered → evt_20260503_604 (IRGC standby, dup URL skipped)
+- webpage-yahoo-world-news: Covered → evt_20260503_608 (Iran proposal, dup URL skipped)
+- twitter-the-dailynk: No new DPRK events in 1-hour window
+- twitter-nsa-gov: No NSA-specific events in 1-hour window
+- twitter-esri-training: No GIS training events in 1-hour window (educational content, low frequency)
+- twitter-opennuclear: No new nuclear facility monitoring events in 1-hour window
+- twitter-national-interest: Covered → evt_20260503_606 (Hezbollah analysis, ADDED)
+- twitter-foxnews: Covered → evt_20260503_601 (Hormuz escort, dup URL skipped)
+- twitter-dataminr: Covered → evt_20260503_603 (Israel-Lebanon strikes, ADDED)
+- webpage-cuashub-defense: No new financial security events in 1-hour window
+- twitter-mondefense: Covered via Taiwan MND search → PLA activity report
+- twitter-jnb-summary: No new Japan-DPRK events in 1-hour window
+- twitter-claudefb: No specific regional observer events in 1-hour window
+- twitter-tatarigamiua: Covered → evt_20260503_610 (Kostiantynivka advance, ADDED)
+- twitter-megatronlion: Covered → evt_20260503_607 (drone exchange, dup URL skipped)
+- twitter-us-fleet-forces: Covered via Hormuz escort/naval search
+- twitter-imo-hq: Covered via maritime security search → Hormuz navigation halt
+- twitter-nguyenthiho88: Covered → evt_20260503_609 (SCS Sandy Cay, dup URL skipped)
+- twitter-msc-sealift: No new sealift-specific events in 1-hour window
+- twitter-vantortech: No new geospatial tech events in 1-hour window (low frequency)
+- twitter-clash-report: Covered → evt_20260503_602 (Primorsk strike, dup URL skipped)
+- twitter-therealshipdude: Covered via shadow fleet/sanctions evasion search
+- twitter-kl-summary: No new Korea summary events in 1-hour window
+- twitter-mofajapan-en: No new Japan MOFA events in 1-hour window
+
+### Events Generated
+- 10 events created total
+- 3 events added to JSONL (unique URLs)
+- 7 events skipped (duplicate URLs from earlier buckets)
+- All 10 events passed strict validation
+
+### Added Events
+- evt_20260503_603: Israel Strikes 120 Hezbollah Targets in Southern Lebanon
+- evt_20260503_606: Reuters Analysis Reveals Hezbollah Lost Several Thousand Fighters
+- evt_20260503_610: Russian Forces Advance Toward Kostiantynivka
+
+### Notes
+- Twitter API credits remain depleted; all collection via exa_web_search
+- High URL overlap with earlier buckets on major stories (Iran, Ukraine, Taiwan)
+- 1-hour window on Saturday evening EST produced limited unique content
+- Sources with low posting frequency (esri-training, vantortech, opennuclear) had no events
