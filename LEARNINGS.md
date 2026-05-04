@@ -90,8 +90,8 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Action for next run:** After generating events, run an automated E-PRIME cleanup pass replacing common "to be" forms before validation. Key substitutions: "has been X" → "has X" or "X'd"; "had been" → "had previously"; "have been" → "have remained/have." Build this into the generation script rather than running as a separate step.
 **Expires:** 2026-07-04
 
-## 2026-05-04 21:19Z — Bucket 5 dedup rate surged to 90.5% during dominant single-story news cycle
-**Trigger:** 19 of 21 generated events (90.5%) shared primary URLs with events already committed by buckets 1-4, up from 45% in previous runs
-**Finding:** When a single massive story dominates the news cycle (Strait of Hormuz crisis with Iran attacks, US Project Freedom, UAE missile intercepts), virtually all sources — across military, maritime, diplomatic, and breaking news categories — converge on the same wire service URLs (AP, Reuters, Al Jazeera, Al-Monitor). Bucket 5's late position means nearly all discoverable URLs already exist. The two unique events that survived dedup covered niche regional stories (South China Sea, East China Sea) not directly tied to the dominant headline cluster.
-**Action for next run:** During dominant single-story cycles, later buckets should shift strategy entirely to (1) regional/niche sources unlikely to cover the main story, (2) second-order effects and analysis pieces rather than breaking coverage, and (3) source-specific search queries that explicitly exclude the dominant story keywords.
-**Expires:** 2026-06-04
+## 2026-05-04 23:00Z — Twitter image extraction not viable; skip for all Twitter sources
+**Trigger:** data/media directory contained only a .gitkeep after multiple collection runs. Analysis traced to Twitter auth requirement and depleted API credits.
+**Finding:** Twitter/X images at pbs.twimg.com require authenticated sessions the agent does not have. Twitter API credits were depleted as of 2026-05-01. Attempting image extraction for Twitter sources wastes time and always fails silently. ~80% of sources are Twitter type.
+**Action for next run:** For type:twitter sources, set image_urls:[] immediately and skip Step 7 entirely. Only attempt image extraction for type:webpage, type:api, type:rss sources where og:image or article hero images are accessible via curl without auth.
+**Expires:** permanent

@@ -9,7 +9,7 @@ This script:
 4. Applies PCA dimensionality reduction (1536 → 384 dims)
 5. Quantizes embeddings to int8
 6. Builds HNSW index for fast ANN search
-7. Saves artifacts to docs/search-index/
+7. Saves artifacts to data/search-index/
 
 Environment variables:
   OPENAI_API_KEY - Required for OpenAI API
@@ -83,7 +83,7 @@ def main():
     # Configuration
     repo_root = Path(os.environ.get('REPO_ROOT', os.getcwd()))
     data_dir = repo_root / 'data' / 'events'
-    output_dir = repo_root / 'docs' / 'search-index'
+    output_dir = repo_root / 'data' / 'search-index'
 
     openai_api_key = os.environ.get('OPENAI_API_KEY')
     if not openai_api_key:

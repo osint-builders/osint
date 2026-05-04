@@ -20,7 +20,7 @@ on:
     branches: [main]
     paths:
       - 'frontend/**'
-      - 'docs/search-index/**'
+      - 'data/search-index/**'
       - 'docs/README.md'
       - '.github/workflows/pages.yml'
   workflow_run:
@@ -64,6 +64,14 @@ jobs:
         # `${{ github.event.repository.name }}` evaluates to the repo name.
         run: PAGES_BASE="/${{ github.event.repository.name }}/search/" npm run build
         working-directory: frontend
+
+      - name: Copy search index into docs for Pages upload
+        run: |
+          if [ -d data/search-index ]; then
+            cp -r data/search-index docs/search-index
+          else
+            echo "::warning::data/search-index/ not found. Searches will fail until embeddings.yml runs."
+          fi
 
       - name: Verify build output
         run: |

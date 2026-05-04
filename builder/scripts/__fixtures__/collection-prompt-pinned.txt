@@ -175,7 +175,8 @@ For each source listed above:
      - **Filter by pubDate**: Parse RSS pubDate fields and filter to time window
    - **Time window validation**: After collecting raw data, verify all items have timestamps within `$TIME_WINDOW_START` to `$TIME_WINDOW_END`. Reject and log any items outside the window to `$WORK_DIR/{source_id}/new-memory.md` (consolidated into `data/run-logs/` in Step 7a; never goes into `LEARNINGS.md`).
 
-3. **Extract World Event Entities** from raw data following the schema in `data/SCHEMA.md`
+3. **Extract World Event Entities** from raw data following the schema in `data/SCHEMA.md`.
+   **Topics must be lowercase, hyphenated, and singular** (e.g., `missile` not `Missiles`, `drone-strike` not `Drone Strikes`, `sanction` not `sanctions`). Deduplicate topics per event.
 
 4. **Transform contents to E-PRIME** — rewrite `contents` field removing all "to be" verbs (is, are, was, were, be, been, being). Use active, specific verbs. See `skills/data-to-markdown/SKILL.md` for guidance.
 
@@ -194,19 +195,20 @@ For each source listed above:
    - **Limit**: Maximum 50 research calls per bucket to control costs
    - **Document**: Add "Confidence Assessment" section to contents field with research findings
 
-7. **Save to `$WORK_DIR/{source_id}/events.jsonl`** — one JSON object per line
+7. **Extract images** (non-Twitter sources only — Twitter images require auth and must be skipped):
+   - For `type: webpage`, `type: api`, `type: rss` sources: extract og:image or article hero image with `curl`
+   - Process to 720×720 PNG: `magick input -resize 720x720^ -gravity center -extent 720x720 +repage -strip -define png:compression-level=9 output.png`
+   - Save to `$WORK_DIR/{source_id}/media/images/{event_id}_img1.png`
+   - Update `image_urls` in the event JSON: `["./media/YYYY-MM/images/YYYY-MM-DD/{event_id}_img1.png"]`
+   - **For Twitter sources**: set `image_urls: []` — do not attempt image extraction.
+   - Image failures never block an event. Move on silently.
 
-8. **Extract and process media** using `skills/image-extraction/SKILL.md`:
-   - Identify all images in source data (social media attachments, webpage hero images, video thumbnails)
-   - Download/screenshot using appropriate method (curl for direct URLs, agent-browser for protected images, ffmpeg for video frames)
-   - Process each image to 720x720 PNG: `magick image -resize 720x720^ -gravity center -extent 720x720 +repage -strip -define png:compression-level=9 output.png`
-   - Save to `$WORK_DIR/{source_id}/media/images/{event_id}_img{N}.png`
-   - Update `image_urls` array with relative paths: `./media/YYYY-MM/images/YYYY-MM-DD/{event_id}_img{N}.png`
-   - Limit to 3-5 images per event (first is primary), handle failures gracefully
+8. **Save to `$WORK_DIR/{source_id}/events.jsonl`** — one JSON object per line (image_urls must already be populated from step 7)
 
 9. **Log issues** to `$WORK_DIR/{source_id}/new-memory.md`: errors, rate limits, rejected events (outside time window), geocoding failures, research findings
 
-**Required JSONL fields per event**: `id`, `source`, `title`, `summary`, `contents` (100+ words, E-PRIME), `date_published`, `links`, `image_urls`, **`geo` (with lat/lon)**
+**Required JSONL fields per event**: `id`, `source`, `title`, `summary`, `contents` (100+ words, E-PRIME), `date_published`, `links`, **`geo` (with lat/lon)**
+`image_urls` is optional (empty array `[]` is valid).
 
 **ID format**: `evt_YYYYMMDD_NNN` using extraction date (e.g., `evt_20260501_001`)
 
@@ -476,6 +478,7 @@ If nothing this run met the criteria, leave LEARNINGS.md untouched.
 ```bash
 git config user.name "OSINT Collector Bot"
 git config user.email "osint-bot@github-actions"
+# Single commit: events + media + learnings (indexes rebuilt by embeddings workflow post-run)
 git add "data/events/$YEAR_MONTH/$DATE.jsonl" "data/media/$YEAR_MONTH/" "LEARNINGS.md" 2>/dev/null || true
 
 if ! git diff --cached --quiet; then
@@ -487,25 +490,17 @@ Automated OSINT collection run
 - Extraction time: 2026-05-01T10:34:55.000-04:00 (EST)
 - Data collected from 1-hour lookback window
 
-Data format: JSONL (JSON Lines)
-Storage: data/events/$YEAR_MONTH/$DATE.jsonl
-
 [skip ci]"
 
-  # Pick the push token. Prefer OSINT_GH_TOKEN (fine-grained PAT with
-  # Contents:write on osint-builders/osint); fall back to GH_TOKEN.
   PUSH_TOKEN="${OSINT_GH_TOKEN:-$GH_TOKEN}"
   if [ -z "$PUSH_TOKEN" ]; then
     echo "ERROR: No push token available (set OSINT_GH_TOKEN or GH_TOKEN)." >&2
     exit 1
   fi
 
-  # Derive owner/repo from the configured origin URL (handles SSH or HTTPS form).
   REPO_PATH=$(git remote get-url origin \
     | sed -E 's|^git@github\.com:|https://github.com/|; s|^https?://github\.com/||; s|\.git$||')
   PUSH_URL="https://x-access-token:$PUSH_TOKEN@github.com/$REPO_PATH.git"
-
-  # Redact the token from any output that gets logged.
   REDACT='s|https://[^@]+@|https://<redacted>@|g'
 
   git push "$PUSH_URL" main 2>&1 | sed -E "$REDACT"
@@ -517,57 +512,7 @@ Storage: data/events/$YEAR_MONTH/$DATE.jsonl
 fi
 ```
 
-### Step 8.5: Update Indexes and Statistics
-
-```bash
-# Rebuild all indexes from collected data
-echo "Rebuilding data indexes..."
-node data/scripts/rebuild-indexes.js
-
-# Generate statistics and update data/stats.json
-echo "Updating data/stats.json..."
-STATS_JSON=$(node data/scripts/stats-report.js)
-TOTAL_EVENTS=$(echo "$STATS_JSON" | jq -r '.total_events')
-OLDEST_DATE=$(jq -s 'map(.date_published) | sort | .[0] // null' data/events/*/*.jsonl 2>/dev/null || echo "null")
-NEWEST_DATE=$(jq -s 'map(.date_published) | sort | .[-1] // null' data/events/*/*.jsonl 2>/dev/null || echo "null")
-
-# data/stats.json schema (PR-F):
-#   { last_updated, data_range:{oldest_date,newest_date},
-#     statistics:{total_events, events_by_month, events_by_source, media_files} }
-jq --arg updated "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-   --arg oldest "$OLDEST_DATE" \
-   --arg newest "$NEWEST_DATE" \
-   --argjson total "$TOTAL_EVENTS" \
-   --argjson by_month "$(echo "$STATS_JSON" | jq '.by_month')" \
-   --argjson by_source "$(echo "$STATS_JSON" | jq '.by_source')" \
-   --argjson media "$(echo "$STATS_JSON" | jq '.media')" \
-   '.last_updated = $updated |
-    .data_range.oldest_date = $oldest |
-    .data_range.newest_date = $newest |
-    .statistics.total_events = $total |
-    .statistics.events_by_month = $by_month |
-    .statistics.events_by_source = $by_source |
-    .statistics.media_files = $media' \
-   data/stats.json > data/stats.json.tmp && mv data/stats.json.tmp data/stats.json
-
-# Commit index and stats updates
-git add data/indexes/*.json data/stats.json
-if ! git diff --cached --quiet; then
-  git commit -m "Update data indexes and statistics
-
-Generated indexes:
-- by-source.json
-- by-topic.json
-- by-location.json
-- stats.json
-
-Updated manifest.json with latest statistics
-
-[skip ci]"
-
-  git push "$PUSH_URL" main 2>&1 | sed -E "$REDACT"
-fi
-```
+Note: Indexes and `data/stats.json` are rebuilt by the `embeddings.yml` workflow after each successful collection run. The agent does **not** need to run `rebuild-indexes.js`.
 
 ### Step 9: Cleanup
 

@@ -2,8 +2,13 @@ name: Daily OSINT Collection
 
 on:
   schedule:
-    # 06:00 UTC every day.
-    - cron: '0 6 * * *'
+    # 4 runs per day during EST business hours (UTC-4 in EDT):
+    # 13:00 UTC = 9am EDT   16:00 UTC = noon EDT
+    # 19:00 UTC = 3pm EDT   22:00 UTC = 6pm EDT
+    - cron: '0 13 * * *'
+    - cron: '0 16 * * *'
+    - cron: '0 19 * * *'
+    - cron: '0 22 * * *'
   workflow_dispatch:      # Manual trigger for testing
   push:
     branches:
@@ -11,10 +16,15 @@ on:
     paths-ignore:
       # The cloud agent's own commits shouldn't re-trigger the workflow.
       - 'data/**'
-      - 'docs/search-index/**'
+      - 'docs/**'
       - 'LEARNINGS.md'
       # Documentation changes don't affect runtime behavior.
       - '**/*.md'
+      # Infrastructure-only changes that don't alter collection behavior.
+      - 'builder/**/*.py'
+      - 'builder/**/*.js'
+      - 'builder/**/*.ts'
+      - 'frontend/**'
 
 permissions:
   contents: read
@@ -23,7 +33,7 @@ permissions:
 env:
   WARP_API_KEY: ${{ secrets.WARP_API_KEY }}
   WARP_ENVIRONMENT_ID: ${{ secrets.WARP_ENVIRONMENT_ID }}
-  PARALLEL_AGENT_COUNT: ${{ vars.PARALLEL_AGENT_COUNT || '5' }}
+  PARALLEL_AGENT_COUNT: ${{ vars.PARALLEL_AGENT_COUNT || '10' }}
 
 jobs:
   collect:

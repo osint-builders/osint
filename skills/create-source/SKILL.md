@@ -40,21 +40,41 @@ python3 skills/create-source/scripts/update-manifest.py
 
 See `references/workflow.md` for full flag reference, programmatic APIs, and per-type CLI examples (twitter/webpage/api/email/rss).
 
+## Source file format (slim — keep files ≤10 lines)
+
+Source files are embedded verbatim in agent prompts. **Every line costs tokens.** Use this minimal format:
+
+```markdown
+---
+id: twitter-example
+type: twitter
+status: active
+---
+# Example Account (@Handle)
+Monitors breaking news on military movements, sanctions, and maritime incidents.
+Collect events matching keywords within the 1-hour time window.
+Keywords: breaking, urgent, sanctions, military, attack, explosion, conflict
+```
+
+Optional trailing lines (add only when genuinely needed):
+```
+Auth: required — set via environment secret
+Notes: priority:high
+```
+
+Do **not** add sections, bullet lists, examples, or documentation. Those belong in `references/` or in the create-source tooling, not in the agent prompt.
+
 ## Workflow at a glance
 
-1. **Plan** — Decide source type, reliability, update frequency, collection criteria, and auth needs (see `references/workflow.md` Phase 1 + AI prompts).
-2. **Create** — Generate the file via `create-source.js` or copy a template from `source/examples/` and fill in the frontmatter.
-3. **Validate** — Run `validate-source.js` to verify required frontmatter, type-specific fields, body sections, examples, and absence of secrets.
-4. **Test** — Run `test-source.js --full` to confirm connectivity, extraction, quality scoring, and entity transform.
-5. **Deploy** — Run `update-manifest.py`, flip status to `active` via `update-source-status.js`, and commit `source/sources/<file>.md` plus `source/manifest.json`.
+1. **Create** — Copy `source/examples/twitter-example.md` and fill in the 4 required fields.
+2. **Update manifest** — Run `python3 skills/create-source/scripts/update-manifest.py`.
+3. **Deploy** — Set `status: active` and commit the source file + manifest.
 
 ## Pitfalls
 
-- **Incomplete frontmatter** — Missing `id`, `type`, `status`, `reliability`, `update_frequency`, or type-specific fields (e.g., webpage `selectors`, api `auth_method`). Run `validate-source.js --check-frontmatter`.
-- **Vague collection criteria** — "Monitor Twitter for news" is not actionable; specify handles, keywords, engagement thresholds, include/exclude filters.
-- **No realistic examples** — Every source must include at least one real (anonymized if needed) example payload showing the expected structure.
-- **Hardcoded credentials** — Never embed API keys, tokens, or passwords. Reference environment variables only; the validator flags secrets.
-- **Untested sources marked active** — Always run the full test suite before flipping `status: testing` to `status: active`. Sync the manifest after status changes.
+- **Verbose files** — Any section beyond the minimal format adds tokens to every agent prompt. Keep files at ≤10 lines.
+- **Vague collection criteria** — The body text is read by the agent verbatim. Be specific: handles, platforms, keywords, what event types qualify.
+- **Hardcoded credentials** — Never embed API keys or tokens; reference environment variables only.
 
 See `references/workflow.md` (Common Pitfalls + Quality Checklist) for the expanded list and remediations.
 

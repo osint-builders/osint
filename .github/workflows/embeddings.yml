@@ -26,7 +26,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -38,19 +38,27 @@ jobs:
       - name: Install embedding dependencies
         run: pip install -r builder/embeddings/requirements.txt
 
+      - name: Install Node.js (for rebuild-indexes)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Build search index
         run: python builder/embeddings/build_index.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           REPO_ROOT: ${{ github.workspace }}
 
-      - name: Commit index artifacts
+      - name: Rebuild indexes and commit
         run: |
+          # Rebuild data indexes + unified stats before committing
+          node data/scripts/rebuild-indexes.js
+
           git config user.name "OSINT Embeddings Bot"
           git config user.email "embeddings-bot@github-actions"
-          git add docs/search-index/
+          git add data/search-index/ data/indexes/ data/stats.json
           # [skip ci] prevents this push from re-triggering anything.
-          git diff-index --quiet HEAD || git commit -m "Update search index with new embeddings
+          git diff-index --quiet HEAD || git commit -m "Update search index, indexes, and stats
 
           Generated embeddings for events collected at $(date -u +%Y-%m-%dT%H:%M:%SZ)
 
