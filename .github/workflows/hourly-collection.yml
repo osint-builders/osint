@@ -2,13 +2,7 @@ name: Daily OSINT Collection
 
 on:
   schedule:
-    # 4 runs per day during EST business hours (UTC-4 in EDT):
-    # 13:00 UTC = 9am EDT   16:00 UTC = noon EDT
-    # 19:00 UTC = 3pm EDT   22:00 UTC = 6pm EDT
     - cron: '0 13 * * *'
-    - cron: '0 16 * * *'
-    - cron: '0 19 * * *'
-    - cron: '0 22 * * *'
   workflow_dispatch:      # Manual trigger for testing
   push:
     branches:
