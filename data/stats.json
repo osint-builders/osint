@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-05-05T00:09:40.343Z",
+  "last_updated": "2026-05-05T00:32:55.091Z",
   "data_range": {
     "oldest_date": "2024-12-12",
-    "newest_date": "2026-05-04"
+    "newest_date": "2026-05-05"
   },
   "statistics": {
-    "total_events": 1148,
+    "total_events": 1175,
     "events_by_month": {
       "2026-04": 430,
       "2024-12": 1,
       "2026-02": 1,
-      "2026-05": 716
+      "2026-05": 743
     },
     "events_by_source": {
       "Twitter @TankerTrackers": 23,
@@ -237,7 +237,7 @@
       "CNN International (@cnni)": 2,
       "ELINT News (@ELINTNews)": 1,
       "Armed Forces of the Philippines (@ArmedForcesPhil)": 2,
-      "US 7th Fleet (@US7thFleet)": 5,
+      "US 7th Fleet (@US7thFleet)": 6,
       "US Forces Japan (@USForcesJapan)": 2,
       "Kyle Bass (@kyleBass)": 3,
       "South Korea Pro (@southkoreapro)": 1,
@@ -300,7 +300,7 @@
       "U.S. Department of the Treasury (@USTreasury)": 1,
       "National Historic Ships (@NatlHistShips)": 2,
       "HawkEye360 (@HawkEye360)": 1,
-      "Royal Australian Navy (@AusNavy)": 1,
+      "Royal Australian Navy (@AusNavy)": 2,
       "Korea Ang Daily (@KAngDaily)": 1,
       "Ray Funseth (@RayFunseth)": 1,
       "ArcGIS StoryMaps (@ArcGISStoryMaps)": 1,
@@ -385,7 +385,7 @@
       "Anadolu Agency via ABC News (@ABC)": 1,
       "Anadolu Agency via Middle East Eye (@MiddleEastEye)": 1,
       "Anadolu Agency via Sim Nasr (@SimNasr)": 1,
-      "Philippine Coast Guard (@CoastGuardPH)": 2,
+      "Philippine Coast Guard (@CoastGuardPH)": 3,
       "BusinessWorld Online via Coast Guard PH (@CoastGuardPH)": 1,
       "BusinessWorld Online via The Diplomat (@TheDiplomat)": 1,
       "Anadolu Agency via AllSource4 (@AllSource4)": 1,
@@ -405,12 +405,12 @@
       "Pakistan Foreign Ministry / NBC News / CBS News": 1,
       "Mizan News / HRANA / Gulf News": 1,
       "South Korean Ministry of Oceans / NBC News / CBS News": 1,
-      "US Navy (@USNavy)": 1,
-      "Fox News (@FoxNews)": 1,
+      "US Navy (@USNavy)": 2,
+      "Fox News (@FoxNews)": 2,
       "SCS Proactive Initiatives (@SCS_PI)": 1,
       "Risk Staff (@riskstaff)": 1,
       "Dataminr (@Dataminr)": 1,
-      "US Treasury (@USTreasury)": 1,
+      "US Treasury (@USTreasury)": 2,
       "WarTV (@WarTV7890)": 1,
       "John Pollock (@John_Pollock22)": 1,
       "China MND (@MNDChina)": 1,
@@ -587,7 +587,28 @@
       "gCaptain": 1,
       "WarshipCam": 1,
       "TankerTrackers": 1,
-      "The Diplomat": 1
+      "The Diplomat": 1,
+      "Jkgarokgov (@Jkgarokgov)": 1,
+      "InfoFusionCtr (@InfoFusionCtr)": 1,
+      "Esri (@Esri)": 1,
+      "DPRK_News (@DPRK_News)": 1,
+      "CA_JC (@CA_JC)": 1,
+      "Yonkos MC (@YonkosMC)": 1,
+      "Scpandura (@Scpandura)": 1,
+      "FAA Southern Region (@FAASouth)": 1,
+      "KlSummary (@KlSummary)": 1,
+      "War TV (@WarTV7890)": 1,
+      "JasdfPaoEng (@JasdfPaoEng)": 1,
+      "Japan Joint Staff (@JapanJointStaff)": 1,
+      "Ianellisjones (@Ianellisjones)": 1,
+      "NSA Cybersecurity (@NSACyber)": 1,
+      "Armed Forces Philippines (@ArmedForcesPhil)": 1,
+      "MdaSpace (@MdaSpace)": 1,
+      "US Fleet Forces (@USFleetForces)": 1,
+      "ntonc (@ntonc)": 1,
+      "NSA (@NSAGov)": 1,
+      "US Pacific Fleet (@USPacificFleet)": 1,
+      "seawatch_intl (@seawatch_intl)": 1
     },
     "media_files": {
       "images": 5,
@@ -620,7 +641,8 @@
     "2026-05-01": 164,
     "2026-05-02": 192,
     "2026-05-03": 100,
-    "2026-05-04": 260
+    "2026-05-04": 285,
+    "2026-05-05": 2
   },
   "average_confidence": null
 }
