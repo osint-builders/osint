@@ -55,8 +55,7 @@ frontend/dist/
 # Built frontend artifacts. The Pages workflow (.github/workflows/pages.yml)
 # builds these on demand and uploads them as a Pages artifact — no need to
 # commit. Local `npm run build` puts the output here too; ignore it.
-docs/search/
-docs/indexes/
+docs/
 data/indexes/events/
 
 # Builder dry-run output

@@ -54,15 +54,15 @@ embeddings.yml  ← rebuilds data/indexes/{metadata,schema,fingerprints,pca}.jso
         ▼  (workflow_run)
 pages.yml       ← runs backfill_event_details.py (generates data/indexes/events/)
                    copies data/indexes/ → docs/indexes/
-                   builds frontend/ → docs/search/
+                   builds frontend/ → docs/
                    uploads docs/ to GitHub Pages
 ```
 
-The site appears at `https://<owner>.github.io/<repo>/search/`.
+The site is deployed at `https://osint.builders/`.
 
 ```bash
 # Local frontend preview (after building the search index once):
-cd frontend && npm install && npm run dev   # http://localhost:5173/search/
+cd frontend && npm install && npm run dev   # http://localhost:5173/
 ```
 
 ## Retention

@@ -8,7 +8,7 @@ React-based semantic search interface for exploring world events corpus with nat
 - **Rich Filtering**: Date range, country, topics, confidence threshold
 - **Fast Performance**: Client-side ANN search (<30ms after index load)
 - **Responsive UI**: Built with React 18 + Tailwind CSS
-- **Static Deployment**: Builds to `../docs/search/` for GitHub Pages
+- **Static Deployment**: Builds to `../docs/` for GitHub Pages
 
 ## Development
 
@@ -21,7 +21,7 @@ npm run dev
 
 # Build for production
 npm run build
-# Output: ../docs/search/
+# Output: ../docs/
 ```
 
 ## Architecture
@@ -59,24 +59,24 @@ Expected files in `/search-index/` (relative to build output):
 
 Set in `vite.config.ts`:
 ```typescript
-base: '/search/'  // GitHub Pages subdirectory
+base: '/'  // Custom domain at root
 ```
 
 ### Build Output
 
 ```typescript
 build: {
-  outDir: '../docs/search',  // Output for GitHub Pages
+  outDir: '../docs',  // Output for GitHub Pages
   emptyOutDir: true
 }
 ```
 
 ## Deployment
 
-The build output is committed to `docs/search/` for GitHub Pages deployment:
+The build output is deployed to GitHub Pages at https://osint.builders/:
 
 1. Build frontend: `npm run build`
-2. Commit `docs/search/` to git
+2. Workflow commits `docs/` to git
 3. GitHub Pages serves from `/docs` folder on `main` branch
 
 ## Future Enhancements

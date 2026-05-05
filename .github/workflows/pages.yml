@@ -2,9 +2,8 @@ name: Deploy GitHub Pages
 
 # Builds the React search frontend and deploys docs/ to GitHub Pages.
 # The deployed site combines:
-#   - docs/search/        ← built from frontend/ in this workflow
-#   - docs/search-index/  ← committed to main by embeddings.yml after every
-#                           successful collection
+#   - docs/               ← built from frontend/ in this workflow
+#   - docs/indexes/       ← copied from data/indexes/ in this workflow
 #
 # Pages source must be configured to "GitHub Actions" in
 # Settings → Pages → Source. (One-time manual step.)
@@ -59,10 +58,9 @@ jobs:
         working-directory: frontend
 
       - name: Build frontend
-        # PAGES_BASE picks up the Pages URL prefix (e.g. /osint/search/) so
-        # Vite emits asset URLs that resolve correctly on the deployed site.
-        # `${{ github.event.repository.name }}` evaluates to the repo name.
-        run: PAGES_BASE="/${{ github.event.repository.name }}/search/" npm run build
+        # PAGES_BASE='/' for custom domain deployment at https://osint.builders/
+        # Vite emits asset URLs relative to the domain root.
+        run: PAGES_BASE="/" npm run build
         working-directory: frontend
 
       - name: Generate event detail files for frontend (from JSONL)
@@ -78,7 +76,7 @@ jobs:
 
       - name: Verify build output
         run: |
-          test -f docs/search/index.html || { echo "::error::docs/search/index.html missing after build"; exit 1; }
+          test -f docs/index.html || { echo "::error::docs/index.html missing after build"; exit 1; }
           if [ ! -d docs/indexes ] || [ -z "$(ls -A docs/indexes 2>/dev/null)" ]; then
             echo "::warning::docs/indexes/ is empty. The site will deploy but searches will fail until embeddings.yml runs at least once."
           fi

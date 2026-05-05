@@ -1,18 +1,15 @@
 import type { IndexSchema, EventMetadata } from '../types';
 
 /**
- * Resolves to the indexes/ directory for both local dev and GitHub Pages.
+ * Resolves to the indexes/ directory for both local dev and production.
  *
- * On Pages the site lives at https://<owner>.github.io/<repo>/search/
- * and the index files at https://<owner>.github.io/<repo>/indexes/.
- * Vite injects import.meta.env.BASE_URL = '/<repo>/search/' at build time;
- * trimming the trailing 'search/' and appending 'indexes' lands on the
- * sibling directory regardless of repo name.
+ * The site is deployed at https://osint.builders/ (root path).
+ * Index files are at https://osint.builders/indexes/.
+ * Vite injects import.meta.env.BASE_URL = '/' at build time.
  */
 function defaultIndexUrl(): string {
   const base = import.meta.env.BASE_URL || '/';
-  const parent = base.replace(/search\/?$/, '');
-  return `${parent}indexes`.replace(/\/+/g, '/');
+  return `${base}indexes`.replace(/\/+/g, '/');
 }
 
 export class IndexLoader {
