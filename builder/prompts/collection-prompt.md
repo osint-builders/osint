@@ -155,6 +155,7 @@ For each source listed above:
 
 3. **Extract World Event Entities** from raw data following the schema in `data/SCHEMA.md`.
    **Topics must be lowercase, hyphenated, and singular** (e.g., `missile` not `Missiles`, `drone-strike` not `Drone Strikes`, `sanction` not `sanctions`). Deduplicate topics per event.
+   **Set `source.name` exactly as written in the source file's `#` header** (e.g., `TankerTrackers (@TankerTrackers)`, `BBC Breaking News (@BBCBreaking)`). Do not invent variants, abbreviations, or combine multiple sources into one name.
 
 4. **Transform contents to E-PRIME** — rewrite `contents` field removing all "to be" verbs (is, are, was, were, be, been, being). Use active, specific verbs. See `skills/data-to-markdown/SKILL.md` for guidance.
 

@@ -202,8 +202,6 @@ async function main() {
   };
 
   fs.writeFileSync(path.join(DATA_DIR, 'stats.json'), JSON.stringify(unified, null, 2));
-  // Keep indexes/stats.json as an alias for backward compat
-  fs.writeFileSync(path.join(INDEXES_DIR, 'stats.json'), JSON.stringify(unified, null, 2));
 
   console.log('\nIndexes rebuilt successfully:');
   console.log(`  by-source.json (${bySource.length} sources)`);

@@ -3,8 +3,8 @@
 Backfill per-event detail files and patch links into metadata.json.
 
 Reads all JSONL files from data/events/**/*.jsonl without requiring OpenAI:
-1. Writes data/search-index/events/{id}.json for each event (for detail modal)
-2. Patches data/search-index/metadata.json to add 'links' field to each entry
+1. Writes data/indexes/events/{id}.json for each event (for detail modal)
+2. Patches data/indexes/metadata.json to add 'links' field to each entry
 
 Usage:
     python backfill_event_details.py [repo_root]
@@ -72,7 +72,7 @@ def patch_metadata(events: dict, metadata_path: Path) -> int:
 def main():
     repo_root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path.cwd()
     data_dir = repo_root / 'data' / 'events'
-    output_dir = repo_root / 'data' / 'search-index'
+    output_dir = repo_root / 'data' / 'indexes'
     events_dir = output_dir / 'events'
     metadata_path = output_dir / 'metadata.json'
 

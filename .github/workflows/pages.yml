@@ -20,7 +20,7 @@ on:
     branches: [main]
     paths:
       - 'frontend/**'
-      - 'data/search-index/**'
+      - 'data/indexes/**'
       - 'docs/README.md'
       - '.github/workflows/pages.yml'
   workflow_run:
@@ -65,19 +65,22 @@ jobs:
         run: PAGES_BASE="/${{ github.event.repository.name }}/search/" npm run build
         working-directory: frontend
 
-      - name: Copy search index into docs for Pages upload
+      - name: Generate event detail files for frontend (from JSONL)
+        run: python3 builder/embeddings/backfill_event_details.py
+
+      - name: Copy indexes into docs for Pages upload
         run: |
-          if [ -d data/search-index ]; then
-            cp -r data/search-index docs/search-index
+          if [ -d data/indexes ]; then
+            cp -r data/indexes docs/indexes
           else
-            echo "::warning::data/search-index/ not found. Searches will fail until embeddings.yml runs."
+            echo "::warning::data/indexes/ not found. Searches will fail until embeddings.yml runs."
           fi
 
       - name: Verify build output
         run: |
           test -f docs/search/index.html || { echo "::error::docs/search/index.html missing after build"; exit 1; }
-          if [ ! -d docs/search-index ] || [ -z "$(ls -A docs/search-index 2>/dev/null)" ]; then
-            echo "::warning::docs/search-index/ is empty. The site will deploy but searches will fail until embeddings.yml runs at least once."
+          if [ ! -d docs/indexes ] || [ -z "$(ls -A docs/indexes 2>/dev/null)" ]; then
+            echo "::warning::docs/indexes/ is empty. The site will deploy but searches will fail until embeddings.yml runs at least once."
           fi
 
       - uses: actions/configure-pages@v5

@@ -25,7 +25,7 @@ on:
     paths-ignore:
       - 'data/events/**'
       - 'data/media/**'
-      - 'data/search-index/**'
+      - 'data/indexes/**'
       - 'data/indexes/**'
       - 'data/stats.json'
       - 'LEARNINGS.md'

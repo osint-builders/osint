@@ -56,6 +56,8 @@ frontend/dist/
 # builds these on demand and uploads them as a Pages artifact — no need to
 # commit. Local `npm run build` puts the output here too; ignore it.
 docs/search/
+docs/indexes/
+data/indexes/events/
 
 # Builder dry-run output
 .dry-run-prompts/

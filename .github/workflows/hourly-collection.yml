@@ -17,6 +17,7 @@ on:
       # The cloud agent's own commits shouldn't re-trigger the workflow.
       - 'data/**'
       - 'docs/**'
+      - 'data/indexes/**'
       - 'LEARNINGS.md'
       # Documentation changes don't affect runtime behavior.
       - '**/*.md'
