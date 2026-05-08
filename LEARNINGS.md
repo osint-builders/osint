@@ -95,3 +95,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** Twitter/X images at pbs.twimg.com require authenticated sessions the agent does not have. Twitter API credits were depleted as of 2026-05-01. Attempting image extraction for Twitter sources wastes time and always fails silently. ~80% of sources are Twitter type.
 **Action for next run:** For type:twitter sources, set image_urls:[] immediately and skip Step 7 entirely. Only attempt image extraction for type:webpage, type:api, type:rss sources where og:image or article hero images are accessible via curl without auth.
 **Expires:** permanent
+
+## 2026-05-08 16:58Z — Nominatim fails to geocode "Strait of Hormuz" — use hardcoded coords
+**Trigger:** Bucket 14 geocoding returned null lat/lon for "Strait of Hormuz, Iran", causing strict validation failures.
+**Finding:** OpenStreetMap Nominatim does not resolve "Strait of Hormuz" as a searchable location. Hardcoded fallback coordinates (26.5944°N, 56.2708°E) resolve the issue.
+**Action for next run:** Pre-populate geocoding cache with known maritime strait coordinates before querying Nominatim.
+**Expires:** permanent
