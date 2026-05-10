@@ -101,3 +101,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** OpenStreetMap Nominatim does not resolve "Strait of Hormuz" as a searchable location. Hardcoded fallback coordinates (26.5944°N, 56.2708°E) resolve the issue.
 **Action for next run:** Pre-populate geocoding cache with known maritime strait coordinates before querying Nominatim.
 **Expires:** permanent
+
+## 2026-05-10 16:12Z — Nominatim now resolves "Strait of Hormuz" — hardcoded fallback no longer needed
+**Trigger:** Bucket 5 geocoding successfully resolved "Strait of Hormuz" via Nominatim API (lat: 26.4494, lon: 56.2028).
+**Finding:** The earlier learning (2026-05-08) noting Nominatim fails for "Strait of Hormuz" no longer holds. The API now returns valid coordinates for this query. The hardcoded fallback (26.5944°N, 56.2708°E) remains close but unnecessary.
+**Action for next run:** Remove hardcoded Strait of Hormuz fallback from geocoding pre-population. Standard Nominatim query now works. Keep the general maritime strait fallback approach for other locations.
+**Expires:** 2026-08-10
