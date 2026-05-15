@@ -10,7 +10,7 @@ Procedural references for the cloud agent. Each skill lives at `skills/<name>/SK
 |---|---|---|
 | [`agent-browser`](agent-browser/SKILL.md) | Native Rust CLI for browser automation by Vercel Labs. Automate web navigation, interact with page elements, extract ... | 61 |
 | [`create-source`](create-source/SKILL.md) 🛠 | Authoring tool for creating new OSINT data sources. Provides templates, validation, and tests for source files. Not u... | 87 |
-| [`data-to-markdown`](data-to-markdown/SKILL.md) | Transform raw scraped or API data into clean, semantic Markdown for the `contents` field of a World Event Entity. Enf... | 53 |
+| [`data-to-markdown`](data-to-markdown/SKILL.md) | Transform raw scraped or API data into clean, semantic Markdown for the `contents` field of a World Event Entity. Enf... | 55 |
 | [`ffmpeg-cli`](ffmpeg-cli/SKILL.md) | FFmpeg CLI for media processing and transformation. Convert video formats, resize and pad, extract audio, trim by tim... | 62 |
 | [`geocoding`](geocoding/SKILL.md) | Extract location mentions from text and convert to lat/lon coordinates using OpenStreetMap Nominatim (free) or Google... | 81 |
 | [`image-extraction`](image-extraction/SKILL.md) | Extract, process, and normalize images from any data source for world event entities. Find images in social media, we... | 90 |
