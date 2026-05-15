@@ -166,3 +166,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** The Twitter handle @ModjapanEn configured for source twitter-modjapan-en does not resolve to an active X/Twitter account. Japan's Ministry of Defense may operate under a different English-language handle or have consolidated social media presence. Events for this source's topic area remain accessible via Japan News, Mainichi, and defense industry publications.
 **Action for next run:** Skip Twitter API and r.jina.ai for twitter-modjapan-en. Use exa_web_search with Japan MOD/defense policy keywords. Flag source for manifest handle investigation or status change to inactive.
 **Expires:** 2026-08-15
+
+## 2026-05-15 18:14Z — Nominatim fails to geocode Uvira, DRC — use hardcoded fallback
+**Trigger:** Bucket 14 geocoding returned null lat/lon for "Uvira, Democratic Republic of Congo."
+**Finding:** OpenStreetMap Nominatim does not resolve "Uvira, Democratic Republic of Congo" as a searchable location. Hardcoded fallback coordinates (-3.4, 29.14) resolve the issue. Uvira sits on the northern shore of Lake Tanganyika in South Kivu province.
+**Action for next run:** Pre-populate geocoding cache with Uvira coordinates (-3.4, 29.14) before querying Nominatim for DRC locations.
+**Expires:** 2026-08-15
