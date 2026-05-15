@@ -35,6 +35,13 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 ---
 
 <!-- entries below this line; newest first -->
+## 2026-05-15 01:35Z — Twitter API credits restored; direct search now works for in-window tweet discovery
+**Trigger:** Bucket 6 Twitter API calls returned valid responses (result_count: 0 or 1) instead of CreditsDepleted errors for all 10 handles tested.
+**Finding:** The TWITTER_BEARER_TOKEN credits have replenished since the depletion reported on 2026-05-01. The recent search endpoint (/2/tweets/search/recent) now returns data when tweets exist within the queried time range. WarshipCam returned 1 in-window tweet; all other handles returned 0 (no tweets during the 00:35-01:35 UTC window). The r.jina.ai mirror remains useful as a first-pass discovery path but showed only older popular tweets, not recent timeline content. exa_web_search proved effective for article-level discovery when Twitter sources had no tweets.
+**Action for next run:** Use Twitter API search as the primary method for tweet discovery before falling back to r.jina.ai or web search. The API now correctly returns in-window tweets when they exist.
+**Expires:** 2026-07-15
+
+
 
 ## 2026-05-01 19:55Z — Twitter API credits depleted; fallback collection strategy needed
 **Trigger:** Twitter Bearer Token returned "CreditsDepleted" error for all API v2 calls during bucket 2 run
