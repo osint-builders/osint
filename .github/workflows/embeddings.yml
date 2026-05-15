@@ -1,7 +1,7 @@
 name: Build Search Embeddings
 
-# Rebuilds the semantic search index after every successful hourly
-# collection. Decoupled from hourly-collection.yml (PR-H) so the two
+# Rebuilds the semantic search index after every hourly collection run,
+# regardless of whether the collection succeeded or failed. Decoupled from hourly-collection.yml (PR-H) so the two
 # cadences can evolve independently — collection is the OSINT product;
 # embeddings power a downstream search UI.
 
@@ -17,8 +17,6 @@ permissions:
 
 jobs:
   build-embeddings:
-    # Only run if the upstream collection succeeded.
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
 

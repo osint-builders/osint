@@ -40,9 +40,6 @@ permissions:
 
 jobs:
   build:
-    # Only run if the upstream embeddings job actually succeeded (when
-    # triggered via workflow_run). Push and dispatch always run.
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
