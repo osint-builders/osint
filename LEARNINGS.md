@@ -107,3 +107,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** The earlier learning (2026-05-08) noting Nominatim fails for "Strait of Hormuz" no longer holds. The API now returns valid coordinates for this query. The hardcoded fallback (26.5944°N, 56.2708°E) remains close but unnecessary.
 **Action for next run:** Remove hardcoded Strait of Hormuz fallback from geocoding pre-population. Standard Nominatim query now works. Keep the general maritime strait fallback approach for other locations.
 **Expires:** 2026-08-10
+
+## 2026-05-15 00:35Z — r.jina.ai mirror returns usable public X profile snapshots
+**Trigger:** Bucket 6 needed a Twitter fallback after API credits depletion and unauthenticated X timelines hid recent posts.
+**Finding:** `https://r.jina.ai/http://x.com/<handle>` returned readable profile snapshots for several X accounts, including tweet status IDs that allowed exact UTC timestamp recovery through snowflake decoding even when the page only showed relative labels such as `1m` or `2h`. Broken or low-activity accounts still returned stale or missing timelines, so the mirror works best as a first-pass discovery path rather than a guarantee of completeness.
+**Action for next run:** When Twitter API credits remain depleted, fetch the r.jina.ai mirror before broader web search, decode candidate status IDs to UTC, and keep only tweets whose decoded times fall inside the bucket window.
+**Expires:** 2026-07-15
