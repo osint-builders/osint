@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
+import { useVirtualizer } from '@tanstack/react-virtual';
 import type { SearchFilters, EventMetadata } from '../types';
 import { todayISO, daysAgoISO, getTagColor } from '../lib/utils';
 
@@ -17,6 +18,64 @@ const DEFAULT_FILTERS: SearchFilters = {
   minConfidence: 0,
 };
 
+const TOPIC_ROW_HEIGHT = 20;
+const TOPIC_LIST_HEIGHT = 160; // px — fixed height for the virtualized tag list
+
+interface TopicListProps {
+  topics: [string, number][];
+  activeTopics: string[];
+  onToggle: (topic: string, active: boolean) => void;
+}
+
+const TopicList: React.FC<TopicListProps> = ({ topics, activeTopics, onToggle }) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const virtualizer = useVirtualizer({
+    count: topics.length,
+    getScrollElement: () => scrollRef.current,
+    estimateSize: () => TOPIC_ROW_HEIGHT,
+    overscan: 5,
+  });
+
+  return (
+    <div ref={scrollRef} style={{ height: TOPIC_LIST_HEIGHT }} className="overflow-y-auto">
+      <div style={{ height: virtualizer.getTotalSize(), width: '100%', position: 'relative' }}>
+        {virtualizer.getVirtualItems().map(vRow => {
+          const [topic, count] = topics[vRow.index];
+          const active = activeTopics.includes(topic);
+          const color = getTagColor(topic);
+          return (
+            <div
+              key={vRow.key}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: `${vRow.size}px`,
+                transform: `translateY(${vRow.start}px)`,
+              }}
+            >
+              <button
+                onClick={() => onToggle(topic, active)}
+                className="w-full flex items-center gap-1.5 text-left py-0.5 pl-1 pr-1 transition-colors hover:bg-term-panel"
+                style={{ borderLeft: `3px solid ${active ? color : '#1a1a1a'}` }}
+              >
+                <span
+                  className="text-[8px] flex-1 truncate"
+                  style={{ color: active ? color : '#666' }}
+                >
+                  {topic}
+                </span>
+                <span className="text-[7px] text-term-muted flex-shrink-0">{count}</span>
+              </button>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
 export const FilterRail: React.FC<FilterRailProps> = ({
   filters,
   onFiltersChange,
@@ -30,10 +89,9 @@ export const FilterRail: React.FC<FilterRailProps> = ({
       if (e.geo?.country) countrySet.add(e.geo.country);
       for (const t of e.topics) topicCounts.set(t, (topicCounts.get(t) ?? 0) + 1);
     }
-    // Alphabetical, max 40
+    // Most-used first, alphabetical tiebreak
     const sortedTopics = [...topicCounts.entries()]
-      .sort((a, b) => a[0].localeCompare(b[0]))
-      .slice(0, 40);
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
     return {
       countries: [...countrySet].sort(),
       topTopics: sortedTopics,
@@ -65,10 +123,10 @@ export const FilterRail: React.FC<FilterRailProps> = ({
       </div>
 
       <div className="flex-1 overflow-y-auto px-2 py-2 space-y-3">
-        {/* Topics — facet surface, shown first */}
-        <div>
-          <div className="text-[7px] text-term-dim tracking-widest mb-1">
-            TAGS
+        {/* Topics — virtualized, no cap */}
+        <div className="flex flex-col min-h-0">
+          <div className="text-[7px] text-term-dim tracking-widest mb-1 flex-shrink-0">
+            TAGS ({topTopics.length})
             {filters.topics.length > 0 && (
               <button
                 onClick={() => onFiltersChange({ ...filters, topics: [] })}
@@ -78,33 +136,16 @@ export const FilterRail: React.FC<FilterRailProps> = ({
               </button>
             )}
           </div>
-          <div className="space-y-px">
-            {topTopics.map(([topic, count]) => {
-              const active = filters.topics.includes(topic);
-              const color = getTagColor(topic);
-              return (
-                <button
-                  key={topic}
-                  onClick={() => {
-                    const next = active
-                      ? filters.topics.filter(t => t !== topic)
-                      : [...filters.topics, topic];
-                    onFiltersChange({ ...filters, topics: next });
-                  }}
-                  className="w-full flex items-center gap-1.5 text-left py-0.5 pl-1 pr-1 transition-colors hover:bg-term-panel"
-                  style={{ borderLeft: `3px solid ${active ? color : '#1a1a1a'}` }}
-                >
-                  <span
-                    className="text-[8px] flex-1 truncate"
-                    style={{ color: active ? color : '#666' }}
-                  >
-                    {topic}
-                  </span>
-                  <span className="text-[7px] text-term-muted flex-shrink-0">{count}</span>
-                </button>
-              );
-            })}
-          </div>
+          <TopicList
+            topics={topTopics}
+            activeTopics={filters.topics}
+            onToggle={(topic, active) => {
+              const next = active
+                ? filters.topics.filter(t => t !== topic)
+                : [...filters.topics, topic];
+              onFiltersChange({ ...filters, topics: next });
+            }}
+          />
         </div>
 
         {/* Date range */}
