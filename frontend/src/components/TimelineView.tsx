@@ -36,12 +36,29 @@ const TimelineColumn: React.FC<TimelineColumnProps> = ({
     count: group.events.length,
     getScrollElement: () => scrollRef.current,
     estimateSize: () => ESTIMATED_CARD_H,
+    measureElement: el => el.getBoundingClientRect().height,
     overscan: 3,
   });
+
+  const onColumnWheel = useCallback((e: React.WheelEvent<HTMLDivElement>) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    // Only intercept predominantly vertical scrolls
+    if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+    const atTop = el.scrollTop <= 0;
+    const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 1;
+    // Stop propagation so the track doesn't scroll horizontally while the
+    // column still has room to scroll. At boundaries, let it bubble so the
+    // track can take over with horizontal scrolling.
+    if ((e.deltaY < 0 && !atTop) || (e.deltaY > 0 && !atBottom)) {
+      e.stopPropagation();
+    }
+  }, []);
 
   return (
     <div
       ref={scrollRef}
+      onWheel={onColumnWheel}
       style={{
         width: COL_W,
         minWidth: COL_W,
@@ -68,6 +85,8 @@ const TimelineColumn: React.FC<TimelineColumnProps> = ({
           return (
             <div
               key={vItem.key}
+              ref={virtualizer.measureElement}
+              data-index={vItem.index}
               style={{
                 position: 'absolute',
                 top: 0,
