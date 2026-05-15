@@ -12,7 +12,7 @@ export interface TimeGroup {
 export function deriveGranularity(results: SearchResult[]): TimeGranularity {
   if (results.length < 2) return 'day';
   const dates = results
-    .map(r => new Date(r.date_published).getTime())
+    .map(r => new Date(r.date_event ?? r.date_published).getTime())
     .filter(t => !isNaN(t));
   if (dates.length < 2) return 'day';
   const spanMs = Math.max(...dates) - Math.min(...dates);
@@ -75,7 +75,7 @@ export function groupEventsByTime(results: SearchResult[]): TimeGroup[] {
   const bucketMap = new Map<string, SearchResult[]>();
 
   for (const ev of results) {
-    const key = getBucketKey(ev.date_published, granularity);
+    const key = getBucketKey(ev.date_event ?? ev.date_published, granularity);
     if (!bucketMap.has(key)) bucketMap.set(key, []);
     bucketMap.get(key)!.push(ev);
   }
@@ -86,7 +86,7 @@ export function groupEventsByTime(results: SearchResult[]): TimeGroup[] {
       const { label, sublabel } = getBucketLabel(key, granularity);
       // Sort events within bucket by date descending
       const sorted = [...events].sort((a, b) =>
-        b.date_published.localeCompare(a.date_published)
+        (b.date_event ?? b.date_published).localeCompare(a.date_event ?? a.date_published)
       );
       return { key, label, sublabel, events: sorted };
     });

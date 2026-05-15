@@ -91,6 +91,7 @@ def extract_metadata(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             'confidence': event.get('confidence'),
             'source_name': event['source']['name'],
             'links': event.get('links', []),
+            'link_preview_image': (event.get('link_preview') or {}).get('image'),
         }
         metadata.append(item)
 

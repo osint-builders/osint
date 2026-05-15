@@ -1,18 +1,18 @@
 # AGENTS.md
 
-Guidance for AI agents (Claude Code, Cursor, Hermes, Warp Cloud Agent) and humans editing this repo. Keep this file under ~150 lines.
+Agent + human guidance. Max ~150 lines.
 
 ## What this repo is
 
-An hourly OSINT collector. A GitHub Actions cron fans out parallel Warp Cloud Agents (via `oz-agent-sdk`) that scrape ~140 sources, normalize hits into **World Event Entities**, and commit them back to `data/`.
+Hourly OSINT collector. GitHub Actions cron → parallel Warp Cloud Agents (`oz-agent-sdk`) → scrape ~140 sources → normalize to **World Event Entities** → commit to `data/`.
 
-For the human-friendly overview see [`README.md`](README.md). For the entity schema see [`data/SCHEMA.md`](data/SCHEMA.md).
+Human overview: [`README.md`](README.md). Schema: [`data/SCHEMA.md`](data/SCHEMA.md).
 
 ## Source of truth (read this before editing)
 
 | Concern | File |
 |---|---|
-| Runtime prompt sent to the cloud agent | `builder/index.ts::buildCollectionPrompt()` (will move to `builder/prompts/collection-prompt.md` in a follow-up PR) |
+| Runtime prompt sent to the cloud agent | `builder/prompts/collection-prompt.md` |
 | Source registry | `source/manifest.json` |
 | Per-source spec | `source/sources/<id>.md` |
 | Entity schema | `data/SCHEMA.md` |
@@ -24,16 +24,16 @@ For the human-friendly overview see [`README.md`](README.md). For the entity sch
 ## Conventions
 
 ### Manifest semantics
-- The manifest is a **deny-list**, not an allow-list. A source is included in every run unless its `status` is one of `inactive`, `archived`, `deprecated` (case-insensitive).
-- New sources default to `status: testing` and ride along on the next run immediately. This is intentional — bugs surface fast.
-- The orchestrator embeds a sentinel ID list in the prompt and aborts if the agent's live manifest snapshot disagrees, so a source can never be silently dropped.
+- Manifest = **deny-list**. Source runs unless `status` is `inactive`, `archived`, or `deprecated`.
+- New sources default `status: testing`, run immediately — bugs surface fast.
+- Orchestrator embeds sentinel ID list; aborts on manifest disagreement — no silent drops.
 
 ### World Event Entity output
-- One JSON object per line, written to `data/events/YYYY-MM/YYYY-MM-DD.jsonl`.
-- Required fields: `id`, `source`, `title`, `summary`, `contents`, `date_published`, `links`, `image_urls`, `geo` (with `lat` and `lon`).
-- IDs follow `evt_YYYYMMDD_NNN` using the extraction date (1-hour lookback from execution).
-- `contents` must be ≥100 words of E-PRIME markdown — no forms of *to be*: is, are, was, were, be, been, being.
-- All events must be geocoded. Use Nominatim with caching; fall back to country-level coords; last-resort global default. See `skills/geocoding/SKILL.md`.
+- One JSON obj/line → `data/events/YYYY-MM/YYYY-MM-DD.jsonl`.
+- Required: `id`, `source`, `title`, `summary`, `contents`, `date_published`, `links`, `image_urls`, `geo` (`lat`+`lon`).
+- IDs: `evt_YYYYMMDD_NNN` (extraction date, 1-hr lookback).
+- `contents`: ≥100 words, E-PRIME — no `is/are/was/were/be/been/being`.
+- All events need geocodes. Nominatim + cache; fallback: country → global default. See `skills/geocoding/SKILL.md`.
 
 ### Media output
 - Every image normalizes to **720×720 PNG**, compression level 9, metadata stripped.
@@ -41,32 +41,22 @@ For the human-friendly overview see [`README.md`](README.md). For the entity sch
 - Path written into `image_urls`: `./media/YYYY-MM/images/YYYY-MM-DD/<event_id>_imgN.png` (relative to repo root after consolidation).
 
 ### Time window
-- Each run targets a **1-hour lookback** from the workflow execution time (UTC).
-- Events with `date_published` outside the window must be rejected and logged.
+- Each run: **1-hour lookback** from execution time (UTC).
+- Reject + log events outside window.
 
 ### CLI tooling
 
-The Warp Cloud Agent environment image (`WARP_ENVIRONMENT_ID`) installs every CLI the agent uses. The repo does **not** carry vendored binaries.
+Cloud agent env image (`WARP_ENVIRONMENT_ID`) installs all CLIs. Repo carries no vendored binaries.
 
-The canonical install list lives in [`README.md`](README.md#warp-cloud-agent-environment-image). When you add a skill that needs a new CLI, update that list in the same PR and rebuild the image before merge.
+Install list: [`README.md`](README.md#warp-cloud-agent-environment-image). Adding skill needing new CLI → update list + rebuild image in same PR.
 
-### `LEARNINGS.md` (the cross-run learnings file)
-- The next run reads it. Write only when a finding will help the next agent.
-- Keep entries to: source-spec changes, non-obvious shortcuts, repeated failure patterns (≥3 occurrences) with mitigations, schema/validation gaps, cost/budget signals.
-- Do **not** dump per-source telemetry (`No events parsed`, `Created event: …`) into `LEARNINGS.md`. That noise belongs in `data/run-logs/YYYY-MM/YYYY-MM-DD.log`.
-- Format every entry:
-  ```
-  ## YYYY-MM-DD HH:MMZ — <topic>
-  **Trigger:** ...
-  **Finding:** ...
-  **Action for next run:** ...
-  **Expires:** YYYY-MM-DD | permanent
-  ```
-- Hard cap: 100 entries or ~30 KB. Prune expired entries before adding new ones.
+### `LEARNINGS.md`
+
+See `skills/remember-as-you-go/SKILL.md`. Cap: 100 entries / 30 KB. Orchestrator prunes — never rotate manually.
 
 ## Skills
 
-The cloud agent reads `skills/<name>/SKILL.md` on demand. Skills currently in scope:
+Cloud agent reads `skills/<name>/SKILL.md` on demand:
 
 - `agent-browser` — web/tweet scraping with deterministic ref selectors
 - `perplexity-search` — confidence-validation queries
@@ -78,15 +68,15 @@ The cloud agent reads `skills/<name>/SKILL.md` on demand. Skills currently in sc
 - `remember-as-you-go` — write rules for `LEARNINGS.md`
 - `create-source` — authoring tool, **not used at runtime**
 
-When editing skills:
-- Keep `SKILL.md` ≤ ~150 lines: Overview, When to use, Entry-point commands, Pitfalls, Pointers. Push deep content into `references/`.
-- Do not embed the same content in multiple SKILL.md files. If two skills need the same procedure, factor it into a shared `references/` doc.
+Skill editing rules:
+- ≤150 lines per SKILL.md. Deep content → `references/`.
+- No duplicate content across SKILL.md files — factor into `references/`.
 
 ## Pitfalls (real ones we've hit)
 
-- **README drift**: the README used to contain a duplicate copy of the runtime instructions. It went stale within days. The runtime prompt now lives only in `builder/index.ts` (and soon `builder/prompts/`). Don't re-document the runtime in the README.
-- **Prompt-size cap**: Warp enforces 1 MB per prompt. The orchestrator targets 80% of that and auto-buckets. If you add a source with a giant body, expect your bucket count to rise.
-- **CRLF in prompt files**: enforce LF in `builder/prompts/**` via `.gitattributes` once those files exist; mixed line endings inflate byte counts unpredictably.
+- **README drift**: runtime prompt lives in `builder/prompts/collection-prompt.md` — don't re-document in README.
+- **Prompt-size cap**: 1 MB limit; orchestrator targets 80%, auto-buckets. Giant source body → more buckets.
+- **CRLF**: enforce LF in `builder/prompts/**` via `.gitattributes` — mixed endings inflate byte counts.
 - **`oz-agent-sdk` cannot answer interactive prompts** — never put a question in the prompt; always make the instruction unambiguous.
 
 ## Don't

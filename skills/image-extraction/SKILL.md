@@ -12,20 +12,21 @@ metadata:
     - agent-browser
 ---
 
-# Image Extraction Skill
+# Image Extraction
 
-Extract, process, and normalize images for world event entities into a uniform 720×720 PNG format. Supports social-media attachments, webpage hero images, video frames, and interactive/embedded content. Every image flows through the same ImageMagick normalization pipeline so output is reproducible across sources.
+Extract + normalize images → 720×720 PNG for world event entities. Sources: social media, webpage hero, video frames, embedded content.
 
 ## When to use
-- An event entity needs `image_urls` populated.
-- A source provides raw images (social-media media URLs, og:image, article hero, thumbnail listings).
-- A source provides a video and a representative still frame is needed.
-- Visual content is embedded/protected and must be screenshotted (maps, charts, iframes).
-- Multiple images must be batch-processed for a single event (≤ 3-5 per event).
+
+- `image_urls` needs populating.
+- Source has raw images (media URLs, og:image, article hero).
+- Source has video needing a still frame.
+- Embedded/protected content needs screenshot (maps, charts, iframes).
+- Batch ≤5 images per event.
 
 ## Entry-point commands
 
-Canonical normalization pipeline (apply to every extracted image):
+Normalization pipeline (every image):
 
 ```bash
 magick INPUT \
@@ -38,58 +39,52 @@ magick INPUT \
   OUTPUT.png
 ```
 
-Plug in the source-appropriate extractor before the pipeline:
+Source extractor:
 
 ```bash
-# curl (direct URL: API media_url, og:image, article <img src>)
+# curl (direct URL)
 curl -o /tmp/source.jpg "$IMAGE_URL"
 
-# ffmpeg (video frame, 5s default past intros)
+# ffmpeg (video frame, 5s default)
 ffmpeg -i /tmp/video.mp4 -ss 00:00:05 -vframes 1 /tmp/source.jpg
 
-# agent-browser (embedded/protected/interactive content)
+# agent-browser (embedded/protected)
 agent-browser open "$URL"
 agent-browser wait --selector ".target"
 agent-browser screenshot --selector ".target" /tmp/source.png
 ```
 
-Verify after processing:
+Verify:
 ```bash
 identify -format "%w x %h | %m | %b\n" OUTPUT.png   # expect: 720 x 720 | PNG | <500KB
 ```
 
-For the full extractor variations, batch loops, parallel/memory-limit forms, validation wrappers, and graceful-degradation patterns, see `references/processing-pipeline.md`.
+Full variations: `references/processing-pipeline.md`.
 
 ## Required output
 
-- **Format**: PNG, 720×720, stripped of metadata, PNG compression level 9.
-- **Naming**: `{event_id}_img{N}.png` — sequential, `img1` is primary/hero. Lowercase `.png`.
-- **Count**: 3-5 images per event maximum (first is primary; rest provide context).
-- **On-disk path**: `data/media/YYYY-MM/images/YYYY-MM-DD/{event_id}_imgN.png`.
-- **Entity field**: append relative paths to `image_urls`:
-  ```json
-  "image_urls": [
-    "./media/2026-04/images/2026-04-29/evt_20260429_001_img1.png",
-    "./media/2026-04/images/2026-04-29/evt_20260429_001_img2.png"
-  ]
-  ```
-- File size target: <500KB per image (typically 100-300KB).
+- **Format**: 720×720 PNG, metadata stripped, compression 9.
+- **Naming**: `{event_id}_img{N}.png`; `img1` = primary. Lowercase.
+- **Count**: ≤5/event (first = primary).
+- **Path**: `data/media/YYYY-MM/images/YYYY-MM-DD/{event_id}_imgN.png`.
+- **`image_urls`**: `["./media/YYYY-MM/images/YYYY-MM-DD/{event_id}_imgN.png"]`.
+- **Size**: <500KB (typ. 100–300KB).
 
 ## Pitfalls
 
-- **`+repage` is required after `-extent`**. Without it, ImageMagick keeps a virtual canvas offset that breaks downstream operations and viewers.
-- **Always `-strip` metadata.** EXIF can leak source/location data and inflates file size.
-- **`mogrify` overwrites the input by default** — prefer `magick INPUT … OUTPUT.png` so the source is preserved while iterating.
-- **Video frame timing matters.** 5s is the safe default to skip intros/black frames; for short clips fall back to 0s; for long clips use middle (`ffprobe` duration / 2). Avoid transitions.
-- **Don't fail the whole event on one bad image.** Skip the image, log a warning, continue. Empty `image_urls` is valid.
-- **agent-browser screenshots need a wait.** Combine `--selector` wait with an extra `--timeout` for tile/chart rendering, then retry once before falling back.
-- **ImageMagick "not authorized"** errors mean `policy.xml` is blocking a format (often PDF/SVG); convert to a permitted format first.
-- **Center-crop preserves the subject**; never use `-resize 720x720!` (force) on non-square sources — it stretches.
+- **`+repage` after `-extent`** — without it, virtual canvas offset breaks viewers.
+- **`-strip` always** — EXIF leaks location data, inflates size.
+- **`mogrify` overwrites** input — use `magick IN … OUT.png` to preserve source.
+- **Frame timing**: 5s default (skips intros); short clips → 0s; long → middle (`ffprobe` dur/2). Avoid transitions.
+- **Never fail event on bad image** — skip, log warning, continue. Empty `image_urls` valid.
+- **Screenshots**: `--selector` wait + `--timeout` for charts/tiles; retry once before fallback.
+- **"not authorized"** → `policy.xml` blocks format (PDF/SVG); convert first.
+- **No `-resize 720x720!`** on non-square — stretches. Use `^` + center + `-extent`.
 
 ## See also
 
-- `references/social-media-sources.md` — Twitter/X media URLs, og:image extraction, decision tree for picking an extraction method, image-selection priority.
-- `references/video-frame-extraction.md` — ffmpeg/ffprobe timing strategies, parallel frame extraction, full video→PNG pipeline.
-- `references/processing-pipeline.md` — every variation of the magick pipeline, batch/parallel processing, memory limits, validation, error-handling tables, graceful degradation, builder/index.ts integration snippet.
-- `references/agent-browser-screenshots.md` — interactive/embedded media (maps, charts, iframes), multi-image batch screenshots.
-- Sibling skills: `skills/imagemagick/SKILL.md`, `skills/ffmpeg-cli/SKILL.md`, `skills/agent-browser/SKILL.md`, `skills/world-event-entities/SKILL.md`.
+- `references/social-media-sources.md` — Twitter/X media, og:image, extraction decision tree.
+- `references/video-frame-extraction.md` — ffmpeg timing, parallel extraction, video→PNG pipeline.
+- `references/processing-pipeline.md` — magick variations, batch/memory limits, error tables.
+- `references/agent-browser-screenshots.md` — interactive/embedded media, batch screenshots.
+- Sibling skills: `imagemagick`, `ffmpeg-cli`, `agent-browser`, `world-event-entities`.

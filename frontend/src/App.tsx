@@ -81,7 +81,9 @@ function applySort(results: SearchResult[], sorts: SortEntry[]): SearchResult[] 
     for (const s of sorts) {
       let cmp = 0;
       if (s.field === 'date') {
-        cmp = (a.date_published ?? '').localeCompare(b.date_published ?? '');
+        const aDate = a.date_event ?? a.date_published ?? '';
+        const bDate = b.date_event ?? b.date_published ?? '';
+        cmp = aDate.localeCompare(bDate);
       } else if (s.field === 'title') {
         cmp = a.title.localeCompare(b.title);
       } else if (s.field === 'confidence') {

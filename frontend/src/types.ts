@@ -3,6 +3,13 @@ export interface EventLink {
   label?: string;
 }
 
+export interface LinkPreview {
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+}
+
 export interface EventMetadata {
   id: string;
   title: string;
@@ -20,6 +27,7 @@ export interface EventMetadata {
   confidence: number | null;
   source_name: string;
   links?: EventLink[];
+  link_preview_image?: string | null;
 }
 
 export interface SearchFilters {
@@ -61,6 +69,7 @@ export interface EventDetail extends EventMetadata {
     email?: string;
   };
   ingested_at?: string;
+  link_preview?: LinkPreview | null;
 }
 
 export interface SavedSearch {

@@ -60,6 +60,7 @@ const TYPES = {
   topics: 'array',
   confidence: 'number',
   ingested_at: 'string',
+  link_preview: ['object', 'null'],
 };
 
 const CONSTRAINTS = {
@@ -214,6 +215,28 @@ function validateEvent(event, filename, lineNumber) {
       issues.push(
         `Field 'date_published' (${event.date_published}) outside time window ` +
         `[${timeWindowStart}, ${timeWindowEnd}]`
+      );
+    }
+  }
+
+  // link_preview structural check (soft — API may return partial data, never fail the event)
+  if (event.link_preview && typeof event.link_preview === 'object') {
+    if (event.link_preview.image !== undefined && typeof event.link_preview.image !== 'string') {
+      issues.push(`Field 'link_preview.image' must be a string when present`);
+    }
+  }
+
+  // Stale event check: date_event must not predate the window start by more than 7 days.
+  // A source publishing today about a weeks-old incident is historical reporting, not
+  // breaking OSINT. Only enforced when --time-window is provided.
+  if (timeWindowStart && event.date_event) {
+    const windowStartMs = new Date(timeWindowStart).getTime();
+    const eventDateMs = new Date(event.date_event).getTime();
+    const maxAgeMs = 7 * 24 * 60 * 60 * 1000; // 7 days in ms
+    if (!isNaN(windowStartMs) && !isNaN(eventDateMs) && eventDateMs < windowStartMs - maxAgeMs) {
+      issues.push(
+        `Field 'date_event' (${event.date_event}) predates the time window start ` +
+        `(${timeWindowStart}) by more than 7 days — event represents historical reporting`
       );
     }
   }

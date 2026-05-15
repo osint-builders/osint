@@ -11,38 +11,38 @@ metadata:
   examples-directory: "../../source/examples"
 ---
 
-# Create Source Skill
+# Create Source
 
-Authoring toolkit for adding new OSINT sources to the repository. This skill is for **developers/authors** defining new source files; it is **not** loaded by the runtime collection agent and runtime agents should skip it. It bundles CLI scripts, schema validation, connectivity tests, and manifest updates so a new source can go from idea to deployed configuration in one workflow.
+Authoring toolkit for OSINT source files. **Dev/author only** — never loaded at runtime. CLI scripts, schema validation, connectivity tests, manifest updates.
 
 ## When to use
 
-Use this skill **only when adding, updating, validating, or deprecating a source definition** under `source/sources/`. Do **not** load it during hourly collection runs — the runtime agent reads finished source files directly and does not need authoring scaffolding.
+**Only for adding/updating/validating/deprecating** sources under `source/sources/`. Never load during collection.
 
 ## Entry-point commands
 
 ```bash
-# 1. Create a new source (interactive, template, or quick mode)
+# Create (interactive, template, or quick)
 node skills/create-source/scripts/create-source.js
 node skills/create-source/scripts/create-source.js --type twitter --template
 node skills/create-source/scripts/create-source.js --quick --type api --name "My API"
 
-# 2. Validate one or all source files (frontmatter, schema, links, secrets)
+# Validate (one or all)
 node skills/create-source/scripts/validate-source.js source/sources/<file>.md
 node skills/create-source/scripts/validate-source.js --all
 
-# 3. Test a source (connectivity, extraction, quality, transform)
+# Test (connectivity, extraction, quality)
 node skills/create-source/scripts/test-source.js <file>.md --full
 
-# 4. Batch validate + refresh manifest.json from all source files
+# Refresh manifest.json
 python3 skills/create-source/scripts/update-manifest.py
 ```
 
-See `references/workflow.md` for full flag reference, programmatic APIs, and per-type CLI examples (twitter/webpage/api/email/rss).
+Full flags + per-type examples: `references/workflow.md`.
 
 ## Source file format (slim — keep files ≤10 lines)
 
-Source files are embedded verbatim in agent prompts. **Every line costs tokens.** Use this minimal format:
+Files embed verbatim in prompts. **Every line costs tokens.** Minimal format:
 
 ```markdown
 ---
@@ -56,32 +56,32 @@ Collect events matching keywords within the 1-hour time window.
 Keywords: breaking, urgent, sanctions, military, attack, explosion, conflict
 ```
 
-Optional trailing lines (add only when genuinely needed):
+Optional (only when needed):
 ```
 Auth: required — set via environment secret
 Notes: priority:high
 ```
 
-Do **not** add sections, bullet lists, examples, or documentation. Those belong in `references/` or in the create-source tooling, not in the agent prompt.
+**No** sections/lists/docs in source files — those belong in `references/` or tooling.
 
-## Workflow at a glance
+## Workflow
 
-1. **Create** — Copy `source/examples/twitter-example.md` and fill in the 4 required fields.
-2. **Update manifest** — Run `python3 skills/create-source/scripts/update-manifest.py`.
-3. **Deploy** — Set `status: active` and commit the source file + manifest.
+1. **Create** — Copy `source/examples/twitter-example.md`, fill 4 required fields.
+2. **Update manifest** — `python3 skills/create-source/scripts/update-manifest.py`.
+3. **Deploy** — Set `status: active`, commit source + manifest.
 
 ## Pitfalls
 
-- **Verbose files** — Any section beyond the minimal format adds tokens to every agent prompt. Keep files at ≤10 lines.
-- **Vague collection criteria** — The body text is read by the agent verbatim. Be specific: handles, platforms, keywords, what event types qualify.
-- **Hardcoded credentials** — Never embed API keys or tokens; reference environment variables only.
+- **Verbose files** — every extra line costs tokens on every run. ≤10 lines.
+- **Vague criteria** — agent reads body verbatim. Specify: handles, platforms, keywords, event types.
+- **No hardcoded creds** — env vars only.
 
-See `references/workflow.md` (Common Pitfalls + Quality Checklist) for the expanded list and remediations.
+Expanded pitfalls: `references/workflow.md`.
 
 ## See also
 
-- `references/workflow.md` — Full lifecycle: planning, creation, validation, testing, deployment, type-specific guides, maintenance, scripts reference, resources.
-- `references/QUICK-REFERENCE.md` — Condensed cheat sheet of fields and commands.
-- `references/EXAMPLES.md` — Worked examples for each source type.
-- `references/AI-HELPERS.md` — Reusable LLM prompts for planning, troubleshooting, and review.
-- `scripts/` — Executable tooling (`create-source.js`, `validate-source.js`, `test-source.js`, `update-manifest.py`, etc.).
+- `references/workflow.md` — full lifecycle + type-specific guides.
+- `references/QUICK-REFERENCE.md` — fields + commands cheat sheet.
+- `references/EXAMPLES.md` — per-type examples.
+- `references/AI-HELPERS.md` — LLM prompts for planning + review.
+- `scripts/` — `create-source.js`, `validate-source.js`, `test-source.js`, `update-manifest.py`.

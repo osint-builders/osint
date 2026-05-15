@@ -12,53 +12,53 @@ metadata:
 
 # remember-as-you-go
 
-Two files. Two purposes. Don't conflate them.
+Two files. Two purposes. Don't conflate.
 
-| File | Purpose | Read by next run? |
+| File | Purpose | Next run reads? |
 |---|---|---|
-| `data/run-logs/YYYY-MM/YYYY-MM-DD.log` | Per-run operational telemetry — `Processing <id>`, `Created event:`, dedup skips, time-window snaps, parse counts. Every run, full firehose. | ❌ |
-| `LEARNINGS.md` (repo root) | Durable findings, shortcuts, optimization opportunities. Append only when criteria below are met. | ✅ Injected at the top of every prompt as `## Prior Learnings`. |
+| `data/run-logs/YYYY-MM/YYYY-MM-DD.log` | Per-run telemetry — `Processing <id>`, `Created event:`, dedup skips, window snaps, parse counts. Full firehose. | ❌ |
+| `LEARNINGS.md` | Durable findings, shortcuts, optimization opportunities. Append only when criteria met. | ✅ Injected as `## Prior Learnings`. |
 
-The orchestrator (`builder/index.ts::loadLearnings()`) reads `LEARNINGS.md`, drops entries past their `Expires` date, caps at 100 entries / 30 KB, then injects the result. You never have to manage rotation yourself.
+Orchestrator reads `LEARNINGS.md`, drops expired entries, caps at 100 entries / 30 KB, injects result. Never rotate manually.
 
 ## When to write to `LEARNINGS.md`
 
-Append a new entry **only** when at least one of these is true:
+Append only when:
 
-1. **Source spec changed.** Selectors, handle, or auth shifted; you found the new working approach.
-2. **Non-obvious shortcut.** Something saved real time or API calls — not a documented happy path.
-3. **Repeated failure (≥3 runs).** A pattern you've now seen often enough that the fix should outlive this run.
-4. **Schema or validation gap.** The pipeline or schema let through (or rejected) something it shouldn't have, and you have a workaround.
-5. **Cost or budget signal.** Hit Perplexity / Twitter / Nominatim quota in a way the next run should know about.
+1. **Source spec changed** — selectors/handle/auth shifted + working fix found.
+2. **Non-obvious shortcut** — saved real time or API calls.
+3. **Repeated failure (≥3 runs)** — fix outlives this run.
+4. **Schema/validation gap** + workaround.
+5. **Cost signal** — hit Perplexity/Twitter/Nominatim quota next run should know.
 
 ## When NOT to write to `LEARNINGS.md`
 
-- "No events parsed" / "Created event: …" / per-source success counts → `data/run-logs/` only.
-- Dedup skip lines (`[skip] dup url: …`) → `data/run-logs/` only.
-- Time-window snap notices (`[snap] 2026-…`) → `data/run-logs/` only.
-- Standard documented behavior. If it worked the way the docs say, no entry.
-- One-off context. If the cause is unique to this run (transient network blip, single bad source response), no entry.
+- `No events parsed` / `Created event:` / per-source counts → `data/run-logs/` only.
+- `[skip] dup url` lines → `data/run-logs/` only.
+- `[snap]` time-window notices → `data/run-logs/` only.
+- Standard documented behavior → no entry.
+- One-off cause (network blip, single bad response) → no entry.
 
-If your finding is "huh, that's odd" but you can't fit it into criterion 1-5, write it to `data/run-logs/` and move on.
+Doesn't fit criteria 1-5 → `data/run-logs/` only.
 
 ## Required entry format
 
 ```markdown
 ## YYYY-MM-DD HH:MMZ — <one-line topic>
-**Trigger:** <what surfaced this — failure, repeated pattern, optimization spotted>
-**Finding:** <what is true, in 1-3 sentences>
-**Action for next run:** <concrete instruction the next agent should follow>
+**Trigger:** <failure, pattern, optimization>
+**Finding:** <what is true, 1-3 sentences>
+**Action for next run:** <concrete instruction>
 **Expires:** YYYY-MM-DD | permanent
 ```
 
-All five lines required. The orchestrator parses them; missing fields cause the entry to be dropped silently.
+All five lines required. Missing fields → silent drop.
 
 ## Editing rules
 
-- **Append only.** Add new entries below the `<!-- entries below this line; newest first -->` marker.
-- **Never modify or delete existing entries.** If a finding is wrong, write a new entry that supersedes it.
-- **Never re-order existing entries.** The orchestrator handles ordering.
-- Set `**Expires:**` to a real `YYYY-MM-DD` date when the finding is genuinely time-bound (e.g., "Twitter UI A/B test ends 2026-06-01"). Use `permanent` only for invariants — repository conventions, schema rules, hard quotas.
+- **Append only** below `<!-- entries below this line; newest first -->`.
+- **Never edit existing entries** — supersede with new one.
+- **Never re-order** — orchestrator handles.
+- `permanent` for invariants (repo conventions, schema, hard quotas). Real date for time-bound.
 
 ## Good vs. bad entries
 
@@ -72,7 +72,7 @@ All five lines required. The orchestrator parses them; missing fields cause the 
 **Expires:** 2026-08-01
 ```
 
-### ❌ Bad — telemetry, not learning
+### ❌ Bad — telemetry
 
 ```markdown
 ## 2026-05-01 16:34Z — twitter-cnn produced 0 events
@@ -82,9 +82,9 @@ All five lines required. The orchestrator parses them; missing fields cause the 
 **Expires:** 2026-05-02
 ```
 
-(That belongs in `data/run-logs/`; the next run gains nothing from knowing one source was quiet for one hour.)
+(Belongs in `data/run-logs/`.)
 
-### ❌ Bad — too vague to act on
+### ❌ Bad — too vague
 
 ```markdown
 ## 2026-05-01 16:34Z — Twitter is flaky
@@ -94,10 +94,10 @@ All five lines required. The orchestrator parses them; missing fields cause the 
 **Expires:** permanent
 ```
 
-(No specific source, no specific symptom, no concrete action.)
+(No source, symptom, or action — useless.)
 
 ## Pitfalls
 
-- **Don't write to `memory.md`.** That file was renamed to `LEARNINGS.md` in PR-3 and removed. References to `memory.md` in older docs are stale.
-- **Don't trim or rotate `LEARNINGS.md`.** The orchestrator does that.
-- **Don't merge multiple findings into one entry.** Each entry is independently filterable; bundling makes expiry useless.
+- **`memory.md` gone** — renamed to `LEARNINGS.md` in PR-3. Old refs stale.
+- **Never trim `LEARNINGS.md`** — orchestrator handles.
+- **One finding per entry** — bundling breaks expiry.

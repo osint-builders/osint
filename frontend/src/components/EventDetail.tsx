@@ -76,6 +76,8 @@ export const EventDetail: React.FC<EventDetailProps> = ({
   const links = detail?.links ?? metadata?.links ?? [];
   const contents = detail?.contents;
 
+  const previewImage = detail?.link_preview?.image ?? metadata?.link_preview_image ?? null;
+
   return (
     <div className="flex-1 flex flex-col min-h-0 border-l border-term-border bg-term-surface animate-slide-in">
       {/* Header bar */}
@@ -102,6 +104,28 @@ export const EventDetail: React.FC<EventDetailProps> = ({
 
       {/* Scrollable content */}
       <div className="flex-1 overflow-y-auto px-3 py-2 space-y-3">
+        {/* Link preview banner */}
+        {previewImage && (
+          <div
+            className="-mx-3 -mt-2 mb-1 relative h-[140px] flex-shrink-0 overflow-hidden"
+            style={{
+              backgroundImage: `url(${previewImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            {/* Semi-transparent dark overlay — mutes bright/white source images */}
+            <div
+              className="absolute inset-0"
+              style={{ backgroundColor: 'rgba(0, 0, 0, 0.45)' }}
+            />
+            {/* Bottom gradient fading into the panel background */}
+            <div
+              className="absolute inset-x-0 bottom-0 h-16"
+              style={{ background: 'linear-gradient(to bottom, transparent, #0d0d0d)' }}
+            />
+          </div>
+        )}
         {/* Title */}
         <div className="min-w-0">
           <div className="text-[11px] font-semibold text-term-primary leading-snug">

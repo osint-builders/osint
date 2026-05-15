@@ -10,11 +10,13 @@ export class SearchEngine {
     this.isInitialized = true;
   }
 
-  /** Returns all events sorted by date_published descending. */
+  /** Returns all events sorted by event date descending (date_event ?? date_published). */
   getLatest(filters: SearchFilters): SearchResult[] {
     return this.metadata
       .filter(e => this.matchesFilters(e, filters))
-      .sort((a, b) => (b.date_published ?? '').localeCompare(a.date_published ?? ''))
+      .sort((a, b) =>
+        (b.date_event ?? b.date_published ?? '').localeCompare(a.date_event ?? a.date_published ?? '')
+      )
       .map(e => ({ ...e, score: 1 }));
   }
 

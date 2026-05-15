@@ -9,19 +9,19 @@ metadata:
   entity-type: world-event
 ---
 
-# World Event Entities Skill
+# World Event Entities
 
-Thin pointer skill for the World Event Entity model. The **canonical schema lives at `data/SCHEMA.md`** — consult it first for field types, constraints, and examples. This file provides only the operational summary needed when building or validating event records.
+Schema pointer. **Canonical schema: `data/SCHEMA.md`** — consult first. This file: operational summary only.
 
 ## When to use
 
-Use this skill when building, validating, or reviewing event JSONL records (one event per line) destined for the OSINT event store. Pair with the `data-to-markdown` skill for the `contents` field.
+Building/validating event JSONL for OSINT event store. Pair `data-to-markdown` for `contents`.
 
 ## Required fields
 
 `id`, `source`, `title`, `summary`, `contents`, `date_published`, `links`, `image_urls`, `geo`.
 
-(Note: `geo` appears under "Optional Fields" in the schema, but this repo's validator treats it as required with `geo.lat` and `geo.lon` mandatory — see Validation rule below.)
+(`geo` listed optional in schema but validator requires `geo.lat`/`geo.lon`.)
 
 ## Optional fields
 
@@ -29,18 +29,16 @@ Use this skill when building, validating, or reviewing event JSONL records (one 
 
 ## ID format
 
-`evt_YYYYMMDD_NNN` — e.g. `evt_20260429_001`. Date reflects the event-publication date; `NNN` is a zero-padded sequence within that day.
+`evt_YYYYMMDD_NNN` (e.g. `evt_20260429_001`). Date = pub date; `NNN` = zero-padded day sequence.
 
 ## Validation rule
 
-Every event MUST pass `data/scripts/validate-events.js`. The validator enforces:
+Run `data/scripts/validate-events.js`. Enforces:
 
 - Schema conformance per `data/SCHEMA.md`.
 - `geo.lat` and `geo.lon` present and numeric.
-- `contents` written in Markdown, ≥100 words, fully E-PRIME compliant (no `is`/`are`/`was`/`were`/`be`/`been`/`being` or their contractions).
+- `contents`: Markdown, ≥100 words, fully E-PRIME (no `is`/`are`/`was`/`were`/`be`/`been`/`being` or contractions).
 - `date_published` as ISO 8601 UTC (`YYYY-MM-DDTHH:mm:ssZ`).
-
-Run from repo root:
 
 ```bash
 node data/scripts/validate-events.js path/to/events.jsonl
@@ -48,5 +46,5 @@ node data/scripts/validate-events.js path/to/events.jsonl
 
 ## See also
 
-- **`data/SCHEMA.md`** — canonical schema (field types, constraints, JSON examples, validation rules). Always consult first.
-- `../data-to-markdown/SKILL.md` — how to author the `contents` field.
+- **`data/SCHEMA.md`** — canonical schema. Consult first.
+- `../data-to-markdown/SKILL.md` — `contents` field authoring.
