@@ -48,8 +48,11 @@ export class SearchEngine {
     if (filters.dateFrom || filters.dateTo) {
       const eventDate = event.date_event || event.date_published;
       if (!eventDate) return false;
-      if (filters.dateFrom && eventDate < filters.dateFrom) return false;
-      if (filters.dateTo && eventDate > filters.dateTo) return false;
+      // Slice to date-only (10 chars) so ISO timestamps like '2026-05-15T14:32Z'
+      // compare correctly against date-only filter strings like '2026-05-15'.
+      const eventDateOnly = eventDate.slice(0, 10);
+      if (filters.dateFrom && eventDateOnly < filters.dateFrom) return false;
+      if (filters.dateTo && eventDateOnly > filters.dateTo) return false;
     }
     if (filters.country && event.geo?.country !== filters.country) return false;
     if (filters.topics.length > 0) {

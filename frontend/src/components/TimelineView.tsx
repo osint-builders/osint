@@ -2,7 +2,9 @@ import React, {
   useRef, useEffect, useCallback, useMemo,
 } from 'react';
 import gsap from 'gsap';
+import { useVirtualizer } from '@tanstack/react-virtual';
 import type { SearchResult } from '../types';
+import type { TimeGroup } from '../lib/timeline';
 import { groupEventsByTime } from '../lib/timeline';
 import { getTagColor, getSourceIcon, formatDateShort } from '../lib/utils';
 
@@ -11,6 +13,144 @@ const COL_GAP = 12;
 const COL_W = CARD_W + COL_GAP;
 const CARD_GAP = 6;
 const TRACK_PAD_LEFT = 24;
+const ESTIMATED_CARD_H = 100; // card height estimate including gap
+
+// ── Per-column virtual scroll ─────────────────────────────────
+interface TimelineColumnProps {
+  group: TimeGroup;
+  selectedId: string | null;
+  onSelectEvent: (id: string) => void;
+  onOpenEvent: (id: string) => void;
+  onTagClick: (tag: string) => void;
+}
+
+const TimelineColumn: React.FC<TimelineColumnProps> = ({
+  group,
+  selectedId,
+  onSelectEvent,
+  onOpenEvent,
+  onTagClick,
+}) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const virtualizer = useVirtualizer({
+    count: group.events.length,
+    getScrollElement: () => scrollRef.current,
+    estimateSize: () => ESTIMATED_CARD_H,
+    overscan: 3,
+  });
+
+  return (
+    <div
+      ref={scrollRef}
+      style={{
+        width: COL_W,
+        minWidth: COL_W,
+        flexShrink: 0,
+        paddingRight: COL_GAP,
+        overflowY: 'auto',
+        maxHeight: '100%',
+      }}
+    >
+      <div
+        style={{
+          height: virtualizer.getTotalSize(),
+          width: '100%',
+          position: 'relative',
+        }}
+      >
+        {virtualizer.getVirtualItems().map(vItem => {
+          const ev = group.events[vItem.index];
+          const icon = getSourceIcon(ev.source_name);
+          const topicColor = ev.topics.length > 0 ? getTagColor(ev.topics[0]) : '#444';
+          const confPct = ev.confidence != null ? Math.round(ev.confidence * 100) : null;
+          const isSelected = ev.id === selectedId;
+
+          return (
+            <div
+              key={vItem.key}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                transform: `translateY(${vItem.start}px)`,
+                paddingBottom: CARD_GAP,
+              }}
+            >
+              <div
+                data-card
+                onClick={() => onSelectEvent(ev.id)}
+                onDoubleClick={() => onOpenEvent(ev.id)}
+                style={{ borderLeft: `3px solid ${topicColor}` }}
+                className={[
+                  'flex-shrink-0 p-2 cursor-pointer transition-colors duration-75 border border-term-border',
+                  isSelected
+                    ? 'bg-term-green-dim border-term-green'
+                    : 'bg-term-surface hover:bg-term-panel',
+                ].join(' ')}
+              >
+                <div className="flex items-center gap-1 text-[7px] mb-1 min-w-0">
+                  <span style={{ color: icon.color, fontWeight: 700 }} className="flex-shrink-0">
+                    {icon.symbol}
+                  </span>
+                  <span className={isSelected ? 'text-[#c0c0c0]' : 'text-term-secondary'}>
+                    {formatDateShort(ev.date_event ?? ev.date_published)}
+                  </span>
+                  {ev.geo?.country && (
+                    <span className={`truncate ${isSelected ? 'text-[#a0a0a0]' : 'text-term-dim'}`}>
+                      · {ev.geo.country}
+                    </span>
+                  )}
+                </div>
+
+                <div
+                  className={`text-[9px] font-medium leading-snug mb-1.5 ${
+                    isSelected ? 'text-term-green' : 'text-term-primary'
+                  }`}
+                  style={{
+                    display: '-webkit-box',
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
+                  }}
+                >
+                  {ev.title}
+                </div>
+
+                {confPct !== null && (
+                  <div className="relative w-full h-px bg-term-border mb-1.5">
+                    <div
+                      className="absolute left-0 top-0 h-full bg-term-green"
+                      style={{ width: `${confPct}%` }}
+                    />
+                  </div>
+                )}
+
+                {ev.topics.length > 0 && (
+                  <div className="flex gap-1 flex-wrap">
+                    {[...ev.topics].sort().slice(0, 2).map(t => (
+                      <button
+                        key={t}
+                        onClick={e => { e.stopPropagation(); onTagClick(t); }}
+                        className="text-[7px] px-1 border transition-opacity hover:opacity-70 flex-shrink-0 max-w-[80px] truncate"
+                        style={{ borderColor: getTagColor(t), color: getTagColor(t) }}
+                      >
+                        {t}
+                      </button>
+                    ))}
+                    {ev.topics.length > 2 && (
+                      <span className="text-[7px] text-term-muted">+{ev.topics.length - 2}</span>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 interface TimelineViewProps {
   results: SearchResult[];
@@ -257,102 +397,14 @@ export const TimelineView: React.FC<TimelineViewProps> = ({
           }}
         >
           {groups.map(g => (
-            <div
+            <TimelineColumn
               key={g.key}
-              style={{
-                width: COL_W,
-                minWidth: COL_W,
-                flexShrink: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                gap: CARD_GAP,
-                paddingRight: COL_GAP,
-                overflowY: 'auto',
-                maxHeight: '100%',
-              }}
-            >
-              {g.events.map(ev => {
-                const icon = getSourceIcon(ev.source_name);
-                const topicColor = ev.topics.length > 0 ? getTagColor(ev.topics[0]) : '#444';
-                const confPct = ev.confidence != null ? Math.round(ev.confidence * 100) : null;
-                const isSelected = ev.id === selectedId;
-
-                return (
-                  <div
-                    key={ev.id}
-                    data-card
-                    onClick={() => onSelectEvent(ev.id)}
-                    onDoubleClick={() => onOpenEvent(ev.id)}
-                    style={{ borderLeft: `3px solid ${topicColor}` }}
-                    className={[
-                      'flex-shrink-0 p-2 cursor-pointer transition-colors duration-75 border border-term-border',
-                      isSelected
-                        ? 'bg-term-green-dim border-term-green'
-                        : 'bg-term-surface hover:bg-term-panel',
-                    ].join(' ')}
-                  >
-                    {/* Source + date */}
-                    <div className="flex items-center gap-1 text-[7px] mb-1 min-w-0">
-                      <span style={{ color: icon.color, fontWeight: 700 }} className="flex-shrink-0">
-                        {icon.symbol}
-                      </span>
-                      <span className={isSelected ? 'text-[#c0c0c0]' : 'text-term-secondary'}>
-                        {formatDateShort(ev.date_event ?? ev.date_published)}
-                      </span>
-                      {ev.geo?.country && (
-                        <span className={`truncate ${isSelected ? 'text-[#a0a0a0]' : 'text-term-dim'}`}>
-                          · {ev.geo.country}
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Title */}
-                    <div
-                      className={`text-[9px] font-medium leading-snug mb-1.5 ${
-                        isSelected ? 'text-term-green' : 'text-term-primary'
-                      }`}
-                      style={{
-                        display: '-webkit-box',
-                        WebkitLineClamp: 3,
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden',
-                      }}
-                    >
-                      {ev.title}
-                    </div>
-
-                    {/* Confidence bar */}
-                    {confPct !== null && (
-                      <div className="relative w-full h-px bg-term-border mb-1.5">
-                        <div
-                          className="absolute left-0 top-0 h-full bg-term-green"
-                          style={{ width: `${confPct}%` }}
-                        />
-                      </div>
-                    )}
-
-                    {/* Topic pills */}
-                    {ev.topics.length > 0 && (
-                      <div className="flex gap-1 flex-wrap">
-                        {[...ev.topics].sort().slice(0, 2).map(t => (
-                          <button
-                            key={t}
-                            onClick={e => { e.stopPropagation(); onTagClick(t); }}
-                            className="text-[7px] px-1 border transition-opacity hover:opacity-70 flex-shrink-0 max-w-[80px] truncate"
-                            style={{ borderColor: getTagColor(t), color: getTagColor(t) }}
-                          >
-                            {t}
-                          </button>
-                        ))}
-                        {ev.topics.length > 2 && (
-                          <span className="text-[7px] text-term-muted">+{ev.topics.length - 2}</span>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+              group={g}
+              selectedId={selectedId}
+              onSelectEvent={onSelectEvent}
+              onOpenEvent={onOpenEvent}
+              onTagClick={onTagClick}
+            />
           ))}
         </div>
       </div>
