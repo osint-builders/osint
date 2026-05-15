@@ -20,6 +20,16 @@ on:
       - 'builder/**/*.js'
       - 'builder/**/*.ts'
       - 'frontend/**'
+      # CI/infra changes don't affect what the agents collect.
+      - '.github/**'
+      - 'skills/**'
+
+# Prevent overlapping collection runs. If a new run is triggered while one is
+# already in progress, queue it rather than running concurrently — the SIGTERM
+# handler in builder/index.ts cancels outstanding agents before exit.
+concurrency:
+  group: osint-collection
+  cancel-in-progress: false
 
 permissions:
   contents: read

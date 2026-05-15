@@ -32,7 +32,38 @@ const POLL_BASE_MS = 15_000;         // base poll interval
 const POLL_JITTER_MS = 5_000;         // ±jitter added to every poll sleep
 const POLL_MAX_BACKOFF_MS = 120_000;  // max backoff on 429: 2 minutes
 const SPAWN_STAGGER_MS = 500;         // delay between consecutive agent spawns
+const POLL_MAX_TRANSIENT_RETRIES = 5; // retry non-429 transient errors before giving up
 const TERMINAL_STATES = new Set(["SUCCEEDED", "FAILED", "CANCELLED"]);
+
+// Track spawned run IDs so the SIGTERM handler can cancel them before the
+// process exits. This prevents the Warp platform from leaving runs orphaned
+// and auto-cancelling them as "Cancelled by user".
+const activeRunIds = new Set<string>();
+let ozClient: OzAPI | null = null;
+
+async function cancelActiveRuns(): Promise<void> {
+  if (!ozClient || activeRunIds.size === 0) return;
+  console.log(`\nCancelling ${activeRunIds.size} in-progress run(s) before exit...`);
+  await Promise.allSettled(
+    [...activeRunIds].map(id =>
+      ozClient!.agent.runs.cancel(id)
+        .then(() => console.log(`  ✓ Cancelled ${id}`))
+        .catch(err => console.warn(`  ⚠ Could not cancel ${id}: ${err?.message ?? err}`))
+    )
+  );
+}
+
+process.on("SIGTERM", async () => {
+  console.log("\nSIGTERM received — cancelling outstanding runs...");
+  await cancelActiveRuns();
+  process.exit(0);
+});
+
+process.on("SIGINT", async () => {
+  console.log("\nSIGINT received — cancelling outstanding runs...");
+  await cancelActiveRuns();
+  process.exit(0);
+});
 
 // Warp's prompt size limit (1 MB = 1,048,576 bytes)
 // We target 80% of limit for safety (838,860 bytes)
@@ -336,16 +367,18 @@ async function pollUntilComplete(
   await sleep(Math.random() * POLL_BASE_MS);
 
   let backoffMs = POLL_BASE_MS;
+  let transientRetries = 0;
 
   while (true) {
     try {
       const run = await client.agent.runs.retrieve(runId);
       process.stdout.write(` [${run.state}]`);
+      transientRetries = 0; // reset on successful poll
       if (TERMINAL_STATES.has(run.state)) {
         process.stdout.write("\n");
         return run.state;
       }
-      backoffMs = POLL_BASE_MS; // reset after a successful poll
+      backoffMs = POLL_BASE_MS;
       await sleep(POLL_BASE_MS + Math.random() * POLL_JITTER_MS);
     } catch (err: unknown) {
       const status = (err as { status?: number }).status;
@@ -354,7 +387,17 @@ async function pollUntilComplete(
         await sleep(backoffMs);
         backoffMs = Math.min(backoffMs * 2, POLL_MAX_BACKOFF_MS);
       } else {
-        throw err;
+        // Retry transient errors (5xx, network blips) up to the limit before
+        // giving up. Re-throwing immediately was crashing Promise.all and
+        // leaving other in-progress buckets orphaned.
+        transientRetries++;
+        if (transientRetries > POLL_MAX_TRANSIENT_RETRIES) {
+          process.stdout.write(` [fatal poll error after ${transientRetries} retries]\n`);
+          throw err;
+        }
+        const delay = Math.min(backoffMs * transientRetries, POLL_MAX_BACKOFF_MS);
+        process.stdout.write(` [transient error ${transientRetries}/${POLL_MAX_TRANSIENT_RETRIES}, retry in ${(delay / 1000).toFixed(0)}s]`);
+        await sleep(delay);
       }
     }
   }
@@ -373,6 +416,7 @@ async function main(): Promise<void> {
   }
 
   const client = dryRun ? null : new OzAPI({ apiKey: warpApiKey! });
+  ozClient = client; // expose to SIGTERM handler
 
   // Load every processable source
   let processableSources: Source[];
@@ -481,6 +525,7 @@ async function main(): Promise<void> {
 
     try {
       const runResponse = await client!.agent.run(runParams);
+      activeRunIds.add(runResponse.run_id); // track for SIGTERM cleanup
       console.log(`  ✓ Bucket ${bucketNum}: spawned (run ID: ${runResponse.run_id})`);
       return { bucketNum, runId: runResponse.run_id, bucket };
     } catch (err) {
@@ -506,10 +551,19 @@ async function main(): Promise<void> {
   console.log(`\nPolling ${runs.length} agents for completion...`);
   const pollPromises = runs.map(async ({ bucketNum, runId, bucket }) => {
     const finalState = await pollUntilComplete(client!, runId);
+    activeRunIds.delete(runId); // no longer needs SIGTERM cleanup
     return { bucketNum, finalState, sourceCount: bucket.length };
   });
 
-  const results = await Promise.all(pollPromises);
+  let results: { bucketNum: number; finalState: string; sourceCount: number }[];
+  try {
+    results = await Promise.all(pollPromises);
+  } catch (err) {
+    console.error(`\nFatal polling error: ${err}`);
+    console.error(`Cancelling remaining in-progress runs before exit...`);
+    await cancelActiveRuns();
+    process.exit(1);
+  }
 
   // Report results
   console.log(`\n=== Collection Results ===`);
