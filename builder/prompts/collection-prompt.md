@@ -99,8 +99,11 @@ Per source:
    - Image failure never blocks an event.
 7.5. **Fetch link preview for `links[0]`** (all sources — non-blocking):
 
+Before saving each event to JSONL, store the finalized event JSON in `$event_json` and run:
+
 ```bash
-# Fetch link preview — enriches event with title/description/image from its primary URL
+# event_json must hold the complete event JSON object at this point.
+# Fetch link preview — enriches event with title/description/image from its primary URL.
 if [ -n "$LINKPREVIEW_API_KEY" ]; then
   FIRST_LINK=$(echo "$event_json" | jq -r '.links[0].url // empty')
   if [ -n "$FIRST_LINK" ]; then
@@ -115,6 +118,7 @@ if [ -n "$LINKPREVIEW_API_KEY" ]; then
     sleep 1  # respect rate limits (one request per second)
   fi
 fi
+# Use $event_json (now enriched with link_preview) as the value written in step 8.
 ```
 
 8. **Save** to `$WORK_DIR/{source_id}/events.jsonl` — one JSON object per line.
@@ -286,6 +290,8 @@ Required format:
 
 ## Step 8: Commit + Push
 
+**CRITICAL: Never open a pull request. Never use `gh pr create` or any equivalent. Commit directly to `main`. If all push attempts fail, exit 1 — never open a PR.**
+
 ```bash
 git config user.name "OSINT Collector Bot"
 git config user.email "osint-bot@github-actions"
@@ -302,10 +308,21 @@ Bucket ${bucketNum}/${totalBuckets} | ${executionTimestamp} UTC | [skip ci]"
   REPO_PATH=$(git remote get-url origin | sed -E 's|^git@github\.com:|https://github.com/|; s|^https?://github\.com/||; s|\.git$||')
   PUSH_URL="https://x-access-token:$PUSH_TOKEN@github.com/$REPO_PATH.git"
   REDACT='s|https://[^@]+@|https://<redacted>@|g'
-  git push "$PUSH_URL" main 2>&1 | sed -E "$REDACT"
-  if [ "${PIPESTATUS[0]}" -ne 0 ]; then
+
+  PUSHED=0
+  for ATTEMPT in 1 2 3 4 5; do
     git pull --rebase "$PUSH_URL" main 2>&1 | sed -E "$REDACT"
     git push "$PUSH_URL" main 2>&1 | sed -E "$REDACT"
+    PUSH_RC=${PIPESTATUS[0]}
+    if [ "$PUSH_RC" -eq 0 ]; then PUSHED=1; break; fi
+    JITTER=$(( RANDOM % 9 + 2 ))
+    echo "Push attempt $ATTEMPT/5 failed; retrying in $JITTER seconds..."
+    sleep "$JITTER"
+  done
+
+  if [ "$PUSHED" -eq 0 ]; then
+    echo "ERROR: Push to main failed after 5 attempts. Do NOT open a pull request — exit and let the next scheduled run collect fresh events." >&2
+    exit 1
   fi
 fi
 ```
@@ -322,7 +339,7 @@ rm -rf "$WORK_DIR"
 
 - **Source fails**: log to `$WORK_DIR/{source_id}/new-memory.md`, continue.
 - **Validation fails**: exit — never commit invalid data.
-- **Git push fails**: retry once with pull/rebase.
+- **Git push fails**: pull/rebase + retry up to 5 attempts with random jitter. Never open a PR on failure.
 - **Zero events**: skip commit, exit 0.
 
 ## Quality Requirements

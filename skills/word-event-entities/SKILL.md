@@ -25,7 +25,9 @@ Building/validating event JSONL for OSINT event store. Pair `data-to-markdown` f
 
 ## Optional fields
 
-`date_event`, `topics`, `confidence`, `ingested_at`.
+`date_event`, `topics`, `confidence`, `ingested_at`, `link_preview`.
+
+`link_preview` — fetched automatically at collection time via LinkPreview API (`$LINKPREVIEW_API_KEY`). Structure: `{title, description, image, url}`. Set by step 7.5 of the collection prompt; do NOT construct manually.
 
 ## ID format
 

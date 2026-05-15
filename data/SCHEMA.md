@@ -46,7 +46,13 @@ Temporal order: `date_event ≤ date_published ≤ ingested_at`
   "image_urls": ["./media/2026-04/images/2026-04-29/evt_20260429_001_img1.jpg"],
   "topics": ["earthquake", "disaster", "turkey", "syria"],
   "confidence": 0.95,
-  "ingested_at": "2026-04-29T10:35:00Z"
+  "ingested_at": "2026-04-29T10:35:00Z",
+  "link_preview": {
+    "title": "7.8 Magnitude Earthquake Strikes Turkey and Syria",
+    "description": "A powerful earthquake causes widespread casualties and infrastructure damage.",
+    "image": "https://example.com/og-earthquake.jpg",
+    "url": "https://www.reuters.com/..."
+  }
 }
 ```
 

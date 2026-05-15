@@ -34,6 +34,7 @@ Human overview: [`README.md`](README.md). Schema: [`data/SCHEMA.md`](data/SCHEMA
 - IDs: `evt_YYYYMMDD_NNN` (extraction date, 1-hr lookback).
 - `contents`: ≥100 words, E-PRIME — no `is/are/was/were/be/been/being`.
 - All events need geocodes. Nominatim + cache; fallback: country → global default. See `skills/geocoding/SKILL.md`.
+- `link_preview` — automatically fetched in collection step 7.5 using `$LINKPREVIEW_API_KEY`. Do not skip this step. Structure: `{title, description, image, url}`. Non-blocking — failure is acceptable, but the step must run.
 
 ### Media output
 - Every image normalizes to **720×720 PNG**, compression level 9, metadata stripped.
@@ -85,3 +86,4 @@ Skill editing rules:
 - Don't hand-write entries to `LEARNINGS.md` that aren't actionable for the next run.
 - Don't introduce `os.getenv`-style secret reading from the agent prompt; secrets flow through the Warp env, not the repo.
 - Don't commit `node_modules/` to the repo. Skill `scripts/` directories should not pull in dependencies.
+- **Don't open pull requests.** Collection agents commit and push directly to `main`. Never use `gh pr create` or any equivalent. If push fails after retries, exit 1.

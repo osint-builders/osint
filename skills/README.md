@@ -17,7 +17,7 @@ Procedural references for the cloud agent. Each skill lives at `skills/<name>/SK
 | [`imagemagick`](imagemagick/SKILL.md) | ImageMagick CLI for comprehensive image processing and manipulation. Convert formats, resize and crop, apply effects ... | 72 |
 | [`perplexity-search`](perplexity-search/SKILL.md) | Perplexity AI search for web search with AI-powered answers, deep research, and chain-of-thought reasoning. Perform d... | 60 |
 | [`remember-as-you-go`](remember-as-you-go/SKILL.md) | Strict criteria for what to write into LEARNINGS.md (the cross-run knowledge base read by the next Warp Cloud Agent).... | 103 |
-| [`word-event-entities`](word-event-entities/SKILL.md) | Build and validate World Event Entity records (JSONL) representing real-world events with structured metadata, source... | 50 |
+| [`word-event-entities`](word-event-entities/SKILL.md) | Build and validate World Event Entity records (JSONL) representing real-world events with structured metadata, source... | 52 |
 
 🛠 = authoring-only skill, not loaded by the cloud agent during collection runs.
 
