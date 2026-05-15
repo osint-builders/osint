@@ -1,6 +1,6 @@
 # OSINT World Event Collection — Bucket ${bucketNum}/${totalBuckets}
 
-**Window**: ${timeWindowStart} → ${timeWindowEnd} UTC | **Target**: ${extractionDate} EST (~${extractionTimeHHMM})
+**Window**: ${timeWindowStart} → ${timeWindowEnd} UTC | **Extraction**: ${extractionTimestamp} EST | **Target**: ${extractionDate} (~${extractionTimeHHMM})
 **Repo**: ${originUrl} | **Bucket**: ${bucketNum}/${totalBuckets} (${bucketSourceCount} sources)
 
 Reject any event with `date_published` outside the window.
