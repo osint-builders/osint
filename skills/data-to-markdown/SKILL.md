@@ -17,6 +17,8 @@ Raw input → `contents` Markdown. E-PRIME style, minimal conventions, format po
 
 Use for any `contents` field write — HTML, JSON, PDF, freeform notes. Output: precise, active Markdown, not source prose. Schema: `skills/word-event-entities/`, `data/SCHEMA.md`.
 
+**Non-English content**: translate `title`, `summary`, and body text to English before applying Markdown conventions or E-PRIME. Agent translates directly. Preserve proper nouns verbatim.
+
 ## Entry-point: the rule
 
 `contents` MUST satisfy three constraints:

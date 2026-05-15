@@ -80,24 +80,25 @@ Per source:
    - API: `curl` with auth; add time range params where supported.
    - RSS: `curl` + XML parse; filter by `pubDate`.
    - Log and reject anything outside `$TIME_WINDOW_START`→`$TIME_WINDOW_END`.
-3. **Extract** World Event Entities per `data/SCHEMA.md`.
+3. **Translate to English** — if raw content contains non-English text, translate `title`, `summary`, and all body text to English before extraction. Agent translates directly using its own capabilities — no external API needed. Preserve proper nouns (person names, place names, organization names) verbatim. Apply E-PRIME after translation.
+4. **Extract** World Event Entities per `data/SCHEMA.md`.
    - Topics: lowercase, hyphenated, singular (`missile` not `Missiles`). Deduplicate per event.
    - `source.name`: exact text from source file `#` header. No variants.
-4. **Transform** `contents` to E-PRIME — strip all `is/are/was/were/be/been/being`. Active verbs only. See `skills/data-to-markdown/SKILL.md`.
-5. **Geocode** every event — REQUIRED. Every event needs `geo.lat` and `geo.lon`.
+5. **Transform** `contents` to E-PRIME — strip all `is/are/was/were/be/been/being`. Active verbs only. See `skills/data-to-markdown/SKILL.md`.
+6. **Geocode** every event — REQUIRED. Every event needs `geo.lat` and `geo.lon`.
    - Extract city/region/country from title+summary+contents.
    - Run `geocode_location()` (defined below).
    - Fallback: specific city → country → region center → global default (37.7749, −122.4194).
    - Nominatim rate limit: 1 req/sec.
-6. **Confidence validation** (high-priority events only):
+7. **Confidence validation** (high-priority events only):
    - Trigger: `priority="high"` OR topics include `conflict/military/attack/disaster/sanctions/nuclear`.
    - Run `validate_event_confidence()` (defined below); cap at 50 calls/bucket.
-7. **Images** (non-Twitter only — Twitter images require auth, skip):
+8. **Images** (non-Twitter only — Twitter images require auth, skip):
    - `curl` og:image or article hero; normalize: `magick INPUT -resize 720x720^ -gravity center -extent 720x720 +repage -strip -define png:compression-level=9 OUTPUT.png`
    - Save to `$WORK_DIR/{source_id}/media/images/{event_id}_img1.png`.
    - Update `image_urls`: `["./media/YYYY-MM/images/YYYY-MM-DD/{event_id}_img1.png"]`.
    - Image failure never blocks an event.
-7.5. **Fetch link preview for `links[0]`** (all sources — non-blocking):
+8.5. **Fetch link preview for `links[0]`** (all sources — non-blocking):
 
 Before saving each event to JSONL, store the finalized event JSON in `$event_json` and run:
 
@@ -121,8 +122,8 @@ fi
 # Use $event_json (now enriched with link_preview) as the value written in step 8.
 ```
 
-8. **Save** to `$WORK_DIR/{source_id}/events.jsonl` — one JSON object per line.
-9. **Log** errors, rate limits, rejects to `$WORK_DIR/{source_id}/new-memory.md`.
+9. **Save** to `$WORK_DIR/{source_id}/events.jsonl` — one JSON object per line.
+10. **Log** errors, rate limits, rejects to `$WORK_DIR/{source_id}/new-memory.md`.
 
 Required event fields: `id`, `source`, `title`, `summary`, `contents` (≥100 words, E-PRIME), `date_published`, `links`, `geo` (lat+lon), `image_urls`.
 ID format: `evt_${extractionDateCompact}_NNN`
