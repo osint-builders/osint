@@ -136,3 +136,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** @Scpandura (twitter-scpandura) no longer exists on X. @olongapotimes (twitter-olongapo-times) has zero posts despite being joined Sep 2025. @Songss44 (twitter-songss44) returns an error page. These sources cannot produce in-window tweets; events must come entirely from web search matching source topic areas.
 **Action for next run:** For these three sources, skip Twitter API and r.jina.ai entirely. Use exa_web_search with source-specific topic keywords as the primary discovery method. Consider flagging these sources for manifest review (status change to inactive or handle update).
 **Expires:** 2026-08-15
+
+## 2026-05-15 01:35Z — Three Twitter source accounts no longer exist on X platform
+**Trigger:** Bucket 14 r.jina.ai mirror returned "This account doesn't exist" for @BatesGill, @KlSummary, and @Rayfunseth.
+**Finding:** Three source handles — BatesGill, KlSummary, and Rayfunseth — returned X's "account doesn't exist" page, indicating the accounts have either changed handles, gone private, or gotten suspended/deleted. Events for these sources can only come from exa_web_search on their topic areas, reducing collection specificity.
+**Action for next run:** Verify these three account handles still resolve before allocating collection time. If confirmed dead, flag source manifest entries for handle update or status change to inactive.
+**Expires:** 2026-08-15
