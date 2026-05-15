@@ -154,3 +154,15 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** The Twitter handle @ChinaP0wer configured for source twitter-chinapower does not resolve to an active X/Twitter account. The CSIS China Power Project may operate under a different handle or have migrated off the platform entirely.
 **Action for next run:** Mark source twitter-chinapower for handle investigation. Skip direct Twitter API and r.jina.ai attempts. Use exa_web_search with CSIS China Power keywords.
 **Expires:** 2026-08-15
+
+## 2026-05-15 18:14Z — @KoreaHerald X account suspended; source should update handle or deactivate
+**Trigger:** Bucket 8 r.jina.ai mirror for @KoreaHerald returned "Account suspended" page on X.
+**Finding:** The Twitter handle @KoreaHerald configured for source twitter-korea-herald has received a suspension from X/Twitter. The Korea Herald continues publishing at koreaherald.com but the X account cannot produce tweets for collection. Events for this source's topic area can come from web search (Yonhap, Korea Herald website, Seoul Economic Daily).
+**Action for next run:** Skip Twitter API and r.jina.ai for twitter-korea-herald. Use exa_web_search with Korea Herald topic keywords. Flag source for manifest status review or handle update.
+**Expires:** 2026-08-15
+
+## 2026-05-15 18:14Z — @ModjapanEn X account does not exist; source should update handle or deactivate
+**Trigger:** Bucket 8 r.jina.ai mirror for @ModjapanEn returned "This account doesn't exist" on X.
+**Finding:** The Twitter handle @ModjapanEn configured for source twitter-modjapan-en does not resolve to an active X/Twitter account. Japan's Ministry of Defense may operate under a different English-language handle or have consolidated social media presence. Events for this source's topic area remain accessible via Japan News, Mainichi, and defense industry publications.
+**Action for next run:** Skip Twitter API and r.jina.ai for twitter-modjapan-en. Use exa_web_search with Japan MOD/defense policy keywords. Flag source for manifest handle investigation or status change to inactive.
+**Expires:** 2026-08-15
