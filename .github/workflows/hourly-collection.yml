@@ -29,6 +29,7 @@ env:
   WARP_API_KEY: ${{ secrets.WARP_API_KEY }}
   WARP_ENVIRONMENT_ID: ${{ secrets.WARP_ENVIRONMENT_ID }}
   PARALLEL_AGENT_COUNT: ${{ vars.PARALLEL_AGENT_COUNT || '10' }}
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   collect:
@@ -41,7 +42,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
           cache-dependency-path: builder/package-lock.json
 
