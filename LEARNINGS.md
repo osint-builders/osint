@@ -148,3 +148,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** Three source handles — BatesGill, KlSummary, and Rayfunseth — returned X's "account doesn't exist" page, indicating the accounts have either changed handles, gone private, or gotten suspended/deleted. Events for these sources can only come from exa_web_search on their topic areas, reducing collection specificity.
 **Action for next run:** Verify these three account handles still resolve before allocating collection time. If confirmed dead, flag source manifest entries for handle update or status change to inactive.
 **Expires:** 2026-08-15
+
+## 2026-05-15 03:20Z — @ChinaP0wer X account does not exist; source should update handle or deactivate
+**Trigger:** Bucket 7 r.jina.ai mirror for @ChinaP0wer returned "This account doesn't exist" on X.
+**Finding:** The Twitter handle @ChinaP0wer configured for source twitter-chinapower does not resolve to an active X/Twitter account. The CSIS China Power Project may operate under a different handle or have migrated off the platform entirely.
+**Action for next run:** Mark source twitter-chinapower for handle investigation. Skip direct Twitter API and r.jina.ai attempts. Use exa_web_search with CSIS China Power keywords.
+**Expires:** 2026-08-15
