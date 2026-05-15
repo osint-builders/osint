@@ -118,4 +118,14 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Trigger:** Bucket 9 collection attempted to scrape @KoreaTimesAlt via r.jina.ai mirror; X returned "This account doesn't exist."
 **Finding:** The Twitter handle @KoreaTimesAlt configured for source twitter-korea-times-alt does not resolve to an active X/Twitter account. The account may have been deleted, suspended, or the handle may have changed. Events for this source's topic area (Korean news) had to come from alternative sources like Yonhap.
 **Action for next run:** Mark source twitter-korea-times-alt as inactive in manifest or investigate whether The Korea Times operates under a different secondary handle. Skip direct scraping attempts for this source until the handle resolves.
+## 2026-05-15 01:35Z — Twitter API credits restored; search/recent endpoint returns data
+**Trigger:** Bucket 2 tested Twitter API v2 search/recent for all 10 source handles and received HTTP 200 with valid tweet data for active accounts (gCaptain, thewarzonewire, coastguardph, ianellisjones).
+**Finding:** The TWITTER_BEARER_TOKEN now returns valid responses from the search/recent endpoint, contradicting the "CreditsDepleted" status documented since 2026-05-01. Credits likely renewed on a monthly billing cycle. The API successfully returned recent tweets with created_at fields for time-window filtering.
+**Action for next run:** Attempt Twitter API search/recent first before falling back to r.jina.ai mirrors or exa_web_search. Use start_time/end_time parameters to filter tweets to the exact bucket window. Keep fallback paths active in case credits deplete again mid-month.
+**Expires:** 2026-07-15
+
+## 2026-05-15 01:35Z — Three source X accounts defunct or inactive: Scpandura, olongapotimes, Songss44
+**Trigger:** Bucket 2 r.jina.ai mirror for @Scpandura returned "This account doesn't exist", @olongapotimes showed 0 posts, and @Songss44 returned "Something went wrong" error.
+**Finding:** @Scpandura (twitter-scpandura) no longer exists on X. @olongapotimes (twitter-olongapo-times) has zero posts despite being joined Sep 2025. @Songss44 (twitter-songss44) returns an error page. These sources cannot produce in-window tweets; events must come entirely from web search matching source topic areas.
+**Action for next run:** For these three sources, skip Twitter API and r.jina.ai entirely. Use exa_web_search with source-specific topic keywords as the primary discovery method. Consider flagging these sources for manifest review (status change to inactive or handle update).
 **Expires:** 2026-08-15
