@@ -35,6 +35,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 ---
 
 <!-- entries below this line; newest first -->
+
+## 2026-05-15 01:35Z — Twitter accounts Allsource4 and Raytoribo no longer exist on X
+**Trigger:** Bucket 13 r.jina.ai mirror returned "This account doesn't exist" for both @Allsource4 and @Raytoribo handles.
+**Finding:** Both X/Twitter accounts have disappeared entirely — not suspended, not renamed, but returning "This account doesn't exist" pages. exa_web_search still yields relevant events for their topic areas, so sources remain viable for news discovery but direct Twitter collection produces zero results.
+**Action for next run:** For twitter-allsource4 and twitter-raytoribo, skip r.jina.ai mirror entirely and go straight to exa_web_search with source-specific keywords. Consider flagging these sources for manifest status review.
+**Expires:** 2026-08-15
 ## 2026-05-15 01:35Z — Twitter API credits restored; direct search now works for in-window tweet discovery
 **Trigger:** Bucket 6 Twitter API calls returned valid responses (result_count: 0 or 1) instead of CreditsDepleted errors for all 10 handles tested.
 **Finding:** The TWITTER_BEARER_TOKEN credits have replenished since the depletion reported on 2026-05-01. The recent search endpoint (/2/tweets/search/recent) now returns data when tweets exist within the queried time range. WarshipCam returned 1 in-window tweet; all other handles returned 0 (no tweets during the 00:35-01:35 UTC window). exa_web_search proved effective for article-level discovery when Twitter sources had no tweets.
