@@ -62961,6 +62961,236 @@
     "link_preview_image": "https://pbs.twimg.com/media/HIXZyJHXMAAfQdw.jpg"
   },
   {
+    "id": "evt_20260515_1000",
+    "title": "Ukraine Announces All Medical School Students Subject to Military Service Including Women",
+    "summary": "Ukrainian Health Minister Lyashko announced that all students at Ukrainian medical schools will face mandatory military service obligations, including female students. Authorities have begun working on new legislation to regulate the expanded conscription policy.",
+    "date_event": "2026-05-15T18:00:00Z",
+    "date_published": "2026-05-15T18:01:17Z",
+    "geo": {
+      "lat": 50.45,
+      "lon": 30.5241,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "military",
+      "ukraine",
+      "conscription",
+      "healthcare",
+      "mobilization"
+    ],
+    "confidence": 0.8,
+    "source_name": "MyLordBebo - Regional Observer & Developments",
+    "links": [
+      {
+        "url": "https://x.com/MyLordBebo/status/2055347802918519092",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HIYOqzyWoAIdt4G.png"
+  },
+  {
+    "id": "evt_20260515_1001",
+    "title": "Israel Strikes Hamas Military Wing Leader Izz al-Din al-Haddad in Gaza City",
+    "summary": "The Israeli Air Force targeted Hamas leader Izz al-Din al-Haddad in an airstrike on a residential building in Gaza City's Rimal neighborhood. Prime Minister Netanyahu and Defense Minister Katz confirmed ordering the strike against the most senior Hamas military commander remaining in Gaza.",
+    "date_event": "2026-05-15T17:20:00Z",
+    "date_published": "2026-05-15T17:22:55Z",
+    "geo": {
+      "lat": 31.5048,
+      "lon": 34.4632,
+      "country": "Palestine",
+      "region": "Gaza Strip",
+      "city": "Gaza City"
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "hamas",
+      "israel",
+      "gaza",
+      "assassination",
+      "ceasefire"
+    ],
+    "confidence": 0.95,
+    "source_name": "ELINT News - Electronic Intelligence & Security Analysis",
+    "links": [
+      {
+        "url": "https://x.com/ELINTNews/status/2055338147479777745",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://www.timesofisrael.com/liveblog_entry/israel-says-it-targeted-hamass-gaza-leader-izz-al-din-haddad-in-gaza-city-despite-ceasefire/",
+        "label": "Times of Israel Coverage"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_20260515_120",
+    "title": "US Justice Department Moves Toward Indictment of Former Cuban President Raúl Castro",
+    "summary": "The US Department of Justice reportedly advances toward an indictment against former Cuban president Raúl Castro, according to AP sources, marking a significant escalation in US-Cuba relations under the Trump administration.",
+    "date_event": "2026-05-15T18:09:57Z",
+    "date_published": "2026-05-15T18:09:57Z",
+    "geo": {
+      "lat": 23.135305,
+      "lon": -82.3589631,
+      "country": "Cuba",
+      "city": "Havana"
+    },
+    "topics": [
+      "cuba",
+      "indictment",
+      "diplomacy",
+      "justice-department",
+      "latin-america"
+    ],
+    "confidence": 0.9,
+    "source_name": "AP News (@AP)",
+    "links": [
+      {
+        "url": "https://x.com/AP/status/2055349985290440929",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://apnews.com/article/raul-castro-cuba-doj-indictment-trump-40939c6644185652649bc90d4e445394",
+        "label": "AP News Article"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2055349986032783360/XgIpliZK?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_20260515_121",
+    "title": "US Halts Army Deployment to Poland in European Troop Reduction Initially Focused on Germany",
+    "summary": "The United States has halted an Army deployment to Poland as part of a broader troop reduction across Europe initially centered on Germany, according to AP sources, signaling a major shift in NATO force posture.",
+    "date_event": "2026-05-15T17:46:14Z",
+    "date_published": "2026-05-15T17:46:14Z",
+    "geo": {
+      "lat": 52.2333742,
+      "lon": 21.0711489,
+      "country": "Poland",
+      "city": "Warsaw"
+    },
+    "topics": [
+      "military",
+      "nato",
+      "troop-reduction",
+      "poland",
+      "germany",
+      "defense"
+    ],
+    "confidence": 0.92,
+    "source_name": "AP News (@AP)",
+    "links": [
+      {
+        "url": "https://x.com/AP/status/2055344014484750458",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://apnews.com/article/poland-us-troop-reduction-deployment-europe-34138e62c7afc0b83ab7c7cc8fa60071",
+        "label": "AP News Article"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2055344015223005184/lS7F_BbU?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_20260515_122",
+    "title": "Judge Declares Mistrial in Harvey Weinstein Rape Retrial After Jury Deadlock",
+    "summary": "A judge declared a mistrial in the Harvey Weinstein rape retrial after jurors reported they had reached a deadlock, leaving the landmark sexual assault case unresolved and raising questions about a potential third trial.",
+    "date_event": "2026-05-15T17:19:21Z",
+    "date_published": "2026-05-15T17:19:21Z",
+    "geo": {
+      "lat": 40.7127281,
+      "lon": -74.0060152,
+      "country": "United States",
+      "region": "New York",
+      "city": "New York City"
+    },
+    "topics": [
+      "legal",
+      "sexual-assault",
+      "metoo",
+      "criminal-justice"
+    ],
+    "confidence": 0.95,
+    "source_name": "AP News (@AP)",
+    "links": [
+      {
+        "url": "https://x.com/AP/status/2055337249630216482",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://apnews.com/article/harvey-weinstein-rape-retrial-jury-deliberations-metoo-5a7dbc5b8007e0d5bb02be104a2946b0",
+        "label": "AP News Article"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2055337189949550592/sNTq6NLh?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_20260515_123",
+    "title": "Trump Maintains Restrained Social Media Presence During Historic Beijing State Visit",
+    "summary": "President Trump has shared only 10 social media updates since arriving in Beijing on Wednesday evening, marking an unusually restrained digital presence during his high-stakes state visit with Chinese President Xi Jinping.",
+    "date_event": "2026-05-15T17:58:30Z",
+    "date_published": "2026-05-15T17:58:30Z",
+    "geo": {
+      "lat": 39.9057136,
+      "lon": 116.3912972,
+      "country": "China",
+      "city": "Beijing"
+    },
+    "topics": [
+      "diplomacy",
+      "trump",
+      "china",
+      "summit",
+      "social-media"
+    ],
+    "confidence": 0.88,
+    "source_name": "South China Morning Post - Asia-Pacific Regional News and Analysis",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2055347104814395485",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://www.scmp.com/news/china/diplomacy/article/3353766/rapid-fire-restrained-china-state-visit-reveals-changed-trump-social-media",
+        "label": "SCMP Article"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2055333177531482112/xzh9iT4T?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_20260515_124",
+    "title": "Peru Presidential Run-Off Set Between Leftist Sanchez and Fujimori",
+    "summary": "Peru's leftist candidate Sanchez will face Fujimori in a presidential run-off election, setting up a politically polarizing contest between left-wing and right-wing forces in the South American nation.",
+    "date_event": "2026-05-15T17:30:51Z",
+    "date_published": "2026-05-15T17:30:51Z",
+    "geo": {
+      "lat": -12.0459808,
+      "lon": -77.0305912,
+      "country": "Peru",
+      "city": "Lima"
+    },
+    "topics": [
+      "election",
+      "peru",
+      "latin-america",
+      "politics"
+    ],
+    "confidence": 0.85,
+    "source_name": "South China Morning Post - Asia-Pacific Regional News and Analysis",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2055340145612554703",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://www.scmp.com/news/world/americas/article/3353775/perus-leftist-sanchez-face-fujimori-presidential-run",
+        "label": "SCMP Article"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2055340146325594112/acn8fTX2?format=jpg&name=800x419"
+  },
+  {
     "id": "evt_20260515_245",
     "title": "Trump-Xi Summit Agreement Demands Strait of Hormuz Remain Open as US Naval Blockade Continues",
     "summary": "During the Trump-Xi Beijing summit on May 15, both leaders agreed the Strait of Hormuz must remain open for global energy flows, while US 5th Fleet forces continue Project Freedom operations and the naval blockade of Iranian ports enters its fifth week.",
@@ -65634,6 +65864,1233 @@
       {
         "url": "https://www.bbc.com/news/articles/clypj01189lo",
         "label": "BBC Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_970",
+    "title": "Ian Bremmer Challenges Xi Jinping Thucydides Trap Framing Amid Trump-Xi Beijing Summit",
+    "summary": "Eurasia Group President Ian Bremmer pushed back against Chinese President Xi Jinping's characterization of US-China relations as a Thucydides Trap, arguing the current geopolitical landscape represents a G-Zero world rather than an inevitable superpower collision, as Trump concludes his three-day Beijing visit.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:48:53Z",
+    "geo": {
+      "lat": 40.7127281,
+      "lon": -74.0060152,
+      "country": "United States",
+      "city": "New York"
+    },
+    "topics": [
+      "geopolitics",
+      "us-china-relations",
+      "summit",
+      "political-risk",
+      "g-zero"
+    ],
+    "confidence": 0.9,
+    "source_name": "ianbremmer (@ianbremmer)",
+    "links": [
+      {
+        "url": "https://x.com/ianbremmer/status/2055344681697804749",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://www.gzeromedia.com",
+        "label": "GZERO Media"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HIYCqjjXYAAluFg.jpg"
+  },
+  {
+    "id": "evt_20260515_971",
+    "title": "US 7th Fleet F-35B Stealth Fighters Conduct Vertical Landing Operations in Western Pacific",
+    "summary": "US Pacific Fleet highlighted Marine Corps F-35B Lightning II stealth fighters executing vertical landings and takeoffs from the flight deck of a US Navy amphibious assault ship, demonstrating 5th-generation strike capabilities in the 7th Fleet area of operations during heightened Indo-Pacific tensions.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:22:57Z",
+    "geo": {
+      "lat": 20.0,
+      "lon": 135.0,
+      "country": "Japan",
+      "region": "Western Pacific"
+    },
+    "topics": [
+      "military",
+      "naval-operations",
+      "f-35",
+      "indo-pacific",
+      "stealth"
+    ],
+    "confidence": 0.85,
+    "source_name": "US Pacific Fleet (@USPacificFleet)",
+    "links": [
+      {
+        "url": "https://x.com/USPacificFleet/status/2055338155469910336",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://www.cpf.navy.mil/Newsroom/",
+        "label": "US Pacific Fleet Newsroom"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HIWvtcSWkAAwWGj.jpg"
+  },
+  {
+    "id": "evt_20260515_972",
+    "title": "Xi Jinping Pledges China Will Not Arm Iran as Strait of Hormuz Tensions Rattle Global Markets",
+    "summary": "During the Trump-Xi summit in Beijing, Xi Jinping pledged China would not provide military equipment to Iran and offered help ending the conflict, while expressing interest in purchasing US oil as markets respond to Hormuz tensions.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:15:00Z",
+    "geo": {
+      "lat": 39.9057,
+      "lon": 116.3913,
+      "country": "China",
+      "region": "Beijing",
+      "city": "Beijing"
+    },
+    "topics": [
+      "china",
+      "iran",
+      "military",
+      "oil",
+      "diplomacy",
+      "strait-of-hormuz",
+      "sanctions"
+    ],
+    "confidence": 0.93,
+    "source_name": "Fox News - Breaking News & World Events",
+    "links": [
+      {
+        "url": "https://www.foxnews.com/politics/trump-reveals-xis-stance-arming-iran-hormuz-tensions-rattle-markets",
+        "label": "Fox News Report"
+      }
+    ],
+    "link_preview_image": "https://static.foxnews.com/foxnews.com/content/uploads/2026/05/donald-trump-xi-jinping-beijing-china-visit-fox-news-022.jpg"
+  },
+  {
+    "id": "evt_20260515_973",
+    "title": "Iranian Forces Seize Floating Armoury Ship Near Fujairah as Hormuz Maritime Tensions Escalate",
+    "summary": "Iranian military personnel seized a Honduras-flagged vessel operating as a floating armoury 70km northeast of Fujairah, UAE, amid escalating maritime security incidents including the sinking of an Indian cargo ship off Oman.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:30:00Z",
+    "geo": {
+      "lat": 25.4147,
+      "lon": 56.2314,
+      "country": "United Arab Emirates",
+      "region": "Fujairah",
+      "city": "Fujairah"
+    },
+    "topics": [
+      "maritime-security",
+      "iran",
+      "ship-seizure",
+      "strait-of-hormuz",
+      "piracy",
+      "conflict"
+    ],
+    "confidence": 0.9,
+    "source_name": "Risk Staff - Global Security and Risk Intelligence",
+    "links": [
+      {
+        "url": "https://gulfnews.com/world/mena/floating-armouryseized-by-iranian-military-in-gulf-1.500541100",
+        "label": "Gulf News Report"
+      }
+    ],
+    "link_preview_image": "https://gumlet-images.assettype.com/gulfnews%2F2026-05-15%2Flxngyj2m%2FHui-Chan.jpeg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100"
+  },
+  {
+    "id": "evt_20260515_974",
+    "title": "Iran Foreign Minister Urges BRICS Nations to Condemn US-Israel War, Accuses UAE of Involvement",
+    "summary": "Iranian Foreign Minister Araghchi called on BRICS member states at a New Delhi summit to condemn US-Israeli military operations as violations of international law, while directly accusing the UAE of active participation in aggression against Iran.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:25:00Z",
+    "geo": {
+      "lat": 28.6139,
+      "lon": 77.209,
+      "country": "India",
+      "region": "Delhi",
+      "city": "New Delhi"
+    },
+    "topics": [
+      "iran",
+      "diplomacy",
+      "brics",
+      "uae",
+      "strait-of-hormuz",
+      "conflict",
+      "sanctions"
+    ],
+    "confidence": 0.91,
+    "source_name": "Sim Nasr - Middle East Regional Analyst",
+    "links": [
+      {
+        "url": "https://www.wionews.com/world/iran-fm-says-strait-of-hormuz-open-to-all-vessels-except-nations-at-war-with-us-says-tehran-has-no-trust-in-us-1778839987625",
+        "label": "WION Report"
+      }
+    ],
+    "link_preview_image": "https://cdn1.wionews.com/prod/wion/images/2026/20260515/image-1778841430980.jpg?imwidth=1200&imheight=900"
+  },
+  {
+    "id": "evt_20260515_975",
+    "title": "Seoul Keeps Missile Strike Possibility Open in HMM Namu Vessel Investigation",
+    "summary": "South Korea's national security adviser stated that a missile strike remains among possible explanations for the attack on the HMM Namu vessel in the Strait of Hormuz, as Seoul reviews potential contributions to international Hormuz security efforts.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:29:00Z",
+    "geo": {
+      "lat": 37.5667,
+      "lon": 126.9783,
+      "country": "South Korea",
+      "region": "Seoul",
+      "city": "Seoul"
+    },
+    "topics": [
+      "south-korea",
+      "maritime-security",
+      "strait-of-hormuz",
+      "investigation",
+      "military",
+      "attack"
+    ],
+    "confidence": 0.92,
+    "source_name": "The Korea Herald - Major Korean English Daily",
+    "links": [
+      {
+        "url": "https://m.koreaherald.com/article/10737271",
+        "label": "Korea Herald Report"
+      }
+    ],
+    "link_preview_image": "https://wimg.heraldcorp.com/news/cms/2026/05/13/news-p.v1.20260513.bfa73d49632049adac7b233db7555a23_T1.png"
+  },
+  {
+    "id": "evt_20260515_976",
+    "title": "Human Rights Watch Documents Execution of 53 Civilians During M23 Occupation of Uvira in Eastern DR Congo",
+    "summary": "Human Rights Watch released a detailed investigation documenting summary executions, rape, and enforced disappearances by M23 rebels and Rwandan soldiers during their occupation of Uvira, a lakeside city in eastern Democratic Republic of Congo.",
+    "date_event": "2026-05-15T12:00:00Z",
+    "date_published": "2026-05-15T18:00:00Z",
+    "geo": {
+      "lat": -3.4,
+      "lon": 29.14,
+      "country": "Democratic Republic of the Congo",
+      "region": "South Kivu",
+      "city": "Uvira"
+    },
+    "topics": [
+      "conflict",
+      "war-crime",
+      "human-right",
+      "dr-congo",
+      "rwanda",
+      "m23"
+    ],
+    "confidence": 0.9,
+    "source_name": "BBG Originals (@BBGOriginals)",
+    "links": [
+      {
+        "url": "https://www.bbc.co.uk/news/articles/cy42dgj0x32o",
+        "label": "BBC News DR Congo Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_977",
+    "title": "Japan Ruling Party Reaches Consensus on Security Spending Increase, Eyes NATO-Level Targets",
+    "summary": "Japan's Liberal Democratic Party agreed on the need to increase security-related expenditures as it finalized key points for revising three security documents, with members examining NATO's 3-5% GDP spending targets.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:34:00Z",
+    "geo": {
+      "lat": 35.6769,
+      "lon": 139.7639,
+      "country": "Japan",
+      "region": "Tokyo",
+      "city": "Tokyo"
+    },
+    "topics": [
+      "japan",
+      "defense",
+      "military-spending",
+      "nato",
+      "nuclear",
+      "security-policy"
+    ],
+    "confidence": 0.88,
+    "source_name": "Japan Ministry of Defense (English)",
+    "links": [
+      {
+        "url": "https://japannews.yomiuri.co.jp/politics/defense-security/20260514-327513/",
+        "label": "Japan News - Yomiuri Shimbun"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_978",
+    "title": "Ship Seized Near Strait of Hormuz and Diverted to Iran, Indian Cargo Vessel Sunk Off Oman",
+    "summary": "Multiple maritime security incidents escalated Hormuz tensions: a vessel anchored off UAE coast seized and diverted toward Iran, while an Indian-flagged cargo ship sank off Oman after a suspected drone or missile attack.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:15:00Z",
+    "geo": {
+      "lat": 26.4494,
+      "lon": 56.2028,
+      "country": "Iran",
+      "region": "Hormozgan",
+      "city": "Strait of Hormuz"
+    },
+    "topics": [
+      "maritime-security",
+      "iran",
+      "ship-seizure",
+      "strait-of-hormuz",
+      "conflict",
+      "intelligence"
+    ],
+    "confidence": 0.93,
+    "source_name": "Info Fusion Center - Multi-Source Intelligence Fusion and Analysis",
+    "links": [
+      {
+        "url": "https://www.npr.org/2026/05/15/g-s1-122203/tensions-flare-near-strait-of-hormuz",
+        "label": "NPR Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_979",
+    "title": "OFAC Ramps Up Economic Fury Campaign Targeting IRGC Oil Operations and Weapons Procurement Networks",
+    "summary": "The US Treasury's Office of Foreign Assets Control intensified its Economic Fury sanctions campaign in May 2026, designating individuals and entities linked to IRGC oil operations, weapons procurement networks, and Iranian shadow banking systems.",
+    "date_event": "2026-05-15T12:00:00Z",
+    "date_published": "2026-05-15T17:35:00Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "country": "United States",
+      "city": "Washington DC"
+    },
+    "topics": [
+      "sanctions",
+      "iran",
+      "irgc",
+      "ofac",
+      "oil",
+      "terrorism"
+    ],
+    "confidence": 0.9,
+    "source_name": "ofacalert (@ofacalert)",
+    "links": [
+      {
+        "url": "https://ofac.treasury.gov/recent-actions/20260511",
+        "label": "OFAC Recent Actions May 11"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_980",
+    "title": "Indian Cargo Ship Carrying Livestock Sinks Off Oman Coast After Maritime Attack Near Hormuz",
+    "summary": "The Indian-flagged cargo vessel Haji Ali sank off Oman's coast after a suspected drone or missile attack while transiting from Somalia to the UAE, raising environmental and maritime safety concerns in the Hormuz corridor.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:20:00Z",
+    "geo": {
+      "lat": 23.615,
+      "lon": 58.5922,
+      "country": "Oman",
+      "region": "Muscat",
+      "city": "Muscat"
+    },
+    "topics": [
+      "maritime-security",
+      "environment",
+      "infrastructure",
+      "conflict",
+      "strait-of-hormuz",
+      "shipping"
+    ],
+    "confidence": 0.85,
+    "source_name": "Esri Water - Water Resources & Environmental GEOINT",
+    "links": [
+      {
+        "url": "https://www.bbc.co.uk/news/articles/cx219xwxg9no",
+        "label": "BBC Verify Report"
+      }
+    ],
+    "link_preview_image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/22e4/live/decae190-4f97-11f1-89a3-d1f559421220.png"
+  },
+  {
+    "id": "evt_20260515_981",
+    "title": "UAE Attempted to Rally Gulf States for Joint Attack on Iran, Report Claims",
+    "summary": "UAE President Mohamed bin Zayed reportedly lobbied Saudi Arabia and Qatar to coordinate a joint military attack against Iran. The failed diplomatic effort revealed deep divisions among Gulf Cooperation Council states over how to respond to the Iran conflict.",
+    "date_event": "2026-05-15T17:57:00Z",
+    "date_published": "2026-05-15T17:57:51Z",
+    "geo": {
+      "lat": 24.4538352,
+      "lon": 54.3774014,
+      "country": "United Arab Emirates",
+      "city": "Abu Dhabi"
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "iran",
+      "gulf-states",
+      "diplomacy",
+      "uae"
+    ],
+    "confidence": 0.78,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2055346937881121001",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_20260515_982",
+    "title": "Israeli Warplanes Strike Ambulance Centre in Harouf, Southern Lebanon",
+    "summary": "Israeli warplanes carried out two air strikes on the town of Harouf in southern Lebanon, destroying an ambulance centre linked to the Islamic Health Authority and wounding at least two people.",
+    "date_event": "2026-05-15T17:56:00Z",
+    "date_published": "2026-05-15T17:56:22Z",
+    "geo": {
+      "lat": 33.3702929,
+      "lon": 35.4430357,
+      "country": "Lebanon",
+      "region": "Nabatieh",
+      "city": "Harouf"
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "airstrike",
+      "israel",
+      "lebanon",
+      "hezbollah"
+    ],
+    "confidence": 0.9,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2055346567901495413",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2055162002520018944/7aqphetA?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_20260515_983",
+    "title": "Hezbollah Strikes Israeli Tank and Military Bulldozers in Southern Lebanon",
+    "summary": "Hezbollah announced its fighters struck an Israeli tank near the town of Biyyada and targeted three Israeli military bulldozers operating in Khiam in southern Lebanon, continuing its intensifying drone campaign against occupying forces.",
+    "date_event": "2026-05-15T17:55:00Z",
+    "date_published": "2026-05-15T17:55:14Z",
+    "geo": {
+      "lat": 33.3079104,
+      "lon": 35.5059689,
+      "country": "Lebanon",
+      "region": "Nabatieh"
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "hezbollah",
+      "israel",
+      "drone",
+      "lebanon"
+    ],
+    "confidence": 0.88,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2055346278909775934",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2055162002520018944/7aqphetA?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_20260515_984",
+    "title": "Libyan Coast Guard Opens Fire on German Vessel Carrying Rescued Migrants in Mediterranean",
+    "summary": "The Libyan Coast Guard opened fire on a German vessel carrying migrants it had rescued in the Mediterranean Sea, according to survivor testimony shared on Middle East Eye Live.",
+    "date_event": "2026-05-15T17:33:00Z",
+    "date_published": "2026-05-15T17:33:52Z",
+    "geo": {
+      "lat": 32.8855274,
+      "lon": 13.1638555,
+      "country": "Libya",
+      "region": "Mediterranean Sea"
+    },
+    "topics": [
+      "migration",
+      "maritime",
+      "attack",
+      "libya",
+      "rescue",
+      "mediterranean"
+    ],
+    "confidence": 0.8,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2055340905549213820",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2055340123148197888/img/BlnUn09PldmkjCdn.jpg"
+  },
+  {
+    "id": "evt_20260515_985",
+    "title": "Russia Pounds Kyiv With Over 1,400 Drones and 56 Missiles in Massive Escalation",
+    "summary": "Russia launched more than 1,400 drones and 56 missiles at Ukraine over two days, heavily targeting Kyiv in the largest aerial assault since the ceasefire ended. The Institute for the Study of War estimated that Russian forces advanced by only 2.9 sq km per day in 2026, down from 9.76 sq km in 2025.",
+    "date_event": "2026-05-15T17:00:00Z",
+    "date_published": "2026-05-15T17:32:33Z",
+    "geo": {
+      "lat": 50.4500336,
+      "lon": 30.5241361,
+      "country": "Ukraine",
+      "region": "Kyiv Oblast",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "drone-strike",
+      "ukraine",
+      "russia",
+      "missile"
+    ],
+    "confidence": 0.92,
+    "source_name": "Aurora Intel (@AuroraIntel)",
+    "links": [
+      {
+        "url": "https://www.aljazeera.com/news/2026/5/15/russia-pounds-kyiv-as-its-war-machine-grinds-to-a-near-standstill",
+        "label": "Al Jazeera Coverage"
+      }
+    ],
+    "link_preview_image": "https://www.aljazeera.com/wp-content/uploads/2026/05/2026-05-14T055542Z_838909164_RC2T8LANCT9Y_RTRMADP_3_UKRAINE-CRISIS-ATTACK-KYIV-1778863539.jpg?resize=1920%2C1440"
+  },
+  {
+    "id": "evt_20260515_986",
+    "title": "China's Grey-Zone Maritime Fleet Accelerates Erosion of Taiwan's Sea Control",
+    "summary": "ASPI analysis revealed that China's grey-zone fleet of coast guard, maritime militia, and civilian vessels recorded 247 incursions into Taiwan-controlled waters in the first four months of 2026, more than doubling the total for all of 2024. The strategy aims to establish control without military confrontation.",
+    "date_event": "2026-05-15T06:00:00Z",
+    "date_published": "2026-05-15T17:30:00Z",
+    "geo": {
+      "lat": 25.0375198,
+      "lon": 121.5636796,
+      "country": "Taiwan",
+      "city": "Taipei"
+    },
+    "topics": [
+      "china",
+      "taiwan",
+      "maritime",
+      "grey-zone",
+      "coast-guard",
+      "security"
+    ],
+    "confidence": 0.91,
+    "source_name": "CA_JC (@CA_JC)",
+    "links": [
+      {
+        "url": "https://www.aspistrategist.org.au/chinas-grey-zone-fleet-is-eroding-taiwans-control-at-sea/",
+        "label": "ASPI Strategist Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_987",
+    "title": "Senior Seoul Official Points to Iran as Likely Perpetrator of HMM Namu Attack, Vows Diplomatic Offensive",
+    "summary": "A senior South Korean government official stated that Iran almost certainly bears responsibility for the May 4 strike on the HMM Namu in the Strait of Hormuz. Seoul vowed a diplomatic offensive once the investigation concludes, marking the first time a government official identified Iran as the likely attacker.",
+    "date_event": "2026-05-14T06:24:00Z",
+    "date_published": "2026-05-15T17:24:00Z",
+    "geo": {
+      "lat": 37.5666791,
+      "lon": 126.9782914,
+      "country": "South Korea",
+      "city": "Seoul"
+    },
+    "topics": [
+      "south-korea",
+      "iran",
+      "attack",
+      "maritime",
+      "diplomacy",
+      "hormuz"
+    ],
+    "confidence": 0.9,
+    "source_name": "Claudefb (@Claudefb)",
+    "links": [
+      {
+        "url": "https://www.koreatimes.co.kr/foreignaffairs/20260514/seoul-official-points-to-iran-in-korean-ship-attack-vows-diplomatic-offensive",
+        "label": "Korea Times Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_988",
+    "title": "Seoul Concludes Unidentified Airborne Objects Struck South Korean Ship in Strait of Hormuz",
+    "summary": "South Korea's investigation team determined that two unidentified airborne objects struck the HMM Namu cargo vessel in the Strait of Hormuz on May 4, causing an explosion and fire. Seoul dispatched a technical analysis team to Dubai for further investigation.",
+    "date_event": "2026-05-14T10:00:00Z",
+    "date_published": "2026-05-15T17:50:00Z",
+    "geo": {
+      "lat": 26.4494061,
+      "lon": 56.2027702,
+      "country": "Oman",
+      "region": "Strait of Hormuz"
+    },
+    "topics": [
+      "maritime",
+      "attack",
+      "hormuz",
+      "south-korea",
+      "iran",
+      "conflict"
+    ],
+    "confidence": 0.93,
+    "source_name": "cnni (@cnni)",
+    "links": [
+      {
+        "url": "https://en.yna.co.kr/view/AEN20260514003800315",
+        "label": "Yonhap News Agency Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_989",
+    "title": "North Korean Soldiers March in Russia Victory Day Parade as Military Alliance Deepens",
+    "summary": "North Korean soldiers participated in Russia's Victory Day Parade for the first time on May 9. Putin personally thanked a North Korean commander, while both nations announced plans for a five-year military cooperation agreement.",
+    "date_event": "2026-05-12T15:00:00Z",
+    "date_published": "2026-05-15T17:40:00Z",
+    "geo": {
+      "lat": 39.0167979,
+      "lon": 125.7473609,
+      "country": "North Korea",
+      "city": "Pyongyang"
+    },
+    "topics": [
+      "north-korea",
+      "russia",
+      "military",
+      "alliance",
+      "victory-day"
+    ],
+    "confidence": 0.91,
+    "source_name": "JnbSummary (@JnbSummary)",
+    "links": [
+      {
+        "url": "https://understandingwar.org/research/china-taiwan/korean-peninsula-update-may-12-2026/",
+        "label": "ISW Korean Peninsula Update"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_990",
+    "title": "Iran's Kharg Island Oil Exports Stall as Maritime Control Architecture Expands Across Hormuz",
+    "summary": "Satellite imagery revealed all loading terminals at Kharg Island sat empty for the first time since April 18, with no confirmed crude departures since May 7. Dark tanker staging expanded across protected Iranian waters while IRGC speedboat activity surged to 342 craft.",
+    "date_event": "2026-05-15T10:00:00Z",
+    "date_published": "2026-05-15T18:00:00Z",
+    "geo": {
+      "lat": 29.2332,
+      "lon": 50.3232,
+      "country": "Iran",
+      "region": "Kharg Island"
+    },
+    "topics": [
+      "iran",
+      "oil",
+      "sanctions",
+      "hormuz",
+      "maritime",
+      "economic-security"
+    ],
+    "confidence": 0.89,
+    "source_name": "Korea Economic Institute (@KoreaEconInst)",
+    "links": [
+      {
+        "url": "https://www.hellenicshippingnews.com/kharg-stalls-as-iran-expands-maritime-control-across-hormuz/",
+        "label": "Hellenic Shipping News Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_991",
+    "title": "Vessel Seized by Unauthorized Personnel Near Fujairah and Taken Toward Iranian Waters",
+    "summary": "UKMTO reported that a Honduras-flagged vessel operating as a floating armoury near Fujairah was boarded by unauthorized personnel and directed toward Iranian territorial waters. The vessel's AIS stopped transmitting after the seizure.",
+    "date_event": "2026-05-15T05:45:00Z",
+    "date_published": "2026-05-15T17:35:00Z",
+    "geo": {
+      "lat": 25.4147357,
+      "lon": 56.2313667,
+      "country": "United Arab Emirates",
+      "city": "Fujairah"
+    },
+    "topics": [
+      "maritime",
+      "vessel-seizure",
+      "iran",
+      "hormuz",
+      "ais",
+      "security"
+    ],
+    "confidence": 0.88,
+    "source_name": "Osaindawg (@Osaindawg)",
+    "links": [
+      {
+        "url": "https://www.marineinsight.com/vessel-en-route-to-iran-as-floating-armoury-seized-off-uaes-fujairah/",
+        "label": "Marine Insight Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_992",
+    "title": "Nearly 200 Russian Shadow Fleet Vessels Enter UK Waters Despite Boarding Threat",
+    "summary": "BBC Verify analysis found 184 UK-sanctioned Russian shadow fleet vessels made 238 journeys through UK waters since PM Starmer threatened boarding operations seven weeks ago. No publicly confirmed boardings have occurred despite the policy announcement.",
+    "date_event": "2026-05-15T12:00:00Z",
+    "date_published": "2026-05-15T18:00:00Z",
+    "geo": {
+      "lat": 51.5074456,
+      "lon": -0.1277653,
+      "country": "United Kingdom",
+      "city": "London"
+    },
+    "topics": [
+      "russia",
+      "sanctions",
+      "shadow-fleet",
+      "maritime",
+      "vessel",
+      "united-kingdom"
+    ],
+    "confidence": 0.93,
+    "source_name": "Ship News (@ShipNews)",
+    "links": [
+      {
+        "url": "https://www.bbc.com/news/articles/cn8pvgw802no",
+        "label": "BBC Verify Investigation"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_993",
+    "title": "Taiwan Declares China the Sole Risk to Regional Peace After Xi Warns Trump Over Taiwan",
+    "summary": "Taiwan's Ministry of Foreign Affairs responded to Chinese President Xi Jinping's warning to U.S. President Donald Trump that Taiwan remains the most important issue in bilateral relations. MOFA declared Beijing the sole risk to regional peace and stability.",
+    "date_event": "2026-05-14T09:00:00Z",
+    "date_published": "2026-05-15T17:30:00Z",
+    "geo": {
+      "lat": 25.0375198,
+      "lon": 121.5636796,
+      "country": "Taiwan",
+      "city": "Taipei"
+    },
+    "topics": [
+      "taiwan",
+      "china",
+      "diplomacy",
+      "military",
+      "xi-jinping",
+      "trump"
+    ],
+    "confidence": 0.92,
+    "source_name": "TheDiplomat (@TheDiplomat)",
+    "links": [
+      {
+        "url": "https://focustaiwan.tw/politics/202605140011",
+        "label": "Focus Taiwan Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_994",
+    "title": "North Korea Removes Reunification From Constitution and Codifies Decentralized Nuclear Command",
+    "summary": "North Korea's amended constitution deleted all references to national reunification, defined territorial borders excluding South Korea, and granted the SAC chairman explicit authority over nuclear forces with delegation provisions. The changes codify Kim Jong Un's hostile two-state policy.",
+    "date_event": "2026-05-12T12:00:00Z",
+    "date_published": "2026-05-15T17:45:00Z",
+    "geo": {
+      "lat": 39.0167979,
+      "lon": 125.7473609,
+      "country": "North Korea",
+      "city": "Pyongyang"
+    },
+    "topics": [
+      "north-korea",
+      "constitution",
+      "nuclear",
+      "reunification",
+      "kim-jong-un"
+    ],
+    "confidence": 0.9,
+    "source_name": "TheKoreaview (@TheKoreaview)",
+    "links": [
+      {
+        "url": "https://understandingwar.org/research/china-taiwan/korean-peninsula-update-may-12-2026/",
+        "label": "ISW Korean Peninsula Update"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_995",
+    "title": "U.S.-Sanctioned Chinese-Owned Tanker Rich Starry Forced to Turn Back at Hormuz Blockade",
+    "summary": "The U.S.-sanctioned tanker Rich Starry, owned by Shanghai Xuanrun Shipping Co, attempted to break through the U.S. naval blockade at the Strait of Hormuz but turned back after failing to pass. Six vessels complied with U.S. forces' directions on the blockade's first day.",
+    "date_event": "2026-05-14T08:00:00Z",
+    "date_published": "2026-05-15T17:55:00Z",
+    "geo": {
+      "lat": 26.4494061,
+      "lon": 56.2027702,
+      "country": "Oman",
+      "region": "Strait of Hormuz"
+    },
+    "topics": [
+      "sanctions",
+      "tanker",
+      "iran",
+      "blockade",
+      "hormuz",
+      "maritime"
+    ],
+    "confidence": 0.9,
+    "source_name": "Therealshipdude (@Therealshipdude)",
+    "links": [
+      {
+        "url": "https://ws15.marinelink.com/news/sanctioned-chinalinked-tanker-turns-back-538072",
+        "label": "MarineLink Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_996",
+    "title": "Bloomberg Reports Iran Oil Flows Cut by Spill at Kharg Island, TankerTrackers Confirms",
+    "summary": "TankerTrackers confirmed that Iran has not exported crude oil by sea for 28 days amid the US naval blockade, while a suspected oil spill near Kharg Island has further disrupted loading operations. Bloomberg reported the oil flow disruption citing TankerTrackers data.",
+    "date_event": "2026-05-15T18:00:00Z",
+    "date_published": "2026-05-15T18:03:32Z",
+    "geo": {
+      "lat": 29.2406,
+      "lon": 50.3117,
+      "country": "Iran",
+      "region": "Bushehr",
+      "city": "Kharg Island"
+    },
+    "topics": [
+      "sanctions",
+      "iran",
+      "oil",
+      "tanker",
+      "blockade",
+      "energy",
+      "conflict"
+    ],
+    "confidence": 0.92,
+    "source_name": "TankerTrackers - Oil & Gas Tanker Movement Tracking",
+    "links": [
+      {
+        "url": "https://x.com/TankerTrackers/status/2055348368742707523",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://www.iranintl.com/en/202605122398",
+        "label": "Iran International Coverage"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2055348055038164992/5Y0ofRSI?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_20260515_997",
+    "title": "Tehran Receives US Response to Iran's Proposal as Nuclear Talks Remain Deadlocked",
+    "summary": "An informed Iranian source confirmed that Tehran officially received the American response to Iran's proposal for ending the conflict. The diplomatic exchange comes as Iran sets five preconditions for further negotiations including war reparations and sovereignty claims over the Strait of Hormuz.",
+    "date_event": "2026-05-15T17:38:00Z",
+    "date_published": "2026-05-15T17:38:13Z",
+    "geo": {
+      "lat": 35.6893,
+      "lon": 51.3896,
+      "country": "Iran",
+      "city": "Tehran"
+    },
+    "topics": [
+      "nuclear",
+      "iran",
+      "sanctions",
+      "diplomacy",
+      "conflict",
+      "policy"
+    ],
+    "confidence": 0.88,
+    "source_name": "JasonBrodsky (@JasonBrodsky)",
+    "links": [
+      {
+        "url": "https://x.com/ELINTNews/status/2055341996735082829",
+        "label": "Source Retweet"
+      },
+      {
+        "url": "https://www.defensenews.com/news/pentagon-congress/2026/05/14/iran-military-threat-is-diminished-but-not-eliminated-centcom-chief-says/",
+        "label": "Defense News CENTCOM"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_20260515_998",
+    "title": "North Korea's Kim Jong Un Orders Stronger Mortar and Howitzer Forces Amid Accelerated Artillery Buildup",
+    "summary": "North Korean leader Kim Jong Un called for strengthening mortar and howitzer forces during inspections of munitions factories, ordering establishment of a specialized artillery production complex as Pyongyang accelerates weapons manufacturing under its five-year defense plan.",
+    "date_event": "2026-05-13T00:00:00Z",
+    "date_published": "2026-05-15T17:40:00Z",
+    "geo": {
+      "lat": 39.0168,
+      "lon": 125.7474,
+      "country": "North Korea",
+      "city": "Pyongyang"
+    },
+    "topics": [
+      "nuclear",
+      "military",
+      "north-korea",
+      "artillery",
+      "defense",
+      "deterrence"
+    ],
+    "confidence": 0.9,
+    "source_name": "CSIS Korea Chair (@CSISKoreaChair)",
+    "links": [
+      {
+        "url": "https://www.koreaherald.com/article/10737133",
+        "label": "Korea Herald Coverage"
+      },
+      {
+        "url": "https://en.yna.co.kr/view/AEN20260515007200315",
+        "label": "Yonhap Weekly Developments"
+      }
+    ],
+    "link_preview_image": "https://wimg.heraldcorp.com/news/cms/2026/05/13/news-p.v1.20260513.297983d3f50047f4af551447475c6c27_T1.jpg"
+  },
+  {
+    "id": "evt_20260515_999",
+    "title": "Former NATO Chief Scholz Sparks Debate Over Alliance Purpose at Security Conference",
+    "summary": "Former German Chancellor Olaf Scholz made controversial remarks about NATO's founding purpose, stating the alliance existed to keep 'Russians out, the US in, and Germans down,' drawing significant attention to ongoing debates about the alliance's relevance and mission.",
+    "date_event": "2026-05-15T17:50:00Z",
+    "date_published": "2026-05-15T17:52:01Z",
+    "geo": {
+      "lat": 52.52,
+      "lon": 13.405,
+      "country": "Germany",
+      "city": "Berlin"
+    },
+    "topics": [
+      "military",
+      "nato",
+      "germany",
+      "security",
+      "alliance",
+      "defense"
+    ],
+    "confidence": 0.78,
+    "source_name": "ntonc (@ntonc)",
+    "links": [
+      {
+        "url": "https://x.com/MyLordBebo/status/2055345469560140214",
+        "label": "Source Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2055345337816993792/img/_xXN5J5iPhAVRzrG.jpg"
+  },
+  {
+    "id": "evt_20260515_1002",
+    "title": "ArcGIS Story Maps Publishes Geospatial Analysis of Low-Stress Bicycling Access in Washington DC",
+    "summary": "ArcGIS Story Maps shared a geospatial analysis examining access to low-stress bicycling infrastructure in Washington, D.C. during National Bike Month, highlighting spatial inequality in cycling infrastructure and its implications for urban mobility and equity.",
+    "date_event": null,
+    "date_published": "2026-05-15T18:01:00Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "country": "United States",
+      "city": "Washington"
+    },
+    "topics": [
+      "geospatial",
+      "urban-planning",
+      "cycling",
+      "infrastructure",
+      "visualization"
+    ],
+    "confidence": 0.8,
+    "source_name": "ArcgisStorymaps (@ArcgisStorymaps)",
+    "links": [
+      {
+        "url": "https://x.com/ArcgisStorymaps/status/2055347837186003021",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_1003",
+    "title": "Russia Launches Largest Combined Drone and Missile Strike on Kyiv Since Full-Scale Invasion",
+    "summary": "Russia launched over 670 drones and 56 missiles at Ukraine overnight on May 14-15, killing at least 16 people including two children in Kyiv. The barrage struck more than 180 sites across Ukraine, including residential buildings, marking the third consecutive day of deadly attacks after the May 9-11 ceasefire expired.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:32:00Z",
+    "geo": {
+      "lat": 50.4500336,
+      "lon": 30.5241361,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "missile-strike",
+      "drone-attack",
+      "ukraine",
+      "russia",
+      "conflict",
+      "kyiv"
+    ],
+    "confidence": 0.95,
+    "source_name": "Borrowed7time (@Borrowed7time)",
+    "links": [
+      {
+        "url": "https://www.aljazeera.com/news/2026/5/15/russia-pounds-kyiv-as-its-war-machine-grinds-to-a-near-standstill",
+        "label": "Al Jazeera Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_1004",
+    "title": "Xi and Trump Agree on 'Constructive Strategic Stability' Framework for US-China Relations",
+    "summary": "Chinese President Xi Jinping and US President Trump agreed on a new vision of building a 'constructive China-US relationship of strategic stability' during their Beijing summit on May 14-15, providing strategic guidance for bilateral relations over the next three years and beyond.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:30:00Z",
+    "geo": {
+      "lat": 39.9057136,
+      "lon": 116.3912972,
+      "country": "China",
+      "city": "Beijing"
+    },
+    "topics": [
+      "diplomacy",
+      "us-china-relations",
+      "summit",
+      "trade",
+      "taiwan"
+    ],
+    "confidence": 0.95,
+    "source_name": "ChineseEmbInUs (@ChineseEmbInUs)",
+    "links": [
+      {
+        "url": "https://english.cctv.com/2026/05/15/ARTIEaB7KdRcXeN5tJ1xNMLN260515.shtml",
+        "label": "CGTN Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_1005",
+    "title": "ISW Publishes Detailed Geospatial Analysis of Russian Territorial Losses and Infiltration Mapping Methodology",
+    "summary": "The Institute for the Study of War released refined mapping data showing Russia suffered net territorial losses of 116 square kilometers in April 2026, the first such reversal since August 2024, while also updating its GIS methodology to distinguish between seized territory and infiltration areas.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:25:00Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "country": "United States",
+      "city": "Washington"
+    },
+    "topics": [
+      "geospatial-analysis",
+      "gis",
+      "mapping",
+      "conflict",
+      "ukraine",
+      "intelligence"
+    ],
+    "confidence": 0.85,
+    "source_name": "Esri Training (@EsriTraining)",
+    "links": [
+      {
+        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-11-2026/",
+        "label": "ISW Assessment"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_1006",
+    "title": "EU Announces 6 Billion Euro Drone Support Package for Ukraine as Russia Intensifies Aerial Attacks",
+    "summary": "EU Commission President von der Leyen announced a 6 billion euro drone support package for Ukraine following Russia's largest combined aerial assault since the full-scale invasion, while Germany invested 1 billion dollars in Ukraine's deep strike capabilities during Defense Minister Pistorius's Kyiv visit.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:40:00Z",
+    "geo": {
+      "lat": 50.8465573,
+      "lon": 4.351697,
+      "country": "Belgium",
+      "city": "Brussels"
+    },
+    "topics": [
+      "european-defense",
+      "drone",
+      "ukraine",
+      "military-aid",
+      "nato",
+      "procurement"
+    ],
+    "confidence": 0.9,
+    "source_name": "EtienneLh (@EtienneLh)",
+    "links": [
+      {
+        "url": "https://www.bbc.com/news/articles/cq5p8yygq94o",
+        "label": "BBC Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_1007",
+    "title": "JASDF Scrambles Against Chinese Aircraft Near Okinawa as Regional Air Defense Tensions Persist",
+    "summary": "Japan Air Self-Defense Force fighters scrambled to intercept Chinese military aircraft near Okinawa amid heightened regional tensions, following recent radar lock-on incidents by Chinese carrier-based J-15 jets and joint Chinese-Russian bomber patrols around Japan.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:50:00Z",
+    "geo": {
+      "lat": 26.5707754,
+      "lon": 128.0255901,
+      "country": "Japan",
+      "region": "Okinawa"
+    },
+    "topics": [
+      "scramble",
+      "air-defense",
+      "japan",
+      "china",
+      "military",
+      "indo-pacific"
+    ],
+    "confidence": 0.85,
+    "source_name": "JasdfPaoEng (@JasdfPaoEng)",
+    "links": [
+      {
+        "url": "https://www.stripes.com/theaters/asia_pacific/2026-05-06/japan-china-air-space-scramble-senkaku-21598397.html",
+        "label": "Stars and Stripes Coverage"
+      }
+    ],
+    "link_preview_image": "https://www.stripes.com/incoming/sr4ltq-080526jpn-scramblesphoto01.jpg/alternates/LANDSCAPE_480/080526JPN-SCRAMBLESphoto01.jpg"
+  },
+  {
+    "id": "evt_20260515_1008",
+    "title": "Russia Claims Capture of Chaikovka and Charivnoye in Kharkiv and Zaporizhzhia Regions",
+    "summary": "The Russian Defense Ministry announced that its Sever grouping captured Chaikovka in Kharkiv region while Vostok grouping forces seized Charivnoye in Zaporizhzhia region, as 257 combat engagements occurred across the front line on May 14-15.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:47:00Z",
+    "geo": {
+      "lat": 49.9923181,
+      "lon": 36.2310146,
+      "country": "Ukraine",
+      "region": "Kharkiv"
+    },
+    "topics": [
+      "frontline",
+      "territorial-change",
+      "ukraine",
+      "russia",
+      "conflict",
+      "military"
+    ],
+    "confidence": 0.85,
+    "source_name": "Militarylandnet (@Militarylandnet)",
+    "links": [
+      {
+        "url": "https://easternherald.com/2026/05/15/russia-captures-charivnoye-chaikovka-kharkiv-zaporizhzhia/",
+        "label": "Eastern Herald Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_1009",
+    "title": "Sea-Watch 5 Arrives at Brindisi With 154 Migrants After Libyan Coast Guard Opens Fire During Rescue",
+    "summary": "The Sea-Watch 5 rescue vessel docked at the Italian port of Brindisi on May 15 carrying 154 migrants, including 25 unaccompanied minors and 3 women, after the Libyan coast guard fired live ammunition at the ship during a Mediterranean rescue operation on May 11.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:15:00Z",
+    "geo": {
+      "lat": 40.6358599,
+      "lon": 17.6884975,
+      "country": "Italy",
+      "city": "Brindisi"
+    },
+    "topics": [
+      "migration",
+      "rescue",
+      "mediterranean",
+      "libya",
+      "coast-guard",
+      "humanitarian"
+    ],
+    "confidence": 0.95,
+    "source_name": "seawatch_intl (@seawatch_intl)",
+    "links": [
+      {
+        "url": "https://abcnews.com/International/wireStory/aid-group-libyan-linked-vessels-fired-migrant-rescue-132851549",
+        "label": "ABC News Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_1010",
+    "title": "Treasury Continues Operation Economic Fury With New Iran-Linked Sanctions Targeting IRGC Oil Networks",
+    "summary": "The US Treasury Department's OFAC designated 12 individuals and entities for facilitating Iranian oil sales to China through IRGC networks, expanding the Economic Fury campaign launched in April to maintain maximum economic pressure on Iran amid the ongoing US blockade.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:20:00Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "country": "United States",
+      "city": "Washington"
+    },
+    "topics": [
+      "sanctions",
+      "iran",
+      "treasury",
+      "irgc",
+      "oil-trade",
+      "economic-pressure"
+    ],
+    "confidence": 0.9,
+    "source_name": "US Treasury (@USTreasury)",
+    "links": [
+      {
+        "url": "https://sputnikglobe.com/20260512/us-treasury-sanctions-12-individuals-entities-over-alleged-role-in-iran-china-oil-trade-1124113322.html",
+        "label": "Sputnik Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260515_1011",
+    "title": "Ukraine Returns 205 Prisoners of War in First Stage of 1,000-for-1,000 Exchange With Russia",
+    "summary": "President Zelenskyy announced that 205 Ukrainian service members returned from Russian captivity on May 15, marking the first stage of the 1,000-for-1,000 prisoner exchange agreed during the US-brokered ceasefire negotiations. Most had spent four years in captivity since the defense of Mariupol.",
+    "date_event": null,
+    "date_published": "2026-05-15T17:45:00Z",
+    "geo": {
+      "lat": 50.4500336,
+      "lon": 30.5241361,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "prisoner-exchange",
+      "ukraine",
+      "russia",
+      "diplomacy",
+      "mariupol"
+    ],
+    "confidence": 0.95,
+    "source_name": "X Korea (@XKorea)",
+    "links": [
+      {
+        "url": "https://en.interfax.com.ua/news/general/1167990.html",
+        "label": "Interfax-Ukraine Coverage"
       }
     ],
     "link_preview_image": null
