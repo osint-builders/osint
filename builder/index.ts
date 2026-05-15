@@ -28,7 +28,10 @@ import * as path from "path";
 import { execSync } from "child_process";
 import { DateTime } from "luxon";
 
-const POLL_INTERVAL_MS = 10_000;
+const POLL_BASE_MS = 15_000;         // base poll interval
+const POLL_JITTER_MS = 5_000;         // ±jitter added to every poll sleep
+const POLL_MAX_BACKOFF_MS = 120_000;  // max backoff on 429: 2 minutes
+const SPAWN_STAGGER_MS = 500;         // delay between consecutive agent spawns
 const TERMINAL_STATES = new Set(["SUCCEEDED", "FAILED", "CANCELLED"]);
 
 // Warp's prompt size limit (1 MB = 1,048,576 bytes)
@@ -311,18 +314,48 @@ function buildCollectionPrompt(
   });
 }
 
+function sleep(ms: number): Promise<void> {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+/**
+ * Polls a run until it reaches a terminal state.
+ *
+ * Uses an initial random jitter delay to spread 15 concurrent pollers apart
+ * so they don't all fire at the same instant and trigger API rate limits.
+ * On a 429 response the backoff doubles (capped at POLL_MAX_BACKOFF_MS)
+ * instead of crashing the whole collection run.
+ */
 async function pollUntilComplete(
   client: OzAPI,
   runId: string
 ): Promise<string> {
   process.stdout.write(`Polling run ${runId}`);
+
+  // Stagger concurrent pollers: random initial offset in [0, POLL_BASE_MS).
+  await sleep(Math.random() * POLL_BASE_MS);
+
+  let backoffMs = POLL_BASE_MS;
+
   while (true) {
-    await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS));
-    const run = await client.agent.runs.retrieve(runId);
-    process.stdout.write(` [${run.state}]`);
-    if (TERMINAL_STATES.has(run.state)) {
-      process.stdout.write("\n");
-      return run.state;
+    try {
+      const run = await client.agent.runs.retrieve(runId);
+      process.stdout.write(` [${run.state}]`);
+      if (TERMINAL_STATES.has(run.state)) {
+        process.stdout.write("\n");
+        return run.state;
+      }
+      backoffMs = POLL_BASE_MS; // reset after a successful poll
+      await sleep(POLL_BASE_MS + Math.random() * POLL_JITTER_MS);
+    } catch (err: unknown) {
+      const status = (err as { status?: number }).status;
+      if (status === 429) {
+        process.stdout.write(` [429, retrying in ${(backoffMs / 1000).toFixed(0)}s]`);
+        await sleep(backoffMs);
+        backoffMs = Math.min(backoffMs * 2, POLL_MAX_BACKOFF_MS);
+      } else {
+        throw err;
+      }
     }
   }
 }
@@ -442,6 +475,9 @@ async function main(): Promise<void> {
         ...(environmentId ? { environment_id: environmentId } : {}),
       },
     };
+
+    // Stagger spawns to avoid hitting the API with 15 simultaneous requests.
+    await sleep(bucketIndex * SPAWN_STAGGER_MS);
 
     try {
       const runResponse = await client!.agent.run(runParams);
