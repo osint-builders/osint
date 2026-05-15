@@ -113,3 +113,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** `https://r.jina.ai/http://x.com/<handle>` returned readable profile snapshots for several X accounts, including tweet status IDs that allowed exact UTC timestamp recovery through snowflake decoding even when the page only showed relative labels such as `1m` or `2h`. Broken or low-activity accounts still returned stale or missing timelines, so the mirror works best as a first-pass discovery path rather than a guarantee of completeness.
 **Action for next run:** When Twitter API credits remain depleted, fetch the r.jina.ai mirror before broader web search, decode candidate status IDs to UTC, and keep only tweets whose decoded times fall inside the bucket window.
 **Expires:** 2026-07-15
+
+## 2026-05-15 01:35Z — @KoreaTimesAlt X account does not exist; source should be deactivated or handle updated
+**Trigger:** Bucket 9 collection attempted to scrape @KoreaTimesAlt via r.jina.ai mirror; X returned "This account doesn't exist."
+**Finding:** The Twitter handle @KoreaTimesAlt configured for source twitter-korea-times-alt does not resolve to an active X/Twitter account. The account may have been deleted, suspended, or the handle may have changed. Events for this source's topic area (Korean news) had to come from alternative sources like Yonhap.
+**Action for next run:** Mark source twitter-korea-times-alt as inactive in manifest or investigate whether The Korea Times operates under a different secondary handle. Skip direct scraping attempts for this source until the handle resolves.
+**Expires:** 2026-08-15
