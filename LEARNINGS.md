@@ -36,6 +36,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
+## 2026-05-17 16:16Z — Nominatim fails to geocode Goma, DRC and Spratly Islands — use hardcoded fallbacks
+**Trigger:** Bucket 8 geocoding returned null lat/lon for both "Goma, Democratic Republic of Congo" and "Spratly Islands, South China Sea."
+**Finding:** OpenStreetMap Nominatim does not resolve these locations. Goma lies at approximately -1.6777°S, 29.2285°E on the northern shore of Lake Kivu. Spratly Islands center at approximately 10.68°N, 117.83°E in the South China Sea.
+**Action for next run:** Pre-populate geocoding cache with Goma (-1.6777, 29.2285) and Spratly Islands (10.68, 117.83) before querying Nominatim.
+**Expires:** 2026-08-17
+
 ## 2026-05-15 01:35Z — Twitter accounts Allsource4 and Raytoribo no longer exist on X
 **Trigger:** Bucket 13 r.jina.ai mirror returned "This account doesn't exist" for both @Allsource4 and @Raytoribo handles.
 **Finding:** Both X/Twitter accounts have disappeared entirely — not suspended, not renamed, but returning "This account doesn't exist" pages. exa_web_search still yields relevant events for their topic areas, so sources remain viable for news discovery but direct Twitter collection produces zero results.
