@@ -36,6 +36,13 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
+## 2026-05-19 19:29Z — @TatarigamiUA X account no longer exists; source should update handle or deactivate
+**Trigger:** Bucket 5 r.jina.ai mirror for @TatarigamiUA returned "This account does not exist" on X.
+**Finding:** The Twitter handle @TatarigamiUA configured for source twitter-tatarigamiua does not resolve to an active X/Twitter account. Events for Ukraine conflict analysis remain accessible via exa_web_search with conflict keywords.
+**Action for next run:** Skip Twitter API and r.jina.ai for twitter-tatarigamiua. Use exa_web_search with Ukraine conflict keywords as primary discovery. Flag source for manifest handle investigation or status change.
+**Expires:** 2026-08-19
+
+
 ## 2026-05-17 16:16Z — Nominatim fails to geocode Goma, DRC and Spratly Islands — use hardcoded fallbacks
 **Trigger:** Bucket 8 geocoding returned null lat/lon for both "Goma, Democratic Republic of Congo" and "Spratly Islands, South China Sea."
 **Finding:** OpenStreetMap Nominatim does not resolve these locations. Goma lies at approximately -1.6777°S, 29.2285°E on the northern shore of Lake Kivu. Spratly Islands center at approximately 10.68°N, 117.83°E in the South China Sea.
