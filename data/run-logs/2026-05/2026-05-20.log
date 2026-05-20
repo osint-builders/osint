@@ -75,3 +75,51 @@ Sources processed:
   twitter-sindikasyontek: 1 event (Senate Iran war powers vote)
   twitter-jasdf-pao-eng: 1 event (Chinese naval activity Tsushima)
   twitter-pyongyang-today: 1 event (China-Russia oppose NK sanctions)
+## Bucket 10 @ 2026-05-20T20:37:00.518Z
+Sources processed: 10
+Events generated: 7
+Events deduped: 3 (URLs already in prior buckets)
+Events added: 4
+Skipped sources (no in-window events): twitter-esri-training, twitter-esri-water, twitter-esri
+
+## twitter-esri-training
+No in-window events found. @EsriTraining focuses on GIS education content - no breaking events matched topic area during 19:37-20:37 UTC window.
+## twitter-esri-water
+No in-window events found. @EsriWater focuses on water resources and hydrology - no breaking events matched topic area during 19:37-20:37 UTC window.
+## twitter-esri
+No in-window events found. @Esri focuses on GIS technology and geospatial intelligence - no breaking events matched topic area during 19:37-20:37 UTC window.
+## Bucket 12 @ 2026-05-20T20:37:00.520Z
+Sources: 10 processed, 10 events generated
+## reddit-ukrainewarvideorepport
+Collection via exa_web_search. Event generated.
+## twitter-beltelfreeaudio
+Collection via exa_web_search. Event generated.
+## twitter-claudefb
+Collection via exa_web_search. Event generated.
+## twitter-jaime-ocon
+Collection via exa_web_search. Event generated.
+## twitter-middle-east-eye
+Collection via exa_web_search. Event generated.
+## twitter-nato-marcom
+Collection via exa_web_search. Event generated.
+## twitter-osaindawg
+Collection via exa_web_search. Event generated.
+## twitter-shipnews
+Collection via exa_web_search. Event generated.
+## twitter-sim-nasr
+Collection via exa_web_search. Event generated.
+## webpage-satellite-today-gov-mil
+Collection via exa_web_search. Event generated.
+
+## Bucket 12 @ 2026-05-20T20:37:00.520Z
+Sources: 10 processed, 10 events generated
+
+## Bucket 14 @ 2026-05-20T20:37:00.522Z
+Sources: 10 (all Twitter type)
+Events created: 10
+Events added after dedup: 2 (8 duplicated by concurrent buckets)
+New events: evt_20260520_1004 (IMO HQ - Somali piracy), evt_20260520_1008 (key2med - IRGC threat)
+Collection method: exa_web_search for all sources
+Link previews: All enriched via LinkPreview API
+Geocoding: 10/10 via Nominatim
+Validation: All passed strict mode
