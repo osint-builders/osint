@@ -184,3 +184,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** Reddit appears to block requests from the Warp Cloud Agent environment IP range despite using the documented User-Agent header (osint-bot/1.0). The 403 response contains an HTML page rather than JSON, suggesting IP-based rate limiting or datacenter IP blocking rather than an authentication issue.
 **Action for next run:** For Reddit API sources, attempt the API call first. If 403 received, immediately fall back to exa_web_search with subreddit-specific keywords. Consider adding Reddit OAuth authentication as a longer-term fix.
 **Expires:** 2026-08-20
+
+## 2026-05-20 17:11Z — Nominatim fails to geocode Bunia, DRC — use hardcoded fallback
+**Trigger:** Bucket 12 geocoding returned null lat/lon for "Bunia, Democratic Republic of Congo."
+**Finding:** OpenStreetMap Nominatim does not resolve Bunia as a searchable location. Bunia serves as the capital of Ituri Province in eastern DRC at approximately 1.5667°N, 30.25°E.
+**Action for next run:** Pre-populate geocoding cache with Bunia coordinates (1.5667, 30.25) before querying Nominatim for DRC locations.
+**Expires:** 2026-08-20
