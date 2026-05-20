@@ -19,3 +19,36 @@ Events generated: 10 total, 6 unique after URL dedup, 4 duplicates from earlier 
 Dedup URLs: windward.ai (2), worldoil.com (1), modis.gsfc.nasa.gov (1)
 E-PRIME fixes: 1 (Taiwan event "cannot be decided" → "must not fall to decisions")
 Validation: All 10 events passed strict validation.
+
+## Bucket 15 @ 2026-05-20T17:11:31.566Z
+Sources: 10 (all Twitter type)
+Window: 2026-05-20T16:11:31.566Z → 2026-05-20T17:11:31.566Z
+
+### Twitter API Results
+- twitter-platracker: 0 tweets in window
+- twitter-us-fleet-forces: 1 tweet (RT @Southcom Nimitz CSG Caribbean)
+- twitter-chadobcnews: 0 tweets in window
+- twitter-korea-econ-inst: 0 tweets in window
+- twitter-us-pacific-fleet: 0 tweets in window
+- twitter-the-diplomat: 0 tweets in window
+- twitter-cnn: 0 tweets in window
+- twitter-riskstaff: 0 tweets in window
+- twitter-national-interest: API error (curl failed)
+- twitter-jasdf-pao-eng: 0 tweets in window
+
+### exa_web_search Discovery
+All 10 sources yielded events via web search. Key topics covered:
+- China Liaoning CSG live-fire drills in Western Pacific
+- USS Nimitz CSG enters Caribbean (direct tweet)
+- Kim Jong Un mortar/howitzer buildup + commanders meeting + border fortress
+- North Korea drops reunification from constitution
+- Taiwan MND releases PLA surveillance images (22 aircraft, 11 crossing median line)
+- China confirms 200 Boeing purchases from Trump-Xi summit
+- WHO declares Ebola PHEIC (DRC/Uganda)
+- Trump defers Iran strikes after Gulf states request
+- Japan scrambles vs Russian Il-20M + Senkaku defense concerns
+
+### Events Created: 10 (evt_20260520_993 through evt_20260520_1002)
+### Events After Dedup: 10 new (173 total for date)
+### Validation: All 10 passed strict + time-window
+### Images: 0 (all Twitter sources, skipped per learnings)
