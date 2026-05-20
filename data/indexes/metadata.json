@@ -78417,125 +78417,140 @@
   },
   {
     "id": "evt_20260520_001",
-    "title": "Polish Military Intercepts Sanctioned Shadow Fleet Tanker Near Baltic Undersea Cable",
-    "summary": "Poland's military dispatched a patrol aircraft to intercept a Russian shadow fleet tanker performing suspicious maneuvers near an undersea power cable connecting Poland and Sweden in the Baltic Sea on May 20. The vessel, identified as the Antigua-flagged Sun, departed the area after the intervention.",
-    "date_event": "2026-05-20T15:00:00Z",
-    "date_published": "2026-05-20T15:30:00Z",
+    "title": "North Korea Codifies Decentralized Nuclear Command Authority in Constitutional Amendment",
+    "summary": "North Korea's constitutional amendments granted Kim Jong Un explicit nuclear forces command authority and introduced provisions for delegating nuclear launch authority to a national command-and-control organization, marking a significant shift in nuclear doctrine.",
+    "date_event": null,
+    "date_published": "2026-05-20T19:40:00Z",
     "geo": {
-      "lat": 53.9158,
-      "lon": 14.4343,
-      "country": "Poland",
-      "region": "Baltic Sea"
+      "lat": 39.0167979,
+      "lon": 125.7473609,
+      "country": "North Korea",
+      "region": "Pyongyang",
+      "city": "Pyongyang"
     },
     "topics": [
-      "maritime-security",
-      "shadow-fleet",
-      "sanctions",
-      "baltic-sea",
-      "infrastructure-protection",
-      "nato"
+      "north-korea",
+      "nuclear",
+      "command-control",
+      "constitution",
+      "deterrence",
+      "military"
     ],
-    "confidence": 0.92,
-    "source_name": "OsainDawg - Maritime OSINT & Vessel Tracking",
+    "confidence": 0.88,
+    "source_name": "TheDailynk (@TheDailynk)",
     "links": [
       {
-        "url": "https://maritime-executive.com/index.php/article/polish-military-responds-to-shadow-fleet-tanker-acting-suspiciously",
-        "label": "Maritime Executive Report"
+        "url": "https://www.aei.org/articles/korean-peninsula-update-may-12-2026/",
+        "label": "AEI-ISW Analysis"
+      },
+      {
+        "url": "https://www.longwarjournal.org/archives/2026/05/analysis-russian-security-assistance-is-creating-problems-on-the-korean-peninsula.php",
+        "label": "FDD Long War Journal"
       }
     ],
     "link_preview_image": null
   },
   {
     "id": "evt_20260520_002",
-    "title": "Trump Warns of Resuming Iran Strikes Within Days as CENTCOM Maintains Maximum Readiness",
-    "summary": "President Trump warned on May 20 that Iran has two to three days to reach a deal before the United States resumes military strikes, while CENTCOM commander Admiral Brad Cooper testified that U.S. forces remain at the highest level of readiness and prepared to execute a broad range of contingencies.",
-    "date_event": "2026-05-20T15:00:00Z",
-    "date_published": "2026-05-20T15:45:00Z",
+    "title": "NASA Psyche Spacecraft Completes Mars Flyby, Captures Stunning Images En Route to Metal-Rich Asteroid",
+    "summary": "NASA's Psyche spacecraft completed its close approach of Mars on May 15, capturing thousands of images and receiving a 1,000 mph speed boost via gravity assist. The spacecraft now heads toward asteroid 16 Psyche, expected to arrive in summer 2029.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:21:55Z",
     "geo": {
-      "lat": 38.895,
-      "lon": -77.0364,
+      "lat": 34.1476507,
+      "lon": -118.144155,
       "country": "United States",
-      "region": "Washington DC",
-      "city": "Washington"
+      "region": "California",
+      "city": "Pasadena"
     },
     "topics": [
-      "military",
-      "conflict",
-      "iran",
-      "strait-of-hormuz",
-      "nuclear",
-      "sanctions",
-      "diplomacy"
+      "space",
+      "mars",
+      "asteroid",
+      "nasa",
+      "gravity-assist",
+      "spacecraft"
     ],
     "confidence": 0.95,
-    "source_name": "The War Zone Wire - Defense and Military News",
+    "source_name": "Nasa (@Nasa)",
     "links": [
       {
-        "url": "https://www.navytimes.com/news/pentagon-congress/2026/05/19/trump-edges-toward-new-strikes-on-iran/",
-        "label": "Navy Times Report"
+        "url": "https://x.com/NASA/status/2057195134630928749",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://www.nasa.gov/missions/psyche-mission/nasas-psyche-mission-aces-mars-flyby-targets-metal-rich-asteroid/",
+        "label": "NASA Mission Update"
       }
     ],
     "link_preview_image": null
   },
   {
     "id": "evt_20260520_003",
-    "title": "Xi and Putin Sign Joint Declaration on Multipolar World Order, Deepen Military Cooperation in Beijing Summit",
-    "summary": "Chinese President Xi Jinping and Russian President Vladimir Putin signed over 20 agreements and issued a joint declaration advocating a multipolar world during Putin's 25th visit to China on May 20, deepening military cooperation and criticizing U.S.-Israeli strikes on Iran as violations of international law.",
-    "date_event": "2026-05-20T14:00:00Z",
-    "date_published": "2026-05-20T15:15:00Z",
+    "title": "Putin Arrives in Beijing for Xi Summit Days After Trump Visit, Showcasing China-Russia Alignment",
+    "summary": "Russian President Vladimir Putin arrived in Beijing Tuesday for his 25th visit to China, meeting Xi Jinping days after the Chinese leader hosted Trump. The summit covers Ukraine, the Iran war, energy cooperation, and their shared vision for a multipolar world order.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:10:00Z",
     "geo": {
-      "lat": 39.9057,
-      "lon": 116.3913,
+      "lat": 39.9057136,
+      "lon": 116.3912972,
       "country": "China",
       "region": "Beijing",
       "city": "Beijing"
     },
     "topics": [
       "diplomacy",
-      "military",
-      "china",
       "russia",
-      "multipolar",
-      "strait-of-hormuz",
-      "nuclear"
+      "china",
+      "geopolitics",
+      "ukraine",
+      "energy"
     ],
     "confidence": 0.95,
-    "source_name": "Info Fusion Center - Multi-Source Intelligence Fusion and Analysis",
+    "source_name": "NytimesWorld (@NytimesWorld)",
     "links": [
       {
-        "url": "https://us.china-embassy.gov.cn/eng/zgyw/202605/t20260520_11914662.htm",
-        "label": "Chinese Embassy Statement"
+        "url": "https://www.cnn.com/2026/05/19/asia/putin-china-visit-xi-meeting-intl-hnk",
+        "label": "CNN Coverage"
+      },
+      {
+        "url": "https://www.aljazeera.com/news/2026/5/20/uk-eases-sanctions-on-russian-oil-imports-as-fuel-prices-soar",
+        "label": "Al Jazeera Coverage"
       }
     ],
     "link_preview_image": null
   },
   {
     "id": "evt_20260520_004",
-    "title": "South Korea Navy Launches Formal Acquisition Procedures for Nuclear-Powered Submarines",
-    "summary": "South Korea's Navy submitted a formal requirements document to the Joint Chiefs of Staff on May 20 initiating the acquisition process for nuclear-powered submarines, as Seoul and Washington prepare to launch bilateral working groups to implement summit agreements on nuclear submarine cooperation.",
-    "date_event": "2026-05-20T10:00:00Z",
-    "date_published": "2026-05-20T15:41:00Z",
+    "title": "Kim Jong Un Convenes Unprecedented Meeting of All Military Commanders, Orders Southern Border Fortification",
+    "summary": "North Korean leader Kim Jong Un summoned all commanding officers of brigade and division-level units on May 17, marking the first such meeting since he took power. Kim emphasized modernizing training methods and strengthening forces along the southern border.",
+    "date_event": null,
+    "date_published": "2026-05-20T19:55:00Z",
     "geo": {
-      "lat": 37.5667,
-      "lon": 126.9783,
-      "country": "South Korea",
-      "region": "Seoul",
-      "city": "Seoul"
+      "lat": 39.0167979,
+      "lon": 125.7473609,
+      "country": "North Korea",
+      "region": "Pyongyang",
+      "city": "Pyongyang"
     },
     "topics": [
-      "nuclear",
-      "submarine",
-      "defense",
-      "procurement",
-      "alliance",
-      "diplomacy"
+      "north-korea",
+      "military",
+      "kim-jong-un",
+      "border",
+      "modernization",
+      "defense"
     ],
-    "confidence": 0.93,
-    "source_name": "JKGA ROK Gov - Korea Government Affairs & Policy",
+    "confidence": 0.92,
+    "source_name": "KC_NWT (@KC_NWT)",
     "links": [
       {
-        "url": "https://en.yna.co.kr/view/AEN20260520002900315",
-        "label": "Yonhap News Agency"
+        "url": "https://en.yna.co.kr/view/AEN20260518000600320",
+        "label": "Yonhap Coverage"
+      },
+      {
+        "url": "https://www.aei.org/articles/korean-peninsula-update-may-19-2026/",
+        "label": "AEI Analysis"
       }
     ],
     "link_preview_image": null
@@ -78959,6 +78974,612 @@
       {
         "url": "https://meyka.com/blog/senkaku-airspace-breach-may-13-japans-defense-challenge-1305/",
         "label": "Senkaku Defense Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1003",
+    "title": "Russia Launches 84 Drones Against Ukraine, Air Defense Neutralizes 75",
+    "summary": "Russian forces launched 84 drones of various types at Ukraine on May 20, including Shahed, Gerbera, Italmas strike drones and Parody-type decoys, starting from 08:30 UTC. Ukrainian air defense forces shot down or suppressed 75 of the attacking drones across eastern, northern, and southern regions.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:00:00Z",
+    "geo": {
+      "lat": 50.4500336,
+      "lon": 30.5241361,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "drone",
+      "ukraine",
+      "russia",
+      "air-defense",
+      "military",
+      "attack"
+    ],
+    "confidence": 0.95,
+    "source_name": "r/UkraineWarVideoReport (reddit.com/r/UkraineWarVideoReport)",
+    "links": [
+      {
+        "url": "https://unn.ua/en/news/russia-has-launched-over-80-drones-at-ukraine-since-morning-with-six-hits-recorded-general-staff",
+        "label": "UNN Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1004",
+    "title": "Three Commercial Vessels Remain Under Somali Pirate Control as Naval Patrol Coverage Thins",
+    "summary": "MT Honour 25, MV Sward, and MT Eureka remain held by Somali pirates in the western Indian Ocean as EUNAVFOR Operation Atalanta attributes the piracy resurgence to redistributed naval capacity toward the Strait of Hormuz and Red Sea crises.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:10:00Z",
+    "geo": {
+      "lat": 11.3614,
+      "lon": 43.4758,
+      "country": "Somalia",
+      "region": "Gulf of Aden"
+    },
+    "topics": [
+      "piracy",
+      "maritime-security",
+      "shipping",
+      "gulf-of-aden",
+      "somalia"
+    ],
+    "confidence": 0.85,
+    "source_name": "IMO HQ (@IMOHQ)",
+    "links": [
+      {
+        "url": "https://www.maritrace.com/blog/three-vessels-held-by-somali-pirates-as-naval-patrol-coverage-thins",
+        "label": "MariTrace Analysis"
+      }
+    ],
+    "link_preview_image": "http://static1.squarespace.com/static/68824537788b6e7d68ff5ac4/t/6a02e4e32f83637c43af4ed0/1778574563704/Sward.png?format=1500w"
+  },
+  {
+    "id": "evt_20260520_1005",
+    "title": "Philippine Coast Guard Challenges Chinese Coast Guard Vessel Operating Within Philippines EEZ Near Zambales",
+    "summary": "The Philippine Coast Guard deployed aerial and surface assets to challenge a Chinese Coast Guard vessel spotted within the Philippines exclusive economic zone approximately 48 nautical miles west of Pandaquit, Zambales.",
+    "date_event": "2026-05-20T08:00:00Z",
+    "date_published": "2026-05-20T20:00:00Z",
+    "geo": {
+      "lat": 15.4,
+      "lon": 119.8,
+      "country": "Philippines",
+      "region": "Zambales",
+      "city": "Pandaquit"
+    },
+    "topics": [
+      "south-china-sea",
+      "maritime",
+      "confrontation",
+      "philippines",
+      "china",
+      "coast-guard"
+    ],
+    "confidence": 0.9,
+    "source_name": "Philippine Coast Guard (@CoastGuardPH)",
+    "links": [
+      {
+        "url": "https://www.gmanetwork.com/news/topstories/nation/988191/pcg-challenges-chinese-vessel-near-pandaquit-zambales/story/",
+        "label": "GMA News Coverage"
+      },
+      {
+        "url": "https://www.philstar.com/headlines/2026/05/19/2528929/pcg-aircraft-dispatched-drive-away-chinese-research-vessel",
+        "label": "Philstar Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1006",
+    "title": "Car Bomb Explodes Near Syrian Defense Ministry in Damascus, Killing Soldier and Wounding Over 20",
+    "summary": "A car bomb detonated near the Syrian Defence Ministry in the Bab Sharqi district of Damascus, killing at least one soldier and wounding more than 20 people in an attack with no immediate claim of responsibility.",
+    "date_event": "2026-05-20T10:30:00Z",
+    "date_published": "2026-05-20T20:00:00Z",
+    "geo": {
+      "lat": 33.5130695,
+      "lon": 36.3095814,
+      "country": "Syria",
+      "city": "Damascus"
+    },
+    "topics": [
+      "bombing",
+      "syria",
+      "conflict",
+      "attack",
+      "military"
+    ],
+    "confidence": 0.93,
+    "source_name": "War TV (@WarTV7890)",
+    "links": [
+      {
+        "url": "https://www.washingtonpost.com/world/2026/05/19/syria-explosion-defense-ministry-bab-sharqi/99cb814a-5388-11f1-9c40-7a0a12d9e745_story.html",
+        "label": "Washington Post Coverage"
+      },
+      {
+        "url": "https://www.aljazeera.com/news/2026/5/19/at-least-one-killed-21-wounded-in-car-bomb-explosion-in-syrias-damascus",
+        "label": "Al Jazeera Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1007",
+    "title": "Nigerian Navy Thwarts Pirate Hijacking of Chinese Fishing Vessel, Rescues 18 Hostages in Gulf of Guinea",
+    "summary": "The Nigerian Navy Special Boat Service conducted an opposed boarding to rescue 18 crew members from a Chinese fishing trawler hijacked by pirates in the Gulf of Guinea, arresting 10 pirates in a multinational coordinated operation.",
+    "date_event": "2026-05-20T14:00:00Z",
+    "date_published": "2026-05-20T20:00:00Z",
+    "geo": {
+      "lat": 6.4550575,
+      "lon": 3.3941795,
+      "country": "Nigeria",
+      "city": "Lagos"
+    },
+    "topics": [
+      "piracy",
+      "maritime",
+      "rescue",
+      "nigeria",
+      "gulf-of-guinea",
+      "security"
+    ],
+    "confidence": 0.88,
+    "source_name": "MDAT Gulf of Guinea (@MDAT_GoG)",
+    "links": [
+      {
+        "url": "https://maritime-executive.com/article/nigerian-navy-successfully-interdicts-maritime-kidnapping-attempt",
+        "label": "Maritime Executive Coverage"
+      },
+      {
+        "url": "https://amaniafrica-et.org/operationalisation-of-the-combined-maritime-task-force-cmtf-in-addressing-piracy-and-other-maritime-crimes-in-the-gulf-of-guinea-gog/",
+        "label": "Amani Africa PSC Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1008",
+    "title": "IRGC Warns Renewed US-Israeli Attacks Will Spread War Far Beyond Middle East",
+    "summary": "Iran's Islamic Revolutionary Guard Corps declared that any resumed aggression would trigger a regional war extending far beyond the Middle East, as the US Senate advanced a war powers resolution and Pakistan's interior minister traveled to Tehran for mediation.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:05:00Z",
+    "geo": {
+      "lat": 35.6893,
+      "lon": 51.3896,
+      "country": "Iran",
+      "region": "Tehran Province",
+      "city": "Tehran"
+    },
+    "topics": [
+      "conflict",
+      "iran",
+      "irgc",
+      "military",
+      "diplomacy",
+      "nuclear"
+    ],
+    "confidence": 0.85,
+    "source_name": "key2med (@key2med)",
+    "links": [
+      {
+        "url": "https://www.timesofisrael.com/irgc-threatens-war-will-spread-far-beyond-the-region-if-us-renews-attacks-on-iran/",
+        "label": "Times of Israel Report"
+      }
+    ],
+    "link_preview_image": "https://static-cdn.toi-media.com/www/uploads/2026/03/AP26061855785359-e1772607057435.jpg"
+  },
+  {
+    "id": "evt_20260520_1009",
+    "title": "IRGC Formalizes Control Over Strait of Hormuz Transit, Threatens Fiber-Optic Cable Permits as Nuclear Talks Stall",
+    "summary": "Iran's newly established Persian Gulf Strait Authority declared itself the legal authority managing Strait of Hormuz transit, while IRGC-affiliated outlets threatened to impose permits on undersea fiber-optic cables as nuclear negotiations with the US remained deadlocked.",
+    "date_event": "2026-05-20T12:00:00Z",
+    "date_published": "2026-05-20T20:00:00Z",
+    "geo": {
+      "lat": 26.4494061,
+      "lon": 56.2027702,
+      "country": "Iran",
+      "region": "Strait of Hormuz"
+    },
+    "topics": [
+      "iran",
+      "nuclear",
+      "irgc",
+      "strait-of-hormuz",
+      "sanctions",
+      "military"
+    ],
+    "confidence": 0.93,
+    "source_name": "Iran Spectrum (@IranSpec)",
+    "links": [
+      {
+        "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-18-2026/",
+        "label": "ISW Iran Update"
+      },
+      {
+        "url": "https://www.aljazeera.com/news/2026/5/19/iran-war-day-81-trump-delays-attack-tehran-says-wont-surrender",
+        "label": "Al Jazeera Iran War Updates"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1010",
+    "title": "Gaza Flotilla Seizure Sparks International Protests as Israel Arrests 100 Activists",
+    "summary": "Israeli forces arrested approximately 100 activists aboard a Gaza-bound humanitarian flotilla on May 20, triggering international protests and diplomatic tensions while Iran-US ceasefire negotiations continued through Pakistani mediation channels.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:00:00Z",
+    "geo": {
+      "lat": 31.5,
+      "lon": 34.47,
+      "country": "Israel",
+      "region": "Gaza Coast"
+    },
+    "topics": [
+      "protest",
+      "military",
+      "breaking",
+      "government"
+    ],
+    "confidence": 0.85,
+    "source_name": "Claudefb (@Claudefb)",
+    "links": [
+      {
+        "url": "https://www.middleeasteye.net/live/iran-war-live-israel-says-it-will-control-bridges-and-area-south-lebanons-litani-river",
+        "label": "Middle East Eye Live Blog"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1011",
+    "title": "Israel Expands Military Presence in Southern Syria with 1,672 Documented Violations",
+    "summary": "Israeli forces carried out at least 1,672 military violations inside Syrian territory between August 2025 and May 2026, including 321 operations in March 2026 alone, according to a new report from the Sijil Centre documenting systematic land seizure and forced displacement.",
+    "date_event": null,
+    "date_published": "2026-05-20T19:45:00Z",
+    "geo": {
+      "lat": 33.13,
+      "lon": 35.77,
+      "country": "Syria",
+      "region": "Quneitra"
+    },
+    "topics": [
+      "security-incident",
+      "military",
+      "regional-security",
+      "government"
+    ],
+    "confidence": 0.88,
+    "source_name": "Belteleradio Free Audio (@BeltelFreeAudio)",
+    "links": [
+      {
+        "url": "https://www.middleeasteye.net/news/smart-borders-military-gates-land-seizure-Israel-encroachment-southern-syria",
+        "label": "Middle East Eye Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1012",
+    "title": "Russian War Bloggers Admit Ukraine Winning Small-Sky Supremacy With AI-Guided Drones",
+    "summary": "Prominent Russian war reporters acknowledged that Ukraine now controls the small-sky airspace over the battlefield, with AI-guided drones that prove immune to electronic warfare countermeasures, while Russia's ground offensive in Donbas has effectively stalled.",
+    "date_event": null,
+    "date_published": "2026-05-20T19:50:00Z",
+    "geo": {
+      "lat": 48.5,
+      "lon": 37.5,
+      "country": "Ukraine",
+      "region": "Donbas"
+    },
+    "topics": [
+      "osint",
+      "analysis",
+      "geospatial",
+      "intelligence",
+      "drone",
+      "military"
+    ],
+    "confidence": 0.88,
+    "source_name": "JaimeOcon (@JaimeOcon)",
+    "links": [
+      {
+        "url": "https://euobserver.com/212237/ai-guided-drones-help-ukraine-win-small-sky-supremacy-ukraine-battlefield-update-day-1516/",
+        "label": "EUobserver Battlefield Update"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1013",
+    "title": "OFAC Disrupts Iranian Procurement Networks Supplying Weapons Components Through Hong Kong and China Shell Companies",
+    "summary": "OFAC designated networks supplying weapons and UAV components to Iran through shell companies in Hong Kong, China, and Belarus, including satellite imaging firm Charming Globe and multiple entities linked to Iran's Center for Innovation and Technology Cooperation.",
+    "date_event": "2026-05-20T00:00:00Z",
+    "date_published": "2026-05-20T20:25:00Z",
+    "geo": {
+      "lat": 38.8977,
+      "lon": -77.0365,
+      "country": "United States",
+      "region": "District of Columbia",
+      "city": "Washington"
+    },
+    "topics": [
+      "cyberattack",
+      "security",
+      "threat",
+      "sanctions",
+      "iran",
+      "procurement",
+      "vulnerability"
+    ],
+    "confidence": 0.88,
+    "source_name": "CUASHUB Defense (cuashub.com)",
+    "links": [
+      {
+        "url": "https://ofac.treasury.gov/recent-actions/20260508_33",
+        "label": "OFAC - Non-Proliferation and Iran Designations"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1015",
+    "title": "Mali Military Launches Drone Strikes on Rebel-Held Kidal as Insurgent Blockade Threatens Bamako",
+    "summary": "Mali's junta government retaliated with drone strikes on Kidal and surrounding areas after coordinated rebel attacks by FLA and JNIM seized the northern city. At least 10 civilians died in strikes on a wedding procession.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:15:00Z",
+    "geo": {
+      "lat": 19.802089,
+      "lon": 0.7253125,
+      "country": "Mali",
+      "city": "Kidal"
+    },
+    "topics": [
+      "mali",
+      "sahel",
+      "terrorism",
+      "conflict",
+      "jnim"
+    ],
+    "confidence": 0.9,
+    "source_name": "Africafactszone (@Africafactszone)",
+    "links": [
+      {
+        "url": "https://foreignpolicy.com/2026/05/20/mali-rebels-kidal-fla-jnim-sahel-violence/",
+        "label": "Foreign Policy Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1016",
+    "title": "WHO Declares Ebola Outbreak in DR Congo Public Health Emergency as Cases Spread to Urban Areas",
+    "summary": "The WHO declared the Ebola outbreak in DR Congo's Ituri province an international health emergency, with over 500 suspected cases and 130+ deaths from the Bundibugyo strain, for which no vaccine exists. Cases reached Goma and spread to Uganda.",
+    "date_event": null,
+    "date_published": "2026-05-20T19:55:00Z",
+    "geo": {
+      "lat": 1.5667,
+      "lon": 30.25,
+      "country": "Democratic Republic of Congo",
+      "region": "Ituri",
+      "city": "Bunia"
+    },
+    "topics": [
+      "ebola",
+      "public-health",
+      "democratic-republic-of-congo",
+      "who",
+      "emergency"
+    ],
+    "confidence": 0.95,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://www.bbc.co.uk/news/articles/ceqp11gn1l8o",
+        "label": "BBC News Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1018",
+    "title": "Kremlin Confirms Pause in Ukraine Peace Talks as Middle East Conflict Intensifies",
+    "summary": "The Kremlin confirmed a situational pause in Ukraine peace negotiations as the Middle East conflict, centered on the US-Iran war and Strait of Hormuz crisis, commands international attention. Ukrainian President Zelenskyy signaled readiness to resume talks.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:00:00Z",
+    "geo": {
+      "lat": 50.4500336,
+      "lon": 30.5241361,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "ukraine",
+      "peace-talk",
+      "russia",
+      "middle-east",
+      "diplomacy"
+    ],
+    "confidence": 0.92,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://www.foxnews.com/world/ukraine-peace-talks-situational-pause-middle-east-conflict-intensifies-kremlin",
+        "label": "Fox News Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1019",
+    "title": "Trump Pauses Planned Military Strike on Iran Citing Gulf State Diplomacy",
+    "summary": "President Trump announced postponement of a planned large-scale military assault on Iran following appeals from Saudi Arabia, Qatar, and UAE leaders who reported breakthrough negotiations nearing completion.",
+    "date_event": null,
+    "date_published": "2026-05-20T19:45:00Z",
+    "geo": {
+      "lat": 35.6892523,
+      "lon": 51.3896004,
+      "country": "Iran",
+      "city": "Tehran"
+    },
+    "topics": [
+      "iran",
+      "military",
+      "trump",
+      "diplomacy",
+      "strait-of-hormuz"
+    ],
+    "confidence": 0.95,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://www.foxnews.com/politics/trump-delays-iran-strike-again-doctrine-unpredictability-keeps-region-guessing",
+        "label": "Fox News Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1022",
+    "title": "Russia Launches Massive Nuclear Forces Exercises Involving 64,000 Troops During Putin China Visit",
+    "summary": "Russia commenced three-day nuclear forces drills involving 64,000 troops, 200+ missile launchers, 13 submarines including 8 nuclear-armed, and cooperation with Belarus, coinciding with Putin's visit to Beijing.",
+    "date_event": null,
+    "date_published": "2026-05-20T19:50:00Z",
+    "geo": {
+      "lat": 55.625578,
+      "lon": 37.6063916,
+      "country": "Russia",
+      "city": "Moscow"
+    },
+    "topics": [
+      "russia",
+      "nuclear",
+      "military-exercise",
+      "belarus",
+      "nato"
+    ],
+    "confidence": 0.94,
+    "source_name": "Riskstaff (@Riskstaff)",
+    "links": [
+      {
+        "url": "https://ca.news.yahoo.com/russia-begins-massive-nuclear-drills-140704108.html",
+        "label": "Yahoo News Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1023",
+    "title": "Zelenskyy Warns of Five Russian Scenarios to Expand War Through Northern Ukraine from Belarus",
+    "summary": "President Zelenskyy revealed intelligence showing five Russian scenarios for offensive operations in the Chernihiv-Kyiv direction, ordering reinforcements and diplomatic measures regarding Belarus after analyzing intelligence data on Russian planning.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:25:00Z",
+    "geo": {
+      "lat": 50.4500336,
+      "lon": 30.5241361,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "belarus",
+      "northern-offensive",
+      "military"
+    ],
+    "confidence": 0.92,
+    "source_name": "Tatarigami Ukraine (@TatarigamiUA)",
+    "links": [
+      {
+        "url": "https://newsukraine.rbc.ua/news/russia-has-5-scenarios-for-expanding-war-1779281795.html",
+        "label": "RBC Ukraine Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1024",
+    "title": "North Korea Registers Guided Missile Destroyer with International Maritime Organization Signaling Green-Water Navy Ambitions",
+    "summary": "North Korea registered the Choe Hyon guided missile destroyer with the UN International Maritime Organization, signaling preparation for extended naval operations and potential harassment of sea lines of communication in the region.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:00:00Z",
+    "geo": {
+      "lat": 39.0167979,
+      "lon": 125.7473609,
+      "country": "North Korea",
+      "city": "Pyongyang"
+    },
+    "topics": [
+      "north-korea",
+      "navy",
+      "maritime",
+      "missile-destroyer",
+      "military"
+    ],
+    "confidence": 0.85,
+    "source_name": "Yonkos MC (@YonkosMC)",
+    "links": [
+      {
+        "url": "https://understandingwar.org/research/china-taiwan/korean-peninsula-update-april-22-2026/",
+        "label": "ISW Korean Peninsula Update"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1025",
+    "title": "Lithuania Issues First Air Threat Alert Sending Vilnius Residents to Shelters After Drone Activity Near Belarus Border",
+    "summary": "Lithuanian authorities ordered Vilnius residents to shelter after detecting drone activity near the Belarus border, marking the first major alert sending residents and leaders in an EU and NATO capital rushing to shelters since Russia's 2022 invasion of Ukraine.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:30:00Z",
+    "geo": {
+      "lat": 54.6870458,
+      "lon": 25.2829111,
+      "country": "Lithuania",
+      "city": "Vilnius"
+    },
+    "topics": [
+      "lithuania",
+      "nato",
+      "drone",
+      "belarus",
+      "security"
+    ],
+    "confidence": 0.94,
+    "source_name": "Yahoo News (news.yahoo.com)",
+    "links": [
+      {
+        "url": "https://www.yahoo.com/news/articles/residents-lithuanias-capital-told-shelter-092741059.html",
+        "label": "Yahoo News / AP Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1026",
+    "title": "Former Cuban President Raul Castro Indicted on Murder Charges in Major US Pressure Escalation",
+    "summary": "The US Department of Justice indicted former Cuban President Raul Castro on murder charges related to the 1996 shootdown of Cuban exile planes, marking a major escalation in Washington's pressure campaign against Havana's communist government.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:00:00Z",
+    "geo": {
+      "lat": 23.135305,
+      "lon": -82.3589631,
+      "country": "Cuba",
+      "city": "Havana"
+    },
+    "topics": [
+      "cuba",
+      "indictment",
+      "sanction",
+      "diplomacy",
+      "united-states"
+    ],
+    "confidence": 0.95,
+    "source_name": "Yahoo News (news.yahoo.com)",
+    "links": [
+      {
+        "url": "https://hk.news.yahoo.com/articles/former-cuban-president-raul-castro-is-indicted-in-us-161814468.html",
+        "label": "Yahoo/Reuters Coverage"
       }
     ],
     "link_preview_image": null
@@ -79528,6 +80149,36 @@
     "link_preview_image": "https://www.satellitetoday.com/wp-content/uploads/2026/05/Protected-Tactical-SATCOM-Rapid-Prototype-001.jpg"
   },
   {
+    "id": "evt_20260520_140",
+    "title": "Kim Jong Un Orders Southern Border Defense Buildup in Rare Meeting with All Army Commanders",
+    "summary": "North Korean leader Kim Jong Un convened an unprecedented meeting with division and brigade commanders from across the military on May 17, ordering the reinforcement of frontline units and transformation of the southern border into an 'impregnable fortress.' The gathering marked the first such assembly since Kim took power in 2011.",
+    "date_event": null,
+    "date_published": "2026-05-20T19:38:00Z",
+    "geo": {
+      "lat": 38.32,
+      "lon": 127.23,
+      "country": "North Korea",
+      "region": "DMZ"
+    },
+    "topics": [
+      "north-korea",
+      "kim-jong-un",
+      "military",
+      "border",
+      "defense",
+      "modernization"
+    ],
+    "confidence": 0.92,
+    "source_name": "inside_nk (@inside_nk)",
+    "links": [
+      {
+        "url": "https://www.aa.com.tr/en/asia-pacific/north-korea-s-kim-orders-defense-build-up-along-southern-border/3940480",
+        "label": "Anadolu Agency Report"
+      }
+    ],
+    "link_preview_image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/05/18/thumbs_b_c_4ff5b934596e39ec85f07e7d6543006a.jpg"
+  },
+  {
     "id": "evt_20260520_141",
     "title": "China Deploys Liaoning Carrier Strike Group for Live-Fire Drills in Western Pacific",
     "summary": "China's PLA Navy deployed the Liaoning carrier strike group into the Western Pacific for live-fire exercises on May 19, marking another step in Beijing's expanding blue-water naval strategy beyond the First Island Chain. Taiwan's premier called it the greatest source of regional instability.",
@@ -79561,6 +80212,38 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_142",
+    "title": "IISS Satellite Imagery Confirms India Commissioned Third Nuclear-Powered Ballistic Missile Submarine",
+    "summary": "IISS satellite imagery analysis corroborated the commissioning of INS Aridhaman (S4), India's third nuclear-powered ballistic missile submarine, at Visakhapatnam on April 3, 2026. Imagery from April 5 showed the SSBN with maritime signal flags, confirming the ceremony reported by local media.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:30:00Z",
+    "geo": {
+      "lat": 17.69,
+      "lon": 83.29,
+      "country": "India",
+      "region": "Andhra Pradesh",
+      "city": "Visakhapatnam"
+    },
+    "topics": [
+      "india",
+      "submarine",
+      "nuclear",
+      "ssbn",
+      "navy",
+      "deterrence",
+      "satellite-imagery"
+    ],
+    "confidence": 0.93,
+    "source_name": "Joseph Dempsey (@JosephDempsey)",
+    "links": [
+      {
+        "url": "https://www.iiss.org/online-analysis/military-balance/2026/05/deepening-deterrence-indias-expanding-ssbn-capability/",
+        "label": "IISS Analysis"
+      }
+    ],
+    "link_preview_image": "https://www.iiss.org/globalassets/media-library---content--migration/images-delta/comment/military-balance-blog/2026/05/13.05.png"
   },
   {
     "id": "evt_20260520_143",
@@ -79733,6 +80416,326 @@
       {
         "url": "https://carnegieendowment.org/programs/nuclear-policy/proliferation-news/proliferation-news-51926",
         "label": "Carnegie Proliferation News"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_150",
+    "title": "Mini Shai-Hulud Worm Compromises 320+ NPM Packages in Largest Single-Registry Supply Chain Attack",
+    "summary": "The TeamPCP hacking group launched the largest single-registry supply chain attack to date on May 19, compromising over 320 npm packages in the AntV data visualization ecosystem through a hijacked maintainer account, affecting approximately 16 million weekly downloads and exfiltrating credentials from CI/CD environments.",
+    "date_event": "2026-05-19T02:00:00Z",
+    "date_published": "2026-05-20T19:45:00Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "country": "United States",
+      "region": "California",
+      "city": "San Francisco"
+    },
+    "topics": [
+      "cybersecurity",
+      "supply-chain",
+      "malware",
+      "npm",
+      "credential-theft",
+      "attack"
+    ],
+    "confidence": 0.93,
+    "source_name": "r/netsec (reddit.com/r/netsec)",
+    "links": [
+      {
+        "url": "https://www.securityweek.com/over-320-npm-packages-hit-by-fresh-mini-shai-hulud-supply-chain-attack/",
+        "label": "SecurityWeek Coverage"
+      },
+      {
+        "url": "https://www.infosecurity-magazine.com/news/antv-npm-mini-shai-hulud-largest/",
+        "label": "Infosecurity Magazine Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_151",
+    "title": "Pentagon Reduces US Army Brigades in Europe From Four to Three Amid Transatlantic Tensions Over Iran War",
+    "summary": "The Pentagon announced on May 20 a reduction in US Army brigade combat teams assigned to Europe from four to three, canceling the planned deployment of a Fort Hood armored brigade to Poland and returning the US force posture to 2021 levels as Washington pressures allies to invest more in their own defense.",
+    "date_event": "2026-05-20T14:00:00Z",
+    "date_published": "2026-05-20T19:50:00Z",
+    "geo": {
+      "lat": 50.8476,
+      "lon": 4.3572,
+      "country": "Belgium",
+      "region": "Brussels",
+      "city": "Brussels"
+    },
+    "topics": [
+      "nato",
+      "defense",
+      "military",
+      "alliance",
+      "europe",
+      "force-posture"
+    ],
+    "confidence": 0.95,
+    "source_name": "EtienneLh (@EtienneLh)",
+    "links": [
+      {
+        "url": "https://www.france24.com/en/live-news/20260520-pentagon-says-it-has-reduced-brigades-in-europe-from-four-to-three",
+        "label": "France24 Report"
+      },
+      {
+        "url": "https://www.stripes.com/theaters/europe/2026-05-20/pentagon-europe-force-posture-changes-21727163.html",
+        "label": "Stars and Stripes Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_152",
+    "title": "Sweden Orders Four FDI Frigates From France's Naval Group in Potential $4.2 Billion Deal",
+    "summary": "Sweden selected France's Naval Group to build four FDI-class frigates in the largest surface warship procurement in Swedish naval history, strengthening NATO's newest member's maritime capabilities in the Baltic Sea region amid rising Russian threats.",
+    "date_event": "2026-05-19T12:00:00Z",
+    "date_published": "2026-05-20T19:55:00Z",
+    "geo": {
+      "lat": 59.3293,
+      "lon": 18.0686,
+      "country": "Sweden",
+      "region": "Stockholm",
+      "city": "Stockholm"
+    },
+    "topics": [
+      "naval",
+      "frigate",
+      "procurement",
+      "sweden",
+      "nato",
+      "defense",
+      "baltic-sea"
+    ],
+    "confidence": 0.88,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://www.defensenews.com/global/europe/2026/05/19/germany-to-deploy-patriot-battery-to-turkey-relieving-us-forces-on-natos-southeastern-flank/",
+        "label": "Defense News Europe Coverage"
+      },
+      {
+        "url": "https://www.dw.com/en/nato-rutte-says-us-troop-withdrawal-wont-hurt-europe/a-77231586",
+        "label": "DW NATO Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_153",
+    "title": "Germany Deploys Patriot Battery to Turkey Relieving US Forces on NATO's Southeastern Flank",
+    "summary": "Germany announced the deployment of a Patriot air and missile defense battery to Turkey from late June through September 2026, relieving a US unit and marking Berlin's first Patriot deployment to Turkey since 2015 as NATO reinforces its southeastern flank against Iranian missile threats.",
+    "date_event": "2026-05-19T10:00:00Z",
+    "date_published": "2026-05-20T20:00:00Z",
+    "geo": {
+      "lat": 37.0,
+      "lon": 35.3213,
+      "country": "Turkey",
+      "region": "Adana",
+      "city": "Adana"
+    },
+    "topics": [
+      "nato",
+      "defense",
+      "patriot",
+      "missile-defense",
+      "turkey",
+      "germany",
+      "iran"
+    ],
+    "confidence": 0.92,
+    "source_name": "Yortuk ISGK (@YortukIsgk)",
+    "links": [
+      {
+        "url": "https://www.defensenews.com/global/europe/2026/05/19/germany-to-deploy-patriot-battery-to-turkey-relieving-us-forces-on-natos-southeastern-flank/",
+        "label": "Defense News Report"
+      },
+      {
+        "url": "https://www.euronews.com/my-europe/2026/05/19/nato-military-chiefs-meet-as-iran-war-depletes-alliances-arsenal",
+        "label": "Euronews NATO Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_154",
+    "title": "Foreign Central Banks Dump US Treasurys as Iran War Forces Currency Defense; China Holdings Hit 18-Year Low",
+    "summary": "Foreign governments reduced US Treasury holdings to $9.25 trillion in March as the Iran war forced central banks to liquidate dollar reserves for currency defense. China cut holdings to $652.3 billion, the lowest level since September 2008, while Japan shed approximately $47 billion.",
+    "date_event": "2026-05-19T22:00:00Z",
+    "date_published": "2026-05-20T20:05:00Z",
+    "geo": {
+      "lat": 39.9042,
+      "lon": 116.4074,
+      "country": "China",
+      "region": "Beijing",
+      "city": "Beijing"
+    },
+    "topics": [
+      "china",
+      "yuan",
+      "treasury",
+      "currency",
+      "sanctions",
+      "energy",
+      "japan"
+    ],
+    "confidence": 0.93,
+    "source_name": "kyleBass (@kyleBass)",
+    "links": [
+      {
+        "url": "https://www.cnbc.com/2026/05/19/central-banks-offload-us-treasuries-china-holdings-at-18-year-low.html",
+        "label": "CNBC Treasury Holdings Report"
+      },
+      {
+        "url": "https://news.cgtn.com/news/2026-05-19/Is-the-Chinese-yuan-becoming-a-situational-safe-haven-currency--1NgMjBmI8rS/p.html",
+        "label": "CGTN Yuan Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_156",
+    "title": "Romanian F-16 Downs Suspected Ukrainian Drone Over Estonia in First NATO Combat Intercept of Allied Drone",
+    "summary": "A Romanian F-16 fighter jet on a NATO air policing mission shot down a drone that entered Estonian airspace, marking the first time a NATO aircraft destroyed a drone over allied territory. NATO Secretary General Rutte stated the intercept demonstrated exactly the prepared response the alliance had planned for.",
+    "date_event": "2026-05-20T12:00:00Z",
+    "date_published": "2026-05-20T20:15:00Z",
+    "geo": {
+      "lat": 59.437,
+      "lon": 24.7536,
+      "country": "Estonia",
+      "region": "Harju County",
+      "city": "Tallinn"
+    },
+    "topics": [
+      "nato",
+      "drone",
+      "intercept",
+      "estonia",
+      "romania",
+      "air-defense",
+      "geospatial"
+    ],
+    "confidence": 0.93,
+    "source_name": "vantortech (@vantortech)",
+    "links": [
+      {
+        "url": "https://agerpres.ro/english/2026/05/20/rutte-after-romanian-f-16-downs-drone-this-is-exactly-what-we-planned-and-prepared-for--1558285",
+        "label": "AGERPRES Report"
+      },
+      {
+        "url": "https://www.aa.com.tr/en/europe/nato-says-stronger-european-pillar-could-pave-way-for-gradual-us-force-redeployment/3942320",
+        "label": "Anadolu Agency NATO Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_157",
+    "title": "UN Agencies Warn Somalia Faces First Famine Risk Since 2022 as 6 Million People Reach Critical Food Insecurity",
+    "summary": "FAO, OCHA, UNICEF, and WFP warned on May 18 that Somalia faces famine risk for the first time since 2022, with 6 million people experiencing critical food insecurity and 493,000 children suffering severe acute malnutrition as multiple shocks including drought and Hormuz disruptions drive food prices up 20 percent.",
+    "date_event": "2026-05-18T08:00:00Z",
+    "date_published": "2026-05-20T20:20:00Z",
+    "geo": {
+      "lat": 2.0469,
+      "lon": 45.3182,
+      "country": "Somalia",
+      "region": "Banaadir",
+      "city": "Mogadishu"
+    },
+    "topics": [
+      "humanitarian",
+      "famine",
+      "somalia",
+      "food-security",
+      "crisis",
+      "health-emergency"
+    ],
+    "confidence": 0.94,
+    "source_name": "United_Nations (@United_Nations)",
+    "links": [
+      {
+        "url": "https://www.global-agriculture.com/global-agriculture/un-agencies-warn-of-worsening-hunger-and-malnutrition-crisis-in-somalia-as-famine-risk-emerges/",
+        "label": "UN Agencies Somalia Warning"
+      },
+      {
+        "url": "https://dppa.un.org/en/news/at-security-council-director-kayoko-gotoh-calls-for-renewed-diplomacy-and-ceasefire-in",
+        "label": "DPPA Ukraine Briefing"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_158",
+    "title": "China's Banks Quietly Freeze Loans to Iran-Linked Refineries as Beijing Navigates Dual Sanctions Pressure",
+    "summary": "China's financial regulator instructed major state banks to suspend new loans to refineries sanctioned by the US for processing Iranian crude oil, creating a stark gap between Beijing's public defiance of sanctions and the private compliance of its banking sector.",
+    "date_event": "2026-05-20T06:00:00Z",
+    "date_published": "2026-05-20T20:25:00Z",
+    "geo": {
+      "lat": 36.6512,
+      "lon": 117.1201,
+      "country": "China",
+      "region": "Shandong",
+      "city": "Jinan"
+    },
+    "topics": [
+      "sanctions",
+      "iran",
+      "china",
+      "oil",
+      "banking",
+      "dark-fleet",
+      "maritime"
+    ],
+    "confidence": 0.9,
+    "source_name": "Rayfunseth (@Rayfunseth)",
+    "links": [
+      {
+        "url": "https://www.visiontimes.com/2026/05/12/chinas-major-banks-freeze-loans-to-iran-linked-refineries-as-us-sanctions-bite.html",
+        "label": "Vision Times Coverage"
+      },
+      {
+        "url": "https://fortune.com/2026/05/04/china-defiance-us-sanctions-iran-oil/",
+        "label": "Fortune China Sanctions Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_159",
+    "title": "China-Aligned APT Group Webworm Deploys Discord and Microsoft Graph API Backdoors Against European Governments",
+    "summary": "ESET researchers uncovered a China-aligned APT group called Webworm deploying novel backdoors using Discord and Microsoft Graph API for command-and-control communications, targeting government organizations across Belgium, Italy, Poland, Serbia, and Spain in an expanded espionage campaign.",
+    "date_event": "2026-05-20T08:00:00Z",
+    "date_published": "2026-05-20T20:30:00Z",
+    "geo": {
+      "lat": 50.8503,
+      "lon": 4.3517,
+      "country": "Belgium",
+      "region": "Brussels",
+      "city": "Brussels"
+    },
+    "topics": [
+      "cybersecurity",
+      "apt",
+      "espionage",
+      "china",
+      "backdoor",
+      "government"
+    ],
+    "confidence": 0.88,
+    "source_name": "Windward AI Blog (windward.ai/blog)",
+    "links": [
+      {
+        "url": "https://finance.yahoo.com/sectors/technology/articles/eset-uncovers-expanded-arsenal-china-124000459.html",
+        "label": "ESET Webworm Research"
+      },
+      {
+        "url": "https://www.helpnetsecurity.com/2026/05/11/google-ai-vulnerability-exploitation/",
+        "label": "Google AI Zero-Day Report"
       }
     ],
     "link_preview_image": null
@@ -80255,6 +81258,661 @@
       {
         "url": "https://caliber.az/en/post/china-denies-claims-of-secretly-training-russian-troops",
         "label": "China Denies Training Russian Troops"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6001",
+    "title": "Indian Government Aircraft Tracks PM Modi Return Flight from Rome to Delhi",
+    "summary": "OSINT flight tracker Borrowed7time identified Indian Government Boeing 777-337ER operating as callsign INDIA1, carrying Prime Minister Narendra Modi from Rome back to New Delhi on May 20, 2026.",
+    "date_event": "2026-05-20T19:53:56Z",
+    "date_published": "2026-05-20T19:53:56Z",
+    "geo": {
+      "lat": 41.9028,
+      "lon": 12.4964,
+      "country": "Italy",
+      "city": "Rome"
+    },
+    "topics": [
+      "flight-tracking",
+      "india",
+      "diplomacy",
+      "government-aircraft",
+      "osint"
+    ],
+    "confidence": 0.9,
+    "source_name": "Borrowed7time (@Borrowed7time)",
+    "links": [
+      {
+        "url": "https://x.com/Borrowed7time/status/2057188092570943784",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://x.com/Borrowed7time/status/2057186676896842120",
+        "label": "Phoenix Air Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HIyZpiubEAA2cWw.jpg"
+  },
+  {
+    "id": "evt_20260520_6002",
+    "title": "Taiwan President Lai Urges Continued US Arms Sales on Second Anniversary Amid Trump-Xi Summit Fallout",
+    "summary": "President Lai Ching-te marked his second anniversary in office by defending Taiwan's sovereignty and expressing hope for continued US weapons procurement, days after Trump described arms sales as a 'negotiating chip' with China.",
+    "date_event": "2026-05-20T12:38:00Z",
+    "date_published": "2026-05-20T19:40:00Z",
+    "geo": {
+      "lat": 25.033,
+      "lon": 121.5654,
+      "country": "Taiwan",
+      "city": "Taipei"
+    },
+    "topics": [
+      "taiwan",
+      "arms-sale",
+      "defense",
+      "diplomacy",
+      "china",
+      "military"
+    ],
+    "confidence": 0.95,
+    "source_name": "Taiwan News (@TaiwanNewsEN)",
+    "links": [
+      {
+        "url": "https://focustaiwan.tw/politics/202605200010",
+        "label": "Focus Taiwan Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6003",
+    "title": "Maersk Maintains Strait of Hormuz Transit Suspension as Ceasefire Confidence Erodes",
+    "summary": "Shipping giant A.P. Moller-Maersk confirmed continued avoidance of Strait of Hormuz transits, citing a 'highly volatile' situation and lack of maritime certainty despite fragile US-Iran ceasefire.",
+    "date_event": "2026-05-20T19:42:00Z",
+    "date_published": "2026-05-20T19:42:00Z",
+    "geo": {
+      "lat": 26.5944,
+      "lon": 56.2708,
+      "country": "Oman",
+      "region": "Strait of Hormuz"
+    },
+    "topics": [
+      "maritime-security",
+      "shipping",
+      "hormuz",
+      "iran",
+      "sanctions",
+      "energy"
+    ],
+    "confidence": 0.95,
+    "source_name": "Gcaptain (@Gcaptain)",
+    "links": [
+      {
+        "url": "https://gcaptain.com/maersk-keeping-strait-of-hormuz-transits-suspended-as-ceasefire-confidence-wavers/",
+        "label": "gCaptain Report"
+      },
+      {
+        "url": "https://gcaptain.com/ukmto-warns-ship-seized-near-hormuz-is-being-taken-toward-iran/",
+        "label": "UKMTO Ship Seizure Warning"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6004",
+    "title": "US Navy Commissions Final Littoral Combat Ship USS Cleveland, Ending Troubled Program",
+    "summary": "The US Navy commissioned USS Cleveland (LCS-31) in Ohio on May 16, 2026, marking the end of the Freedom-class littoral combat ship program after years of mechanical issues, cost overruns, and early retirements.",
+    "date_event": "2026-05-16T22:00:00Z",
+    "date_published": "2026-05-20T19:45:00Z",
+    "geo": {
+      "lat": 41.4993,
+      "lon": -81.6944,
+      "country": "United States",
+      "region": "Ohio",
+      "city": "Cleveland"
+    },
+    "topics": [
+      "naval",
+      "commissioning",
+      "littoral-combat-ship",
+      "us-navy",
+      "mine-countermeasure"
+    ],
+    "confidence": 0.9,
+    "source_name": "FleetNumbers Maritime (@Fleetnumbers)",
+    "links": [
+      {
+        "url": "https://www.navytimes.com/news/your-navy/2026/05/18/us-navy-commissions-final-littoral-combat-ship-after-years-of-issues/",
+        "label": "Navy Times Report"
+      },
+      {
+        "url": "https://www.forcesnews.com/services/navy/ensuring-safety-strait-mine-hunting-drones-transferred-across-hms-sterling-castle",
+        "label": "UK Mine-Hunting Drones Transfer"
+      }
+    ],
+    "link_preview_image": "https://www.armytimes.com/resizer/v2/7NS7K7VMIZHWRI5EA6L3RZ4XCI.jpg?width=1200&auth=60658b2968931fe81fa671cb4da194f613d0426385028c1b4adf5fc4e04c2cb8"
+  },
+  {
+    "id": "evt_20260520_6005",
+    "title": "NATO Launches OPEX-26 Maritime Drone Exercises in Black Sea as Secretary General Warns Russia on Nuclear Weapons",
+    "summary": "Six NATO nations began the OPEX-26 exercises testing autonomous maritime drones in the Black Sea on May 18-29, while Secretary General Mark Rutte warned Russia of 'devastating' consequences if nuclear weapons target Ukraine.",
+    "date_event": "2026-05-20T18:10:00Z",
+    "date_published": "2026-05-20T19:50:00Z",
+    "geo": {
+      "lat": 43.8,
+      "lon": 28.6,
+      "country": "Romania",
+      "city": "Mangalia"
+    },
+    "topics": [
+      "nato",
+      "exercise",
+      "black-sea",
+      "nuclear",
+      "drone",
+      "deterrence"
+    ],
+    "confidence": 0.9,
+    "source_name": "John Pollock (@John_Pollock22)",
+    "links": [
+      {
+        "url": "https://tass.com/world/2132667",
+        "label": "TASS Black Sea Exercise Report"
+      },
+      {
+        "url": "https://kyivindependent.com/nato-chief-warns-russia-of-devastating-reaction-if-russia-uses-nuclear-weapons-against-ukraine/",
+        "label": "NATO Nuclear Warning"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6006",
+    "title": "Zelensky Warns of Russian Plans for Northern Ukraine Offensive via Chernihiv-Kyiv Direction",
+    "summary": "Ukrainian President Zelensky revealed intelligence on five Russian offensive scenarios targeting northern Ukraine, ordering reinforcements to the Chernihiv-Kyiv sector and pledging diplomatic pressure on Belarus.",
+    "date_event": "2026-05-20T19:26:00Z",
+    "date_published": "2026-05-20T19:38:00Z",
+    "geo": {
+      "lat": 51.4982,
+      "lon": 31.2893,
+      "country": "Ukraine",
+      "city": "Chernihiv"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "offensive",
+      "military",
+      "intelligence",
+      "belarus"
+    ],
+    "confidence": 0.85,
+    "source_name": "Allsource4 (@Allsource4)",
+    "links": [
+      {
+        "url": "https://kyivindependent.com/zelensky-warns-russian-northern-offensive/",
+        "label": "Kyiv Independent Report"
+      }
+    ],
+    "link_preview_image": "https://assets.kyivindependent.com/content/images/2026/05/7843e49078450eaa11dc0cd0bd0b81d5_1779294986_extra_large_20260520-191249.png"
+  },
+  {
+    "id": "evt_20260520_6007",
+    "title": "China Deploys Liaoning Carrier Strike Group for Western Pacific Live-Fire Drills Days After Trump-Xi Summit",
+    "summary": "The PLA Navy sent its Liaoning carrier task group into the Western Pacific for long-range tactical flight training and live-fire exercises, four days after Beijing and Washington agreed to a 'constructive strategic stability' relationship.",
+    "date_event": "2026-05-19T12:00:00Z",
+    "date_published": "2026-05-20T19:48:00Z",
+    "geo": {
+      "lat": 24.0,
+      "lon": 126.0,
+      "country": "International Waters",
+      "region": "Western Pacific"
+    },
+    "topics": [
+      "china",
+      "aircraft-carrier",
+      "military",
+      "taiwan",
+      "western-pacific",
+      "pla-navy"
+    ],
+    "confidence": 0.9,
+    "source_name": "ChinaP0wer (@ChinaP0wer)",
+    "links": [
+      {
+        "url": "http://www.koreapost.com/news/articleView.html?idxno=48466",
+        "label": "Korea Post Analysis"
+      }
+    ],
+    "link_preview_image": "http://www.koreapost.com/ https://cdn.koreapost.com/news/thumbnail/202605/48466_63718_319_v150.jpg"
+  },
+  {
+    "id": "evt_20260520_6008",
+    "title": "Italian Authorities Open Criminal Investigation Into Sea-Watch 5 Captain After Libyan Coastguard Shooting",
+    "summary": "Italian authorities opened a criminal investigation into the captain of Sea-Watch 5 for 'aiding and abetting illegal migration' after the vessel returned to Brindisi following a Libyan coastguard shooting attack on May 11, 2026.",
+    "date_event": "2026-05-16T12:00:00Z",
+    "date_published": "2026-05-20T19:55:00Z",
+    "geo": {
+      "lat": 33.45,
+      "lon": 12.9,
+      "country": "Libya",
+      "region": "International Waters off Tripoli"
+    },
+    "topics": [
+      "mediterranean",
+      "rescue",
+      "migration",
+      "libya",
+      "maritime-security",
+      "human-right"
+    ],
+    "confidence": 0.9,
+    "source_name": "seawatch_intl (@seawatch_intl)",
+    "links": [
+      {
+        "url": "https://www.occrp.org/en/news/libyan-coast-guard-fired-on-migrant-rescue-ship-charity-says",
+        "label": "OCCRP Investigation Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6009",
+    "title": "Piracy Resurfaces Off Horn of Africa as Hormuz Crisis Strains Indo-Pacific Naval Security Resources",
+    "summary": "Multiple vessel hijackings and armed approaches off Somalia prompted the Joint Maritime Information Center to raise the regional piracy threat level, as naval forces redirect toward the Strait of Hormuz crisis.",
+    "date_event": "2026-05-20T19:43:00Z",
+    "date_published": "2026-05-20T19:43:00Z",
+    "geo": {
+      "lat": 5.15,
+      "lon": 46.2,
+      "country": "Somalia",
+      "region": "Somali Basin"
+    },
+    "topics": [
+      "piracy",
+      "maritime-security",
+      "horn-of-africa",
+      "naval",
+      "indo-pacific"
+    ],
+    "confidence": 0.85,
+    "source_name": "Royal Australian Navy (@AusNavy)",
+    "links": [
+      {
+        "url": "https://gcaptain.com/piracy-resurfaces-off-somalia-as-hormuz-crisis-stretches-naval-security/",
+        "label": "gCaptain Piracy Report"
+      }
+    ],
+    "link_preview_image": "https://gcaptain.com/wp-content/uploads/2026/04/Iranian-flagged-dhow-ALWASEEMI.jpg"
+  },
+  {
+    "id": "evt_20260520_6010",
+    "title": "Chinese President Xi Jinping Likely to Visit North Korea as Early as Next Week",
+    "summary": "South Korean intelligence indicates Chinese President Xi Jinping will visit North Korea as early as next week, potentially seeking to mediate between Pyongyang and Washington following his recent summit with Trump in Beijing.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:15:00Z",
+    "geo": {
+      "lat": 39.0392,
+      "lon": 125.7625,
+      "country": "North Korea",
+      "city": "Pyongyang"
+    },
+    "topics": [
+      "diplomacy",
+      "china",
+      "north-korea",
+      "xi-jinping",
+      "denuclearization"
+    ],
+    "confidence": 0.85,
+    "source_name": "Korea Times (@TheKorea_Times)",
+    "links": [
+      {
+        "url": "https://en.yna.co.kr/view/AEN20260520013200320",
+        "label": "Yonhap News Agency"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6011",
+    "title": "Philippine Coast Guard Challenges China Coast Guard Vessel Within Exclusive Economic Zone Off Zambales",
+    "summary": "The Philippine Coast Guard confronted China Coast Guard vessel CCG-4305 approximately 48 nautical miles west of Zambales after deploying aerial and maritime assets to challenge the unauthorized presence within the Philippines' EEZ.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:00:00Z",
+    "geo": {
+      "lat": 15.5082,
+      "lon": 119.9698,
+      "country": "Philippines",
+      "region": "Zambales"
+    },
+    "topics": [
+      "south-china-sea",
+      "maritime-dispute",
+      "china-coast-guard",
+      "philippines",
+      "sovereignty"
+    ],
+    "confidence": 0.95,
+    "source_name": "SCS Probing Initiative (@SCS_PI)",
+    "links": [
+      {
+        "url": "https://qa.philstar.com/headlines/2026/05/21/2529431/china-coast-guard-ship-spotted-zambales",
+        "label": "Philstar Coverage"
+      },
+      {
+        "url": "https://www.gmanetwork.com/news/topstories/nation/988191/pcg-challenges-chinese-vessel-near-pandaquit-zambales/story/",
+        "label": "GMA News"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6012",
+    "title": "Japan Expands Indo-Pacific Defense Cooperation Network Through Arms Export Reforms and New Partnerships",
+    "summary": "Japan continues expanding its Indo-Pacific defense cooperation following the April 22 arms export revision, with Australia ordering upgraded Mogami-class frigates and Indonesia signing a historic defense cooperation agreement.",
+    "date_event": null,
+    "date_published": "2026-05-20T19:55:00Z",
+    "geo": {
+      "lat": 35.6762,
+      "lon": 139.6503,
+      "country": "Japan",
+      "city": "Tokyo"
+    },
+    "topics": [
+      "japan",
+      "defense-export",
+      "indo-pacific",
+      "military-cooperation",
+      "arms-trade"
+    ],
+    "confidence": 0.9,
+    "source_name": "ModjapanEn (@ModjapanEn)",
+    "links": [
+      {
+        "url": "https://thediplomat.com/2026/05/japans-middle-power-arms-strategy-in-the-indo-pacific/",
+        "label": "The Diplomat Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6013",
+    "title": "North Korea Draws Strategic Nuclear Lessons From Iran War Including Underground Infrastructure and Drone Warfare",
+    "summary": "Korea Economic Institute analysis warns that North Korea draws critical military lessons from the Iran war, including underground infrastructure and low-cost drone warfare, with the most concerning conclusion that Iran's mistake lay in not pursuing nuclear weapons.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:30:00Z",
+    "geo": {
+      "lat": 39.0392,
+      "lon": 125.7625,
+      "country": "North Korea",
+      "city": "Pyongyang"
+    },
+    "topics": [
+      "north-korea",
+      "nuclear-weapon",
+      "iran",
+      "drone-warfare",
+      "deterrence"
+    ],
+    "confidence": 0.85,
+    "source_name": "Korea Economic Institute (@KoreaEconInst)",
+    "links": [
+      {
+        "url": "https://x.com/KoreaEconInst/status/2057197195904872504",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6014",
+    "title": "Second Thomas Shoal Tensions Escalate as Philippines and China Trade Accusations Over Resupply Mission",
+    "summary": "Philippine and Chinese forces clashed verbally over a resupply mission to Second Thomas Shoal, with Manila accusing Beijing of harassment and aggressive maneuvers while China claimed its coast guard acted lawfully to regulate Philippine movements.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:10:00Z",
+    "geo": {
+      "lat": 9.7,
+      "lon": 115.8,
+      "country": "Philippines",
+      "region": "Spratly Islands"
+    },
+    "topics": [
+      "south-china-sea",
+      "second-thomas-shoal",
+      "maritime-dispute",
+      "china",
+      "philippines"
+    ],
+    "confidence": 0.9,
+    "source_name": "Raytoribo (@Raytoribo)",
+    "links": [
+      {
+        "url": "https://www.ibtimes.sg/china-philippines-south-china-sea-clash-escalates-over-second-thomas-shoal-mission-86585",
+        "label": "IBTimes Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6015",
+    "title": "Windows BitLocker Zero-Day CVE-2026-45585 Enables Full-Disk Encryption Bypass via Recovery Environment Exploit",
+    "summary": "Microsoft disclosed CVE-2026-45585, a critical zero-day vulnerability allowing attackers with physical access to bypass BitLocker full-disk encryption entirely through the Windows Recovery Environment, rated Exploitation More Likely.",
+    "date_event": null,
+    "date_published": "2026-05-20T19:42:00Z",
+    "geo": {
+      "lat": 47.6395,
+      "lon": -122.1283,
+      "country": "United States",
+      "city": "Redmond"
+    },
+    "topics": [
+      "vulnerability",
+      "zero-day",
+      "bitlocker",
+      "encryption",
+      "windows"
+    ],
+    "confidence": 0.92,
+    "source_name": "InfoFusionCtr (@InfoFusionCtr)",
+    "links": [
+      {
+        "url": "https://cybersecuritynews.com/windows-bitlocker-yellowkey-mitigation/",
+        "label": "Cyber Security News Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6016",
+    "title": "China Military Denounces Philippine Infrastructure Construction on Disputed South China Sea Features",
+    "summary": "China's Ministry of National Defense spokesperson denounced Philippine construction activities on occupied islands and reefs in the South China Sea, asserting indisputable sovereignty and threatening necessary measures to safeguard territorial claims.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:08:00Z",
+    "geo": {
+      "lat": 10.68,
+      "lon": 117.83,
+      "country": "Philippines",
+      "region": "Spratly Islands"
+    },
+    "topics": [
+      "south-china-sea",
+      "geopolitics",
+      "china",
+      "philippines",
+      "territorial-dispute"
+    ],
+    "confidence": 0.9,
+    "source_name": "r/geopolitics (reddit.com/r/geopolitics)",
+    "links": [
+      {
+        "url": "http://en.people.cn/n3/2026/0519/c90000-20457752.html",
+        "label": "People's Daily Online"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6017",
+    "title": "China Taiwan Affairs Office Responds to Trump Summit Remarks, Warns Against Independence",
+    "summary": "China's Taiwan Affairs Office declared that the US side understands China's position and does not stand for Taiwan independence, following the Xi-Trump Beijing summit. The spokesperson warned DPP authorities will face consequences for their separatist stance.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:05:00Z",
+    "geo": {
+      "lat": 39.9057136,
+      "lon": 116.3912972,
+      "country": "China",
+      "region": "Beijing",
+      "city": "Beijing"
+    },
+    "topics": [
+      "taiwan",
+      "diplomacy",
+      "china",
+      "united-state",
+      "summit"
+    ],
+    "confidence": 0.95,
+    "source_name": "ChineseEmbInUs (@ChineseEmbInUs)",
+    "links": [
+      {
+        "url": "https://www.globaltimes.cn/page/202605/1361456.shtml",
+        "label": "Global Times Report"
+      },
+      {
+        "url": "https://us.china-embassy.gov.cn/eng/fyrth/202605/t20260511_11908438.htm",
+        "label": "MFA Press Conference"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6018",
+    "title": "Xi and Putin Extend China-Russia Treaty in Beijing Summit, Reaffirm Strategic Partnership",
+    "summary": "Chinese President Xi Jinping and Russian President Vladimir Putin held talks in Beijing on May 20, 2026, extending the China-Russia Treaty of Good-Neighborliness and Friendly Cooperation. Xi called for an immediate end to all Middle East hostilities during the summit.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:15:00Z",
+    "geo": {
+      "lat": 39.9057136,
+      "lon": 116.3912972,
+      "country": "China",
+      "region": "Beijing",
+      "city": "Beijing"
+    },
+    "topics": [
+      "diplomacy",
+      "china",
+      "russia",
+      "summit",
+      "treaty"
+    ],
+    "confidence": 0.95,
+    "source_name": "KlSummary (@KlSummary)",
+    "links": [
+      {
+        "url": "https://www.globaltimes.cn/page/202605/1361456.shtml",
+        "label": "Global Times Summit Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6019",
+    "title": "Pentagon Awards $500 Million Counter-Drone Contract as Iran Conflict Accelerates Drone Warfare Demands",
+    "summary": "The Pentagon awarded Perennial Autonomy a $500 million contract for AI-enabled counter-drone systems including the Merops interceptor, which has downed over 4,000 Russian drones in Ukraine. The Iran war accelerated demand as the Army purchased 13,000 Merops interceptors in the early days of the conflict.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:25:00Z",
+    "geo": {
+      "lat": 14.7849787,
+      "lon": 120.2339799,
+      "country": "Philippines",
+      "region": "Zambales",
+      "city": "Subic Bay"
+    },
+    "topics": [
+      "counter-drone",
+      "defense",
+      "military",
+      "technology",
+      "iran"
+    ],
+    "confidence": 0.9,
+    "source_name": "olongapotimes (@olongapotimes)",
+    "links": [
+      {
+        "url": "https://defensescoop.com/2026/05/19/pentagon-awards-500-million-contract-to-perennial-autonomy-for-counter-drone-systems/",
+        "label": "DefenseScoop Report"
+      },
+      {
+        "url": "https://www.defensenews.com/industry/techwatch/2026/05/19/pentagon-inks-500-million-deal-with-perennial-autonomy-for-counter-drone-tech/",
+        "label": "Defense News Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6020",
+    "title": "PLA Navy Deploys Liaoning Carrier Task Group to Western Pacific for Live-Fire Exercises",
+    "summary": "The Chinese Navy dispatched the CNS Liaoning aircraft carrier and escort ships to the Western Pacific Ocean on May 19 for long-distance tactical flight training and live-fire exercises. Taiwan responded by monitoring activities and tasking aircraft and naval vessels.",
+    "date_event": null,
+    "date_published": "2026-05-20T19:45:00Z",
+    "geo": {
+      "lat": 37.6649498,
+      "lon": 21.3275683,
+      "country": "International Waters",
+      "region": "Western Pacific"
+    },
+    "topics": [
+      "military",
+      "aircraft-carrier",
+      "china",
+      "taiwan",
+      "naval-exercise"
+    ],
+    "confidence": 0.95,
+    "source_name": "Platracker (@Platracker)",
+    "links": [
+      {
+        "url": "https://www.chinadaily.com.cn/a/202605/19/WS6a0bf023a310d6866eb4973d.html",
+        "label": "China Daily Report"
+      },
+      {
+        "url": "https://www.scmp.com/news/china/military/article/3354115/chinese-aircraft-carrier-kicks-drills-western-pacific-amid-tense-japan-ties",
+        "label": "SCMP Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_6021",
+    "title": "Trump Threatens New Military Strikes on Iran as CENTCOM Maintains Naval Blockade",
+    "summary": "President Trump warned Iran has days to reach a deal, revealing he came within an hour of authorizing major strikes. CENTCOM Admiral Cooper testified forces remain at the highest readiness level while maintaining the blockade that has redirected 88 commercial vessels.",
+    "date_event": null,
+    "date_published": "2026-05-20T20:00:00Z",
+    "geo": {
+      "lat": 26.4494061,
+      "lon": 56.2027702,
+      "country": "Iran",
+      "region": "Strait of Hormuz"
+    },
+    "topics": [
+      "military",
+      "iran",
+      "naval-blockade",
+      "conflict",
+      "strait-of-hormuz"
+    ],
+    "confidence": 0.95,
+    "source_name": "US Navy (@USNavy)",
+    "links": [
+      {
+        "url": "https://www.navytimes.com/news/pentagon-congress/2026/05/19/trump-edges-toward-new-strikes-on-iran/",
+        "label": "Navy Times Report"
+      },
+      {
+        "url": "https://news.usni.org/2026/05/18/usni-news-fleet-and-marine-tracker-may-18-2026",
+        "label": "USNI Fleet Tracker"
       }
     ],
     "link_preview_image": null
