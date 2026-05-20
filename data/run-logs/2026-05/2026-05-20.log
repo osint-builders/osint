@@ -94,3 +94,13 @@ Collection via exa_web_search. Event generated.
 
 ## Bucket 12 @ 2026-05-20T20:37:00.520Z
 Sources: 10 processed, 10 events generated
+
+## Bucket 14 @ 2026-05-20T20:37:00.522Z
+Sources: 10 (all Twitter type)
+Events created: 10
+Events added after dedup: 2 (8 duplicated by concurrent buckets)
+New events: evt_20260520_1004 (IMO HQ - Somali piracy), evt_20260520_1008 (key2med - IRGC threat)
+Collection method: exa_web_search for all sources
+Link previews: All enriched via LinkPreview API
+Geocoding: 10/10 via Nominatim
+Validation: All passed strict mode
