@@ -94,6 +94,7 @@ Per source:
    - Trigger: `priority="high"` OR topics include `conflict/military/attack/disaster/sanctions/nuclear`.
    - Run `validate_event_confidence()` (defined below); cap at 50 calls/bucket.
 8. **Images** (non-Twitter only — Twitter images require auth, skip):
+   For Twitter/X sources, set `image_urls: []` immediately and skip the rest of this step.
    - `curl` og:image or article hero; normalize: `magick INPUT -resize 720x720^ -gravity center -extent 720x720 +repage -strip -define png:compression-level=9 OUTPUT.png`
    - Save to `$WORK_DIR/{source_id}/media/images/{event_id}_img1.png`.
    - Update `image_urls`: `["./media/YYYY-MM/images/YYYY-MM-DD/{event_id}_img1.png"]`.
@@ -236,7 +237,7 @@ find "$WORK_DIR" -name "events.jsonl" -type f | while read f; do
   done < "$f"
 done >> "$TARGET"
 
-jq -s 'unique_by(.id) | .[]' "$TARGET" > "$TARGET.tmp" && mv "$TARGET.tmp" "$TARGET"
+jq -sc 'unique_by(.id) | .[]' "$TARGET" > "$TARGET.tmp" && mv "$TARGET.tmp" "$TARGET"
 ```
 
 ## Step 6: Move Media

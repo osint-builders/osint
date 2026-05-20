@@ -52,7 +52,10 @@ cat > "$GEOCODING_CACHE" << 'EOF'
   "North Korea": {"lat": "40.3399", "lon": "127.5101", "display_name": "North Korea"},
   "South Korea": {"lat": "35.9078", "lon": "127.7669", "display_name": "South Korea"},
   "Japan": {"lat": "36.2048", "lon": "138.2529", "display_name": "Japan"},
-  "Philippines": {"lat": "12.8797", "lon": "121.7740", "display_name": "Philippines"}
+  "Philippines": {"lat": "12.8797", "lon": "121.7740", "display_name": "Philippines"},
+  "Goma, Democratic Republic of Congo": {"lat": "-1.6777", "lon": "29.2285", "display_name": "Goma, North Kivu, DRC"},
+  "Spratly Islands, South China Sea": {"lat": "10.68", "lon": "117.83", "display_name": "Spratly Islands"},
+  "Uvira, Democratic Republic of Congo": {"lat": "-3.4", "lon": "29.14", "display_name": "Uvira, South Kivu, DRC"}
 }
 EOF
 ```
