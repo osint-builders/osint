@@ -262,11 +262,40 @@ if [ -n "$LINKPREVIEW_API_KEY" ]; then
     PREVIEW_JSON=$(curl -sf --max-time 8 \
       "https://api.linkpreview.net/?q=$ENCODED_URL" \
       -H "X-Linkpreview-Api-Key: $LINKPREVIEW_API_KEY" 2>/dev/null || echo '{}')
-    if echo "$PREVIEW_JSON" | jq -e '.image | type == "string"' >/dev/null 2>&1; then
+    if echo "$PREVIEW_JSON" | jq -e '.image | type == "string" and length > 0' >/dev/null 2>&1; then
       event_json=$(echo "$event_json" | jq --argjson preview "$PREVIEW_JSON" \
         '. + {link_preview: $preview}')
     fi
     sleep 1  # respect rate limits (one request per second)
+  fi
+fi
+# Twitter banner fallback: if link_preview still has no image and source is Twitter/X,
+# fetch the account's profile banner via the Twitter API and use it as the preview image.
+# Banners are cached per handle to avoid redundant API calls across events from the same source.
+if [ -n "$TWITTER_BEARER_TOKEN" ]; then
+  HAS_IMG=$(echo "$event_json" | jq -r '.link_preview.image // ""')
+  IS_TW=$(echo "$event_json" | jq -r '.links[0].url // ""' | grep -cE 'x\.com|twitter\.com' || true)
+  if [ -z "$HAS_IMG" ] && [ "${IS_TW:-0}" -gt 0 ]; then
+    TW_HANDLE=$(echo "$event_json" | jq -r '.source.name // ""' | grep -oP '(?<=\(@)\w+(?=\))' | head -1)
+    if [ -n "$TW_HANDLE" ]; then
+      BANNER_URL=$(jq -r --arg h "$TW_HANDLE" '.[$h] // empty' "$TWITTER_BANNER_CACHE" 2>/dev/null)
+      if [ -z "$BANNER_URL" ]; then
+        BANNER_RESP=$(curl -sf --max-time 8 \
+          "https://api.twitter.com/2/users/by/username/$TW_HANDLE?user.fields=profile_banner_url" \
+          -H "Authorization: Bearer $TWITTER_BEARER_TOKEN" 2>/dev/null || echo '{}')
+        BANNER_URL=$(echo "$BANNER_RESP" | jq -r '.data.profile_banner_url // empty')
+        CACHE_TMP=$(jq --arg h "$TW_HANDLE" --arg u "${BANNER_URL:-}" \
+          '. + {($h): $u}' "$TWITTER_BANNER_CACHE" 2>/dev/null)
+        [ -n "$CACHE_TMP" ] && echo "$CACHE_TMP" > "$TWITTER_BANNER_CACHE"
+      fi
+      if [ -n "$BANNER_URL" ]; then
+        BANNER_IMG="${BANNER_URL}/1500x500"
+        event_json=$(echo "$event_json" | jq --arg img "$BANNER_IMG" \
+          'if .link_preview then .link_preview.image = $img
+           else . + {link_preview: {image: $img, title: (.title // ""), description: (.summary // ""), url: (.links[0].url // "")}}
+           end')
+      fi
+    fi
   fi
 fi
 # Use $event_json (now enriched with link_preview) as the value written in step 8.
@@ -285,6 +314,8 @@ Skills (read SKILL.md first): `agent-browser`, `perplexity-search`, `data-to-mar
 ```bash
 GEOCODING_CACHE="/tmp/geocoding-cache-${bucketNum}.json"
 echo '{}' > "$GEOCODING_CACHE"
+TWITTER_BANNER_CACHE="/tmp/twitter-banner-cache-${bucketNum}.json"
+echo '{}' > "$TWITTER_BANNER_CACHE"
 
 geocode_location() {
   local location="$1"
