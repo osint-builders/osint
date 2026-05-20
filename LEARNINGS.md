@@ -172,3 +172,15 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** The Twitter handles @FAASouth (twitter-faa-south), @YonkosMC (twitter-yonkosmc), and @Nguyenthiho88 (twitter-nguyenthiho88) do not resolve to active X/Twitter accounts. The API returns explicit "Could not find user" errors rather than suspension or protected status. Events for these sources' topic areas remain accessible via exa_web_search with source-specific keywords.
 **Action for next run:** Skip Twitter API and r.jina.ai for twitter-faa-south, twitter-yonkosmc, and twitter-nguyenthiho88. Use exa_web_search with source-specific topic keywords. Flag these sources for manifest handle investigation or status change to inactive.
 **Expires:** 2026-08-20
+
+## 2026-05-20 17:11Z — Five Twitter source accounts do not exist: WarTV7890, BeltelFreeAudio, BelteleFacts, MofajapanEn, BatesGill
+**Trigger:** Bucket 9 Twitter API v2 user lookup returned "Could not find user with username" for @WarTV7890, @BeltelFreeAudio, @BelteleFacts, @MofajapanEn, and @BatesGill.
+**Finding:** These five X/Twitter accounts do not exist on the platform. The handles may have changed, accounts may have been deleted or suspended. All five produced zero direct collection results. exa_web_search with source-specific keywords yielded relevant events for each source topic area.
+**Action for next run:** Skip Twitter API and r.jina.ai for these five sources. Use exa_web_search with source-specific topic keywords as primary discovery. Flag all five for manifest handle investigation or status change.
+**Expires:** 2026-08-20
+
+## 2026-05-20 17:11Z — Reddit API returns 403 from cloud agent environment for both cybersecurity and LessCredibleDefence subreddits
+**Trigger:** Bucket 9 curl requests to reddit.com/r/cybersecurity/new.json and reddit.com/r/LessCredibleDefence/new.json both returned HTTP 403 with HTML error page instead of JSON.
+**Finding:** Reddit appears to block requests from the Warp Cloud Agent environment IP range despite using the documented User-Agent header (osint-bot/1.0). The 403 response contains an HTML page rather than JSON, suggesting IP-based rate limiting or datacenter IP blocking rather than an authentication issue.
+**Action for next run:** For Reddit API sources, attempt the API call first. If 403 received, immediately fall back to exa_web_search with subreddit-specific keywords. Consider adding Reddit OAuth authentication as a longer-term fix.
+**Expires:** 2026-08-20
