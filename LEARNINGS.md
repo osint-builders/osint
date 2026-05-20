@@ -167,4 +167,8 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Trigger:** Bucket 7 attempted to fetch r/NorthKoreaNews/new.json and r/OSINT/new.json with User-Agent osint-bot/1.0; both returned HTTP 403 with HTML body instead of JSON.
 **Finding:** Reddit appears to block programmatic access to the public JSON API endpoints from the agent environment. The r/*/new.json endpoints that previously returned valid JSON now return 403 Forbidden. exa_web_search with subreddit-specific topic keywords yielded relevant current events as an effective alternative.
 **Action for next run:** For reddit-* sources, attempt the JSON API first but fall back immediately to exa_web_search with source-specific keywords if HTTP 403 received. Do not retry the Reddit API — the block appears environment-wide.
+## 2026-05-20 17:12Z — Three X accounts do not exist: FAASouth, YonkosMC, Nguyenthiho88
+**Trigger:** Bucket 11 Twitter API user lookup returned "Could not find user with username" for @FAASouth, @YonkosMC, and @Nguyenthiho88.
+**Finding:** The Twitter handles @FAASouth (twitter-faa-south), @YonkosMC (twitter-yonkosmc), and @Nguyenthiho88 (twitter-nguyenthiho88) do not resolve to active X/Twitter accounts. The API returns explicit "Could not find user" errors rather than suspension or protected status. Events for these sources' topic areas remain accessible via exa_web_search with source-specific keywords.
+**Action for next run:** Skip Twitter API and r.jina.ai for twitter-faa-south, twitter-yonkosmc, and twitter-nguyenthiho88. Use exa_web_search with source-specific topic keywords. Flag these sources for manifest handle investigation or status change to inactive.
 **Expires:** 2026-08-20
