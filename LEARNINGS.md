@@ -162,3 +162,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** OpenStreetMap Nominatim does not resolve "Uvira, Democratic Republic of Congo" as a searchable location. Hardcoded fallback coordinates (-3.4, 29.14) resolve the issue. Uvira sits on the northern shore of Lake Tanganyika in South Kivu province.
 **Action for next run:** Pre-populate geocoding cache with Uvira coordinates (-3.4, 29.14) before querying Nominatim for DRC locations.
 **Expires:** 2026-08-15
+
+## 2026-05-20 17:11Z — Reddit JSON API returns 403 for public subreddits; exa_web_search effective fallback
+**Trigger:** Bucket 7 attempted to fetch r/NorthKoreaNews/new.json and r/OSINT/new.json with User-Agent osint-bot/1.0; both returned HTTP 403 with HTML body instead of JSON.
+**Finding:** Reddit appears to block programmatic access to the public JSON API endpoints from the agent environment. The r/*/new.json endpoints that previously returned valid JSON now return 403 Forbidden. exa_web_search with subreddit-specific topic keywords yielded relevant current events as an effective alternative.
+**Action for next run:** For reddit-* sources, attempt the JSON API first but fall back immediately to exa_web_search with source-specific keywords if HTTP 403 received. Do not retry the Reddit API — the block appears environment-wide.
+**Expires:** 2026-08-20
