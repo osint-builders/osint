@@ -68,18 +68,6 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Action for next run:** Check Twitter API credit status at run start. If depleted, immediately pivot to: (1) Perplexity API with `search_recency_filter: "hour"` for source-specific queries, (2) exa_web_search for broad event discovery, (3) agent-browser on non-Twitter web sources. Consider requesting credit top-up or rotating to a backup bearer token.
 **Expires:** 2026-06-01
 
-## 2026-05-01 19:55Z — Twitter API credits depleted; fallback collection strategy needed
-**Trigger:** Twitter Bearer Token returned "CreditsDepleted" error for all API v2 calls during bucket 2 run
-**Finding:** The TWITTER_BEARER_TOKEN has exhausted its monthly credits. All 28 Twitter source collections fell back to web search (Perplexity API, exa_web_search) and agent-browser scraping. X.com requires authentication for recent tweet timelines, limiting agent-browser's effectiveness on Twitter profiles (only showing old tweets for unauthenticated sessions).
-**Action for next run:** Check Twitter API credit status at run start. If depleted, immediately pivot to: (1) Perplexity API with search_recency_filter hour for source-specific queries, (2) exa_web_search for broad event discovery, (3) agent-browser on non-Twitter web sources. Consider requesting credit top-up or rotating to a backup bearer token.
-**Expires:** 2026-06-01
-
-## 2026-05-01 19:55Z — Twitter API credits depleted; fallback collection strategy needed
-**Trigger:** Twitter Bearer Token returned "CreditsDepleted" error for all API v2 calls during bucket 2 run
-**Finding:** The TWITTER_BEARER_TOKEN has exhausted its monthly credits. All 28 Twitter source collections fell back to web search (Perplexity API, exa_web_search) and agent-browser scraping.
-**Action for next run:** Check Twitter API credit status at run start. If depleted, pivot to Perplexity API and exa_web_search immediately.
-**Expires:** 2026-06-01
-
 ## 2026-05-01 19:55Z — Twitter API credits depleted; X browser scraping unreliable without auth
 **Trigger:** All Twitter API v2 endpoints returned 402 CreditsDepleted across all 29 bucket 5 sources. Browser scraping via agent-browser showed curated/popular old tweets instead of latest timeline for non-authenticated sessions.
 **Finding:** Twitter/X API credits can deplete mid-collection run, affecting all subsequent buckets. Without authentication, X shows a curated "popular tweets" view rather than the chronological timeline for most profiles (some high-activity profiles like NASA showed recent retweets). Twitter search requires login. Nitter mirrors appear defunct.
@@ -104,12 +92,6 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Action for next run:** Later buckets should prioritize niche/specialist sources and use source-specific search queries rather than broad topic queries. Consider assigning wire-service-heavy sources (cnni, yahoo-world-news) to earlier buckets and specialist sources (pizzainwatch, rayfunseth, opennuclear) to later ones to maximize unique URL yield per bucket.
 **Expires:** 2026-06-04
 
-## 2026-05-04 02:10Z — High URL dedup rate (45%) in bucket 5 confirms cross-bucket overlap pattern
-**Trigger:** 9 of 20 generated events (45%) shared primary URLs with events already committed by buckets 1-4
-**Finding:** Late-running buckets (bucket 5) face diminishing unique URL returns because major stories covered by wire services appear across all source topic areas. exa_web_search continues to perform well as the primary discovery tool with Twitter API credits depleted, but URL diversity degrades in later buckets when the same underlying wire service stories (Reuters, AP, AFP) get surfaced repeatedly.
-**Action for next run:** Later buckets should prioritize niche/specialist sources and use source-specific search queries rather than broad topic queries. Consider assigning wire-service-heavy sources (cnni, yahoo-world-news) to earlier buckets and specialist sources (pizzainwatch, rayfunseth, opennuclear) to later ones to maximize unique URL yield per bucket.
-**Expires:** 2026-06-04
-
 ## 2026-05-04 18:04Z — E-PRIME violations in generated contents require automated post-processing
 **Trigger:** 5 of 27 events in bucket 4 contained the word "been" in contents field, failing strict validation
 **Finding:** The word "been" (a form of "to be") frequently appears in generated event contents, especially in phrases like "has been," "had been," and "have been." Other E-PRIME violations (is, are, was, were) also occur but less frequently. A post-generation E-PRIME fix pass eliminates these efficiently.
@@ -120,12 +102,6 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Trigger:** data/media directory contained only a .gitkeep after multiple collection runs. Analysis traced to Twitter auth requirement and depleted API credits.
 **Finding:** Twitter/X images at pbs.twimg.com require authenticated sessions the agent does not have. Twitter API credits were depleted as of 2026-05-01. Attempting image extraction for Twitter sources wastes time and always fails silently. ~80% of sources are Twitter type.
 **Action for next run:** For type:twitter sources, set image_urls:[] immediately and skip Step 7 entirely. Only attempt image extraction for type:webpage, type:api, type:rss sources where og:image or article hero images are accessible via curl without auth.
-**Expires:** permanent
-
-## 2026-05-08 16:58Z — Nominatim fails to geocode "Strait of Hormuz" — use hardcoded coords
-**Trigger:** Bucket 14 geocoding returned null lat/lon for "Strait of Hormuz, Iran", causing strict validation failures.
-**Finding:** OpenStreetMap Nominatim does not resolve "Strait of Hormuz" as a searchable location. Hardcoded fallback coordinates (26.5944°N, 56.2708°E) resolve the issue.
-**Action for next run:** Pre-populate geocoding cache with known maritime strait coordinates before querying Nominatim.
 **Expires:** permanent
 
 ## 2026-05-10 16:12Z — Nominatim now resolves "Strait of Hormuz" — hardcoded fallback no longer needed
@@ -144,6 +120,7 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Trigger:** Bucket 9 collection attempted to scrape @KoreaTimesAlt via r.jina.ai mirror; X returned "This account doesn't exist."
 **Finding:** The Twitter handle @KoreaTimesAlt configured for source twitter-korea-times-alt does not resolve to an active X/Twitter account. The account may have been deleted, suspended, or the handle may have changed. Events for this source's topic area (Korean news) had to come from alternative sources like Yonhap.
 **Action for next run:** Mark source twitter-korea-times-alt as inactive in manifest or investigate whether The Korea Times operates under a different secondary handle. Skip direct scraping attempts for this source until the handle resolves.
+**Expires:** 2026-08-15
 ## 2026-05-15 01:35Z — Twitter API credits restored; search/recent endpoint returns data
 **Trigger:** Bucket 2 tested Twitter API v2 search/recent for all 10 source handles and received HTTP 200 with valid tweet data for active accounts (gCaptain, thewarzonewire, coastguardph, ianellisjones).
 **Finding:** The TWITTER_BEARER_TOKEN now returns valid responses from the search/recent endpoint, contradicting the "CreditsDepleted" status documented since 2026-05-01. Credits likely renewed on a monthly billing cycle. The API successfully returned recent tweets with created_at fields for time-window filtering.
