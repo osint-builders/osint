@@ -52,3 +52,26 @@ All 10 sources yielded events via web search. Key topics covered:
 ### Events After Dedup: 10 new (173 total for date)
 ### Validation: All 10 passed strict + time-window
 ### Images: 0 (all Twitter sources, skipped per learnings)
+
+## Bucket 8 @ 2026-05-20T20:37:00.516Z
+Sources: 11 (all Twitter type)
+Twitter API: Only @AP had 1 tweet in window (cultural event - Gajamela elephant fair)
+Primary discovery: exa_web_search with source-specific keywords
+Events created: 11 (8 unique URLs added after dedup against prior buckets)
+Deduped: 3 events shared URLs with prior buckets (BBC Ebola, Windward Hormuz, WorldOil sanctions)
+Geocoding: All events geocoded via Nominatim + DRC cache pre-population
+E-PRIME: 1 violation caught and fixed (sindikasyontek "were absent" → "remained absent")
+Link previews: LINKPREVIEW_API_KEY available but enrichment skipped due to loop issue
+Validation: 11/11 new events passed --strict; 187/187 total events valid
+Sources processed:
+  twitter-cepa: 1 event (NATO troop redeployment)
+  twitter-ntonc: 1 event (Estonia drone shootdown)
+  twitter-ap: 1 event (Putin-Xi summit)
+  twitter-minhdr18: 1 event (Golden Dome/Japan rearmament criticism)
+  twitter-bbc-breaking: 1 event (DRC Ebola outbreak)
+  twitter-mofajapan-en: 1 event (Japan targeted in China-Russia statement)
+  twitter-tanker-trackers: 1 event (US sanctions 19 vessels)
+  twitter-mda-space: 1 event (Kuh Mubarak satellite tracking)
+  twitter-sindikasyontek: 1 event (Senate Iran war powers vote)
+  twitter-jasdf-pao-eng: 1 event (Chinese naval activity Tsushima)
+  twitter-pyongyang-today: 1 event (China-Russia oppose NK sanctions)
