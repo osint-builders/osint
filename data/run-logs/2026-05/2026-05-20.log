@@ -1,0 +1,21 @@
+
+## Bucket 10 @ 2026-05-20T17:11:31.561Z
+Sources processed: 10/10
+- twitter-natalierevolts: 1 event (Ukraine frontline 129 engagements)
+- twitter-hawkeye360: 1 event (HawkEye 360 IPO SEC filing)
+- twitter-taiwan-news-en: 1 event (PLA 22 aircraft joint patrol, F-16V Sniper pod imagery)
+- twitter-seawatch-intl: 1 event (ICC Libya hearings, Sea-Watch 5 investigation)
+- twitter-nasa: 1 event (MODIS California wildfires, CLARREO Pathfinder) [DEDUP - modis URL]
+- twitter-borrowed7time: 1 event (Putin Il-96 + Russian jets Moscow→Istanbul, from API)
+- twitter-msc-sealift: 1 event (Taiwan arms LOA received, legislature funding)
+- twitter-rayfunseth: 1 event (US seizes Skywave tanker, OFAC 19 vessels) [DEDUP - windward URL]
+- twitter-tanker-trackers: 1 event (Iran Kuh Mubarak terminal, PGSA toll regime) [DEDUP - windward URL]
+- twitter-schizoint-rel: 1 event (OFAC Amin Exchange sanctions network) [DEDUP - worldoil URL]
+
+Twitter API: Credits active. Only @Borrowed7time had in-window tweets (4 tweets). All other handles returned 0 tweets in window.
+@Rayfunseth: Account confirmed non-existent per prior learnings.
+Discovery: exa_web_search primary for 9 sources. Twitter API primary for Borrowed7time.
+Events generated: 10 total, 6 unique after URL dedup, 4 duplicates from earlier buckets.
+Dedup URLs: windward.ai (2), worldoil.com (1), modis.gsfc.nasa.gov (1)
+E-PRIME fixes: 1 (Taiwan event "cannot be decided" → "must not fall to decisions")
+Validation: All 10 events passed strict validation.
