@@ -190,3 +190,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** OpenStreetMap Nominatim does not resolve Bunia as a searchable location. Bunia serves as the capital of Ituri Province in eastern DRC at approximately 1.5667°N, 30.25°E.
 **Action for next run:** Pre-populate geocoding cache with Bunia coordinates (1.5667, 30.25) before querying Nominatim for DRC locations.
 **Expires:** 2026-08-20
+
+## 2026-05-20 20:37Z — Twitter accounts TaFarms18 and pizzainwatch do not exist; use exa_web_search
+**Trigger:** Bucket 5 Twitter API v2 user lookup returned "Could not find user with username" for @TaFarms18 and @pizzainwatch.
+**Finding:** Both X/Twitter accounts do not resolve to active accounts. The API returned explicit "Could not find user" errors. Events for these sources' topic areas remain accessible via exa_web_search with source-specific keywords (agriculture/food security for TaFarms18; maritime tracking/sanctions for pizzainwatch).
+**Action for next run:** Skip Twitter API and r.jina.ai for twitter-tafarms18 and twitter-pizzainwatch. Use exa_web_search with source-specific topic keywords. Flag these sources for manifest handle investigation or status change.
+**Expires:** 2026-08-20
