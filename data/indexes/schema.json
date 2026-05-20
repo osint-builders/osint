@@ -3,8 +3,8 @@
   "embedding_model": "text-embedding-3-small",
   "embedding_dims": 384,
   "quantization": "int8",
-  "scale": 187.08144259104833,
-  "min_val": -0.6323554896987772,
+  "scale": 187.07857965792073,
+  "min_val": -0.6323836998043053,
   "index_type": "hnsw",
   "hnsw_params": {
     "M": 16,
@@ -12,6 +12,6 @@
     "ef": 64,
     "space": "ip"
   },
-  "event_count": 2547,
-  "last_updated": "2026-05-20T16:24:57.178376Z"
+  "event_count": 2556,
+  "last_updated": "2026-05-20T17:08:02.775966Z"
 }

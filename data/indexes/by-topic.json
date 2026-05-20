@@ -1,7 +1,7 @@
 [
   {
     "topic": "iran",
-    "count": 677
+    "count": 678
   },
   {
     "topic": "military",
@@ -13,15 +13,15 @@
   },
   {
     "topic": "china",
-    "count": 362
+    "count": 363
   },
   {
     "topic": "sanction",
-    "count": 329
+    "count": 330
   },
   {
     "topic": "russia",
-    "count": 270
+    "count": 273
   },
   {
     "topic": "diplomacy",
@@ -33,11 +33,11 @@
   },
   {
     "topic": "maritime-security",
-    "count": 207
+    "count": 208
   },
   {
     "topic": "north-korea",
-    "count": 202
+    "count": 203
   },
   {
     "topic": "ukraine",
@@ -45,7 +45,7 @@
   },
   {
     "topic": "nuclear",
-    "count": 193
+    "count": 194
   },
   {
     "topic": "philippine",
@@ -60,32 +60,32 @@
     "count": 166
   },
   {
+    "topic": "south-china-sea",
+    "count": 144
+  },
+  {
     "topic": "south-korea",
     "count": 144
   },
   {
-    "topic": "south-china-sea",
-    "count": 143
+    "topic": "defense",
+    "count": 141
   },
   {
-    "topic": "defense",
-    "count": 140
+    "topic": "nato",
+    "count": 125
   },
   {
     "topic": "ceasefire",
     "count": 124
   },
   {
-    "topic": "nato",
+    "topic": "indo-pacific",
     "count": 121
   },
   {
-    "topic": "indo-pacific",
-    "count": 119
-  },
-  {
     "topic": "japan",
-    "count": 118
+    "count": 120
   },
   {
     "topic": "drone",
@@ -109,15 +109,15 @@
   },
   {
     "topic": "missile",
-    "count": 90
+    "count": 91
   },
   {
     "topic": "naval",
-    "count": 85
+    "count": 86
   },
   {
     "topic": "deployment",
-    "count": 81
+    "count": 83
   },
   {
     "topic": "irgc",
@@ -132,23 +132,23 @@
     "count": 70
   },
   {
-    "topic": "drone-strike",
-    "count": 68
+    "topic": "alliance",
+    "count": 70
   },
   {
-    "topic": "alliance",
-    "count": 67
+    "topic": "drone-strike",
+    "count": 68
   },
   {
     "topic": "energy",
     "count": 66
   },
   {
-    "topic": "uae",
-    "count": 62
+    "topic": "cybersecurity",
+    "count": 63
   },
   {
-    "topic": "cybersecurity",
+    "topic": "uae",
     "count": 62
   },
   {
@@ -168,12 +168,12 @@
     "count": 58
   },
   {
-    "topic": "intelligence",
-    "count": 56
+    "topic": "military-exercise",
+    "count": 57
   },
   {
-    "topic": "military-exercise",
-    "count": 55
+    "topic": "intelligence",
+    "count": 56
   },
   {
     "topic": "lebanon",
@@ -200,6 +200,10 @@
     "count": 48
   },
   {
+    "topic": "exercise",
+    "count": 48
+  },
+  {
     "topic": "air-defense",
     "count": 48
   },
@@ -209,10 +213,6 @@
   },
   {
     "topic": "attack",
-    "count": 47
-  },
-  {
-    "topic": "exercise",
     "count": 47
   },
   {
@@ -230,6 +230,10 @@
   {
     "topic": "trade",
     "count": 43
+  },
+  {
+    "topic": "deterrence",
+    "count": 42
   },
   {
     "topic": "korean-peninsula",
@@ -250,10 +254,6 @@
   {
     "topic": "middle-east",
     "count": 39
-  },
-  {
-    "topic": "deterrence",
-    "count": 38
   },
   {
     "topic": "civilian-casualty",
@@ -292,12 +292,12 @@
     "count": 32
   },
   {
-    "topic": "gray-zone",
+    "topic": "escalation",
     "count": 32
   },
   {
-    "topic": "escalation",
-    "count": 31
+    "topic": "gray-zone",
+    "count": 32
   },
   {
     "topic": "project-freedom",
@@ -372,6 +372,10 @@
     "count": 25
   },
   {
+    "topic": "artificial-intelligence",
+    "count": 25
+  },
+  {
     "topic": "dprk",
     "count": 24
   },
@@ -388,8 +392,8 @@
     "count": 24
   },
   {
-    "topic": "artificial-intelligence",
-    "count": 24
+    "topic": "critical-infrastructure",
+    "count": 23
   },
   {
     "topic": "airstrike",
@@ -413,10 +417,6 @@
   },
   {
     "topic": "vietnam",
-    "count": 22
-  },
-  {
-    "topic": "critical-infrastructure",
     "count": 22
   },
   {
@@ -461,6 +461,10 @@
   },
   {
     "topic": "sahel",
+    "count": 20
+  },
+  {
+    "topic": "geospatial",
     "count": 20
   },
   {
@@ -524,11 +528,11 @@
     "count": 18
   },
   {
-    "topic": "reconnaissance",
+    "topic": "nasa",
     "count": 18
   },
   {
-    "topic": "geospatial",
+    "topic": "reconnaissance",
     "count": 18
   },
   {
@@ -557,10 +561,6 @@
   },
   {
     "topic": "enrichment",
-    "count": 17
-  },
-  {
-    "topic": "nasa",
     "count": 17
   },
   {
@@ -736,6 +736,10 @@
     "count": 13
   },
   {
+    "topic": "hybrid-warfare",
+    "count": 12
+  },
+  {
     "topic": "drought",
     "count": 12
   },
@@ -784,10 +788,6 @@
     "count": 11
   },
   {
-    "topic": "hybrid-warfare",
-    "count": 11
-  },
-  {
     "topic": "pla-navy",
     "count": 11
   },
@@ -809,6 +809,10 @@
   },
   {
     "topic": "government",
+    "count": 11
+  },
+  {
+    "topic": "strait",
     "count": 11
   },
   {
@@ -865,10 +869,6 @@
   },
   {
     "topic": "regional",
-    "count": 10
-  },
-  {
-    "topic": "strait",
     "count": 10
   },
   {
@@ -1824,6 +1824,10 @@
     "count": 5
   },
   {
+    "topic": "gis",
+    "count": 5
+  },
+  {
     "topic": "uganda",
     "count": 5
   },
@@ -2080,6 +2084,10 @@
     "count": 4
   },
   {
+    "topic": "climate",
+    "count": 4
+  },
+  {
     "topic": "tanker-attack",
     "count": 4
   },
@@ -2132,6 +2140,10 @@
     "count": 4
   },
   {
+    "topic": "national-security",
+    "count": 4
+  },
+  {
     "topic": "aukus",
     "count": 4
   },
@@ -2180,7 +2192,7 @@
     "count": 4
   },
   {
-    "topic": "gis",
+    "topic": "mapping",
     "count": 4
   },
   {
@@ -2552,10 +2564,6 @@
     "count": 3
   },
   {
-    "topic": "climate",
-    "count": 3
-  },
-  {
     "topic": "f-35",
     "count": 3
   },
@@ -2633,10 +2641,6 @@
   },
   {
     "topic": "united-arab-emirate",
-    "count": 3
-  },
-  {
-    "topic": "national-security",
     "count": 3
   },
   {
@@ -2741,10 +2745,6 @@
   },
   {
     "topic": "readiness",
-    "count": 3
-  },
-  {
-    "topic": "mapping",
     "count": 3
   },
   {
@@ -3901,6 +3901,10 @@
   },
   {
     "topic": "labour",
+    "count": 2
+  },
+  {
+    "topic": "baltic-security",
     "count": 2
   },
   {
@@ -7848,10 +7852,6 @@
     "count": 1
   },
   {
-    "topic": "baltic-security",
-    "count": 1
-  },
-  {
     "topic": "shipping-disruption",
     "count": 1
   },
@@ -8901,6 +8901,10 @@
   },
   {
     "topic": "nansei-island",
+    "count": 1
+  },
+  {
+    "topic": "ocean",
     "count": 1
   },
   {

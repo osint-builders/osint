@@ -79667,6 +79667,282 @@
     "link_preview_image": null
   },
   {
+    "id": "evt_20260520_501",
+    "title": "EU Warns of Strong Response After Russian Threats Against Baltic States",
+    "summary": "The European Union issued a stern warning to Russia on May 20, pledging a strong response to escalating Russian threats directed at Baltic member states. The warning followed increased Russian military posturing and intelligence provocations near Latvia, Estonia, and Lithuania.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:00:00Z",
+    "geo": {
+      "lat": 56.9494,
+      "lon": 24.1052,
+      "country": "Latvia",
+      "region": "Baltic States",
+      "city": "Riga"
+    },
+    "topics": [
+      "russia",
+      "baltic-security",
+      "nato",
+      "deterrence",
+      "hybrid-warfare"
+    ],
+    "confidence": 0.82,
+    "source_name": "MT Anderson (@MT_Anderson)",
+    "links": [
+      {
+        "url": "https://caliber.az/en/post/eu-warns-of-strong-response-after-russian-threats-against-baltic-states",
+        "label": "EU Baltic Warning Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_502",
+    "title": "NATO Confirms Active Monitoring of Russian Nuclear Military Exercises",
+    "summary": "NATO confirmed on May 20 that it actively monitors Russian nuclear military exercises, underscoring alliance vigilance amid heightened tensions from the ongoing Iran conflict and European security concerns.",
+    "date_event": null,
+    "date_published": "2026-05-20T15:49:00Z",
+    "geo": {
+      "lat": 50.8467,
+      "lon": 4.3525,
+      "country": "Belgium",
+      "region": "Brussels",
+      "city": "Brussels"
+    },
+    "topics": [
+      "nuclear",
+      "russia",
+      "nato",
+      "deterrence",
+      "military-exercise"
+    ],
+    "confidence": 0.85,
+    "source_name": "Minhdr18 OSINT (@Minhdr18)",
+    "links": [
+      {
+        "url": "https://caliber.az/en/post/nato-confirms-monitoring-of-russias-nuclear-military-exercises",
+        "label": "NATO Nuclear Monitoring Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_503",
+    "title": "Esri Highlights NASA Animated Ocean Currents Map Showing Depths of Global Circulation",
+    "summary": "Esri shared an animated map from NASA's Scientific Visualization Studio on May 20 demonstrating ocean currents at different depths, emphasizing their vital role in regulating Earth's climate and transporting nutrients across the global conveyor belt system.",
+    "date_event": null,
+    "date_published": "2026-05-20T15:45:22Z",
+    "geo": {
+      "lat": 38.895,
+      "lon": -77.0364,
+      "country": "United States",
+      "region": "District of Columbia",
+      "city": "Washington"
+    },
+    "topics": [
+      "geospatial",
+      "ocean",
+      "climate",
+      "mapping",
+      "nasa"
+    ],
+    "confidence": 0.95,
+    "source_name": "Esri (@Esri)",
+    "links": [
+      {
+        "url": "https://x.com/Esri/status/2057125538515276125",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://www.maps.com/animated-ocean-currents-map-shows-currents-at-various-depths/",
+        "label": "Mapping Ocean Current Depths Article"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_504",
+    "title": "Balikatan 2026 Leveraged Advanced GIS and Spatial Analysis for Multi-Domain Indo-Pacific Operations",
+    "summary": "The recently concluded Balikatan 2026 exercises demonstrated extensive integration of geospatial intelligence and GIS technology across seven-nation military operations in the Philippines, incorporating spatial analysis for maritime strike coordination and joint command systems.",
+    "date_event": null,
+    "date_published": "2026-05-20T15:30:00Z",
+    "geo": {
+      "lat": 18.1973,
+      "lon": 120.5935,
+      "country": "Philippines",
+      "region": "Ilocos Norte",
+      "city": "Laoag"
+    },
+    "topics": [
+      "geospatial",
+      "military-exercise",
+      "indo-pacific",
+      "gis",
+      "south-china-sea"
+    ],
+    "confidence": 0.8,
+    "source_name": "Esri Training (@EsriTraining)",
+    "links": [
+      {
+        "url": "https://www.visiontimes.com/2026/05/12/balikatan-2026-south-china-sea-drills-highlight-growing-indo-pacific-integrated-deterrence.html",
+        "label": "Balikatan 2026 Integrated Deterrence Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_505",
+    "title": "LANPAC 2026 Highlights US-Japan Industrial Deterrence Strategy for Indo-Pacific Defense",
+    "summary": "US Army leaders at the 2026 Land Forces Pacific Symposium in Hawaii emphasized joint military-industrial deterrence with allies including Japan, citing expanded burden-sharing as critical components of Indo-Pacific security architecture.",
+    "date_event": null,
+    "date_published": "2026-05-20T15:20:00Z",
+    "geo": {
+      "lat": 18.1973,
+      "lon": 120.5935,
+      "country": "Philippines",
+      "region": "Indo-Pacific",
+      "city": "Laoag"
+    },
+    "topics": [
+      "deployment",
+      "exercise",
+      "indo-pacific",
+      "alliance",
+      "deterrence",
+      "japan"
+    ],
+    "confidence": 0.85,
+    "source_name": "US Forces Japan (@USForcesJapan)",
+    "links": [
+      {
+        "url": "https://www.defensenews.com/news/your-military/2026/05/13/no-indo-pacific-peace-without-industry-surge-and-burden-sharing-us-general-says/",
+        "label": "LANPAC 2026 Defense News Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_506",
+    "title": "NATO Weighs Hormuz Naval Escort Mission as Strait Blockade Enters Eleventh Week",
+    "summary": "NATO members discussed deploying a naval escort mission to the Strait of Hormuz if the waterway remains blocked into July, while a 40-nation Franco-British coalition positioned assets for potential operations. CENTCOM reported redirecting 90 ships and disabling four vessels.",
+    "date_event": null,
+    "date_published": "2026-05-20T15:40:00Z",
+    "geo": {
+      "lat": 26.4494,
+      "lon": 56.2028,
+      "country": "Oman",
+      "region": "Strait of Hormuz"
+    },
+    "topics": [
+      "naval",
+      "strait",
+      "maritime-security",
+      "nato",
+      "deployment",
+      "iran"
+    ],
+    "confidence": 0.88,
+    "source_name": "Ianellisjones (@Ianellisjones)",
+    "links": [
+      {
+        "url": "https://worldoil.com/news/2026/5/19/nato-weighs-hormuz-mission-as-shipping-disruptions-deepen/",
+        "label": "NATO Hormuz Mission Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_507",
+    "title": "NSA and CISA Release Joint Advisory on Secure Adoption of Agentic AI Services",
+    "summary": "The National Security Agency and CISA published a joint cybersecurity information sheet providing guidance for careful adoption of agentic AI services, addressing emerging threats from autonomous AI systems operating within critical infrastructure networks.",
+    "date_event": null,
+    "date_published": "2026-05-20T15:15:00Z",
+    "geo": {
+      "lat": 39.103,
+      "lon": -76.7465,
+      "country": "United States",
+      "region": "Maryland",
+      "city": "Fort Meade"
+    },
+    "topics": [
+      "cybersecurity",
+      "artificial-intelligence",
+      "national-security",
+      "critical-infrastructure"
+    ],
+    "confidence": 0.9,
+    "source_name": "NSA (@NSAGov)",
+    "links": [
+      {
+        "url": "https://www.nsa.gov/press-room/cybersecurity-advisories-guidance/",
+        "label": "NSA Cybersecurity Advisories Portal"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_508",
+    "title": "South Korea and Japan Strengthen Alliance at Andong Summit Amid North Korea Nuclear Concerns",
+    "summary": "South Korean President Lee Jae-myung and Japanese Prime Minister Sanae Takaichi held a 105-minute summit in Andong on May 19, reinforcing bilateral security cooperation against North Korea's nuclear and missile threats while expanding energy supply chain coordination.",
+    "date_event": null,
+    "date_published": "2026-05-20T15:10:00Z",
+    "geo": {
+      "lat": 36.5635,
+      "lon": 128.7261,
+      "country": "South Korea",
+      "region": "Gyeongsangbuk-do",
+      "city": "Andong"
+    },
+    "topics": [
+      "missile",
+      "defense",
+      "sanctions",
+      "alliance",
+      "north-korea",
+      "japan"
+    ],
+    "confidence": 0.87,
+    "source_name": "JnbSummary (@JnbSummary)",
+    "links": [
+      {
+        "url": "https://www.asiae.co.kr/en/article/2026052006512287906",
+        "label": "Korea-Japan Andong Summit Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_509",
+    "title": "China Denies Claims of Secretly Training Russian Military Troops Amid NATO Scrutiny",
+    "summary": "China on May 20 denied allegations of covertly training Russian troops, pushing back against reports that heightened NATO concerns about deepening Sino-Russian military cooperation and its implications for the Ukraine conflict and broader European security.",
+    "date_event": null,
+    "date_published": "2026-05-20T15:48:00Z",
+    "geo": {
+      "lat": 39.9057,
+      "lon": 116.3913,
+      "country": "China",
+      "region": "Beijing",
+      "city": "Beijing"
+    },
+    "topics": [
+      "nato",
+      "russia",
+      "china",
+      "alliance",
+      "deterrence",
+      "escalation"
+    ],
+    "confidence": 0.78,
+    "source_name": "John_Pollock22 (@John_Pollock22)",
+    "links": [
+      {
+        "url": "https://caliber.az/en/post/china-denies-claims-of-secretly-training-russian-troops",
+        "label": "China Denies Training Russian Troops"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
     "id": "evt_20260520_701",
     "title": "China Condemns Taiwan Leader Lai Ching-te's Second Anniversary Speech as Separatist Provocation",
     "summary": "China's Foreign Ministry and Taiwan Affairs Office denounced Taiwan leader Lai Ching-te's inauguration anniversary speech on May 20, calling his proposals for cross-strait dialogue a hypocritical gesture masking separatist intent. The PLA Defense Ministry warned that seeking independence through external forces or military means will fail.",
