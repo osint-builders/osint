@@ -152,6 +152,40 @@ _check_twitter() {
   _write_precheck "$sid" "pass" "@$handle: $count tweet(s) in past 6h"
 }
 
+# --- Reddit pre-check ---
+_check_reddit() {
+  local sid="$1" subreddit="$2"
+  # Fetch latest 5 posts (no auth required for public subreddits)
+  local resp
+  resp=$(curl -sf --max-time 10 \
+    "https://www.reddit.com/r/$subreddit/new.json?limit=5&raw_json=1" \
+    -A "osint-bot/1.0" 2>/dev/null)
+  if [ $? -ne 0 ]; then
+    _write_precheck "$sid" "pass" "Reddit API unreachable — defaulting to pass"; return
+  fi
+  # Banned / private / not-found subreddits return an .error field
+  if echo "$resp" | jq -e '.error' >/dev/null 2>&1; then
+    local reason
+    reason=$(echo "$resp" | jq -r '.message // .reason // "access denied"')
+    _write_precheck "$sid" "fail" "r/$subreddit: $reason"; return
+  fi
+  local post_count
+  post_count=$(echo "$resp" | jq '.data.children | length' 2>/dev/null || echo 0)
+  if [ "$post_count" -eq 0 ]; then
+    _write_precheck "$sid" "fail" "r/$subreddit: no posts found"; return
+  fi
+  # Check for at least one post in the past 6 hours (created_utc is Unix seconds)
+  local six_h_ts
+  six_h_ts=$(date -u -d '6 hours ago' +%s 2>/dev/null || date -u -v-6H +%s 2>/dev/null)
+  local recent_count
+  recent_count=$(echo "$resp" | jq --argjson cutoff "$six_h_ts" \
+    '[.data.children[].data | select(.created_utc > $cutoff)] | length' 2>/dev/null || echo 0)
+  if [ "$recent_count" -eq 0 ]; then
+    _write_precheck "$sid" "fail" "r/$subreddit: no posts in the past 6 hours"; return
+  fi
+  _write_precheck "$sid" "pass" "r/$subreddit: $recent_count post(s) in past 6h"
+}
+
 # --- Webpage pre-check ---
 _check_webpage() {
   local sid="$1" url="$2" keywords="$3"
@@ -195,6 +229,10 @@ for sid in "${EXPECTED_IDS[@]}"; do
     handle=$(grep -oP '(?<=\(@)\w+(?=\))' "$src_file" | head -1)
     [ -n "$handle" ] && { _check_twitter "$sid" "$handle" & PCHECK_PIDS+=($!); } || \
       _write_precheck "$sid" "pass" "handle not parseable — skipping"
+  elif [[ "$sid" == reddit-* ]]; then
+    subreddit=$(grep -oP '(?<=r/)\w+(?= \()' "$src_file" | head -1)
+    [ -n "$subreddit" ] && { _check_reddit "$sid" "$subreddit" & PCHECK_PIDS+=($!); } || \
+      _write_precheck "$sid" "pass" "subreddit name not parseable — skipping"
   elif [ "$src_type" = "webpage" ]; then
     url=$(grep -m1 '^url:' "$src_file" | awk '{print $2}')
     keywords=$(grep -m1 '^Keywords:' "$src_file" | sed 's/^Keywords:[[:space:]]*//')
