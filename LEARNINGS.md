@@ -195,6 +195,16 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Trigger:** Bucket 5 Twitter API v2 user lookup returned "Could not find user with username" for @TaFarms18 and @pizzainwatch.
 **Finding:** Both X/Twitter accounts do not resolve to active accounts. The API returned explicit "Could not find user" errors. Events for these sources' topic areas remain accessible via exa_web_search with source-specific keywords (agriculture/food security for TaFarms18; maritime tracking/sanctions for pizzainwatch).
 **Action for next run:** Skip Twitter API and r.jina.ai for twitter-tafarms18 and twitter-pizzainwatch. Use exa_web_search with source-specific topic keywords. Flag these sources for manifest handle investigation or status change.
+## 2026-05-20 20:37Z — @Fleetnumbers X account does not exist; source should update handle or deactivate
+**Trigger:** Bucket 6 Twitter API v2 user lookup returned "Could not find user with username: [Fleetnumbers]."
+**Finding:** The Twitter handle @Fleetnumbers configured for source twitter-fleetnumbers does not resolve to an active X/Twitter account. The account may have changed handles, deleted, or received a suspension. Events for this source's topic area (naval fleet tracking) remain accessible via exa_web_search with naval/fleet keywords.
+**Action for next run:** Skip Twitter API and r.jina.ai for twitter-fleetnumbers. Use exa_web_search with naval fleet tracking keywords as primary discovery. Flag source for manifest handle investigation or status change.
+**Expires:** 2026-08-20
+
+## 2026-05-20 20:37Z — @AusNavy X account now protected (private); direct tweet collection blocked
+**Trigger:** Bucket 6 Twitter API v2 user lookup returned protected:true for @AusNavy (user ID 786700712570941440).
+**Finding:** The Royal Australian Navy's @AusNavy Twitter account has switched to protected (private) status, preventing all direct tweet collection via API, r.jina.ai, or browser scraping. The account still exists but tweets require follow approval to access.
+**Action for next run:** Skip Twitter API tweet search for twitter-ausnav. Use exa_web_search with "Royal Australian Navy" and Indo-Pacific maritime keywords. Consider flagging source for manifest review.
 **Expires:** 2026-08-20
 
 ## 2026-05-20 20:37Z — Reddit JSON API now returns valid data from agent environment
