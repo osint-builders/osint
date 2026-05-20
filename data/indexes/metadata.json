@@ -78857,6 +78857,113 @@
     "link_preview_image": null
   },
   {
+    "id": "evt_20260520_1000",
+    "title": "WHO Declares Ebola Public Health Emergency as Outbreak Spreads Across DRC and Uganda",
+    "summary": "WHO Director-General declared the Ebola outbreak in the Democratic Republic of Congo and Uganda a public health emergency of international concern, with over 130 deaths and 500 suspected cases involving the Bundibugyo strain for which no approved vaccines exist.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:50:00Z",
+    "geo": {
+      "lat": -1.6777,
+      "lon": 29.2285,
+      "country": "Democratic Republic of Congo",
+      "region": "North Kivu",
+      "city": "Goma"
+    },
+    "topics": [
+      "ebola",
+      "health-emergency",
+      "drc",
+      "uganda",
+      "who",
+      "outbreak",
+      "crisis"
+    ],
+    "confidence": 0.93,
+    "source_name": "Riskstaff (@Riskstaff)",
+    "links": [
+      {
+        "url": "https://edition.cnn.com/2026/05/18/europe/ukraine-road-of-life-russian-drones-intl-cmd",
+        "label": "CNN Global Coverage"
+      },
+      {
+        "url": "https://www.cnn.com/2026/05/19/africa/ebola-outbreak-drc-uganda-who-chief-intl",
+        "label": "CNN Ebola Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1001",
+    "title": "Trump Backs Off Iran Strikes After Gulf States Request Restraint, Sets New Deadline",
+    "summary": "President Trump backed away from planned strikes on Iran after Gulf leaders from Qatar, Saudi Arabia, and the UAE pressed for more time for diplomacy, setting a new two-to-three day deadline for Tehran to produce an acceptable deal to end the conflict.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:55:00Z",
+    "geo": {
+      "lat": 38.9,
+      "lon": -77.04,
+      "country": "United States",
+      "region": "District of Columbia",
+      "city": "Washington"
+    },
+    "topics": [
+      "iran",
+      "trump",
+      "military",
+      "diplomacy",
+      "gulf-state",
+      "strike",
+      "nuclear"
+    ],
+    "confidence": 0.92,
+    "source_name": "National Interest (@NationalInterest)",
+    "links": [
+      {
+        "url": "https://edition.cnn.com/2026/05/19/politics/trump-iran-decision-gulf-states",
+        "label": "CNN Analysis"
+      },
+      {
+        "url": "https://www.cnn.com/2026/05/18/politics/trump-iran-resumed-attack-plans",
+        "label": "CNN Iran Attack Plans"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_1002",
+    "title": "Japan Scrambles Jets to Intercept Russian Il-20M Intelligence Aircraft in Sea of Japan",
+    "summary": "Japan's Air Self-Defense Force scrambled fighter aircraft to intercept a Russian Il-20M reconnaissance aircraft operating in Japan's air defense identification zone near the west coast of Hokkaido and Honshu islands on May 18, continuing a pattern of regular Russian intelligence-gathering sorties near Japanese territory.",
+    "date_event": null,
+    "date_published": "2026-05-20T17:00:00Z",
+    "geo": {
+      "lat": 35.68,
+      "lon": 139.76,
+      "country": "Japan",
+      "region": "Tokyo"
+    },
+    "topics": [
+      "japan",
+      "scramble",
+      "intercept",
+      "russia",
+      "reconnaissance",
+      "air-defense",
+      "jasdf"
+    ],
+    "confidence": 0.9,
+    "source_name": "JasdfPaoEng (@JasdfPaoEng)",
+    "links": [
+      {
+        "url": "https://www.newsweek.com/japan-air-force-scrambles-intercept-china-russia-aircraft-1900720",
+        "label": "Newsweek Coverage"
+      },
+      {
+        "url": "https://meyka.com/blog/senkaku-airspace-breach-may-13-japans-defense-challenge-1305/",
+        "label": "Senkaku Defense Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
     "id": "evt_20260520_121",
     "title": "Israeli Airstrikes Kill 22 Across Southern Lebanon Despite Extended Ceasefire",
     "summary": "Israeli military forces struck more than 25 Hezbollah infrastructure sites across southern Lebanon on May 20, killing at least 22 people including children and women. The attacks continued despite a 45-day ceasefire extension brokered by the United States.",
@@ -79419,6 +79526,216 @@
       }
     ],
     "link_preview_image": "https://www.satellitetoday.com/wp-content/uploads/2026/05/Protected-Tactical-SATCOM-Rapid-Prototype-001.jpg"
+  },
+  {
+    "id": "evt_20260520_141",
+    "title": "China Deploys Liaoning Carrier Strike Group for Live-Fire Drills in Western Pacific",
+    "summary": "China's PLA Navy deployed the Liaoning carrier strike group into the Western Pacific for live-fire exercises on May 19, marking another step in Beijing's expanding blue-water naval strategy beyond the First Island Chain. Taiwan's premier called it the greatest source of regional instability.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:30:00Z",
+    "geo": {
+      "lat": 24.4917,
+      "lon": 120.9578,
+      "country": "Taiwan",
+      "region": "Taiwan Strait"
+    },
+    "topics": [
+      "china",
+      "military",
+      "carrier",
+      "taiwan",
+      "western-pacific",
+      "naval-exercise",
+      "pla-navy"
+    ],
+    "confidence": 0.95,
+    "source_name": "ChinaP0wer (@ChinaP0wer)",
+    "links": [
+      {
+        "url": "https://defencesecurityasia.com/en/china-liaoning-carrier-strike-group-live-fire-western-pacific-indo-pacific-taiwan/",
+        "label": "Defence Security Asia Report"
+      },
+      {
+        "url": "https://www.scmp.com/news/china/military/article/3354115/chinese-aircraft-carrier-kicks-drills-western-pacific-amid-tense-japan-ties",
+        "label": "SCMP Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_143",
+    "title": "Finland Launches Narrow Waters 26-1 Naval Exercise in Gulf of Finland with NATO Allies",
+    "summary": "Finland began its main spring naval exercise Narrow Waters 26-1 in the Gulf of Finland from May 18-29, involving approximately 3,000 military personnel from Finland, Germany, and the United States to practice joint operations in the Northern Baltic.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:20:00Z",
+    "geo": {
+      "lat": 59.8737,
+      "lon": 25.6161,
+      "country": "Finland",
+      "region": "Gulf of Finland"
+    },
+    "topics": [
+      "nato",
+      "naval-exercise",
+      "finland",
+      "baltic-sea",
+      "germany",
+      "military",
+      "maritime-security"
+    ],
+    "confidence": 0.9,
+    "source_name": "NATO Maritime Command (@NATO_MARCOM)",
+    "links": [
+      {
+        "url": "https://ua.news/en/world/finliandiia-rozpochala-masshtabni-morski-navchannia-za-uchasti-nato-bilia-kordoniv-z-rf",
+        "label": "UA News Report"
+      },
+      {
+        "url": "https://germany.news-pravda.com/en/russia/2026/05/16/132183.html",
+        "label": "Exercise Details"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_145",
+    "title": "Taiwan's President Lai Declares Foreign Forces Cannot Decide Island's Future on Second Anniversary",
+    "summary": "Taiwanese President Lai Ching-te marked his second anniversary in office declaring that foreign forces cannot decide Taiwan's future, directly responding to the Trump-Xi summit where arms sales to Taiwan emerged as a bargaining chip.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:25:00Z",
+    "geo": {
+      "lat": 25.0375,
+      "lon": 121.5637,
+      "country": "Taiwan",
+      "region": "Taipei"
+    },
+    "topics": [
+      "taiwan",
+      "china",
+      "arm-sale",
+      "sovereignty",
+      "military",
+      "diplomacy",
+      "united-state"
+    ],
+    "confidence": 0.95,
+    "source_name": "cnni (@cnni)",
+    "links": [
+      {
+        "url": "https://www.france24.com/en/asia-pacific/20260520-taiwan-leader-foreign-forces-cannot-decide-islands-future-china",
+        "label": "France 24 Coverage"
+      },
+      {
+        "url": "https://focustaiwan.tw/politics/202605200010",
+        "label": "Focus Taiwan Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_146",
+    "title": "Xi-Trump Summit Highlights Taiwan and South China Sea as Connected Strategic Theater for Beijing",
+    "summary": "Analysis following the Xi-Trump Beijing summit reveals China increasingly views Taiwan and the South China Sea as part of a connected strategic theater tied to regional security, maritime control, and long-term competition with Washington.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:15:00Z",
+    "geo": {
+      "lat": 39.9057,
+      "lon": 116.3912,
+      "country": "China",
+      "region": "Beijing"
+    },
+    "topics": [
+      "china",
+      "taiwan",
+      "south-china-sea",
+      "diplomacy",
+      "military",
+      "xi-jinping",
+      "united-state"
+    ],
+    "confidence": 0.88,
+    "source_name": "r/Sino (reddit.com/r/Sino)",
+    "links": [
+      {
+        "url": "https://www.rfa.org/english/southchinasea/2026/05/19/xi-trump-taiwan-five-year-plan/",
+        "label": "Radio Free Asia Analysis"
+      },
+      {
+        "url": "https://www.bbc.com/news/articles/c7591gq10qko",
+        "label": "BBC Taiwan Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_147",
+    "title": "Philippine Coast Guard Challenges Chinese Vessel CCG-4305 Operating in Philippine EEZ Off Zambales",
+    "summary": "The Philippine Coast Guard challenged China Coast Guard vessel CCG-4305 spotted approximately 48 nautical miles west of Zambales within the Philippine exclusive economic zone, deploying aircraft and surface assets after the vessel provided no lawful basis for its presence.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:40:00Z",
+    "geo": {
+      "lat": 15.23,
+      "lon": 119.8,
+      "country": "Philippines",
+      "region": "Zambales"
+    },
+    "topics": [
+      "south-china-sea",
+      "philippine",
+      "china",
+      "coast-guard",
+      "maritime-security",
+      "confrontation",
+      "eez"
+    ],
+    "confidence": 0.92,
+    "source_name": "Philippine Coast Guard (@CoastGuardPH)",
+    "links": [
+      {
+        "url": "https://manilastandard.net/news/314741914/coast-guard-challenges-chinese-ship-in-eez-off-zambales.html",
+        "label": "Manila Standard Report"
+      },
+      {
+        "url": "https://qa.philstar.com/headlines/2026/05/19/2528929/pcg-aircraft-dispatched-drive-away-chinese-research-vessel",
+        "label": "Philstar Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_148",
+    "title": "Drone Strike Hits Edge of UAE Barakah Nuclear Power Plant Amid US-Iran Tensions",
+    "summary": "A drone strike sparked a fire on the edge of the United Arab Emirates' sole nuclear power plant Barakah on May 18, highlighting the risk of renewed war as the US and Iran signal readiness to resume fighting.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:30:00Z",
+    "geo": {
+      "lat": 23.9865,
+      "lon": 52.2553,
+      "country": "United Arab Emirates",
+      "region": "Abu Dhabi"
+    },
+    "topics": [
+      "nuclear",
+      "drone",
+      "attack",
+      "uae",
+      "iran",
+      "proliferation",
+      "energy"
+    ],
+    "confidence": 0.9,
+    "source_name": "Opennuclear (@Opennuclear)",
+    "links": [
+      {
+        "url": "https://www.npr.org/2026/05/18/g-s1-122534/drone-strikes-uae-nuclear-plant",
+        "label": "NPR Report"
+      },
+      {
+        "url": "https://carnegieendowment.org/programs/nuclear-policy/proliferation-news/proliferation-news-51926",
+        "label": "Carnegie Proliferation News"
+      }
+    ],
+    "link_preview_image": null
   },
   {
     "id": "evt_20260520_401",
@@ -81221,6 +81538,2634 @@
       {
         "url": "https://www.aei.org/articles/korean-peninsula-update-may-19-2026/",
         "label": "AEI Korean Peninsula Update"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_917",
+    "title": "Ukraine Reports 129 Combat Engagements as Pokrovsk Direction Faces 37 Russian Assaults",
+    "summary": "Ukraine's General Staff reported 129 combat clashes on May 20, with Pokrovsk remaining the hottest sector at 37 offensive actions. Russian forces launched 57 airstrikes with 78 KABs, deployed 984 kamikaze drones, and conducted over 3,500 shellings against Ukrainian positions and settlements.",
+    "date_event": null,
+    "date_published": "2026-05-20T17:00:00Z",
+    "geo": {
+      "lat": 48.2771,
+      "lon": 37.1772,
+      "country": "Ukraine",
+      "region": "Donetsk",
+      "city": "Pokrovsk"
+    },
+    "topics": [
+      "conflict",
+      "ukraine",
+      "russia",
+      "military",
+      "battle"
+    ],
+    "confidence": 0.92,
+    "source_name": "Natalierevolts (@Natalierevolts)",
+    "links": [
+      {
+        "url": "https://www.ukrinform.net/rubric-ato/3995205-war-update-129-clashes-on-frontline-pokrovsk-sector-remains-hottest-spot.html",
+        "label": "Ukrinform Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_918",
+    "title": "HawkEye 360 Files Amended IPO Prospectus for NYSE Listing Under Ticker HAWK",
+    "summary": "HawkEye 360 filed an amended S-1 registration with the SEC on May 1, targeting an initial public offering of 16 million shares at $24-$26 per share on the New York Stock Exchange. The space-based RF intelligence company generated $117.7 million in 2025 revenue with a $302.7 million contracted backlog.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:30:00Z",
+    "geo": {
+      "lat": 38.9696,
+      "lon": -77.3861,
+      "country": "United States",
+      "region": "Virginia",
+      "city": "Herndon"
+    },
+    "topics": [
+      "satellite",
+      "intelligence",
+      "ipo",
+      "defense",
+      "maritime"
+    ],
+    "confidence": 0.9,
+    "source_name": "HawkEye 360 (@HawkEye360)",
+    "links": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1750704/000162828026029373/hawkeye360-sx1a2.htm",
+        "label": "SEC Filing"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_919",
+    "title": "Taiwan Releases Rare F-16V Sniper Pod Imagery of Chinese J-16 During PLA Joint Combat Patrol",
+    "summary": "Taiwan's Ministry of National Defense detected 22 PLA aircraft including J-10 and J-16 fighters conducting a joint combat readiness patrol near Taiwan, with 11 crossing the Taiwan Strait median line. The MND released rare surveillance images captured by an F-16V's Sniper Advanced Targeting Pod showing a Chinese J-16's exhaust nozzles.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:39:00Z",
+    "geo": {
+      "lat": 24.4917,
+      "lon": 119.6054,
+      "country": "Taiwan",
+      "region": "Taiwan Strait"
+    },
+    "topics": [
+      "military",
+      "taiwan",
+      "china",
+      "adiz",
+      "defense",
+      "surveillance"
+    ],
+    "confidence": 0.95,
+    "source_name": "Taiwan News (@TaiwanNewsEN)",
+    "links": [
+      {
+        "url": "https://www.taiwannews.com.tw/news/6366095",
+        "label": "Taiwan News Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_920",
+    "title": "ICC Opens First Confirmation Hearings on Crimes Against Migrants in Libya as Sea-Watch 5 Crew Faces Italian Investigation",
+    "summary": "The International Criminal Court began hearings on May 19-21 to determine whether to confirm charges against Khaled Mohamed al-Hishri for crimes against humanity and war crimes against migrants at Tripoli's Mitiga Prison. Concurrently, Italian authorities opened a criminal investigation into Sea-Watch 5's captain after the May 11 Libyan coast guard attack.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:20:00Z",
+    "geo": {
+      "lat": 32.8855,
+      "lon": 13.1639,
+      "country": "Libya",
+      "region": "Mediterranean",
+      "city": "Tripoli"
+    },
+    "topics": [
+      "migrant",
+      "rescue",
+      "mediterranean",
+      "libya",
+      "human-right",
+      "maritime"
+    ],
+    "confidence": 0.93,
+    "source_name": "seawatch_intl (@seawatch_intl)",
+    "links": [
+      {
+        "url": "https://sea-watch.org/en/sea-watch-strongly-criticises-eu-response-following-attack-on-sea-watch-5/",
+        "label": "Sea-Watch Statement"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_921",
+    "title": "OSINT Tools Market Reaches $29 Billion as AI-Powered Geolocation Platforms Transform Investigations",
+    "summary": "The open-source intelligence tools market reached an estimated $29.19 billion in 2026, driven by AI-powered geolocation platforms like Netryx Astra V2 and GeoSeer that achieve sub-50-meter accuracy from single photographs. Major platforms including Maltego and SpiderFoot integrated advanced AI capabilities for automated intelligence gathering.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:15:00Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "country": "United States",
+      "city": "San Francisco"
+    },
+    "topics": [
+      "osint",
+      "intelligence",
+      "geolocation",
+      "tool",
+      "investigation"
+    ],
+    "confidence": 0.85,
+    "source_name": "r/OSINT (reddit.com/r/OSINT)",
+    "links": [
+      {
+        "url": "https://hackread.com/10-top-osint-tools-investigator-should-know-2026/",
+        "label": "Hackread Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_922",
+    "title": "OSINT Analysts Track Putin's Il-96 Presidential Aircraft and Multiple Russian Executive Jets Flying Moscow to Istanbul",
+    "summary": "Open-source intelligence analysts tracked Russia's Special Flight Squadron Il-96-300PU (RA-96025) carrying Vladimir Putin to Istanbul on May 20, alongside multiple Russian executive aircraft including a Tulpar Aircompany Challenger 850 and Jet Air Group Gulfstream G650 on the same Moscow-Istanbul route.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:56:25Z",
+    "geo": {
+      "lat": 41.0064,
+      "lon": 28.9759,
+      "country": "Turkey",
+      "region": "Istanbul",
+      "city": "Istanbul"
+    },
+    "topics": [
+      "aviation",
+      "russia",
+      "diplomacy",
+      "osint",
+      "tracking"
+    ],
+    "confidence": 0.88,
+    "source_name": "Borrowed7time (@Borrowed7time)",
+    "links": [
+      {
+        "url": "https://x.com/Borrowed7time/status/2057142140258639998",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_923",
+    "title": "Taiwan Receives Draft LOA for US Anti-Drone System as Legislature Greenlights First Arms Funding Batch",
+    "summary": "Taiwan's Premier Cho Jung-tai confirmed receipt of draft Letters of Offer and Acceptance for four US weapons systems including HIMARS and ALTIUS 700M drones. The legislature authorized the cabinet to begin sourcing funds for the first batch, with the HIMARS installment due May 31.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:15:00Z",
+    "geo": {
+      "lat": 25.0375,
+      "lon": 121.5637,
+      "country": "Taiwan",
+      "region": "Taipei",
+      "city": "Taipei"
+    },
+    "topics": [
+      "defense",
+      "taiwan",
+      "arms-sale",
+      "military",
+      "missile"
+    ],
+    "confidence": 0.91,
+    "source_name": "MSC Sealift (@MSCSealift)",
+    "links": [
+      {
+        "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/05/20/2003857644",
+        "label": "Taipei Times Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_924",
+    "title": "CSIS Satellite Analysis Confirms Completion of Suspected Uranium Enrichment Building at Yongbyon",
+    "summary": "CSIS Beyond Parallel published satellite imagery analysis confirming the completion of a new building at Yongbyon Nuclear Research Center with dimensions and features similar to the Kangson enrichment plant. The facility includes generators, fuel storage tanks, and cooling units, with internal fitting assessed as ongoing.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:35:00Z",
+    "geo": {
+      "lat": 39.8022324,
+      "lon": 125.7520365,
+      "country": "North Korea",
+      "region": "North Pyongan"
+    },
+    "topics": [
+      "nuclear",
+      "north-korea",
+      "uranium",
+      "proliferation",
+      "satellite"
+    ],
+    "confidence": 0.93,
+    "source_name": "r/NorthKoreaNews (reddit.com/r/NorthKoreaNews)",
+    "links": [
+      {
+        "url": "https://beyondparallel.csis.org/suspected-uranium-enrichment-building-at-yongbyon-complete/",
+        "label": "CSIS Beyond Parallel Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_925",
+    "title": "U.S. Seizes Iran-Linked Oil Tanker Skywave in Indian Ocean, Third Seizure in Enforcement Campaign",
+    "summary": "The United States seized the Iran-linked oil tanker Skywave in the Indian Ocean, marking the third U.S. seizure of a vessel tied to Iranian oil shipments. The tanker carried more than one million barrels of crude loaded at Iran's Kharg Island in February and had received U.S. sanctions in March for transporting Iranian oil.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:55:00Z",
+    "geo": {
+      "lat": 3.5,
+      "lon": 98.5,
+      "country": "Indonesia",
+      "region": "Malacca Strait"
+    },
+    "topics": [
+      "sanctions",
+      "iran",
+      "tanker",
+      "maritime",
+      "seizure"
+    ],
+    "confidence": 0.94,
+    "source_name": "InfoFusionCtr (@InfoFusionCtr)",
+    "links": [
+      {
+        "url": "https://www.aa.com.tr/en/americas/us-seizes-iran-linked-oil-tanker-in-indian-ocean-report/3942586",
+        "label": "Anadolu Agency Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_926",
+    "title": "U.S. Federal Indictment Exposes Turkey as Hub in Covert Iranian Arms Pipeline to Sudan",
+    "summary": "A newly unsealed U.S. federal indictment revealed Turkey's central role as a financial and logistical hub in an Iranian weapons-trafficking network supplying drones, ammunition, and bomb components to Sudan's military. The indictment charges Iranian national Shamim Mafi with brokering deals involving Mohajer-6 drones and 240 million rounds of AK-47 ammunition.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:30:00Z",
+    "geo": {
+      "lat": 39.9207759,
+      "lon": 32.8540497,
+      "country": "Turkey",
+      "city": "Ankara"
+    },
+    "topics": [
+      "sanctions",
+      "iran",
+      "weapon",
+      "conflict",
+      "proliferation"
+    ],
+    "confidence": 0.92,
+    "source_name": "X Korea (@XKorea)",
+    "links": [
+      {
+        "url": "https://www.fdd.org/analysis/2026/05/15/turkey-plays-central-role-in-transfer-of-iranian-weapons-to-sudan/",
+        "label": "FDD Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_927",
+    "title": "Somalia Faces Credible Risk of Famine as Hunger Crisis Deepens Amid Hormuz Disruption",
+    "summary": "FEWS NET assessed a credible risk of Famine in crop-dependent agropastoral areas of Bay, Bakool, and Gedo between June and September 2026. Nearly six million Somalis face acute hunger, with food prices surging 70 percent and fuel prices rising 150 percent due to Strait of Hormuz disruptions.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:45:00Z",
+    "geo": {
+      "lat": 2.0349312,
+      "lon": 45.3419183,
+      "country": "Somalia",
+      "city": "Mogadishu"
+    },
+    "topics": [
+      "famine",
+      "food-security",
+      "crisis",
+      "drought",
+      "conflict"
+    ],
+    "confidence": 0.93,
+    "source_name": "CA_JC (@CA_JC)",
+    "links": [
+      {
+        "url": "https://fews.net/east-africa/somalia/alert/may-2026",
+        "label": "FEWS NET Alert"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_928",
+    "title": "Japan and South Korea Leaders Meet in Andong to Deepen Defense Cooperation Amid Regional Threats",
+    "summary": "South Korean President Lee Jae Myung and Japanese Prime Minister Sanae Takaichi held their fourth summit in six months in Andong, South Korea, discussing energy security, defense cooperation, and trilateral coordination with Washington amid the Iran war and North Korean military threats.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:55:00Z",
+    "geo": {
+      "lat": 36.5634886,
+      "lon": 128.7260798,
+      "country": "South Korea",
+      "city": "Andong"
+    },
+    "topics": [
+      "japan",
+      "south-korea",
+      "diplomacy",
+      "defense",
+      "summit"
+    ],
+    "confidence": 0.92,
+    "source_name": "JnbSummary (@JnbSummary)",
+    "links": [
+      {
+        "url": "https://www.nbcnews.com/world/asia/south-korea-japan-lee-jae-myung-sanae-takaichi-rcna345836",
+        "label": "NBC News AP"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_929",
+    "title": "US Army Awards Northrop Grumman 325 Million Dollar Contract to Develop RangeHawk Hypersonic Tracking Drone",
+    "summary": "The US Army awarded a 325.5 million dollar contract to Northrop Grumman to develop the RangeHawk uncrewed aircraft, a high-altitude sensor platform designed to track hypersonic missile tests and close critical data gaps in the nations weapons development programs.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:42:00Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "country": "United States",
+      "city": "Washington"
+    },
+    "topics": [
+      "hypersonic",
+      "military",
+      "defense",
+      "drone",
+      "technology"
+    ],
+    "confidence": 0.88,
+    "source_name": "Minhdr18 OSINT (@Minhdr18)",
+    "links": [
+      {
+        "url": "https://modernmechanics24.com/post/us-army-awards-northrop-rangehawk-drone/",
+        "label": "Modern Mechanics"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_930",
+    "title": "ArcGIS StoryMaps Updates Interactive Conflict Maps Tracking US-Israeli Strikes in Iran and Russia-Ukraine Front Lines",
+    "summary": "ArcGIS StoryMaps published updated interactive conflict mapping products covering US-Israeli military operations in Iran and the evolving front lines in Russias war against Ukraine, providing critical geospatial intelligence visualization for analysts and policymakers.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:30:00Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "country": "United States",
+      "city": "San Francisco"
+    },
+    "topics": [
+      "geospatial",
+      "intelligence",
+      "conflict",
+      "mapping",
+      "iran",
+      "ukraine"
+    ],
+    "confidence": 0.72,
+    "source_name": "ArcgisStorymaps (@ArcgisStorymaps)",
+    "links": [
+      {
+        "url": "https://storymaps.arcgis.com/stories/089bc1a2fe684405a67d67f13bd31324",
+        "label": "ArcGIS Iran Strikes Map"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_931",
+    "title": "Google Threat Intelligence Uncovers First AI-Developed Zero-Day Exploit Used by Criminal Group",
+    "summary": "Googles Threat Intelligence Group documented the first confirmed zero-day exploit developed with artificial intelligence assistance, thwarting a planned mass exploitation event by a criminal group that used an LLM to find a semantic logic flaw in a popular open-source administration tool.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:30:00Z",
+    "geo": {
+      "lat": 37.422,
+      "lon": -122.0841,
+      "country": "United States",
+      "city": "Mountain View"
+    },
+    "topics": [
+      "cybersecurity",
+      "zero-day",
+      "artificial-intelligence",
+      "exploit",
+      "apt"
+    ],
+    "confidence": 0.88,
+    "source_name": "r/netsec (reddit.com/r/netsec)",
+    "links": [
+      {
+        "url": "https://www.helpnetsecurity.com/2026/05/11/google-ai-vulnerability-exploitation/",
+        "label": "Help Net Security"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_932",
+    "title": "FPV Drones Strike Multiple Russian Soldiers on Motorcycles and ATVs Near Chasiv Yar",
+    "summary": "Ukraine's 24th Mechanized Brigade published footage showing FPV drone strikes hitting multiple Russian soldiers riding motorcycles and ATVs in the Chasiv Yar area, demonstrating continued evolution of drone warfare tactics on the frontline.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:52:45Z",
+    "geo": {
+      "lat": 48.5873911,
+      "lon": 37.8373367,
+      "country": "Ukraine",
+      "region": "Donetsk Oblast",
+      "city": "Chasiv Yar"
+    },
+    "topics": [
+      "drone",
+      "ukraine",
+      "russia",
+      "combat",
+      "warfare",
+      "frontline"
+    ],
+    "confidence": 0.85,
+    "source_name": "r/CombatFootage (reddit.com/r/CombatFootage)",
+    "links": [
+      {
+        "url": "https://reddit.com/r/CombatFootage/comments/1tirkm6/fpv_drones_hit_multiple_russian_soldiers_riding/",
+        "label": "Reddit Post"
+      },
+      {
+        "url": "https://v.redd.it/olmz5cjynb2h1",
+        "label": "Video Link"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_933",
+    "title": "China Leverages Rare Earth Monopoly as Geopolitical Weapon Amid Trade Tensions",
+    "summary": "BBG Originals published an investigation into China's dominant position in rare earth production and processing, documenting how Beijing now deploys its commodity monopoly as geopolitical leverage while global competitors struggle to build alternative supply chains.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:42:05Z",
+    "geo": {
+      "lat": 39.9057136,
+      "lon": 116.3912972,
+      "country": "China",
+      "city": "Beijing"
+    },
+    "topics": [
+      "rare-earth",
+      "china",
+      "supply-chain",
+      "trade",
+      "geopolitical-leverage"
+    ],
+    "confidence": 0.87,
+    "source_name": "BBG Originals (@BBGOriginals)",
+    "links": [
+      {
+        "url": "https://x.com/BBGOriginals/status/2057139810423177434",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://youtu.be/d2dgJGkw5p0",
+        "label": "YouTube Investigation"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_934",
+    "title": "Seoul Weighs Phased Contribution to US-Led Strait of Hormuz Security Initiative",
+    "summary": "South Korea's defense minister announced Seoul would review phased contributions to a US-led security initiative in the Strait of Hormuz after a South Korean vessel successfully transited the waterway for the first time since the US-Iran war began.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:35:00Z",
+    "geo": {
+      "lat": 37.5666791,
+      "lon": 126.9782914,
+      "country": "South Korea",
+      "city": "Seoul"
+    },
+    "topics": [
+      "defense",
+      "indo-pacific",
+      "strait-of-hormuz",
+      "security",
+      "alliance"
+    ],
+    "confidence": 0.85,
+    "source_name": "Australian Defence (@DefenceAust)",
+    "links": [
+      {
+        "url": "https://en.yna.co.kr/view/AEN20260520010200315",
+        "label": "Yonhap - Hormuz Transit"
+      },
+      {
+        "url": "https://www.navy.mil/Press-Office/News-Stories/display-news/Article/4464141/australia-canada-and-us-conduct-multilateral-operations-in-south-china-sea/",
+        "label": "US Navy - SCS Operations"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_935",
+    "title": "South Korean Vessel Clears Strait of Hormuz for First Time Since US-Iran War Began",
+    "summary": "A South Korean-operated vessel successfully transited the Strait of Hormuz for the first time since the US-Iran war began in February 2026, marking a significant test of passage through the contested waterway where shipping transit remains at approximately 42 percent of normal volume.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:40:00Z",
+    "geo": {
+      "lat": 26.4494061,
+      "lon": 56.2027702,
+      "country": "Oman",
+      "region": "Strait of Hormuz"
+    },
+    "topics": [
+      "maritime",
+      "distress",
+      "strait-of-hormuz",
+      "shipping",
+      "conflict"
+    ],
+    "confidence": 0.93,
+    "source_name": "Detresfa (@Detresfa)",
+    "links": [
+      {
+        "url": "https://en.yna.co.kr/view/AEN20260520010200315",
+        "label": "Yonhap Breaking News"
+      },
+      {
+        "url": "https://www.npr.org/2026/05/15/g-s1-122203/tensions-flare-near-strait-of-hormuz",
+        "label": "NPR Hormuz Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_936",
+    "title": "US Treasury Sanctions Over 50 Iranian Entities in Major Economic Fury Escalation",
+    "summary": "The US Treasury Department designated more than 50 companies, individuals, and vessels under the Economic Fury campaign, targeting Iran's Amin Exchange network and 19 shadow fleet vessels to disrupt Tehran's ability to generate revenue from illicit oil exports.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:55:00Z",
+    "geo": {
+      "lat": 48.8534951,
+      "lon": 2.3483915,
+      "country": "France",
+      "city": "Paris"
+    },
+    "topics": [
+      "iran",
+      "nuclear",
+      "sanctions",
+      "irgc",
+      "policy"
+    ],
+    "confidence": 0.92,
+    "source_name": "JasonBrodsky (@JasonBrodsky)",
+    "links": [
+      {
+        "url": "https://www.tribuneindia.com/news/usa-news/us-imposes-fresh-sanctions-on-iran-linked-exchange-firms-oil-vessels-under-economic-fury/",
+        "label": "Tribune India Report"
+      },
+      {
+        "url": "https://foreignpolicy.com/2026/05/19/iran-war-nuclear-deal-uranium-enrichment-negotiations-jcpoa-united-states/",
+        "label": "Foreign Policy - Zero Enrichment Myth"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_937",
+    "title": "Kim Jong Un Convenes First Division-Brigade Commanders Meeting, Orders Southern Border Fortification",
+    "summary": "North Korean leader Kim Jong Un convened the first publicly reported meeting of division- and brigade-level commanders since taking power in 2011, ordering military restructuring to strengthen frontline units along the southern border and turn it into an impregnable fortress.",
+    "date_event": "2026-05-17T12:00:00Z",
+    "date_published": "2026-05-20T16:30:00Z",
+    "geo": {
+      "lat": 39.0392,
+      "lon": 125.7625,
+      "country": "North Korea",
+      "city": "Pyongyang"
+    },
+    "topics": [
+      "north-korea",
+      "military",
+      "defense",
+      "nuclear",
+      "border-fortification"
+    ],
+    "confidence": 0.9,
+    "source_name": "KoreaTimesAlt (@KoreaTimesAlt)",
+    "links": [
+      {
+        "url": "https://globalnation.inquirer.net/323832/kim-holds-1st-division-brigade-commanders-meet-amid-military-revamp",
+        "label": "Inquirer Coverage"
+      },
+      {
+        "url": "https://en.yna.co.kr/view/AEN20260519001400315",
+        "label": "Yonhap - MDL Crossings Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_938",
+    "title": "FinCEN Issues Alert on IRGC Shadow Fleet Oil Smuggling Through Maritime Networks",
+    "summary": "The US Treasury's Financial Crimes Enforcement Network issued an alert to financial institutions identifying IRGC oil smuggling patterns using shadow fleet vessels and front companies, warning of shadow banking networks facilitating billions in illicit maritime petroleum transactions.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:25:00Z",
+    "geo": {
+      "lat": 35.6892523,
+      "lon": 51.3896004,
+      "country": "Iran",
+      "city": "Tehran"
+    },
+    "topics": [
+      "maritime",
+      "sanctions",
+      "iran",
+      "piracy",
+      "security",
+      "shadow-fleet"
+    ],
+    "confidence": 0.9,
+    "source_name": "MDAT Gulf of Guinea (@MDAT_GoG)",
+    "links": [
+      {
+        "url": "https://www.fincen.gov/news/news-releases/fincen-issues-alert-stop-money-laundering-iranian-revolutionary-guard-corps",
+        "label": "FinCEN Alert"
+      },
+      {
+        "url": "https://www.worldoil.com/news/2026/5/19/u-s-sanctions-19-vessels-in-expanded-crackdown-on-iran-oil-exports/",
+        "label": "World Oil Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_939",
+    "title": "NSA and Five Eyes Partners Warn of Active Exploitation of Cisco SD-WAN Zero-Day Since 2023",
+    "summary": "NSA, CISA, and Five Eyes cybersecurity agencies released a joint threat hunt guide for CVE-2026-20127, a Cisco Catalyst SD-WAN Controller zero-day actively exploited by unknown threat actors for at least three years to gain persistent root access to enterprise networks.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:20:00Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "country": "United States",
+      "region": "District of Columbia",
+      "city": "Washington"
+    },
+    "topics": [
+      "cybersecurity",
+      "vulnerability",
+      "zero-day",
+      "critical-infrastructure",
+      "nation-state"
+    ],
+    "confidence": 0.88,
+    "source_name": "NSA Cybersecurity (@NSACyber)",
+    "links": [
+      {
+        "url": "https://decipher.sc/2026/02/26/cisco-nsa-warn-of-attacks-targeting-catalyst-sd-wan-zero-day/",
+        "label": "Decipher Analysis"
+      },
+      {
+        "url": "https://www.cyber.gov.au/about-us/view-all-content/alerts-and-advisories/exploitation-of-cisco-sd-wan-appliances",
+        "label": "ASD ACSC Advisory"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_940",
+    "title": "US Stages Largest-Ever Balikatan Military Drills in Philippines Near Taiwan",
+    "summary": "The United States and allies conducted the largest-ever Balikatan military exercises in the Philippines with over 17,000 troops from seven nations, showcasing new anti-China deterrence tactics including counter-landing live fire and drone warfare capabilities near regional flashpoints.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:15:00Z",
+    "geo": {
+      "lat": 18.1979,
+      "lon": 120.5934,
+      "country": "Philippines",
+      "region": "Ilocos Norte",
+      "city": "Laoag City"
+    },
+    "topics": [
+      "military",
+      "exercise",
+      "indo-pacific",
+      "philippines",
+      "china",
+      "taiwan",
+      "deterrence"
+    ],
+    "confidence": 0.9,
+    "source_name": "US 7th Fleet (@US7thFleet)",
+    "links": [
+      {
+        "url": "https://www.npr.org/2026/05/06/nx-s1-5810616/u-s-stages-largest-ever-annual-military-drills-in-the-philippines",
+        "label": "NPR Coverage"
+      },
+      {
+        "url": "https://www.cpf.navy.mil/Newsroom/News/Article/4470529/balikatan-2026-desron-7-task-force-ashland-commence-multinational-maritime-event/",
+        "label": "US Pacific Fleet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_941",
+    "title": "Trump and Xi Agree Strait of Hormuz Must Remain Open During Beijing Summit",
+    "summary": "President Trump and Chinese President Xi Jinping agreed during their summit in Beijing that the Strait of Hormuz must remain open, as Chinese vessels began transiting the waterway under new Iranian protocols amid the ongoing US-Iran conflict.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:50:00Z",
+    "geo": {
+      "lat": 39.9057136,
+      "lon": 116.3912972,
+      "country": "China",
+      "city": "Beijing"
+    },
+    "topics": [
+      "diplomacy",
+      "china",
+      "strait-of-hormuz",
+      "summit",
+      "trade"
+    ],
+    "confidence": 0.88,
+    "source_name": "X News (@XNews)",
+    "links": [
+      {
+        "url": "https://en.yna.co.kr/view/AEN20260520010200315",
+        "label": "Yonhap - Hormuz Vessel"
+      },
+      {
+        "url": "https://www.cnbc.com/2026/05/19/bessent-g7-iran-finance-terrorism.html",
+        "label": "CNBC - G7 Iran Finance"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_942",
+    "title": "Trump Threatens Renewed Military Strikes on Iran as Gulf States Urge Restraint",
+    "summary": "President Trump disclosed he came within an hour of authorizing a major military strike against Iran before Gulf state leaders persuaded him to postpone, while CENTCOM Admiral Brad Cooper confirmed forces remain at highest readiness to execute contingencies.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:45:00Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "country": "United States",
+      "region": "District of Columbia",
+      "city": "Washington"
+    },
+    "topics": [
+      "iran",
+      "conflict",
+      "military",
+      "sanctions",
+      "diplomacy",
+      "strait-of-hormuz"
+    ],
+    "confidence": 0.92,
+    "source_name": "Yortuk ISGK (@YortukIsgk)",
+    "links": [
+      {
+        "url": "https://www.rferl.org/a/trump-strike-iran-restraint-war/33760289.html",
+        "label": "RFE/RL Analysis"
+      },
+      {
+        "url": "https://www.navytimes.com/news/pentagon-congress/2026/05/19/trump-edges-toward-new-strikes-on-iran/",
+        "label": "Navy Times"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_943",
+    "title": "US Treasury Sanctions Iranian Exchange Houses and 19 Shadow Fleet Vessels Under Economic Fury Campaign",
+    "summary": "The US Department of the Treasury's Office of Foreign Assets Control designated Amin Exchange and associated front companies overseeing hundreds of millions of dollars in transactions for sanctioned Iranian banks, alongside 19 vessels involved in Iranian petroleum shipments.",
+    "date_event": "2026-05-19T20:00:00Z",
+    "date_published": "2026-05-20T16:15:00Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0364,
+      "country": "United States",
+      "region": "District of Columbia",
+      "city": "Washington"
+    },
+    "topics": [
+      "sanctions",
+      "iran",
+      "ofac",
+      "terrorism-financing",
+      "shadow-fleet",
+      "oil"
+    ],
+    "confidence": 0.95,
+    "source_name": "USTreasury (@USTreasury)",
+    "links": [
+      {
+        "url": "https://www.wionews.com/world/us-imposes-fresh-sanctions-on-iranian-exchange-houses-front-companies-and-shadow-fleet-vessels-1779206969619",
+        "label": "WION Coverage"
+      },
+      {
+        "url": "https://www.worldoil.com/news/2026/5/19/u-s-sanctions-19-vessels-in-expanded-crackdown-on-iran-oil-exports/",
+        "label": "World Oil Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_944",
+    "title": "GitHub Confirms 3,800 Internal Repositories Breached via Poisoned VS Code Extension by TeamPCP",
+    "summary": "GitHub confirmed that approximately 3,800 internal repositories experienced exfiltration after a threat actor group called TeamPCP compromised an employee device through a malicious Visual Studio Code extension in a supply chain attack.",
+    "date_event": "2026-05-19T18:00:00Z",
+    "date_published": "2026-05-20T16:30:00Z",
+    "geo": {
+      "lat": 37.7879,
+      "lon": -122.4075,
+      "country": "United States",
+      "region": "California",
+      "city": "San Francisco"
+    },
+    "topics": [
+      "cybersecurity",
+      "supply-chain-attack",
+      "breach",
+      "vulnerability",
+      "github"
+    ],
+    "confidence": 0.95,
+    "source_name": "Scpandura (@Scpandura)",
+    "links": [
+      {
+        "url": "https://www.securityweek.com/github-confirms-hack-impacting-3800-internal-repositories/",
+        "label": "SecurityWeek Coverage"
+      },
+      {
+        "url": "https://cybersecuritynews.com/grafana-github-breach-linked-tanstack-ransomware/",
+        "label": "Cyber Security News Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_945",
+    "title": "Sweden Selects French FDI Frigates From Naval Group in $4.2 Billion Defense Deal",
+    "summary": "Sweden selected France's Naval Group to supply four FDI frigates in a deal worth approximately $4.2 billion, representing the country's largest defense investment since the Gripen fighter jet program and tripling its air defense capabilities.",
+    "date_event": "2026-05-19T11:00:00Z",
+    "date_published": "2026-05-20T16:35:00Z",
+    "geo": {
+      "lat": 59.3251,
+      "lon": 18.0711,
+      "country": "Sweden",
+      "region": "Stockholm",
+      "city": "Stockholm"
+    },
+    "topics": [
+      "military",
+      "defense-procurement",
+      "nato",
+      "frigate",
+      "sweden",
+      "naval"
+    ],
+    "confidence": 0.97,
+    "source_name": "ELINT News (@ELINTNews)",
+    "links": [
+      {
+        "url": "https://www.defensenews.com/global/europe/2026/05/19/sweden-picks-frances-fdi-frigates-in-potential-42-billion-deal/",
+        "label": "Defense News Coverage"
+      },
+      {
+        "url": "https://www.dw.com/en/sweden-orders-4-frigates-from-french-company-naval-group/a-77208762",
+        "label": "DW Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_946",
+    "title": "EU Scrambles to Seal Defense Industry Omnibus Deal Amid Growing Security Threats",
+    "summary": "European Parliament, EU member states, and Commission mediators entered intensive trilogue negotiations on the Defense Readiness Omnibus, aiming to streamline defense procurement and boost domestic production, with eligibility criteria proving the most divisive issue.",
+    "date_event": "2026-05-20T10:00:00Z",
+    "date_published": "2026-05-20T16:40:00Z",
+    "geo": {
+      "lat": 50.8467,
+      "lon": 4.3525,
+      "country": "Belgium",
+      "region": "Brussels",
+      "city": "Brussels"
+    },
+    "topics": [
+      "defense-procurement",
+      "european-defense",
+      "nato",
+      "military",
+      "strategic-autonomy"
+    ],
+    "confidence": 0.92,
+    "source_name": "EtienneLh (@EtienneLh)",
+    "links": [
+      {
+        "url": "https://www.euronews.com/my-europe/2026/05/19/each-day-counts-eu-scrambles-to-seal-defence-industry-deal",
+        "label": "Euronews Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_947",
+    "title": "MONUSCO Head Reaffirms Ceasefire Commitment and Civilian Protection in Eastern DRC Visit to Goma",
+    "summary": "UN Special Representative James Swan visited Goma on his first field trip to eastern DRC, emphasizing MONUSCO's mandate to support ceasefire monitoring and protect civilians amid persistent security challenges in North and South Kivu provinces.",
+    "date_event": "2026-05-20T12:00:00Z",
+    "date_published": "2026-05-20T16:50:00Z",
+    "geo": {
+      "lat": -1.6777,
+      "lon": 29.2285,
+      "country": "Democratic Republic of Congo",
+      "region": "North Kivu",
+      "city": "Goma"
+    },
+    "topics": [
+      "peacekeeping",
+      "conflict",
+      "ceasefire",
+      "humanitarian-crisis",
+      "drc"
+    ],
+    "confidence": 0.9,
+    "source_name": "United_Nations (@United_Nations)",
+    "links": [
+      {
+        "url": "https://monusco.unmissions.org/en/news/goma-james-swan-reaffirms-monuscos-commitment-to-ceasefire-and-protection-of-civilians",
+        "label": "MONUSCO Official"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_948",
+    "title": "NATO Jet Shoots Down Suspected Ukrainian Drone Over Estonia in Airspace Violation Escalation",
+    "summary": "A NATO fighter jet intercepted and shot down a suspected Ukrainian drone over Estonian airspace, marking a significant escalation as Ukrainian drone strikes targeting Russian Baltic oil facilities increasingly stray into allied territory.",
+    "date_event": "2026-05-19T15:00:00Z",
+    "date_published": "2026-05-20T17:00:00Z",
+    "geo": {
+      "lat": 59.4372,
+      "lon": 24.7573,
+      "country": "Estonia",
+      "region": "Harju",
+      "city": "Tallinn"
+    },
+    "topics": [
+      "nato",
+      "drone",
+      "airspace-violation",
+      "ukraine",
+      "estonia",
+      "conflict"
+    ],
+    "confidence": 0.88,
+    "source_name": "r/Intelligence (reddit.com/r/Intelligence)",
+    "links": [
+      {
+        "url": "https://www.dw.com/en/sweden-orders-4-frigates-from-french-company-naval-group/a-77208762",
+        "label": "DW Regional Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_949",
+    "title": "UK Announces GBP 1 Billion Order for 72 RCH 155 Howitzers Mounted on Boxer Vehicles",
+    "summary": "The United Kingdom announced procurement of 72 Remote Controlled Howitzers 155mm in a deal valued at close to GBP 1 billion, with the KNDS and Rheinmetall systems mounted on Boxer armored vehicles capable of firing eight rounds per minute at targets out to 70 kilometres.",
+    "date_event": "2026-05-20T10:00:00Z",
+    "date_published": "2026-05-20T17:05:00Z",
+    "geo": {
+      "lat": 51.5074,
+      "lon": -0.1278,
+      "country": "United Kingdom",
+      "region": "England",
+      "city": "London"
+    },
+    "topics": [
+      "military",
+      "defense-procurement",
+      "artillery",
+      "nato",
+      "uk",
+      "germany"
+    ],
+    "confidence": 0.93,
+    "source_name": "olongapotimes (@olongapotimes)",
+    "links": [
+      {
+        "url": "https://breakingdefense.com/2026/05/all-guns-blazing-the-uk-sets-up-1-35-billion-rch-155-artillery-order/",
+        "label": "Breaking Defense Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_950",
+    "title": "CDC Transfers American Ebola-Infected Physician From DRC to Germany for Treatment",
+    "summary": "The US Centers for Disease Control and Prevention confirmed an American missionary physician working in the Democratic Republic of Congo contracted Ebola and arranged transfer to Germany for specialized care amid a deadly outbreak of the Bundibugyo variant.",
+    "date_event": "2026-05-20T13:00:00Z",
+    "date_published": "2026-05-20T17:10:00Z",
+    "geo": {
+      "lat": -4.3217,
+      "lon": 15.3126,
+      "country": "Democratic Republic of Congo",
+      "region": "Kinshasa",
+      "city": "Kinshasa"
+    },
+    "topics": [
+      "ebola",
+      "public-health",
+      "drc",
+      "outbreak",
+      "humanitarian-crisis"
+    ],
+    "confidence": 0.88,
+    "source_name": "Esri Water Resources (@EsriWater)",
+    "links": [
+      {
+        "url": "https://www.upi.com/Top_News/World-News/2026/05/15/nuclear-powered-submarines-basic-plan/8591778877403/",
+        "label": "UPI Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_951",
+    "title": "Grafana GitHub Breach Linked to TanStack npm Supply Chain Ransomware Campaign",
+    "summary": "Grafana Labs disclosed a targeted ransomware-linked breach of its GitHub environment traced to the TanStack npm supply chain compromise, with attackers exfiltrating repository data and issuing a ransom demand that the company refused to pay.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:19:00Z",
+    "geo": {
+      "lat": 37.788,
+      "lon": -122.408,
+      "country": "United States",
+      "city": "San Francisco"
+    },
+    "topics": [
+      "ransomware",
+      "supply-chain",
+      "breach",
+      "npm",
+      "github",
+      "cybersecurity"
+    ],
+    "confidence": 0.93,
+    "source_name": "r/cybersecurity (reddit.com/r/cybersecurity)",
+    "links": [
+      {
+        "url": "https://cybersecuritynews.com/grafana-github-breach-linked-tanstack-ransomware/",
+        "label": "Cybersecurity News Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_952",
+    "title": "Large-Scale DDoS Cyber Extortion Campaign Targets South African Web Hosts and Telecom Companies",
+    "summary": "South African web hosting and telecommunications companies face a large-scale distributed denial of service campaign by a group calling itself Black Matter, demanding cryptocurrency payments while experts question whether the attacks serve purposes beyond simple extortion.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:30:00Z",
+    "geo": {
+      "lat": -26.205,
+      "lon": 28.05,
+      "country": "South Africa",
+      "city": "Johannesburg"
+    },
+    "topics": [
+      "ddos",
+      "cyber-extortion",
+      "ransomware",
+      "telecom",
+      "cybersecurity"
+    ],
+    "confidence": 0.88,
+    "source_name": "r/cybersecurity (reddit.com/r/cybersecurity)",
+    "links": [
+      {
+        "url": "https://www.ewn.co.za/2026/05/20/large-scale-cyber-extortion-hits-sa-web-hosts-telecom-companies",
+        "label": "EWN Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_953",
+    "title": "U.S. Air Force Transitions Dragon Cart Palletized Strike System to Official Program of Record",
+    "summary": "The U.S. Air Force formally transitioned the experimental Rapid Dragon palletized munitions initiative into the Dragon Cart Program of Record, enabling C-130 and C-17 cargo aircraft to deploy standoff missiles and scheduled for operational service in 2027.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:42:00Z",
+    "geo": {
+      "lat": 38.895,
+      "lon": -77.036,
+      "country": "United States",
+      "city": "Washington"
+    },
+    "topics": [
+      "procurement",
+      "missile",
+      "air-force",
+      "military",
+      "weapon"
+    ],
+    "confidence": 0.88,
+    "source_name": "r/LessCredibleDefence (reddit.com/r/LessCredibleDefence)",
+    "links": [
+      {
+        "url": "https://www.thedefensenews.com/news-details/US-Air-Force-Advances-Dragon-Cart-Palletized-Strike-System-to-Official-Program-of-Record/",
+        "label": "Defense News Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_954",
+    "title": "Xi Jinping Warns Trump of Extreme Danger Over Taiwan Mishandling at Beijing Summit",
+    "summary": "Chinese President Xi Jinping delivered a stark warning to U.S. President Donald Trump during their Beijing summit, stating that mishandling the Taiwan issue could push bilateral relations into an extremely dangerous situation and lead to direct conflict between the two powers.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:30:00Z",
+    "geo": {
+      "lat": 39.9042,
+      "lon": 116.4074,
+      "country": "China",
+      "city": "Beijing"
+    },
+    "topics": [
+      "taiwan",
+      "china",
+      "diplomacy",
+      "xi-jinping",
+      "trump",
+      "strategic-competition"
+    ],
+    "confidence": 0.95,
+    "source_name": "BatesGill (@BatesGill)",
+    "links": [
+      {
+        "url": "https://www.scmp.com/news/china/military/article/3353604/xi-warns-trump-about-extremely-dangerous-risks-if-taiwan-issue-mishandled",
+        "label": "SCMP Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_955",
+    "title": "Taiwan Says Chinese Military Activities Represent Greatest Source of Regional Instability",
+    "summary": "Taiwanese Premier Cho Jung-tai declared China the greatest source of regional instability due to ongoing military activities, as the Chinese Navy announced sending a carrier task force into the Western Pacific for training ahead of the second anniversary of President Lai taking office.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:15:00Z",
+    "geo": {
+      "lat": 25.038,
+      "lon": 121.564,
+      "country": "Taiwan",
+      "city": "Taipei"
+    },
+    "topics": [
+      "taiwan",
+      "china",
+      "military",
+      "defense",
+      "instability"
+    ],
+    "confidence": 0.9,
+    "source_name": "Belteleradio Facts (@BelteleFacts)",
+    "links": [
+      {
+        "url": "https://www.japantimes.co.jp/news/2026/05/19/asia-pacific/politics/taiwan-china-military-instability/",
+        "label": "Japan Times Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_956",
+    "title": "Japan and Philippines Advance Destroyer Transfer Discussions to Strengthen Maritime Defense Cooperation",
+    "summary": "Japan and the Philippines established a working group to negotiate the potential transfer of Abukuma-class destroyer escorts, which could represent Japan first export of lethal military equipment under its revised defense equipment transfer framework.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:50:00Z",
+    "geo": {
+      "lat": 14.59,
+      "lon": 120.98,
+      "country": "Philippines",
+      "city": "Manila"
+    },
+    "topics": [
+      "defense-cooperation",
+      "japan",
+      "philippines",
+      "naval",
+      "indo-pacific"
+    ],
+    "confidence": 0.9,
+    "source_name": "Belteleradio Free Audio (@BeltelFreeAudio)",
+    "links": [
+      {
+        "url": "https://tribune.net.ph/2026/05/20/japan-philippines-deepen-defense-ties-with-destroyer-transfer-talks",
+        "label": "Tribune Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_957",
+    "title": "Japan Launches Updated Free and Open Indo-Pacific Strategy With Focus on AI Infrastructure and Security Cooperation",
+    "summary": "Prime Minister Takaichi Sanae announced Japan updated Free and Open Indo-Pacific strategy in Hanoi, establishing three priority areas covering AI-era economic infrastructure, public-private growth collaboration, and enhanced security cooperation including defense equipment transfers to regional partners.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:25:00Z",
+    "geo": {
+      "lat": 21.028,
+      "lon": 105.854,
+      "country": "Vietnam",
+      "city": "Hanoi"
+    },
+    "topics": [
+      "diplomacy",
+      "japan",
+      "indo-pacific",
+      "defense-cooperation",
+      "foip"
+    ],
+    "confidence": 0.92,
+    "source_name": "MofajapanEn (@MofajapanEn)",
+    "links": [
+      {
+        "url": "https://www.mofa.go.jp/policy/pageite_000001_01612.html",
+        "label": "MOFA Japan Official"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_958",
+    "title": "UAE Blames Iraq-Based Drones for Barakah Nuclear Plant Attack as Energy Minister Warns of Four-Month Recovery",
+    "summary": "UAE authorities confirmed that drones targeting the Barakah Nuclear Energy Plant originated from Iraqi territory, while Energy Minister Dr Sultan Al Jaber warned that returning to 80 percent of pre-war energy flows could take at least four months, with full recovery unlikely before early 2027.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:31:00Z",
+    "geo": {
+      "lat": 23.96,
+      "lon": 52.26,
+      "country": "UAE",
+      "region": "Abu Dhabi"
+    },
+    "topics": [
+      "nuclear",
+      "drone",
+      "attack",
+      "uae",
+      "iran",
+      "energy"
+    ],
+    "confidence": 0.95,
+    "source_name": "MT Anderson (@MT_Anderson)",
+    "links": [
+      {
+        "url": "https://www.thenationalnews.com/business/energy/2026/05/20/barakah-drone-attack-showed-clear-disregard-for-civilian-lives-dr-al-jaber-says/",
+        "label": "The National Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_959",
+    "title": "DirtyDecrypt Linux Kernel Privilege Escalation PoC Released Targeting Fedora and Arch Systems",
+    "summary": "Security researchers released a working proof-of-concept exploit for DirtyDecrypt (CVE-2026-31635), a Linux kernel local privilege escalation vulnerability exploiting a missing copy-on-write guard in rxgk_decrypt_skb, affecting Fedora, Arch Linux, and openSUSE Tumbleweed distributions.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:40:00Z",
+    "geo": {
+      "lat": 37.788,
+      "lon": -122.408,
+      "country": "United States",
+      "city": "San Francisco"
+    },
+    "topics": [
+      "vulnerability",
+      "linux",
+      "exploit",
+      "kernel",
+      "cybersecurity"
+    ],
+    "confidence": 0.9,
+    "source_name": "ntonc (@ntonc)",
+    "links": [
+      {
+        "url": "https://securityaffairs.com/192436/uncategorized/dirtydecrypt-poc-released-for-yet-another-linux-flaw.html",
+        "label": "Security Affairs Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_960",
+    "title": "Lithuania Issues Emergency Shelter Alert as Drone Detected Near Vilnius From Belarus",
+    "summary": "Lithuanian military ordered residents of Vilnius to take immediate shelter after detecting drone activity near the Belarus border heading toward the capital, forcing the president and prime minister into emergency shelters and suspending flights at Vilnius Airport.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:19:00Z",
+    "geo": {
+      "lat": 54.687,
+      "lon": 25.283,
+      "country": "Lithuania",
+      "city": "Vilnius"
+    },
+    "topics": [
+      "drone",
+      "nato",
+      "lithuania",
+      "military",
+      "conflict",
+      "baltic"
+    ],
+    "confidence": 0.95,
+    "source_name": "War TV (@WarTV7890)",
+    "links": [
+      {
+        "url": "https://www.bbc.com/news/articles/c9d3vpqqqpeo",
+        "label": "BBC Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_961",
+    "title": "Russian Strike Damages Ukraine Danube Port at Izmail as Moscow Intercepts Drones Heading for Capital",
+    "summary": "A Russian attack damaged port infrastructure in Ukraine Izmail Danube River port city, a vital grain-export hub, while Russian authorities reported downing four Ukrainian drones headed toward Moscow as both sides continued reciprocal strikes.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:45:00Z",
+    "geo": {
+      "lat": 45.351,
+      "lon": 28.836,
+      "country": "Ukraine",
+      "city": "Izmail"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "drone",
+      "strike",
+      "port",
+      "conflict"
+    ],
+    "confidence": 0.92,
+    "source_name": "War TV (@WarTV7890)",
+    "links": [
+      {
+        "url": "https://www.aljazeera.com/news/2026/5/19/russian-strike-damages-ukraine-danube-port-as-moscow-intercepts-drones",
+        "label": "Al Jazeera Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_962",
+    "title": "Nigeria and US Joint Strikes Kill 175 Islamic State Fighters in Lake Chad Basin Operations",
+    "summary": "A coordinated military operation between Nigeria and the United States eliminated 175 Islamic State fighters in northeastern Nigeria's Lake Chad Basin, following the killing of ISIL second-in-command Abu-Bilal al-Minuki days earlier.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:50:00Z",
+    "geo": {
+      "lat": 12.1875392,
+      "lon": 13.3080034,
+      "country": "Nigeria",
+      "region": "Borno State"
+    },
+    "topics": [
+      "counter-terrorism",
+      "nigeria",
+      "military",
+      "islamic-state",
+      "africa",
+      "iswap"
+    ],
+    "confidence": 0.94,
+    "source_name": "Africafactszone (@Africafactszone)",
+    "links": [
+      {
+        "url": "https://www.washingtonpost.com/world/2026/05/19/nigeria-us-joint-strikes-islamic-state/f25be54c-53a7-11f1-9c40-7a0a12d9e745_story.html",
+        "label": "Washington Post Coverage"
+      }
+    ],
+    "link_preview_image": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/RUGLRTKULZB6XPESJMXXJVLTDI.jpeg&w=1440"
+  },
+  {
+    "id": "evt_20260520_963",
+    "title": "Australia and Canada Strengthen Naval Cooperation Through South China Sea Operations",
+    "summary": "HMAS Toowoomba and HMCS Charlottetown conducted extensive bilateral exercises in the South China Sea, including live firing, replenishment at sea, and boarding drills over two weeks alongside USS Ashland.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:25:00Z",
+    "geo": {
+      "lat": 15.0000001,
+      "lon": 114.9999999,
+      "country": "South China Sea",
+      "region": "Indo-Pacific"
+    },
+    "topics": [
+      "naval-exercise",
+      "australia",
+      "canada",
+      "south-china-sea",
+      "indo-pacific",
+      "freedom-of-navigation"
+    ],
+    "confidence": 0.92,
+    "source_name": "Royal Australian Navy (@AusNavy)",
+    "links": [
+      {
+        "url": "https://www.miragenews.com/middle-powers-forge-naval-alliance-1676868/",
+        "label": "Mirage News Coverage"
+      }
+    ],
+    "link_preview_image": "https://www.defence.gov.au/sites/default/files/styles/landscape_large/public/media-gallery/2026-05/20260502ran8656906_0668.jpg?h=10d202d3&itok=yMac7ftd"
+  },
+  {
+    "id": "evt_20260520_964",
+    "title": "WHO Declares Ebola Emergency as DR Congo Death Toll Reaches 136 with Over 500 Suspected Cases",
+    "summary": "The World Health Organization declared a public health emergency of international concern as the Bundibugyo Ebola strain spreads beyond Ituri province in DR Congo, with 136 deaths, 514 suspected cases, and no available vaccine.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:40:00Z",
+    "geo": {
+      "lat": 1.5594,
+      "lon": 30.2526,
+      "country": "Democratic Republic of Congo",
+      "region": "Ituri",
+      "city": "Bunia"
+    },
+    "topics": [
+      "ebola",
+      "health-emergency",
+      "democratic-republic-of-congo",
+      "who",
+      "epidemic"
+    ],
+    "confidence": 0.96,
+    "source_name": "BBC Breaking News (@BBCBreaking)",
+    "links": [
+      {
+        "url": "https://www.bbc.com/news/articles/cvgzj0pqpyyo",
+        "label": "BBC News Coverage"
+      }
+    ],
+    "link_preview_image": "https://ichef.bbci.co.uk/news/1024/branded_news/c8bb/live/9d165df0-5394-11f1-82e5-bb1c743931bd.jpg"
+  },
+  {
+    "id": "evt_20260520_965",
+    "title": "Heavy Rains in Central China Leave Five Dead and Eleven Missing",
+    "summary": "Severe rainfall swept through central China, killing at least five people and leaving eleven others missing as emergency responders launched search and rescue operations across affected provinces.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:35:00Z",
+    "geo": {
+      "lat": 29.7053514,
+      "lon": -95.5484113,
+      "country": "China",
+      "region": "Central China"
+    },
+    "topics": [
+      "disaster",
+      "flood",
+      "china",
+      "weather",
+      "emergency-response"
+    ],
+    "confidence": 0.88,
+    "source_name": "Claudefb (@Claudefb)",
+    "links": [
+      {
+        "url": "https://www.aa.com.tr/en/asia-pacific/heavy-rains-in-central-china-leave-5-dead-11-missing/3942676",
+        "label": "Anadolu Agency Report"
+      }
+    ],
+    "link_preview_image": "https://web-cdnprod.aa.com.tr/uploads/Contents/2026/05/20/thumbs_b_c_a3fb32f824a93b77960ed09f50650219.jpg"
+  },
+  {
+    "id": "evt_20260520_966",
+    "title": "South Korean Destroyer Deploys to Gulf of Aden as Italian Navy Dispatches First Full-Configuration Combat Ship to Indo-Pacific",
+    "summary": "ROKS Wang Geon departed Busan for a six-month anti-piracy deployment to the Gulf of Aden while Italy's ITS Bande Nere, the first PPA Full configuration warship with ballistic missile defense capabilities, headed to participate in RIMPAC and Pacific Dragon exercises.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:15:00Z",
+    "geo": {
+      "lat": 35.1028,
+      "lon": 129.032,
+      "country": "South Korea",
+      "region": "Busan",
+      "city": "Busan"
+    },
+    "topics": [
+      "deployment",
+      "destroyer",
+      "naval",
+      "exercise",
+      "anti-piracy",
+      "tracking"
+    ],
+    "confidence": 0.93,
+    "source_name": "FleetNumbers Maritime (@Fleetnumbers)",
+    "links": [
+      {
+        "url": "https://news.usni.org/2026/05/15/usni-news-western-pacific-pulse-may-15-2026",
+        "label": "USNI Western Pacific Pulse"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_967",
+    "title": "IMO Secretary-General Demands Action on Stranded Hormuz Seafarers and Warns of Somali Piracy Resurgence at MSC 111",
+    "summary": "IMO Secretary-General Dominguez opened the 111th Maritime Safety Committee session demanding urgent solutions for seafarers trapped in the Strait of Hormuz crisis while warning of renewed piracy off Somalia's coast fueled by diverted shipping traffic.",
+    "date_event": null,
+    "date_published": "2026-05-20T17:05:00Z",
+    "geo": {
+      "lat": 51.5074456,
+      "lon": -0.1277653,
+      "country": "United Kingdom",
+      "region": "London",
+      "city": "London"
+    },
+    "topics": [
+      "maritime-security",
+      "piracy",
+      "strait-of-hormuz",
+      "seafarer",
+      "imo",
+      "shipping"
+    ],
+    "confidence": 0.95,
+    "source_name": "IMO HQ (@IMOHQ)",
+    "links": [
+      {
+        "url": "https://www.imo.org/en/mediacentre/secretarygeneral/pages/msc-111-opening-remarks.aspx",
+        "label": "IMO MSC 111 Opening Remarks"
+      }
+    ],
+    "link_preview_image": "https://www.imo.org/Content/images/img/apple-touch-icon-152x152.png"
+  },
+  {
+    "id": "evt_20260520_968",
+    "title": "US Intelligence Reveals Iran Retains 70 Percent of Missile Stockpile and 30 of 33 Hormuz Sites Operational",
+    "summary": "Classified US intelligence assessments show Iran restored operational access to 30 of 33 missile sites along the Strait of Hormuz, retaining approximately 70 percent of its prewar missile stockpile and mobile launchers despite Operation Epic Fury strikes.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:55:00Z",
+    "geo": {
+      "lat": 26.45,
+      "lon": 56.2,
+      "country": "Iran",
+      "region": "Strait of Hormuz"
+    },
+    "topics": [
+      "missile",
+      "iran",
+      "military",
+      "intelligence",
+      "strait-of-hormuz",
+      "nuclear"
+    ],
+    "confidence": 0.91,
+    "source_name": "Iran Spectrum (@IranSpec)",
+    "links": [
+      {
+        "url": "https://www.inquirer.com/politics/nation/iran-missiles-us-intelligence-20260512.html",
+        "label": "NYT/Inquirer Report"
+      }
+    ],
+    "link_preview_image": "https://www.inquirer.com/resizer/v2/XZIWYVWO6PKEHAIQVL2YCMVOGA.jpg?auth=af3c1aee8c89d5d69cb99484bc23765cd3589b71dea523d6c5ed1499334fc211&width=760&height=507&smart=true"
+  },
+  {
+    "id": "evt_20260520_969",
+    "title": "South Korean Navy Formally Requests Nuclear-Powered Submarine Acquisition as Master Plan Nears Release",
+    "summary": "South Korea's Navy submitted a formal requirements document to the Joint Chiefs of Staff for nuclear-powered submarines, initiating the official procurement process as the government prepares to announce a comprehensive master plan by month's end.",
+    "date_event": null,
+    "date_published": "2026-05-20T17:00:00Z",
+    "geo": {
+      "lat": 37.5666791,
+      "lon": 126.9782914,
+      "country": "South Korea",
+      "region": "Seoul",
+      "city": "Seoul"
+    },
+    "topics": [
+      "defense",
+      "submarine",
+      "nuclear",
+      "south-korea",
+      "military",
+      "alliance"
+    ],
+    "confidence": 0.9,
+    "source_name": "Jkgarokgov (@Jkgarokgov)",
+    "links": [
+      {
+        "url": "https://www.dt.co.kr/article/12063373",
+        "label": "Digital Times Korea"
+      }
+    ],
+    "link_preview_image": "https://wimg.dt.co.kr/news/cms/2026/05/20/news-p.v1.20260520.329c4bcfc14d417cb6650aee6f2a5b3a_R.jpg"
+  },
+  {
+    "id": "evt_20260520_970",
+    "title": "OFAC Designates Cuba Intelligence Directorate and Issues Russia-Related General License",
+    "summary": "The US Treasury's OFAC designated Cuba's Directorate of Intelligence and nine Cuban officials under new Executive Order 14404 while issuing Russia-related General License 134C authorizing wind-down of certain crude oil transactions.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:30:00Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "country": "United States",
+      "region": "District of Columbia",
+      "city": "Washington"
+    },
+    "topics": [
+      "sanctions",
+      "cuba",
+      "russia",
+      "ofac",
+      "enforcement",
+      "intelligence"
+    ],
+    "confidence": 0.95,
+    "source_name": "ofacalert (@ofacalert)",
+    "links": [
+      {
+        "url": "https://ofac.treasury.gov/recent-actions/20260518_33",
+        "label": "OFAC Recent Actions"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_971",
+    "title": "OFAC Sanctions 19 Vessels and Shadow Banking Networks in Expanded Crackdown on Iranian Oil Exports",
+    "summary": "The US Treasury sanctioned 19 vessels and a network of shipping, financial, and trading entities tied to Iranian oil and petrochemical exports under Operation Economic Fury, targeting Iran's shadow fleet used to evade the naval blockade.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:45:00Z",
+    "geo": {
+      "lat": 25.5,
+      "lon": 57.5,
+      "country": "Iran",
+      "region": "Gulf of Oman"
+    },
+    "topics": [
+      "oil",
+      "sanctions",
+      "iran",
+      "tanker",
+      "exports",
+      "enforcement"
+    ],
+    "confidence": 0.93,
+    "source_name": "Oilcfd (@Oilcfd)",
+    "links": [
+      {
+        "url": "https://www.iranintl.com/en/202605122398",
+        "label": "Iran International Report"
+      }
+    ],
+    "link_preview_image": "https://i.iranintl.com/images/rdk9umy0/production/cd2a253054cf96bc4f073ad8a681a8b3b301324a-8192x5206.jpg?rect=0,453,8192,4301&w=1200&h=630&fit=max&auto=format"
+  },
+  {
+    "id": "evt_20260520_972",
+    "title": "Xi and Putin Open Summit in Beijing, Sign 20+ Agreements on Trade and Multipolar World",
+    "summary": "Chinese President Xi Jinping hosted Russian President Vladimir Putin at the Great Hall of the People in Beijing on May 20 for a state visit. The two leaders signed more than 20 agreements covering trade, technology, and a joint declaration on establishing a multipolar world order. They also extended the China-Russia Treaty of Good-Neighbourliness and Friendly Cooperation.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:28:00Z",
+    "geo": {
+      "lat": 39.9057136,
+      "lon": 116.3912972,
+      "country": "China",
+      "city": "Beijing"
+    },
+    "topics": [
+      "diplomacy",
+      "china",
+      "russia",
+      "summit",
+      "trade",
+      "multipolar-order"
+    ],
+    "confidence": 0.95,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://news.rthk.hk/rthk/en/component/k2/1855368-20260520.htm",
+        "label": "RTHK Coverage"
+      },
+      {
+        "url": "https://www.scmp.com/news/china/diplomacy/article/3354159/xi-putin-summit-live-energy-ties-iran-and-ukraine-set-top-agenda",
+        "label": "SCMP Live Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_973",
+    "title": "NATO Transformation Commander Admits Alliance Falls Behind Russia in Drone and AI Warfare",
+    "summary": "NATO's Supreme Allied Commander Transformation Admiral Pierre Vandier publicly acknowledged that NATO member states have reacted too slowly to adopt drones and artificial intelligence, warning that Russia's rapid battlefield innovation reshapes modern warfare faster than Western militaries can respond.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:40:00Z",
+    "geo": {
+      "lat": 50.8467372,
+      "lon": 4.352493,
+      "country": "Belgium",
+      "city": "Brussels"
+    },
+    "topics": [
+      "military",
+      "nato",
+      "drone",
+      "artificial-intelligence",
+      "russia",
+      "defense"
+    ],
+    "confidence": 0.9,
+    "source_name": "r/CredibleDefense (reddit.com/r/CredibleDefense)",
+    "links": [
+      {
+        "url": "https://easternherald.com/2026/05/20/nato-russia-drone-ai-warfare-gap/",
+        "label": "Eastern Herald Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_974",
+    "title": "Ukraine Surpasses Russia in Daily Assault Count for First Time, Commander Syrsky Reports",
+    "summary": "Ukraine's Armed Forces Commander-in-Chief Oleksandr Syrsky revealed that Ukrainian forces conducted more daily offensive operations than Russian forces for the first time in the war. He warned that Russia concentrated approximately 99,000 personnel in the Pokrovsk direction and that a possible northern offensive from Belarus remains a real threat.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:45:00Z",
+    "geo": {
+      "lat": 48.2771086,
+      "lon": 37.1772482,
+      "country": "Ukraine",
+      "region": "Donetsk Oblast",
+      "city": "Pokrovsk"
+    },
+    "topics": [
+      "conflict",
+      "ukraine",
+      "russia",
+      "military",
+      "frontline",
+      "assault"
+    ],
+    "confidence": 0.92,
+    "source_name": "r/RussiaUkraineWar2022 (reddit.com/r/RussiaUkraineWar2022)",
+    "links": [
+      {
+        "url": "https://www.kyivpost.com/post/76480",
+        "label": "Kyiv Post Coverage"
+      },
+      {
+        "url": "https://euobserver.com/217692/ukraine-war-entering-decisive-phase-as-russia-finds-losses-hard-to-bear-ukraine-battlefield-update-day-1545/",
+        "label": "EUobserver Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_975",
+    "title": "Xi Jinping Hosts Putin Days After Trump Visit, Showcasing Beijing as Global Diplomatic Focal Point",
+    "summary": "Chinese President Xi Jinping hosted Russian President Vladimir Putin in Beijing less than a week after receiving US President Donald Trump. The back-to-back summits highlighted China's growing role as a superpower capable of managing ties with both Washington and Moscow simultaneously, with experts describing Beijing as fast emerging as the focal point of global diplomacy.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:30:00Z",
+    "geo": {
+      "lat": 39.9057136,
+      "lon": 116.3912972,
+      "country": "China",
+      "city": "Beijing"
+    },
+    "topics": [
+      "diplomacy",
+      "geopolitics",
+      "china",
+      "russia",
+      "united-state",
+      "summit"
+    ],
+    "confidence": 0.93,
+    "source_name": "ianbremmer (@ianbremmer)",
+    "links": [
+      {
+        "url": "https://edition.cnn.com/2026/05/19/asia/putin-china-visit-xi-meeting-intl-hnk",
+        "label": "CNN Analysis"
+      },
+      {
+        "url": "https://www.nprillinois.org/2026-05-20/xi-and-putin-meet-to-reaffirm-china-russia-ties-days-after-trumps-visit",
+        "label": "NPR Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_976",
+    "title": "Russia Launches Massive Nuclear Force Drills Featuring Ballistic and Cruise Missile Practice Launches",
+    "summary": "Russia began large-scale maneuvers of its nuclear forces on May 20, featuring practice launches of nuclear-capable ballistic and cruise missiles. The drills coincided with a surge in Ukrainian drone strikes targeting Russian defense infrastructure and oil refineries deep inside Russian territory.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:50:00Z",
+    "geo": {
+      "lat": 55.625578,
+      "lon": 37.6063916,
+      "country": "Russia",
+      "city": "Moscow"
+    },
+    "topics": [
+      "nuclear",
+      "military",
+      "russia",
+      "missile",
+      "deterrence",
+      "ukraine"
+    ],
+    "confidence": 0.91,
+    "source_name": "Joseph Dempsey (@JosephDempsey)",
+    "links": [
+      {
+        "url": "https://www.washingtonpost.com/world/2026/05/19/russia-nuclear-drills-putin-ukraine-war/a83859c6-537c-11f1-9c40-7a0a12d9e745_story.html",
+        "label": "Washington Post Report"
+      },
+      {
+        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-12-2026/",
+        "label": "ISW Assessment"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_977",
+    "title": "Xi-Putin Joint Statement Targets Japan's Rearmament as Serious Regional Threat",
+    "summary": "China and Russia issued a joint statement during their Beijing summit on May 20 expressing serious concern over Japan's accumulation of sensitive nuclear materials and accelerated rearmament. The statement described Japan's military buildup as posing a serious threat to peace and stability in the region and opposed NATO expansion into the Asia-Pacific.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:35:00Z",
+    "geo": {
+      "lat": 35.7490925,
+      "lon": 139.3490931,
+      "country": "Japan",
+      "city": "Yokota"
+    },
+    "topics": [
+      "military",
+      "japan",
+      "china",
+      "russia",
+      "rearmament",
+      "nato",
+      "indo-pacific"
+    ],
+    "confidence": 0.9,
+    "source_name": "US Forces Japan (@USForcesJapan)",
+    "links": [
+      {
+        "url": "https://www.bluewin.ch/en/news/international/xi-and-putin-adopt-declaration-also-on-ukraine-war-3242106.html",
+        "label": "Blue News Coverage"
+      },
+      {
+        "url": "https://www.scmp.com/news/china/diplomacy/article/3354181/how-xi-and-putin-are-trying-shape-polycentric-world-heres-takeaways",
+        "label": "SCMP Takeaways"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_978",
+    "title": "US Naval Blockade Redirects 62 Ships as Iran Ghost Fleet Adapts with Lombok Strait Route",
+    "summary": "US CENTCOM reported that naval forces redirected 62 commercial ships and disabled 4 to prevent vessels from entering or leaving Iranian ports since the blockade commenced on April 13. UANI tracking revealed that Iranian-flagged tankers adopted a new evasion route through Indonesia's Lombok Strait to avoid US interdiction while continuing oil shipments to China.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:55:00Z",
+    "geo": {
+      "lat": 26.4494061,
+      "lon": 56.2027702,
+      "country": "Oman",
+      "region": "Strait of Hormuz"
+    },
+    "topics": [
+      "sanctions",
+      "iran",
+      "maritime",
+      "blockade",
+      "oil",
+      "ghost-fleet"
+    ],
+    "confidence": 0.93,
+    "source_name": "UANI (@UANI)",
+    "links": [
+      {
+        "url": "https://www.unitedagainstnucleariran.com/blog/iran-war-shipping-update-may-11-2026",
+        "label": "UANI Shipping Update"
+      },
+      {
+        "url": "https://jinsa.org/jinsa_report/blockade-evasion-update-5-8-26/",
+        "label": "JINSA Blockade Update"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_979",
+    "title": "Iranian Shadow Fleet Tankers Exploit Jurisdictional Gaps in Malaysian Waters for Illicit Oil Transfers",
+    "summary": "Satellite imagery and UANI tracking data revealed at least 42 ship-to-ship transfers of Iranian oil near Malaysia's Eastern Outer Port Limits anchorage since the Iran conflict began. Malaysia's maritime enforcement agency cited jurisdictional gaps as the primary barrier to stopping the transfers, which occurred approximately 70 kilometers offshore in the South China Sea.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:58:00Z",
+    "geo": {
+      "lat": 2.0228821,
+      "lon": 103.3114564,
+      "country": "Malaysia",
+      "region": "Johor"
+    },
+    "topics": [
+      "sanctions",
+      "iran",
+      "maritime",
+      "dark-vessel",
+      "oil",
+      "tracking"
+    ],
+    "confidence": 0.91,
+    "source_name": "pizzainwatch (@pizzainwatch)",
+    "links": [
+      {
+        "url": "https://gulfnews.com/world/mena/how-iran-s-dark-fleet-keeps-oil-flowing-despite-sanctions-1.500539433",
+        "label": "Gulf News Investigation"
+      },
+      {
+        "url": "https://www.theweek.in/news/maritime/2026/05/17/malaysia-flags-major-barrier-to-stopping-iran-linked-oil-transfers-near-its-waters.html",
+        "label": "The Week Maritime Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_980",
+    "title": "US Senate Advances Bill to End Iran War as Xi Calls for Immediate Cessation of Middle East Hostilities",
+    "summary": "The US Senate advanced a bill aimed at ending the Iran war on May 20, while Chinese President Xi Jinping called for a complete cessation of hostilities in the Middle East during the Xi-Putin summit. Xi warned that the Gulf region stands at a critical juncture between war and peace and urged continued negotiations to prevent renewed fighting.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:55:00Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "country": "United States",
+      "city": "Washington DC"
+    },
+    "topics": [
+      "iran",
+      "conflict",
+      "diplomacy",
+      "middle-east",
+      "nuclear",
+      "peace"
+    ],
+    "confidence": 0.88,
+    "source_name": "ModjapanEn (@ModjapanEn)",
+    "links": [
+      {
+        "url": "https://news.rthk.hk/rthk/en/component/k2/1855368-20260520.htm",
+        "label": "RTHK Summit Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_981",
+    "title": "China and Russia Oppose Sanctions Against North Korea in Xi-Putin Joint Statement",
+    "summary": "The Xi-Putin summit joint statement on May 20 explicitly opposed foreign policy isolation and economic sanctions against North Korea. The declaration represented a strengthening of the Beijing-Moscow alignment on Korean Peninsula policy, raising questions about the future of UN Security Council enforcement mechanisms targeting Pyongyang's nuclear and missile programs.",
+    "date_event": null,
+    "date_published": "2026-05-20T17:00:00Z",
+    "geo": {
+      "lat": 37.5666791,
+      "lon": 126.9782914,
+      "country": "South Korea",
+      "city": "Seoul"
+    },
+    "topics": [
+      "north-korea",
+      "sanctions",
+      "china",
+      "russia",
+      "nuclear",
+      "diplomacy"
+    ],
+    "confidence": 0.85,
+    "source_name": "KlSummary (@KlSummary)",
+    "links": [
+      {
+        "url": "https://www.scmp.com/news/china/diplomacy/article/3354181/how-xi-and-putin-are-trying-shape-polycentric-world-heres-takeaways",
+        "label": "SCMP Summit Takeaways"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_982",
+    "title": "Germany Releases First-Ever Bundeswehr Military Strategy with Integrated Force Design and Territorial Defense Framework",
+    "summary": "Germany's Federal Ministry of Defence released its first-ever Bundeswehr Military Strategy alongside the Bundeswehr Capability Profile in April 2026. The documents establish a phased buildup framework to make Germany the strongest conventional army in Europe by 2035, with a target force of at least 460,000 military personnel and integrated capability alignment with NATO targets.",
+    "date_event": null,
+    "date_published": "2026-05-20T17:05:00Z",
+    "geo": {
+      "lat": 52.52,
+      "lon": 13.405,
+      "country": "Germany",
+      "city": "Berlin"
+    },
+    "topics": [
+      "defense",
+      "germany",
+      "nato",
+      "military",
+      "doctrine",
+      "strategy"
+    ],
+    "confidence": 0.82,
+    "source_name": "Esri Training (@EsriTraining)",
+    "links": [
+      {
+        "url": "https://sldinfo.com/2026/05/from-challenge-to-strategy-germanys-new-military-doctrine-and-the-fulfillment-of-a-long-anticipated-turn/",
+        "label": "Second Line of Defense Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_983",
+    "title": "American Doctor Evacuated to Berlin Hospital After Contracting Ebola in DRC",
+    "summary": "Dr. Peter Stafford, a US medical missionary working in Bunia, Democratic Republic of Congo, tested positive for the Bundibugyo Ebola variant and has arrived at Berlin's Charité Hospital isolation ward for treatment. Six other Americans face evacuation to Germany for monitoring.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:33:46Z",
+    "geo": {
+      "lat": 52.5174,
+      "lon": 13.3951,
+      "country": "Germany",
+      "city": "Berlin"
+    },
+    "topics": [
+      "ebola",
+      "public-health",
+      "evacuation",
+      "democratic-republic-of-congo",
+      "germany"
+    ],
+    "confidence": 0.95,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2057137720120504741",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://www.bbc.com/news/articles/cjwpy2qww5do",
+        "label": "BBC Coverage"
+      },
+      {
+        "url": "https://www.cdc.gov/ebola/situation-summary/index.html",
+        "label": "CDC Situation Summary"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_984",
+    "title": "CEPA Analysis Finds Ukraine Gaining Edge in War of Attrition Against Russia",
+    "summary": "The Center for European Policy Analysis published analysis showing Ukraine liberated more territory than it lost in January-February and April 2026, while Russia's advance rate continues slowing despite record drone deployments, as European support offsets declining US aid.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:40:00Z",
+    "geo": {
+      "lat": 50.45,
+      "lon": 30.5241,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "war-of-attrition",
+      "drone",
+      "defense",
+      "europe"
+    ],
+    "confidence": 0.85,
+    "source_name": "cepa (@cepa)",
+    "links": [
+      {
+        "url": "https://cepa.org/article/one-more-day-ukraine-is-edging-the-war-of-attrition/",
+        "label": "CEPA Article"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_985",
+    "title": "Former Cuban President Raúl Castro Indicted on Murder Charges for 1996 Brothers to the Rescue Shootdown",
+    "summary": "The US Justice Department unsealed a federal indictment against former Cuban President Raúl Castro, 94, in Miami on May 20, charging him with murder and conspiracy to kill US nationals in connection with the 1996 shootdown of two civilian Brothers to the Rescue aircraft that killed four people.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:52:42Z",
+    "geo": {
+      "lat": 23.1353,
+      "lon": -82.359,
+      "country": "Cuba",
+      "city": "Havana"
+    },
+    "topics": [
+      "cuba",
+      "indictment",
+      "murder",
+      "brothers-to-the-rescue",
+      "regime-change"
+    ],
+    "confidence": 0.95,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2057142483587395968",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://www.nbcnews.com/news/us-news/raul-castro-indictment-cuba-us-rcna346012",
+        "label": "NBC News Coverage"
+      },
+      {
+        "url": "https://www.cnn.com/2026/05/20/politics/behind-the-decades-long-effort-to-indict-raul-castro",
+        "label": "CNN Background"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_20260520_986",
+    "title": "Iran's IRGC Warns of Extending War Beyond Region If US-Israeli Attacks Resume",
+    "summary": "Iran's Islamic Revolutionary Guard Corps issued a statement warning that any renewed US or Israeli attacks would trigger retaliation beyond the Middle East region, stating it had not yet brought all national capacities into action, as the Iran war entered its 82nd day.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:50:00Z",
+    "geo": {
+      "lat": 35.6893,
+      "lon": 51.3896,
+      "country": "Iran",
+      "city": "Tehran"
+    },
+    "topics": [
+      "iran",
+      "irgc",
+      "military",
+      "escalation",
+      "war",
+      "nuclear"
+    ],
+    "confidence": 0.9,
+    "source_name": "NSA (@NSAGov)",
+    "links": [
+      {
+        "url": "https://www.cbsnews.com/live-updates/iran-war-trump-irgc-threatens-attacks-beyond-region/",
+        "label": "CBS News Live Updates"
+      },
+      {
+        "url": "https://www.aljazeera.com/news/2026/5/19/iran-war-day-81-trump-delays-attack-tehran-says-wont-surrender",
+        "label": "Al Jazeera Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_987",
+    "title": "Adani Enterprises Settles $275 Million With OFAC Over Iranian Oil Sanctions Violations",
+    "summary": "India's Adani Enterprises Limited agreed to pay $275 million to settle potential civil liability with OFAC for purchasing 35 shipments of Iranian-origin LPG through a Dubai-based intermediary, with US financial institutions processing $192 million in payments for the sanctioned cargo.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:55:00Z",
+    "geo": {
+      "lat": 22.8388,
+      "lon": 69.6622,
+      "country": "India",
+      "region": "Gujarat",
+      "city": "Mundra"
+    },
+    "topics": [
+      "sanctions",
+      "iran",
+      "oil",
+      "india",
+      "adani",
+      "enforcement",
+      "maritime"
+    ],
+    "confidence": 0.9,
+    "source_name": "Therealshipdude (@Therealshipdude)",
+    "links": [
+      {
+        "url": "https://ofac.treasury.gov/media/935631/download?inline=",
+        "label": "OFAC Enforcement Release"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_988",
+    "title": "Xi Jinping and Putin Hold Beijing Summit, Call for Comprehensive Iran Ceasefire",
+    "summary": "Chinese President Xi Jinping hosted Russian President Vladimir Putin in Beijing, with both leaders condemning US-Israeli attacks on Iran and calling for a comprehensive ceasefire while issuing a joint statement on the conflict, as Russia offered to help mediate an end to hostilities.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:45:00Z",
+    "geo": {
+      "lat": 39.9057,
+      "lon": 116.3913,
+      "country": "China",
+      "city": "Beijing"
+    },
+    "topics": [
+      "china",
+      "russia",
+      "iran",
+      "ceasefire",
+      "diplomacy",
+      "summit"
+    ],
+    "confidence": 0.9,
+    "source_name": "vantortech (@vantortech)",
+    "links": [
+      {
+        "url": "https://www.cbsnews.com/live-updates/iran-war-trump-irgc-threatens-attacks-beyond-region/",
+        "label": "CBS News Coverage"
+      },
+      {
+        "url": "https://www.aljazeera.com/news/2026/5/19/trump-says-iran-attack-on-hold-what-we-know-about-latest-negotiations",
+        "label": "Al Jazeera Background"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_989",
+    "title": "US Marines Board and Search Iranian Oil Tanker in Gulf of Oman Over Blockade Violations",
+    "summary": "U.S. Marines briefly boarded and searched an Iranian oil tanker in the Gulf of Oman over suspected blockade violations, then released the vessel after ordering it to change course.",
+    "date_event": "2026-05-20T17:00:00Z",
+    "date_published": "2026-05-20T17:11:08Z",
+    "geo": {
+      "lat": 24.2138,
+      "lon": 58.9846,
+      "country": "Oman",
+      "region": "Gulf of Oman"
+    },
+    "topics": [
+      "military",
+      "conflict",
+      "iran",
+      "blockade",
+      "naval-operation"
+    ],
+    "confidence": 0.85,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2057147122617610678",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_990",
+    "title": "Former Cuban President Raul Castro Indicted by United States Federal Court",
+    "summary": "The U.S. Justice Department announced a criminal indictment against former Cuban President Raul Castro, 94, over his alleged role in the 1996 shootdown of two Brothers to the Rescue civilian aircraft.",
+    "date_event": "2026-05-20T16:17:00Z",
+    "date_published": "2026-05-20T16:47:04Z",
+    "geo": {
+      "lat": 25.7742,
+      "lon": -80.1936,
+      "country": "United States",
+      "region": "Florida",
+      "city": "Miami"
+    },
+    "topics": [
+      "sanctions",
+      "indictment",
+      "cuba",
+      "regime-change"
+    ],
+    "confidence": 0.95,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2057141063723200552",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://www.ctvnews.ca/world/article/us-is-expected-to-announce-criminal-case-against-former-cuban-president-raul-castro/",
+        "label": "CTV News"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_991",
+    "title": "Hezbollah FPV Drones Strike Israeli Iron Dome Launchers at Jal-Al-Alam Site",
+    "summary": "Hezbollah claimed destruction of Israeli Iron Dome air defense launchers using first-person-view drones at the Jal-Al-Alam military site in northern Israel.",
+    "date_event": "2026-05-20T16:45:00Z",
+    "date_published": "2026-05-20T16:51:24Z",
+    "geo": {
+      "lat": 33.0632,
+      "lon": 35.2512,
+      "country": "Israel",
+      "region": "Northern District"
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "drone",
+      "hezbollah",
+      "iron-dome",
+      "israel"
+    ],
+    "confidence": 0.9,
+    "source_name": "My Lord Bebo (@MyLordBebo)",
+    "links": [
+      {
+        "url": "https://x.com/MyLordBebo/status/2057142156456816764",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/articles/c1j2zwe9g5no",
+        "label": "BBC Verify Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_992",
+    "title": "Colombian Mercenary Captured by Russian Forces in Ukraine Urges Parents to Report Recruiters",
+    "summary": "A Colombian mercenary captured by Russian forces in Ukraine urged his parents to report recruiters who make false promises to young people and elderly individuals seeking to fight abroad.",
+    "date_event": "2026-05-20T17:00:00Z",
+    "date_published": "2026-05-20T17:10:00Z",
+    "geo": {
+      "lat": 49.4872,
+      "lon": 31.2718,
+      "country": "Ukraine"
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "ukraine",
+      "russia",
+      "mercenary",
+      "colombia"
+    ],
+    "confidence": 0.75,
+    "source_name": "My Lord Bebo (@MyLordBebo)",
+    "links": [
+      {
+        "url": "https://x.com/MyLordBebo/status/2057146835962077244",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_993",
+    "title": "China Deploys Liaoning Carrier Strike Group for Live-Fire Drills in Western Pacific",
+    "summary": "The PLA Navy dispatched the Liaoning carrier strike group to the Western Pacific for live-fire exercises, marking another step in Beijing's expanding blue-water naval strategy beyond the First Island Chain. Taiwan's Premier warned China's military actions represent the greatest source of regional instability.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:20:00Z",
+    "geo": {
+      "lat": 20.0,
+      "lon": 130.0,
+      "country": "International Waters",
+      "region": "Western Pacific"
+    },
+    "topics": [
+      "carrier",
+      "deployment",
+      "live-fire",
+      "taiwan",
+      "china",
+      "pla-navy",
+      "western-pacific"
+    ],
+    "confidence": 0.92,
+    "source_name": "Platracker (@Platracker)",
+    "links": [
+      {
+        "url": "https://defencesecurityasia.com/en/china-liaoning-carrier-strike-group-live-fire-western-pacific-indo-pacific-taiwan/",
+        "label": "Defence Security Asia Coverage"
+      },
+      {
+        "url": "https://www.jpost.com/international/article-896631",
+        "label": "Jerusalem Post Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_994",
+    "title": "Nimitz Carrier Strike Group Arrives in Caribbean as Part of Southern Seas 2026",
+    "summary": "US Fleet Forces Command retweeted SOUTHCOM's welcome of the Nimitz Carrier Strike Group to the Caribbean, with USS Nimitz (CVN 68), Carrier Air Wing 17, USS Gridley (DDG 101), and USNS Patuxent (T-AO 201) demonstrating readiness and strategic reach during the Southern Seas 2026 deployment.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:14:32Z",
+    "geo": {
+      "lat": 15.0,
+      "lon": -75.0,
+      "country": "International Waters",
+      "region": "Caribbean Sea"
+    },
+    "topics": [
+      "carrier",
+      "deployment",
+      "us-navy",
+      "caribbean",
+      "southern-seas",
+      "nimitz"
+    ],
+    "confidence": 0.95,
+    "source_name": "US Fleet Forces (@USFleetForces)",
+    "links": [
+      {
+        "url": "https://x.com/USFleetForces/status/2057132878362718296",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://www.southcom.mil/MEDIA/NEWS-ARTICLES/Article/4442177/us-4th-fleet-announces-southern-seas-2026-deployment/",
+        "label": "SOUTHCOM Announcement"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_995",
+    "title": "Kim Jong Un Calls for Stronger Mortar and Howitzer Forces in Artillery Buildup",
+    "summary": "North Korean leader Kim Jong Un visited munitions factories to review production of new 155mm self-propelled howitzers and called for strengthening mortar and howitzer forces, ordering establishment of a specialized artillery production complex as Pyongyang accelerates military modernization.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:25:00Z",
+    "geo": {
+      "lat": 39.02,
+      "lon": 125.75,
+      "country": "North Korea",
+      "region": "Pyongyang"
+    },
+    "topics": [
+      "north-korea",
+      "artillery",
+      "military",
+      "howitzer",
+      "munition",
+      "kim-jong-un"
+    ],
+    "confidence": 0.9,
+    "source_name": "Chadobcnews (@Chadobcnews)",
+    "links": [
+      {
+        "url": "https://www.koreaherald.com/article/10737133",
+        "label": "Korea Herald Coverage"
+      },
+      {
+        "url": "https://en.yna.co.kr/view/AEN20260508001300315",
+        "label": "Yonhap Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_996",
+    "title": "North Korea Drops Reunification Goal From Constitution, Redefining Inter-Korean Relations",
+    "summary": "North Korea removed all mentions of unification with South Korea from its constitution, marking a fundamental shift in the seven-decade relationship between the two Koreas. Analysts describe the change as a double-edged sword that could either reduce hostilities or deepen the divide.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:30:00Z",
+    "geo": {
+      "lat": 37.57,
+      "lon": 126.98,
+      "country": "South Korea",
+      "region": "Seoul"
+    },
+    "topics": [
+      "north-korea",
+      "south-korea",
+      "reunification",
+      "constitution",
+      "diplomacy",
+      "korean-peninsula"
+    ],
+    "confidence": 0.88,
+    "source_name": "Korea Economic Institute (@KoreaEconInst)",
+    "links": [
+      {
+        "url": "https://www.csmonitor.com/World/Asia-Pacific/2026/0519/north-korea-south-korea-reunification-kim-jong-un",
+        "label": "Christian Science Monitor Analysis"
+      },
+      {
+        "url": "https://indianexpress.com/article/world/kim-jong-un-north-korea-south-korea-border-fortress-10695498/",
+        "label": "Indian Express Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_997",
+    "title": "Taiwan Releases Rare F-16V Sniper Pod Images of PLA J-16 as 22 Chinese Aircraft Enter ADIZ",
+    "summary": "Taiwan's Ministry of National Defense released surveillance images captured by an F-16V fighter jet using a Sniper Advanced Targeting Pod showing a Chinese J-16 fighter, alongside Navy photos of Type 052D destroyer Yinchuan and Type 054A frigate Xuzhou operating near Taiwan.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:35:00Z",
+    "geo": {
+      "lat": 24.49,
+      "lon": 119.61,
+      "country": "Taiwan",
+      "region": "Taiwan Strait"
+    },
+    "topics": [
+      "taiwan",
+      "china",
+      "adiz",
+      "surveillance",
+      "f-16",
+      "military",
+      "fighter-jet"
+    ],
+    "confidence": 0.93,
+    "source_name": "US Pacific Fleet (@USPacificFleet)",
+    "links": [
+      {
+        "url": "https://www.channelnewsasia.com/east-asia/chinese-aircraft-carrier-taiwan-strait-6067941",
+        "label": "CNA Coverage"
+      },
+      {
+        "url": "https://www.taiwannews.com.tw/news/6366095",
+        "label": "Taiwan News Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_998",
+    "title": "Kim Jong Un Chairs Unprecedented Division-Brigade Commanders Meeting, Orders Border Fortress",
+    "summary": "North Korean leader Kim Jong Un convened the first publicly reported meeting of division and brigade-level military commanders since taking power in 2011, unveiling plans to reorganize the military and turn the southern border into an impregnable fortress amid the two hostile states policy.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:40:00Z",
+    "geo": {
+      "lat": 39.02,
+      "lon": 125.75,
+      "country": "North Korea",
+      "region": "Pyongyang"
+    },
+    "topics": [
+      "north-korea",
+      "military",
+      "border",
+      "fortress",
+      "kim-jong-un",
+      "restructuring"
+    ],
+    "confidence": 0.91,
+    "source_name": "TheDiplomat (@TheDiplomat)",
+    "links": [
+      {
+        "url": "https://indianexpress.com/article/world/kim-jong-un-north-korea-south-korea-border-fortress-10695498/",
+        "label": "Indian Express Coverage"
+      },
+      {
+        "url": "https://globalnation.inquirer.net/323832/kim-holds-1st-division-brigade-commanders-meet",
+        "label": "Inquirer Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260520_999",
+    "title": "China Confirms Purchase of 200 Boeing Aircraft Following Trump-Xi Beijing Summit",
+    "summary": "China's Commerce Ministry confirmed a deal to purchase 200 Boeing aircraft and work with the United States to reduce tariffs, ending a virtual sales freeze on Boeing aircraft to China of nearly a decade following the Trump-Xi summit in Beijing.",
+    "date_event": null,
+    "date_published": "2026-05-20T16:45:00Z",
+    "geo": {
+      "lat": 39.91,
+      "lon": 116.39,
+      "country": "China",
+      "region": "Beijing"
+    },
+    "topics": [
+      "china",
+      "trade",
+      "boeing",
+      "trump",
+      "xi-jinping",
+      "aviation",
+      "tariff"
+    ],
+    "confidence": 0.94,
+    "source_name": "CNN (@CNN)",
+    "links": [
+      {
+        "url": "https://www.cnn.com/2026/05/20/china/china-confirms-boeing-purchases-deals-intl-hnk",
+        "label": "CNN Coverage"
+      },
+      {
+        "url": "https://edition.cnn.com/2026/05/19/asia/putin-china-visit-xi-meeting-intl-hnk",
+        "label": "Putin-Xi Visit Context"
       }
     ],
     "link_preview_image": null
