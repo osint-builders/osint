@@ -248,6 +248,7 @@ Per source:
      - **Tweet permalink REQUIRED as `links[0]`**: The direct tweet URL (`https://x.com/{handle}/status/{tweet_id}`) MUST be the FIRST entry in `links[]` labeled `"Original Tweet"`. Corroborating article links follow. Never omit the original tweet URL.
    - Webpage: `agent-browser` + CSS selectors; parse publish dates; skip outside window.
    - API: `curl` with auth; add time range params where supported.
+     - **Reddit API** (`reddit.com/r/*/new.json`): no auth; header `User-Agent: osint-bot/1.0` required. Convert window to Unix seconds: `UNIX_START=$(date -d "$TIME_WINDOW_START" +%s 2>/dev/null || gdate -d "$TIME_WINDOW_START" +%s)` (same for `UNIX_END`). Parse `.data.children[].data`. Filter: `select(.created_utc >= UNIX_START and .created_utc <= UNIX_END)`. Set `links[0]={url:"https://reddit.com"+.permalink,label:"Reddit Post"}`; set `links[1]={url:.url,label:"External Link"}` only when `.url` does not contain "reddit.com". Set `image_urls:[]`.
    - RSS: `curl` + XML parse; filter by `pubDate`.
    - Log and reject anything outside `$TIME_WINDOW_START`→`$TIME_WINDOW_END`.
 3. **Translate to English** — if raw content contains non-English text, translate `title`, `summary`, and all body text to English before extraction. Agent translates directly using its own capabilities — no external API needed. Preserve proper nouns (person names, place names, organization names) verbatim. Apply E-PRIME after translation.
@@ -283,11 +284,40 @@ if [ -n "$LINKPREVIEW_API_KEY" ]; then
     PREVIEW_JSON=$(curl -sf --max-time 8 \
       "https://api.linkpreview.net/?q=$ENCODED_URL" \
       -H "X-Linkpreview-Api-Key: $LINKPREVIEW_API_KEY" 2>/dev/null || echo '{}')
-    if echo "$PREVIEW_JSON" | jq -e '.image | type == "string"' >/dev/null 2>&1; then
+    if echo "$PREVIEW_JSON" | jq -e '.image | type == "string" and length > 0' >/dev/null 2>&1; then
       event_json=$(echo "$event_json" | jq --argjson preview "$PREVIEW_JSON" \
         '. + {link_preview: $preview}')
     fi
     sleep 1  # respect rate limits (one request per second)
+  fi
+fi
+# Twitter banner fallback: if link_preview still has no image and source is Twitter/X,
+# fetch the account's profile banner via the Twitter API and use it as the preview image.
+# Banners are cached per handle to avoid redundant API calls across events from the same source.
+if [ -n "$TWITTER_BEARER_TOKEN" ]; then
+  HAS_IMG=$(echo "$event_json" | jq -r '.link_preview.image // ""')
+  IS_TW=$(echo "$event_json" | jq -r '.links[0].url // ""' | grep -cE 'x\.com|twitter\.com' || true)
+  if [ -z "$HAS_IMG" ] && [ "${IS_TW:-0}" -gt 0 ]; then
+    TW_HANDLE=$(echo "$event_json" | jq -r '.source.name // ""' | grep -oP '(?<=\(@)\w+(?=\))' | head -1)
+    if [ -n "$TW_HANDLE" ]; then
+      BANNER_URL=$(jq -r --arg h "$TW_HANDLE" '.[$h] // empty' "$TWITTER_BANNER_CACHE" 2>/dev/null)
+      if [ -z "$BANNER_URL" ]; then
+        BANNER_RESP=$(curl -sf --max-time 8 \
+          "https://api.twitter.com/2/users/by/username/$TW_HANDLE?user.fields=profile_banner_url" \
+          -H "Authorization: Bearer $TWITTER_BEARER_TOKEN" 2>/dev/null || echo '{}')
+        BANNER_URL=$(echo "$BANNER_RESP" | jq -r '.data.profile_banner_url // empty')
+        CACHE_TMP=$(jq --arg h "$TW_HANDLE" --arg u "${BANNER_URL:-}" \
+          '. + {($h): $u}' "$TWITTER_BANNER_CACHE" 2>/dev/null)
+        [ -n "$CACHE_TMP" ] && echo "$CACHE_TMP" > "$TWITTER_BANNER_CACHE"
+      fi
+      if [ -n "$BANNER_URL" ]; then
+        BANNER_IMG="$BANNER_URL/1500x500"
+        event_json=$(echo "$event_json" | jq --arg img "$BANNER_IMG" \
+          'if .link_preview then .link_preview.image = $img
+           else . + {link_preview: {image: $img, title: (.title // ""), description: (.summary // ""), url: (.links[0].url // "")}}
+           end')
+      fi
+    fi
   fi
 fi
 # Use $event_json (now enriched with link_preview) as the value written in step 8.
@@ -306,6 +336,8 @@ Skills (read SKILL.md first): `agent-browser`, `perplexity-search`, `data-to-mar
 ```bash
 GEOCODING_CACHE="/tmp/geocoding-cache-2.json"
 echo '{}' > "$GEOCODING_CACHE"
+TWITTER_BANNER_CACHE="/tmp/twitter-banner-cache-2.json"
+echo '{}' > "$TWITTER_BANNER_CACHE"
 
 geocode_location() {
   local location="$1"

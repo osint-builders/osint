@@ -289,7 +289,7 @@ if [ -n "$TWITTER_BEARER_TOKEN" ]; then
         [ -n "$CACHE_TMP" ] && echo "$CACHE_TMP" > "$TWITTER_BANNER_CACHE"
       fi
       if [ -n "$BANNER_URL" ]; then
-        BANNER_IMG="${BANNER_URL}/1500x500"
+        BANNER_IMG="$BANNER_URL/1500x500"
         event_json=$(echo "$event_json" | jq --arg img "$BANNER_IMG" \
           'if .link_preview then .link_preview.image = $img
            else . + {link_preview: {image: $img, title: (.title // ""), description: (.summary // ""), url: (.links[0].url // "")}}
