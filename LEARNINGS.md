@@ -196,3 +196,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** Both X/Twitter accounts do not resolve to active accounts. The API returned explicit "Could not find user" errors. Events for these sources' topic areas remain accessible via exa_web_search with source-specific keywords (agriculture/food security for TaFarms18; maritime tracking/sanctions for pizzainwatch).
 **Action for next run:** Skip Twitter API and r.jina.ai for twitter-tafarms18 and twitter-pizzainwatch. Use exa_web_search with source-specific topic keywords. Flag these sources for manifest handle investigation or status change.
 **Expires:** 2026-08-20
+
+## 2026-05-20 20:37Z — Reddit JSON API now returns valid data from agent environment
+**Trigger:** Bucket 4 successfully fetched r/CombatFootage, r/Intelligence, r/cybersecurity, and r/RussiaUkraineWar2022 via JSON API without 403 errors.
+**Finding:** The Reddit JSON API endpoints (reddit.com/r/*/new.json) returned valid JSON responses with User-Agent osint-bot/1.0 from the Warp Cloud Agent environment. This supersedes earlier findings from the same day reporting 403 blocks. The block appears to have been temporary or IP-rotation-dependent.
+**Action for next run:** Attempt Reddit JSON API first as the primary collection method for reddit-* sources. Keep exa_web_search as fallback only if 403 received.
+**Expires:** 2026-08-20
