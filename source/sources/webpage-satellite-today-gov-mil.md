@@ -2,6 +2,7 @@
 id: webpage-satellite-today-gov-mil
 type: webpage
 status: testing
+url: https://www.satellite.today/government-military/
 ---
 # Satellite Today (DoD) (satellite.today)
 Satellite Today's Government & Military section covers defense satellite programs, military space operations, launch contracts, space policy, and national security space activities. Provides industry news on government satellite procurement, military communications, reconnaissance systems, and defense space initiatives.
