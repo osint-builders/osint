@@ -226,6 +226,7 @@ Per source:
      - **Tweet permalink REQUIRED as `links[0]`**: The direct tweet URL (`https://x.com/{handle}/status/{tweet_id}`) MUST be the FIRST entry in `links[]` labeled `"Original Tweet"`. Corroborating article links follow. Never omit the original tweet URL.
    - Webpage: `agent-browser` + CSS selectors; parse publish dates; skip outside window.
    - API: `curl` with auth; add time range params where supported.
+     - **Reddit API** (`reddit.com/r/*/new.json`): no auth; header `User-Agent: osint-bot/1.0` required. Convert window to Unix seconds: `UNIX_START=$(date -d "$TIME_WINDOW_START" +%s 2>/dev/null || gdate -d "$TIME_WINDOW_START" +%s)` (same for `UNIX_END`). Parse `.data.children[].data`. Filter: `select(.created_utc >= UNIX_START and .created_utc <= UNIX_END)`. Set `links[0]={url:"https://reddit.com"+.permalink,label:"Reddit Post"}`; set `links[1]={url:.url,label:"External Link"}` only when `.url` does not contain "reddit.com". Set `image_urls:[]`.
    - RSS: `curl` + XML parse; filter by `pubDate`.
    - Log and reject anything outside `$TIME_WINDOW_START`→`$TIME_WINDOW_END`.
 3. **Translate to English** — if raw content contains non-English text, translate `title`, `summary`, and all body text to English before extraction. Agent translates directly using its own capabilities — no external API needed. Preserve proper nouns (person names, place names, organization names) verbatim. Apply E-PRIME after translation.

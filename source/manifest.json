@@ -1,1478 +1,1608 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-04-30",
+  "last_updated": "2026-05-20",
   "description": "Master registry of all OSINT data sources for world event collection",
   "sources": [
     {
+      "id": "reddit-combatfootage",
+      "name": "",
+      "type": "api",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/reddit-combatfootage.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "reddit-credibledefense",
+      "name": "",
+      "type": "api",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/reddit-credibledefense.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "reddit-cybersecurity",
+      "name": "",
+      "type": "api",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/reddit-cybersecurity.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "reddit-geopolitics",
+      "name": "",
+      "type": "api",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/reddit-geopolitics.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "reddit-intelligence",
+      "name": "",
+      "type": "api",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/reddit-intelligence.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "reddit-lesscredibledefence",
+      "name": "",
+      "type": "api",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/reddit-lesscredibledefence.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "reddit-netsec",
+      "name": "",
+      "type": "api",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/reddit-netsec.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "reddit-noncredibledefense",
+      "name": "",
+      "type": "api",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/reddit-noncredibledefense.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "reddit-northkoreanews",
+      "name": "",
+      "type": "api",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/reddit-northkoreanews.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "reddit-osint",
+      "name": "",
+      "type": "api",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/reddit-osint.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "reddit-russiaukrainewar2022",
+      "name": "",
+      "type": "api",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/reddit-russiaukrainewar2022.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "reddit-sino",
+      "name": "",
+      "type": "api",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/reddit-sino.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "reddit-ukrainewarvideorepport",
+      "name": "",
+      "type": "api",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/reddit-ukrainewarvideorepport.md",
+      "added_date": "2026-05-20"
+    },
+    {
       "id": "twitter-abc",
-      "name": "ABC News - Breaking News & World Events",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-abc.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-africafactszone",
-      "name": "Africa Facts Zone",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-africafactszone.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-allsource4",
-      "name": "All Source Intelligence - Multi-Domain OSINT Aggregation",
+      "name": "",
       "type": "twitter",
-      "status": "inactive",
-      "reliability": "high",
-      "priority": "high",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-allsource4.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-ap",
-      "name": "Associated Press - Breaking News & World Events",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-ap.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-arcgis-storymaps",
-      "name": "ArcGIS Story Maps - Geospatial Narrative Intelligence & Visualization",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
+      "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-arcgis-storymaps.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-armed-forces-phil",
-      "name": "Armed Forces of the Philippines - Official Military Intelligence",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-armed-forces-phil.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-aurora-intel",
-      "name": "Aurora Intel - Geopolitical Intelligence and Security Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-aurora-intel.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-ausnav",
-      "name": "Royal Australian Navy - Indo-Pacific Naval Operations",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-ausnav.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-bates-gill",
-      "name": "Bates Gill - Asia Security Expert and China Scholar",
+      "name": "",
       "type": "twitter",
-      "status": "inactive",
-      "reliability": "high",
-      "priority": "high",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-bates-gill.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-bbc-breaking",
-      "name": "BBC Breaking News - Immediate Alerts",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "critical",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-bbc-breaking.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-bbc-world",
-      "name": "BBC World News - International Coverage",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-bbc-world.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-bbgoriginals",
-      "name": "BBG Originals",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
+      "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-bbgoriginals.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-beltelefacts",
-      "name": "Belteleradio Facts - Philippines Defense & Security News",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-beltelefacts.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-beltelfreeaudio",
-      "name": "Belteleradio Free Audio - Philippines Security & Regional News",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-beltelfreeaudio.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-borrowed7time",
-      "name": "Borrowed7Time - OSINT Analyst and Conflict Intelligence",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-borrowed7time.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-c4ads",
-      "name": "C4ADS - Conflict and Illicit Networks Research",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-c4ads.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-ca-jc",
-      "name": "CA JC - Regional Security & Political Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-ca-jc.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-cepa",
-      "name": "CEPA - Center for European Policy Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-cepa.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-chadobcnews",
-      "name": "Chad O'Brien - Korea News & Military Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-chadobcnews.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-chinapower",
-      "name": "China Power Project - CSIS China Analysis Platform",
+      "name": "",
       "type": "twitter",
-      "status": "inactive",
-      "reliability": "high",
-      "priority": "high",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-chinapower.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-chinese-emb-in-us",
-      "name": "Chinese Embassy in the United States",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
-      "priority": "high",
+      "priority": "medium",
       "file": "sources/twitter-chinese-emb-in-us.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-clash-report",
-      "name": "Clash Report - Middle East Conflict & Security Reporting",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
-      "priority": "high",
+      "priority": "medium",
       "file": "sources/twitter-clash-report.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-claudefb",
-      "name": "Claude FB - Regional Observer & Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-claudefb.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-cnn",
-      "name": "CNN - Breaking News & World Events",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-cnn.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-cnnbrk",
-      "name": "CNN Breaking News - Immediate Alerts",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "critical",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-cnnbrk.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-cnni",
-      "name": "CNN International - Global Breaking News",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-cnni.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-coastguard-ph",
-      "name": "Philippine Coast Guard - Maritime Law Enforcement and Territorial Defense",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-coastguard-ph.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-csis-korea-chair",
-      "name": "CSIS Korea Chair - Strategic Think Tank Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-csis-korea-chair.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-dataminr",
-      "name": "Dataminr - Real-Time Event Detection",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-dataminr.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-defence-aust",
-      "name": "Australian Department of Defence - Regional Security and Defense Policy",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-defence-aust.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-detresfa",
-      "name": "Detresfa - Maritime Distress & Search and Rescue Monitoring",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-detresfa.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-dprk-news",
-      "name": "DPRK News Aggregator",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-dprk-news.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-elint-news",
-      "name": "ELINT News - Electronic Intelligence & Security Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-elint-news.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-esri-training",
-      "name": "Esri Training - GIS Education & Geospatial Analysis Techniques",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
+      "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-esri-training.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-esri-water",
-      "name": "Esri Water - Water Resources & Environmental GEOINT",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "low",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-esri-water.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-esri",
-      "name": "Esri - GIS Technology & Geospatial Intelligence Platform",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
+      "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-esri.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-etienne-lh",
-      "name": "Etienne - Defense and Security Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-etienne-lh.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-faa-south",
-      "name": "Focus on Africa South - Regional Security & Defense",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-faa-south.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-fleetnumbers",
-      "name": "Fleetnumbers - Naval Fleet Tracking & Ship Pennant Numbers",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-fleetnumbers.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-foxnews",
-      "name": "Fox News - Breaking News & World Events",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
-      "priority": "high",
+      "priority": "medium",
       "file": "sources/twitter-foxnews.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-gcaptain",
-      "name": "gCaptain - Maritime News and Intelligence",
-      "type": "twitter",
-      "status": "active",
-      "reliability": "high",
-      "priority": "high",
-      "file": "sources/twitter-gcaptain.md",
-      "added_date": "2026-04-30"
-    },
-    {
-      "id": "twitter-hawkeye360",
-      "name": "HawkEye360 - Satellite RF Detection & Geolocation Intelligence",
-      "type": "twitter",
-      "status": "active",
-      "reliability": "high",
-      "priority": "high",
-      "file": "sources/twitter-hawkeye360.md",
-      "added_date": "2026-04-30"
-    },
-    {
-      "id": "twitter-ian-bremmer",
-      "name": "Ian Bremmer - Eurasia Group Political Risk Analysis",
-      "type": "twitter",
-      "status": "active",
-      "reliability": "high",
-      "priority": "high",
-      "file": "sources/twitter-ian-bremmer.md",
-      "added_date": "2026-04-30"
-    },
-    {
-      "id": "twitter-ianellisjones",
-      "name": "Ian Ellis-Jones - Maritime Intelligence & Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
-      "priority": "high",
+      "priority": "medium",
+      "file": "sources/twitter-gcaptain.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "twitter-hawkeye360",
+      "name": "",
+      "type": "twitter",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/twitter-hawkeye360.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "twitter-ian-bremmer",
+      "name": "",
+      "type": "twitter",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/twitter-ian-bremmer.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "twitter-ianellisjones",
+      "name": "",
+      "type": "twitter",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-ianellisjones.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-imo-hq",
-      "name": "International Maritime Organization - Official Account",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
+      "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-imo-hq.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-info-fusion-ctr",
-      "name": "Info Fusion Center - Multi-Source Intelligence Fusion and Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-info-fusion-ctr.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-inside-nk",
-      "name": "Inside North Korea Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-inside-nk.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-iran-observer",
-      "name": "Iran Observer - Iranian Intelligence & Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-iran-observer.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-iran-spectrum",
-      "name": "Iran Spectrum - Technical Iran Analysis & Intelligence",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-iran-spectrum.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-jaime-ocon",
-      "name": "Jaime Ocon - GIS Analyst & Geospatial Intelligence Practitioner",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-jaime-ocon.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-japan-joint-staff",
-      "name": "Japan Joint Staff Office - Multi-Domain Defense Operations",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-japan-joint-staff.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-jasdf-pao-eng",
-      "name": "Japan Air Self-Defense Force Public Affairs (English)",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-jasdf-pao-eng.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-jason-brodsky",
-      "name": "Jason Brodsky - Iran Policy Expert",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-jason-brodsky.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-jkgarokgov",
-      "name": "JKGA ROK Gov - Korea Government Affairs & Policy",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-jkgarokgov.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-jnb-summary",
-      "name": "Japan-North Korea Bridge Summary",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-jnb-summary.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-john-pollock",
-      "name": "John Pollock - Defense Analysis & Intelligence",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
+      "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-john-pollock.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-joseph-dempsey",
-      "name": "Joseph Dempsey - IISS Military Systems Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-joseph-dempsey.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-kang-daily",
-      "name": "Korea Ang Daily - Korean Military & Defense News",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-kang-daily.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-kc-nwt",
-      "name": "KC NWT - Korea Security & Defense Watch",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
-      "priority": "high",
+      "priority": "medium",
       "file": "sources/twitter-kc-nwt.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-key-to-med",
-      "name": "Key to Middle East Defense - Military & Defense Intelligence",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "medium-high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-key-to-med.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-kl-summary",
-      "name": "Korea-related Summaries and Analysis",
+      "name": "",
       "type": "twitter",
-      "status": "inactive",
+      "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-kl-summary.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-korea-econ-inst",
-      "name": "Korea Economic Institute - Economic & Security Analysis",
-      "type": "twitter",
-      "status": "active",
-      "reliability": "high",
-      "priority": "medium",
-      "file": "sources/twitter-korea-econ-inst.md",
-      "added_date": "2026-04-30"
-    },
-    {
-      "id": "twitter-korea-herald",
-      "name": "The Korea Herald - Major Korean English Daily",
-      "type": "twitter",
-      "status": "inactive",
-      "reliability": "high",
-      "priority": "high",
-      "file": "sources/twitter-korea-herald.md",
-      "added_date": "2026-04-30"
-    },
-    {
-      "id": "twitter-korea-times-alt",
-      "name": "The Korea Times (Alt) - Secondary Korean News Feed",
-      "type": "twitter",
-      "status": "inactive",
-      "reliability": "high",
-      "priority": "medium",
-      "file": "sources/twitter-korea-times-alt.md",
-      "added_date": "2026-04-30"
-    },
-    {
-      "id": "twitter-korea-times",
-      "name": "The Korea Times - Established Korean News & Analysis",
-      "type": "twitter",
-      "status": "active",
-      "reliability": "high",
-      "priority": "high",
-      "file": "sources/twitter-korea-times.md",
-      "added_date": "2026-04-30"
-    },
-    {
-      "id": "twitter-kylebass",
-      "name": "Kyle Bass - Asia/China Economic & Geopolitical Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
-      "priority": "high",
+      "priority": "medium",
+      "file": "sources/twitter-korea-econ-inst.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "twitter-korea-herald",
+      "name": "",
+      "type": "twitter",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/twitter-korea-herald.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "twitter-korea-times-alt",
+      "name": "",
+      "type": "twitter",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/twitter-korea-times-alt.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "twitter-korea-times",
+      "name": "",
+      "type": "twitter",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/twitter-korea-times.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "twitter-kylebass",
+      "name": "",
+      "type": "twitter",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-kylebass.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-mda-space",
-      "name": "MDA Space - Commercial Satellite Intelligence & Earth Observation",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-mda-space.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-mdat-gog",
-      "name": "MDAT GoG - Maritime Domain Awareness Gulf of Guinea",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-mdat-gog.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-megatronlion",
-      "name": "Megatron Lion - Independent OSINT Analyst",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-megatronlion.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-mench-osint",
-      "name": "Mench OSINT - Visual Intelligence and Equipment Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mench-osint.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-middle-east-eye",
-      "name": "Middle East Eye - Regional News & Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-middle-east-eye.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-militarylandnet",
-      "name": "Military Land - Conflict Mapping and Territorial Control Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-militarylandnet.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-minhdr18",
-      "name": "Minhdr18 - Defense Research and Military Technology Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-minhdr18.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-mndchina",
-      "name": "China Ministry of National Defense",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
-      "priority": "high",
+      "priority": "medium",
       "file": "sources/twitter-mndchina.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-modjapan-en",
-      "name": "Japan Ministry of Defense (English)",
+      "name": "",
       "type": "twitter",
-      "status": "inactive",
-      "reliability": "high",
-      "priority": "high",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-modjapan-en.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-mofajapan-en",
-      "name": "Japan Ministry of Foreign Affairs (English)",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
+      "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mofajapan-en.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-mondefense",
-      "name": "Taiwan Ministry of National Defense - Official Defense Intelligence",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-mondefense.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-msc-sealift",
-      "name": "Military Sealift Command - Strategic Logistics and Support",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
+      "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-msc-sealift.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-mt-anderson",
-      "name": "M.T. Anderson - Regional Security & Intelligence Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mt-anderson.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-mylordbebo",
-      "name": "MyLordBebo - Regional Observer & Developments",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mylordbebo.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-nasa",
-      "name": "NASA - Official National Aeronautics and Space Administration",
-      "type": "twitter",
-      "status": "active",
-      "reliability": "high",
-      "priority": "medium",
-      "file": "sources/twitter-nasa.md",
-      "added_date": "2026-04-30"
-    },
-    {
-      "id": "twitter-natalierevolts",
-      "name": "Natalie Revolts - Conflict Tracking & Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
-      "priority": "high",
+      "priority": "medium",
+      "file": "sources/twitter-nasa.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "twitter-natalierevolts",
+      "name": "",
+      "type": "twitter",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-natalierevolts.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-national-interest",
-      "name": "The National Interest - Defense & Foreign Policy Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-national-interest.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-natlhistships",
-      "name": "National Historic Ships - Naval Heritage & Ship Preservation",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
-      "priority": "low",
+      "priority": "medium",
       "file": "sources/twitter-natlhistships.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-nato-marcom",
-      "name": "NATO Maritime Command - Official Account",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-nato-marcom.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-nguyenthiho88",
-      "name": "Nguyen Thi Ho - Vietnam Observer",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-nguyenthiho88.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-nsa-cyber",
-      "name": "NSA Cybersecurity - Official Cybersecurity Directorate",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-nsa-cyber.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-nsa-gov",
-      "name": "National Security Agency - Official Account",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
+      "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-nsa-gov.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-ntonc",
-      "name": "ntonc - OSINT Collector and Military Intelligence",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-ntonc.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-nytimes-world",
-      "name": "New York Times World News - International Coverage",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-nytimes-world.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-ofac-alert",
-      "name": "OFAC Alert - US Treasury Sanctions Announcements",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-ofac-alert.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-oilcfd",
-      "name": "OilCfd - Oil Shipping and Commodities Intelligence",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
-      "priority": "high",
+      "priority": "medium",
       "file": "sources/twitter-oilcfd.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-olongapo-times",
-      "name": "Olongapo Times - Philippines Regional News & Military Activity",
-      "type": "twitter",
-      "status": "inactive",
-      "reliability": "medium",
-      "priority": "medium",
-      "file": "sources/twitter-olongapo-times.md",
-      "added_date": "2026-04-30"
-    },
-    {
-      "id": "twitter-opennuclear",
-      "name": "OpenNuclear - Nuclear Facilities & Weapons Monitoring",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
-      "priority": "high",
+      "priority": "medium",
+      "file": "sources/twitter-olongapo-times.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "twitter-opennuclear",
+      "name": "",
+      "type": "twitter",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-opennuclear.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-osaindawg",
-      "name": "OsainDawg - Maritime OSINT & Vessel Tracking",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-osaindawg.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-pizzainwatch",
-      "name": "Pizza in Watch - Maritime Vessel Tracking & AIS Intelligence",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-pizzainwatch.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-platracker",
-      "name": "PLATracker - Chinese Military Movement Monitoring",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-platracker.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-pyongyang-today",
-      "name": "Pyongyang Today - Daily DPRK Updates",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-pyongyang-today.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-rayfunseth",
-      "name": "Ray Funseth - Maritime OSINT Analyst",
+      "name": "",
       "type": "twitter",
-      "status": "inactive",
+      "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-rayfunseth.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-raytoribo",
-      "name": "Ray Toribo - Regional Analysis & Intelligence",
+      "name": "",
       "type": "twitter",
-      "status": "inactive",
+      "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-raytoribo.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-riskstaff",
-      "name": "Risk Staff - Global Security and Risk Intelligence",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-riskstaff.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-sanctions-watch",
-      "name": "Sanctions Watch - International Sanctions Monitoring",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-sanctions-watch.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-schizoint-rel",
-      "name": "SchizointReL - Intelligence Relations and Information Warfare Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-schizoint-rel.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-scmpnews",
-      "name": "South China Morning Post - Asia-Pacific Regional News and Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
-      "priority": "high",
+      "priority": "medium",
       "file": "sources/twitter-scmpnews.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-scpandura",
-      "name": "Pandura - Security Analysis & Intelligence",
+      "name": "",
       "type": "twitter",
-      "status": "inactive",
+      "status": "active",
       "reliability": "medium",
-      "priority": "high",
+      "priority": "medium",
       "file": "sources/twitter-scpandura.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-scs-pi",
-      "name": "SCS-PI - South China Sea Proactive Initiatives",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-scs-pi.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-seawatch-intl",
-      "name": "Sea Watch International - Maritime Search and Rescue Operations",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-seawatch-intl.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-shipnews",
-      "name": "ShipNews - Shipping Industry News and Intelligence",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-shipnews.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-sim-nasr",
-      "name": "Sim Nasr - Middle East Regional Analyst",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-sim-nasr.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-sindikasyontek",
-      "name": "Sindikasyon Teknolohiya - Philippines Technology & Security News",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-sindikasyontek.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-songss44",
-      "name": "Songss44 - OSINT Analyst and Regional Security Intelligence",
+      "name": "",
       "type": "twitter",
-      "status": "inactive",
+      "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-songss44.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-southkoreapro",
-      "name": "South Korea Pro - Professional Korea Analysis & Intelligence",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-southkoreapro.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-tafarms18",
-      "name": "TaFarms18 - Agriculture & Regional Security Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-tafarms18.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-taiwan-news-en",
-      "name": "Taiwan News English - Taiwan Regional News and Cross-Strait Relations",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-taiwan-news-en.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-tanker-trackers",
-      "name": "TankerTrackers - Oil & Gas Tanker Movement Tracking",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-tanker-trackers.md",
-      "added_date": "2026-04-29"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-tatarigamiua",
-      "name": "Tatarigami - Ukraine Conflict Analysis & Military Tracking",
+      "name": "",
       "type": "twitter",
-      "status": "inactive",
-      "reliability": "high",
-      "priority": "high",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-tatarigamiua.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-the-dailynk",
-      "name": "The Daily NK - North Korea News and Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-the-dailynk.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-the-diplomat",
-      "name": "The Diplomat - Asia-Pacific Affairs & Geopolitics",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-the-diplomat.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-the-koreaview",
-      "name": "The Korea View - Korean Peninsula News",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-the-koreaview.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-the-lookout-north",
-      "name": "The Lookout North - Regional Military Monitoring",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "medium-high",
+      "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-the-lookout-north.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-the-pacific-brief",
-      "name": "The Pacific Brief - Defense Intelligence and Regional Security Analysis",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-the-pacific-brief.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-therealshipdude",
-      "name": "TheRealShipDude - Ship Identification and Maritime OSINT",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-therealshipdude.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-thewarzonewire",
-      "name": "The War Zone Wire - Defense and Military News",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-thewarzonewire.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-tradewindsnews",
-      "name": "TradeWinds News - Shipping Trade Intelligence",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
+      "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-tradewindsnews.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-uani",
-      "name": "United Against Nuclear Iran - Iran Policy & Advocacy",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "medium-high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-uani.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-united-nations",
-      "name": "United Nations - Official Account",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-united-nations.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-us-5th-fleet",
-      "name": "US 5th Fleet - Middle East Naval Operations Command",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "critical",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-us-5th-fleet.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-us-7th-fleet",
-      "name": "US 7th Fleet - Indo-Pacific Naval Operations Command",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "critical",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-us-7th-fleet.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-us-fleet-forces",
-      "name": "US Fleet Forces Command - Atlantic Fleet Operations",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-us-fleet-forces.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-us-forces-japan",
-      "name": "US Forces Japan - Official Military Command Account",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-us-forces-japan.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-us-navy",
-      "name": "US Navy Official - Department of the Navy Primary Account",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-us-navy.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-us-pacific-fleet",
-      "name": "US Pacific Fleet - Theater Naval Command",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-us-pacific-fleet.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-us-treasury",
-      "name": "US Department of Treasury - Official Account",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-us-treasury.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-vantortech",
-      "name": "Vantor Technologies - Geospatial Intelligence & Analytics",
+      "name": "",
       "type": "twitter",
       "status": "active",
-      "reliability": "high",
+      "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-vantortech.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-war-tv7890",
-      "name": "WarTV - Real-Time Conflict Monitoring and War Updates",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-war-tv7890.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-warshipcam",
-      "name": "WarshipCam - Naval Vessel Photography and Identification",
-      "type": "twitter",
-      "status": "active",
-      "reliability": "high",
-      "priority": "medium",
-      "file": "sources/twitter-warshipcam.md",
-      "added_date": "2026-04-30"
-    },
-    {
-      "id": "twitter-xinhua-news",
-      "name": "Xinhua News Agency",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
-      "priority": "high",
+      "priority": "medium",
+      "file": "sources/twitter-warshipcam.md",
+      "added_date": "2026-05-20"
+    },
+    {
+      "id": "twitter-xinhua-news",
+      "name": "",
+      "type": "twitter",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/twitter-xinhua-news.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-xkorea",
-      "name": "X Korea - Korea-Focused News & Updates",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-xkorea.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-xnews",
-      "name": "X News - Platform Breaking News",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-xnews.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-yonkosmc",
-      "name": "YonkosMC - Philippines Maritime Security & Naval Operations",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
-      "priority": "high",
+      "priority": "medium",
       "file": "sources/twitter-yonkosmc.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "twitter-yortukisgk",
-      "name": "Yortuk Intelligence - Regional Monitoring",
+      "name": "",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-yortukisgk.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "webpage-breaking-defense-global",
-      "name": "Breaking Defense - Global Coverage",
+      "name": "",
       "type": "webpage",
       "status": "testing",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/webpage-breaking-defense-global.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "webpage-cuashub-defense",
-      "name": "CUASHUB - Defense Content",
+      "name": "",
       "type": "webpage",
       "status": "testing",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/webpage-cuashub-defense.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "webpage-satellite-today-gov-mil",
-      "name": "Satellite Today - Government & Military",
+      "name": "",
       "type": "webpage",
       "status": "testing",
-      "reliability": "high",
+      "reliability": "medium",
       "priority": "medium",
       "file": "sources/webpage-satellite-today-gov-mil.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "webpage-windward-ai-blog",
-      "name": "Windward AI Blog - Maritime Intelligence & Risk Analytics",
+      "name": "",
       "type": "webpage",
       "status": "active",
-      "reliability": "high",
+      "reliability": "medium",
       "priority": "medium",
       "file": "sources/webpage-windward-ai-blog.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     },
     {
       "id": "webpage-yahoo-world-news",
-      "name": "Yahoo News - World Section",
+      "name": "",
       "type": "webpage",
       "status": "testing",
-      "reliability": "high",
-      "priority": "high",
+      "reliability": "medium",
+      "priority": "medium",
       "file": "sources/webpage-yahoo-world-news.md",
-      "added_date": "2026-04-30"
+      "added_date": "2026-05-20"
     }
   ],
   "statistics": {
-    "total_sources": 146,
-    "active_sources": 129,
-    "testing_sources": 4,
-    "inactive_sources": 13,
+    "total_sources": 159,
+    "active_sources": 142,
+    "testing_sources": 17,
+    "inactive_sources": 0,
     "by_type": {
       "twitter": 141,
       "webpage": 5,
-      "api": 0,
+      "api": 13,
       "email": 0,
       "rss": 0,
       "webhook": 0,
@@ -1482,13 +1612,13 @@
       "other": 0
     },
     "by_priority": {
-      "high": 73,
-      "medium": 65,
-      "low": 2
+      "high": 0,
+      "medium": 159,
+      "low": 0
     },
     "by_reliability": {
-      "high": 83,
-      "medium": 62,
+      "high": 0,
+      "medium": 159,
       "low": 0,
       "unverified": 0
     }
@@ -1498,6 +1628,6 @@
     "compatible_versions": [
       "1.0.x"
     ],
-    "last_validated": "2026-04-30"
+    "last_validated": "2026-05-20"
   }
 }
