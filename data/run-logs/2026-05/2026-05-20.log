@@ -53,6 +53,7 @@ All 10 sources yielded events via web search. Key topics covered:
 ### Validation: All 10 passed strict + time-window
 ### Images: 0 (all Twitter sources, skipped per learnings)
 
+<<<<<<< Updated upstream
 ## Bucket 10 @ 2026-05-20T20:37:00.518Z
 Sources processed: 10
 Events generated: 7
@@ -66,3 +67,30 @@ No in-window events found. @EsriTraining focuses on GIS education content - no b
 No in-window events found. @EsriWater focuses on water resources and hydrology - no breaking events matched topic area during 19:37-20:37 UTC window.
 ## twitter-esri
 No in-window events found. @Esri focuses on GIS technology and geospatial intelligence - no breaking events matched topic area during 19:37-20:37 UTC window.
+=======
+## Bucket 12 @ 2026-05-20T20:37:00.520Z
+Sources: 10 processed, 10 events generated
+## reddit-ukrainewarvideorepport
+Collection via exa_web_search. Event generated.
+## twitter-beltelfreeaudio
+Collection via exa_web_search. Event generated.
+## twitter-claudefb
+Collection via exa_web_search. Event generated.
+## twitter-jaime-ocon
+Collection via exa_web_search. Event generated.
+## twitter-middle-east-eye
+Collection via exa_web_search. Event generated.
+## twitter-nato-marcom
+Collection via exa_web_search. Event generated.
+## twitter-osaindawg
+Collection via exa_web_search. Event generated.
+## twitter-shipnews
+Collection via exa_web_search. Event generated.
+## twitter-sim-nasr
+Collection via exa_web_search. Event generated.
+## webpage-satellite-today-gov-mil
+Collection via exa_web_search. Event generated.
+>>>>>>> Stashed changes
+
+## Bucket 12 @ 2026-05-20T20:37:00.520Z
+Sources: 10 processed, 10 events generated
