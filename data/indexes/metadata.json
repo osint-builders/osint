@@ -27465,8 +27465,8 @@
     "date_event": "2026-05-03T23:18:00Z",
     "date_published": "2026-05-03T23:18:00Z",
     "geo": {
-      "lat": null,
-      "lon": null,
+      "lat": 15.1347,
+      "lon": 117.7546,
       "country": "Philippines",
       "region": "South China Sea",
       "city": "Scarborough Shoal"
@@ -87879,6 +87879,318 @@
     "link_preview_image": null
   },
   {
+    "id": "evt_20260521_120",
+    "title": "Ukrainian SBU Strike Destroys Russian Drone Training Camp in Snizhne, Killing 65 Cadets and Instructor",
+    "summary": "Ukraine's Unmanned Systems Forces and Security Service struck a Russian UAV pilot training facility in Snizhne, Donetsk Oblast, eliminating at least 65 drone cadets and a lieutenant colonel. The attack also destroyed production facilities and four Tiger armoured vehicles.",
+    "date_event": "2026-05-21T04:00:00Z",
+    "date_published": "2026-05-21T20:35:00Z",
+    "geo": {
+      "lat": 48.0220754,
+      "lon": 38.7634612,
+      "country": "Ukraine",
+      "region": "Donetsk Oblast",
+      "city": "Snizhne"
+    },
+    "topics": [
+      "drone",
+      "strike",
+      "ukraine",
+      "russia",
+      "military",
+      "training"
+    ],
+    "confidence": 0.9,
+    "source_name": "r/UkraineWarVideoReport (reddit.com/r/UkraineWarVideoReport)",
+    "links": [
+      {
+        "url": "https://censor.net/en/news/4004260/the-sbs-and-sbu-destroyed-a-russian-uav-pilot-training-school",
+        "label": "Censor.NET Report"
+      },
+      {
+        "url": "https://www.cnn.com/2026/05/21/world/video/ukraine-drone-camp-strike-intldsk",
+        "label": "CNN Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_121",
+    "title": "Russia Delivers Nuclear Munitions to Belarus as Part of Joint Nuclear Exercises",
+    "summary": "Russia officially delivered nuclear munitions to field storage sites of a missile brigade in Belarus during joint nuclear drills, including test launches of ICBMs and hypersonic missiles. NATO warned of devastating consequences for any nuclear attack.",
+    "date_event": "2026-05-21T12:00:00Z",
+    "date_published": "2026-05-21T20:50:00Z",
+    "geo": {
+      "lat": 53.4250605,
+      "lon": 27.6971358,
+      "country": "Belarus"
+    },
+    "topics": [
+      "nuclear",
+      "military",
+      "russia",
+      "belarus",
+      "exercise",
+      "nato"
+    ],
+    "confidence": 0.95,
+    "source_name": "r/UkraineWarVideoReport (reddit.com/r/UkraineWarVideoReport)",
+    "links": [
+      {
+        "url": "https://www.cbsnews.com/news/ukraine-russia-war-nuclear-weapons-belarus-exercises/",
+        "label": "CBS News Report"
+      },
+      {
+        "url": "https://euromaidanpress.com/2026/05/21/russo-ukrainian-war-day-1548/",
+        "label": "Euromaidan Press Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_122",
+    "title": "Boxer Amphibious Ready Group and 11th MEU Conduct Blue-Green Integration Operations in Strait of Malacca",
+    "summary": "USS Boxer (LHD-4), USS Portland (LPD-27), and the 11th Marine Expeditionary Unit demonstrated Navy-Marine Corps blue-green team integration while operating in the Strait of Malacca as part of the U.S. 7th Fleet forward-deployed amphibious force.",
+    "date_event": null,
+    "date_published": "2026-05-21T21:06:14Z",
+    "geo": {
+      "lat": 4.6299322,
+      "lon": 99.298,
+      "country": "International Waters",
+      "region": "Strait of Malacca"
+    },
+    "topics": [
+      "deployment",
+      "exercise",
+      "indo-pacific",
+      "amphibious",
+      "navy",
+      "marine"
+    ],
+    "confidence": 0.9,
+    "source_name": "US Pacific Fleet (@USPacificFleet)",
+    "links": [
+      {
+        "url": "https://x.com/USPacificFleet/status/2057568674312028213",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://www.cpf.navy.mil/Newsroom/News/Article/4405600/boxarg-11th-meu-complete-at-sea-integrated-training-exercise/",
+        "label": "BOXARG Training Details"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_124",
+    "title": "Iran's Mojtaba Rejects Removal of Enriched Uranium From Country Amid Nuclear Negotiations",
+    "summary": "Reuters reported, citing two Iranian sources, that Mojtaba rejected the proposal to remove enriched uranium from Iran, complicating ongoing nuclear negotiations with the United States.",
+    "date_event": null,
+    "date_published": "2026-05-21T21:02:30Z",
+    "geo": {
+      "lat": 35.6892523,
+      "lon": 51.3896004,
+      "country": "Iran",
+      "city": "Tehran"
+    },
+    "topics": [
+      "nuclear",
+      "iran",
+      "diplomacy",
+      "sanctions",
+      "uranium"
+    ],
+    "confidence": 0.8,
+    "source_name": "War Monitor (@warmonitors)",
+    "links": [
+      {
+        "url": "https://t.me/warmonitors/44146",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_125",
+    "title": "Gunmen Kill at Least 16 in Two Separate Attacks on Honduras Coast",
+    "summary": "Gunmen carried out two separate shooting attacks on the Honduras coast, killing at least 16 people according to police reports.",
+    "date_event": null,
+    "date_published": "2026-05-21T21:07:30Z",
+    "geo": {
+      "lat": 15.2572432,
+      "lon": -86.0755145,
+      "country": "Honduras"
+    },
+    "topics": [
+      "violence",
+      "shooting",
+      "honduras",
+      "security",
+      "crime"
+    ],
+    "confidence": 0.75,
+    "source_name": "War Monitor (@warmonitors)",
+    "links": [
+      {
+        "url": "https://t.me/warmonitors/44148",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_167",
+    "title": "Iran Nuclear Deal Gaps Narrow as Uranium Enrichment and Strait of Hormuz Remain Key Sticking Points",
+    "summary": "A senior Iranian source told Reuters that while no deal has emerged yet, negotiating gaps have narrowed. Iran's uranium enrichment program and control over the Strait of Hormuz remain the central obstacles to an agreement.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:22:06Z",
+    "geo": {
+      "lat": 35.6892523,
+      "lon": 51.3896004,
+      "country": "Iran",
+      "city": "Tehran"
+    },
+    "topics": [
+      "nuclear",
+      "diplomacy",
+      "iran",
+      "strait-of-hormuz",
+      "ceasefire"
+    ],
+    "confidence": 0.8,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/82837",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/oPpJ-hD9Q2vIxVanT1lmNjoNTwe_lacM1u7zVyQsRdHArePYmlk13ZJXWVHTckOyMW2PDxeElWXC-c_L30S936nex1ICBSP06e6efql6aQivF3yCBvX83DreravbR1HtN915YiaFA3p-kBhDm4EOyasVpt7EbZA2zTFWumwCzZr4eFgzQJLT3dbDe13IUTcSog5LWs_S6eg49v23lMcIn1JDPnxjiCIivXjhR57yWt2L_mevY52ildIUGcgE1sI0Bo5MfIrpz2rgiVLYoTo1NhMZ5XX3UHvcS8F31QOT4gXm_pYI54Gk8s2_cLJzCDyRIuL5KcIAdAOzAfpya3FQWg.jpg"
+  },
+  {
+    "id": "evt_20260521_168",
+    "title": "Trump Announces Deployment of 5,000 Additional US Troops to Poland Following Nawrocki Election",
+    "summary": "President Trump announced the deployment of an additional 5,000 US troops to Poland, citing the successful election of President Karol Nawrocki whom Trump endorsed.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:39:53Z",
+    "geo": {
+      "lat": 52.2333742,
+      "lon": 21.0711489,
+      "country": "Poland",
+      "city": "Warsaw"
+    },
+    "topics": [
+      "military",
+      "nato",
+      "troop-deployment",
+      "poland",
+      "united-state"
+    ],
+    "confidence": 0.85,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/82838",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/iIvfJiIBUZQNx03ShanX-y3j1uCs8eGwZjubtqSYel3lZBDjj4xGGLGyIp3LGXo3Pnukz6dJznn5dSDE0NTRqJ2SUIE8fCazsCtgqM-oHIqArSnHhE3Luc3Z7-xCEC-ThVVYLXtPAqIMmmiKY64726tE5W7WRrPdCwcmpMBq-X9KugQE2E38rSbpEGcGfM9lXefqd1AR6Ko0gRKoJcMRhv7Vy9BM5nkLDgTlmPAFNONRuIaVfbsdJLzsuCEmTYkL8WvCNRVp5MzKTmGnh4pDdEc8bMIoANsMgcv7eodfVMX6o9k6ABl6oFuJWzosTll_WN-ImJ1WggneuAFZVjTv6A.jpg"
+  },
+  {
+    "id": "evt_20260521_169",
+    "title": "Two USGOV Contractor Phoenix Air Gulfstream III Aircraft Route from Chania to Keflavik",
+    "summary": "OSINT flight tracker Borrowed7time spotted two US government contractor Phoenix Air Gulfstream III aircraft (N163PA and N173PA) en route from Chania, Greece to Keflavik, Iceland, operating under callsigns GRB86 and GRB84.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:37:45Z",
+    "geo": {
+      "lat": 35.5120831,
+      "lon": 24.0191544,
+      "country": "Greece",
+      "city": "Chania"
+    },
+    "topics": [
+      "flight-tracking",
+      "military",
+      "intelligence",
+      "osint",
+      "contractor"
+    ],
+    "confidence": 0.9,
+    "source_name": "Borrowed7time (@Borrowed7time)",
+    "links": [
+      {
+        "url": "https://x.com/Borrowed7Time/status/2057561507811189127",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://x.com/Borrowed7Time/status/2057562440372736282",
+        "label": "Second Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HI3tO97a0AAkDbl.jpg"
+  },
+  {
+    "id": "evt_20260521_170",
+    "title": "Poland Government G550 Returns from Abuja to Warsaw Carrying Deputy PM Gawkowski",
+    "summary": "A Polish government Gulfstream G550 (registration 0001, hex #48D960) flew from Abuja, Nigeria to Warsaw as PLF105, carrying Deputy Prime Minister and Minister of Digital Affairs Dr. Krzysztof Gawkowski after a courtesy visit.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:48:57Z",
+    "geo": {
+      "lat": 9.0643305,
+      "lon": 7.4892974,
+      "country": "Nigeria",
+      "city": "Abuja"
+    },
+    "topics": [
+      "diplomacy",
+      "flight-tracking",
+      "digital-economy",
+      "defense",
+      "nigeria"
+    ],
+    "confidence": 0.9,
+    "source_name": "Borrowed7time (@Borrowed7time)",
+    "links": [
+      {
+        "url": "https://x.com/Borrowed7Time/status/2057564326786126196",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://www.nationalaccordnewspaper.com/nigeria-poland-explore-strategic-partnership-on-digital-economy-defence-others/",
+        "label": "Nigeria-Poland Partnership Coverage"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HI3v1CVaUAAWdqR.jpg"
+  },
+  {
+    "id": "evt_20260521_171",
+    "title": "Ghana Government Falcon 900EX Completes Flight from Accra to Johannesburg",
+    "summary": "OSINT flight tracker identified Ghana government Falcon 900EX (9G-EXE, hex #044037) operating as GHA005, which departed Accra and landed at Johannesburg, indicating high-level Ghanaian diplomatic or governmental activity.",
+    "date_event": null,
+    "date_published": "2026-05-21T21:02:16Z",
+    "geo": {
+      "lat": 5.5571096,
+      "lon": -0.2012376,
+      "country": "Ghana",
+      "city": "Accra"
+    },
+    "topics": [
+      "flight-tracking",
+      "diplomacy",
+      "government-aviation",
+      "ghana",
+      "south-africa"
+    ],
+    "confidence": 0.85,
+    "source_name": "Borrowed7time (@Borrowed7time)",
+    "links": [
+      {
+        "url": "https://x.com/Borrowed7Time/status/2057567674780234092",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HI3y4HTaQAAYHsK.jpg"
+  },
+  {
     "id": "evt_20260521_401",
     "title": "SNMG1 Monitors Russian Intelligence Vessel Yuri Ivanov Near Dynamic Mongoose 2026 Exercise",
     "summary": "Standing NATO Maritime Group 1 units tracked the Russian intelligence-gathering vessel Yuri Ivanov as it attempted to observe NATO Exercise Dynamic Mongoose 2026 in the High North off northern Norway. Portuguese frigate NRP Dom Francisco de Almeida maintained surveillance on the Russian AGI.",
@@ -88232,6 +88544,238 @@
       {
         "url": "https://www.securityweek.com/microsoft-patches-exploited-undefend-and-redsun-defender-zero-days/",
         "label": "SecurityWeek Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_501",
+    "title": "Lukoil Nizhny Novgorod Refinery Halts Operations After Ukrainian Drone Strike",
+    "summary": "Russia's fourth-largest refinery, Lukoil-Nizhegorodnefteorgsintez, ceased operations after Ukrainian drones damaged its main CDU-6 processing unit on May 20. Reuters reports virtually all major refineries in central Russia have halted or reduced fuel production following recent Ukrainian strikes.",
+    "date_event": "2026-05-20T22:00:00Z",
+    "date_published": "2026-05-21T20:37:00Z",
+    "geo": {
+      "lat": 56.3264816,
+      "lon": 44.0051395,
+      "country": "Russia",
+      "region": "Nizhny Novgorod Oblast",
+      "city": "Nizhny Novgorod"
+    },
+    "topics": [
+      "drone-strike",
+      "refinery",
+      "energy",
+      "ukraine",
+      "russia",
+      "military"
+    ],
+    "confidence": 0.85,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/42597",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/u0-fPUtFcXe4X91BTFX_ANoTd_2Ayp4dmPx9f4RtUzymqu9j1qcA1ql_ECyzhwqQC4Jch3au3w5deUNJoXWjiGaO9CA9s1Zxqx1WSi63IK7RR808Lu7woLjBrANzb5JNK9Jw_eeoNtzRxSdI87YsxafL4ktib_xDbxSYOMOHoZ_O_sHuAv7pu4TUDPX3WiWwuKa7FzCFoYe_9dl_hfhLpni888NxL92-c3zhyca0ctDYqpIernmiwObx4c9hnTWKIzu6UIhdYCYCqeKn7zziSlnrgieB9KWswtmRysdzpaIKN8kBmhWSCUQVzffD6yfkYIw_7ymiUrp2EFAUpK4Ozg.jpg"
+  },
+  {
+    "id": "evt_20260521_502",
+    "title": "Trump Deploys Additional 5,000 Troops to Poland",
+    "summary": "President Trump announced the deployment of an additional 5,000 US troops to Poland, expanding the American military presence in Eastern Europe amid continued regional security tensions.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:45:22Z",
+    "geo": {
+      "lat": 52.215933,
+      "lon": 19.134422,
+      "country": "Poland"
+    },
+    "topics": [
+      "military",
+      "deployment",
+      "nato",
+      "poland",
+      "united-state"
+    ],
+    "confidence": 0.7,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/184668",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/q5KS7UjoB9xII9biKb5Ls08A3lU7AnlCNw_VUV7Ete8K30IFaIcLJzlD0lwshcD7HDaSpuXrmGNbeunz8H70j4Ekvx238xgoaYMHmbufCelcw7Erms6wZwUP7GfbFCGofknsb5GdsaFQvvjW17PccvbtjlFFJwfwDjiRKvBjf-lX6GUISHOxqHCjLT01Gho7KgXERGlpaFDYu_UiEO7-e8lppr8yDSDTu0csMxlUdm1c_TUQzNUlzwJFmvoDajgGjU4zPrV0DM007DIU4HM84oLtLXoZNYSuzNQ2lxGsMWsM5F-v9xeRL5YF4DBauMoLdfYQdAUOTT8rWsdxvqnCXg.jpg"
+  },
+  {
+    "id": "evt_20260521_503",
+    "title": "Cuba Accuses US Secretary of State Rubio of Fabricating Pretexts for Military Aggression",
+    "summary": "Cuban Foreign Minister Bruno Rodríguez Parrilla accused US Secretary of State Marco Rubio of fabricating pretexts to justify military aggression against Cuba, escalating diplomatic tensions between the two nations.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:55:35Z",
+    "geo": {
+      "lat": 23.0131338,
+      "lon": -80.8328748,
+      "country": "Cuba"
+    },
+    "topics": [
+      "diplomacy",
+      "cuba",
+      "united-state",
+      "military",
+      "sanction"
+    ],
+    "confidence": 0.65,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/184669",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/u4Kl-LD3fm3zWyDxzTBpW-VHumkWorRc11ci72cLIImQOCqgRKarwbDhVRoJcAWCI2t2z2pqyv87eaBo9m3Rf2DlcydGcyNauJv-LRzrn4qi1I__h9eTcAVFccVKp2b3khCqWrJgjuvs8jGaVHOSLHwcWYWe0mHSWNPP183PnaCbWV70fiTf4Kj-rstVtEW6NfmEYahHDG2cXsHKSUNPONIX8skPMVR71SgLI5gFWXqL2HrLuQC5u4sCoEMOrV5zWf-ukH5QwllKU--r4fOwJdjdIw5ZvYn892xaiylu-yQDuZ9Yuu1SkwLk68yAzne-8PUoBD1XCQtpaeHxCYoW0g.jpg"
+  },
+  {
+    "id": "evt_20260521_504",
+    "title": "Trump Announces 5,000 Additional US Troops to Poland Following Nawrocki Election",
+    "summary": "President Trump announced 5,000 additional US troops heading to Poland, citing his relationship with newly elected Polish President Karol Nawrocki whom he endorsed. The deployment strengthens NATO's eastern flank.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:39:44Z",
+    "geo": {
+      "lat": 52.215933,
+      "lon": 19.134422,
+      "country": "Poland"
+    },
+    "topics": [
+      "military",
+      "deployment",
+      "nato",
+      "poland",
+      "united-state",
+      "trump"
+    ],
+    "confidence": 0.85,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2057562007683977325",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HI3tswlWAAA0wsH.png"
+  },
+  {
+    "id": "evt_20260521_505",
+    "title": "Iran Nuclear Negotiations: Gaps Narrowing but Enrichment and Hormuz Remain Sticking Points",
+    "summary": "A senior Iranian source told Reuters that while no deal has yet materialized, the gaps in nuclear negotiations have narrowed. Iran's uranium enrichment program and control over the Strait of Hormuz remain the key unresolved issues.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:21:55Z",
+    "geo": {
+      "lat": 32.6475314,
+      "lon": 54.5643516,
+      "country": "Iran"
+    },
+    "topics": [
+      "nuclear",
+      "negotiation",
+      "iran",
+      "enrichment",
+      "diplomacy",
+      "strait-of-hormuz"
+    ],
+    "confidence": 0.8,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2057557521875747313",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_20260521_506",
+    "title": "Graham Platner Controversy Intensifies Over Posts Mocking US Troops",
+    "summary": "The Graham Platner controversy continues as resurfaced posts mocking US troops and an interview suggesting Navy SEAL Chris Kyle killed civilians create political backlash ahead of Memorial Day weekend.",
+    "date_event": null,
+    "date_published": "2026-05-21T21:03:29Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "country": "United States",
+      "city": "Washington, DC"
+    },
+    "topics": [
+      "politics",
+      "controversy",
+      "military",
+      "united-state"
+    ],
+    "confidence": 0.8,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2057567984617451982",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2057567428628869120/img/eyQFOvMjVKT4HUeC.jpg"
+  },
+  {
+    "id": "evt_20260521_508",
+    "title": "Ukraine Strikes Russian FSB Headquarters in Occupied Kherson Oblast, Killing Nearly 100 Troops",
+    "summary": "Ukraine's SBU Alpha special forces struck an FSB headquarters in occupied Kherson Oblast, killing and wounding approximately 100 Russian troops and destroying a Pantsir-S1 air defense system valued at up to $20 million, President Zelensky announced.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:42:00Z",
+    "geo": {
+      "lat": 46.5421715,
+      "lon": 33.4079326,
+      "country": "Ukraine",
+      "region": "Kherson Oblast"
+    },
+    "topics": [
+      "military",
+      "strike",
+      "ukraine",
+      "russia",
+      "fsb",
+      "air-defense"
+    ],
+    "confidence": 0.85,
+    "source_name": "BBC Breaking News (@BBCBreaking)",
+    "links": [
+      {
+        "url": "https://kyivindependent.com/ukraine-strikes-russian-fsb-headquarters-in-occupied-kherson-oblast-killing-and-injuring-nearly-100-troops/",
+        "label": "Kyiv Independent"
+      }
+    ],
+    "link_preview_image": "https://assets.kyivindependent.com/content/images/2026/05/Screenshot-2026-05-21-at-16_01_03_20260521-130134.png"
+  },
+  {
+    "id": "evt_20260521_509",
+    "title": "NATO Jets Scramble as Drone Breaches Latvian Airspace for Third Consecutive Day",
+    "summary": "NATO scrambled fighter jets after a drone breached Latvian airspace for the third day in a row, with residents in eastern municipalities urged to remain indoors and seek shelter. Latvia deployed additional air defense assets to the affected areas.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:45:00Z",
+    "geo": {
+      "lat": 56.8406494,
+      "lon": 24.7537645,
+      "country": "Latvia"
+    },
+    "topics": [
+      "nato",
+      "drone",
+      "airspace",
+      "latvia",
+      "security",
+      "baltic"
+    ],
+    "confidence": 0.8,
+    "source_name": "Aurora Intel (@AuroraIntel)",
+    "links": [
+      {
+        "url": "https://kyivindependent.com/nato-jets-scramble-as-drone-breaches-latvian-airspace-for-3rd-day-in-a-row/",
+        "label": "Kyiv Independent"
       }
     ],
     "link_preview_image": null
@@ -91067,210 +91611,713 @@
     "link_preview_image": null
   },
   {
-    "id": "evt_20260521_001",
-    "title": "Taiwan Detects Seven PLA Aircraft and Seven Naval Vessels Near Island, Six Cross Median Line",
-    "summary": "Taiwan's Ministry of National Defense detected seven Chinese military aircraft and seven naval vessels operating around its waters on May 21, with six aircraft crossing the Taiwan Strait median line and entering northern and southwestern ADIZ sectors.",
-    "date_event": "2026-05-21T06:00:00Z",
-    "date_published": "2026-05-21T20:00:00Z",
+    "id": "evt_20260521_862",
+    "title": "Austrian Former Intelligence Officer Found Guilty of Spying for Russia in Landmark Trial",
+    "summary": "A Vienna court convicted former Austrian intelligence official Egisto Ott of espionage for Russia, sentencing him to four years for handing classified data to Russian intelligence and fugitive Wirecard executive Jan Marsalek.",
+    "date_event": "2026-05-21T20:00:00Z",
+    "date_published": "2026-05-21T20:30:00Z",
     "geo": {
-      "lat": 24.4917,
-      "lon": 119.6054,
-      "country": "Taiwan",
-      "region": "Taiwan Strait"
+      "lat": 48.2083537,
+      "lon": 16.3725042,
+      "country": "Austria",
+      "city": "Vienna"
     },
     "topics": [
-      "taiwan",
-      "pla",
-      "adiz",
-      "median-line",
-      "military",
-      "china",
-      "gray-zone"
-    ],
-    "confidence": 0.95,
-    "source_name": "國防部 Ministry of National Defense, ROC(Taiwan) 🇹🇼 (@MoNDefense)",
-    "links": [
-      {
-        "url": "https://x.com/MoNDefense/status/2057452117309136973",
-        "label": "Original Tweet"
-      },
-      {
-        "url": "https://newsable.asianetnews.com/world/taiwan-detects-7-chinese-military-aircraft-7-vessels-near-island-articleshow-6d88znh",
-        "label": "Asianet Newsable Report"
-      }
-    ],
-    "link_preview_image": "https://pbs.twimg.com/media/HI2JxsaW4AAYD-I.jpg"
-  },
-  {
-    "id": "evt_20260521_006",
-    "title": "Drone Strike Destroys FSB Headquarters on Arabat Spit with Dozens of Russian Personnel",
-    "summary": "Ukrainian forces struck an FSB headquarters building on the Arabat Spit in occupied Crimea, reportedly destroying the facility with dozens of Russian personnel inside.",
-    "date_event": "2026-05-21T19:00:00Z",
-    "date_published": "2026-05-21T20:00:41Z",
-    "geo": {
-      "lat": 45.7212,
-      "lon": 34.9931,
-      "country": "Ukraine",
-      "region": "Crimea",
-      "city": "Arabat Spit"
-    },
-    "topics": [
-      "ukraine",
+      "espionage",
+      "counterintelligence",
       "russia",
-      "drone",
-      "crimea",
-      "fsb",
-      "intelligence",
-      "conflict"
-    ],
-    "confidence": 0.8,
-    "source_name": "r/UkraineWarVideoReport (reddit.com/r/UkraineWarVideoReport)",
-    "links": [
-      {
-        "url": "https://reddit.com/r/UkraineWarVideoReport/comments/1tjwhku/drone_strike_destroys_fsb_headquarters_with/",
-        "label": "Reddit Post"
-      },
-      {
-        "url": "https://militarnyi.com/en/news/drone-strike-destroys-fsb-hq-arabat-spit/",
-        "label": "Militarnyi Report"
-      }
-    ],
-    "link_preview_image": "https://www.redditstatic.com/icon.png"
-  },
-  {
-    "id": "evt_20260521_007",
-    "title": "ATESH Partisans Burn Russian Diesel Locomotive in Saint Petersburg",
-    "summary": "The ATESH partisan movement claimed responsibility for setting fire to a Russian diesel locomotive in Saint Petersburg, continuing a sabotage campaign targeting Russian military logistics infrastructure.",
-    "date_event": "2026-05-21T19:00:00Z",
-    "date_published": "2026-05-21T19:53:00Z",
-    "geo": {
-      "lat": 59.9607,
-      "lon": 30.1587,
-      "country": "Russia",
-      "region": "Saint Petersburg",
-      "city": "Saint Petersburg"
-    },
-    "topics": [
-      "ukraine",
-      "russia",
-      "sabotage",
-      "partisan",
-      "railway",
-      "logistics",
-      "conflict"
-    ],
-    "confidence": 0.7,
-    "source_name": "r/UkraineWarVideoReport (reddit.com/r/UkraineWarVideoReport)",
-    "links": [
-      {
-        "url": "https://reddit.com/r/UkraineWarVideoReport/comments/1tjw2m0/atesh_partisans_burned_a_russian_diesel/",
-        "label": "Reddit Post"
-      }
-    ],
-    "link_preview_image": "https://www.redditstatic.com/icon.png"
-  },
-  {
-    "id": "evt_20260521_008",
-    "title": "Ukrainian Fiber-Optic FPV Drones Strike Russian Soldiers and Logistics in Lyman Direction",
-    "summary": "Ukraine's SIGNUM Battalion of the 59th Assault Brigade employed fiber-optic FPV drones to strike Russian soldiers and logistics targets along the Lyman direction on the eastern front.",
-    "date_event": "2026-05-21T18:00:00Z",
-    "date_published": "2026-05-21T19:39:26Z",
-    "geo": {
-      "lat": 48.9801,
-      "lon": 37.8168,
-      "country": "Ukraine",
-      "region": "Donetsk Oblast",
-      "city": "Lyman"
-    },
-    "topics": [
-      "ukraine",
-      "russia",
-      "drone",
-      "fpv",
-      "warfare",
-      "frontline",
-      "lyman",
-      "conflict"
-    ],
-    "confidence": 0.8,
-    "source_name": "r/UkraineWarVideoReport (reddit.com/r/UkraineWarVideoReport)",
-    "links": [
-      {
-        "url": "https://reddit.com/r/UkraineWarVideoReport/comments/1tjvhi2/ukrainian_fiberoptic_fpv_drones_struck_russian/",
-        "label": "Reddit Post - SIGNUM FPV Strikes"
-      },
-      {
-        "url": "https://reddit.com/r/UkraineWarVideoReport/comments/1tjvp7o/422nd_separate_regiment_of_unmanned_systems/",
-        "label": "Reddit Post - 422nd Regiment Fuel Tanker"
-      }
-    ],
-    "link_preview_image": "https://www.redditstatic.com/icon.png"
-  },
-  {
-    "id": "evt_20260521_010",
-    "title": "Chinese Research Vessel Conducts Unauthorized Marine Research at Pag-asa Island Sandbars",
-    "summary": "The Philippine Coast Guard documented Chinese oceanographic vessel Xiang Yang Hong 33 conducting unauthorized marine scientific research at Pag-asa Island sandbars, with personnel landing on two cays escorted by Chinese Coast Guard vessels.",
-    "date_event": "2026-05-17T08:00:00Z",
-    "date_published": "2026-05-21T19:45:00Z",
-    "geo": {
-      "lat": 11.05,
-      "lon": 114.28,
-      "country": "Philippines",
-      "region": "Kalayaan Island Group",
-      "city": "Pag-asa Island"
-    },
-    "topics": [
-      "south-china-sea",
-      "spratly-island",
-      "marine-research",
-      "china",
-      "philippines",
-      "maritime-militia",
-      "sovereignty"
+      "austria",
+      "intelligence"
     ],
     "confidence": 0.9,
-    "source_name": "SCS Probing Initiative (@SCS_PI)",
+    "source_name": "r/Intelligence (reddit.com/r/Intelligence)",
     "links": [
       {
-        "url": "https://www.philstar.com/headlines/2026/05/18/2528807/chinese-survey-ship-land-sandbars-within-pag-asa-waters",
-        "label": "Philippine Star Report"
-      },
-      {
-        "url": "https://www.philstar.com/headlines/2026/05/19/2528929/pcg-aircraft-dispatched-drive-away-chinese-research-vessel",
-        "label": "PCG Response"
+        "url": "https://www.bbc.com/news/articles/cwy21541dz4o",
+        "label": "BBC Coverage"
       }
     ],
-    "link_preview_image": "https://media.philstar.com/photos/2026/05/18/chinese-vessel_2026-05-18_09-42-46.jpg"
+    "link_preview_image": null
   },
   {
-    "id": "evt_20260521_012",
-    "title": "Moscow Region Residents Film Ukrainian Drone as Air Defense Questions Mount",
-    "summary": "Residents in the Moscow region filmed a Ukrainian drone overhead, questioning and mocking their air defense systems' effectiveness in intercepting the unmanned aircraft.",
-    "date_event": "2026-05-21T18:00:00Z",
-    "date_published": "2026-05-21T19:41:42Z",
+    "id": "evt_20260521_863",
+    "title": "US Space Force Missile Alert Satellite System Identified as Lowest-Performing Program With Mission-Critical Defect Risks",
+    "summary": "An unreleased Space Force report identified the new global satellite missile warning system, built by Lockheed Martin, Northrop Grumman, L3 Harris, and York Space Systems, as the lowest-performing program in 2025 with risk of cascading on-orbit failures.",
+    "date_event": "2026-05-21T11:20:00Z",
+    "date_published": "2026-05-21T20:22:00Z",
     "geo": {
-      "lat": 55.6256,
-      "lon": 37.6064,
-      "country": "Russia",
-      "region": "Moscow Oblast",
-      "city": "Moscow"
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "country": "United States",
+      "city": "Washington"
     },
     "topics": [
+      "space",
+      "missile-defense",
+      "satellite",
+      "defense",
+      "military"
+    ],
+    "confidence": 0.85,
+    "source_name": "r/NonCredibleDefense (reddit.com/r/NonCredibleDefense)",
+    "links": [
+      {
+        "url": "https://www.straitstimes.com/world/united-states/us-space-force-missile-alert-satellites-at-risk-of-critical-defects",
+        "label": "Straits Times Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_864",
+    "title": "AI-Powered Visual Geolocation Platforms Transform OSINT Investigation Capabilities in 2026",
+    "summary": "New AI geolocation platforms including India's GEOX AI and community tools like ShadowTrace demonstrate a paradigm shift in visual intelligence analysis, enabling location identification from environmental clues without GPS metadata.",
+    "date_event": "2026-05-21T20:00:00Z",
+    "date_published": "2026-05-21T20:35:00Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "country": "United States",
+      "city": "San Francisco"
+    },
+    "topics": [
+      "osint",
+      "geolocation",
+      "artificial-intelligence",
+      "investigation",
+      "tool",
+      "satellite"
+    ],
+    "confidence": 0.82,
+    "source_name": "r/OSINT (reddit.com/r/OSINT)",
+    "links": [
+      {
+        "url": "https://osintideas.com/geo-osint-in-action-how-satellite-clues-and-shadows-are-cracking-open-investigations/",
+        "label": "OSINT Ideas Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_865",
+    "title": "Ukrainian SBU Strike Destroys Russian FSB Site and Pantsir-S1 Air Defense System, Inflicting Heavy Casualties",
+    "summary": "Ukraine's SBU Special Operations Center conducted a precision strike that destroyed a Russian FSB facility and a Pantsir-S1 air defense system, killing or injuring approximately 100 Russian troops according to President Zelenskyy.",
+    "date_event": "2026-05-21T20:00:00Z",
+    "date_published": "2026-05-21T20:57:00Z",
+    "geo": {
+      "lat": 48.2771086,
+      "lon": 37.1772482,
+      "country": "Ukraine",
+      "region": "Donetsk",
+      "city": "Pokrovsk"
+    },
+    "topics": [
+      "conflict",
+      "military",
       "ukraine",
       "russia",
       "drone",
-      "moscow",
-      "air-defense",
-      "conflict"
+      "air-defense"
     ],
-    "confidence": 0.75,
-    "source_name": "r/UkraineWarVideoReport (reddit.com/r/UkraineWarVideoReport)",
+    "confidence": 0.92,
+    "source_name": "r/RussiaUkraineWar2022 (reddit.com/r/RussiaUkraineWar2022)",
     "links": [
       {
-        "url": "https://reddit.com/r/UkraineWarVideoReport/comments/1tjw4w7/residents_in_the_moscow_region_were_making_fun_of/",
-        "label": "Reddit Post"
+        "url": "https://euromaidanpress.com/2026/05/21/russo-ukrainian-war-day-1548/",
+        "label": "Euromaidan Press Coverage"
       }
     ],
-    "link_preview_image": "https://www.redditstatic.com/icon.png"
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_866",
+    "title": "Chinese Cyber-Espionage Campaign Targets Telecommunications Providers Across Asia-Pacific With Novel Malware",
+    "summary": "Researchers uncovered a Chinese cyber-espionage campaign by the Calypso threat group deploying newly discovered Linux and Windows malware dubbed Showboat and JFMBackdoor against telecommunications providers across Asia-Pacific and the Middle East.",
+    "date_event": "2026-05-21T14:00:00Z",
+    "date_published": "2026-05-21T20:20:00Z",
+    "geo": {
+      "lat": 39.9057136,
+      "lon": 116.3912972,
+      "country": "China",
+      "city": "Beijing"
+    },
+    "topics": [
+      "cyber-espionage",
+      "china",
+      "telecommunications",
+      "malware",
+      "intelligence"
+    ],
+    "confidence": 0.88,
+    "source_name": "BatesGill (@BatesGill)",
+    "links": [
+      {
+        "url": "https://www.bleepingcomputer.com/news/security/chinese-hackers-target-telcos-with-new-linux-windows-malware/",
+        "label": "BleepingComputer Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_867",
+    "title": "CEPA Analysis Warns Europe Faces Near-Term Russian Aggression Window Before Rearmament Gains Momentum",
+    "summary": "CEPA analysis from the Lennart Meri Conference warned that Russia could exploit a near-term window of European military weakness before rearmament efforts mature, particularly if a transatlantic dispute over Ukraine triggers US disengagement.",
+    "date_event": "2026-05-21T20:00:00Z",
+    "date_published": "2026-05-21T20:50:00Z",
+    "geo": {
+      "lat": 59.437242,
+      "lon": 24.7572693,
+      "country": "Estonia",
+      "city": "Tallinn"
+    },
+    "topics": [
+      "nato",
+      "russia",
+      "europe",
+      "defense",
+      "hybrid-warfare",
+      "security"
+    ],
+    "confidence": 0.87,
+    "source_name": "cepa (@cepa)",
+    "links": [
+      {
+        "url": "https://cepa.org/article/hot-shots-cold-sweats/",
+        "label": "CEPA Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_870",
+    "title": "Russia and Belarus Conduct Joint Nuclear Forces Drills With Kinzhal Missile Warhead Loading Exercises",
+    "summary": "Russia and Belarus completed joint strategic and tactical nuclear forces exercises from May 19-21, practicing nuclear warhead loading onto Kinzhal hypersonic missiles and deploying Iskander-M systems with special warheads to Belarus.",
+    "date_event": "2026-05-21T08:57:00Z",
+    "date_published": "2026-05-21T20:45:00Z",
+    "geo": {
+      "lat": 53.9,
+      "lon": 27.5667,
+      "country": "Belarus",
+      "city": "Minsk"
+    },
+    "topics": [
+      "nuclear",
+      "military",
+      "russia",
+      "belarus",
+      "north-korea",
+      "deterrence"
+    ],
+    "confidence": 0.88,
+    "source_name": "CSIS Korea Chair (@CSISKoreaChair)",
+    "links": [
+      {
+        "url": "https://sputnikglobe.com/20260521/russian-aviation-units-practice-equipping-kinzhal-missiles-with-special-warheads-1124165336.html",
+        "label": "Sputnik Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_872",
+    "title": "Russian Fighter Jet Shields Shadow Fleet Tanker From Estonian Navy Interception in Baltic Sea Standoff",
+    "summary": "A Russian military jet entered Estonian airspace to protect the unflagged shadow fleet tanker Jaguar from Estonian Navy interception, marking a significant escalation in Baltic maritime tensions involving sanctioned Russian oil transport.",
+    "date_event": "2026-05-21T20:00:00Z",
+    "date_published": "2026-05-21T20:40:00Z",
+    "geo": {
+      "lat": 56.0,
+      "lon": 18.0,
+      "country": "Estonia",
+      "region": "Baltic Sea"
+    },
+    "topics": [
+      "maritime",
+      "sanctions",
+      "russia",
+      "nato",
+      "estonia",
+      "vessel"
+    ],
+    "confidence": 0.85,
+    "source_name": "Ship News (@ShipNews)",
+    "links": [
+      {
+        "url": "https://deftechtimes.com/baltic-sea-face-off-highlights-growing-threats/",
+        "label": "DefTech Times Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_873",
+    "title": "Russian Su-35 and Su-27 Jets Nearly Collide With British RC-135W Reconnaissance Aircraft Over Black Sea",
+    "summary": "The UK Ministry of Defence revealed that Russian Su-35 and Su-27 fighter jets dangerously intercepted an RAF RC-135W Rivet Joint over the Black Sea in April 2026, closing to within six meters and triggering emergency systems in the worst such incident since 2022.",
+    "date_event": "2026-05-20T19:00:00Z",
+    "date_published": "2026-05-21T20:55:00Z",
+    "geo": {
+      "lat": 43.872824,
+      "lon": 33.9938077,
+      "country": "International Waters",
+      "region": "Black Sea"
+    },
+    "topics": [
+      "military",
+      "russia",
+      "nato",
+      "aircraft",
+      "black-sea",
+      "reconnaissance"
+    ],
+    "confidence": 0.92,
+    "source_name": "US Fleet Forces (@USFleetForces)",
+    "links": [
+      {
+        "url": "https://defence-blog.com/russian-jets-nearly-collide-with-british-rc-135w-plane-over-black-sea/",
+        "label": "Defence Blog Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_874",
+    "title": "Pakistan Army Chief Cancels Planned Trip to Iran Amid Diplomatic Tensions",
+    "summary": "Pakistan Army Chief General Asim Munir cancelled a planned evening trip to Iran on May 21, 2026, according to a senior source cited by Al Arabiya. The cancellation highlights ongoing diplomatic complexities as Pakistan attempts to mediate between the United States and Iran.",
+    "date_event": "2026-05-21T20:40:50Z",
+    "date_published": "2026-05-21T20:40:50Z",
+    "geo": {
+      "lat": 33.6938118,
+      "lon": 73.0651511,
+      "country": "Pakistan",
+      "city": "Islamabad"
+    },
+    "topics": [
+      "diplomacy",
+      "pakistan",
+      "iran",
+      "military",
+      "mediation"
+    ],
+    "confidence": 0.8,
+    "source_name": "Bellum Acta (@BellumActaNews)",
+    "links": [
+      {
+        "url": "https://t.me/BellumActaNews/173019",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_875",
+    "title": "Trump Announces Deployment of 5,000 Additional US Troops to Poland",
+    "summary": "US President Donald Trump announced the deployment of an additional 5,000 American soldiers to Poland, citing his relationship with newly elected Polish President Karol Nawrocki. The announcement reinforces NATO eastern flank amid ongoing Russian threats.",
+    "date_event": "2026-05-21T20:53:10Z",
+    "date_published": "2026-05-21T20:53:10Z",
+    "geo": {
+      "lat": 52.2333742,
+      "lon": 21.0711489,
+      "country": "Poland",
+      "city": "Warsaw"
+    },
+    "topics": [
+      "military",
+      "deployment",
+      "nato",
+      "poland",
+      "united-states",
+      "defense"
+    ],
+    "confidence": 0.95,
+    "source_name": "Bellum Acta (@BellumActaNews)",
+    "links": [
+      {
+        "url": "https://t.me/BellumActaNews/173020",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_876",
+    "title": "Major Tanker Operators Haul Oil Under Recent US Sanctions Waivers",
+    "summary": "New data reveals that vessels controlled by Frontline, Scorpio Tankers, Hafnia, and International Seaways transported oil cargoes under recent US sanctions waivers, signaling a shift in enforcement dynamics amid the Strait of Hormuz crisis.",
+    "date_event": "2026-05-21T21:10:25Z",
+    "date_published": "2026-05-21T21:10:25Z",
+    "geo": {
+      "lat": 26.4494061,
+      "lon": 56.2027702,
+      "country": "Oman",
+      "region": "Strait of Hormuz"
+    },
+    "topics": [
+      "sanctions",
+      "shipping",
+      "tanker",
+      "oil",
+      "iran",
+      "maritime"
+    ],
+    "confidence": 0.85,
+    "source_name": "TradeWinds (@tradewindsnews)",
+    "links": [
+      {
+        "url": "https://x.com/tradewindsnews/status/2057569725857829148",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260521_877",
+    "title": "Nigeria and US Joint Strikes Kill 175 ISIL Fighters in Northeast Nigeria",
+    "summary": "Nigerian forces working with the U.S. military's Africa Command claimed to have killed 175 ISIL fighters in a series of joint strikes in northeastern Nigeria, including ISIL's second-in-command Abu Bilal al-Minuki and other senior commanders.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:30:00Z",
+    "geo": {
+      "lat": 11.8395375,
+      "lon": 13.1536214,
+      "country": "Nigeria",
+      "region": "Borno",
+      "city": "Maiduguri"
+    },
+    "topics": [
+      "counterterrorism",
+      "isil",
+      "military",
+      "nigeria",
+      "africa"
+    ],
+    "confidence": 0.9,
+    "source_name": "War TV (@WarTV7890)",
+    "links": [
+      {
+        "url": "https://www.aljazeera.com/news/2026/5/20/nigeria-says-joint-us-strikes-kill-175-isil-fighters-in-countrys-northeast",
+        "label": "Al Jazeera Report"
+      }
+    ],
+    "link_preview_image": "https://www.aljazeera.com/wp-content/uploads/2026/05/2019-02-16T100931Z_1467220700_RC1ADBE14FE0_RTRMADP_3_NIGERIA-ELECTION-1779243401.jpg?resize=1920%2C1440"
+  },
+  {
+    "id": "evt_20260521_878",
+    "title": "Israeli Air Attacks Kill at Least Eight People in Southern Lebanon Despite Ceasefire",
+    "summary": "Israeli fighter jets struck multiple villages in southern Lebanon, killing at least eight people and flattening homes in the latest violations of the ongoing ceasefire agreement, as Hezbollah reported clashes with advancing Israeli troops.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:45:00Z",
+    "geo": {
+      "lat": 33.2721211,
+      "lon": 35.1964023,
+      "country": "Lebanon",
+      "region": "South Governorate",
+      "city": "Tyre"
+    },
+    "topics": [
+      "conflict",
+      "airstrike",
+      "lebanon",
+      "ceasefire-violation",
+      "hezbollah"
+    ],
+    "confidence": 0.9,
+    "source_name": "Raytoribo (@Raytoribo)",
+    "links": [
+      {
+        "url": "https://www.aljazeera.com/news/2026/5/20/at-least-eight-killed-in-israels-air-attacks-on-southern-lebanon",
+        "label": "Al Jazeera Report"
+      }
+    ],
+    "link_preview_image": "https://www.aljazeera.com/wp-content/uploads/2026/05/afp_6a0dc6c49bf9-1779287748.jpg?resize=1920%2C1440"
+  },
+  {
+    "id": "evt_20260521_879",
+    "title": "US Seizes Iran-Linked VLCC Skywave in Indian Ocean as Shadow Fleet Crackdown Widens",
+    "summary": "U.S. forces seized the Iran-linked very large crude carrier Skywave in the Indian Ocean, the third seizure in the current enforcement campaign, as Washington broadened its crackdown on vessels suspected of transporting sanctioned Iranian crude.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:35:00Z",
+    "geo": {
+      "lat": 20.0,
+      "lon": 63.0,
+      "country": "International Waters",
+      "region": "Indian Ocean"
+    },
+    "topics": [
+      "sanctions",
+      "iran",
+      "dark-vessel",
+      "tanker",
+      "oil",
+      "maritime-enforcement"
+    ],
+    "confidence": 0.85,
+    "source_name": "pizzainwatch (@pizzainwatch)",
+    "links": [
+      {
+        "url": "https://www.roic.ai/news/us-seizes-iran-linked-tanker-skywave-in-indian-ocean-widens-shadow-fleet-crackdown-05-19-2026",
+        "label": "ROIC News Report"
+      }
+    ],
+    "link_preview_image": "https://www.roic.ai/img/logo.jpg"
+  },
+  {
+    "id": "evt_20260521_880",
+    "title": "North Korea's Kim Jong Un Convenes Military Commanders to Strengthen Frontline Units",
+    "summary": "North Korean leader Kim Jong Un convened a rare meeting of commanders of divisions and brigades across the entire military, calling for plans to strengthen frontline units on the border with South Korea and redefine operational concepts in line with rapid modernization.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:40:00Z",
+    "geo": {
+      "lat": 39.0167979,
+      "lon": 125.7473609,
+      "country": "North Korea",
+      "city": "Pyongyang"
+    },
+    "topics": [
+      "north-korea",
+      "military",
+      "nuclear",
+      "border-security"
+    ],
+    "confidence": 0.8,
+    "source_name": "PyongyangToday (@PyongyangToday)",
+    "links": [
+      {
+        "url": "https://hk.news.yahoo.com/articles/north-koreas-kim-calls-stronger-213101037.html",
+        "label": "Reuters Report"
+      }
+    ],
+    "link_preview_image": "https://s.yimg.com/os/en/reuters.com/932e1dfd0df39eefd64930fc1c7cbf6f"
+  },
+  {
+    "id": "evt_20260521_881",
+    "title": "UN Warns Gaza Risks Permanent State of Limbo as Transition Plan Stalls",
+    "summary": "A senior UN envoy warned the Security Council that delays in implementing the Council-backed transition plan for Gaza increase suffering and undermine recovery, with nearly a million people needing urgent shelter assistance and the ceasefire fraying.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:50:00Z",
+    "geo": {
+      "lat": 31.5061841,
+      "lon": 34.4625473,
+      "country": "Palestine",
+      "region": "Gaza Strip",
+      "city": "Gaza City"
+    },
+    "topics": [
+      "gaza",
+      "humanitarian",
+      "ceasefire",
+      "displacement",
+      "conflict"
+    ],
+    "confidence": 0.95,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://news.un.org/en/story/2026/05/1167568",
+        "label": "UN News Report"
+      }
+    ],
+    "link_preview_image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/19-05-2026_Gaza_Pestiside_Campaign4.jpg/image770x420cropped.jpg"
+  },
+  {
+    "id": "evt_20260521_882",
+    "title": "Colorado River Reservoirs Face Record-Low Water Levels Amid Severe Snow Drought",
+    "summary": "The Bureau of Reclamation projects record-low water levels for Lakes Mead and Powell due to a severe snow drought, with April-July inflow to Lake Powell forecast at only 13 percent of average, threatening water supplies for more than 40 million people.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:55:00Z",
+    "geo": {
+      "lat": 37.3768572,
+      "lon": -110.726121,
+      "country": "United States",
+      "region": "Utah",
+      "city": "Lake Powell"
+    },
+    "topics": [
+      "drought",
+      "water",
+      "reservoir",
+      "infrastructure",
+      "climate"
+    ],
+    "confidence": 0.9,
+    "source_name": "Esri Water Resources (@EsriWater)",
+    "links": [
+      {
+        "url": "https://abcnews.com/US/water-supplies-colorado-river-basin-peril-experts/story?id=133107551",
+        "label": "ABC News Report"
+      }
+    ],
+    "link_preview_image": "https://i.abcnewsfe.com/a/f42ccc1d-8acc-431d-808d-76e8725e1282/mead-gty-jef-260519_1779215746772_hpMain_16x9.jpg?w=1600"
+  },
+  {
+    "id": "evt_20260521_883",
+    "title": "Philippines President Marcos Seeks to Clarify Japan's New Defense Posture Ahead of Tokyo Visit",
+    "summary": "President Ferdinand Marcos Jr. announced plans to clarify Japan's new defense posture during his upcoming visit to Tokyo, as both nations face coercive acts in disputed waters where China has increased its activities.",
+    "date_event": null,
+    "date_published": "2026-05-21T21:00:00Z",
+    "geo": {
+      "lat": 35.6764225,
+      "lon": 139.6500649,
+      "country": "Japan",
+      "region": "Kanto",
+      "city": "Tokyo"
+    },
+    "topics": [
+      "defense-cooperation",
+      "japan",
+      "philippines",
+      "indo-pacific",
+      "military"
+    ],
+    "confidence": 0.85,
+    "source_name": "ModjapanEn (@ModjapanEn)",
+    "links": [
+      {
+        "url": "https://www.philstar.com/headlines/2026/05/20/2529306/marcos-clarify-manilas-place-japans-new-defense-posture-during-visit",
+        "label": "Philstar Report"
+      }
+    ],
+    "link_preview_image": "https://media.philstar.com/photos/2025/10/27/12_2025-10-27_21-55-24.jpg"
+  },
+  {
+    "id": "evt_20260521_884",
+    "title": "North Korea Warns of Countermeasures After U.S. Approves $4.2 Billion Arms Sale to South Korea",
+    "summary": "North Korea threatened countermeasures against Washington's approval of military helicopter sales to Seoul, denouncing the deal as a reckless military buildup that would compel Pyongyang to strengthen its deterrent capabilities.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:46:00Z",
+    "geo": {
+      "lat": 39.0167979,
+      "lon": 125.7473609,
+      "country": "North Korea",
+      "city": "Pyongyang"
+    },
+    "topics": [
+      "north-korea",
+      "arms-sale",
+      "military",
+      "south-korea",
+      "deterrence"
+    ],
+    "confidence": 0.85,
+    "source_name": "X Korea (@XKorea)",
+    "links": [
+      {
+        "url": "https://koreajoongangdaily.joins.com/news/2026-05-21/national/northKorea/North-Korea-warns-of-countermeasures-as-US-approves-arms-sale-to-South/2598321",
+        "label": "Korea JoongAng Daily"
+      }
+    ],
+    "link_preview_image": "https://koreajoongangdaily.joins.com/data/photo/2026/05/21/ee0eb3c6-c73f-4916-b14d-e4b7e59046d1.jpg"
+  },
+  {
+    "id": "evt_20260521_885",
+    "title": "U.S. Central Command Reports 94 Commercial Vessels Redirected Under Strait of Hormuz Blockade",
+    "summary": "CENTCOM announced it had redirected 94 commercial vessels and disabled 4 others while enforcing the U.S. blockade to prevent commerce flowing into and out of Iranian ports, marking a significant escalation in maritime enforcement operations.",
+    "date_event": null,
+    "date_published": "2026-05-21T21:07:00Z",
+    "geo": {
+      "lat": 26.4494061,
+      "lon": 56.2027702,
+      "country": "Iran",
+      "region": "Strait of Hormuz"
+    },
+    "topics": [
+      "strait-of-hormuz",
+      "blockade",
+      "iran",
+      "naval",
+      "sanctions"
+    ],
+    "confidence": 0.92,
+    "source_name": "US 5th Fleet (@US5thFleet)",
+    "links": [
+      {
+        "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-latest-peace-proposal/",
+        "label": "CBS News Live Updates"
+      }
+    ],
+    "link_preview_image": "https://assets2.cbsnewsstatic.com/hub/i/r/2026/05/21/9d743b4d-7abd-40ef-b4a6-c97480c7631b/thumbnail/1200x630/7cb5bc1420112b93b776cee6b4171dca/hi2t-7wcaaouch.jpg"
+  },
+  {
+    "id": "evt_20260521_886",
+    "title": "Ukraine Targets 200 Russian Casualties for Every Square Kilometer of Ground Gained",
+    "summary": "Ukrainian Defense Minister Mykhailo Fedorov outlined a strategic objective of inflicting 200 Russian casualties for every square kilometer of territory Russia advances, as Kyiv reported significant battlefield momentum and technological advantages in drone warfare.",
+    "date_event": null,
+    "date_published": "2026-05-21T21:08:00Z",
+    "geo": {
+      "lat": 50.4500336,
+      "lon": 30.5241361,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "ukraine",
+      "conflict",
+      "casualty",
+      "military",
+      "drone"
+    ],
+    "confidence": 0.82,
+    "source_name": "Natalierevolts (@Natalierevolts)",
+    "links": [
+      {
+        "url": "https://united24media.com/war-in-ukraine/ukraine-liberates-settlements-in-kharkiv-region-pushing-russian-troops-toward-border-19048",
+        "label": "United24 Media"
+      }
+    ],
+    "link_preview_image": "https://storage.united24media.com/og/2/2f/dbd33dc7627354dfa6e377e8179102f2.jpg"
+  },
+  {
+    "id": "evt_20260521_887",
+    "title": "Trump Demands Iran Surrender Enriched Uranium as Supreme Leader Rejects Transfer Abroad",
+    "summary": "President Trump insisted Iran must hand over its enriched uranium stockpile as a non-negotiable condition for any nuclear deal, while Iran's Supreme Leader Mojtaba Khamenei issued a directive that the near-weapons-grade material must not leave the country.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:39:00Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "country": "United States",
+      "city": "Washington DC"
+    },
+    "topics": [
+      "iran",
+      "nuclear",
+      "diplomacy",
+      "conflict",
+      "sanctions"
+    ],
+    "confidence": 0.9,
+    "source_name": "CNN (@CNN)",
+    "links": [
+      {
+        "url": "https://www.cnbc.com/2026/05/21/iran-war-us-peace-talks-trump-hormuz.html",
+        "label": "CNBC Report"
+      }
+    ],
+    "link_preview_image": "https://image.cnbcfm.com/api/v1/image/108310311-1779346640485-gettyimages-2276312584-AFP_B3737GH.jpeg?v=1779347186&w=1920&h=1080"
+  },
+  {
+    "id": "evt_20260521_889",
+    "title": "U.S. House Votes on War Powers Resolution to Compel Trump Withdrawal From Iran Conflict",
+    "summary": "The U.S. House of Representatives moved to vote on legislation compelling President Trump to withdraw from the Iran war, as a growing bipartisan coalition challenged the president's authority to wage the 83-day conflict without congressional approval.",
+    "date_event": null,
+    "date_published": "2026-05-21T20:30:00Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "country": "United States",
+      "city": "Washington DC"
+    },
+    "topics": [
+      "war-power",
+      "iran",
+      "congress",
+      "diplomacy",
+      "political"
+    ],
+    "confidence": 0.87,
+    "source_name": "Claudefb (@Claudefb)",
+    "links": [
+      {
+        "url": "https://www.kolotv.com/2026/05/21/house-vote-hopes-compel-president-trump-withdraw-iran-war/",
+        "label": "KOLO-TV AP Report"
+      }
+    ],
+    "link_preview_image": "https://gray-kolo-prod.gtv-cdn.com/resizer/v2/UY37WG6D4VFMLPBIQ346E4BGZQ.jpg?auth=284ac684aef304a49039b697b1211dc25f08f1b072c43410c1505438f66234c5&width=1200&height=600&smart=true"
   }
 ]
