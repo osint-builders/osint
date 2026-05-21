@@ -36,6 +36,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
+## 2026-05-21 12:22Z — @KC_NWT and @PyongyangToday X accounts do not exist; @jasonbrodsky account protected
+**Trigger:** Bucket 15 Twitter API v2 user lookup returned "Could not find user with username" for @KC_NWT and @PyongyangToday. Separate lookup returned protected:true for @jasonbrodsky (user ID 15975913 — lowercase "jasonbrodsky", not the intended Iran policy expert Jason Brodsky).
+**Finding:** The handles KC_NWT and PyongyangToday do not resolve to active X/Twitter accounts. The jasonbrodsky handle resolves to a protected account with only 33 followers and 121 tweets — likely not the intended UANI Policy Director Jason Brodsky. All three sources yielded zero direct Twitter collection. exa_web_search with source-specific topic keywords (Iran/sanctions for Jason Brodsky, Korean Peninsula/DPRK for KC_NWT, Pyongyang/KCNA for PyongyangToday) produced relevant events.
+**Action for next run:** Skip Twitter API for twitter-kc-nwt, twitter-pyongyang-today, and twitter-jason-brodsky. Use exa_web_search as primary discovery. Investigate correct Twitter handles for Jason Brodsky (UANI) and KC_NWT. Flag all three for manifest handle review.
+**Expires:** 2026-08-21
+
 ## 2026-05-19 19:29Z — @TatarigamiUA X account no longer exists; source should update handle or deactivate
 **Trigger:** Bucket 5 r.jina.ai mirror for @TatarigamiUA returned "This account does not exist" on X.
 **Finding:** The Twitter handle @TatarigamiUA configured for source twitter-tatarigamiua does not resolve to an active X/Twitter account. Events for Ukraine conflict analysis remain accessible via exa_web_search with conflict keywords.
