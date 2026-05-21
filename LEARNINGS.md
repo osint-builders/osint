@@ -270,3 +270,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** Reddit JSON API endpoint for r/Intelligence failed to respond. exa_web_search with intelligence keywords yielded effective alternative.
 **Action for next run:** Attempt Reddit JSON API first, fall back to exa_web_search if connection fails.
 **Expires:** 2026-08-21
+
+## 2026-05-21 12:22Z — @ntonc and @detresfa X accounts appear to have wrong handles configured
+**Trigger:** Bucket 7 Twitter API user lookup returned an account with 1 follower and 1 total tweet for @ntonc, and a personal account "Elle" with 443 followers for @detresfa. Neither matches the described OSINT/military intelligence or maritime distress monitoring profiles.
+**Finding:** The Twitter handles @ntonc and @detresfa configured in sources twitter-ntonc and twitter-detresfa do not correspond to the described analyst accounts. @ntonc has essentially zero activity, and @detresfa belongs to a personal user unrelated to maritime distress monitoring. exa_web_search with source-specific keywords yielded relevant events as an effective alternative.
+**Action for next run:** Skip Twitter API for twitter-ntonc and twitter-detresfa. Use exa_web_search with source-specific keywords. Flag both sources for manifest handle investigation or status change.
+**Expires:** 2026-08-21
