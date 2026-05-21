@@ -276,3 +276,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** The Twitter handles @ntonc and @detresfa configured in sources twitter-ntonc and twitter-detresfa do not correspond to the described analyst accounts. @ntonc has essentially zero activity, and @detresfa belongs to a personal user unrelated to maritime distress monitoring. exa_web_search with source-specific keywords yielded relevant events as an effective alternative.
 **Action for next run:** Skip Twitter API for twitter-ntonc and twitter-detresfa. Use exa_web_search with source-specific keywords. Flag both sources for manifest handle investigation or status change.
 **Expires:** 2026-08-21
+
+## 2026-05-21 19:30Z — @MNDChina X handle resolves to wrong account; not China Ministry of National Defense
+**Trigger:** Bucket 14 Twitter API user lookup for @MNDChina returned user "Xin Tomberg" (uid 1998378585636442112, 3 followers, 0 tweets) instead of the Chinese Ministry of National Defense.
+**Finding:** The X/Twitter handle @MNDChina does not belong to China's Ministry of National Defense. The actual account belongs to a private individual with zero activity. The Chinese MoD may operate under a different handle or may not maintain an active English-language X presence. exa_web_search with China defense and PLA keywords yielded relevant events.
+**Action for next run:** Skip Twitter API for twitter-mndchina source. Use exa_web_search with China military, PLA, and defense policy keywords. Flag source for manifest handle investigation or update.
+**Expires:** 2026-08-21
