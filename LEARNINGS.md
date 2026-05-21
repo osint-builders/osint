@@ -311,3 +311,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** The Twitter handle @ofacalert configured for source twitter-ofac-alert does not resolve to an active X/Twitter account. The OFAC sanctions alert service may operate under a different handle or have migrated off the platform. Events for OFAC sanctions topics remain accessible via exa_web_search with OFAC, sanctions, and Treasury keywords.
 **Action for next run:** Skip Twitter API for twitter-ofac-alert. Use exa_web_search with OFAC sanctions enforcement keywords. Flag source for manifest handle investigation.
 **Expires:** 2026-08-21
+
+## 2026-05-21 19:30Z — @Sindikasyontek X account does not exist; use exa_web_search
+**Trigger:** Bucket 8 Twitter API v2 user lookup returned "Could not find user with usernames: [Sindikasyontek]."
+**Finding:** The Twitter handle @Sindikasyontek configured for source twitter-sindikasyontek does not resolve to an active X/Twitter account. The account may have changed handles, deleted, or received a suspension. Events for Philippines cybersecurity and technology topics remain accessible via exa_web_search with source-specific keywords.
+**Action for next run:** Skip Twitter API for twitter-sindikasyontek. Use exa_web_search with Philippines cybersecurity, information warfare, and data breach keywords. Flag source for manifest handle investigation or status change.
+**Expires:** 2026-08-21
