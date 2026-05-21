@@ -35,12 +35,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 ---
 
 <!-- entries below this line; newest first -->
-## 2026-05-21 20:34Z -- @Jkgarokgov X account does not exist
-**Trigger:** Bucket 8 Twitter API v2 user lookup returned "Could not find user with username: [Jkgarokgov]."
-**Finding:** The Twitter handle @Jkgarokgov configured for source twitter-jkgarokgov does not resolve to an active X/Twitter account. Events for ROK government policy and defense topics remain accessible via exa_web_search with South Korea government and defense policy keywords.
-**Action for next run:** Skip Twitter API for twitter-jkgarokgov. Use exa_web_search with ROK government defense policy keywords. Flag source for manifest handle investigation.
-**Expires:** 2026-08-21
 
+## 2026-05-21 20:34Z — @kylebass resolves to wrong account (Kyle Manning, not investor Kyle Bass)
+**Trigger:** Bucket 12 Twitter API v2 user lookup returned user "Kyle Manning" (uid 47355370, 1,075 followers, 1,082 tweets) for @kylebass — clearly not the hedge fund manager Kyle Bass known for Asian macroeconomic analysis.
+**Finding:** The handle @kylebass configured for source twitter-kylebass resolves to an unrelated personal account with minimal following. The intended Kyle Bass (Hayman Capital Management) likely operates under a different handle or has left the platform. exa_web_search with China economics and Asian markets keywords can substitute for direct tweet collection.
+**Action for next run:** Skip Twitter API for twitter-kylebass. Investigate correct Twitter handle for Kyle Bass (Hayman Capital). Use exa_web_search with China yuan, Hong Kong, CCP sanctions keywords. Flag source for manifest handle review.
+**Expires:** 2026-08-21
 ## 2026-05-21 19:35Z — Three X accounts do not exist: SchizointRel, JosephDempsey, Natlhistships
 **Trigger:** Bucket 2 Twitter API v2 user lookup returned "Could not find user with username" for @SchizointRel, @JosephDempsey, and @Natlhistships.
 **Finding:** These three Twitter handles do not resolve to active X/Twitter accounts. Events for their topic areas remain accessible via exa_web_search.
@@ -322,10 +322,4 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Trigger:** Bucket 8 Twitter API v2 user lookup returned "Could not find user with usernames: [Sindikasyontek]."
 **Finding:** The Twitter handle @Sindikasyontek configured for source twitter-sindikasyontek does not resolve to an active X/Twitter account. The account may have changed handles, deleted, or received a suspension. Events for Philippines cybersecurity and technology topics remain accessible via exa_web_search with source-specific keywords.
 **Action for next run:** Skip Twitter API for twitter-sindikasyontek. Use exa_web_search with Philippines cybersecurity, information warfare, and data breach keywords. Flag source for manifest handle investigation or status change.
-**Expires:** 2026-08-21
-
-## 2026-05-21 20:34Z — @Claudefb X handle resolves to wrong account; not the described regional analyst
-**Trigger:** Bucket 5 Twitter API v2 user lookup for @Claudefb returned user "Claudenice Borges" (uid 269500165, 103 followers, 443 tweets) instead of the described regional security and situational awareness analyst.
-**Finding:** The X/Twitter handle @Claudefb does not belong to the intended source described as providing regional observation, political developments, and real-time reporting. The actual account belongs to a private individual with minimal activity unrelated to OSINT or security analysis. exa_web_search with source-specific keywords yielded no matching events within the collection window.
-**Action for next run:** Skip Twitter API for twitter-claudefb source. Use exa_web_search with regional security, protest, and incident keywords. Flag source for manifest handle investigation or status change.
 **Expires:** 2026-08-21
