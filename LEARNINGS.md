@@ -212,3 +212,15 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** The Reddit JSON API endpoints (reddit.com/r/*/new.json) returned valid JSON responses with User-Agent osint-bot/1.0 from the Warp Cloud Agent environment. This supersedes earlier findings from the same day reporting 403 blocks. The block appears to have been temporary or IP-rotation-dependent.
 **Action for next run:** Attempt Reddit JSON API first as the primary collection method for reddit-* sources. Keep exa_web_search as fallback only if 403 received.
 **Expires:** 2026-08-20
+
+## 2026-05-21 12:22Z — @TheDiplomat X handle resolves to wrong account; not The Diplomat magazine
+**Trigger:** Bucket 14 Twitter API user lookup for @TheDiplomat returned user "Aiaz Mohammed" (uid 132967082, 40 followers, 221 tweets) instead of The Diplomat magazine.
+**Finding:** The X/Twitter handle @TheDiplomat does not belong to The Diplomat magazine (thediplomat.com). The actual account appears to belong to a private individual with minimal activity. The Diplomat magazine may operate under a different handle or may have left the platform. exa_web_search with Asia-Pacific security keywords yielded relevant events from the magazine's topic areas.
+**Action for next run:** Skip Twitter API for twitter-the-diplomat source. Use exa_web_search with Asia-Pacific diplomacy and security keywords. Flag source for manifest handle investigation or update to correct handle.
+**Expires:** 2026-08-21
+
+## 2026-05-21 12:22Z — @JasdfPaoEng X account does not exist; source should update handle or deactivate
+**Trigger:** Bucket 14 Twitter API v2 user lookup returned "Could not find user with usernames: [JasdfPaoEng]."
+**Finding:** The Twitter handle @JasdfPaoEng configured for source twitter-jasdf-pao-eng does not resolve to an active X/Twitter account. The JASDF may operate its English-language public affairs under a different handle or have consolidated social media accounts. Events for Japanese air defense topics remain accessible via exa_web_search.
+**Action for next run:** Skip Twitter API and r.jina.ai for twitter-jasdf-pao-eng. Use exa_web_search with JASDF and Japan air defense keywords. Flag source for manifest handle investigation or status change to inactive.
+**Expires:** 2026-08-21
