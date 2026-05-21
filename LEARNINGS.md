@@ -252,3 +252,15 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** These three Twitter handles do not resolve to active X/Twitter accounts. The accounts may have changed handles, deleted, or received suspensions. Events for their topic areas remain accessible via exa_web_search with source-specific keywords.
 **Action for next run:** Skip Twitter API and r.jina.ai for twitter-osaindawg, twitter-etienne-lh, and twitter-therealshipdude. Use exa_web_search with source-specific topic keywords. Flag these sources for manifest handle investigation or status change.
 **Expires:** 2026-08-21
+
+## 2026-05-21 12:22Z — Twitter accounts TheKorea_Times and JnbSummary do not exist; use exa_web_search
+**Trigger:** Bucket 5 Twitter API v2 user lookup returned "Could not find user with username" for @TheKorea_Times and @JnbSummary.
+**Finding:** Both X/Twitter accounts do not resolve to active accounts. Events for these sources' topic areas remain accessible via exa_web_search with source-specific keywords.
+**Action for next run:** Skip Twitter API for twitter-korea-times and twitter-jnb-summary. Use exa_web_search with source-specific topic keywords.
+**Expires:** 2026-08-21
+
+## 2026-05-21 12:22Z — Reddit API unreachable from agent environment for r/Intelligence
+**Trigger:** Bucket 5 curl request to reddit.com/r/Intelligence/new.json returned connection failure.
+**Finding:** Reddit JSON API endpoint for r/Intelligence failed to respond. exa_web_search with intelligence keywords yielded effective alternative.
+**Action for next run:** Attempt Reddit JSON API first, fall back to exa_web_search if connection fails.
+**Expires:** 2026-08-21
