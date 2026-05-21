@@ -264,9 +264,11 @@ function App() {
     return () => { cancelled = true; };
   }, [selectedId]);
 
-  // Keyboard shortcuts
+  // Keyboard shortcuts — suppressed when the semantic modal is open
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
+      if (semanticModalVisible) return;
+
       const tag = (e.target as Element)?.tagName ?? '';
       const isInput = ['INPUT', 'TEXTAREA', 'SELECT'].includes(tag);
 
@@ -320,7 +322,7 @@ function App() {
     };
     document.addEventListener('keydown', handler);
     return () => document.removeEventListener('keydown', handler);
-  }, [results, selectedId, showHelp, rightPane, query, filters, saveSearch, showToast]);
+  }, [results, selectedId, showHelp, rightPane, query, filters, saveSearch, showToast, semanticModalVisible]);
 
   // Derived
   const sortedResults = useMemo(() => applySort(results, sorts), [results, sorts]);
