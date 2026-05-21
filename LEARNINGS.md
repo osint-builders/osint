@@ -36,6 +36,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
+## 2026-05-21 22:50Z — @EtienneLh Twitter handle does not resolve; account deleted or renamed
+**Trigger:** Bucket 8 collection. Twitter API v2 user lookup for @EtienneLh returned no data object (user not found).
+**Finding:** twitter-etienne-lh handle @EtienneLh does not resolve to any account. The European defense analyst may have changed handles, gone private, or left the platform. exa_web_search with NATO and European defense keywords found relevant Baltic drone/NATO coverage but all articles published before the collection window.
+**Action for next run:** Skip Twitter API for twitter-etienne-lh. Use exa_web_search with European defense, NATO, and defense procurement keywords. Flag source for manifest handle investigation or status change to inactive.
+**Expires:** 2026-08-21
+
 ## 2026-05-21 21:40Z — @Jkgarokgov Twitter account does not exist; @IranObserver dormant since 2016
 **Trigger:** Bucket 8 collection. r.jina.ai mirror for @Jkgarokgov returned "This account doesn't exist." @IranObserver last tweeted January 2016.
 **Finding:** twitter-jkgarokgov handle @Jkgarokgov resolves to a non-existent account page. twitter-iran-observer handle @IranObserver has not posted since 2016 — effectively dormant. Neither account produces collectible events.
