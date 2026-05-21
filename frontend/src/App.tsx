@@ -170,8 +170,17 @@ function App() {
         setSchema(sch);
         setAllMetadata(meta);
         setIsInitializing(false);
+      } catch (err) {
+        if (!cancelled) {
+          setError(err instanceof Error ? err.message : 'Failed to load index');
+          setIsInitializing(false);
+        }
+        return;
+      }
 
-        // Initialize vector engine (drives splash screen)
+      // Vector engine init is best-effort — if embeddings.bin is missing
+      // or the model fails to download, fall back to keyword-only search.
+      try {
         const baseUrl = loader.getBaseUrl();
         const progressInterval = setInterval(() => {
           if (cancelled) return;
@@ -187,10 +196,12 @@ function App() {
           setSplashStatus('Ready');
           setVectorReady(true);
         }
-      } catch (err) {
+      } catch {
+        // Vector search unavailable — app continues with keyword search
         if (!cancelled) {
-          setError(err instanceof Error ? err.message : 'Failed to load index');
-          setIsInitializing(false);
+          setSplashProgress(100);
+          setSplashStatus('Keyword search only');
+          setVectorReady(true);
         }
       }
     })();
