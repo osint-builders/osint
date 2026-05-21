@@ -47,7 +47,6 @@ jobs:
       - name: Build search index
         run: python builder/embeddings/build_index.py
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           REPO_ROOT: ${{ github.workspace }}
 
       - name: Rebuild indexes and commit
@@ -58,7 +57,7 @@ jobs:
           git config user.name "OSINT Embeddings Bot"
           git config user.email "embeddings-bot@github-actions"
           # Add indexes but exclude generated events/ (regenerated at Pages deploy time)
-          git add data/indexes/fingerprints.json data/indexes/metadata.json data/indexes/pca_transform.json data/indexes/schema.json data/indexes/by-source.json data/indexes/by-topic.json data/indexes/by-location.json data/stats.json
+          git add data/indexes/fingerprints.json data/indexes/metadata.json data/indexes/schema.json data/indexes/embeddings.bin data/indexes/by-source.json data/indexes/by-topic.json data/indexes/by-location.json data/stats.json
           # [skip ci] prevents this push from re-triggering anything.
           git diff-index --quiet HEAD || git commit -m "Update search index, indexes, and stats
 

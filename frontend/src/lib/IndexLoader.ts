@@ -35,12 +35,13 @@ export class IndexLoader {
     return response.json();
   }
 
-  async loadHNSWIndex(): Promise<ArrayBuffer> {
-    const response = await fetch(`${this.baseUrl}/hnsw.bin`);
+  async loadEmbeddings(): Promise<Float32Array> {
+    const response = await fetch(`${this.baseUrl}/embeddings.bin`);
     if (!response.ok) {
-      throw new Error(`Failed to load HNSW index: ${response.statusText}`);
+      throw new Error(`Failed to load embeddings: ${response.statusText}`);
     }
-    return response.arrayBuffer();
+    const buffer = await response.arrayBuffer();
+    return new Float32Array(buffer);
   }
 
   async loadEventDetail(id: string): Promise<import('../types').EventDetail> {

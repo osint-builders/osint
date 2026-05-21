@@ -18,6 +18,7 @@ interface CommandBarProps {
   searchInputRef: React.RefObject<HTMLInputElement>;
   view: 'search' | 'timeline';
   onToggleView: () => void;
+  semanticModalActive?: boolean;
 }
 
 export const CommandBar: React.FC<CommandBarProps> = ({
@@ -36,6 +37,7 @@ export const CommandBar: React.FC<CommandBarProps> = ({
   searchInputRef,
   view,
   onToggleView,
+  semanticModalActive,
 }) => {
   const [showSaved, setShowSaved] = useState(false);
   const savedRef = useRef<HTMLDivElement>(null);
@@ -62,6 +64,11 @@ export const CommandBar: React.FC<CommandBarProps> = ({
           <span className="text-term-yellow text-[9px] flex-shrink-0 animate-pulse-green">⟳</span>
         ) : (
           <span className="text-term-dim text-[9px] flex-shrink-0">▶</span>
+        )}
+        {semanticModalActive && (
+          <span className="text-term-cyan text-[8px] flex-shrink-0" title="Semantic search active">
+            ◆
+          </span>
         )}
         <input
           ref={searchInputRef}

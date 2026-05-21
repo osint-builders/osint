@@ -14,8 +14,11 @@ import { EventDetail } from './components/EventDetail';
 import { StatusBar } from './components/StatusBar';
 import { ShortcutsHelp } from './components/ShortcutsHelp';
 import { TimelineView } from './components/TimelineView';
+import { SplashScreen } from './components/SplashScreen';
+import { SemanticSearchModal } from './components/SemanticSearchModal';
 import { IndexLoader } from './lib/IndexLoader';
 import { SearchEngine } from './lib/SearchEngine';
+import { VectorSearchEngine } from './lib/VectorSearchEngine';
 import { useSavedSearches } from './hooks/useSavedSearches';
 import { copyToClipboard, todayISO, daysAgoISO } from './lib/utils';
 import type {
@@ -61,6 +64,7 @@ function syncUrl(query: string, filters: SearchFilters) {
 // ── Singletons (survive React strict-mode remounts) ───────────
 const loader = new IndexLoader();
 const engine = new SearchEngine();
+const vectorEngine = new VectorSearchEngine();
 
 type RightPane = 'map' | 'detail';
 type AppView = 'search' | 'timeline';
@@ -131,6 +135,15 @@ function App() {
   const [eventDetail, setEventDetail] = useState<EventDetailType | null>(null);
   const [isLoadingDetail, setIsLoadingDetail] = useState(false);
 
+  // Vector search state
+  const [vectorReady, setVectorReady] = useState(false);
+  const [splashProgress, setSplashProgress] = useState(0);
+  const [splashStatus, setSplashStatus] = useState('Loading...');
+  const [semanticResult, setSemanticResult] = useState<EventMetadata | null>(null);
+  const [semanticScore, setSemanticScore] = useState(0);
+  const [semanticModalVisible, setSemanticModalVisible] = useState(false);
+  const vectorSearchTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const searchInputRef = useRef<HTMLInputElement>(null);
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -142,11 +155,12 @@ function App() {
     toastTimerRef.current = setTimeout(() => setToast(null), ms);
   }, []);
 
-  // Initialize index
+  // Initialize index + vector engine
   useEffect(() => {
     let cancelled = false;
     (async () => {
       try {
+        // Load metadata and schema first
         const [sch, meta] = await Promise.all([
           loader.loadSchema(),
           loader.loadMetadata(),
@@ -156,6 +170,23 @@ function App() {
         setSchema(sch);
         setAllMetadata(meta);
         setIsInitializing(false);
+
+        // Initialize vector engine (drives splash screen)
+        const baseUrl = loader.getBaseUrl();
+        const progressInterval = setInterval(() => {
+          if (cancelled) return;
+          const p = vectorEngine.getProgress();
+          setSplashProgress(p.progress);
+          setSplashStatus(p.status);
+        }, 100);
+
+        await vectorEngine.initialize(baseUrl);
+        clearInterval(progressInterval);
+        if (!cancelled) {
+          setSplashProgress(100);
+          setSplashStatus('Ready');
+          setVectorReady(true);
+        }
       } catch (err) {
         if (!cancelled) {
           setError(err instanceof Error ? err.message : 'Failed to load index');
@@ -182,6 +213,33 @@ function App() {
 
   // Sync URL
   useEffect(() => { syncUrl(query, filters); }, [query, filters]);
+
+  // Debounced vector search → semantic modal
+  useEffect(() => {
+    if (!vectorReady || query.trim().length < 2) {
+      setSemanticModalVisible(false);
+      setSemanticResult(null);
+      return;
+    }
+    if (vectorSearchTimer.current) clearTimeout(vectorSearchTimer.current);
+    vectorSearchTimer.current = setTimeout(async () => {
+      try {
+        const hits = await vectorEngine.search(query.trim(), 1);
+        if (hits.length > 0 && allMetadata[hits[0].index]) {
+          setSemanticResult(allMetadata[hits[0].index]);
+          setSemanticScore(hits[0].score);
+          setSemanticModalVisible(true);
+        } else {
+          setSemanticModalVisible(false);
+        }
+      } catch {
+        setSemanticModalVisible(false);
+      }
+    }, 150);
+    return () => {
+      if (vectorSearchTimer.current) clearTimeout(vectorSearchTimer.current);
+    };
+  }, [query, vectorReady, allMetadata]);
 
   // Load event detail
   useEffect(() => {
@@ -284,6 +342,22 @@ function App() {
     }));
   }, []);
 
+  const handleSemanticClose = useCallback(() => setSemanticModalVisible(false), []);
+  const handleSemanticSelect = useCallback((id: string) => {
+    setSemanticModalVisible(false);
+    handleOpen(id);
+  }, [handleOpen]);
+
+  // Show splash screen until vector engine is ready
+  if (!vectorReady) {
+    return (
+      <SplashScreen
+        progress={splashProgress}
+        status={splashStatus}
+      />
+    );
+  }
+
   if (error) {
     return (
       <div className="h-full flex flex-col items-center justify-center bg-term-bg font-mono text-[9px] gap-3">
@@ -317,6 +391,7 @@ function App() {
         searchInputRef={searchInputRef}
         view={view}
         onToggleView={() => setView(v => v === 'search' ? 'timeline' : 'search')}
+        semanticModalActive={semanticModalVisible}
       />
 
       {isInitializing && (
@@ -390,6 +465,15 @@ function App() {
       />
 
       {showHelp && <ShortcutsHelp onClose={() => setShowHelp(false)} />}
+
+      <SemanticSearchModal
+        result={semanticResult}
+        query={query}
+        score={semanticScore}
+        visible={semanticModalVisible}
+        onClose={handleSemanticClose}
+        onSelect={handleSemanticSelect}
+      />
     </div>
   );
 }

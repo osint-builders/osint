@@ -1,66 +1,29 @@
 """
-OpenAI embedding generation with batching and rate limiting
+Embedding generation using Hugging Face sentence-transformers
 """
-import time
-from typing import List, Tuple
-import openai
-from openai import OpenAI
+from typing import List
+import numpy as np
+from sentence_transformers import SentenceTransformer
 
 
 class Embedder:
-    def __init__(self, api_key: str, model: str = "text-embedding-3-small"):
-        self.client = OpenAI(api_key=api_key)
-        self.model = model
-        self.batch_size = 100  # OpenAI supports up to 2048 inputs per request
+    def __init__(self, model_name: str = 'all-MiniLM-L6-v2', batch_size: int = 128):
+        self.model = SentenceTransformer(model_name)
+        self.batch_size = batch_size
 
-    def embed_texts(self, texts: List[str]) -> List[List[float]]:
+    def embed_texts(self, texts: List[str]) -> np.ndarray:
         """
-        Generate embeddings for a list of texts with batching and retry logic
+        Generate embeddings for a list of texts with batching.
+        Returns np.ndarray of shape (len(texts), 384).
         """
-        all_embeddings = []
-
-        for i in range(0, len(texts), self.batch_size):
-            batch = texts[i:i + self.batch_size]
-            embeddings = self._embed_batch_with_retry(batch)
-            all_embeddings.extend(embeddings)
-
-            if i + self.batch_size < len(texts):
-                print(f"Embedded {i + self.batch_size}/{len(texts)} texts...")
-
-        return all_embeddings
-
-    def _embed_batch_with_retry(
-        self,
-        texts: List[str],
-        max_retries: int = 5,
-        base_delay: float = 1.0
-    ) -> List[List[float]]:
-        """
-        Embed a batch with exponential backoff retry on rate limits
-        """
-        for attempt in range(max_retries):
-            try:
-                response = self.client.embeddings.create(
-                    model=self.model,
-                    input=texts
-                )
-
-                embeddings = [item.embedding for item in response.data]
-                return embeddings
-
-            except openai.RateLimitError as e:
-                if attempt == max_retries - 1:
-                    raise
-
-                delay = base_delay * (2 ** attempt)
-                print(f"Rate limit hit, retrying in {delay:.1f}s... (attempt {attempt + 1}/{max_retries})")
-                time.sleep(delay)
-
-            except Exception as e:
-                print(f"Error embedding batch: {e}")
-                raise
-
-        raise RuntimeError("Max retries exceeded for embedding batch")
+        print(f"Encoding {len(texts)} texts with batch_size={self.batch_size}...")
+        embeddings = self.model.encode(
+            texts,
+            batch_size=self.batch_size,
+            show_progress_bar=True,
+            convert_to_numpy=True,
+        )
+        return embeddings
 
 
 def prepare_embedding_text(title: str, summary: str) -> str:

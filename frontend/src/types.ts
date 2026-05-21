@@ -46,16 +46,7 @@ export interface IndexSchema {
   version: string;
   embedding_model: string;
   embedding_dims: number;
-  quantization: string;
-  scale: number;
-  min_val: number;
-  index_type: string;
-  hnsw_params: {
-    M: number;
-    ef_construction: number;
-    ef: number;
-    space: string;
-  };
+  embedding_file: string;
   event_count: number;
   last_updated: string;
 }
@@ -78,6 +69,11 @@ export interface SavedSearch {
   query: string;
   filters: SearchFilters;
   savedAt: string;
+}
+
+export interface VectorSearchResult {
+  index: number;
+  score: number;
 }
 
 export type SortField = 'date' | 'title' | 'confidence';

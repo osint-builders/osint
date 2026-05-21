@@ -16,7 +16,8 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'onnx': ['onnxruntime-web']
+          'onnx': ['onnxruntime-web'],
+          'transformers': ['@huggingface/transformers']
         }
       }
     }
