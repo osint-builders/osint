@@ -114,3 +114,9 @@ twitter-national-interest (@NationalInterest, 16 chars)
 **Finding:** The handle @JaimeOcon configured for source twitter-jaime-ocon resolves to a personal account with minimal activity (5 followers, 17 tweets). The intended GIS/geospatial intelligence analyst may operate under a different handle or have left the platform. exa_web_search with GIS and OSINT keywords yielded no relevant in-window events.
 **Action for next run:** Skip Twitter API for twitter-jaime-ocon. Use exa_web_search with GIS, OSINT, and geospatial intelligence keywords. Flag source for manifest handle investigation or status change.
 **Expires:** 2026-08-21
+
+## 2026-05-21 22:30Z — twitter-dprk-news @DPRK_News resolves to parody/satire account
+**Trigger:** Bucket 11 collection attempted to scrape @DPRK_News via r.jina.ai mirror. Content returned included satirical posts about Epstein, fashion week, and other joke content clearly unrelated to actual DPRK intelligence.
+**Finding:** The handle @DPRK_News ("DPRK News Service") operates as a well-known parody account, not an official or aggregator North Korea news source. It has 0 usable OSINT content. The source file description ("News aggregation account focused on North Korea developments") does not match the actual account. exa_web_search with DPRK keywords yields real news but none attributable to this source.
+**Action for next run:** Skip Twitter API and r.jina.ai for twitter-dprk-news entirely. Use exa_web_search with DPRK/North Korea keywords only. Flag source for manifest status change to inactive or handle correction.
+**Expires:** permanent
