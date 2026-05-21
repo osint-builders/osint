@@ -1,31 +1,31 @@
 [
   {
     "country": "United States",
-    "count": 376
+    "count": 383
   },
   {
     "country": "Iran",
-    "count": 348
+    "count": 356
   },
   {
     "country": "Philippines",
-    "count": 194
+    "count": 197
   },
   {
     "country": "South Korea",
-    "count": 161
+    "count": 164
   },
   {
     "country": "Ukraine",
-    "count": 141
+    "count": 148
   },
   {
     "country": "North Korea",
-    "count": 134
+    "count": 136
   },
   {
     "country": "China",
-    "count": 131
+    "count": 135
   },
   {
     "country": "Taiwan",
@@ -36,16 +36,16 @@
     "count": 86
   },
   {
+    "country": "Oman",
+    "count": 81
+  },
+  {
     "country": "Russia",
     "count": 81
   },
   {
-    "country": "Oman",
-    "count": 79
-  },
-  {
     "country": "Japan",
-    "count": 72
+    "count": 74
   },
   {
     "country": "International Waters",
@@ -61,15 +61,15 @@
   },
   {
     "country": "Belgium",
-    "count": 29
+    "count": 30
   },
   {
     "country": "Mali",
-    "count": 26
+    "count": 27
   },
   {
     "country": "Israel",
-    "count": 25
+    "count": 26
   },
   {
     "country": "India",
@@ -89,7 +89,15 @@
   },
   {
     "country": "Vietnam",
+    "count": 17
+  },
+  {
+    "country": "Democratic Republic of Congo",
     "count": 16
+  },
+  {
+    "country": "UAE",
+    "count": 14
   },
   {
     "country": "Nigeria",
@@ -104,19 +112,15 @@
     "count": 14
   },
   {
-    "country": "Democratic Republic of Congo",
-    "count": 14
-  },
-  {
-    "country": "UAE",
-    "count": 13
-  },
-  {
     "country": "Syria",
     "count": 13
   },
   {
     "country": "Qatar",
+    "count": 13
+  },
+  {
+    "country": "Sweden",
     "count": 13
   },
   {
@@ -136,8 +140,8 @@
     "count": 12
   },
   {
-    "country": "Sweden",
-    "count": 12
+    "country": "Turkey",
+    "count": 10
   },
   {
     "country": "Estonia",
@@ -152,7 +156,15 @@
     "count": 9
   },
   {
-    "country": "Turkey",
+    "country": "Palestine",
+    "count": 9
+  },
+  {
+    "country": "Norway",
+    "count": 9
+  },
+  {
+    "country": "Cuba",
     "count": 9
   },
   {
@@ -164,19 +176,11 @@
     "count": 8
   },
   {
-    "country": "Palestine",
-    "count": 8
-  },
-  {
-    "country": "Norway",
-    "count": 8
-  },
-  {
-    "country": "Cuba",
-    "count": 8
-  },
-  {
     "country": "Greece",
+    "count": 7
+  },
+  {
+    "country": "South China Sea",
     "count": 7
   },
   {
@@ -200,8 +204,8 @@
     "count": 6
   },
   {
-    "country": "South China Sea",
-    "count": 5
+    "country": "Belarus",
+    "count": 6
   },
   {
     "country": "Austria",
@@ -249,10 +253,6 @@
   },
   {
     "country": "Saudi Arabia",
-    "count": 4
-  },
-  {
-    "country": "Belarus",
     "count": 4
   },
   {
@@ -349,6 +349,14 @@
   },
   {
     "country": "Mozambique",
+    "count": 2
+  },
+  {
+    "country": "Ivory Coast",
+    "count": 2
+  },
+  {
+    "country": "Caribbean Sea",
     "count": 2
   },
   {
@@ -580,10 +588,6 @@
     "count": 1
   },
   {
-    "country": "Ivory Coast",
-    "count": 1
-  },
-  {
     "country": "Somaliland",
     "count": 1
   },
@@ -596,11 +600,15 @@
     "count": 1
   },
   {
-    "country": "Caribbean Sea",
+    "country": "Nauru",
     "count": 1
   },
   {
-    "country": "Nauru",
+    "country": "Panama",
+    "count": 1
+  },
+  {
+    "country": "Nepal",
     "count": 1
   }
 ]
