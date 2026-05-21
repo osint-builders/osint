@@ -216,6 +216,11 @@ for sid in "${EXPECTED_IDS[@]}"; do
     keywords=$(grep -m1 '^Keywords:' "$src_file" | sed 's/^Keywords:[[:space:]]*//')
     [ -n "$url" ] && { _check_webpage "$sid" "$url" "$keywords" & PCHECK_PIDS+=($!); } || \
       _write_precheck "$sid" "pass" "url field missing — skipping"
+  elif [ "$src_type" = "telegram" ]; then
+    url=$(grep -m1 '^url:' "$src_file" | awk '{print $2}')
+    keywords=$(grep -m1 '^Keywords:' "$src_file" | sed 's/^Keywords:[[:space:]]*//')
+    [ -n "$url" ] && { _check_webpage "$sid" "$url" "$keywords" & PCHECK_PIDS+=($!); } || \
+      _write_precheck "$sid" "pass" "url field missing — skipping"
   else
     _write_precheck "$sid" "pass" "type '$src_type' has no pre-check"
   fi
@@ -262,7 +267,17 @@ Per source:
 2. **Collect** with time filtering:
    - Twitter/X: `agent-browser` or Twitter API (`$TWITTER_BEARER_TOKEN`); filter by timestamp to window.
      - **Tweet permalink REQUIRED as `links[0]`**: The direct tweet URL (`https://x.com/{handle}/status/{tweet_id}`) MUST be the FIRST entry in `links[]` labeled `"Original Tweet"`. Corroborating article links follow. Never omit the original tweet URL.
-   - Webpage: `agent-browser` + CSS selectors; parse publish dates; skip outside window.
+   - Telegram: `agent-browser` scraping `https://t.me/s/<channel>`. Steps:
+     1. `agent-browser open "https://t.me/s/$CHANNEL" --session telegram-$source_id`
+     2. `agent-browser wait --load networkidle`
+     3. Eval to extract all messages: `JSON.stringify(Array.from(document.querySelectorAll('.tgme_widget_message')).map(function(el){return {id:el.dataset.post,datetime:el.querySelector('time')&&el.querySelector('time').getAttribute('datetime'),text:(el.querySelector('.tgme_widget_message_text')||{}).innerText||'',permalink:el.querySelector('.tgme_widget_message_date')&&el.querySelector('.tgme_widget_message_date').href,photo:(el.querySelector('.tgme_widget_message_photo_wrap')||{}).href||null}}))`
+     4. Filter by `datetime` (ISO 8601) within `$TIME_WINDOW_START`→`$TIME_WINDOW_END`. Reject messages outside window.
+     5. If oldest message on page is still within window (channel posts >20/hr), paginate: append `?before=<oldest_msg_id>` to the URL, open again, repeat.
+     6. Set `links[0]={url: permalink, label: "Telegram Post"}`. Add any external URLs found in post text as subsequent links.
+     7. `agent-browser close --session telegram-$source_id`
+     - **Dedup**: Telegram message IDs are stable. Skip any message whose permalink already appears in today's JSONL (`SEEN_URLS`).
+     - Photo download: use photo href from `.tgme_widget_message_photo_wrap` — runs through standard `magick` 720×720 pipeline.
+     - For Twitter/X sources, set `image_urls: []` immediately and skip the rest of this step.
    - API: `curl` with auth; add time range params where supported.
      - **Reddit API** (`reddit.com/r/*/new.json`): no auth; header `User-Agent: osint-bot/1.0` required. Convert window to Unix seconds: `UNIX_START=$(date -d "$TIME_WINDOW_START" +%s 2>/dev/null || gdate -d "$TIME_WINDOW_START" +%s)` (same for `UNIX_END`). Parse `.data.children[].data`. Filter: `select(.created_utc >= UNIX_START and .created_utc <= UNIX_END)`. Set `links[0]={url:"https://reddit.com"+.permalink,label:"Reddit Post"}`; set `links[1]={url:.url,label:"External Link"}` only when `.url` does not contain "reddit.com". Set `image_urls:[]`.
    - RSS: `curl` + XML parse; filter by `pubDate`.

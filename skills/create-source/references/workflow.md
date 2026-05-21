@@ -15,6 +15,7 @@ This file contains the full encyclopedic walkthrough of the source creation life
 | **websocket** | Real-time streams | Live data feeds, market data |
 | **file** | File sources | S3 buckets, SFTP, shared drives |
 | **database** | Direct DB access | Intelligence databases, archives |
+| **telegram** | Telegram public channels | Conflict OSINT, war news, geopolitics channels |
 | **other** | Custom types | Specialized or hybrid sources |
 
 ## Quick Start
@@ -457,6 +458,60 @@ node scripts/create-source.js \
 - [ ] Item mapping extracts all fields
 - [ ] Example feed items included
 
+### Creating Telegram Sources
+
+**Required Information:**
+- Channel handle (without @)
+- Public channel URL (`https://t.me/s/<channel>`)
+- Geographic/topical focus
+- Keywords for relevance filtering
+
+**How it works:**
+Public Telegram channels expose a web preview at `t.me/s/<channel>`. No API key or auth required. The agent uses `agent-browser` to scrape this page — same approach as `webpage` type.
+
+**DOM selectors (stable, verified 2026-05):**
+| Selector | Content |
+|---|---|
+| `.tgme_widget_message[data-post]` | Container; `data-post="channel/12345"` → message ID |
+| `time[datetime]` | ISO 8601 timestamp — use directly for time window filter |
+| `.tgme_widget_message_text` | Full post text (emojis, markdown-style) |
+| `.tgme_widget_message_date[href]` | Permalink: `https://t.me/<channel>/<msg_id>` |
+| `.tgme_widget_message_photo_wrap` | Photo href → direct image download |
+
+**Collection snippet:**
+```bash
+agent-browser open "https://t.me/s/$CHANNEL" --session telegram-$sid
+agent-browser wait --load networkidle
+agent-browser eval "JSON.stringify(Array.from(document.querySelectorAll('.tgme_widget_message')).map(function(el){return {id:el.dataset.post,datetime:el.querySelector('time')&&el.querySelector('time').getAttribute('datetime'),text:(el.querySelector('.tgme_widget_message_text')||{}).innerText||'',permalink:el.querySelector('.tgme_widget_message_date')&&el.querySelector('.tgme_widget_message_date').href,photo:(el.querySelector('.tgme_widget_message_photo_wrap')||{}).href||null}}))"
+agent-browser close --session telegram-$sid
+```
+
+**Time window filtering:** compare `datetime` attribute (ISO 8601) directly against `$TIME_WINDOW_START`/`$TIME_WINDOW_END` — no conversion needed.
+
+**Permalink:** `https://t.me/<channel>/<msg_id>` → `links[0]` labeled `"Telegram Post"`.
+
+**Pagination:** page loads ~20 most recent messages. For 1-hour lookbacks on high-volume channels (>20 posts/hour), append `?before=<oldest_msg_id>` to load earlier messages. Most channels post <20/hour so one page suffices.
+
+**Images:** use `.tgme_widget_message_photo_wrap[href]` as the download URL — runs through standard `magick` 720×720 PNG pipeline.
+
+**Pre-check:** `_check_webpage()` against `https://t.me/s/<channel>` works — returns HTTP 200, contains ISO datetimes.
+
+**Quick Create:**
+```bash
+node scripts/create-source.js \
+  --type telegram \
+  --channel intelslava \
+  --url "https://t.me/s/intelslava" \
+  --priority high
+```
+
+**Validation Checklist:**
+- [ ] Channel exists and is public (HTTP 200 at t.me/s/channel)
+- [ ] `channel:` line present in source file body
+- [ ] `url:` line present (https://t.me/s/<channel>)
+- [ ] Keywords relevant to geopolitical events
+- [ ] Bias/perspective noted in source description
+
 ## Validation Reference
 
 ### Front Matter Validation
@@ -465,7 +520,7 @@ node scripts/create-source.js \
 ```yaml
 id: string (UUID or slug)
 name: string
-type: enum (twitter|webpage|api|email|rss|webhook|websocket|file|database|other)
+type: enum (twitter|webpage|api|email|rss|webhook|websocket|file|database|telegram|other)
 status: enum (active|inactive|archived|testing)
 description: string (multiline OK)
 created_date: YYYY-MM-DD
