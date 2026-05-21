@@ -36,6 +36,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
+## 2026-05-21 21:40Z — @Jkgarokgov Twitter account does not exist; @IranObserver dormant since 2016
+**Trigger:** Bucket 8 collection. r.jina.ai mirror for @Jkgarokgov returned "This account doesn't exist." @IranObserver last tweeted January 2016.
+**Finding:** twitter-jkgarokgov handle @Jkgarokgov resolves to a non-existent account page. twitter-iran-observer handle @IranObserver has not posted since 2016 — effectively dormant. Neither account produces collectible events.
+**Action for next run:** Skip Twitter API and r.jina.ai for twitter-jkgarokgov and twitter-iran-observer. Use exa_web_search with Korea government policy keywords for jkgarokgov and Iran IRGC nuclear keywords for iran-observer. Flag both sources for manifest status review (recommend inactive).
+**Expires:** 2026-08-21
+
 ## 2026-05-21 — Twitter image extraction not viable; skip for all Twitter sources
 **Trigger:** data/media directory contained only a .gitkeep after multiple collection runs. Twitter/X images at pbs.twimg.com require authenticated sessions the agent does not have.
 **Finding:** For type:twitter sources, image extraction always fails silently. ~80% of sources are Twitter type. Only type:webpage, type:api, type:rss, and type:telegram sources yield extractable images.
