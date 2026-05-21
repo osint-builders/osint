@@ -120,3 +120,9 @@ twitter-national-interest (@NationalInterest, 16 chars)
 **Finding:** The handle @DPRK_News ("DPRK News Service") operates as a well-known parody account, not an official or aggregator North Korea news source. It has 0 usable OSINT content. The source file description ("News aggregation account focused on North Korea developments") does not match the actual account. exa_web_search with DPRK keywords yields real news but none attributable to this source.
 **Action for next run:** Skip Twitter API and r.jina.ai for twitter-dprk-news entirely. Use exa_web_search with DPRK/North Korea keywords only. Flag source for manifest status change to inactive or handle correction.
 **Expires:** permanent
+
+## 2026-05-21 22:35Z — @Osaindawg Twitter handle not found; add to dead handles list
+**Trigger:** Bucket 15 Twitter API user lookup for @Osaindawg returned no .data object — account not found or suspended.
+**Finding:** The twitter-osaindawg source (maritime OSINT, vessel tracking) references handle @Osaindawg which does not resolve via Twitter API v2 user lookup. exa_web_search with maritime OSINT keywords yielded results (Russian navy DPRK ship escort story from NK News) but none published within the 1-hour collection window. The source topic area remains coverable via exa_web_search.
+**Action for next run:** Add twitter-osaindawg (@Osaindawg) to the dead/not-found handles list. Skip Twitter API and r.jina.ai for this source. Use exa_web_search with maritime OSINT, vessel tracking, and AIS keywords.
+**Expires:** 2026-08-21
