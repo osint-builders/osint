@@ -277,6 +277,11 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Action for next run:** Skip Twitter API for twitter-ntonc and twitter-detresfa. Use exa_web_search with source-specific keywords. Flag both sources for manifest handle investigation or status change.
 **Expires:** 2026-08-21
 
+## 2026-05-21 19:35Z — @Chadobcnews X account does not exist
+**Trigger:** Bucket 10 Twitter API v2 user lookup returned "Could not find user with usernames: [Chadobcnews]."
+**Finding:** The Twitter handle @Chadobcnews configured for source twitter-chadobcnews does not resolve to an active X/Twitter account. Events for Korea-focused defense topics remain accessible via exa_web_search with Korean Peninsula and military keywords.
+**Action for next run:** Skip Twitter API for twitter-chadobcnews. Use exa_web_search with Korea defense, DPRK missile, and ROK military keywords. Flag source for manifest handle investigation or status change.
+
 ## 2026-05-21 19:30Z — @MNDChina X handle resolves to wrong account; not China Ministry of National Defense
 **Trigger:** Bucket 14 Twitter API user lookup for @MNDChina returned user "Xin Tomberg" (uid 1998378585636442112, 3 followers, 0 tweets) instead of the Chinese Ministry of National Defense.
 **Finding:** The X/Twitter handle @MNDChina does not belong to China's Ministry of National Defense. The actual account belongs to a private individual with zero activity. The Chinese MoD may operate under a different handle or may not maintain an active English-language X presence. exa_web_search with China defense and PLA keywords yielded relevant events.
