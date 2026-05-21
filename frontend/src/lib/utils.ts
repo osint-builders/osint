@@ -86,12 +86,16 @@ export function getTagColor(tag: string): string {
 
 interface SourceIcon { symbol: string; color: string; }
 
-export function getSourceIcon(sourceName: string): SourceIcon {
+export function getSourceIcon(sourceName: string, firstLinkUrl?: string): SourceIcon {
   const s = sourceName.toLowerCase();
-  if (s.includes('@') || s.startsWith('twitter') || s.includes('x.com') || s.includes('tweet'))
+  const u = (firstLinkUrl ?? '').toLowerCase();
+
+  // Telegram: check permalink URL first (t.me/...) — must come before the @
+  // check since Telegram source names also contain (@channelname)
+  if (u.includes('t.me/') || s.includes('telegram'))
+    return { symbol: '✈', color: '#26a5e4' };
+  if (s.includes('@') || s.startsWith('twitter') || u.includes('x.com/') || u.includes('twitter.com/') || s.includes('tweet'))
     return { symbol: '𝕏', color: '#1d9bf0' };
-  if (s.includes('telegram'))
-    return { symbol: 'TG', color: '#26a5e4' };
   if (s.includes('reuters'))
     return { symbol: 'R', color: '#ff8c00' };
   if (s.includes('bbc'))

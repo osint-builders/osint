@@ -41,6 +41,7 @@ export const MapView: React.FC<MapViewProps> = ({
         date: formatDateShort(ev.date_event ?? ev.date_published),
         country: ev.geo?.country ?? '',
         selected: ev.id === selectedId,
+        firstLink: ev.links?.[0]?.url ?? '',
       },
     })),
   }), [geocoded, selectedId]);
@@ -49,6 +50,7 @@ export const MapView: React.FC<MapViewProps> = ({
   const [popupInfo, setPopupInfo] = React.useState<{
     id: string; lng: number; lat: number;
     title: string; source: string; date: string; country: string;
+    firstLink?: string;
   } | null>(null);
 
   // Fly to selected event
@@ -90,6 +92,7 @@ export const MapView: React.FC<MapViewProps> = ({
       source: props.source,
       date: props.date,
       country: props.country,
+      firstLink: props.firstLink,
     });
   }, [onSelectEvent]);
 
@@ -203,8 +206,8 @@ export const MapView: React.FC<MapViewProps> = ({
                 padding: '6px 8px',
                 maxWidth: '220px',
               }}>
-                <div style={{ color: getSourceIcon(popupInfo.source).color, fontWeight: 700, marginBottom: 2 }}>
-                  {getSourceIcon(popupInfo.source).symbol} {popupInfo.source}
+                <div style={{ color: getSourceIcon(popupInfo.source, popupInfo.firstLink).color, fontWeight: 700, marginBottom: 2 }}>
+                  {getSourceIcon(popupInfo.source, popupInfo.firstLink).symbol} {popupInfo.source}
                 </div>
                 <div style={{ color: '#666', marginBottom: 3, fontSize: '8px' }}>
                   {popupInfo.date}{popupInfo.country ? ` · ${popupInfo.country}` : ''}

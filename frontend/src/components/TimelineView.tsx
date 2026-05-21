@@ -77,7 +77,7 @@ const TimelineColumn: React.FC<TimelineColumnProps> = ({
       >
         {virtualizer.getVirtualItems().map(vItem => {
           const ev = group.events[vItem.index];
-          const icon = getSourceIcon(ev.source_name);
+          const icon = getSourceIcon(ev.source_name, ev.links?.[0]?.url);
           const topicColor = ev.topics.length > 0 ? getTagColor(ev.topics[0]) : '#444';
           const confPct = ev.confidence != null ? Math.round(ev.confidence * 100) : null;
           const isSelected = ev.id === selectedId;

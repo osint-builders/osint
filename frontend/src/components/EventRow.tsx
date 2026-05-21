@@ -24,7 +24,7 @@ export const EventRow: React.FC<EventRowProps> = React.memo(({
   const date = formatDateShort(result.date_event ?? result.date_published);
   const conf = result.confidence;
   const confPct = conf !== null ? Math.round(conf * 100) : null;
-  const srcIcon = getSourceIcon(result.source_name);
+  const srcIcon = getSourceIcon(result.source_name, result.links?.[0]?.url);
 
   const handleCopy = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();

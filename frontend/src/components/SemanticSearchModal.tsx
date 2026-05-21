@@ -152,7 +152,7 @@ export const SemanticSearchModal: React.FC<SemanticSearchModalProps> = ({
                 const isActive = i === activeIndex;
                 const m = hit.metadata;
                 const date = formatDateShort(m.date_event ?? m.date_published);
-                const srcIcon = getSourceIcon(m.source_name);
+                const srcIcon = getSourceIcon(m.source_name, m.links?.[0]?.url);
                 const confPct = m.confidence !== null ? Math.round(m.confidence * 100) : null;
                 const geoStr = [m.geo?.city, m.geo?.country].filter(Boolean).join(', ');
 
