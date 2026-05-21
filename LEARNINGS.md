@@ -229,4 +229,26 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Trigger:** Bucket 14 Twitter API v2 user lookup returned "Could not find user with usernames: [JasdfPaoEng]."
 **Finding:** The Twitter handle @JasdfPaoEng configured for source twitter-jasdf-pao-eng does not resolve to an active X/Twitter account. The JASDF may operate its English-language public affairs under a different handle or have consolidated social media accounts. Events for Japanese air defense topics remain accessible via exa_web_search.
 **Action for next run:** Skip Twitter API and r.jina.ai for twitter-jasdf-pao-eng. Use exa_web_search with JASDF and Japan air defense keywords. Flag source for manifest handle investigation or status change to inactive.
+## 2026-05-21 12:22Z — @ArmedForcesPhil Twitter handle resolves to wrong account with zero tweets
+**Trigger:** Bucket 12 Twitter API user lookup returned username "armedforcesphil" (user ID 135013193) with 0 tweets, 0 followers, display name "joey radaman" — clearly not the official Armed Forces of the Philippines account.
+**Finding:** The handle @ArmedForcesPhil configured for source twitter-armed-forces-phil resolves to an unrelated personal account with zero activity. The official AFP account likely operates under a different handle. Events for this source's topic area remain accessible via exa_web_search with Philippines military and South China Sea keywords.
+**Action for next run:** Skip Twitter API for twitter-armed-forces-phil. Use exa_web_search with "Armed Forces Philippines," "West Philippine Sea," and "South China Sea" keywords. Flag source for manifest handle investigation.
+**Expires:** 2026-08-21
+
+## 2026-05-21 12:22Z — @NationalInterest handle exceeds Twitter 15-character limit; cannot query API
+**Trigger:** Bucket 12 Twitter API batch user lookup returned HTTP 400 because "NationalInterest" (16 characters) violates Twitter's ^[A-Za-z0-9_]{1,15}$ username constraint.
+**Finding:** The handle @NationalInterest configured for source twitter-national-interest exceeds Twitter's 15-character handle limit. The actual account may operate under a shortened handle (e.g., @NatInterest). The API rejects any batch query containing this username.
+**Action for next run:** Investigate the correct Twitter handle for The National Interest. Skip API lookup for this source until handle corrected. Use exa_web_search with "National Interest defense analysis" keywords.
+**Expires:** 2026-08-21
+
+## 2026-05-21 12:22Z — @key2med account now protected (private); direct tweet collection blocked
+**Trigger:** Bucket 12 Twitter API user lookup returned protected:true for @key2med (user ID 318556348, display name "Michael J Sanchez").
+**Finding:** The @key2med account configured for source twitter-key-to-med has switched to protected status, preventing all direct tweet collection via API or scraping. The account still exists but requires follow approval.
+**Action for next run:** Skip Twitter API tweet search for twitter-key-to-med. Use exa_web_search with Middle East defense, Iran military, and missile keywords. Flag source for manifest review.
+**Expires:** 2026-08-21
+
+## 2026-05-21 12:22Z — Three X accounts do not exist: Osaindawg, EtienneLh, Therealshipdude
+**Trigger:** Bucket 12 Twitter API v2 user lookup returned "Could not find user with username" for @Osaindawg, @EtienneLh, and @Therealshipdude.
+**Finding:** These three Twitter handles do not resolve to active X/Twitter accounts. The accounts may have changed handles, deleted, or received suspensions. Events for their topic areas remain accessible via exa_web_search with source-specific keywords.
+**Action for next run:** Skip Twitter API and r.jina.ai for twitter-osaindawg, twitter-etienne-lh, and twitter-therealshipdude. Use exa_web_search with source-specific topic keywords. Flag these sources for manifest handle investigation or status change.
 **Expires:** 2026-08-21
