@@ -1,7 +1,7 @@
 ---
 id: twitter-the-pacific-brief
 type: twitter
-status: active
+status: inactive
 ---
 # The Pacific Brief (@ThePacificBrief)
 Specialized defense intelligence and analysis platform focused on Indo-Pacific region military developments, strategic competition, naval operations, and regional security dynamics. Provides expert-level OSINT analysis of PLA activities, allied operations, maritime security, and geopolitical developments across Asia-Pacific theater.

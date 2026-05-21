@@ -1,7 +1,7 @@
 ---
 id: twitter-kc-nwt
 type: twitter
-status: active
+status: inactive
 ---
 # KC_NWT (@KC_NWT)
 Korea-focused security and defense monitoring account providing real-time updates on Korean Peninsula military developments, security incidents, and geopolitical tensions. Valuable source for tracking DPRK provocations, ROK-US military cooperation, cross-border incidents, and regional security dynamics. Provides timely alerts on missile launches, military exercises, and diplomatic developments affecting Korean Peninsula stability.

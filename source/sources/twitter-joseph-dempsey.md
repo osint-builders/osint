@@ -1,7 +1,7 @@
 ---
 id: twitter-joseph-dempsey
 type: twitter
-status: active
+status: inactive
 ---
 # Joseph Dempsey (@JosephDempsey)
 Joseph Dempsey is Research Associate for Defence and Military Analysis at the International Institute for Strategic Studies (IISS). Provides expert technical analysis of military hardware, weapons systems, defense procurement, and arms transfers. Specializes in visual intelligence (VISINT) using satellite imagery and open-source verification of military equipment and deployments.

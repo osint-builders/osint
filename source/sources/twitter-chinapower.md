@@ -1,7 +1,7 @@
 ---
 id: twitter-chinapower
 type: twitter
-status: active
+status: inactive
 ---
 # ChinaP0wer (@ChinaP0wer)
 CSIS China Power Project provides data-driven analysis of China's global influence through comprehensive assessments of military capabilities, economic power, diplomatic reach, and technological advancement. Uses visualizations, databases, and rigorous research to examine Chinese power projection and its implications for regional and global security.

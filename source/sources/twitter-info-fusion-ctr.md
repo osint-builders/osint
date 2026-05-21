@@ -1,7 +1,7 @@
 ---
 id: twitter-info-fusion-ctr
 type: twitter
-status: active
+status: inactive
 ---
 # InfoFusionCtr (@InfoFusionCtr)
 Info Fusion Center provides multi-source intelligence fusion, combining OSINT, SIGINT, IMINT, and HUMINT reporting into comprehensive situational assessments. Specializes in cross-source verification, intelligence synthesis, and analytical products covering global security developments. Collaborative intelligence collection and analysis hub.

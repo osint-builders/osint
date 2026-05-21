@@ -1,7 +1,7 @@
 ---
 id: twitter-kylebass
 type: twitter
-status: active
+status: inactive
 ---
 # kyleBass (@kyleBass)
 Kyle Bass provides expert analysis on Asian markets with particular focus on China's economic conditions, currency policies, Hong Kong developments, and broader Asia-Pacific geopolitical dynamics. Known for macroeconomic insights and deep understanding of regional financial systems and political risk.

@@ -1,7 +1,7 @@
 ---
 id: twitter-national-interest
 type: twitter
-status: active
+status: inactive
 ---
 # National Interest (@NationalInterest)
 The National Interest provides expert analysis on defense policy, international security, geopolitics, and foreign affairs. Focus on strategic analysis, military affairs, great power competition, and national security policy. Valuable for context and expert perspectives.

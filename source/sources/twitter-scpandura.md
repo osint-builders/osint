@@ -1,7 +1,7 @@
 ---
 id: twitter-scpandura
 type: twitter
-status: active
+status: inactive
 ---
 # Scpandura (@Scpandura)
 Pandura provides security analysis and intelligence covering cybersecurity, threat intelligence, information operations, and regional security developments. Focus on technical security issues, threat actor tracking, and operational security insights with emphasis on verifiable technical details.

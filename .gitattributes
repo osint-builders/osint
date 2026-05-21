@@ -3,3 +3,8 @@
 # prompt-size budget and the verify-prompt-extraction snapshot).
 builder/prompts/** text eol=lf
 builder/scripts/__fixtures__/** text eol=lf
+
+# JSONL data files are append-only event stores. On merge conflicts always
+# take the union (ours + theirs) rather than leaving conflict markers in the
+# data. Use the 'union' merge driver which concatenates both sides.
+data/events/**/*.jsonl merge=union
