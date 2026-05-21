@@ -335,3 +335,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** Breaking Defense /global/ URL no longer resolves. Use exa_web_search as fallback.
 **Action for next run:** Update source URL or use exa_web_search.
 **Expires:** 2026-08-21
+
+## 2026-05-21 20:34Z — @MdaSpace X handle resolves to wrong account with 0 tweets and 0 followers
+**Trigger:** Bucket 6 Twitter API v2 user lookup returned user "mdaspace" (uid 1765875432422068224, 0 followers, 0 tweets, 0 media) instead of MDA Space Ltd. satellite company.
+**Finding:** The X/Twitter handle @MdaSpace does not belong to MDA Space (formerly MDA Ltd.), the satellite systems and geospatial intelligence provider. The actual account has zero activity. MDA Space may operate under a different handle or may not maintain an active X presence. exa_web_search with satellite and SAR imagery keywords yielded relevant events.
+**Action for next run:** Skip Twitter API for twitter-mda-space. Use exa_web_search with MDA satellite, RADARSAT, and SAR imagery keywords. Flag source for manifest handle investigation or update.
+**Expires:** 2026-08-21
