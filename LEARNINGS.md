@@ -36,6 +36,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
+## 2026-05-21 12:22Z — X accounts @YortukIsgk and @ThePacificBrief do not exist
+**Trigger:** Bucket 2 Twitter API v2 user lookup returned "Could not find user with username" for @YortukIsgk and @ThePacificBrief.
+**Finding:** Both X/Twitter accounts do not resolve to active accounts. Events for these sources remain accessible via exa_web_search with source-specific keywords.
+**Action for next run:** Skip Twitter API for twitter-yortukisgk and twitter-the-pacific-brief. Use exa_web_search. Flag for manifest review.
+**Expires:** 2026-08-21
+
 ## 2026-05-21 12:22Z — @KC_NWT and @PyongyangToday X accounts do not exist; @jasonbrodsky account protected
 **Trigger:** Bucket 15 Twitter API v2 user lookup returned "Could not find user with username" for @KC_NWT and @PyongyangToday. Separate lookup returned protected:true for @jasonbrodsky (user ID 15975913 — lowercase "jasonbrodsky", not the intended Iran policy expert Jason Brodsky).
 **Finding:** The handles KC_NWT and PyongyangToday do not resolve to active X/Twitter accounts. The jasonbrodsky handle resolves to a protected account with only 33 followers and 121 tweets — likely not the intended UANI Policy Director Jason Brodsky. All three sources yielded zero direct Twitter collection. exa_web_search with source-specific topic keywords (Iran/sanctions for Jason Brodsky, Korean Peninsula/DPRK for KC_NWT, Pyongyang/KCNA for PyongyangToday) produced relevant events.
