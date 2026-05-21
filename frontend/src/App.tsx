@@ -19,6 +19,11 @@ import { SemanticSearchModal } from './components/SemanticSearchModal';
 import { IndexLoader } from './lib/IndexLoader';
 import { SearchEngine } from './lib/SearchEngine';
 import { VectorSearchEngine } from './lib/VectorSearchEngine';
+import { ResizeHandle } from './components/ResizeHandle';
+import { PopoutPlaceholder } from './components/PopoutPlaceholder';
+import { useResizable } from './hooks/useResizable';
+import { usePopout } from './hooks/usePopout';
+import { useBroadcastParent } from './hooks/useBroadcastSync';
 import { useSavedSearches } from './hooks/useSavedSearches';
 import { copyToClipboard, todayISO, daysAgoISO } from './lib/utils';
 import type {
@@ -31,6 +36,9 @@ import type {
   SortEntry,
   SortField,
   SortDirection,
+  PanelId,
+  PopoutSyncState,
+  PopoutAction,
 } from './types';
 
 // ── URL state helpers ─────────────────────────────────────────
@@ -109,6 +117,12 @@ function toggleSort(sorts: SortEntry[], field: SortField, dir: SortDirection): S
   return [...sorts.filter(s => s.field !== field), { field, dir }];
 }
 
+const MIN_RESULTS_WIDTH = 200;
+
+const PANEL_LABELS: Record<PanelId, string> = {
+  filters: 'Filters', map: 'Map', detail: 'Detail', results: 'Results', timeline: 'Timeline',
+};
+
 function App() {
   const initial = useMemo(getUrlParams, []);
 
@@ -144,6 +158,41 @@ function App() {
   const vectorSearchTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  // ── Popout state ──────────────────────────────────────────────
+  const [poppedPanels, setPoppedPanels] = useState<Set<PanelId>>(new Set());
+
+  // ── Resize hooks ──────────────────────────────────────────────
+  const rightWidthRef = useRef(420);
+  const filterWidthRef = useRef(176);
+
+  const filterResize = useResizable({
+    storageKey: 'osint-filter-width',
+    min: 120,
+    max: 320,
+    defaultWidth: 176,
+    direction: 'right',
+    getMax: () => window.innerWidth - rightWidthRef.current - MIN_RESULTS_WIDTH,
+  });
+
+  const rightResize = useResizable({
+    storageKey: 'osint-right-width',
+    min: 280,
+    max: 700,
+    defaultWidth: 420,
+    direction: 'left',
+    getMax: () => window.innerWidth - filterWidthRef.current - MIN_RESULTS_WIDTH,
+  });
+
+  // Keep refs in sync for cross-constraint between the two resize hooks.
+  const filterVisible = !filterCollapsed && !poppedPanels.has('filters');
+  const rightPanelPopped = (rightPane === 'map' && poppedPanels.has('map')) ||
+                           (rightPane === 'detail' && poppedPanels.has('detail'));
+  filterWidthRef.current = filterVisible ? filterResize.width : 0;
+  rightWidthRef.current = rightPanelPopped ? 0 : rightResize.width;
+
+  const { width: filterWidth, ...filterHandleProps } = filterResize;
+  const { width: rightWidth, ...rightHandleProps } = rightResize;
+
   const { searches: savedSearches, save: saveSearch, remove: removeSaved } = useSavedSearches();
 
   const showToast = useCallback((msg: string, ms = 2000) => {
@@ -151,6 +200,15 @@ function App() {
     if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
     toastTimerRef.current = setTimeout(() => setToast(null), ms);
   }, []);
+
+  const popout = usePopout({
+    onBlocked: () => showToast('Popup blocked — allow popups for this site'),
+    onClosed: (panel: PanelId) => setPoppedPanels(prev => {
+      const next = new Set(prev);
+      next.delete(panel);
+      return next;
+    }),
+  });
 
   // Initialize index + vector engine
   useEffect(() => {
@@ -362,6 +420,45 @@ function App() {
   }, [handleOpen]);
   const handleOpenSearch = useCallback(() => setSemanticModalVisible(true), []);
 
+  // ── Popout handlers ─────────────────────────────────────────
+  const handlePopout = useCallback((panel: PanelId) => {
+    popout.open(panel);
+    setPoppedPanels(prev => new Set(prev).add(panel));
+    showToast(`${PANEL_LABELS[panel]} opened in new window`);
+  }, [popout, showToast]);
+
+  const handleDockBack = useCallback((panel: PanelId) => {
+    popout.close(panel);
+  }, [popout]);
+
+  // ── Broadcast sync to popout children ───────────────────────
+  const handlePopoutAction = useCallback((action: PopoutAction) => {
+    switch (action.kind) {
+      case 'select': setSelectedId(action.id); break;
+      case 'open': handleOpen(action.id); break;
+      case 'tagClick': handleTagClick(action.tag); break;
+      case 'popIn': handleDockBack(action.panel); break;
+      case 'setFilters': setFilters(action.filters); break;
+      case 'setQuery': setQuery(action.query); break;
+      case 'setSort': setSorts(prev => toggleSort(prev, action.field, action.dir)); break;
+      case 'clearSorts': setSorts([]); break;
+    }
+  }, [handleOpen, handleTagClick, handleDockBack]);
+
+  const syncState: PopoutSyncState = useMemo(() => ({
+    results: sortedResults,
+    selectedId,
+    filters,
+    query,
+    eventDetail,
+    isLoadingDetail,
+    sorts,
+    rightPane,
+    view,
+  }), [sortedResults, selectedId, filters, query, eventDetail, isLoadingDetail, sorts, rightPane, view]);
+
+  useBroadcastParent(syncState, handlePopoutAction);
+
   // Show splash screen until vector engine is ready
   if (!vectorReady) {
     return (
@@ -415,54 +512,93 @@ function App() {
       )}
 
       <div className="flex-1 flex min-h-0 overflow-hidden">
-        <FilterRail
-          filters={filters}
-          onFiltersChange={setFilters}
-          allMetadata={allMetadata}
-          collapsed={filterCollapsed}
-        />
-
-        {view === 'timeline' ? (
-          <TimelineView
-            results={sortedResults}
-            selectedId={selectedId}
-            onSelectEvent={handleSelect}
-            onOpenEvent={handleOpen}
-            onTagClick={handleTagClick}
-          />
+        {/* ── Filter rail / placeholder ──────────────────────── */}
+        {filterCollapsed ? null : poppedPanels.has('filters') ? (
+          <PopoutPlaceholder panel="filters" onDockBack={handleDockBack} />
         ) : (
           <>
-            <ResultsPane
+            <div style={{ width: filterWidth, transition: 'width 150ms ease' }} className="flex-shrink-0 flex flex-col min-h-0">
+              <FilterRail
+                filters={filters}
+                onFiltersChange={setFilters}
+                allMetadata={allMetadata}
+                collapsed={false}
+                onPopout={() => handlePopout('filters')}
+              />
+            </div>
+            <ResizeHandle {...filterHandleProps} ariaLabel="Resize filter panel" />
+          </>
+        )}
+
+        {view === 'timeline' ? (
+          /* ── Timeline / placeholder ────────────────────────── */
+          poppedPanels.has('timeline') ? (
+            <div className="flex-1 flex items-center justify-center min-h-0">
+              <PopoutPlaceholder panel="timeline" onDockBack={handleDockBack} />
+            </div>
+          ) : (
+            <TimelineView
               results={sortedResults}
               selectedId={selectedId}
-              isSearching={isSearching}
-              query={debouncedQuery}
-              sorts={sorts}
-              onSortChange={(field, dir) => setSorts(prev => toggleSort(prev, field, dir))}
-              onClearSorts={() => setSorts([])}
-              onSelect={handleSelect}
-              onOpen={handleOpen}
+              onSelectEvent={handleSelect}
+              onOpenEvent={handleOpen}
               onTagClick={handleTagClick}
+              onPopout={() => handlePopout('timeline')}
             />
+          )
+        ) : (
+          <>
+            {/* ── Results / placeholder ────────────────────── */}
+            {poppedPanels.has('results') ? (
+              <div className="flex-1 flex items-center justify-center min-h-0">
+                <PopoutPlaceholder panel="results" onDockBack={handleDockBack} />
+              </div>
+            ) : (
+              <ResultsPane
+                results={sortedResults}
+                selectedId={selectedId}
+                isSearching={isSearching}
+                query={debouncedQuery}
+                sorts={sorts}
+                onSortChange={(field, dir) => setSorts(prev => toggleSort(prev, field, dir))}
+                onClearSorts={() => setSorts([])}
+                onSelect={handleSelect}
+                onOpen={handleOpen}
+                onTagClick={handleTagClick}
+                onPopout={() => handlePopout('results')}
+              />
+            )}
 
-            <div className="w-[420px] flex-shrink-0 flex flex-col min-h-0">
-              {rightPane === 'map' ? (
-                <MapView
-                  results={results}
-                  selectedId={selectedId}
-                  onSelectEvent={handleSelect}
-                  onOpenEvent={handleOpen}
-                />
-              ) : (
-                <EventDetail
-                  metadata={selectedMetadata}
-                  detail={eventDetail}
-                  isLoading={isLoadingDetail}
-                  onClose={() => setRightPane('map')}
-                  onShowMap={() => setRightPane('map')}
-                />
-              )}
-            </div>
+            {/* ── Right resize handle ──────────────────────── */}
+            {!rightPanelPopped && !poppedPanels.has('results') && (
+              <ResizeHandle {...rightHandleProps} ariaLabel="Resize right panel" />
+            )}
+
+            {/* ── Right pane (map / detail) / placeholder ──── */}
+            {rightPanelPopped ? (
+              <PopoutPlaceholder panel={rightPane} onDockBack={handleDockBack} />
+            ) : (
+              <div style={{ width: rightWidth, transition: 'width 150ms ease' }} className="flex-shrink-0 flex flex-col min-h-0">
+                {rightPane === 'map' ? (
+                  <MapView
+                    results={results}
+                    selectedId={selectedId}
+                    onSelectEvent={handleSelect}
+                    onOpenEvent={handleOpen}
+                    onPopout={() => handlePopout('map')}
+                  />
+                ) : (
+                  <EventDetail
+                    metadata={selectedMetadata}
+                    detail={eventDetail}
+                    isLoading={isLoadingDetail}
+                    onClose={() => setRightPane('map')}
+                    onShowMap={() => setRightPane('map')}
+                    onPopout={() => handlePopout('detail')}
+                  />
+                )}
+              </div>
+            )}
           </>
         )}
       </div>

@@ -29,6 +29,9 @@ export function useBroadcastParent(
     const handleMessage = (e: MessageEvent<BroadcastMessage>) => {
       if (e.data?.type === 'action') {
         onActionRef.current(e.data.payload);
+      } else if (e.data?.type === 'ready') {
+        // A new child just connected — immediately send current state.
+        ch.postMessage({ type: 'state', payload: latestState.current } satisfies BroadcastMessage);
       }
     };
     ch.addEventListener('message', handleMessage);
@@ -76,6 +79,9 @@ export function useBroadcastChild(
       }
     };
     ch.addEventListener('message', handleMessage);
+
+    // Request initial state from parent.
+    ch.postMessage({ type: 'ready' } satisfies BroadcastMessage);
 
     return () => {
       ch.removeEventListener('message', handleMessage);

@@ -2,6 +2,7 @@ import React from 'react';
 import type { PanelId } from '../types';
 
 const LABELS: Record<PanelId, string> = {
+  filters: 'FILTERS',
   map: 'MAP',
   detail: 'DETAIL',
   timeline: 'TIMELINE',

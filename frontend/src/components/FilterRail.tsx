@@ -8,6 +8,7 @@ interface FilterRailProps {
   onFiltersChange: (f: SearchFilters) => void;
   allMetadata: EventMetadata[];
   collapsed: boolean;
+  onPopout?: () => void;
 }
 
 const DEFAULT_FILTERS: SearchFilters = {
@@ -81,6 +82,7 @@ export const FilterRail: React.FC<FilterRailProps> = ({
   onFiltersChange,
   allMetadata,
   collapsed,
+  onPopout,
 }) => {
   const { countries, topTopics } = useMemo(() => {
     const countrySet = new Set<string>();
@@ -108,18 +110,30 @@ export const FilterRail: React.FC<FilterRailProps> = ({
   if (collapsed) return null;
 
   return (
-    <div className="w-44 flex-shrink-0 flex flex-col border-r border-term-border bg-term-surface overflow-y-auto">
+    <div className="flex flex-col border-r border-term-border bg-term-surface overflow-y-auto h-full">
       {/* Header */}
       <div className="flex items-center justify-between px-2 py-1.5 border-b border-term-border flex-shrink-0">
         <span className="text-[8px] text-term-secondary tracking-widest">FILTERS</span>
-        {isFiltered && (
-          <button
-            onClick={() => onFiltersChange(DEFAULT_FILTERS)}
-            className="text-[7px] text-term-red hover:text-term-primary transition-colors"
-          >
-            CLEAR
-          </button>
-        )}
+        <div className="flex items-center gap-1.5">
+          {isFiltered && (
+            <button
+              onClick={() => onFiltersChange(DEFAULT_FILTERS)}
+              className="text-[7px] text-term-red hover:text-term-primary transition-colors"
+            >
+              CLEAR
+            </button>
+          )}
+          {onPopout && (
+            <button
+              onClick={onPopout}
+              className="text-[7px] text-term-dim hover:text-term-cyan transition-colors"
+              aria-label="Open filters in new window"
+              title="Pop out"
+            >
+              ⧉
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="flex-1 overflow-y-auto px-2 py-2 space-y-3">

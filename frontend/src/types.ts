@@ -83,14 +83,15 @@ export interface SortEntry { field: SortField; dir: SortDirection; }
 // ── Popout / multi-window primitives ──────────────────────────
 
 /** Panels that can be popped out into separate windows. */
-export type PanelId = 'map' | 'detail' | 'timeline' | 'results';
+export type PanelId = 'filters' | 'map' | 'detail' | 'timeline' | 'results';
 
-/** Default window geometry per panel (width × height). */
-export const PANEL_DEFAULTS: Record<PanelId, { width: number; height: number }> = {
-  map:      { width: 800, height: 600 },
-  detail:   { width: 480, height: 700 },
-  timeline: { width: 900, height: 600 },
-  results:  { width: 600, height: 700 },
+/** Default window geometry per panel (width × height) + window title. */
+export const PANEL_DEFAULTS: Record<PanelId, { width: number; height: number; title: string }> = {
+  filters:  { width: 280, height: 700, title: 'OSINT // Filters' },
+  map:      { width: 800, height: 600, title: 'OSINT // Map View' },
+  detail:   { width: 480, height: 700, title: 'OSINT // Event Detail' },
+  timeline: { width: 900, height: 600, title: 'OSINT // Timeline' },
+  results:  { width: 600, height: 700, title: 'OSINT // Results' },
 };
 
 /**
@@ -100,7 +101,8 @@ export const PANEL_DEFAULTS: Record<PanelId, { width: number; height: number }> 
  */
 export type BroadcastMessage =
   | { type: 'state'; payload: PopoutSyncState }
-  | { type: 'action'; payload: PopoutAction };
+  | { type: 'action'; payload: PopoutAction }
+  | { type: 'ready' };
 
 /** Subset of App state that parent broadcasts to popout children. */
 export interface PopoutSyncState {
@@ -110,6 +112,9 @@ export interface PopoutSyncState {
   query: string;
   eventDetail: EventDetail | null;
   isLoadingDetail: boolean;
+  sorts: SortEntry[];
+  rightPane: 'map' | 'detail';
+  view: 'search' | 'timeline';
 }
 
 /** Actions a popout child can dispatch back to the parent. */
@@ -117,4 +122,8 @@ export type PopoutAction =
   | { kind: 'select'; id: string }
   | { kind: 'open'; id: string }
   | { kind: 'tagClick'; tag: string }
-  | { kind: 'popIn'; panel: PanelId };
+  | { kind: 'popIn'; panel: PanelId }
+  | { kind: 'setFilters'; filters: SearchFilters }
+  | { kind: 'setQuery'; query: string }
+  | { kind: 'setSort'; field: SortField; dir: SortDirection }
+  | { kind: 'clearSorts' };

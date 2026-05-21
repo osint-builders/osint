@@ -17,6 +17,7 @@ interface ResultsPaneProps {
   onSelect: (id: string) => void;
   onOpen: (id: string) => void;
   onTagClick: (tag: string) => void;
+  onPopout?: () => void;
 }
 
 // Compact sort toggle button
@@ -47,6 +48,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
   onSelect,
   onOpen,
   onTagClick,
+  onPopout,
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const showScore = query.trim().length > 0;
@@ -88,7 +90,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
     <div className="flex-1 flex flex-col min-h-0 min-w-0">
       {/* Sort + column header */}
       <div className="flex-shrink-0 flex items-center gap-1.5 px-3 py-1 bg-term-bg border-b border-term-border">
-        <span className="text-[7px] text-term-dim tracking-widest flex-1">SORT:</span>
+        <span className="text-[7px] text-term-dim tracking-widest">SORT:</span>
         <SortBtn label="DATE↓" field="date" dir="desc" active={sorts.some(s => s.field==='date'&&s.dir==='desc')} onClick={() => onSortChange('date','desc')} />
         <SortBtn label="DATE↑" field="date" dir="asc"  active={sorts.some(s => s.field==='date'&&s.dir==='asc')}  onClick={() => onSortChange('date','asc')}  />
         <SortBtn label="CONF↓" field="confidence" dir="desc" active={sorts.some(s => s.field==='confidence'&&s.dir==='desc')} onClick={() => onSortChange('confidence','desc')} />
@@ -97,6 +99,17 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
         <SortBtn label="Z→A"   field="title" dir="desc" active={sorts.some(s => s.field==='title'&&s.dir==='desc')} onClick={() => onSortChange('title','desc')} />
         {sorts.length > 0 && (
           <button onClick={onClearSorts} className="text-[7px] text-term-red hover:text-term-primary ml-0.5 transition-colors" title="Clear sorts">×</button>
+        )}
+        <span className="flex-1" />
+        {onPopout && (
+          <button
+            onClick={onPopout}
+            className="text-[7px] text-term-dim hover:text-term-cyan transition-colors"
+            aria-label="Open results in new window"
+            title="Pop out"
+          >
+            ⧉
+          </button>
         )}
       </div>
 
