@@ -287,3 +287,15 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** The X/Twitter handle @MNDChina does not belong to China's Ministry of National Defense. The actual account belongs to a private individual with zero activity. The Chinese MoD may operate under a different handle or may not maintain an active English-language X presence. exa_web_search with China defense and PLA keywords yielded relevant events.
 **Action for next run:** Skip Twitter API for twitter-mndchina source. Use exa_web_search with China military, PLA, and defense policy keywords. Flag source for manifest handle investigation or update.
 **Expires:** 2026-08-21
+
+## 2026-05-21 19:30Z — @InfoFusionCtr X account does not exist; use exa_web_search
+**Trigger:** Bucket 3 Twitter API v2 user lookup returned "Could not find user with usernames: [InfoFusionCtr]."
+**Finding:** The Twitter handle @InfoFusionCtr configured for source twitter-info-fusion-ctr does not resolve to an active X/Twitter account. Events for multi-source intelligence and OSINT analysis topics remain accessible via exa_web_search.
+**Action for next run:** Skip Twitter API for twitter-info-fusion-ctr. Use exa_web_search with intelligence fusion and OSINT keywords. Flag source for manifest handle investigation.
+**Expires:** 2026-08-21
+
+## 2026-05-21 19:30Z — @Megatronlion X handle resolves to wrong account with 0 tweets
+**Trigger:** Bucket 3 Twitter API v2 user lookup returned user "chuck cantley" (uid 1727367912, 2 followers, 0 tweets) for @megatronlion — clearly not the OSINT analyst described in the source specification.
+**Finding:** The handle @Megatronlion configured for source twitter-megatronlion resolves to an unrelated personal account with zero activity. The intended OSINT military analyst may operate under a different handle or have left the platform.
+**Action for next run:** Skip Twitter API for twitter-megatronlion. Use exa_web_search with military operations, conflict zone, and weapons analysis keywords. Flag source for manifest handle investigation.
+**Expires:** 2026-08-21
