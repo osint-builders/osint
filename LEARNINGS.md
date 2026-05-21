@@ -35,6 +35,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 ---
 
 <!-- entries below this line; newest first -->
+## 2026-05-21 20:34Z -- @Jkgarokgov X account does not exist
+**Trigger:** Bucket 8 Twitter API v2 user lookup returned "Could not find user with username: [Jkgarokgov]."
+**Finding:** The Twitter handle @Jkgarokgov configured for source twitter-jkgarokgov does not resolve to an active X/Twitter account. Events for ROK government policy and defense topics remain accessible via exa_web_search with South Korea government and defense policy keywords.
+**Action for next run:** Skip Twitter API for twitter-jkgarokgov. Use exa_web_search with ROK government defense policy keywords. Flag source for manifest handle investigation.
+**Expires:** 2026-08-21
+
 ## 2026-05-21 19:35Z — Three X accounts do not exist: SchizointRel, JosephDempsey, Natlhistships
 **Trigger:** Bucket 2 Twitter API v2 user lookup returned "Could not find user with username" for @SchizointRel, @JosephDempsey, and @Natlhistships.
 **Finding:** These three Twitter handles do not resolve to active X/Twitter accounts. Events for their topic areas remain accessible via exa_web_search.
