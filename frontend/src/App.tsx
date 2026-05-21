@@ -142,8 +142,6 @@ function App() {
   const [semanticResults, setSemanticResults] = useState<Array<{ metadata: EventMetadata; score: number }>>([]);
   const [semanticModalVisible, setSemanticModalVisible] = useState(false);
   const vectorSearchTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const searchInputRef = useRef<HTMLInputElement>(null);
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const { searches: savedSearches, save: saveSearch, remove: removeSaved } = useSavedSearches();
@@ -234,7 +232,7 @@ function App() {
     if (vectorSearchTimer.current) clearTimeout(vectorSearchTimer.current);
     vectorSearchTimer.current = setTimeout(async () => {
       try {
-        const hits = await vectorEngine.search(query.trim(), 8);
+        const hits = await vectorEngine.search(query.trim(), 16);
         const mapped = hits
           .filter(h => allMetadata[h.index])
           .map(h => ({ metadata: allMetadata[h.index], score: h.score }));
@@ -286,7 +284,7 @@ function App() {
       }
       if (e.key === '/' && !isInput) {
         e.preventDefault();
-        searchInputRef.current?.focus();
+        setSemanticModalVisible(true);
         return;
       }
       if (!isInput) {
@@ -354,11 +352,18 @@ function App() {
     }));
   }, []);
 
-  const handleSemanticClose = useCallback(() => setSemanticModalVisible(false), []);
+  const handleSemanticClose = useCallback(() => {
+    setSemanticModalVisible(false);
+    setQuery('');
+    setSemanticResults([]);
+  }, []);
   const handleSemanticSelect = useCallback((id: string) => {
     setSemanticModalVisible(false);
+    setQuery('');
+    setSemanticResults([]);
     handleOpen(id);
   }, [handleOpen]);
+  const handleOpenSearch = useCallback(() => setSemanticModalVisible(true), []);
 
   // Show splash screen until vector engine is ready
   if (!vectorReady) {
@@ -389,7 +394,6 @@ function App() {
     <div className="h-full flex flex-col bg-term-bg font-mono text-[9px] text-term-primary overflow-hidden scanlines">
       <CommandBar
         query={query}
-        onQueryChange={setQuery}
         isLoading={isInitializing || isSearching}
         eventCount={allMetadata.length}
         resultCount={results.length}
@@ -400,7 +404,7 @@ function App() {
         onToggleHelp={() => setShowHelp(s => !s)}
         onToggleFilters={() => setFilterCollapsed(s => !s)}
         filtersActive={filtersActive}
-        searchInputRef={searchInputRef}
+        onOpenSearch={handleOpenSearch}
         view={view}
         onToggleView={() => setView(v => v === 'search' ? 'timeline' : 'search')}
         semanticModalActive={semanticModalVisible}
@@ -481,6 +485,7 @@ function App() {
       <SemanticSearchModal
         results={semanticResults}
         query={query}
+        onQueryChange={setQuery}
         visible={semanticModalVisible}
         onClose={handleSemanticClose}
         onSelect={handleSemanticSelect}

@@ -4,7 +4,6 @@ import { formatDateCompact } from '../lib/utils';
 
 interface CommandBarProps {
   query: string;
-  onQueryChange: (q: string) => void;
   isLoading: boolean;
   eventCount: number;
   resultCount: number;
@@ -15,7 +14,7 @@ interface CommandBarProps {
   onToggleHelp: () => void;
   onToggleFilters: () => void;
   filtersActive: boolean;
-  searchInputRef: React.RefObject<HTMLInputElement>;
+  onOpenSearch: () => void;
   view: 'search' | 'timeline';
   onToggleView: () => void;
   semanticModalActive?: boolean;
@@ -23,7 +22,6 @@ interface CommandBarProps {
 
 export const CommandBar: React.FC<CommandBarProps> = ({
   query,
-  onQueryChange,
   isLoading,
   eventCount,
   resultCount,
@@ -34,19 +32,13 @@ export const CommandBar: React.FC<CommandBarProps> = ({
   onToggleHelp,
   onToggleFilters,
   filtersActive,
-  searchInputRef,
+  onOpenSearch,
   view,
   onToggleView,
   semanticModalActive,
 }) => {
   const [showSaved, setShowSaved] = useState(false);
   const savedRef = useRef<HTMLDivElement>(null);
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Escape') {
-      (e.target as HTMLInputElement).blur();
-    }
-  };
 
   return (
     <div className="relative flex items-center h-7 px-2 border-b border-term-border bg-term-surface flex-shrink-0 gap-2">
@@ -58,8 +50,11 @@ export const CommandBar: React.FC<CommandBarProps> = ({
       {/* Divider */}
       <span className="text-term-border flex-shrink-0">│</span>
 
-      {/* Search input */}
-      <div className="flex-1 flex items-center gap-1.5 min-w-0">
+      {/* Search trigger — opens the command palette */}
+      <button
+        onClick={onOpenSearch}
+        className="flex-1 flex items-center gap-1.5 min-w-0 text-left"
+      >
         {isLoading ? (
           <span className="text-term-yellow text-[9px] flex-shrink-0 animate-pulse-green">⟳</span>
         ) : (
@@ -70,27 +65,10 @@ export const CommandBar: React.FC<CommandBarProps> = ({
             ◆
           </span>
         )}
-        <input
-          ref={searchInputRef}
-          type="text"
-          value={query}
-          onChange={e => onQueryChange(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder="search events... (press / to focus)"
-          className="flex-1 min-w-0 bg-transparent text-[9px] text-term-primary placeholder:text-term-dim caret-term-green focus:outline-none"
-          spellCheck={false}
-          autoComplete="off"
-        />
-        {query && (
-          <button
-            onClick={() => onQueryChange('')}
-            className="text-term-dim hover:text-term-red text-[9px] flex-shrink-0 transition-colors"
-            tabIndex={-1}
-          >
-            ✕
-          </button>
-        )}
-      </div>
+        <span className="text-[9px] text-term-dim truncate">
+          {query || 'search events… (press /)'}
+        </span>
+      </button>
 
       {/* Divider */}
       <span className="text-term-border flex-shrink-0">│</span>

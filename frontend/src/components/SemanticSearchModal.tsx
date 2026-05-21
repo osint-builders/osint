@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
+import { useVirtualizer } from '@tanstack/react-virtual';
 import gsap from 'gsap';
 import type { EventMetadata } from '../types';
 import { highlightMatches, tokenizeQuery } from '../lib/highlightMatches';
@@ -12,10 +13,13 @@ export interface SemanticHit {
 interface SemanticSearchModalProps {
   results: SemanticHit[];
   query: string;
+  onQueryChange: (q: string) => void;
   visible: boolean;
   onClose: () => void;
   onSelect: (id: string) => void;
 }
+
+const ROW_HEIGHT = 68; // estimated px per result row
 
 function scoreTier(pct: number): { label: string; cls: string } {
   if (pct >= 85) return { label: 'HIGH', cls: 'text-term-green border-term-green/40' };
@@ -26,16 +30,32 @@ function scoreTier(pct: number): { label: string; cls: string } {
 export const SemanticSearchModal: React.FC<SemanticSearchModalProps> = ({
   results,
   query,
+  onQueryChange,
   visible,
   onClose,
   onSelect,
 }) => {
   const backdropRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
-  const listRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
+  // Virtual scrolling
+  const virtualizer = useVirtualizer({
+    count: results.length,
+    getScrollElement: () => scrollRef.current,
+    estimateSize: () => ROW_HEIGHT,
+    overscan: 4,
+  });
+
+  // Reset active index and focus input when opening or results change
   useEffect(() => { setActiveIndex(0); }, [results]);
+  useEffect(() => {
+    if (visible) {
+      requestAnimationFrame(() => inputRef.current?.focus());
+    }
+  }, [visible]);
 
   // Animate in
   useEffect(() => {
@@ -48,24 +68,24 @@ export const SemanticSearchModal: React.FC<SemanticSearchModalProps> = ({
     );
   }, [visible]);
 
-  // Scroll active into view
+  // Scroll active row into view via virtualizer
   useEffect(() => {
-    if (!listRef.current) return;
-    const el = listRef.current.children[activeIndex] as HTMLElement | undefined;
-    el?.scrollIntoView({ block: 'nearest' });
-  }, [activeIndex]);
+    if (results.length > 0) {
+      virtualizer.scrollToIndex(activeIndex, { align: 'auto' });
+    }
+  }, [activeIndex, virtualizer, results.length]);
 
   // Keyboard — capture phase
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
-      if (!visible || results.length === 0) return;
+      if (!visible) return;
       if (e.key === 'ArrowDown' || (e.key === 'Tab' && !e.shiftKey)) {
         e.preventDefault();
-        setActiveIndex(i => (i + 1) % results.length);
+        if (results.length > 0) setActiveIndex(i => (i + 1) % results.length);
       } else if (e.key === 'ArrowUp' || (e.key === 'Tab' && e.shiftKey)) {
         e.preventDefault();
-        setActiveIndex(i => (i - 1 + results.length) % results.length);
-      } else if (e.key === 'Enter') {
+        if (results.length > 0) setActiveIndex(i => (i - 1 + results.length) % results.length);
+      } else if (e.key === 'Enter' && results.length > 0) {
         e.preventDefault();
         e.stopPropagation();
         onSelect(results[activeIndex].metadata.id);
@@ -82,7 +102,7 @@ export const SemanticSearchModal: React.FC<SemanticSearchModalProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown, true);
   }, [handleKeyDown]);
 
-  if (!visible || results.length === 0) return null;
+  if (!visible) return null;
 
   const tokens = tokenizeQuery(query);
 
@@ -93,7 +113,6 @@ export const SemanticSearchModal: React.FC<SemanticSearchModalProps> = ({
       style={{ paddingTop: '2rem' }}
       onClick={(e) => { if (e.target === backdropRef.current) onClose(); }}
     >
-      {/* Backdrop with vignette */}
       <div className="absolute inset-0 bg-black/70" />
 
       {/* Panel */}
@@ -105,7 +124,7 @@ export const SemanticSearchModal: React.FC<SemanticSearchModalProps> = ({
           boxShadow: '0 0 40px rgba(0,255,65,0.06), 0 0 2px rgba(0,255,65,0.15), inset 0 1px 0 rgba(0,255,65,0.05)',
         }}
       >
-        {/* ── CRT scanlines inside panel ── */}
+        {/* CRT scanlines */}
         <div
           className="pointer-events-none absolute inset-0 z-10"
           style={{
@@ -113,125 +132,151 @@ export const SemanticSearchModal: React.FC<SemanticSearchModalProps> = ({
           }}
         />
 
-        {/* ── Header bar ── */}
-        <div className="relative z-20 flex items-center gap-2 px-3 py-1.5 border-b border-term-green/10 bg-term-surface">
-          <span className="text-term-green text-[8px] animate-pulse-green">█</span>
-          <span className="text-[8px] text-term-green/70 tracking-widest uppercase">
-            SEMANTIC SEARCH
-          </span>
-          <span className="text-term-dim text-[8px]">—</span>
-          <span className="text-[8px] text-term-secondary truncate flex-1">
-            {query}
-          </span>
+        {/* ── Search input ── */}
+        <div className="relative z-20 flex items-center gap-2 px-3 py-2 border-b border-term-green/10 bg-term-surface">
+          <span className="text-term-green text-[9px] animate-pulse-green">▶</span>
+          <input
+            ref={inputRef}
+            type="text"
+            value={query}
+            onChange={(e) => onQueryChange(e.target.value)}
+            placeholder="search events..."
+            className="flex-1 bg-transparent text-[10px] text-term-primary placeholder:text-term-dim caret-term-green focus:outline-none"
+            spellCheck={false}
+            autoComplete="off"
+          />
+          {query && (
+            <button
+              onClick={() => onQueryChange('')}
+              className="text-term-dim hover:text-term-red text-[9px] transition-colors"
+              tabIndex={-1}
+            >
+              ✕
+            </button>
+          )}
           <span className="text-[7px] text-term-green/50 tabular-nums">
             [{results.length}]
           </span>
         </div>
 
-        {/* ── Result list ── */}
-        <div ref={listRef} className="relative z-20 flex-1 overflow-y-auto overscroll-contain">
-          {results.map((hit, i) => {
-            const isActive = i === activeIndex;
-            const pct = Math.round(hit.score * 100);
-            const tier = scoreTier(pct);
-            const m = hit.metadata;
-            const confPct = m.confidence !== null ? Math.round(m.confidence * 100) : null;
+        {/* ── Virtual result list ── */}
+        <div
+          ref={scrollRef}
+          className="relative z-20 flex-1 overflow-y-auto overscroll-contain"
+          style={{ maxHeight: 'calc(100vh - 10rem)' }}
+        >
+          {results.length === 0 && query.trim().length >= 2 && (
+            <div className="px-3 py-6 text-center text-[8px] text-term-dim">
+              No semantic matches found.
+            </div>
+          )}
+          {results.length === 0 && query.trim().length < 2 && (
+            <div className="px-3 py-6 text-center text-[8px] text-term-dim">
+              Type at least 2 characters to search.
+            </div>
+          )}
+          {results.length > 0 && (
+            <div style={{ height: virtualizer.getTotalSize(), position: 'relative' }}>
+              {virtualizer.getVirtualItems().map((virtualRow) => {
+                const i = virtualRow.index;
+                const hit = results[i];
+                const isActive = i === activeIndex;
+                const pct = Math.round(hit.score * 100);
+                const tier = scoreTier(pct);
+                const m = hit.metadata;
+                const confPct = m.confidence !== null ? Math.round(m.confidence * 100) : null;
 
-            return (
-              <div
-                key={m.id}
-                className={`group relative flex gap-3 px-3 py-2.5 cursor-pointer transition-all duration-75 ${
-                  isActive
-                    ? 'bg-term-green/[0.04]'
-                    : 'hover:bg-term-surface'
-                }`}
-                onClick={() => onSelect(m.id)}
-                onMouseEnter={() => setActiveIndex(i)}
-              >
-                {/* Active indicator — terminal cursor bar */}
-                <div
-                  className={`absolute left-0 top-1 bottom-1 w-[2px] transition-all duration-75 ${
-                    isActive ? 'bg-term-green' : 'bg-transparent'
-                  }`}
-                />
+                return (
+                  <div
+                    key={m.id}
+                    data-index={i}
+                    ref={virtualizer.measureElement}
+                    className={`absolute left-0 right-0 flex gap-3 px-3 py-2.5 cursor-pointer transition-all duration-75 ${
+                      isActive ? 'bg-term-green/[0.04]' : 'hover:bg-term-surface'
+                    }`}
+                    style={{ top: virtualRow.start }}
+                    onClick={() => onSelect(m.id)}
+                    onMouseEnter={() => setActiveIndex(i)}
+                  >
+                    {/* Active indicator */}
+                    <div
+                      className={`absolute left-0 top-1 bottom-1 w-[2px] transition-all duration-75 ${
+                        isActive ? 'bg-term-green' : 'bg-transparent'
+                      }`}
+                    />
 
-                {/* Rank column */}
-                <div className="flex flex-col items-center gap-0.5 pt-0.5 flex-shrink-0 w-5">
-                  <span className={`text-[8px] tabular-nums font-bold ${
-                    isActive ? 'text-term-green' : 'text-term-dim'
-                  }`}>
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                </div>
+                    {/* Rank */}
+                    <div className="flex flex-col items-center pt-0.5 flex-shrink-0 w-5">
+                      <span className={`text-[8px] tabular-nums font-bold ${
+                        isActive ? 'text-term-green' : 'text-term-dim'
+                      }`}>
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                    </div>
 
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  {/* Title */}
-                  <div className={`text-[10px] leading-snug font-medium ${
-                    isActive ? 'text-term-primary' : 'text-term-secondary'
-                  }`}>
-                    {highlightMatches(m.title, tokens)}
-                  </div>
-
-                  {/* Summary — 2 lines max */}
-                  <div className="text-[8px] text-term-dim leading-relaxed mt-0.5 line-clamp-2">
-                    {highlightMatches(m.summary, tokens)}
-                  </div>
-
-                  {/* Metadata row */}
-                  <div className="flex items-center gap-2 mt-1.5 text-[7px]">
-                    <span className="text-term-green/60">
-                      {formatDateCompact(m.date_event ?? m.date_published)}
-                    </span>
-                    <span className="text-term-border">│</span>
-                    <span className="text-term-dim truncate max-w-[120px]">
-                      {m.source_name}
-                    </span>
-                    {confPct !== null && (
-                      <>
-                        <span className="text-term-border">│</span>
-                        <span className="flex items-center gap-1">
-                          <span className="relative inline-block w-6 h-[2px] bg-term-dim">
-                            <span
-                              className="absolute left-0 top-0 h-full bg-term-green/50"
-                              style={{ width: `${confPct}%` }}
-                            />
-                          </span>
-                          <span className="text-term-dim tabular-nums">{confPct}%</span>
+                    {/* Content */}
+                    <div className="flex-1 min-w-0">
+                      <div className={`text-[10px] leading-snug font-medium ${
+                        isActive ? 'text-term-primary' : 'text-term-secondary'
+                      }`}>
+                        {highlightMatches(m.title, tokens)}
+                      </div>
+                      <div className="text-[8px] text-term-dim leading-relaxed mt-0.5 line-clamp-2">
+                        {highlightMatches(m.summary, tokens)}
+                      </div>
+                      <div className="flex items-center gap-2 mt-1.5 text-[7px]">
+                        <span className="text-term-green/60">
+                          {formatDateCompact(m.date_event ?? m.date_published)}
                         </span>
-                      </>
-                    )}
-                    {m.topics.length > 0 && (
-                      <>
                         <span className="text-term-border">│</span>
-                        {m.topics.slice(0, 3).map(t => (
-                          <span
-                            key={t}
-                            className="text-[6px] px-1 py-px border border-term-border text-term-dim uppercase tracking-wider"
-                          >
-                            {t}
-                          </span>
-                        ))}
-                      </>
-                    )}
+                        <span className="text-term-dim truncate max-w-[120px]">{m.source_name}</span>
+                        {confPct !== null && (
+                          <>
+                            <span className="text-term-border">│</span>
+                            <span className="flex items-center gap-1">
+                              <span className="relative inline-block w-6 h-[2px] bg-term-dim">
+                                <span
+                                  className="absolute left-0 top-0 h-full bg-term-green/50"
+                                  style={{ width: `${confPct}%` }}
+                                />
+                              </span>
+                              <span className="text-term-dim tabular-nums">{confPct}%</span>
+                            </span>
+                          </>
+                        )}
+                        {m.topics.length > 0 && (
+                          <>
+                            <span className="text-term-border">│</span>
+                            {m.topics.slice(0, 3).map(t => (
+                              <span
+                                key={t}
+                                className="text-[6px] px-1 py-px border border-term-border text-term-dim uppercase tracking-wider"
+                              >
+                                {t}
+                              </span>
+                            ))}
+                          </>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Score */}
+                    <div className="flex flex-col items-end gap-0.5 flex-shrink-0 pt-0.5">
+                      <span className={`text-[8px] font-bold tabular-nums border px-1 py-px ${tier.cls}`}>
+                        {pct}%
+                      </span>
+                      <span className={`text-[6px] tracking-widest ${tier.cls}`}>
+                        {tier.label}
+                      </span>
+                    </div>
+
+                    {/* Separator */}
+                    <div className="absolute bottom-0 left-3 right-3 h-px bg-term-border/40" />
                   </div>
-                </div>
-
-                {/* Score column */}
-                <div className="flex flex-col items-end gap-0.5 flex-shrink-0 pt-0.5">
-                  <span className={`text-[8px] font-bold tabular-nums border px-1 py-px ${tier.cls}`}>
-                    {pct}%
-                  </span>
-                  <span className={`text-[6px] tracking-widest ${tier.cls}`}>
-                    {tier.label}
-                  </span>
-                </div>
-
-                {/* Bottom separator */}
-                <div className="absolute bottom-0 left-3 right-3 h-px bg-term-border/40" />
-              </div>
-            );
-          })}
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {/* ── Footer ── */}
