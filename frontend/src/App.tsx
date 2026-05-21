@@ -207,19 +207,19 @@ function App() {
     return () => { cancelled = true; };
   }, []);
 
-  // Real-time search via useTransition (no debounce needed — pure sync)
+  // Filter listing by filters only — query text drives the semantic modal, not the main listing.
   useEffect(() => {
     if (isInitializing) return;
-    setDebouncedQuery(query); // keep debouncedQuery in sync for display logic
+    setDebouncedQuery(query);
     setIsSearching(true);
     startTransition(() => {
-      const res = engine.searchSync(query, filters);
+      const res = engine.searchSync('', filters);
       setResults(res);
       if (res.length > 0 && !selectedId) setSelectedId(res[0].id);
       setIsSearching(false);
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query, filters, isInitializing]);
+  }, [filters, isInitializing]);
 
   // Sync URL
   useEffect(() => { syncUrl(query, filters); }, [query, filters]);
