@@ -1,17 +1,8 @@
 {
-  "version": "1.0.0",
-  "embedding_model": "text-embedding-3-small",
+  "version": "2.0.0",
+  "embedding_model": "all-MiniLM-L6-v2",
   "embedding_dims": 384,
-  "quantization": "int8",
-  "scale": 187.08144259104833,
-  "min_val": -0.6323554896987772,
-  "index_type": "hnsw",
-  "hnsw_params": {
-    "M": 16,
-    "ef_construction": 200,
-    "ef": 64,
-    "space": "ip"
-  },
+  "embedding_file": "embeddings.bin",
   "event_count": 2700,
-  "last_updated": "2026-05-20T20:54:51.511749Z"
+  "last_updated": "2026-05-21T12:26:46.074885Z"
 }
