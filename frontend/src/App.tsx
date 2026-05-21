@@ -222,10 +222,10 @@ function App() {
   // Sync URL
   useEffect(() => { syncUrl(query, filters); }, [query, filters]);
 
-  // Debounced vector search → semantic palette
+  // Debounced vector search — only updates results, never controls modal visibility.
+  // The modal opens/closes via user actions (/ key, click, Escape, select).
   useEffect(() => {
     if (!vectorReady || query.trim().length < 2) {
-      setSemanticModalVisible(false);
       setSemanticResults([]);
       return;
     }
@@ -236,14 +236,9 @@ function App() {
         const mapped = hits
           .filter(h => allMetadata[h.index])
           .map(h => ({ metadata: allMetadata[h.index], score: h.score }));
-        if (mapped.length > 0) {
-          setSemanticResults(mapped);
-          setSemanticModalVisible(true);
-        } else {
-          setSemanticModalVisible(false);
-        }
+        setSemanticResults(mapped);
       } catch {
-        setSemanticModalVisible(false);
+        setSemanticResults([]);
       }
     }, 150);
     return () => {
