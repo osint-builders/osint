@@ -35,6 +35,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 ---
 
 <!-- entries below this line; newest first -->
+## 2026-05-21 19:35Z — Three X accounts do not exist: SchizointRel, JosephDempsey, Natlhistships
+**Trigger:** Bucket 2 Twitter API v2 user lookup returned "Could not find user with username" for @SchizointRel, @JosephDempsey, and @Natlhistships.
+**Finding:** These three Twitter handles do not resolve to active X/Twitter accounts. Events for their topic areas remain accessible via exa_web_search.
+**Action for next run:** Skip Twitter API for twitter-schizoint-rel, twitter-joseph-dempsey, and twitter-natlhistships. Use exa_web_search.
+**Expires:** 2026-08-21
+
 
 ## 2026-05-21 12:22Z — X accounts @YortukIsgk and @ThePacificBrief do not exist
 **Trigger:** Bucket 2 Twitter API v2 user lookup returned "Could not find user with username" for @YortukIsgk and @ThePacificBrief.
