@@ -139,8 +139,7 @@ function App() {
   const [vectorReady, setVectorReady] = useState(false);
   const [splashProgress, setSplashProgress] = useState(0);
   const [splashStatus, setSplashStatus] = useState('Loading...');
-  const [semanticResult, setSemanticResult] = useState<EventMetadata | null>(null);
-  const [semanticScore, setSemanticScore] = useState(0);
+  const [semanticResults, setSemanticResults] = useState<Array<{ metadata: EventMetadata; score: number }>>([]);
   const [semanticModalVisible, setSemanticModalVisible] = useState(false);
   const vectorSearchTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -225,20 +224,22 @@ function App() {
   // Sync URL
   useEffect(() => { syncUrl(query, filters); }, [query, filters]);
 
-  // Debounced vector search → semantic modal
+  // Debounced vector search → semantic palette
   useEffect(() => {
     if (!vectorReady || query.trim().length < 2) {
       setSemanticModalVisible(false);
-      setSemanticResult(null);
+      setSemanticResults([]);
       return;
     }
     if (vectorSearchTimer.current) clearTimeout(vectorSearchTimer.current);
     vectorSearchTimer.current = setTimeout(async () => {
       try {
-        const hits = await vectorEngine.search(query.trim(), 1);
-        if (hits.length > 0 && allMetadata[hits[0].index]) {
-          setSemanticResult(allMetadata[hits[0].index]);
-          setSemanticScore(hits[0].score);
+        const hits = await vectorEngine.search(query.trim(), 8);
+        const mapped = hits
+          .filter(h => allMetadata[h.index])
+          .map(h => ({ metadata: allMetadata[h.index], score: h.score }));
+        if (mapped.length > 0) {
+          setSemanticResults(mapped);
           setSemanticModalVisible(true);
         } else {
           setSemanticModalVisible(false);
@@ -478,9 +479,8 @@ function App() {
       {showHelp && <ShortcutsHelp onClose={() => setShowHelp(false)} />}
 
       <SemanticSearchModal
-        result={semanticResult}
+        results={semanticResults}
         query={query}
-        score={semanticScore}
         visible={semanticModalVisible}
         onClose={handleSemanticClose}
         onSelect={handleSemanticSelect}
