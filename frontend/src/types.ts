@@ -79,3 +79,42 @@ export interface VectorSearchResult {
 export type SortField = 'date' | 'title' | 'confidence';
 export type SortDirection = 'asc' | 'desc';
 export interface SortEntry { field: SortField; dir: SortDirection; }
+
+// ── Popout / multi-window primitives ──────────────────────────
+
+/** Panels that can be popped out into separate windows. */
+export type PanelId = 'map' | 'detail' | 'timeline' | 'results';
+
+/** Default window geometry per panel (width × height). */
+export const PANEL_DEFAULTS: Record<PanelId, { width: number; height: number }> = {
+  map:      { width: 800, height: 600 },
+  detail:   { width: 480, height: 700 },
+  timeline: { width: 900, height: 600 },
+  results:  { width: 600, height: 700 },
+};
+
+/**
+ * Messages sent over BroadcastChannel('osint-sync').
+ * Parent → children: full state snapshots.
+ * Children → parent: action dispatches.
+ */
+export type BroadcastMessage =
+  | { type: 'state'; payload: PopoutSyncState }
+  | { type: 'action'; payload: PopoutAction };
+
+/** Subset of App state that parent broadcasts to popout children. */
+export interface PopoutSyncState {
+  results: SearchResult[];
+  selectedId: string | null;
+  filters: SearchFilters;
+  query: string;
+  eventDetail: EventDetail | null;
+  isLoadingDetail: boolean;
+}
+
+/** Actions a popout child can dispatch back to the parent. */
+export type PopoutAction =
+  | { kind: 'select'; id: string }
+  | { kind: 'open'; id: string }
+  | { kind: 'tagClick'; tag: string }
+  | { kind: 'popIn'; panel: PanelId };
