@@ -317,3 +317,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** The Twitter handle @Sindikasyontek configured for source twitter-sindikasyontek does not resolve to an active X/Twitter account. The account may have changed handles, deleted, or received a suspension. Events for Philippines cybersecurity and technology topics remain accessible via exa_web_search with source-specific keywords.
 **Action for next run:** Skip Twitter API for twitter-sindikasyontek. Use exa_web_search with Philippines cybersecurity, information warfare, and data breach keywords. Flag source for manifest handle investigation or status change.
 **Expires:** 2026-08-21
+
+## 2026-05-21 20:34Z — @Claudefb X handle resolves to wrong account; not the described regional analyst
+**Trigger:** Bucket 5 Twitter API v2 user lookup for @Claudefb returned user "Claudenice Borges" (uid 269500165, 103 followers, 443 tweets) instead of the described regional security and situational awareness analyst.
+**Finding:** The X/Twitter handle @Claudefb does not belong to the intended source described as providing regional observation, political developments, and real-time reporting. The actual account belongs to a private individual with minimal activity unrelated to OSINT or security analysis. exa_web_search with source-specific keywords yielded no matching events within the collection window.
+**Action for next run:** Skip Twitter API for twitter-claudefb source. Use exa_web_search with regional security, protest, and incident keywords. Flag source for manifest handle investigation or status change.
+**Expires:** 2026-08-21
