@@ -36,6 +36,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
+## 2026-05-21 22:49Z — @US5thFleet, @PLATracker, @Borrowed7Time inactive or stale; skip API for these
+**Trigger:** Bucket 10 Twitter API returned 0 results for all three handles. Jina.ai mirror confirmed: @US5thFleet last tweet 2023-10-21, @PLATracker last tweet 2025-03-25, @Borrowed7Time last original tweet 2026-05-02 (only RTs since).
+**Finding:** @US5thFleet appears to have ceased posting entirely (no tweets in 19+ months). @PLATracker has not posted in 14+ months. @Borrowed7Time only retweets non-OSINT content. Twitter API calls for these handles consistently return 0 in-window results and waste rate-limited API calls.
+**Action for next run:** Skip Twitter API for twitter-us-5th-fleet, twitter-platracker, and twitter-borrowed7time. Use exa_web_search with source-specific topic keywords instead. Flag all three sources for manifest status review.
+**Expires:** 2026-08-21
+
 ## 2026-05-21 22:50Z — @EtienneLh Twitter handle does not resolve; account deleted or renamed
 **Trigger:** Bucket 8 collection. Twitter API v2 user lookup for @EtienneLh returned no data object (user not found).
 **Finding:** twitter-etienne-lh handle @EtienneLh does not resolve to any account. The European defense analyst may have changed handles, gone private, or left the platform. exa_web_search with NATO and European defense keywords found relevant Baltic drone/NATO coverage but all articles published before the collection window.
