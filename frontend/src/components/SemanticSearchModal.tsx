@@ -3,7 +3,7 @@ import { useVirtualizer } from '@tanstack/react-virtual';
 import gsap from 'gsap';
 import type { EventMetadata } from '../types';
 import { highlightMatches, tokenizeQuery } from '../lib/highlightMatches';
-import { formatDateCompact } from '../lib/utils';
+import { formatDateShort, truncate, getSourceIcon, getTagColor } from '../lib/utils';
 
 export interface SemanticHit {
   metadata: EventMetadata;
@@ -19,13 +19,7 @@ interface SemanticSearchModalProps {
   onSelect: (id: string) => void;
 }
 
-const ROW_HEIGHT = 68; // estimated px per result row
-
-function scoreTier(pct: number): { label: string; cls: string } {
-  if (pct >= 85) return { label: 'HIGH', cls: 'text-term-green border-term-green/40' };
-  if (pct >= 60) return { label: 'MED', cls: 'text-term-yellow border-term-yellow/40' };
-  return { label: 'LOW', cls: 'text-term-orange border-term-orange/40' };
-}
+const ROW_HEIGHT = 62;
 
 export const SemanticSearchModal: React.FC<SemanticSearchModalProps> = ({
   results,
@@ -41,7 +35,6 @@ export const SemanticSearchModal: React.FC<SemanticSearchModalProps> = ({
   const inputRef = useRef<HTMLInputElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Virtual scrolling
   const virtualizer = useVirtualizer({
     count: results.length,
     getScrollElement: () => scrollRef.current,
@@ -49,33 +42,21 @@ export const SemanticSearchModal: React.FC<SemanticSearchModalProps> = ({
     overscan: 4,
   });
 
-  // Reset active index and focus input when opening or results change
   useEffect(() => { setActiveIndex(0); }, [results]);
   useEffect(() => {
-    if (visible) {
-      requestAnimationFrame(() => inputRef.current?.focus());
-    }
+    if (visible) requestAnimationFrame(() => inputRef.current?.focus());
   }, [visible]);
 
-  // Animate in
   useEffect(() => {
     if (!visible || !backdropRef.current || !panelRef.current) return;
     gsap.fromTo(backdropRef.current, { opacity: 0 }, { opacity: 1, duration: 0.1, ease: 'power2.out' });
-    gsap.fromTo(
-      panelRef.current,
-      { opacity: 0, y: -10, scaleY: 0.96 },
-      { opacity: 1, y: 0, scaleY: 1, duration: 0.2, ease: 'power3.out', delay: 0.02 },
-    );
+    gsap.fromTo(panelRef.current, { opacity: 0, y: -8 }, { opacity: 1, y: 0, duration: 0.18, ease: 'power3.out', delay: 0.02 });
   }, [visible]);
 
-  // Scroll active row into view via virtualizer
   useEffect(() => {
-    if (results.length > 0) {
-      virtualizer.scrollToIndex(activeIndex, { align: 'auto' });
-    }
+    if (results.length > 0) virtualizer.scrollToIndex(activeIndex, { align: 'auto' });
   }, [activeIndex, virtualizer, results.length]);
 
-  // Keyboard — capture phase
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (!visible) return;
@@ -113,61 +94,49 @@ export const SemanticSearchModal: React.FC<SemanticSearchModalProps> = ({
       style={{ paddingTop: '2rem' }}
       onClick={(e) => { if (e.target === backdropRef.current) onClose(); }}
     >
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-black/80" />
 
-      {/* Panel */}
       <div
         ref={panelRef}
-        className="relative w-full max-w-2xl mx-4 flex flex-col bg-term-bg border border-term-green/20 shadow-2xl"
-        style={{
-          maxHeight: 'calc(100vh - 4rem)',
-          boxShadow: '0 0 40px rgba(0,255,65,0.06), 0 0 2px rgba(0,255,65,0.15), inset 0 1px 0 rgba(0,255,65,0.05)',
-        }}
+        className="relative w-full max-w-2xl mx-4 flex flex-col bg-term-bg border border-term-border-hi"
+        style={{ maxHeight: 'calc(100vh - 4rem)' }}
       >
-        {/* CRT scanlines */}
-        <div
-          className="pointer-events-none absolute inset-0 z-10"
-          style={{
-            background: 'repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0,0,0,0.06) 1px, rgba(0,0,0,0.06) 2px)',
-          }}
-        />
-
-        {/* ── Search input ── */}
-        <div className="relative z-20 flex items-center gap-2 px-3 py-2 border-b border-term-green/10 bg-term-surface">
-          <span className="text-term-green text-[9px] animate-pulse-green">▶</span>
+        {/* Search input */}
+        <div className="flex items-center gap-2 px-3 py-1.5 border-b border-term-border bg-term-bg">
+          <span className="text-term-green text-[8px]">▶</span>
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => onQueryChange(e.target.value)}
             placeholder="search events..."
-            className="flex-1 bg-transparent text-[10px] text-term-primary placeholder:text-term-dim caret-term-green focus:outline-none"
+            className="flex-1 bg-transparent text-[9px] text-term-primary placeholder:text-term-dim caret-term-green focus:outline-none"
             spellCheck={false}
             autoComplete="off"
           />
           {query && (
             <button
               onClick={() => onQueryChange('')}
-              className="text-term-dim hover:text-term-red text-[9px] transition-colors"
+              className="text-term-dim hover:text-term-red text-[8px] transition-colors"
               tabIndex={-1}
             >
               ✕
             </button>
           )}
-          <span className="text-[7px] text-term-green/50 tabular-nums">
-            [{results.length}]
-          </span>
+          {results.length > 0 && (
+            <span className="text-[7px] text-term-dim tabular-nums">{results.length}</span>
+          )}
         </div>
 
-        {/* ── Virtual result list ── */}
+        {/* Result list */}
         <div
           ref={scrollRef}
-          className="relative z-20 flex-1 overflow-y-auto overscroll-contain"
-          style={{ maxHeight: 'calc(100vh - 10rem)' }}
+          className="flex-1 overflow-y-auto overscroll-contain"
+          style={{ maxHeight: 'calc(100vh - 8rem)' }}
         >
           {results.length === 0 && query.trim().length >= 2 && (
             <div className="px-3 py-6 text-center text-[8px] text-term-dim">
-              No semantic matches found.
+              No matches found.
             </div>
           )}
           {results.length === 0 && query.trim().length < 2 && (
@@ -177,101 +146,94 @@ export const SemanticSearchModal: React.FC<SemanticSearchModalProps> = ({
           )}
           {results.length > 0 && (
             <div style={{ height: virtualizer.getTotalSize(), position: 'relative' }}>
-              {virtualizer.getVirtualItems().map((virtualRow) => {
-                const i = virtualRow.index;
+              {virtualizer.getVirtualItems().map((vRow) => {
+                const i = vRow.index;
                 const hit = results[i];
                 const isActive = i === activeIndex;
-                const pct = Math.round(hit.score * 100);
-                const tier = scoreTier(pct);
                 const m = hit.metadata;
+                const date = formatDateShort(m.date_event ?? m.date_published);
+                const srcIcon = getSourceIcon(m.source_name);
                 const confPct = m.confidence !== null ? Math.round(m.confidence * 100) : null;
+                const geoStr = [m.geo?.city, m.geo?.country].filter(Boolean).join(', ');
 
                 return (
                   <div
                     key={m.id}
                     data-index={i}
                     ref={virtualizer.measureElement}
-                    className={`absolute left-0 right-0 flex gap-3 px-3 py-2.5 cursor-pointer transition-all duration-75 ${
-                      isActive ? 'bg-term-green/[0.04]' : 'hover:bg-term-surface'
-                    }`}
-                    style={{ top: virtualRow.start }}
+                    className={[
+                      'absolute left-0 right-0 flex flex-col gap-px px-3 py-1.5 cursor-pointer border-l-2 transition-colors duration-75',
+                      isActive
+                        ? 'border-term-green bg-term-green-dim'
+                        : 'border-transparent hover:border-term-border-hi hover:bg-term-panel',
+                    ].join(' ')}
+                    style={{ top: vRow.start }}
                     onClick={() => onSelect(m.id)}
                     onMouseEnter={() => setActiveIndex(i)}
                   >
-                    {/* Active indicator */}
-                    <div
-                      className={`absolute left-0 top-1 bottom-1 w-[2px] transition-all duration-75 ${
-                        isActive ? 'bg-term-green' : 'bg-transparent'
-                      }`}
-                    />
-
-                    {/* Rank */}
-                    <div className="flex flex-col items-center pt-0.5 flex-shrink-0 w-5">
-                      <span className={`text-[8px] tabular-nums font-bold ${
-                        isActive ? 'text-term-green' : 'text-term-dim'
-                      }`}>
-                        {String(i + 1).padStart(2, '0')}
+                    {/* Line 1: meta */}
+                    <div className="flex items-center gap-1.5 text-[7px] leading-tight min-w-0">
+                      <span
+                        className="flex-shrink-0 font-bold text-[7px] px-0.5 leading-none"
+                        style={{ color: srcIcon.color }}
+                      >
+                        {srcIcon.symbol}
                       </span>
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1 min-w-0">
-                      <div className={`text-[10px] leading-snug font-medium ${
-                        isActive ? 'text-term-primary' : 'text-term-secondary'
-                      }`}>
-                        {highlightMatches(m.title, tokens)}
-                      </div>
-                      <div className="text-[8px] text-term-dim leading-relaxed mt-0.5 line-clamp-2">
-                        {highlightMatches(m.summary, tokens)}
-                      </div>
-                      <div className="flex items-center gap-2 mt-1.5 text-[7px]">
-                        <span className="text-term-green/60">
-                          {formatDateCompact(m.date_event ?? m.date_published)}
+                      <span className={isActive ? 'text-[#c0c0c0]' : 'text-term-secondary'}>{date}</span>
+                      {geoStr && <span>·</span>}
+                      {geoStr && (
+                        <span className={`truncate max-w-[80px] ${isActive ? 'text-[#a0a0a0]' : 'text-term-dim'}`}>
+                          {geoStr}
                         </span>
-                        <span className="text-term-border">│</span>
-                        <span className="text-term-dim truncate max-w-[120px]">{m.source_name}</span>
-                        {confPct !== null && (
-                          <>
-                            <span className="text-term-border">│</span>
-                            <span className="flex items-center gap-1">
-                              <span className="relative inline-block w-6 h-[2px] bg-term-dim">
-                                <span
-                                  className="absolute left-0 top-0 h-full bg-term-green/50"
-                                  style={{ width: `${confPct}%` }}
-                                />
-                              </span>
-                              <span className="text-term-dim tabular-nums">{confPct}%</span>
-                            </span>
-                          </>
-                        )}
-                        {m.topics.length > 0 && (
-                          <>
-                            <span className="text-term-border">│</span>
-                            {m.topics.slice(0, 3).map(t => (
-                              <span
-                                key={t}
-                                className="text-[6px] px-1 py-px border border-term-border text-term-dim uppercase tracking-wider"
-                              >
-                                {t}
-                              </span>
-                            ))}
-                          </>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Score */}
-                    <div className="flex flex-col items-end gap-0.5 flex-shrink-0 pt-0.5">
-                      <span className={`text-[8px] font-bold tabular-nums border px-1 py-px ${tier.cls}`}>
-                        {pct}%
+                      )}
+                      <span className={isActive ? 'text-[#a0a0a0]' : 'text-term-dim'}>·</span>
+                      <span className={`truncate min-w-0 ${isActive ? 'text-[#a0a0a0]' : 'text-term-dim'}`}>
+                        {m.source_name}
                       </span>
-                      <span className={`text-[6px] tracking-widest ${tier.cls}`}>
-                        {tier.label}
+                      <span className="ml-auto text-term-green flex-shrink-0 text-[7px]">
+                        {Math.round(hit.score * 100)}%
                       </span>
                     </div>
 
-                    {/* Separator */}
-                    <div className="absolute bottom-0 left-3 right-3 h-px bg-term-border/40" />
+                    {/* Line 2: title */}
+                    <div className={[
+                      'text-[10px] font-medium leading-tight truncate',
+                      isActive ? 'text-term-green' : 'text-term-primary',
+                    ].join(' ')}>
+                      {highlightMatches(m.title, tokens)}
+                    </div>
+
+                    {/* Line 3: summary */}
+                    <div className={`text-[8px] leading-tight truncate ${isActive ? 'text-[#b0b0b0]' : 'text-term-secondary'}`}>
+                      {truncate(m.summary, 120)}
+                    </div>
+
+                    {/* Line 4: topics + confidence */}
+                    <div className="flex items-center gap-1 mt-px min-w-0">
+                      {[...m.topics].sort().slice(0, 4).map(t => (
+                        <span
+                          key={t}
+                          className="text-[7px] px-1 border leading-tight flex-shrink-0 truncate max-w-[60px]"
+                          style={{ borderColor: getTagColor(t), color: getTagColor(t) }}
+                        >
+                          {t}
+                        </span>
+                      ))}
+                      {m.topics.length > 4 && (
+                        <span className="text-[7px] text-term-muted">+{m.topics.length - 4}</span>
+                      )}
+                      {confPct !== null && (
+                        <span className="ml-auto flex items-center gap-1 flex-shrink-0">
+                          <span className="relative inline-block w-10 h-[2px] bg-term-border">
+                            <span
+                              className="absolute left-0 top-0 h-full bg-term-green"
+                              style={{ width: `${confPct}%` }}
+                            />
+                          </span>
+                          <span className="text-[7px] text-term-dim w-5 text-right">{confPct}%</span>
+                        </span>
+                      )}
+                    </div>
                   </div>
                 );
               })}
@@ -279,12 +241,12 @@ export const SemanticSearchModal: React.FC<SemanticSearchModalProps> = ({
           )}
         </div>
 
-        {/* ── Footer ── */}
-        <div className="relative z-20 flex items-center justify-between px-3 py-1 border-t border-term-green/10 bg-term-surface">
+        {/* Footer */}
+        <div className="flex items-center justify-between px-3 py-1 border-t border-term-border bg-term-bg">
           <div className="flex items-center gap-3 text-[7px] text-term-dim select-none">
-            <span><span className="text-term-green/40">↑↓</span> navigate</span>
-            <span><span className="text-term-green/40">↵</span> open</span>
-            <span><span className="text-term-green/40">esc</span> close</span>
+            <span>↑↓ navigate</span>
+            <span>↵ open</span>
+            <span>esc close</span>
           </div>
           <span className="text-[6px] text-term-dim tracking-widest uppercase select-none">
             vector search
