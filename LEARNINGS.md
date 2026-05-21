@@ -323,3 +323,15 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** The Twitter handle @Sindikasyontek configured for source twitter-sindikasyontek does not resolve to an active X/Twitter account. The account may have changed handles, deleted, or received a suspension. Events for Philippines cybersecurity and technology topics remain accessible via exa_web_search with source-specific keywords.
 **Action for next run:** Skip Twitter API for twitter-sindikasyontek. Use exa_web_search with Philippines cybersecurity, information warfare, and data breach keywords. Flag source for manifest handle investigation or status change.
 **Expires:** 2026-08-21
+
+## 2026-05-21 20:33Z — @United_Nations X account suspended; use exa_web_search
+**Trigger:** Bucket 7 Twitter API v2 user lookup returned "User has been suspended: [United_Nations]."
+**Finding:** The official @United_Nations X account has received a suspension. UN News (news.un.org) remains accessible via exa_web_search.
+**Action for next run:** Skip Twitter API for twitter-united-nations. Use exa_web_search.
+**Expires:** 2026-08-21
+
+## 2026-05-21 20:33Z — breakingdefense.com/global/ returns 404; URL structure changed
+**Trigger:** Bucket 7 agent-browser opened breakingdefense.com/global/ and received "Page not found."
+**Finding:** Breaking Defense /global/ URL no longer resolves. Use exa_web_search as fallback.
+**Action for next run:** Update source URL or use exa_web_search.
+**Expires:** 2026-08-21
