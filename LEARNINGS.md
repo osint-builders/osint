@@ -347,3 +347,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** The X/Twitter handle @TheKoreaview does not belong to a Korean Peninsula news outlet. The actual account belongs to a private individual with minimal activity and no connection to inter-Korean relations or defense analysis. exa_web_search with Korean Peninsula keywords yielded relevant events from the topic area.
 **Action for next run:** Skip Twitter API for twitter-the-koreaview source. Use exa_web_search with Korean Peninsula, inter-Korean relations, and DMZ keywords. Flag source for manifest handle investigation or update to correct handle.
 **Expires:** 2026-08-21
+
+## 2026-05-21 20:33Z — @JaimeOcon Twitter handle resolves to wrong account with 5 followers
+**Trigger:** Bucket 13 Twitter API user lookup returned user "Jaime Ocon" (uid 369135813, 5 followers, 17 tweets) — clearly not a professional GIS analyst or OSINT practitioner.
+**Finding:** The handle @JaimeOcon configured for source twitter-jaime-ocon resolves to a personal account with minimal activity (5 followers, 17 tweets). The intended GIS/geospatial intelligence analyst may operate under a different handle or have left the platform. exa_web_search with GIS and OSINT keywords yielded no relevant in-window events.
+**Action for next run:** Skip Twitter API for twitter-jaime-ocon. Use exa_web_search with GIS, OSINT, and geospatial intelligence keywords. Flag source for manifest handle investigation or status change.
+**Expires:** 2026-08-21
