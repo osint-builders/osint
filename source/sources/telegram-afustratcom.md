@@ -2,6 +2,7 @@
 id: telegram-afustratcom
 type: telegram
 status: testing
+language: uk
 ---
 # AFU Strategic Communications (@AFUStratCom)
 Official Ukrainian Armed Forces strategic communications channel. Posts combat footage, operational updates, and strategic messaging from the Ukrainian military.

@@ -2,6 +2,7 @@
 id: telegram-voyna18
 type: telegram
 status: testing
+language: ru
 ---
 # WarLife 18+ (@Voyna18)
 Russian-language raw combat footage channel covering Ukraine-Russia war and global conflict zones. Posts frontline video from both sides including drone strikes, infantry combat, and vehicle destructions.

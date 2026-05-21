@@ -2,6 +2,7 @@
 id: telegram-wagner-group-pmcr
 type: telegram
 status: testing
+language: ru
 ---
 # Wagner Z Group (@wagner_group_pmcr)
 Russian Wagner-affiliated combat footage channel posting frontline video from Ukraine and other active theaters. Unverified; potentially re-posts content from multiple sources.

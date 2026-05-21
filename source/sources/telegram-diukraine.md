@@ -2,6 +2,7 @@
 id: telegram-diukraine
 type: telegram
 status: testing
+language: uk
 ---
 # Defence Intelligence of Ukraine – GUR MO (@DIUkraine)
 Official channel of the Main Intelligence Directorate of the Ukrainian Ministry of Defence. Posts operational intelligence, intercepts, special operations reports, and strategic communications from the Ukrainian war effort.

@@ -2,6 +2,7 @@
 id: telegram-generalstaffzsu
 type: telegram
 status: testing
+language: uk
 ---
 # General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)
 Official channel of the Ukrainian Armed Forces General Staff. Publishes official daily situation reports, confirmed Russian losses, and operational updates.

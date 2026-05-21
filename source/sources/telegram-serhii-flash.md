@@ -2,6 +2,7 @@
 id: telegram-serhii-flash
 type: telegram
 status: testing
+language: mixed
 ---
 # Serhii FLASH — Technologies (@serhii_flash)
 Ukrainian SIGINT/EW technology analyst channel covering radio-electronic reconnaissance (RER), electronic warfare (EW), and military communications. Posts equipment analysis, frequency intercepts, and battlefield tech updates.
