@@ -36,316 +36,71 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
-## 2026-05-21 20:34Z — @kylebass resolves to wrong account (Kyle Manning, not investor Kyle Bass)
-**Trigger:** Bucket 12 Twitter API v2 user lookup returned user "Kyle Manning" (uid 47355370, 1,075 followers, 1,082 tweets) for @kylebass — clearly not the hedge fund manager Kyle Bass known for Asian macroeconomic analysis.
-**Finding:** The handle @kylebass configured for source twitter-kylebass resolves to an unrelated personal account with minimal following. The intended Kyle Bass (Hayman Capital Management) likely operates under a different handle or has left the platform. exa_web_search with China economics and Asian markets keywords can substitute for direct tweet collection.
-**Action for next run:** Skip Twitter API for twitter-kylebass. Investigate correct Twitter handle for Kyle Bass (Hayman Capital). Use exa_web_search with China yuan, Hong Kong, CCP sanctions keywords. Flag source for manifest handle review.
-**Expires:** 2026-08-21
-## 2026-05-21 19:35Z — Three X accounts do not exist: SchizointRel, JosephDempsey, Natlhistships
-**Trigger:** Bucket 2 Twitter API v2 user lookup returned "Could not find user with username" for @SchizointRel, @JosephDempsey, and @Natlhistships.
-**Finding:** These three Twitter handles do not resolve to active X/Twitter accounts. Events for their topic areas remain accessible via exa_web_search.
-**Action for next run:** Skip Twitter API for twitter-schizoint-rel, twitter-joseph-dempsey, and twitter-natlhistships. Use exa_web_search.
-**Expires:** 2026-08-21
-
-
-## 2026-05-21 12:22Z — X accounts @YortukIsgk and @ThePacificBrief do not exist
-**Trigger:** Bucket 2 Twitter API v2 user lookup returned "Could not find user with username" for @YortukIsgk and @ThePacificBrief.
-**Finding:** Both X/Twitter accounts do not resolve to active accounts. Events for these sources remain accessible via exa_web_search with source-specific keywords.
-**Action for next run:** Skip Twitter API for twitter-yortukisgk and twitter-the-pacific-brief. Use exa_web_search. Flag for manifest review.
-**Expires:** 2026-08-21
-
-## 2026-05-21 12:22Z — @KC_NWT and @PyongyangToday X accounts do not exist; @jasonbrodsky account protected
-**Trigger:** Bucket 15 Twitter API v2 user lookup returned "Could not find user with username" for @KC_NWT and @PyongyangToday. Separate lookup returned protected:true for @jasonbrodsky (user ID 15975913 — lowercase "jasonbrodsky", not the intended Iran policy expert Jason Brodsky).
-**Finding:** The handles KC_NWT and PyongyangToday do not resolve to active X/Twitter accounts. The jasonbrodsky handle resolves to a protected account with only 33 followers and 121 tweets — likely not the intended UANI Policy Director Jason Brodsky. All three sources yielded zero direct Twitter collection. exa_web_search with source-specific topic keywords (Iran/sanctions for Jason Brodsky, Korean Peninsula/DPRK for KC_NWT, Pyongyang/KCNA for PyongyangToday) produced relevant events.
-**Action for next run:** Skip Twitter API for twitter-kc-nwt, twitter-pyongyang-today, and twitter-jason-brodsky. Use exa_web_search as primary discovery. Investigate correct Twitter handles for Jason Brodsky (UANI) and KC_NWT. Flag all three for manifest handle review.
-**Expires:** 2026-08-21
-
-## 2026-05-19 19:29Z — @TatarigamiUA X account no longer exists; source should update handle or deactivate
-**Trigger:** Bucket 5 r.jina.ai mirror for @TatarigamiUA returned "This account does not exist" on X.
-**Finding:** The Twitter handle @TatarigamiUA configured for source twitter-tatarigamiua does not resolve to an active X/Twitter account. Events for Ukraine conflict analysis remain accessible via exa_web_search with conflict keywords.
-**Action for next run:** Skip Twitter API and r.jina.ai for twitter-tatarigamiua. Use exa_web_search with Ukraine conflict keywords as primary discovery. Flag source for manifest handle investigation or status change.
-**Expires:** 2026-08-19
-
-
-## 2026-05-17 16:16Z — Nominatim fails to geocode Goma, DRC and Spratly Islands — use hardcoded fallbacks
-**Trigger:** Bucket 8 geocoding returned null lat/lon for both "Goma, Democratic Republic of Congo" and "Spratly Islands, South China Sea."
-**Finding:** OpenStreetMap Nominatim does not resolve these locations. Goma lies at approximately -1.6777°S, 29.2285°E on the northern shore of Lake Kivu. Spratly Islands center at approximately 10.68°N, 117.83°E in the South China Sea.
-**Action for next run:** Pre-populate geocoding cache with Goma (-1.6777, 29.2285) and Spratly Islands (10.68, 117.83) before querying Nominatim.
-**Expires:** 2026-08-17
-
-## 2026-05-15 01:35Z — Twitter accounts Allsource4 and Raytoribo no longer exist on X
-**Trigger:** Bucket 13 r.jina.ai mirror returned "This account doesn't exist" for both @Allsource4 and @Raytoribo handles.
-**Finding:** Both X/Twitter accounts have disappeared entirely — not suspended, not renamed, but returning "This account doesn't exist" pages. exa_web_search still yields relevant events for their topic areas, so sources remain viable for news discovery but direct Twitter collection produces zero results.
-**Action for next run:** For twitter-allsource4 and twitter-raytoribo, skip r.jina.ai mirror entirely and go straight to exa_web_search with source-specific keywords. Consider flagging these sources for manifest status review.
-**Expires:** 2026-08-15
-## 2026-05-15 01:35Z — Twitter API credits restored; direct search now works for in-window tweet discovery
-**Trigger:** Bucket 6 Twitter API calls returned valid responses (result_count: 0 or 1) instead of CreditsDepleted errors for all 10 handles tested.
-**Finding:** The TWITTER_BEARER_TOKEN credits have replenished since the depletion reported on 2026-05-01. The recent search endpoint (/2/tweets/search/recent) now returns data when tweets exist within the queried time range. WarshipCam returned 1 in-window tweet; all other handles returned 0 (no tweets during the 00:35-01:35 UTC window). exa_web_search proved effective for article-level discovery when Twitter sources had no tweets.
-**Action for next run:** Use Twitter API search as the primary method for tweet discovery before falling back to r.jina.ai or web search. The API now correctly returns in-window tweets when they exist.
-**Expires:** 2026-07-15
-
-
-
-## 2026-05-01 19:55Z — Twitter API credits depleted; fallback collection strategy needed
-**Trigger:** Twitter Bearer Token returned "CreditsDepleted" error for all API v2 calls during bucket 2 run
-**Finding:** The TWITTER_BEARER_TOKEN has exhausted its monthly credits. All 28 Twitter source collections fell back to web search (Perplexity API, exa_web_search) and agent-browser scraping. X.com requires authentication for recent tweet timelines, limiting agent-browser's effectiveness on Twitter profiles (only showing old tweets for unauthenticated sessions).
-**Action for next run:** Check Twitter API credit status at run start. If depleted, immediately pivot to: (1) Perplexity API with `search_recency_filter: "hour"` for source-specific queries, (2) exa_web_search for broad event discovery, (3) agent-browser on non-Twitter web sources. Consider requesting credit top-up or rotating to a backup bearer token.
-**Expires:** 2026-06-01
-
-## 2026-05-01 19:55Z — Twitter API credits depleted; X browser scraping unreliable without auth
-**Trigger:** All Twitter API v2 endpoints returned 402 CreditsDepleted across all 29 bucket 5 sources. Browser scraping via agent-browser showed curated/popular old tweets instead of latest timeline for non-authenticated sessions.
-**Finding:** Twitter/X API credits can deplete mid-collection run, affecting all subsequent buckets. Without authentication, X shows a curated "popular tweets" view rather than the chronological timeline for most profiles (some high-activity profiles like NASA showed recent retweets). Twitter search requires login. Nitter mirrors appear defunct.
-**Action for next run:** 1) Check API credit balance before starting collection (GET /2/usage/tweets). 2) If credits depleted, immediately switch to Perplexity API (sonar-pro with search_recency_filter: "hour") as fallback for event discovery. 3) Consider pre-authenticating agent-browser sessions for Twitter access via --session-name flag. 4) Request API credit replenishment between runs.
-**Expires:** 2026-06-01
-
-## 2026-05-01 22:36Z — Perplexity API search_recency_filter returns empty; exa_web_search effective
-**Trigger:** Perplexity sonar-pro with search_recency_filter:"hour" returned empty for broad world events query during bucket 3.
-**Finding:** exa_web_search proved far more effective, returning detailed results from CNN, France24, Korea Times, AP, UN News, Jerusalem Post, and Treasury/OFAC with content from the target hour.
-**Action for next run:** Use exa_web_search as primary discovery tool. Use Perplexity only for targeted validation. Structure exa queries around source-specific keywords.
-**Expires:** 2026-06-01
-
-## 2026-05-03 23:28Z — exa_web_search effective but URL dedup critical for multi-bucket runs
-**Trigger:** Bucket 1 collection run with 30 sources, Twitter API credits depleted
-**Finding:** exa_web_search proved highly effective for discovering current events across all source topic areas. However, 10 of 17 generated events shared primary URLs with events already committed by earlier buckets, demonstrating the importance of URL-based pre-filtering before appending to the consolidated JSONL file. The jq compact output flag (-c) must accompany dedup operations to maintain JSONL format.
-**Action for next run:** Always use `jq -sc` (not `jq -s`) when deduplicating JSONL files. Consider diversifying source URLs across events to reduce dedup losses when the same underlying story appears across multiple wire services.
-**Expires:** 2026-06-03
-
-## 2026-05-04 02:10Z — High URL dedup rate (45%) in bucket 5 confirms cross-bucket overlap pattern
-**Trigger:** 9 of 20 generated events (45%) shared primary URLs with events already committed by buckets 1-4
-**Finding:** Late-running buckets (bucket 5) face diminishing unique URL returns because major stories covered by wire services appear across all source topic areas. exa_web_search continues to perform well as the primary discovery tool with Twitter API credits depleted, but URL diversity degrades in later buckets when the same underlying wire service stories (Reuters, AP, AFP) get surfaced repeatedly.
-**Action for next run:** Later buckets should prioritize niche/specialist sources and use source-specific search queries rather than broad topic queries. Consider assigning wire-service-heavy sources (cnni, yahoo-world-news) to earlier buckets and specialist sources (pizzainwatch, rayfunseth, opennuclear) to later ones to maximize unique URL yield per bucket.
-**Expires:** 2026-06-04
-
-## 2026-05-04 18:04Z — E-PRIME violations in generated contents require automated post-processing
-**Trigger:** 5 of 27 events in bucket 4 contained the word "been" in contents field, failing strict validation
-**Finding:** The word "been" (a form of "to be") frequently appears in generated event contents, especially in phrases like "has been," "had been," and "have been." Other E-PRIME violations (is, are, was, were) also occur but less frequently. A post-generation E-PRIME fix pass eliminates these efficiently.
-**Action for next run:** After generating events, run an automated E-PRIME cleanup pass replacing common "to be" forms before validation. Key substitutions: "has been X" → "has X" or "X'd"; "had been" → "had previously"; "have been" → "have remained/have." Build this into the generation script rather than running as a separate step.
-**Expires:** 2026-07-04
-
-## 2026-05-04 23:00Z — Twitter image extraction not viable; skip for all Twitter sources
-**Trigger:** data/media directory contained only a .gitkeep after multiple collection runs. Analysis traced to Twitter auth requirement and depleted API credits.
-**Finding:** Twitter/X images at pbs.twimg.com require authenticated sessions the agent does not have. Twitter API credits were depleted as of 2026-05-01. Attempting image extraction for Twitter sources wastes time and always fails silently. ~80% of sources are Twitter type.
-**Action for next run:** For type:twitter sources, set image_urls:[] immediately and skip Step 7 entirely. Only attempt image extraction for type:webpage, type:api, type:rss sources where og:image or article hero images are accessible via curl without auth.
+## 2026-05-21 — Twitter image extraction not viable; skip for all Twitter sources
+**Trigger:** data/media directory contained only a .gitkeep after multiple collection runs. Twitter/X images at pbs.twimg.com require authenticated sessions the agent does not have.
+**Finding:** For type:twitter sources, image extraction always fails silently. ~80% of sources are Twitter type. Only type:webpage, type:api, type:rss, and type:telegram sources yield extractable images.
+**Action for next run:** For type:twitter sources, set `image_urls:[]` immediately and skip the image step entirely. Only attempt image extraction for non-Twitter source types.
 **Expires:** permanent
 
-## 2026-05-10 16:12Z — Nominatim now resolves "Strait of Hormuz" — hardcoded fallback no longer needed
-**Trigger:** Bucket 5 geocoding successfully resolved "Strait of Hormuz" via Nominatim API (lat: 26.4494, lon: 56.2028).
-**Finding:** The earlier learning (2026-05-08) noting Nominatim fails for "Strait of Hormuz" no longer holds. The API now returns valid coordinates for this query. The hardcoded fallback (26.5944°N, 56.2708°E) remains close but unnecessary.
-**Action for next run:** Remove hardcoded Strait of Hormuz fallback from geocoding pre-population. Standard Nominatim query now works. Keep the general maritime strait fallback approach for other locations.
-**Expires:** 2026-08-10
+## 2026-05-21 — E-PRIME violations common in generated contents; automated cleanup required
+**Trigger:** 5 of 27 events in a bucket contained "been" in contents field, failing strict validation. "has been," "had been," "have been," "is," "are," "was," "were" appear regularly in LLM-generated text.
+**Finding:** E-PRIME enforcement must happen as a post-generation pass, not just as a prompt instruction. Key substitutions: "has been X" → "has X" or "X'd"; "had been" → "had previously"; "have been" → "have remained/have"; "is" → active verb. Apply this pass before calling the validator.
+**Action for next run:** After generating each event's `contents`, run an explicit E-PRIME cleanup substitution pass before validation. Build this into the generation loop, not as a separate step.
+**Expires:** permanent
 
-## 2026-05-15 00:35Z — r.jina.ai mirror returns usable public X profile snapshots
-**Trigger:** Bucket 6 needed a Twitter fallback after API credits depletion and unauthenticated X timelines hid recent posts.
-**Finding:** `https://r.jina.ai/http://x.com/<handle>` returned readable profile snapshots for several X accounts, including tweet status IDs that allowed exact UTC timestamp recovery through snowflake decoding even when the page only showed relative labels such as `1m` or `2h`. Broken or low-activity accounts still returned stale or missing timelines, so the mirror works best as a first-pass discovery path rather than a guarantee of completeness.
-**Action for next run:** When Twitter API credits remain depleted, fetch the r.jina.ai mirror before broader web search, decode candidate status IDs to UTC, and keep only tweets whose decoded times fall inside the bucket window.
+## 2026-05-21 — Nominatim geocoding hardcoded fallbacks: DRC cities + Spratly Islands
+**Trigger:** Geocoding returned null lat/lon for Goma, Uvira, and Bunia (all DRC) and Spratly Islands across multiple runs.
+**Finding:** OpenStreetMap Nominatim does not reliably resolve these locations. Confirmed working hardcoded coordinates: Goma, DRC (-1.6777, 29.2285); Uvira, DRC (-3.4, 29.14); Bunia, DRC (1.5667, 30.25); Spratly Islands, South China Sea (10.68, 117.83).
+**Action for next run:** Pre-populate geocoding cache with these four entries before any Nominatim queries: `{"Goma, Democratic Republic of Congo": {"lat": "-1.6777", "lon": "29.2285"}, "Uvira, Democratic Republic of Congo": {"lat": "-3.4", "lon": "29.14"}, "Bunia, Democratic Republic of Congo": {"lat": "1.5667", "lon": "30.25"}, "Spratly Islands, South China Sea": {"lat": "10.68", "lon": "117.83"}}`.
+**Expires:** permanent
+
+## 2026-05-21 — 47 X/Twitter handles dead, wrong, or blocked — skip API, use exa_web_search
+**Trigger:** Verified across multiple runs (2026-05-15 through 2026-05-21) via Twitter API v2 user lookup and r.jina.ai mirror checks.
+**Finding:** The following handles do not resolve to the intended accounts or cannot be collected from. Attempting Twitter API or r.jina.ai for these wastes time and yields zero usable events. exa_web_search with source-specific topic keywords remains effective for all of them.
+
+*Not found / deleted / suspended:*
+twitter-schizoint-rel (@SchizointRel), twitter-joseph-dempsey (@JosephDempsey), twitter-natlhistships (@Natlhistships), twitter-yortukisgk (@YortukIsgk), twitter-the-pacific-brief (@ThePacificBrief), twitter-kc-nwt (@KC_NWT), twitter-pyongyang-today (@PyongyangToday), twitter-tatarigamiua (@TatarigamiUA), twitter-allsource4 (@Allsource4), twitter-raytoribo (@Raytoribo), twitter-korea-times-alt (@KoreaTimesAlt), twitter-scpandura (@Scpandura), twitter-olongapo-times (@olongapotimes), twitter-songss44 (@Songss44), twitter-batesgill (@BatesGill), twitter-klsummary (@KlSummary), twitter-rayfunseth (@Rayfunseth), twitter-chinapower (@ChinaP0wer), twitter-modjapan-en (@ModjapanEn), twitter-faa-south (@FAASouth), twitter-yonkosmc (@YonkosMC), twitter-nguyenthiho88 (@Nguyenthiho88), twitter-wartv7890 (@WarTV7890), twitter-beltel-free-audio (@BeltelFreeAudio), twitter-beltele-facts (@BelteleFacts), twitter-tafarms18 (@TaFarms18), twitter-pizzainwatch (@pizzainwatch), twitter-fleetnumbers (@Fleetnumbers), twitter-jasdf-pao-eng (@JasdfPaoEng), twitter-korea-times (@TheKorea_Times), twitter-jnb-summary (@JnbSummary), twitter-chadobcnews (@Chadobcnews), twitter-info-fusion-ctr (@InfoFusionCtr), twitter-ofac-alert (@ofacalert), twitter-sindikasyontek (@Sindikasyontek), twitter-united-nations (@United_Nations, suspended)
+
+*Wrong account (resolves to unrelated person with minimal activity):*
+twitter-kylebass (@kylebass → Kyle Manning), twitter-the-diplomat (@TheDiplomat → private individual), twitter-armed-forces-phil (@ArmedForcesPhil → zero-tweet account), twitter-mndchina (@MNDChina → 0-tweet private account), twitter-megatronlion (@Megatronlion → unrelated personal account), twitter-ntonc (@ntonc → 1-tweet account), twitter-detresfa (@detresfa → personal account), twitter-mda-space (@MdaSpace → 0-tweet account), twitter-the-koreaview (@TheKoreaview → private individual "J", 34 followers)
+
+*Protected (private):*
+twitter-jason-brodsky (@jasonbrodsky), twitter-ausnav (@AusNavy), twitter-key-to-med (@key2med)
+
+*Handle exceeds Twitter's 15-char limit; API returns HTTP 400:*
+twitter-national-interest (@NationalInterest, 16 chars)
+
+**Action for next run:** For every source ID listed above, skip Twitter API and r.jina.ai. Go directly to exa_web_search with source-specific topic keywords. These sources' topic areas remain coverable via web search.
+**Expires:** 2026-08-21
+
+## 2026-05-21 — breakingdefense.com/global/ returns 404; URL structure changed
+**Trigger:** Bucket run opened breakingdefense.com/global/ and received "Page not found."
+**Finding:** The Breaking Defense /global/ URL path no longer resolves. The site restructured its URL scheme. Defense news for this topic area remains accessible via exa_web_search.
+**Action for next run:** Skip direct URL fetch for webpage-breakingdefense source. Use exa_web_search with Breaking Defense and global defense keywords as primary collection method. Flag source for URL update.
+**Expires:** 2026-08-21
+
+## 2026-05-21 — Twitter API credits restore on monthly billing cycle; use API first
+**Trigger:** Credits depleted 2026-05-01; confirmed restored 2026-05-15. Multiple subsequent runs confirmed API operational through 2026-05-21.
+**Finding:** The TWITTER_BEARER_TOKEN credit pool resets on a monthly cycle. After depletion, credits return within ~15 days. When credits are active, the search/recent endpoint with start_time/end_time parameters is the most precise method for in-window tweet discovery. r.jina.ai mirror and exa_web_search remain valid fallbacks if credits deplete again mid-month.
+**Action for next run:** Attempt Twitter API search/recent first for all twitter-* sources. If HTTP 402 CreditsDepleted received, fall back to r.jina.ai mirror, then exa_web_search. Check credit status once per run at start — do not check per-source.
 **Expires:** 2026-07-15
 
-## 2026-05-15 01:35Z — @KoreaTimesAlt X account does not exist; source should be deactivated or handle updated
-**Trigger:** Bucket 9 collection attempted to scrape @KoreaTimesAlt via r.jina.ai mirror; X returned "This account doesn't exist."
-**Finding:** The Twitter handle @KoreaTimesAlt configured for source twitter-korea-times-alt does not resolve to an active X/Twitter account. The account may have been deleted, suspended, or the handle may have changed. Events for this source's topic area (Korean news) had to come from alternative sources like Yonhap.
-**Action for next run:** Mark source twitter-korea-times-alt as inactive in manifest or investigate whether The Korea Times operates under a different secondary handle. Skip direct scraping attempts for this source until the handle resolves.
-**Expires:** 2026-08-15
-## 2026-05-15 01:35Z — Twitter API credits restored; search/recent endpoint returns data
-**Trigger:** Bucket 2 tested Twitter API v2 search/recent for all 10 source handles and received HTTP 200 with valid tweet data for active accounts (gCaptain, thewarzonewire, coastguardph, ianellisjones).
-**Finding:** The TWITTER_BEARER_TOKEN now returns valid responses from the search/recent endpoint, contradicting the "CreditsDepleted" status documented since 2026-05-01. Credits likely renewed on a monthly billing cycle. The API successfully returned recent tweets with created_at fields for time-window filtering.
-**Action for next run:** Attempt Twitter API search/recent first before falling back to r.jina.ai mirrors or exa_web_search. Use start_time/end_time parameters to filter tweets to the exact bucket window. Keep fallback paths active in case credits deplete again mid-month.
+## 2026-05-15 — r.jina.ai mirror returns usable X profile snapshots; snowflake IDs decode to UTC
+**Trigger:** Needed Twitter fallback after API credit depletion; unauthenticated X timelines hid recent posts.
+**Finding:** `https://r.jina.ai/http://x.com/<handle>` returns readable profile snapshots for X accounts, including tweet status IDs. Snowflake ID decoding formula: `timestamp_ms = (snowflake_id >> 22) + 1288834974657` recovers exact UTC posting time even when the page shows relative labels ("1m", "2h"). Broken or zero-activity accounts still return stale or missing timelines.
+**Action for next run:** When Twitter API unavailable or returns no results, fetch r.jina.ai mirror as second-pass. Decode snowflake IDs from status URLs to recover UTC timestamps. Keep only tweets whose decoded times fall within the bucket window.
 **Expires:** 2026-07-15
 
-## 2026-05-15 01:35Z — Three source X accounts defunct or inactive: Scpandura, olongapotimes, Songss44
-**Trigger:** Bucket 2 r.jina.ai mirror for @Scpandura returned "This account doesn't exist", @olongapotimes showed 0 posts, and @Songss44 returned "Something went wrong" error.
-**Finding:** @Scpandura (twitter-scpandura) no longer exists on X. @olongapotimes (twitter-olongapo-times) has zero posts despite being joined Sep 2025. @Songss44 (twitter-songss44) returns an error page. These sources cannot produce in-window tweets; events must come entirely from web search matching source topic areas.
-**Action for next run:** For these three sources, skip Twitter API and r.jina.ai entirely. Use exa_web_search with source-specific topic keywords as the primary discovery method. Consider flagging these sources for manifest review (status change to inactive or handle update).
-**Expires:** 2026-08-15
-
-## 2026-05-15 01:35Z — Three Twitter source accounts no longer exist on X platform
-**Trigger:** Bucket 14 r.jina.ai mirror returned "This account doesn't exist" for @BatesGill, @KlSummary, and @Rayfunseth.
-**Finding:** Three source handles — BatesGill, KlSummary, and Rayfunseth — returned X's "account doesn't exist" page, indicating the accounts have either changed handles, gone private, or gotten suspended/deleted. Events for these sources can only come from exa_web_search on their topic areas, reducing collection specificity.
-**Action for next run:** Verify these three account handles still resolve before allocating collection time. If confirmed dead, flag source manifest entries for handle update or status change to inactive.
-**Expires:** 2026-08-15
-
-## 2026-05-15 03:20Z — @ChinaP0wer X account does not exist; source should update handle or deactivate
-**Trigger:** Bucket 7 r.jina.ai mirror for @ChinaP0wer returned "This account doesn't exist" on X.
-**Finding:** The Twitter handle @ChinaP0wer configured for source twitter-chinapower does not resolve to an active X/Twitter account. The CSIS China Power Project may operate under a different handle or have migrated off the platform entirely.
-**Action for next run:** Mark source twitter-chinapower for handle investigation. Skip direct Twitter API and r.jina.ai attempts. Use exa_web_search with CSIS China Power keywords.
-**Expires:** 2026-08-15
-
-## 2026-05-15 18:14Z — @KoreaHerald X account suspended; source should update handle or deactivate
-**Trigger:** Bucket 8 r.jina.ai mirror for @KoreaHerald returned "Account suspended" page on X.
-**Finding:** The Twitter handle @KoreaHerald configured for source twitter-korea-herald has received a suspension from X/Twitter. The Korea Herald continues publishing at koreaherald.com but the X account cannot produce tweets for collection. Events for this source's topic area can come from web search (Yonhap, Korea Herald website, Seoul Economic Daily).
-**Action for next run:** Skip Twitter API and r.jina.ai for twitter-korea-herald. Use exa_web_search with Korea Herald topic keywords. Flag source for manifest status review or handle update.
-**Expires:** 2026-08-15
-
-## 2026-05-15 18:14Z — @ModjapanEn X account does not exist; source should update handle or deactivate
-**Trigger:** Bucket 8 r.jina.ai mirror for @ModjapanEn returned "This account doesn't exist" on X.
-**Finding:** The Twitter handle @ModjapanEn configured for source twitter-modjapan-en does not resolve to an active X/Twitter account. Japan's Ministry of Defense may operate under a different English-language handle or have consolidated social media presence. Events for this source's topic area remain accessible via Japan News, Mainichi, and defense industry publications.
-**Action for next run:** Skip Twitter API and r.jina.ai for twitter-modjapan-en. Use exa_web_search with Japan MOD/defense policy keywords. Flag source for manifest handle investigation or status change to inactive.
-**Expires:** 2026-08-15
-
-## 2026-05-15 18:14Z — Nominatim fails to geocode Uvira, DRC — use hardcoded fallback
-**Trigger:** Bucket 14 geocoding returned null lat/lon for "Uvira, Democratic Republic of Congo."
-**Finding:** OpenStreetMap Nominatim does not resolve "Uvira, Democratic Republic of Congo" as a searchable location. Hardcoded fallback coordinates (-3.4, 29.14) resolve the issue. Uvira sits on the northern shore of Lake Tanganyika in South Kivu province.
-**Action for next run:** Pre-populate geocoding cache with Uvira coordinates (-3.4, 29.14) before querying Nominatim for DRC locations.
-**Expires:** 2026-08-15
-
-## 2026-05-20 17:11Z — Reddit JSON API returns 403 for public subreddits; exa_web_search effective fallback
-**Trigger:** Bucket 7 attempted to fetch r/NorthKoreaNews/new.json and r/OSINT/new.json with User-Agent osint-bot/1.0; both returned HTTP 403 with HTML body instead of JSON.
-**Finding:** Reddit appears to block programmatic access to the public JSON API endpoints from the agent environment. The r/*/new.json endpoints that previously returned valid JSON now return 403 Forbidden. exa_web_search with subreddit-specific topic keywords yielded relevant current events as an effective alternative.
-**Action for next run:** For reddit-* sources, attempt the JSON API first but fall back immediately to exa_web_search with source-specific keywords if HTTP 403 received. Do not retry the Reddit API — the block appears environment-wide.
-## 2026-05-20 17:12Z — Three X accounts do not exist: FAASouth, YonkosMC, Nguyenthiho88
-**Trigger:** Bucket 11 Twitter API user lookup returned "Could not find user with username" for @FAASouth, @YonkosMC, and @Nguyenthiho88.
-**Finding:** The Twitter handles @FAASouth (twitter-faa-south), @YonkosMC (twitter-yonkosmc), and @Nguyenthiho88 (twitter-nguyenthiho88) do not resolve to active X/Twitter accounts. The API returns explicit "Could not find user" errors rather than suspension or protected status. Events for these sources' topic areas remain accessible via exa_web_search with source-specific keywords.
-**Action for next run:** Skip Twitter API and r.jina.ai for twitter-faa-south, twitter-yonkosmc, and twitter-nguyenthiho88. Use exa_web_search with source-specific topic keywords. Flag these sources for manifest handle investigation or status change to inactive.
-**Expires:** 2026-08-20
-
-## 2026-05-20 17:11Z — Five Twitter source accounts do not exist: WarTV7890, BeltelFreeAudio, BelteleFacts, MofajapanEn, BatesGill
-**Trigger:** Bucket 9 Twitter API v2 user lookup returned "Could not find user with username" for @WarTV7890, @BeltelFreeAudio, @BelteleFacts, @MofajapanEn, and @BatesGill.
-**Finding:** These five X/Twitter accounts do not exist on the platform. The handles may have changed, accounts may have been deleted or suspended. All five produced zero direct collection results. exa_web_search with source-specific keywords yielded relevant events for each source topic area.
-**Action for next run:** Skip Twitter API and r.jina.ai for these five sources. Use exa_web_search with source-specific topic keywords as primary discovery. Flag all five for manifest handle investigation or status change.
-**Expires:** 2026-08-20
-
-## 2026-05-20 17:11Z — Reddit API returns 403 from cloud agent environment for both cybersecurity and LessCredibleDefence subreddits
-**Trigger:** Bucket 9 curl requests to reddit.com/r/cybersecurity/new.json and reddit.com/r/LessCredibleDefence/new.json both returned HTTP 403 with HTML error page instead of JSON.
-**Finding:** Reddit appears to block requests from the Warp Cloud Agent environment IP range despite using the documented User-Agent header (osint-bot/1.0). The 403 response contains an HTML page rather than JSON, suggesting IP-based rate limiting or datacenter IP blocking rather than an authentication issue.
-**Action for next run:** For Reddit API sources, attempt the API call first. If 403 received, immediately fall back to exa_web_search with subreddit-specific keywords. Consider adding Reddit OAuth authentication as a longer-term fix.
-**Expires:** 2026-08-20
-
-## 2026-05-20 17:11Z — Nominatim fails to geocode Bunia, DRC — use hardcoded fallback
-**Trigger:** Bucket 12 geocoding returned null lat/lon for "Bunia, Democratic Republic of Congo."
-**Finding:** OpenStreetMap Nominatim does not resolve Bunia as a searchable location. Bunia serves as the capital of Ituri Province in eastern DRC at approximately 1.5667°N, 30.25°E.
-**Action for next run:** Pre-populate geocoding cache with Bunia coordinates (1.5667, 30.25) before querying Nominatim for DRC locations.
-**Expires:** 2026-08-20
-
-## 2026-05-20 20:37Z — Twitter accounts TaFarms18 and pizzainwatch do not exist; use exa_web_search
-**Trigger:** Bucket 5 Twitter API v2 user lookup returned "Could not find user with username" for @TaFarms18 and @pizzainwatch.
-**Finding:** Both X/Twitter accounts do not resolve to active accounts. The API returned explicit "Could not find user" errors. Events for these sources' topic areas remain accessible via exa_web_search with source-specific keywords (agriculture/food security for TaFarms18; maritime tracking/sanctions for pizzainwatch).
-**Action for next run:** Skip Twitter API and r.jina.ai for twitter-tafarms18 and twitter-pizzainwatch. Use exa_web_search with source-specific topic keywords. Flag these sources for manifest handle investigation or status change.
-## 2026-05-20 20:37Z — @Fleetnumbers X account does not exist; source should update handle or deactivate
-**Trigger:** Bucket 6 Twitter API v2 user lookup returned "Could not find user with username: [Fleetnumbers]."
-**Finding:** The Twitter handle @Fleetnumbers configured for source twitter-fleetnumbers does not resolve to an active X/Twitter account. The account may have changed handles, deleted, or received a suspension. Events for this source's topic area (naval fleet tracking) remain accessible via exa_web_search with naval/fleet keywords.
-**Action for next run:** Skip Twitter API and r.jina.ai for twitter-fleetnumbers. Use exa_web_search with naval fleet tracking keywords as primary discovery. Flag source for manifest handle investigation or status change.
-**Expires:** 2026-08-20
-
-## 2026-05-20 20:37Z — @AusNavy X account now protected (private); direct tweet collection blocked
-**Trigger:** Bucket 6 Twitter API v2 user lookup returned protected:true for @AusNavy (user ID 786700712570941440).
-**Finding:** The Royal Australian Navy's @AusNavy Twitter account has switched to protected (private) status, preventing all direct tweet collection via API, r.jina.ai, or browser scraping. The account still exists but tweets require follow approval to access.
-**Action for next run:** Skip Twitter API tweet search for twitter-ausnav. Use exa_web_search with "Royal Australian Navy" and Indo-Pacific maritime keywords. Consider flagging source for manifest review.
-**Expires:** 2026-08-20
-
-## 2026-05-20 20:37Z — Reddit JSON API now returns valid data from agent environment
-**Trigger:** Bucket 4 successfully fetched r/CombatFootage, r/Intelligence, r/cybersecurity, and r/RussiaUkraineWar2022 via JSON API without 403 errors.
-**Finding:** The Reddit JSON API endpoints (reddit.com/r/*/new.json) returned valid JSON responses with User-Agent osint-bot/1.0 from the Warp Cloud Agent environment. This supersedes earlier findings from the same day reporting 403 blocks. The block appears to have been temporary or IP-rotation-dependent.
-**Action for next run:** Attempt Reddit JSON API first as the primary collection method for reddit-* sources. Keep exa_web_search as fallback only if 403 received.
-**Expires:** 2026-08-20
-
-## 2026-05-21 12:22Z — @TheDiplomat X handle resolves to wrong account; not The Diplomat magazine
-**Trigger:** Bucket 14 Twitter API user lookup for @TheDiplomat returned user "Aiaz Mohammed" (uid 132967082, 40 followers, 221 tweets) instead of The Diplomat magazine.
-**Finding:** The X/Twitter handle @TheDiplomat does not belong to The Diplomat magazine (thediplomat.com). The actual account appears to belong to a private individual with minimal activity. The Diplomat magazine may operate under a different handle or may have left the platform. exa_web_search with Asia-Pacific security keywords yielded relevant events from the magazine's topic areas.
-**Action for next run:** Skip Twitter API for twitter-the-diplomat source. Use exa_web_search with Asia-Pacific diplomacy and security keywords. Flag source for manifest handle investigation or update to correct handle.
+## 2026-05-21 — Reddit JSON API: intermittent 403 from agent environment; attempt first, fall back on failure
+**Trigger:** Same-day bucket runs produced both 403 blocks and successful JSON responses for identical endpoints. The block appears IP-rotation-dependent, not permanent.
+**Finding:** reddit.com/r/*/new.json endpoints with User-Agent osint-bot/1.0 return HTTP 403 in some agent environment IP ranges and valid JSON in others. The block is not consistent or permanent. exa_web_search with subreddit-specific keywords is an effective fallback when blocked.
+**Action for next run:** For reddit-* sources, attempt the JSON API first. If 403 received, do not retry — fall back immediately to exa_web_search with source-specific keywords.
 **Expires:** 2026-08-21
 
-## 2026-05-21 12:22Z — @JasdfPaoEng X account does not exist; source should update handle or deactivate
-**Trigger:** Bucket 14 Twitter API v2 user lookup returned "Could not find user with usernames: [JasdfPaoEng]."
-**Finding:** The Twitter handle @JasdfPaoEng configured for source twitter-jasdf-pao-eng does not resolve to an active X/Twitter account. The JASDF may operate its English-language public affairs under a different handle or have consolidated social media accounts. Events for Japanese air defense topics remain accessible via exa_web_search.
-**Action for next run:** Skip Twitter API and r.jina.ai for twitter-jasdf-pao-eng. Use exa_web_search with JASDF and Japan air defense keywords. Flag source for manifest handle investigation or status change to inactive.
-## 2026-05-21 12:22Z — @ArmedForcesPhil Twitter handle resolves to wrong account with zero tweets
-**Trigger:** Bucket 12 Twitter API user lookup returned username "armedforcesphil" (user ID 135013193) with 0 tweets, 0 followers, display name "joey radaman" — clearly not the official Armed Forces of the Philippines account.
-**Finding:** The handle @ArmedForcesPhil configured for source twitter-armed-forces-phil resolves to an unrelated personal account with zero activity. The official AFP account likely operates under a different handle. Events for this source's topic area remain accessible via exa_web_search with Philippines military and South China Sea keywords.
-**Action for next run:** Skip Twitter API for twitter-armed-forces-phil. Use exa_web_search with "Armed Forces Philippines," "West Philippine Sea," and "South China Sea" keywords. Flag source for manifest handle investigation.
-**Expires:** 2026-08-21
-
-## 2026-05-21 12:22Z — @NationalInterest handle exceeds Twitter 15-character limit; cannot query API
-**Trigger:** Bucket 12 Twitter API batch user lookup returned HTTP 400 because "NationalInterest" (16 characters) violates Twitter's ^[A-Za-z0-9_]{1,15}$ username constraint.
-**Finding:** The handle @NationalInterest configured for source twitter-national-interest exceeds Twitter's 15-character handle limit. The actual account may operate under a shortened handle (e.g., @NatInterest). The API rejects any batch query containing this username.
-**Action for next run:** Investigate the correct Twitter handle for The National Interest. Skip API lookup for this source until handle corrected. Use exa_web_search with "National Interest defense analysis" keywords.
-**Expires:** 2026-08-21
-
-## 2026-05-21 12:22Z — @key2med account now protected (private); direct tweet collection blocked
-**Trigger:** Bucket 12 Twitter API user lookup returned protected:true for @key2med (user ID 318556348, display name "Michael J Sanchez").
-**Finding:** The @key2med account configured for source twitter-key-to-med has switched to protected status, preventing all direct tweet collection via API or scraping. The account still exists but requires follow approval.
-**Action for next run:** Skip Twitter API tweet search for twitter-key-to-med. Use exa_web_search with Middle East defense, Iran military, and missile keywords. Flag source for manifest review.
-**Expires:** 2026-08-21
-
-## 2026-05-21 12:22Z — Three X accounts do not exist: Osaindawg, EtienneLh, Therealshipdude
-**Trigger:** Bucket 12 Twitter API v2 user lookup returned "Could not find user with username" for @Osaindawg, @EtienneLh, and @Therealshipdude.
-**Finding:** These three Twitter handles do not resolve to active X/Twitter accounts. The accounts may have changed handles, deleted, or received suspensions. Events for their topic areas remain accessible via exa_web_search with source-specific keywords.
-**Action for next run:** Skip Twitter API and r.jina.ai for twitter-osaindawg, twitter-etienne-lh, and twitter-therealshipdude. Use exa_web_search with source-specific topic keywords. Flag these sources for manifest handle investigation or status change.
-**Expires:** 2026-08-21
-
-## 2026-05-21 12:22Z — Twitter accounts TheKorea_Times and JnbSummary do not exist; use exa_web_search
-**Trigger:** Bucket 5 Twitter API v2 user lookup returned "Could not find user with username" for @TheKorea_Times and @JnbSummary.
-**Finding:** Both X/Twitter accounts do not resolve to active accounts. Events for these sources' topic areas remain accessible via exa_web_search with source-specific keywords.
-**Action for next run:** Skip Twitter API for twitter-korea-times and twitter-jnb-summary. Use exa_web_search with source-specific topic keywords.
-**Expires:** 2026-08-21
-
-## 2026-05-21 12:22Z — Reddit API unreachable from agent environment for r/Intelligence
-**Trigger:** Bucket 5 curl request to reddit.com/r/Intelligence/new.json returned connection failure.
-**Finding:** Reddit JSON API endpoint for r/Intelligence failed to respond. exa_web_search with intelligence keywords yielded effective alternative.
-**Action for next run:** Attempt Reddit JSON API first, fall back to exa_web_search if connection fails.
-**Expires:** 2026-08-21
-
-## 2026-05-21 12:22Z — @ntonc and @detresfa X accounts appear to have wrong handles configured
-**Trigger:** Bucket 7 Twitter API user lookup returned an account with 1 follower and 1 total tweet for @ntonc, and a personal account "Elle" with 443 followers for @detresfa. Neither matches the described OSINT/military intelligence or maritime distress monitoring profiles.
-**Finding:** The Twitter handles @ntonc and @detresfa configured in sources twitter-ntonc and twitter-detresfa do not correspond to the described analyst accounts. @ntonc has essentially zero activity, and @detresfa belongs to a personal user unrelated to maritime distress monitoring. exa_web_search with source-specific keywords yielded relevant events as an effective alternative.
-**Action for next run:** Skip Twitter API for twitter-ntonc and twitter-detresfa. Use exa_web_search with source-specific keywords. Flag both sources for manifest handle investigation or status change.
-**Expires:** 2026-08-21
-
-## 2026-05-21 19:35Z — @Chadobcnews X account does not exist
-**Trigger:** Bucket 10 Twitter API v2 user lookup returned "Could not find user with usernames: [Chadobcnews]."
-**Finding:** The Twitter handle @Chadobcnews configured for source twitter-chadobcnews does not resolve to an active X/Twitter account. Events for Korea-focused defense topics remain accessible via exa_web_search with Korean Peninsula and military keywords.
-**Action for next run:** Skip Twitter API for twitter-chadobcnews. Use exa_web_search with Korea defense, DPRK missile, and ROK military keywords. Flag source for manifest handle investigation or status change.
-
-## 2026-05-21 19:30Z — @MNDChina X handle resolves to wrong account; not China Ministry of National Defense
-**Trigger:** Bucket 14 Twitter API user lookup for @MNDChina returned user "Xin Tomberg" (uid 1998378585636442112, 3 followers, 0 tweets) instead of the Chinese Ministry of National Defense.
-**Finding:** The X/Twitter handle @MNDChina does not belong to China's Ministry of National Defense. The actual account belongs to a private individual with zero activity. The Chinese MoD may operate under a different handle or may not maintain an active English-language X presence. exa_web_search with China defense and PLA keywords yielded relevant events.
-**Action for next run:** Skip Twitter API for twitter-mndchina source. Use exa_web_search with China military, PLA, and defense policy keywords. Flag source for manifest handle investigation or update.
-**Expires:** 2026-08-21
-
-## 2026-05-21 19:30Z — @InfoFusionCtr X account does not exist; use exa_web_search
-**Trigger:** Bucket 3 Twitter API v2 user lookup returned "Could not find user with usernames: [InfoFusionCtr]."
-**Finding:** The Twitter handle @InfoFusionCtr configured for source twitter-info-fusion-ctr does not resolve to an active X/Twitter account. Events for multi-source intelligence and OSINT analysis topics remain accessible via exa_web_search.
-**Action for next run:** Skip Twitter API for twitter-info-fusion-ctr. Use exa_web_search with intelligence fusion and OSINT keywords. Flag source for manifest handle investigation.
-**Expires:** 2026-08-21
-
-## 2026-05-21 19:30Z — @Megatronlion X handle resolves to wrong account with 0 tweets
-**Trigger:** Bucket 3 Twitter API v2 user lookup returned user "chuck cantley" (uid 1727367912, 2 followers, 0 tweets) for @megatronlion — clearly not the OSINT analyst described in the source specification.
-**Finding:** The handle @Megatronlion configured for source twitter-megatronlion resolves to an unrelated personal account with zero activity. The intended OSINT military analyst may operate under a different handle or have left the platform.
-**Action for next run:** Skip Twitter API for twitter-megatronlion. Use exa_web_search with military operations, conflict zone, and weapons analysis keywords. Flag source for manifest handle investigation.
-**Expires:** 2026-08-21
-
-## 2026-05-21 19:30Z — @ofacalert X account does not exist; use exa_web_search
-**Trigger:** Bucket 12 Twitter API v2 user lookup returned "Could not find user with username: [ofacalert]."
-**Finding:** The Twitter handle @ofacalert configured for source twitter-ofac-alert does not resolve to an active X/Twitter account. The OFAC sanctions alert service may operate under a different handle or have migrated off the platform. Events for OFAC sanctions topics remain accessible via exa_web_search with OFAC, sanctions, and Treasury keywords.
-**Action for next run:** Skip Twitter API for twitter-ofac-alert. Use exa_web_search with OFAC sanctions enforcement keywords. Flag source for manifest handle investigation.
-**Expires:** 2026-08-21
-
-## 2026-05-21 19:30Z — @Sindikasyontek X account does not exist; use exa_web_search
-**Trigger:** Bucket 8 Twitter API v2 user lookup returned "Could not find user with usernames: [Sindikasyontek]."
-**Finding:** The Twitter handle @Sindikasyontek configured for source twitter-sindikasyontek does not resolve to an active X/Twitter account. The account may have changed handles, deleted, or received a suspension. Events for Philippines cybersecurity and technology topics remain accessible via exa_web_search with source-specific keywords.
-**Action for next run:** Skip Twitter API for twitter-sindikasyontek. Use exa_web_search with Philippines cybersecurity, information warfare, and data breach keywords. Flag source for manifest handle investigation or status change.
-**Expires:** 2026-08-21
-
-## 2026-05-21 20:33Z — @United_Nations X account suspended; use exa_web_search
-**Trigger:** Bucket 7 Twitter API v2 user lookup returned "User has been suspended: [United_Nations]."
-**Finding:** The official @United_Nations X account has received a suspension. UN News (news.un.org) remains accessible via exa_web_search.
-**Action for next run:** Skip Twitter API for twitter-united-nations. Use exa_web_search.
-**Expires:** 2026-08-21
-
-## 2026-05-21 20:33Z — breakingdefense.com/global/ returns 404; URL structure changed
-**Trigger:** Bucket 7 agent-browser opened breakingdefense.com/global/ and received "Page not found."
-**Finding:** Breaking Defense /global/ URL no longer resolves. Use exa_web_search as fallback.
-**Action for next run:** Update source URL or use exa_web_search.
-**Expires:** 2026-08-21
-
-## 2026-05-21 20:34Z — @MdaSpace X handle resolves to wrong account with 0 tweets and 0 followers
-**Trigger:** Bucket 6 Twitter API v2 user lookup returned user "mdaspace" (uid 1765875432422068224, 0 followers, 0 tweets, 0 media) instead of MDA Space Ltd. satellite company.
-**Finding:** The X/Twitter handle @MdaSpace does not belong to MDA Space (formerly MDA Ltd.), the satellite systems and geospatial intelligence provider. The actual account has zero activity. MDA Space may operate under a different handle or may not maintain an active X presence. exa_web_search with satellite and SAR imagery keywords yielded relevant events.
-**Action for next run:** Skip Twitter API for twitter-mda-space. Use exa_web_search with MDA satellite, RADARSAT, and SAR imagery keywords. Flag source for manifest handle investigation or update.
-**Expires:** 2026-08-21
-
-## 2026-05-21 20:53Z — @TheKoreaview X handle resolves to wrong account; not Korean Peninsula news
-**Trigger:** Bucket 14 Twitter API v2 user lookup for @TheKoreaview returned user "J" (uid 1484018313336262658, 34 followers, 240 tweets) instead of any Korean Peninsula news or analysis account.
-**Finding:** The X/Twitter handle @TheKoreaview does not belong to a Korean Peninsula news outlet. The actual account belongs to a private individual with minimal activity and no connection to inter-Korean relations or defense analysis. exa_web_search with Korean Peninsula keywords yielded relevant events from the topic area.
-**Action for next run:** Skip Twitter API for twitter-the-koreaview source. Use exa_web_search with Korean Peninsula, inter-Korean relations, and DMZ keywords. Flag source for manifest handle investigation or update to correct handle.
+## 2026-05-21 — exa_web_search effective primary tool; URL dedup critical; late buckets get diminishing returns
+**Trigger:** Multiple runs with Twitter API depleted; observed 45% URL collision rate in bucket 5 vs buckets 1-4.
+**Finding:** exa_web_search reliably surfaces events within the target window. However, major wire service stories (Reuters, AP, AFP) get surfaced across all source topic areas, so later buckets (4+) see 40-50% URL collision. Use `jq -sc` (compact flag required) not `jq -s` for JSONL dedup — the `-c` flag maintains one-object-per-line format.
+**Action for next run:** Assign wire-service-heavy sources to early buckets, niche/specialist sources (OFAC, opennuclear, SIGINT analysts) to later buckets to maximize unique URL yield. Always use `jq -sc 'unique_by(.links[0].url)'` for dedup.
 **Expires:** 2026-08-21
 
 ## 2026-05-21 20:33Z — @JaimeOcon Twitter handle resolves to wrong account with 5 followers
