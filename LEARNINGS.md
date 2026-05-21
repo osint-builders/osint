@@ -341,3 +341,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** The X/Twitter handle @MdaSpace does not belong to MDA Space (formerly MDA Ltd.), the satellite systems and geospatial intelligence provider. The actual account has zero activity. MDA Space may operate under a different handle or may not maintain an active X presence. exa_web_search with satellite and SAR imagery keywords yielded relevant events.
 **Action for next run:** Skip Twitter API for twitter-mda-space. Use exa_web_search with MDA satellite, RADARSAT, and SAR imagery keywords. Flag source for manifest handle investigation or update.
 **Expires:** 2026-08-21
+
+## 2026-05-21 20:53Z — @TheKoreaview X handle resolves to wrong account; not Korean Peninsula news
+**Trigger:** Bucket 14 Twitter API v2 user lookup for @TheKoreaview returned user "J" (uid 1484018313336262658, 34 followers, 240 tweets) instead of any Korean Peninsula news or analysis account.
+**Finding:** The X/Twitter handle @TheKoreaview does not belong to a Korean Peninsula news outlet. The actual account belongs to a private individual with minimal activity and no connection to inter-Korean relations or defense analysis. exa_web_search with Korean Peninsula keywords yielded relevant events from the topic area.
+**Action for next run:** Skip Twitter API for twitter-the-koreaview source. Use exa_web_search with Korean Peninsula, inter-Korean relations, and DMZ keywords. Flag source for manifest handle investigation or update to correct handle.
+**Expires:** 2026-08-21
