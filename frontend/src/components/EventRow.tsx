@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import type { SearchResult } from '../types';
 import { formatDateShort, truncate, copyToClipboard, getSourceIcon, getTagColor } from '../lib/utils';
+import { SourceIconBadge } from './SourceIconBadge';
 
 interface EventRowProps {
   result: SearchResult;
@@ -49,13 +50,7 @@ export const EventRow: React.FC<EventRowProps> = React.memo(({
     >
       {/* Line 1: meta */}
       <div className="flex items-center gap-1.5 text-[7px] leading-tight min-w-0">
-        <span
-          className="flex-shrink-0 font-bold text-[7px] px-0.5 leading-none"
-          style={{ color: srcIcon.color }}
-          title={result.source_name}
-        >
-          {srcIcon.symbol}
-        </span>
+        <SourceIconBadge icon={srcIcon} title={result.source_name} />
         <span className={isSelected ? 'text-[#c0c0c0]' : 'text-term-secondary'}>{date}</span>
         {geoStr && <span>·</span>}
         {geoStr && <span className={`truncate max-w-[80px] ${isSelected ? 'text-[#a0a0a0]' : 'text-term-dim'}`}>{geoStr}</span>}
