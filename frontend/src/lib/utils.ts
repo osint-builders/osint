@@ -84,7 +84,7 @@ export function getTagColor(tag: string): string {
   return TAG_PALETTE[h % TAG_PALETTE.length];
 }
 
-interface SourceIcon { symbol: string; color: string; }
+export interface SourceIcon { symbol: string; color: string; network?: string; }
 
 export function getSourceIcon(sourceName: string, firstLinkUrl?: string): SourceIcon {
   const s = sourceName.toLowerCase();
@@ -93,9 +93,9 @@ export function getSourceIcon(sourceName: string, firstLinkUrl?: string): Source
   // Telegram: check permalink URL first (t.me/...) — must come before the @
   // check since Telegram source names also contain (@channelname)
   if (u.includes('t.me/') || s.includes('telegram'))
-    return { symbol: '✈', color: '#26a5e4' };
+    return { symbol: '✈', color: '#26a5e4', network: 'telegram' };
   if (s.includes('@') || s.startsWith('twitter') || u.includes('x.com/') || u.includes('twitter.com/') || s.includes('tweet'))
-    return { symbol: '𝕏', color: '#1d9bf0' };
+    return { symbol: '𝕏', color: '#1d9bf0', network: 'x' };
   if (s.includes('reuters'))
     return { symbol: 'R', color: '#ff8c00' };
   if (s.includes('bbc'))
@@ -107,9 +107,9 @@ export function getSourceIcon(sourceName: string, firstLinkUrl?: string): Source
   if (s.includes('ap ') || s.includes('associated press'))
     return { symbol: 'AP', color: '#007af5' };
   if (s.includes('youtube') || s.includes('youtu.be'))
-    return { symbol: '▶', color: '#ff0000' };
+    return { symbol: '▶', color: '#ff0000', network: 'youtube' };
   if (s.includes('reddit'))
-    return { symbol: '◐', color: '#ff4500' };
+    return { symbol: '◐', color: '#ff4500', network: 'reddit' };
   if (s.includes('al jazeera'))
     return { symbol: 'AJ', color: '#c5980e' };
   if (s.includes('afp'))

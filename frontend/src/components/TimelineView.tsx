@@ -7,6 +7,7 @@ import type { SearchResult } from '../types';
 import type { TimeGroup } from '../lib/timeline';
 import { groupEventsByTime } from '../lib/timeline';
 import { getTagColor, getSourceIcon, formatDateShort } from '../lib/utils';
+import { SourceIconBadge } from './SourceIconBadge';
 
 const CARD_W = 200;
 const COL_GAP = 12;
@@ -109,9 +110,7 @@ const TimelineColumn: React.FC<TimelineColumnProps> = ({
                 ].join(' ')}
               >
                 <div className="flex items-center gap-1 text-[7px] mb-1 min-w-0">
-                  <span style={{ color: icon.color, fontWeight: 700 }} className="flex-shrink-0">
-                    {icon.symbol}
-                  </span>
+                  <SourceIconBadge icon={icon} size={12} />
                   <span className={isSelected ? 'text-[#c0c0c0]' : 'text-term-secondary'}>
                     {formatDateShort(ev.date_event ?? ev.date_published)}
                   </span>

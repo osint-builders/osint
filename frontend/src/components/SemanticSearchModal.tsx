@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import type { EventMetadata } from '../types';
 import { highlightMatches, tokenizeQuery } from '../lib/highlightMatches';
 import { formatDateShort, truncate, getSourceIcon, getTagColor } from '../lib/utils';
+import { SourceIconBadge } from './SourceIconBadge';
 
 export interface SemanticHit {
   metadata: EventMetadata;
@@ -172,12 +173,7 @@ export const SemanticSearchModal: React.FC<SemanticSearchModalProps> = ({
                     <div className="flex flex-col justify-center gap-px px-3 h-full">
                       {/* Row 1: meta */}
                       <div className="flex items-center gap-1.5 text-[7px] leading-none overflow-hidden">
-                        <span
-                          className="flex-shrink-0 font-bold px-0.5"
-                          style={{ color: srcIcon.color }}
-                        >
-                          {srcIcon.symbol}
-                        </span>
+                        <SourceIconBadge icon={srcIcon} size={12} />
                         <span className={isActive ? 'text-[#c0c0c0]' : 'text-term-secondary'}>{date}</span>
                         {geoStr && (
                           <>
