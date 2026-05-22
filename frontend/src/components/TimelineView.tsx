@@ -177,6 +177,7 @@ interface TimelineViewProps {
   onSelectEvent: (id: string) => void;
   onOpenEvent: (id: string) => void;
   onTagClick: (tag: string) => void;
+  onPopout?: () => void;
 }
 
 export const TimelineView: React.FC<TimelineViewProps> = ({
@@ -185,6 +186,7 @@ export const TimelineView: React.FC<TimelineViewProps> = ({
   onSelectEvent,
   onOpenEvent,
   onTagClick,
+  onPopout,
 }) => {
   const groups = useMemo(() => groupEventsByTime(results), [results]);
 
@@ -432,7 +434,19 @@ export const TimelineView: React.FC<TimelineViewProps> = ({
       <div className="flex-shrink-0 border-t border-term-border bg-term-surface">
         <div className="flex items-center justify-between px-3 pt-1 text-[7px] text-term-dim">
           <span className="text-term-green">← NEWEST</span>
-          <span>{results.length} EVENTS · {groups.length} GROUPS · DRAG/SCROLL · DBL-CLICK → DETAIL</span>
+          <span className="flex items-center gap-2">
+            <span>{results.length} EVENTS · {groups.length} GROUPS · DRAG/SCROLL · DBL-CLICK → DETAIL</span>
+            {onPopout && (
+              <button
+                onClick={onPopout}
+                className="text-term-dim hover:text-term-cyan transition-colors"
+                aria-label="Open timeline in new window"
+                title="Pop out"
+              >
+                ⧉
+              </button>
+            )}
+          </span>
           <span className="text-term-dim">OLDEST →</span>
         </div>
         <div className="relative w-full" style={{ height: 28 }}>

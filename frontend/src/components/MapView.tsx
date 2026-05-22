@@ -13,6 +13,7 @@ interface MapViewProps {
   selectedId: string | null;
   onSelectEvent: (id: string) => void;
   onOpenEvent: (id: string) => void;
+  onPopout?: () => void;
 }
 
 export const MapView: React.FC<MapViewProps> = ({
@@ -20,6 +21,7 @@ export const MapView: React.FC<MapViewProps> = ({
   selectedId,
   onSelectEvent,
   onOpenEvent,
+  onPopout,
 }) => {
   const mapRef = useRef<MapRef>(null);
 
@@ -102,7 +104,19 @@ export const MapView: React.FC<MapViewProps> = ({
         <span className="text-[7px] text-term-dim tracking-widest">
           GEOSPATIAL · {geocoded.length}/{results.length} GEOCODED
         </span>
-        <span className="text-[7px] text-term-dim">◎ CLICK MARKER · DBL-CLICK OPEN</span>
+        <span className="flex items-center gap-2">
+          <span className="text-[7px] text-term-dim">◎ CLICK MARKER · DBL-CLICK OPEN</span>
+          {onPopout && (
+            <button
+              onClick={onPopout}
+              className="text-[7px] text-term-dim hover:text-term-cyan transition-colors"
+              aria-label="Open map in new window"
+              title="Pop out"
+            >
+              ⧉
+            </button>
+          )}
+        </span>
       </div>
 
       <div className="flex-1 min-h-0">

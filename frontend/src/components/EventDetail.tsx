@@ -10,6 +10,7 @@ interface EventDetailProps {
   isLoading: boolean;
   onClose: () => void;
   onShowMap: () => void;
+  onPopout?: () => void;
 }
 
 const CopyBtn: React.FC<{ text: string; label?: string }> = ({ text, label = '⊡' }) => {
@@ -47,6 +48,7 @@ export const EventDetail: React.FC<EventDetailProps> = ({
   isLoading,
   onClose,
   onShowMap,
+  onPopout,
 }) => {
   const event = detail ?? metadata;
 
@@ -86,6 +88,16 @@ export const EventDetail: React.FC<EventDetailProps> = ({
           {event.id}
           <CopyBtn text={event.id} />
         </span>
+        {onPopout && (
+          <button
+            onClick={onPopout}
+            className="text-[7px] text-term-dim hover:text-term-cyan transition-colors flex-shrink-0"
+            aria-label="Open detail in new window"
+            title="Pop out"
+          >
+            ⧉
+          </button>
+        )}
         <button
           onClick={onShowMap}
           title="Show map [M]"
