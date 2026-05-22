@@ -2,7 +2,8 @@ name: Daily OSINT Collection
 
 on:
   schedule:
-    - cron: '0 13 * * *'
+    - cron: '0 9,13,17 * * *'
+      timezone: America/New_York
   workflow_dispatch:      # Manual trigger for testing
   push:
     branches:
