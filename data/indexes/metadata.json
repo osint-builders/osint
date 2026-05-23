@@ -93558,124 +93558,6 @@
     "link_preview_image": "https://cdn4.telesco.pe/file/CkcvVoAsy7F2JOW6Wv3ppiuQWD5h7vF-_nhaWcqtSBdmtY13hIFhK3FGEmPxTLxlew53HnAW-6-2iDgAD1gUbeR9qRkTg4f0qYmHcRbVCxidZ3vMSa7cDmQJuVW8K0cgjHbYmj1-78lshjmqU1RkWRzSePJTlxjc0Pkwxn7MZIaxDxue76zksiIFsCiOzKcIPZO9129M_uDTkvnV7HrewUYWpu_eI5IqdW8dna8SwVmhfyGlaUcIQRpY5USnI9AlJEUHqNlBaqPgAbOWYOzPSMhHLe5L7VqgFFAiELdlMmjpDbuem9Y4KyaWc1ZScHUucXto47E_q49CPaA2OPn8sg.jpg"
   },
   {
-    "id": "evt_20260523_010",
-    "title": "US and Iran Hint at Progress Toward Framework Deal as Mediators Leave Tehran",
-    "summary": "CNN reported that US and Iranian officials suggested they may have drawn closer to a framework agreement to end the war, with Secretary of State Rubio hinting at possible news within hours or days.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:40:01Z",
-    "geo": {
-      "lat": 35.6892523,
-      "lon": 51.3896004,
-      "country": "Iran",
-      "city": "Tehran"
-    },
-    "topics": [
-      "iran",
-      "diplomacy",
-      "war",
-      "nuclear",
-      "strait-of-hormuz"
-    ],
-    "confidence": 0.9,
-    "source_name": "CNN Breaking News (@cnnbrk)",
-    "links": [
-      {
-        "url": "https://us.cnn.com/2026/05/23/middleeast/iran-us-progress-framework-diplomacy-intl",
-        "label": "CNN Report"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_011",
-    "title": "Iran Closes National Airspace Until Monday Amid Fears of Imminent US-Israeli Military Strikes",
-    "summary": "Iran closed its national airspace until Monday as multiple indicators suggested potential US-Israeli military strikes, including GPS jamming across the UAE, Trump cancelling weekend plans, and Iranian fighter jets scrambling from Tehran.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:30:00Z",
-    "geo": {
-      "lat": 35.6892523,
-      "lon": 51.3896004,
-      "country": "Iran",
-      "city": "Tehran"
-    },
-    "topics": [
-      "iran",
-      "airspace",
-      "military",
-      "escalation",
-      "war"
-    ],
-    "confidence": 0.78,
-    "source_name": "ELINT News (@ELINTNews)",
-    "links": [
-      {
-        "url": "https://uk.news-pravda.com/russia/2026/05/23/145408.html",
-        "label": "OSINT Assessment"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_012",
-    "title": "Iran Reports 35 Vessels Crossed Strait of Hormuz as Oil Tankers Pile Up Off Kharg Island",
-    "summary": "Iran's IRGC navy reported 35 vessels crossed the Strait of Hormuz in 24 hours under its permit system, while Windward data showed a 93% surge in tankers anchored off Kharg Island with all operating with AIS disabled.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:20:00Z",
-    "geo": {
-      "lat": 26.4494061,
-      "lon": 56.2027702,
-      "country": "Iran",
-      "region": "Strait of Hormuz"
-    },
-    "topics": [
-      "maritime",
-      "strait-of-hormuz",
-      "iran",
-      "sanctions",
-      "oil",
-      "shipping"
-    ],
-    "confidence": 0.88,
-    "source_name": "gCaptain (@Gcaptain)",
-    "links": [
-      {
-        "url": "https://see.news/hormuz-monitor-iran-says-35-ships-crossed-strait-as-oil-tankers-pile-up-off-kharg-island",
-        "label": "Hormuz Monitor Report"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_013",
-    "title": "US Navy Seizes Third Iran-Linked VLCC in Indian Ocean Enforcement Campaign",
-    "summary": "The US seized the Iran-linked VLCC SKYWAVE in the Indian Ocean, marking the third tanker seizure in the current enforcement campaign as OFAC designated 19 additional Iran-trading vessels under Operation Economic Fury.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:25:00Z",
-    "geo": {
-      "lat": 10.0,
-      "lon": 65.0,
-      "country": "International Waters",
-      "region": "Indian Ocean"
-    },
-    "topics": [
-      "maritime",
-      "sanctions",
-      "iran",
-      "navy",
-      "blockade",
-      "oil"
-    ],
-    "confidence": 0.85,
-    "source_name": "Osaindawg (@Osaindawg)",
-    "links": [
-      {
-        "url": "https://windward.ai/blog/iran-loads-east-of-hormuz/",
-        "label": "Windward Maritime Intelligence"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
     "id": "evt_20260523_014",
     "title": "UKMTO Reports Armed Approach on Petroleum Tanker Near Yemen's Socotra Island",
     "summary": "The UK Maritime Trade Operations agency reported a small craft with five people approached within 100 meters of a petroleum tanker 200 nautical miles west of Yemen's Socotra island before the armed security team deployed.",
@@ -93733,187 +93615,6 @@
       }
     ],
     "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_010",
-    "title": "Gas Explosion at Shanxi Province Coal Mine Kills at Least 82 Workers in China",
-    "summary": "A gas explosion at a coal mine in Shanxi Province, China, killed at least 82 people and left 2 missing on Friday evening. Of the 247 workers underground at the time, 128 required hospitalization. Company executives have faced detention.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:33:20Z",
-    "geo": {
-      "lat": 37.0,
-      "lon": 112.0,
-      "country": "China",
-      "region": "Shanxi Province"
-    },
-    "topics": [
-      "mining-disaster",
-      "coal-mine",
-      "explosion",
-      "china",
-      "industrial-safety"
-    ],
-    "confidence": 0.85,
-    "source_name": "Clash Report (@ClashReport)",
-    "links": [
-      {
-        "url": "https://t.me/ClashReport/82961",
-        "label": "Telegram Post"
-      }
-    ],
-    "link_preview_image": "https://cdn4.telesco.pe/file/LqwJimidHTGkVAmxrcRFEZb1nUl4QikRgNbK6MRGWWl590sO0TvE6g8gqfg_84D-YYbmr8QgEgZzHyxWg1Kh2hWmxv1sdzzOWeb4Mz4mZ5ImlXaoeh_KvZqLulx6cynwCNN-JZFvdJP9eLd0OJgY_s8ll8hp7rl_l-YqmqcgYP4xQPfG9EEvOeUjoFRbDDqZCtS7RCX_kI3pj24muRBhFMei5azkFP4tgeK1vCJVbhk9yXE8XArP5gD4UhL5PpkIF4z9XqhdGZiaUbFQhiG78ASWL_GJuEwAAT8uJL7b6dNfspZqJMdzh25Ln0WahsBfseaPmvClQIJg_7JoV8ie9w"
-  },
-  {
-    "id": "evt_20260523_011",
-    "title": "Trump Tells Axios Iran Deal Odds Stand at 50/50 Between Agreement and Resumed Military Action",
-    "summary": "President Trump told Axios the chances of reaching a deal with Iran stand at a 'solid 50/50,' stating he would either strike Iran harder than ever or sign a good deal. Trump plans to meet Steve Witkoff and Jared Kushner Saturday to review Iran's latest offer, with a decision expected by Sunday.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:34:21Z",
-    "geo": {
-      "lat": 38.895,
-      "lon": -77.036,
-      "country": "United States",
-      "region": "Washington DC",
-      "city": "Washington"
-    },
-    "topics": [
-      "iran",
-      "nuclear-deal",
-      "diplomacy",
-      "trump",
-      "middle-east",
-      "sanctions"
-    ],
-    "confidence": 0.8,
-    "source_name": "Clash Report (@ClashReport)",
-    "links": [
-      {
-        "url": "https://t.me/ClashReport/82963",
-        "label": "Telegram Post"
-      }
-    ],
-    "link_preview_image": "https://cdn4.telesco.pe/file/Vn-OzOPCDi7Z3G740VMl1G1td9-D5q9TcY3XYxeUKvAwvEkTeDDdxbFxK_g6Myw1nEf2YJggsM27L0I1BjkuWJn0UQM4n8ZSuDO6kPQHnKZlsICtvO6dDtGXTdH-pseOpY29yEIgG5gAVeCY1RwhRspD5FS9AQQBxRPHRMNGdqUfoKo2JLcmrkJQm0fuf7USFaoUCrqbutMS9BZMQlq491WxyQ6Hxvd1ahAGbXVZbvi_SvUzO7f4ztpOnTAx16u3TFMkcCTVEzo6c7-fwhsCPqoQF_y2zExf3d5rc91KFsFDL_SrsOGmxpGopadyn9tv6PNWMyke1ZKbqCYy02pU6Q.jpg"
-  },
-  {
-    "id": "evt_20260523_012",
-    "title": "Taiwan Receives First Two MQ-9B SkyGuardian Drones from United States",
-    "summary": "Taiwan received its first two MQ-9B SkyGuardian drones from the United States. The drones will remain in the U.S. for testing and training before arriving in Taiwan in Q3 2026, with two more scheduled for delivery in 2027.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:36:49Z",
-    "geo": {
-      "lat": 23.974,
-      "lon": 120.982,
-      "country": "Taiwan"
-    },
-    "topics": [
-      "taiwan",
-      "drone",
-      "military-aid",
-      "united-states",
-      "defense",
-      "indo-pacific"
-    ],
-    "confidence": 0.85,
-    "source_name": "Clash Report (@ClashReport)",
-    "links": [
-      {
-        "url": "https://t.me/ClashReport/82964",
-        "label": "Telegram Post"
-      }
-    ],
-    "link_preview_image": "https://cdn4.telesco.pe/file/vJlOrTK__mbBwujDtVtEia09hGbJF4ubJCkProbPKbDdOsncU9DvvqCieyWUpWx-qgI_1wqyMQpajUWXWrUC9UXmOEu6Y7L0PxY6PSL0aoIlG8j8udlK9-4NS6PLZm1pMyc13fo0ajI-mt0lSd5HJTcAmw2RdcyQXoS-3Rj7hp5gnL9Srzx69B77160CRSVY0f9pySlwZ1Z_0VzSNz690Ld_CPXTwTTgUF4yKru9KUbuRDxrb73HOtyrpAgIShOFmiE9tHJXgOo_9xzNBQZo0mHHlxZGIGHUiJMTOQcjQPxdpSPRlM5Hnph8prqWVg-e1yON5n7fpTYRYRd9wDlLqQ.jpg"
-  },
-  {
-    "id": "evt_20260523_013",
-    "title": "Riot Police Clash with Flotilla Supporters at Bilbao Airport in Spain's Basque Country",
-    "summary": "Clashes erupted at Bilbao Airport in Spain's Basque Country between riot police and supporters welcoming returning Global Sumud Flotilla activists deported from Israeli detention. Police used batons and made at least four arrests, with left-wing Basque parties condemning the response.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:42:41Z",
-    "geo": {
-      "lat": 43.263,
-      "lon": -2.935,
-      "country": "Spain",
-      "region": "Basque Country",
-      "city": "Bilbao"
-    },
-    "topics": [
-      "protest",
-      "spain",
-      "flotilla",
-      "palestine",
-      "police",
-      "basque-country"
-    ],
-    "confidence": 0.75,
-    "source_name": "Clash Report (@ClashReport)",
-    "links": [
-      {
-        "url": "https://t.me/ClashReport/82967",
-        "label": "Telegram Post"
-      }
-    ],
-    "link_preview_image": "https://cdn4.telesco.pe/file/mX-dAuxV8-rWGJFuUOsa2N60KNfoFj16NCugwtOPSQX1ECzW2hOwZ21YEAFmjC7DP-n7sYkgAwRU0CBM5bEqmHyqMCWSVSzfqHvU7TzmGm4nDd2G7Ma08RQ1cGScTKI7nvaTuFwRgzAYXI7pDQZJbovudeHH2n2if4Zl4FYHO6z4pCw0jsGOCW_YQIA9LHahRswK_XMy4ll6P0bwZdWajsPda97YR81irDr3Dd4M94TJZyh9aj0b6caKLUuIZNdeKEqzKyqTuX2v2wotRnK91NPI8WykRvyLE29arBM7Ypb94dwW2Zy0ulQCS9l2wI8FV6Urf4iKYZY6ZKNjCTTWJA"
-  },
-  {
-    "id": "evt_20260523_014",
-    "title": "US Marine Corps MV-22 Ospreys Conduct Emergency Response Exercise at US Embassy in Caracas",
-    "summary": "Two US Marine Corps MV-22 Osprey tiltrotor aircraft conducted an emergency response exercise at the US Embassy in Caracas, Venezuela. Venezuelan authorities authorized the flights while the USS Iwo Jima operates off the Venezuelan coast.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:44:20Z",
-    "geo": {
-      "lat": 10.506,
-      "lon": -66.915,
-      "country": "Venezuela",
-      "city": "Caracas"
-    },
-    "topics": [
-      "military-exercise",
-      "venezuela",
-      "united-states",
-      "marine-corps",
-      "embassy",
-      "caribbean"
-    ],
-    "confidence": 0.8,
-    "source_name": "Clash Report (@ClashReport)",
-    "links": [
-      {
-        "url": "https://t.me/ClashReport/82970",
-        "label": "Telegram Post"
-      }
-    ],
-    "link_preview_image": "https://cdn4.telesco.pe/file/HDDj_VWJD8WftocdosdGpS_86ThaOA2oNJxN39W_rk3Cnktmcx0jmnW3hoDBeAN-Wl1UlZRYMkHkoWijaJTIiAtTZ48YVyf1iVbkF6QhOeZM7Q4vVkL-V6AkaX-nhNmoOYCRHs_hFlOp1dSD4WLUq2kNh6bVxWPX6qdOwNtkrdEf1RR78Skr-lWoYDL9loRbV37JkmN3oZk9HRf3acTGcoOKe_8lGH2Zp6wWEMONQiYP-J5PXRzkUTvvueTNwQsYPdhj0uVqtUxOoejkwiZmVfi3r4QJUcE4e1Yi6Rd_PqwRmcQcG_KKbI7pzo7MyktwUMh97RCC_jR1hNuMjukagg"
-  },
-  {
-    "id": "evt_20260523_015",
-    "title": "Hezbollah Claims Destruction of Four Iron Dome Launchers at Israeli Military Bases Using Ababil Drones",
-    "summary": "Hezbollah claimed to have destroyed four Iron Dome launchers at two Israeli military bases in northern Israel using Ababil attack drones, targeting the Biranit barracks and a second base in the Shlomi area.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:46:07Z",
-    "geo": {
-      "lat": 33.06,
-      "lon": 35.245,
-      "country": "Israel",
-      "region": "Northern District"
-    },
-    "topics": [
-      "hezbollah",
-      "iron-dome",
-      "drone",
-      "israel",
-      "lebanon",
-      "conflict",
-      "air-defense"
-    ],
-    "confidence": 0.6,
-    "source_name": "Clash Report (@ClashReport)",
-    "links": [
-      {
-        "url": "https://t.me/ClashReport/82971",
-        "label": "Telegram Post"
-      }
-    ],
-    "link_preview_image": "https://cdn4.telesco.pe/file/HaGnJ1_7WTEihOm1LYp-v4mJ8esYEf_DmVora-gU0ABS68P32Z6mdyE2LZ2gJKX565ft3MiHOYD7H3ufUIUAUMX_8AHMwLo6PXb3-wn4mU8JZPx70vm0FCz1Tke_V1jY5sKbl_TD5bTObOGWvwBdL0gJ4osR6YQf5MCG3KZ6KNljvgMNQRPor0J7RYubPR8rlssJDkqHWKzxeszjhz9afuFxc0Md338lYC0SHKgy-RL-4ZrpG4CAEY6ENZiWg50wYggyJGd562UZsuex3xa5SekXEBAdeUD7e9dMA-_3CLVYqiuljc_Rhb4-Jp7sGIErYB9jYqpgpxXfFmioZOk93Q.jpg"
   },
   {
     "id": "evt_20260523_016",
@@ -93979,1579 +93680,30 @@
     "link_preview_image": "https://cdn4.telesco.pe/file/IerXsJYwEE_dQRmAxMwamHU2ZcknpRgHlvqS59z-QfhD4hnUTldI76Wp25N2lYxjOjCZilnzKoGdbguejmT8FsgHC4YbLpbfgXbKRCdHrV24GcCh4FJs2hF6BMmgFzLxlF6Pc-j4khYqFi_yFBKSdzK8qXk-7jfiEzokZ7NRy32goMeKqXBE7gO1Yrs7zZBsps0vW1zlVn9Rbr7XI52bmbX-j3OLxg6m1Q4U5EgB6OGqae5on6wzV1VppytTI4U8rwRLFRuXBd8P0OJvREXTGYdmrXKxwIDtC9PIFsfhmAd9bpZR5aRX7Ir7xNiiLTe4i_K39k3okAUCQzygn-vd_g.jpg"
   },
   {
-    "id": "evt_20260523_010",
-    "title": "Kyle Busch Died From Severe Pneumonia Progressing to Sepsis, Family Confirms",
-    "summary": "The family of two-time NASCAR Cup Series champion Kyle Busch announced that the 41-year-old driver died after severe pneumonia progressed into sepsis, resulting in rapid and overwhelming associated complications. Busch had collapsed at a Chevrolet racing simulator facility in Concord, North Carolina, one day before his death.",
+    "id": "evt_20260523_018",
+    "title": "Armed Security Team Repels Boat Approach on Tanker Near Yemen Socotra Island",
+    "summary": "A products tanker sailing within 200 nautical miles of Yemen's Socotra Island deployed its armed security team after a small craft with five persons approached within 100 meters, according to UK Maritime Trade Operations.",
     "date_event": null,
-    "date_published": "2026-05-23T15:49:27Z",
+    "date_published": "2026-05-23T16:00:00Z",
     "geo": {
-      "lat": 35.2272086,
-      "lon": -80.8430827,
-      "country": "United States",
-      "region": "North Carolina",
-      "city": "Charlotte"
-    },
-    "topics": [
-      "nascar",
-      "obituary",
-      "sports",
-      "sepsis",
-      "pneumonia"
-    ],
-    "confidence": 0.95,
-    "source_name": "AP News (@AP)",
-    "links": [
-      {
-        "url": "https://x.com/AP/status/2058213729603354649",
-        "label": "Original Tweet"
-      },
-      {
-        "url": "https://www.nbcnews.com/news/us-news/kyle-busch-death-coughing-up-blood-training-911-audio-nascar-legend-rcna346534",
-        "label": "NBC News Coverage"
-      },
-      {
-        "url": "https://bleacherreport.com/articles/25430438-kyle-buschs-cause-death-announced-family-nascar-star-died-sepsis-after-severe-pneumonia",
-        "label": "Bleacher Report Coverage"
-      }
-    ],
-    "link_preview_image": "https://pbs.twimg.com/card_img/2057635310100443137/YxvwRGJ5?format=jpg&name=800x419"
-  },
-  {
-    "id": "evt_20260523_011",
-    "title": "USS George Washington Departs Yokosuka for Second Indo-Pacific Patrol",
-    "summary": "Aircraft carrier USS George Washington departed Yokosuka Naval Base, Japan, on Saturday to begin its second Indo-Pacific patrol since returning to the home of the U.S. 7th Fleet. The deployment comes as the Navy faces operational strain from the ongoing war with Iran.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:30:00Z",
-    "geo": {
-      "lat": 35.2814779,
-      "lon": 139.6719597,
-      "country": "Japan",
-      "region": "Kanagawa",
-      "city": "Yokosuka"
-    },
-    "topics": [
-      "carrier",
-      "deployment",
-      "indo-pacific",
-      "navy",
-      "military"
-    ],
-    "confidence": 0.9,
-    "source_name": "US Pacific Fleet (@USPacificFleet)",
-    "links": [
-      {
-        "url": "https://www.stripes.com/branches/navy/2026-05-23/uss-george-washington-indo-pacific-patrol-21756101.html",
-        "label": "Stars and Stripes Coverage"
-      },
-      {
-        "url": "https://news.usni.org/2026/05/22/usni-news-western-pacific-pulse-may-22-2026",
-        "label": "USNI Western Pacific Pulse"
-      }
-    ],
-    "link_preview_image": "https://www.stripes.com/incoming/5sfodv-250526gw-patrolphoto01.jpg/alternates/LANDSCAPE_480/250526GW-PATROLphoto01.jpg"
-  },
-  {
-    "id": "evt_20260523_012",
-    "title": "Nuclear Nonproliferation Treaty Review Conference Ends Without Agreement for Third Consecutive Time",
-    "summary": "The four-week United Nations conference reviewing the Nuclear Non-Proliferation Treaty ended Friday without consensus as the United States and Iran clashed over Tehran's nuclear program, marking the third consecutive failure to adopt a final document.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:20:00Z",
-    "geo": {
-      "lat": 40.7127281,
-      "lon": -74.0060152,
-      "country": "United States",
-      "region": "New York",
-      "city": "New York City"
-    },
-    "topics": [
-      "nuclear",
-      "nonproliferation",
-      "treaty",
-      "diplomacy",
-      "iran"
-    ],
-    "confidence": 0.95,
-    "source_name": "Opennuclear (@Opennuclear)",
-    "links": [
-      {
-        "url": "https://www.ksat.com/news/politics/2026/05/23/conference-at-un-to-review-nuclear-nonproliferation-treaty-fails-to-reach-agreement/",
-        "label": "AP Coverage via KSAT"
-      },
-      {
-        "url": "https://www.stimson.org/2026/the-iran-war-is-a-big-issue-among-many-at-the-2026-npt-revcon/",
-        "label": "Stimson Center Analysis"
-      }
-    ],
-    "link_preview_image": "https://res.cloudinary.com/graham-media-group/image/upload/f_auto/q_auto/c_thumb,w_700/v1/media/gmg/SWF3VRLFONAJREC4VGFSJ4QILQ.jpg?_a=DATAg1fkZAA0"
-  },
-  {
-    "id": "evt_20260523_014",
-    "title": "Nine Iron Dome Platforms Targeted by FPV Drones in Northern Israel",
-    "summary": "MenchOsint reported that nine Iron Dome air defense platforms have faced targeting by first-person-view (FPV) drones, including platforms struck earlier on May 23, 2026. The report included geolocated footage from attacks on platforms near Jal-al-Alam (May 7), Shomera (May 18), and Margaliot (May 19).",
-    "date_event": "2026-05-23T15:34:08Z",
-    "date_published": "2026-05-23T15:34:08Z",
-    "geo": {
-      "lat": 33.09,
-      "lon": 35.52,
-      "country": "Israel",
-      "region": "Northern District",
-      "city": "Margaliot"
-    },
-    "topics": [
-      "iron-dome",
-      "fpv-drone",
-      "air-defense",
-      "asymmetric-warfare",
-      "israel",
-      "northern-border"
-    ],
-    "confidence": 0.85,
-    "source_name": "MenchOsint (@MenchOsint)",
-    "links": [
-      {
-        "url": "https://x.com/MenchOsint/status/2058209873859317937",
-        "label": "Original Tweet"
-      },
-      {
-        "url": "https://x.com/MenchOsint/status/2058198105355436422",
-        "label": "Related Thread"
-      }
-    ],
-    "link_preview_image": "https://pbs.twimg.com/media/HJA69N3WQAAPchR.jpg"
-  },
-  {
-    "id": "evt_20260523_015",
-    "title": "US and Iran Signal Progress Toward Framework Agreement as Mediators Depart Tehran",
-    "summary": "US Secretary of State Marco Rubio indicated that a framework agreement between the US and Iran may emerge within days, as Pakistani and Qatari mediators concluded talks in Tehran. Iran confirmed focus on finalizing a memorandum of understanding covering war cessation, naval blockade, and frozen assets.",
-    "date_event": "2026-05-23T15:40:01Z",
-    "date_published": "2026-05-23T15:40:01Z",
-    "geo": {
-      "lat": 35.6892,
-      "lon": 51.3896,
-      "country": "Iran",
-      "region": "Tehran Province",
-      "city": "Tehran"
-    },
-    "topics": [
-      "iran",
-      "us-iran-war",
-      "diplomacy",
-      "strait-of-hormuz",
-      "nuclear",
-      "ceasefire",
-      "pakistan-mediation"
-    ],
-    "confidence": 0.92,
-    "source_name": "CNN (@CNN)",
-    "links": [
-      {
-        "url": "https://us.cnn.com/2026/05/23/middleeast/iran-us-progress-framework-diplomacy-intl",
-        "label": "CNN Report"
-      }
-    ],
-    "link_preview_image": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2277200683.jpg?c=16x9&q=w_800,c_fill"
-  },
-  {
-    "id": "evt_20260523_001",
-    "title": "China Deploys 16 Military Aircraft and 8 Naval Vessels Near Taiwan in Continued Pressure Campaign",
-    "summary": "Taiwan's Ministry of National Defense detected 16 sorties of PLA aircraft and 8 PLAN vessels operating around Taiwan, with 13 aircraft crossing the median line of the Taiwan Strait and entering multiple sectors of Taiwan's Air Defense Identification Zone.",
-    "date_event": "2026-05-23T06:00:00Z",
-    "date_published": "2026-05-23T06:30:00Z",
-    "geo": {
-      "lat": 24.4917,
-      "lon": 119.6054,
-      "country": "Taiwan",
-      "region": "Taiwan Strait"
-    },
-    "topics": [
-      "military",
-      "taiwan",
-      "china",
-      "pla",
-      "air-defense",
-      "strait",
-      "deployment"
-    ],
-    "confidence": 0.92,
-    "source_name": "Scmpnews (@Scmpnews)",
-    "links": [
-      {
-        "url": "https://newsable.asianetnews.com/world/china-deploys-16-aircraft-8-vessels-near-taiwan-defense-ministry-articleshow-13ofkwf",
-        "label": "Asianet Newsable Coverage"
-      }
-    ],
-    "link_preview_image": "https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-external,imgname-image-cc574bfc-09cd-4720-a096-d3aaeb1bd05b.jpg"
-  },
-  {
-    "id": "evt_20260523_002",
-    "title": "Ukraine Air Defense Destroys 102 of 124 Russian Drones in Overnight Attack on May 23",
-    "summary": "Ukrainian air defense forces shot down or suppressed 102 enemy UAVs during a large-scale overnight drone attack involving 124 Shahed, Gerbera, Italmas, and decoy drones launched from multiple Russian locations and occupied Crimea.",
-    "date_event": "2026-05-23T05:30:00Z",
-    "date_published": "2026-05-23T06:01:00Z",
-    "geo": {
-      "lat": 50.45,
-      "lon": 30.5241,
-      "country": "Ukraine",
-      "region": "Kyiv",
-      "city": "Kyiv"
-    },
-    "topics": [
-      "drone",
-      "air-defense",
-      "ukraine",
-      "russia",
-      "combat",
-      "attack",
-      "uav"
-    ],
-    "confidence": 0.95,
-    "source_name": "r/UkraineWarVideoReport (reddit.com/r/UkraineWarVideoReport)",
-    "links": [
-      {
-        "url": "https://unn.ua/en/news/air-defense-shot-down-102-out-of-124-uavs-during-night-attack-on-may-23",
-        "label": "UNN Coverage"
-      }
-    ],
-    "link_preview_image": "https://unn.ua/img/2026/05/02/1777699002-3926-large.webp"
-  },
-  {
-    "id": "evt_20260523_003",
-    "title": "Megalodon Supply Chain Attack Compromises 5,500 GitHub Repositories via Malicious CI/CD Backdoors",
-    "summary": "A coordinated supply chain attack codenamed Megalodon injected malicious CI/CD backdoors into over 5,500 GitHub repositories in less than six hours, targeting credential harvesting across AWS, GCP, Azure, and other cloud platforms through poisoned GitHub Actions workflows.",
-    "date_event": "2026-05-18T11:36:00Z",
-    "date_published": "2026-05-23T06:00:00Z",
-    "geo": {
-      "lat": 37.7749,
-      "lon": -122.4194,
-      "country": "United States",
-      "region": "Global"
-    },
-    "topics": [
-      "supply-chain",
-      "cybersecurity",
-      "malware",
-      "github",
-      "credential-theft",
-      "vulnerability"
-    ],
-    "confidence": 0.88,
-    "source_name": "r/cybersecurity (reddit.com/r/cybersecurity)",
-    "links": [
-      {
-        "url": "https://www.cryptika.com/megalodon-malware-compromised-5500-github-repos-within-6-hours/",
-        "label": "Cryptika Cybersecurity Report"
-      }
-    ],
-    "link_preview_image": "https://i0.wp.com/www.cryptika.com/wp-content/uploads/2017/06/Cryptika-Logo-Seal-Purple.png?fit=178%2C180&ssl=1"
-  },
-  {
-    "id": "evt_20260523_004",
-    "title": "Maersk Valparaiso Collision with Nigerian Oil Tanker Causes Groundings, Oil Spill, and Port Disruption at Bonny Channel",
-    "summary": "A collision between Singapore-flagged container vessel Maersk Valparaiso and Nigerian-flagged oil tanker MT Lady Martina at Bonny Inner Anchorage injured five crew members, caused both vessels to ground, triggered an oil spill, and disrupted access to Onne and Port Harcourt ports.",
-    "date_event": "2026-05-20T10:30:00Z",
-    "date_published": "2026-05-23T05:51:00Z",
-    "geo": {
-      "lat": 4.5058,
-      "lon": 7.2035,
-      "country": "Nigeria",
-      "region": "Rivers State",
-      "city": "Bonny"
-    },
-    "topics": [
-      "collision",
-      "grounding",
-      "oil-spill",
-      "maritime",
-      "vessel",
-      "port",
-      "sanctions"
-    ],
-    "confidence": 0.9,
-    "source_name": "Gcaptain (@Gcaptain)",
-    "links": [
-      {
-        "url": "https://en.portnews.ru/news/391859/",
-        "label": "PortNews Coverage"
-      }
-    ],
-    "link_preview_image": "https://en.portnews.ru/favicon.svg"
-  },
-  {
-    "id": "evt_20260523_005",
-    "title": "Iran-Oman Discussions on Strait of Hormuz Payment System Signal Shift from Wartime Disruption to Formalized Maritime Control",
-    "summary": "Reported discussions between Iran and Oman over a possible payment framework for vessels crossing the Strait of Hormuz indicate Tehran may seek to convert wartime leverage over the critical energy chokepoint into longer-term strategic influence and revenue generation.",
-    "date_event": "2026-05-22T12:00:00Z",
-    "date_published": "2026-05-23T06:21:00Z",
-    "geo": {
-      "lat": 26.4494,
-      "lon": 56.2028,
-      "country": "Iran",
-      "region": "Strait of Hormuz"
-    },
-    "topics": [
-      "iran",
-      "strait",
-      "sanctions",
-      "maritime",
-      "nuclear",
-      "proxy"
-    ],
-    "confidence": 0.9,
-    "source_name": "IranObserver (@IranObserver)",
-    "links": [
-      {
-        "url": "https://gulfnews.com/world/mena/reported-oman-iran-talks-signal-new-phase-in-hormuz-crisis-1.500550542",
-        "label": "Gulf News Coverage"
-      }
-    ],
-    "link_preview_image": "https://gumlet-images.assettype.com/gulfnews%2F2026-02-14%2Fb3xb8sxt%2Fpreview.jpg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100"
-  },
-  {
-    "id": "evt_20260523_001",
-    "title": "Shanxi Coal Mine Gas Explosion Kills 82, Rescue Teams Deploy to Qinyuan County",
-    "summary": "A gas explosion at the Liushenyu coal mine in Qinyuan County, Shanxi Province, has killed 82 people with nine others still trapped underground. China dispatched six national mine emergency rescue teams totaling 345 personnel with heavy equipment to assist ongoing rescue efforts.",
-    "date_event": "2026-05-23T06:00:00Z",
-    "date_published": "2026-05-23T06:08:19Z",
-    "geo": {
-      "lat": 36.7072,
-      "lon": 112.2581,
-      "country": "China",
-      "region": "Shanxi",
-      "city": "Qinyuan"
-    },
-    "topics": [
-      "mining-disaster",
-      "explosion",
-      "rescue",
-      "shanxi",
-      "china"
-    ],
-    "confidence": 0.95,
-    "source_name": "Xinhua News (@XHNews)",
-    "links": [
-      {
-        "url": "https://x.com/XHNews/status/2058067482301345807",
-        "label": "Original Tweet"
-      },
-      {
-        "url": "https://x.com/XHNews/status/2058072298222198943",
-        "label": "Rescue Teams Tweet"
-      }
-    ],
-    "link_preview_image": "https://pbs.twimg.com/media/HI-5eBVbYAA_KFZ.jpg"
-  },
-  {
-    "id": "evt_20260523_002",
-    "title": "Gas Explosion at Chinese Coal Mine Kills at Least 82 in Shanxi Province",
-    "summary": "The Associated Press reported that a gas explosion at a coal mine in China's northern Shanxi Province killed at least 82 people, citing state media accounts of the disaster at the Liushenyu mine in Qinyuan County.",
-    "date_event": "2026-05-23T06:00:00Z",
-    "date_published": "2026-05-23T06:44:25Z",
-    "geo": {
-      "lat": 36.7072,
-      "lon": 112.2581,
-      "country": "China",
-      "region": "Shanxi",
-      "city": "Qinyuan"
-    },
-    "topics": [
-      "mining-disaster",
-      "explosion",
-      "china",
-      "shanxi"
-    ],
-    "confidence": 0.95,
-    "source_name": "AP News (@AP)",
-    "links": [
-      {
-        "url": "https://x.com/AP/status/2058076567696248856",
-        "label": "Original Tweet"
-      }
-    ],
-    "link_preview_image": "https://pbs.twimg.com/card_img/2058076570175012864/XRbqpOVv?format=jpg&name=800x419"
-  },
-  {
-    "id": "evt_20260523_003",
-    "title": "Hong Kong Chief Executive Congratulates Li Jiaying on Joining China Fourth Batch of Astronauts",
-    "summary": "John Lee, chief executive of Hong Kong SAR, congratulated Li Jiaying (Lai Ka-ying in Cantonese) on becoming a member of China's fourth batch of astronauts, marking a milestone for Hong Kong's participation in China's space program.",
-    "date_event": null,
-    "date_published": "2026-05-23T05:58:37Z",
-    "geo": {
-      "lat": 22.3492,
-      "lon": 114.1858,
-      "country": "China",
-      "region": "Hong Kong",
-      "city": "Hong Kong"
-    },
-    "topics": [
-      "space",
-      "astronaut",
-      "hong-kong",
-      "china"
-    ],
-    "confidence": 0.85,
-    "source_name": "Xinhua News (@XHNews)",
-    "links": [
-      {
-        "url": "https://x.com/XHNews/status/2058065040343986261",
-        "label": "Original Tweet"
-      }
-    ],
-    "link_preview_image": "https://pbs.twimg.com/media/HI-3P4nbYAAklAq.jpg"
-  },
-  {
-    "id": "evt_20260523_004",
-    "title": "Kyrgyz Lawmaker Describes Prospects for Kyrgyz-Chinese Relations as Very Favorable",
-    "summary": "A Kyrgyz lawmaker assessed prospects for Kyrgyz-Chinese relations as very favorable in an interview with Xinhua, reflecting strengthening diplomatic and economic ties between Bishkek and Beijing in Central Asia.",
-    "date_event": null,
-    "date_published": "2026-05-23T05:51:18Z",
-    "geo": {
-      "lat": 42.8761,
-      "lon": 74.6037,
-      "country": "Kyrgyzstan",
-      "city": "Bishkek"
-    },
-    "topics": [
-      "diplomacy",
-      "china",
-      "kyrgyzstan",
-      "belt-and-road",
-      "central-asia"
-    ],
-    "confidence": 0.8,
-    "source_name": "Xinhua News (@XHNews)",
-    "links": [
-      {
-        "url": "https://x.com/XHNews/status/2058063199443005484",
-        "label": "Original Tweet"
-      }
-    ],
-    "link_preview_image": "https://pbs.twimg.com/media/HI-1klGbMAAbvMd.jpg"
-  },
-  {
-    "id": "evt_20260523_005",
-    "title": "Ukrainian Kamikaze Drones Eliminate Over 100 Russian Assault Troops Near Pokrovsk in Donetsk Oblast",
-    "summary": "Footage shared on the WarLife 18+ Telegram channel showed Ukrainian kamikaze drones destroying over 100 Russian assault troops in the vicinity of Pokrovsk, Donetsk Oblast, amid ongoing frontline combat operations in eastern Ukraine.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:00:00Z",
-    "geo": {
-      "lat": 48.2771,
-      "lon": 37.1772,
-      "country": "Ukraine",
-      "region": "Donetsk Oblast",
-      "city": "Pokrovsk"
-    },
-    "topics": [
-      "drone",
-      "ukraine",
-      "russia",
-      "conflict",
-      "frontline",
-      "donetsk"
-    ],
-    "confidence": 0.7,
-    "source_name": "WarLife 18+ (@Voyna18)",
-    "links": [
-      {
-        "url": "https://t.me/Voyna18/8546",
-        "label": "Telegram Post"
-      },
-      {
-        "url": "https://t.me/Voyna18/8523",
-        "label": "Related Post"
-      }
-    ],
-    "link_preview_image": "https://cdn4.telesco.pe/file/fYOTdqytROJvaEYxGmsZBDWXj3u79tL5pb2RL6vSMrOv-7eG5GzDJyxyL7UjqgW36PXKJ3XnXMZzZSlJjUUj-nkoy5vPgaai2Iuhckeu-faJm7ITzFCUXcttUdcxA5XJmUomMXnooOUr8XCahBQOdm7Cxte1hYY9s5YmV_A6mcpl6fqI0JegcrLOcfFB2ffP0JEBHrWFwnTcji1_VHJ6bycQlN8kua__5gAtLn6SulTT7eIGv-gaRsVWA87xIfddK6UoIONzCI6gOa-1aKf-1XD567gFLUcZrSKzIoE8LdT7YHpwQ_TfGfJ1nIFANGh1NzWct3zP4TWqSwhlYMzgTg"
-  },
-  {
-    "id": "evt_20260523_006",
-    "title": "Ukrainian FP-2 Drones with Rocket Pods Strike Russian Black Sea Fleet Communications Node in Crimea",
-    "summary": "Ukrainian FP-2 drones equipped with unguided rocket pods attacked a strategic communications node of Russia's Black Sea Fleet near the settlement of Mirny in occupied Crimea, targeting naval command infrastructure.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:15:00Z",
-    "geo": {
-      "lat": 45.093,
-      "lon": 33.587,
-      "country": "Ukraine",
-      "region": "Crimea",
-      "city": "Mirny"
-    },
-    "topics": [
-      "drone",
-      "strike",
-      "crimea",
-      "black-sea-fleet",
-      "ukraine",
-      "russia",
-      "naval"
-    ],
-    "confidence": 0.7,
-    "source_name": "WarLife 18+ (@Voyna18)",
-    "links": [
-      {
-        "url": "https://t.me/Voyna18/8537",
-        "label": "Telegram Post"
-      }
-    ],
-    "link_preview_image": "https://cdn4.telesco.pe/file/p33-gCTpsrFsTLXGdRu7ChofKEZaFZ3jDOynHGgqP0gs1IInohq2S2P0zjYPg9WfWMIkiaQ1IEr66McYerJBpAtl7XIK4Hy58bxCyaFDLJzjocmwHhbLaILUWWc3cymXB6OFwqZiDZSJ0h4DYdJMpGQHqUIuAQz4bCIH6FuY1NmhdRoOglbzMFODNtL1K3HoVmag7LLh64QEtCj2XWg5OskEpb_kDp1dhs19xqCuwliTtUxf0fB03j587Qx3w4CfUKI-o9Cqt-vMK6pZgg21jDamBGfv1ni_HAExubNEvgCl5if69rGSGhzf6_1c9Hd0dDe_h1-dKJK3dOejYEDcPg"
-  },
-  {
-    "id": "evt_20260523_007",
-    "title": "Ukrainian Forces Deploy AI-Guided FPV Drone with Facial Contour Auto-Targeting in Donetsk Oblast",
-    "summary": "Combat footage from the Donetsk front showed a Ukrainian FPV drone equipped with artificial intelligence and facial contour auto-targeting engaging a Russian soldier, demonstrating advancing autonomous weapons technology on the battlefield.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:20:00Z",
-    "geo": {
-      "lat": 48.2771,
-      "lon": 37.1772,
-      "country": "Ukraine",
-      "region": "Donetsk Oblast"
-    },
-    "topics": [
-      "drone",
-      "artificial-intelligence",
-      "autonomous-weapon",
-      "ukraine",
-      "russia",
-      "donetsk"
-    ],
-    "confidence": 0.65,
-    "source_name": "WarLife 18+ (@Voyna18)",
-    "links": [
-      {
-        "url": "https://t.me/Voyna18/8538",
-        "label": "Telegram Post"
-      }
-    ],
-    "link_preview_image": "https://cdn4.telesco.pe/file/Hzfzaz-fUKaRD-9o9Lw1prJ5s6HEH-9xN2ZJ6ft6qGyq42c_x2GKQZR9g2fnKNaAcNLP-sAUPuQzzNtap8vrmcQdJ55rLhtjBHvWS3clpST31x7A9bCMvc03y8X-Xa7pQs_PDoWZnwuLX3to7hqNCUqhZxuuuJ0UmfjmtR0-l7thn-hMk9xxtwIKFYd8VKpGjAF9ha85TjWqyicvdmxnTIkyt6ljyWQkO7djNQmKkvsWzdc4zZP52Dz769pksDPlBKO0BfagEu8xXX-D8aKABhpuVlaNjUqGl--atosP_EHFBqVyDDWPzxcZfaQNzGntsjYk3Q0vGreVOtT8n_1vzQ"
-  },
-  {
-    "id": "evt_20260523_008",
-    "title": "Iran and Oman Hold Talks Over Permanent Shipping Fee System for Strait of Hormuz Transit",
-    "summary": "Iran engaged in discussions with Oman over establishing a permanent payment system for ships crossing the Strait of Hormuz, raising concerns about formalizing wartime maritime control into a long-term revenue and governance mechanism over the critical energy chokepoint.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:21:00Z",
-    "geo": {
-      "lat": 26.4494,
-      "lon": 56.2028,
-      "country": "Iran",
-      "region": "Strait of Hormuz"
-    },
-    "topics": [
-      "strait-of-hormuz",
-      "iran",
-      "oman",
-      "maritime",
-      "energy",
-      "naval",
-      "sanctions"
-    ],
-    "confidence": 0.9,
-    "source_name": "US 5th Fleet (@US5thFleet)",
-    "links": [
-      {
-        "url": "https://gulfnews.com/world/mena/reported-oman-iran-talks-signal-new-phase-in-hormuz-crisis-1.500550542",
-        "label": "Gulf News Report"
-      }
-    ],
-    "link_preview_image": "https://gumlet-images.assettype.com/gulfnews%2F2026-02-14%2Fb3xb8sxt%2Fpreview.jpg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100"
-  },
-  {
-    "id": "evt_20260523_001",
-    "title": "Israeli Military Reports Hostile Aircraft Infiltration in Northern Israel Near Lebanon Border",
-    "summary": "The Israel Defense Forces detected a hostile aerial target in northern Israel near Kiryat Shmona, close to the Lebanese border. Air attack sirens activated across the area as the IDF confirmed an aerial target fell in Israeli territory, with details under review.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:04:57Z",
-    "geo": {
-      "lat": 33.2074733,
-      "lon": 35.5707828,
-      "country": "Israel",
-      "region": "Northern District",
-      "city": "Kiryat Shmona"
-    },
-    "topics": [
-      "drone",
-      "conflict",
-      "israel",
-      "lebanon",
-      "hezbollah",
-      "military"
-    ],
-    "confidence": 0.9,
-    "source_name": "Middle East Eye (@MiddleEastEye)",
-    "links": [
-      {
-        "url": "https://www.timesofisrael.com/liveblog_entry/idf-says-aerial-target-fell-in-northern-israel-close-to-border-with-lebanon/",
-        "label": "Times of Israel Report"
-      },
-      {
-        "url": "https://www.aljazeera.com/news/liveblog/2026/5/23/iran-war-live-tehran-says-diplomacy-continues-but-no-deal-yet-with-us",
-        "label": "Al Jazeera Live Coverage"
-      }
-    ],
-    "link_preview_image": "https://static-cdn.toi-media.com/www/images/toi-ln-1200.png"
-  },
-  {
-    "id": "evt_20260523_002",
-    "title": "US Prepares Fresh Military Strikes on Iran as Multi-Front Diplomatic Push Intensifies in Tehran",
-    "summary": "The United States prepared for a potential fresh round of military strikes against Iran while Pakistan's army chief and Qatari negotiators conducted parallel mediation efforts in Tehran. President Trump cancelled his son's wedding attendance, citing government circumstances.",
-    "date_event": null,
-    "date_published": "2026-05-23T05:55:00Z",
-    "geo": {
-      "lat": 38.8950982,
-      "lon": -77.0363849,
-      "country": "United States",
-      "region": "District of Columbia",
-      "city": "Washington"
-    },
-    "topics": [
-      "iran",
-      "military",
-      "diplomacy",
-      "nuclear",
-      "strait-of-hormuz",
-      "sanctions",
-      "conflict"
-    ],
-    "confidence": 0.95,
-    "source_name": "Aurora Intel (@AuroraIntel)",
-    "links": [
-      {
-        "url": "https://www.gbnews.com/news/us/us-preparing-strikes-iran-donald-trump-sons-wedding",
-        "label": "GB News Report"
-      },
-      {
-        "url": "https://www.thenews.com.pk/latest/1403516-trump-holds-iran-crisis-talks-with-national-security-team-amid-ongoing-negotiations",
-        "label": "The News Coverage"
-      }
-    ],
-    "link_preview_image": "https://www.gbnews.com/media-library/image.png?id=66786125&width=1200&height=600&coordinates=0%2C25%2C0%2C75"
-  },
-  {
-    "id": "evt_20260523_003",
-    "title": "China Coal Mine Gas Explosion Kills at Least 82 in Shanxi Province, Dozens Still Missing",
-    "summary": "A gas explosion at the Liushenyu coal mine in Qinyuan County, Shanxi Province, killed at least 82 miners and left nine missing. Chinese President Xi Jinping ordered all-out rescue efforts as the death toll continued to climb from the country's deadliest mining disaster in over a decade.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:13:00Z",
-    "geo": {
-      "lat": 36.7072373,
-      "lon": 112.2580628,
-      "country": "China",
-      "region": "Shanxi",
-      "city": "Qinyuan"
-    },
-    "topics": [
-      "disaster",
-      "mining",
-      "explosion",
-      "china",
-      "industrial-accident"
-    ],
-    "confidence": 0.95,
-    "source_name": "Fox News (@FoxNews)",
-    "links": [
-      {
-        "url": "https://www.dw.com/en/china-at-least-8-dead-dozens-trapped-in-coal-mine-blast/a-77270811",
-        "label": "DW Report"
-      },
-      {
-        "url": "https://www.dawn.com/news/2002487/china-coal-mine-blast-kills-at-least-90-more-missing",
-        "label": "Dawn Coverage"
-      }
-    ],
-    "link_preview_image": "https://static.dw.com/image/77270780_6.jpg"
-  },
-  {
-    "id": "evt_20260523_004",
-    "title": "First Japanese-Managed Oil Tanker Successfully Transits Strait of Hormuz Since Iran Blockade",
-    "summary": "The Panama-flagged Idemitsu Maru became the first Japanese-managed oil tanker to successfully transit the Strait of Hormuz since Iran closed the waterway. The vessel carried approximately 2 million barrels of Saudi Arabian crude oil and headed toward a Japanese refining facility.",
-    "date_event": null,
-    "date_published": "2026-05-23T05:45:00Z",
-    "geo": {
-      "lat": 26.4494061,
-      "lon": 56.2027702,
-      "country": "Iran",
-      "region": "Hormozgan",
-      "city": "Strait of Hormuz"
+      "lat": 12.5,
+      "lon": 53.8333,
+      "country": "Yemen",
+      "region": "Socotra"
     },
     "topics": [
       "maritime",
-      "tanker",
-      "strait-of-hormuz",
-      "energy",
-      "blockade",
-      "iran"
-    ],
-    "confidence": 0.9,
-    "source_name": "Osaindawg (@Osaindawg)",
-    "links": [
-      {
-        "url": "https://www.aljazeera.com/news/liveblog/2026/5/23/iran-war-live-tehran-says-diplomacy-continues-but-no-deal-yet-with-us",
-        "label": "Al Jazeera Live Coverage"
-      },
-      {
-        "url": "https://www.businesstimes.com.sg/international/global/us-secretary-state-rubio-sees-progress-iran-talks-more-work-be-done",
-        "label": "Business Times Coverage"
-      }
-    ],
-    "link_preview_image": "https://www.aljazeera.com/wp-content/uploads/2026/05/AFP__20260522__B3RH9KF__v1__HighRes__PakistanWarIranUsIsrael-1779492796_f0b692-1779493137.jpg?resize=1200%2C630&quality=80"
-  },
-  {
-    "id": "evt_20260523_005",
-    "title": "SpaceX Launches First Starship Version 3 Rocket on Landmark Test Flight From Texas",
-    "summary": "SpaceX successfully launched the first Starship V3, the largest and most powerful rocket ever flown, from its Starbase facility in Texas. The test flight deployed 20 mock Starlink satellites and achieved a controlled splashdown in the Indian Ocean despite engine anomalies.",
-    "date_event": null,
-    "date_published": "2026-05-23T05:48:00Z",
-    "geo": {
-      "lat": 25.9971,
-      "lon": -97.1558,
-      "country": "United States",
-      "region": "Texas",
-      "city": "Boca Chica"
-    },
-    "topics": [
-      "space",
-      "rocket",
-      "launch",
-      "spacex",
-      "nasa",
-      "satellite",
-      "moon"
-    ],
-    "confidence": 0.95,
-    "source_name": "Nasa (@Nasa)",
-    "links": [
-      {
-        "url": "https://spaceflightnow.com/2026/05/23/musk-praises-epic-super-heavy-starship-launch/",
-        "label": "Spaceflight Now Report"
-      },
-      {
-        "url": "https://www.bbc.com/news/articles/c62d65y16nno",
-        "label": "BBC Coverage"
-      }
-    ],
-    "link_preview_image": "https://spaceflightnow.com/wp-content/uploads/2015/09/SFN-Logo-Blue1.png"
-  },
-  {
-    "id": "evt_20260523_006",
-    "title": "Pakistan Army Chief Conducts Late-Night Mediation Talks in Tehran as US-Iran Ceasefire Deadline Looms",
-    "summary": "Pakistan's Field Marshal Asim Munir held extended late-night talks with Iranian Foreign Minister Araghchi in Tehran, leading a multi-nation diplomatic effort to prevent renewed US-Iran military conflict. Qatar and China also engaged in parallel diplomatic tracks.",
-    "date_event": null,
-    "date_published": "2026-05-23T05:50:00Z",
-    "geo": {
-      "lat": 35.6892523,
-      "lon": 51.3896004,
-      "country": "Iran",
-      "region": "Tehran Province",
-      "city": "Tehran"
-    },
-    "topics": [
-      "diplomacy",
-      "iran",
-      "pakistan",
-      "conflict",
-      "nuclear",
-      "mediation",
-      "crisis"
-    ],
-    "confidence": 0.9,
-    "source_name": "MT Anderson (@MT_Anderson)",
-    "links": [
-      {
-        "url": "https://www.thenews.pk/print/1416993-cdf-qatari-mediators-in-tehran-in-push-to-end-iran-war",
-        "label": "The News Pakistan Report"
-      },
-      {
-        "url": "https://www.aljazeera.com/news/liveblog/2026/5/23/iran-war-live-tehran-says-diplomacy-continues-but-no-deal-yet-with-us",
-        "label": "Al Jazeera Live Coverage"
-      }
-    ],
-    "link_preview_image": "https://www.thenews.pk/assets/uploads/akhbar/2026-05-23/1416993_042112_updates.jpg"
-  },
-  {
-    "id": "evt_20260523_001",
-    "title": "Ukrainian Air Defense Downs 102 of 124 Russian Strike Drones Overnight May 23",
-    "summary": "Ukrainian air defense forces intercepted 102 out of 124 Russian strike drones launched overnight on May 23, 2026. The attacks originated from Kursk, Bryansk, Millerovo, and occupied Crimea, targeting multiple regions across Ukraine.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:01:00Z",
-    "geo": {
-      "lat": 50.4500336,
-      "lon": 30.5241361,
-      "country": "Ukraine",
-      "city": "Kyiv"
-    },
-    "topics": [
-      "drone",
-      "air-defense",
-      "ukraine",
-      "russia",
-      "conflict"
-    ],
-    "confidence": 0.95,
-    "source_name": "AFU Strategic Communications (@AFUStratCom)",
-    "links": [
-      {
-        "url": "https://unn.ua/en/news/air-defense-shot-down-102-out-of-124-uavs-during-night-attack-on-may-23",
-        "label": "UNN Report"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_002",
-    "title": "Trump Weighs Fresh Military Strikes on Iran as Peace Talks Stall",
-    "summary": "U.S. President Trump held emergency national security meetings on May 22 to discuss potential new military strikes against Iran, as diplomatic efforts through Pakistan and Qatar mediation continued without breakthrough.",
-    "date_event": null,
-    "date_published": "2026-05-23T05:55:00Z",
-    "geo": {
-      "lat": 38.8950982,
-      "lon": -77.0363849,
-      "country": "United States",
-      "city": "Washington"
-    },
-    "topics": [
-      "iran",
-      "military",
-      "conflict",
-      "united-states",
-      "diplomacy",
-      "nuclear"
-    ],
-    "confidence": 0.92,
-    "source_name": "Yahoo News (news.yahoo.com)",
-    "links": [
-      {
-        "url": "https://www.newkerala.com/news/a/us-preparing-fresh-strikes-iran-even-as-talks-957.htm",
-        "label": "NewKerala Report"
-      },
-      {
-        "url": "https://www.thehindu.com/news/international/iran-israel-war-west-asia-conflict-donald-trump-us-iran-peace-talks-live-updates-may-23-2026/article71013439.ece",
-        "label": "The Hindu Live Updates"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_003",
-    "title": "U.S. Forces Seize Iran-Linked Supertanker SKYWAVE in Indian Ocean",
-    "summary": "U.S. forces seized the VLCC supertanker SKYWAVE in the Indian Ocean on May 19, marking the third seizure of an Iran-linked tanker under Operation Economic Fury. OFAC simultaneously designated 19 additional Iran-trading vessels.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:00:00Z",
-    "geo": {
-      "lat": -2.0,
-      "lon": 85.0,
-      "country": "International Waters",
-      "region": "Indian Ocean"
-    },
-    "topics": [
-      "sanctions",
-      "maritime",
-      "iran",
-      "tanker",
-      "seizure",
-      "shipping"
-    ],
-    "confidence": 0.93,
-    "source_name": "Tradewindsnews (@Tradewindsnews)",
-    "links": [
-      {
-        "url": "https://www.unitedagainstnucleariran.com/blog/iran-war-shipping-update-may-21-2026",
-        "label": "UANI Shipping Update"
-      },
-      {
-        "url": "https://windward.ai/blog/iran-loads-east-of-hormuz/",
-        "label": "Windward Analysis"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_004",
-    "title": "Baltic States Face Escalating Drone Incursions as NATO Responds and Latvia Government Falls",
-    "summary": "A Romanian F-16 shot down a Ukrainian drone over Estonia on May 19, while Lithuania evacuated parliament and shut down Vilnius airport on May 20 after a suspected drone incursion. Latvia's defense minister and prime minister resigned following multiple incidents.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:10:00Z",
-    "geo": {
-      "lat": 54.6870458,
-      "lon": 25.2829111,
-      "country": "Lithuania",
-      "city": "Vilnius"
-    },
-    "topics": [
-      "drone",
-      "nato",
-      "baltic",
-      "russia",
-      "hybrid-warfare",
-      "estonia",
-      "latvia",
-      "lithuania"
-    ],
-    "confidence": 0.91,
-    "source_name": "cepa (@cepa)",
-    "links": [
-      {
-        "url": "https://cepa.org/article/hesitation-risks-escalation-europe-and-russias-shadow-war/",
-        "label": "CEPA Analysis"
-      },
-      {
-        "url": "https://www.euractiv.com/news/stray-ukrainian-drones-test-european-unity-amid-russian-disinformation/",
-        "label": "Euractiv Report"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_005",
-    "title": "253 Combat Engagements Recorded Along Ukraine Frontline with Pokrovsk Direction Most Intense",
-    "summary": "Ukrainian defenders repelled 253 combat engagements on May 22, with the heaviest fighting concentrated in the Pokrovsk and Huliaipole directions. Russian forces deployed 9,655 kamikaze drones and dropped 288 guided bombs.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:15:00Z",
-    "geo": {
-      "lat": 48.2771086,
-      "lon": 37.1772482,
-      "country": "Ukraine",
-      "region": "Donetsk Oblast",
-      "city": "Pokrovsk"
-    },
-    "topics": [
-      "conflict",
-      "ukraine",
-      "frontline",
-      "artillery",
-      "drone",
-      "casualty"
-    ],
-    "confidence": 0.94,
-    "source_name": "Militarylandnet (@Militarylandnet)",
-    "links": [
-      {
-        "url": "https://ua.news/en/war-vs-rf/zsu-zupinili-ponad-250-shturmiv-ta-zavdali-tochkovikh-udariv-po-pozitsiiakh-rosiian",
-        "label": "UA News Report"
-      },
-      {
-        "url": "https://unn.ua/en/news/general-staff-updates-rf-loss-data-minus-950-soldiers-and-1819-uavs",
-        "label": "UNN Loss Data"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_006",
-    "title": "U.S. Pauses $14 Billion Taiwan Arms Sale Citing Iran War Munitions Needs",
-    "summary": "Acting U.S. Navy Secretary Hung Cao confirmed a pause on Taiwan's $14 billion weapons purchase to ensure sufficient munitions for the Iran conflict, as Trump described the arms package as a 'negotiating chip' with Beijing.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:20:00Z",
-    "geo": {
-      "lat": 25.0375198,
-      "lon": 121.5636796,
-      "country": "Taiwan",
-      "city": "Taipei"
-    },
-    "topics": [
-      "taiwan",
-      "arms-sale",
-      "china",
-      "united-states",
-      "military",
-      "diplomacy"
-    ],
-    "confidence": 0.93,
-    "source_name": "r/Sino (reddit.com/r/Sino)",
-    "links": [
-      {
-        "url": "https://hongkongfp.com/2026/05/22/us-navy-official-says-taiwan-arm-sales-on-pause-due-to-iran-war/",
-        "label": "HKFP Report"
-      },
-      {
-        "url": "https://www.taipeitimes.com/News/front/archives/2026/05/23/2003857818",
-        "label": "Taipei Times"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_007",
-    "title": "Iran and Oman Discuss Permanent Strait of Hormuz Fee System Amid Global Energy Crisis",
-    "summary": "Iran held discussions with Oman over a proposed permanent payment system for ships crossing the Strait of Hormuz, signaling an attempt to formalize wartime control over the critical energy chokepoint.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:25:00Z",
-    "geo": {
-      "lat": 26.56,
-      "lon": 56.25,
-      "country": "Iran",
-      "region": "Strait of Hormuz"
-    },
-    "topics": [
-      "iran",
+      "security",
+      "yemen",
       "shipping",
-      "energy",
-      "sanctions",
-      "strait-of-hormuz",
-      "maritime"
-    ],
-    "confidence": 0.9,
-    "source_name": "Tradewindsnews (@Tradewindsnews)",
-    "links": [
-      {
-        "url": "https://gulfnews.com/world/mena/reported-oman-iran-talks-signal-new-phase-in-hormuz-crisis-1.500550542",
-        "label": "Gulf News Analysis"
-      },
-      {
-        "url": "https://gcaptain.com/inside-irans-expanding-hormuz-transit-system-checkpoints-diplomatic-deals-and-passage-fees/",
-        "label": "gCaptain Investigation"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_008",
-    "title": "NATO Foreign Ministers Meet in Helsingborg to Prepare Ankara Summit Amid Baltic Drone Crisis",
-    "summary": "NATO foreign ministers gathered in Helsingborg, Sweden for a two-day meeting focused on Baltic airspace security, Iran negotiations, and preparations for the upcoming Ankara Summit.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:30:00Z",
-    "geo": {
-      "lat": 56.0442098,
-      "lon": 12.703706,
-      "country": "Sweden",
-      "city": "Helsingborg"
-    },
-    "topics": [
-      "nato",
-      "diplomacy",
-      "iran",
-      "baltic",
-      "defense",
-      "summit"
-    ],
-    "confidence": 0.91,
-    "source_name": "cepa (@cepa)",
-    "links": [
-      {
-        "url": "https://www.koreatimes.co.kr/world/20260523/rubio-sees-progress-in-iran-talks-says-more-work-needed",
-        "label": "Korea Times Report"
-      },
-      {
-        "url": "https://www.businesstimes.com.sg/international/global/us-secretary-state-rubio-sees-progress-iran-talks-more-work-be-done",
-        "label": "Business Times"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_009",
-    "title": "Turkey Exposed as Key Node in Iranian Weapons Trafficking Network to Sudan",
-    "summary": "A newly unsealed U.S. federal indictment detailed how Turkish financial channels and corporate networks facilitated Iranian weapons transfers to Sudan, including Mohajer-6 drones and 240 million rounds of ammunition.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:35:00Z",
-    "geo": {
-      "lat": 39.9207759,
-      "lon": 32.8540497,
-      "country": "Turkey",
-      "city": "Ankara"
-    },
-    "topics": [
-      "sanctions",
-      "turkey",
-      "iran",
-      "weapon-trafficking",
-      "drone",
-      "sudan"
-    ],
-    "confidence": 0.88,
-    "source_name": "C4ADS (@C4ADS)",
-    "links": [
-      {
-        "url": "https://www.fdd.org/analysis/2026/05/15/turkey-plays-central-role-in-transfer-of-iranian-weapons-to-sudan/",
-        "label": "FDD Analysis"
-      },
-      {
-        "url": "https://c4ads.org/commentary/anchors-away/",
-        "label": "C4ADS Commentary"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_001",
-    "title": "White House Extends US Sanctions Against Belarus for Another Year",
-    "summary": "The White House extended the state of emergency and US sanctions against the Belarusian authorities for an additional year, continuing punitive measures targeting the Lukashenko government.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:30:22Z",
-    "geo": {
-      "lat": 53.4250605,
-      "lon": 27.6971358,
-      "country": "Belarus"
-    },
-    "topics": [
-      "sanctions",
-      "belarus",
-      "diplomacy",
-      "state-of-emergency"
-    ],
-    "confidence": 0.7,
-    "source_name": "DD Geopolitics (@DDGeopolitics)",
-    "links": [
-      {
-        "url": "https://t.me/DDGeopolitics/184741",
-        "label": "Telegram Post"
-      }
-    ],
-    "link_preview_image": "https://cdn4.telesco.pe/file/ePfrPr100Jg6k6gGHR2u9IThgyuBR6oSw4huvxFhxCSFCJltEhuMJnBVATADJT7C895IAXRLdpWW8QE5YMj3VrKBv9MIoXCQHqyoqdpbwNffOvq2JtS9tKVK-6yFW6282YX3tpQkgaX0q-GWq6k4sCLxpPpVlKP6sSecJ5cYt39AvAcMf3qAPgaB6inSRT3fxhLB5GOovjOKd7KTerBBikFxX3AUnxjW3v8yEixBxylRz4Sl0hRWRlrZN7ovxVbBaA4zMuTKPljjrjOMCUC2JP1Vfrzr8xXtdNnh9tTexBSa644sQjogTnr9QCaKiLliKZzODh3P9Bn-PBne9Y3hjA.jpg"
-  },
-  {
-    "id": "evt_20260523_002",
-    "title": "Putin Claims Ukraine Faces 'Catastrophic' Military Situation as Russian Bloggers Challenge Narrative",
-    "summary": "Putin asserted that the Ukrainian Armed Forces face a catastrophic situation while insisting Russian losses remain justified. Prominent Russian military bloggers openly contradicted his assessment, suggesting the Kremlin receives falsified frontline reports.",
-    "date_event": null,
-    "date_published": "2026-05-23T05:50:22Z",
-    "geo": {
-      "lat": 49.2724587,
-      "lon": 38.9150477,
-      "country": "Ukraine",
-      "region": "Luhansk"
-    },
-    "topics": [
-      "conflict",
-      "ukraine",
-      "russia",
-      "military",
-      "information-warfare"
-    ],
-    "confidence": 0.75,
-    "source_name": "UNITED24 Media (@United24media)",
-    "links": [
-      {
-        "url": "https://t.me/United24media/42645",
-        "label": "Telegram Post"
-      }
-    ],
-    "link_preview_image": "https://cdn4.telesco.pe/file/IqohJvL0RcYkD3fdZLRfTpW0lwnTCntAx47vtZaCwUXuy8CC3dRoq9Fxg4PGWEAJYngcItY6E-yhH_qnIYyo9UKqrNbM1-IKLoq_y3jJLG6ioJGwGYd7smuGN6TTeGRm2KhDC7pKcM7tvw11YWEHt1HD0V-NsGDiRcbJ7_1GM8CtA0lmTSeCw4CgNNBpTBCJY1pk4k8pH1fZI52JRNjYIfsuQloU-nSPxPmmjcPIRdh37qOAu0bWnjnMqi4NgCSZKR-suOb2soNIOAxmnbJiyIgW5tRwis4caI9foULYiXXJkie4vp2438_HWDLEbh-UMhmcV_BFs-sr7qTHmrD1KA.jpg"
-  },
-  {
-    "id": "evt_20260523_003",
-    "title": "Taiwan Tracks 16 Chinese Military Aircraft and 8 Naval Vessels Near ADIZ",
-    "summary": "Taiwan's Ministry of National Defense tracked 16 Chinese military aircraft and eight naval vessels, with 13 sorties crossing the Taiwan Strait median line and entering Taiwan's ADIZ. Taiwan deployed aircraft, ships, and missile systems in response.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:20:11Z",
-    "geo": {
-      "lat": 24.4917388,
-      "lon": 119.6054017,
-      "country": "Taiwan",
-      "region": "Taiwan Strait"
-    },
-    "topics": [
-      "military",
-      "taiwan",
-      "china",
-      "adiz",
-      "gray-zone"
-    ],
-    "confidence": 0.9,
-    "source_name": "Taiwan News (@TaiwanNewsEN)",
-    "links": [
-      {
-        "url": "https://x.com/TaiwanNewsEN/status/2058070469665046621",
-        "label": "Original Tweet"
-      },
-      {
-        "url": "https://www.taiwannews.com.tw/news/6368622",
-        "label": "Taiwan News Article"
-      }
-    ],
-    "link_preview_image": "https://pbs.twimg.com/card_img/2055546656309817344/ayJqv8qX?format=jpg&name=800x419"
-  },
-  {
-    "id": "evt_20260523_004",
-    "title": "US Prepares Fresh Military Strikes Against Iran as Nuclear Talks Stall",
-    "summary": "The Trump administration prepared for a new round of military strikes against Iran while negotiations continued. Iran's Supreme Leader Khamenei issued a directive that enriched uranium must remain in the country, hardening Tehran's position on a key US demand.",
-    "date_event": null,
-    "date_published": "2026-05-23T05:55:00Z",
-    "geo": {
-      "lat": 35.6892523,
-      "lon": 51.3896004,
-      "country": "Iran",
-      "city": "Tehran"
-    },
-    "topics": [
-      "nuclear",
-      "military",
-      "iran",
-      "conflict",
-      "sanctions",
-      "diplomacy"
+      "incident"
     ],
     "confidence": 0.85,
-    "source_name": "Iran Spectrum (@IranSpec)",
+    "source_name": "Ship News (@ShipNews)",
     "links": [
       {
-        "url": "https://www.newkerala.com/news/a/us-preparing-fresh-strikes-iran-even-as-talks-957.htm",
-        "label": "NewKerala Report"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_001",
-    "title": "White House Extends State of Emergency and Sanctions Against Belarus for Another Year",
-    "summary": "The White House extended the state of emergency and US sanctions against Belarusian authorities for an additional year, publishing a notification in the Federal Register citing ongoing threats to US national security and foreign policy.",
-    "date_event": "2026-05-23T06:34:38Z",
-    "date_published": "2026-05-23T06:34:38Z",
-    "geo": {
-      "lat": 53.9024716,
-      "lon": 27.5618225,
-      "country": "Belarus",
-      "city": "Minsk"
-    },
-    "topics": [
-      "sanctions",
-      "belarus",
-      "united-states",
-      "diplomacy",
-      "human-right"
-    ],
-    "confidence": 0.85,
-    "source_name": "Intel Slava Z (@intelslava)",
-    "links": [
-      {
-        "url": "https://t.me/intelslava/88053",
-        "label": "Telegram Post"
-      }
-    ],
-    "link_preview_image": "https://cdn5.telesco.pe/file/AM16MRLcS5kQ9QU7JzsbU3XRiU9j0uLGi_7IDfToXuVmh770dv2yjp4vhtYiFJNLL-ffCdgFn_mY0P8ywgsORtzhRb_8EnhUo3nmZ1PqZk4YwrIQS77bbdHFtwH0VLAiMcPMp-pvVpAD-rPdF1fCs-ALkbvKx3LiumpNAaA95FuMA6-rIem9V5U9-6EQgvbpY8CXF9w6jvOaILXrXnAgg-6biPLXOAjB_TkAJkfgLJ_Dssib--zawhW2gzww7_cz7rdGHHAQ7rcmGWFQITN6WNgKRUhLjsgxEAC-_-_kgWQiWELWg1HMGJyqGUrt2tBVczbzm14PAY79aRtOQ62c6w.jpg"
-  },
-  {
-    "id": "evt_20260523_002",
-    "title": "Israeli Military Detects Hostile Aircraft Infiltration and Aerial Target Impact in Northern Israel Near Lebanon Border",
-    "summary": "The Israeli Defense Forces reported the infiltration of a hostile aircraft in northern Israel, triggering air attack sirens in Kiryat Shmona and Rosh HaNikra near the Lebanon border. An aerial target subsequently fell in Israeli territory.",
-    "date_event": "2026-05-23T05:50:00Z",
-    "date_published": "2026-05-23T06:04:57Z",
-    "geo": {
-      "lat": 33.2074733,
-      "lon": 35.5707828,
-      "country": "Israel",
-      "city": "Kiryat Shmona"
-    },
-    "topics": [
-      "conflict",
-      "military",
-      "israel",
-      "lebanon",
-      "hezbollah",
-      "drone",
-      "border"
-    ],
-    "confidence": 0.9,
-    "source_name": "Lebanese News and Updates (@LebUpdate)",
-    "links": [
-      {
-        "url": "https://www.timesofisrael.com/liveblog_entry/idf-says-aerial-target-fell-in-northern-israel-close-to-border-with-lebanon/",
-        "label": "Times of Israel Coverage"
-      },
-      {
-        "url": "https://www.aljazeera.com/news/liveblog/2026/5/23/iran-war-live-tehran-says-diplomacy-continues-but-no-deal-yet-with-us",
-        "label": "Al Jazeera Liveblog"
-      }
-    ],
-    "link_preview_image": "https://static-cdn.toi-media.com/www/images/toi-ln-1200.png"
-  },
-  {
-    "id": "evt_20260523_003",
-    "title": "Multi-Front Diplomatic Push Intensifies as US Weighs Fresh Military Strikes Against Iran",
-    "summary": "Pakistan's army chief arrived in Tehran for mediation while Qatar sent a negotiating team, even as US media reported the Trump administration prepared for potential fresh military strikes against Iran should peace talks fail.",
-    "date_event": "2026-05-23T05:55:00Z",
-    "date_published": "2026-05-23T05:55:00Z",
-    "geo": {
-      "lat": 35.6892523,
-      "lon": 51.3896004,
-      "country": "Iran",
-      "city": "Tehran"
-    },
-    "topics": [
-      "conflict",
-      "iran",
-      "united-state",
-      "diplomacy",
-      "military",
-      "nuclear",
-      "strait-of-hormuz"
-    ],
-    "confidence": 0.92,
-    "source_name": "NytimesWorld (@NytimesWorld)",
-    "links": [
-      {
-        "url": "https://www.aljazeera.com/news/liveblog/2026/5/23/iran-war-live-tehran-says-diplomacy-continues-but-no-deal-yet-with-us",
-        "label": "Al Jazeera Iran War Liveblog"
-      },
-      {
-        "url": "https://www.newkerala.com/news/a/us-preparing-fresh-strikes-iran-even-as-talks-957.htm",
-        "label": "NewKerala Coverage"
-      }
-    ],
-    "link_preview_image": "https://www.aljazeera.com/wp-content/uploads/2026/05/AFP__20260522__B3RH9KF__v1__HighRes__PakistanWarIranUsIsrael-1779492796_f0b692-1779493137.jpg?resize=1200%2C630&quality=80"
-  },
-  {
-    "id": "evt_20260523_004",
-    "title": "First Japanese-Managed Oil Tanker to Arrive After Transiting Strait of Hormuz Since Iran War",
-    "summary": "The Panama-flagged Idemitsu Maru, carrying 2 million barrels of Saudi crude oil with three Japanese crew members aboard, neared Japan after becoming the first Japanese oil tanker to successfully transit the Strait of Hormuz since the blockade began.",
-    "date_event": "2026-05-23T05:45:00Z",
-    "date_published": "2026-05-23T05:45:00Z",
-    "geo": {
-      "lat": 34.9991645,
-      "lon": 137.254574,
-      "country": "Japan",
-      "region": "Aichi Prefecture"
-    },
-    "topics": [
-      "energy",
-      "strait-of-hormuz",
-      "japan",
-      "iran",
-      "oil",
-      "maritime",
-      "diplomacy"
-    ],
-    "confidence": 0.95,
-    "source_name": "MofajapanEn (@MofajapanEn)",
-    "links": [
-      {
-        "url": "https://english.kyodonews.net/articles/-/76530",
-        "label": "Kyodo News Coverage"
-      },
-      {
-        "url": "https://jen.jiji.com/jc/eng?g=eco&k=2026052201111",
-        "label": "Jiji Press Coverage"
-      }
-    ],
-    "link_preview_image": "https://english-kyodo.ismcdn.jp/mwimgs/d/e/1200x/img_de8c6326ee58e03786166a72dd6cc845322538.jpg"
-  },
-  {
-    "id": "evt_20260523_005",
-    "title": "Taiwan Detects 16 Chinese Military Aircraft Sorties with 13 Crossing Median Line",
-    "summary": "Taiwan's Ministry of National Defense detected 16 sorties of Chinese military aircraft and 8 naval vessels operating around the island, with 13 aircraft crossing the sensitive Taiwan Strait median line and entering multiple sectors of Taiwan's Air Defense Identification Zone.",
-    "date_event": "2026-05-22T22:00:00Z",
-    "date_published": "2026-05-23T06:30:00Z",
-    "geo": {
-      "lat": 24.4917388,
-      "lon": 119.6054017,
-      "country": "Taiwan",
-      "region": "Taiwan Strait"
-    },
-    "topics": [
-      "china",
-      "taiwan",
-      "military",
-      "aircraft",
-      "south-china-sea",
-      "indo-pacific",
-      "defense"
-    ],
-    "confidence": 0.95,
-    "source_name": "BatesGill (@BatesGill)",
-    "links": [
-      {
-        "url": "https://newsable.asianetnews.com/world/china-deploys-16-aircraft-8-vessels-near-taiwan-defense-ministry-articleshow-13ofkwf",
-        "label": "Asianet Newsable Coverage"
-      },
-      {
-        "url": "https://www.newkerala.com/news/a/taiwan-detects-16-sorties-chinese-military-aircraft-vessels-603.htm",
-        "label": "NewKerala Coverage"
-      }
-    ],
-    "link_preview_image": "https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-external,imgname-image-cc574bfc-09cd-4720-a096-d3aaeb1bd05b.jpg"
-  },
-  {
-    "id": "evt_20260523_001",
-    "title": "China Deploys 16 Military Aircraft and 8 Naval Vessels Near Taiwan in Major Show of Force",
-    "summary": "Taiwan's Ministry of National Defense detected 16 Chinese military aircraft sorties and 8 PLAN naval vessels operating near the island on May 23, with 13 aircraft crossing the sensitive median line of the Taiwan Strait and entering multiple sectors of Taiwan's Air Defense Identification Zone.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:30:00Z",
-    "geo": {
-      "lat": 24.4917,
-      "lon": 119.6054,
-      "country": "Taiwan",
-      "region": "Taiwan Strait"
-    },
-    "topics": [
-      "china",
-      "taiwan",
-      "military",
-      "aircraft",
-      "navy",
-      "indo-pacific",
-      "adiz"
-    ],
-    "confidence": 0.92,
-    "source_name": "X News (@XNews)",
-    "links": [
-      {
-        "url": "https://newsable.asianetnews.com/world/china-deploys-16-aircraft-8-vessels-near-taiwan-defense-ministry-articleshow-13ofkwf",
-        "label": "Asianet Newsable Report"
-      }
-    ],
-    "link_preview_image": "https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-external,imgname-image-cc574bfc-09cd-4720-a096-d3aaeb1bd05b.jpg"
-  },
-  {
-    "id": "evt_20260523_001",
-    "title": "Taiwan Detects 16 Chinese Military Aircraft and 8 Naval Vessels Crossing Strait Median Line",
-    "summary": "Taiwan's Ministry of National Defense reported detecting 16 PLA aircraft sorties and 8 naval vessels operating around the island on May 23, with 13 aircraft crossing the sensitive Taiwan Strait median line into multiple sectors of Taiwan's ADIZ.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:30:00Z",
-    "geo": {
-      "lat": 24.4917,
-      "lon": 119.6054,
-      "country": "Taiwan",
-      "region": "Taiwan Strait"
-    },
-    "topics": [
-      "military",
-      "china",
-      "taiwan",
-      "air-defense",
-      "south-china-sea",
-      "strait-crossing"
-    ],
-    "confidence": 0.9,
-    "source_name": "SCS Probing Initiative (@SCS_PI)",
-    "links": [
-      {
-        "url": "https://newsable.asianetnews.com/world/china-deploys-16-aircraft-8-vessels-near-taiwan-defense-ministry-articleshow-13ofkwf",
-        "label": "Asianet Newsable Coverage"
-      },
-      {
-        "url": "https://www.newkerala.com/news/a/taiwan-detects-16-sorties-chinese-military-aircraft-vessels-603.htm",
-        "label": "NewKerala Report"
-      }
-    ],
-    "link_preview_image": "https://static.asianetnews.com/images/w-1280,h-720,format-jpg,imgid-external,imgname-image-cc574bfc-09cd-4720-a096-d3aaeb1bd05b.jpg"
-  },
-  {
-    "id": "evt_20260523_002",
-    "title": "Trump Administration Prepares Fresh Military Strikes Against Iran as Diplomatic Window Narrows",
-    "summary": "The US administration actively prepared for a new round of military strikes against Iran on May 23, with President Trump convening his national security team and canceling personal travel, as last-minute negotiations through Pakistan and Qatar continued without breakthrough.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:00:00Z",
-    "geo": {
-      "lat": 38.8951,
-      "lon": -77.0364,
-      "country": "United States",
-      "region": "District of Columbia",
-      "city": "Washington"
-    },
-    "topics": [
-      "military",
-      "iran",
-      "conflict",
-      "sanctions",
-      "diplomacy",
-      "nuclear"
-    ],
-    "confidence": 0.85,
-    "source_name": "cnni (@cnni)",
-    "links": [
-      {
-        "url": "https://www.gbnews.com/news/us/us-preparing-strikes-iran-donald-trump-sons-wedding",
-        "label": "GB News Report"
-      },
-      {
-        "url": "https://www.thenews.com.pk/latest/1403516-trump-holds-iran-crisis-talks-with-national-security-team-amid-ongoing-negotiations",
-        "label": "The News Coverage"
-      }
-    ],
-    "link_preview_image": "https://www.gbnews.com/media-library/image.png?id=66786125&width=1200&height=600&coordinates=0%2C25%2C0%2C75"
-  },
-  {
-    "id": "evt_20260523_003",
-    "title": "WHO Upgrades Congo Ebola Risk to Very High as Outbreak Spreads Rapidly Through Conflict Zone",
-    "summary": "The World Health Organization upgraded the Ebola outbreak risk assessment in the Democratic Republic of Congo from high to very high on May 23, with 82 confirmed cases and 750 suspected cases of the Bundibugyo virus spreading through Ituri Province amid armed conflict.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:15:00Z",
-    "geo": {
-      "lat": 1.5667,
-      "lon": 30.25,
-      "country": "Democratic Republic of Congo",
-      "region": "Ituri Province",
-      "city": "Bunia"
-    },
-    "topics": [
-      "disaster",
-      "ebola",
-      "health",
-      "conflict",
-      "humanitarian"
-    ],
-    "confidence": 0.92,
-    "source_name": "Insider Paper (@insiderpaper)",
-    "links": [
-      {
-        "url": "https://wgnradio.com/health/ap-who-chief-says-ebola-outbreak-in-congo-is-spreading-rapidly-and-upgrades-risk-assessment/",
-        "label": "AP/WGN Report"
-      },
-      {
-        "url": "https://t.me/insiderpaper/42610",
-        "label": "Telegram Post"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_004",
-    "title": "US Treasury Sanctions Nine Hezbollah-Aligned Lebanese Officials Including Military and Intelligence Figures",
-    "summary": "The US Treasury Department designated nine Lebanese individuals under counterterrorism authorities, targeting parliamentarians, intelligence officers, and diplomatic figures embedded across Lebanon's government for allegedly shielding Hezbollah influence and obstructing disarmament efforts.",
-    "date_event": null,
-    "date_published": "2026-05-23T06:10:00Z",
-    "geo": {
-      "lat": 33.8938,
-      "lon": 35.5018,
-      "country": "Lebanon",
-      "region": "Beirut",
-      "city": "Beirut"
-    },
-    "topics": [
-      "sanctions",
-      "terrorism",
-      "hezbollah",
-      "lebanon",
-      "iran"
-    ],
-    "confidence": 0.95,
-    "source_name": "US Treasury (@USTreasury)",
-    "links": [
-      {
-        "url": "https://www.kurdistan24.net/en/story/915522/us-treasury-sanctions-hezbollah-aligned-lebanese-officials",
-        "label": "Kurdistan24 Report"
-      },
-      {
-        "url": "https://www.al-monitor.com/originals/2026/05/first-us-sanctions-lebanon-military-intel-officials-aiding-hezbollah",
-        "label": "Al-Monitor Coverage"
-      }
-    ],
-    "link_preview_image": "https://d2wqffb2bc8st5.cloudfront.net/images/1779436440_kurdistan24.jpg"
-  },
-  {
-    "id": "evt_20260523_021",
-    "title": "F-35 Fighter Jets Arrive in Poland to Bolster NATO Eastern Flank Amid Regional Tensions",
-    "summary": "Poland received its first batch of F-35 fighter jets as NATO strengthened its eastern flank posture. The delivery followed Trump's announcement of 5,000 additional US troops deploying to Poland after the election of President Karol Nawrocki.",
-    "date_event": null,
-    "date_published": "2026-05-23T16:10:00Z",
-    "geo": {
-      "lat": 52.2297,
-      "lon": 21.0122,
-      "country": "Poland",
-      "city": "Warsaw"
-    },
-    "topics": [
-      "nato",
-      "poland",
-      "military",
-      "f-35",
-      "defense"
-    ],
-    "confidence": 0.8,
-    "source_name": "Yahoo News (news.yahoo.com)",
-    "links": [
-      {
-        "url": "https://thedefensepost.com/2026/05/23/iran-weighs-peace-proposal/",
-        "label": "Defense Post Coverage"
+        "url": "https://www.aa.com.tr/en/middle-east/boat-approaches-tanker-near-yemen-retreats-after-armed-team-deployed-says-uk-maritime-agency/3946376",
+        "label": "Anadolu Agency Report"
       }
     ],
     "link_preview_image": null
@@ -95620,532 +93772,562 @@
     "link_preview_image": null
   },
   {
-    "id": "evt_20260523_017",
-    "title": "Iran Reports 25 Ships Transit Strait of Hormuz Under IRGC Naval Coordination in Past 24 Hours",
-    "summary": "Iran's IRGC Navy announced 25 vessels including oil tankers and container ships transited the Strait of Hormuz after obtaining permission. Gulf states formally rejected Iran's proposed Persian Gulf Strait Authority at the IMO.",
+    "id": "evt_20260523_021",
+    "title": "F-35 Fighter Jets Arrive in Poland to Bolster NATO Eastern Flank Amid Regional Tensions",
+    "summary": "Poland received its first batch of F-35 fighter jets as NATO strengthened its eastern flank posture. The delivery followed Trump's announcement of 5,000 additional US troops deploying to Poland after the election of President Karol Nawrocki.",
     "date_event": null,
-    "date_published": "2026-05-23T15:55:00Z",
+    "date_published": "2026-05-23T16:10:00Z",
     "geo": {
-      "lat": 26.4494,
-      "lon": 56.2028,
-      "country": "Iran",
-      "region": "Strait of Hormuz"
+      "lat": 52.2297,
+      "lon": 21.0122,
+      "country": "Poland",
+      "city": "Warsaw"
     },
     "topics": [
-      "shipping",
-      "strait-of-hormuz",
-      "iran",
-      "sanctions",
-      "maritime"
+      "nato",
+      "poland",
+      "military",
+      "f-35",
+      "defense"
+    ],
+    "confidence": 0.8,
+    "source_name": "Yahoo News (news.yahoo.com)",
+    "links": [
+      {
+        "url": "https://thedefensepost.com/2026/05/23/iran-weighs-peace-proposal/",
+        "label": "Defense Post Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260523_022",
+    "title": "New York City Shipyard Fire and Explosion Kills One, Injures Over 30 Firefighters",
+    "summary": "Investigators combed through a New York City shipyard after a fire and explosion killed one person and injured more than 30 firefighters and other first responders.",
+    "date_event": null,
+    "date_published": "2026-05-23T20:09:37Z",
+    "geo": {
+      "lat": 40.7127281,
+      "lon": -74.0060152,
+      "country": "United States",
+      "city": "New York City"
+    },
+    "topics": [
+      "fire",
+      "explosion",
+      "emergency-response",
+      "shipyard",
+      "new-york"
     ],
     "confidence": 0.9,
-    "source_name": "Ship News (@ShipNews)",
+    "source_name": "ABC News (@ABC)",
     "links": [
       {
-        "url": "https://www.aa.com.tr/en/middle-east/iran-says-25-ships-passed-through-strait-of-hormuz-in-past-24-hours/3946701",
-        "label": "Anadolu Agency Report"
+        "url": "https://x.com/ABC/status/2058279203993239636",
+        "label": "Original Tweet"
       },
       {
-        "url": "https://see.news/hormuz-monitor-iran-says-35-ships-crossed-strait-as-oil-tankers-pile-up-off-kharg-island",
-        "label": "Hormuz Monitor"
+        "url": "https://t.co/HP7FAlKqwd",
+        "label": "ABC News Coverage"
       }
     ],
     "link_preview_image": null
   },
   {
-    "id": "evt_20260523_018",
-    "title": "Armed Security Team Repels Boat Approach on Tanker Near Yemen Socotra Island",
-    "summary": "A products tanker sailing within 200 nautical miles of Yemen's Socotra Island deployed its armed security team after a small craft with five persons approached within 100 meters, according to UK Maritime Trade Operations.",
+    "id": "evt_20260523_023",
+    "title": "Suspected Ebola Cases Surge Into Hundreds Across Central Africa",
+    "summary": "Suspected ebola cases in Central Africa climbed well into the hundreds as officials expressed concern the outbreak would continue to grow, raising alarm about regional health security.",
     "date_event": null,
-    "date_published": "2026-05-23T16:00:00Z",
+    "date_published": "2026-05-23T20:01:00Z",
     "geo": {
-      "lat": 12.5,
-      "lon": 53.8333,
-      "country": "Yemen",
-      "region": "Socotra"
+      "lat": 7.0323598,
+      "lon": 19.9981227,
+      "country": "Central African Republic",
+      "region": "Central Africa"
     },
     "topics": [
-      "maritime",
-      "security",
-      "yemen",
-      "shipping",
-      "incident"
+      "ebola",
+      "outbreak",
+      "health",
+      "central-africa",
+      "disease"
     ],
     "confidence": 0.85,
-    "source_name": "Ship News (@ShipNews)",
+    "source_name": "ABC News (@ABC)",
     "links": [
       {
-        "url": "https://www.aa.com.tr/en/middle-east/boat-approaches-tanker-near-yemen-retreats-after-armed-team-deployed-says-uk-maritime-agency/3946376",
-        "label": "Anadolu Agency Report"
+        "url": "https://x.com/ABC/status/2058277032761671991",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://t.co/zQ9Nn5MRE9",
+        "label": "ABC News Report"
       }
     ],
     "link_preview_image": null
   },
   {
-    "id": "evt_20260523_015",
-    "title": "Israeli Strikes Kill 11 in Southern Lebanon Including Healthcare Workers Despite Ceasefire",
-    "summary": "Israeli attacks across southern Lebanon killed at least 11 people including healthcare workers and paramedics in the Tyre district, testing the fragile US-mediated ceasefire. Lebanon's health ministry reported 3,111 deaths since March 2.",
+    "id": "evt_20260523_024",
+    "title": "Woman Shoots Two Attorneys Outside North Carolina Courthouse After Lawsuit Ends",
+    "summary": "A woman who became belligerent in court allegedly shot two attorneys involved in the same lawsuit outside a North Carolina courthouse after the case concluded, according to the Raleigh police chief.",
     "date_event": null,
-    "date_published": "2026-05-23T15:35:00Z",
+    "date_published": "2026-05-23T19:26:18Z",
+    "geo": {
+      "lat": 35.7803977,
+      "lon": -78.6390989,
+      "country": "United States",
+      "region": "North Carolina",
+      "city": "Raleigh"
+    },
+    "topics": [
+      "shooting",
+      "courthouse",
+      "violence",
+      "law-enforcement",
+      "north-carolina"
+    ],
+    "confidence": 0.9,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2058268303315947999",
+        "label": "Original Tweet"
+      },
+      {
+        "url": "https://t.co/B3VaYCqNV3",
+        "label": "ABC News Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260523_025",
+    "title": "Iran Rebuilding Military Capabilities Faster Than US Intelligence Predicted During Ceasefire",
+    "summary": "US intelligence assessments reveal Iran has restarted drone production and reconstituted military capabilities much faster than initially estimated, with China and Russia providing missile components and drone parts during the six-week ceasefire.",
+    "date_event": null,
+    "date_published": "2026-05-23T19:45:00Z",
+    "geo": {
+      "lat": 35.6892,
+      "lon": 51.389,
+      "country": "Iran",
+      "region": "Tehran",
+      "city": "Tehran"
+    },
+    "topics": [
+      "iran",
+      "military",
+      "drone",
+      "missile",
+      "reconstitution",
+      "nuclear"
+    ],
+    "confidence": 0.88,
+    "source_name": "Iran Spectrum (@IranSpec)",
+    "links": [
+      {
+        "url": "https://www.cnn.com/2026/05/21/politics/iran-military-rebuild",
+        "label": "CNN Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260523_026",
+    "title": "Iran Supreme Leader Blocks Transfer of Enriched Uranium Abroad Amid Peace Talks",
+    "summary": "Iran's Supreme Leader Ayatollah Mojtaba Khamenei issued a directive that the country's 440kg stockpile of near-weapons-grade uranium must remain inside Iran, hardening Tehran's stance on a key US demand in peace negotiations.",
+    "date_event": null,
+    "date_published": "2026-05-23T19:50:00Z",
+    "geo": {
+      "lat": 32.6539,
+      "lon": 51.666,
+      "country": "Iran",
+      "region": "Isfahan",
+      "city": "Isfahan"
+    },
+    "topics": [
+      "nuclear",
+      "iran",
+      "uranium",
+      "enrichment",
+      "diplomacy",
+      "sanctions"
+    ],
+    "confidence": 0.9,
+    "source_name": "Iran Spectrum (@IranSpec)",
+    "links": [
+      {
+        "url": "https://www.al-monitor.com/originals/2026/05/irans-supreme-leader-says-enriched-uranium-must-stay-country",
+        "label": "Al-Monitor Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_20260523_027",
+    "title": "Ghostwriter APT Resurfaces Targeting Ukrainian Government With Phishing Campaign",
+    "summary": "The Belarus-nexus APT group Ghostwriter launched a new phishing campaign targeting Ukrainian government organizations using the legitimate Prometheus learning platform as bait, deploying the OYSTERFRESH JavaScript loader and ultimately delivering Cobalt Strike payloads.",
+    "date_event": null,
+    "date_published": "2026-05-23T19:40:00Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "region": "Kyiv",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "apt",
+      "malware",
+      "cyber",
+      "attack",
+      "nation-state",
+      "phishing"
+    ],
+    "confidence": 0.9,
+    "source_name": "r/netsec (reddit.com/r/netsec)",
+    "links": [
+      {
+        "url": "https://securityaffairs.com/192538/apt/ghostwriter-is-back-using-a-ukrainian-learning-platform-as-bait-to-hit-government-targets.html",
+        "label": "SecurityAffairs Report"
+      }
+    ],
+    "link_preview_image": "https://securityaffairs.com/wp-content/uploads/2026/05/image-64.png"
+  },
+  {
+    "id": "evt_20260523_028",
+    "title": "USS Nimitz Carrier Strike Group Arrives in Caribbean Amid Rising US-Cuba Tensions",
+    "summary": "The USS Nimitz, the Navy's oldest and longest-serving aircraft carrier, arrived in the Caribbean Sea with Carrier Air Wing 17 and escort vessels, coinciding with the DOJ indictment of former Cuban President Raul Castro and intensified US surveillance flights around Cuba.",
+    "date_event": null,
+    "date_published": "2026-05-23T19:17:00Z",
+    "geo": {
+      "lat": 15.5,
+      "lon": -75.0,
+      "country": "Caribbean",
+      "region": "Caribbean Sea"
+    },
+    "topics": [
+      "carrier",
+      "deployment",
+      "caribbean",
+      "cuba",
+      "us-navy",
+      "exercise"
+    ],
+    "confidence": 0.92,
+    "source_name": "US Fleet Forces (@USFleetForces)",
+    "links": [
+      {
+        "url": "https://taskandpurpose.com/news/uss-nimitz-caribbean-cuba/",
+        "label": "Task and Purpose Report"
+      }
+    ],
+    "link_preview_image": "https://taskandpurpose.com/wp-content/uploads/2026/05/GettyImages-2271636469.jpg?w=1200"
+  },
+  {
+    "id": "evt_20260523_029",
+    "title": "EU Expands Sanctions Framework to Target Iran's Threats to Hormuz Navigation",
+    "summary": "The Council of the European Union extended its restrictive measures framework to target individuals and entities involved in Iran's actions threatening freedom of navigation in the Middle East, enabling new travel restrictions and asset freezes against those undermining Strait of Hormuz passage.",
+    "date_event": null,
+    "date_published": "2026-05-23T19:50:00Z",
+    "geo": {
+      "lat": 50.8503,
+      "lon": 4.3517,
+      "country": "Belgium",
+      "region": "Brussels",
+      "city": "Brussels"
+    },
+    "topics": [
+      "sanctions",
+      "iran",
+      "eu",
+      "hormuz",
+      "navigation",
+      "maritime-security"
+    ],
+    "confidence": 0.88,
+    "source_name": "UANI (@UANI)",
+    "links": [
+      {
+        "url": "https://www.unitedagainstnucleariran.com/press-releases/what-theyre-saying-about-operations-epic-and-economic-fury-and-project-freedom-16",
+        "label": "UANI Press Release - May 22"
+      }
+    ],
+    "link_preview_image": ""
+  },
+  {
+    "id": "evt_20260523_030",
+    "title": "US-Iran Framework Agreement Approaches Completion as Trump Weighs Deal With Gulf Leaders",
+    "summary": "The United States and Iran moved closer to a Pakistan-mediated framework agreement to end the nearly three-month war, with Trump holding a call with Gulf leaders to review Iran's latest proposal. Iranian officials signaled narrowing differences while Trump described the chances of reaching a deal as a solid 50/50.",
+    "date_event": "2026-05-23T19:00:00Z",
+    "date_published": "2026-05-23T19:27:00Z",
+    "geo": {
+      "lat": 35.6893,
+      "lon": 51.3896,
+      "country": "Iran",
+      "region": "Tehran",
+      "city": "Tehran"
+    },
+    "topics": [
+      "nuclear",
+      "enrichment",
+      "sanctions",
+      "missile",
+      "diplomacy",
+      "strait-of-hormuz",
+      "ceasefire"
+    ],
+    "confidence": 0.92,
+    "source_name": "IranObserver (@IranObserver)",
+    "links": [
+      {
+        "url": "https://www.cnn.com/2026/05/23/middleeast/iran-us-progress-framework-diplomacy-intl",
+        "label": "CNN Coverage"
+      },
+      {
+        "url": "https://www.euronews.com/2026/05/23/us-and-iran-getting-a-lot-closer-to-an-agreement-to-end-war-trump-says",
+        "label": "Euronews Report"
+      },
+      {
+        "url": "https://www.aljazeera.com/news/2026/5/23/iran-war-day-85-tehran-says-major-gaps-remain-in-us-talks",
+        "label": "Al Jazeera Analysis"
+      }
+    ],
+    "link_preview_image": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2277150155.jpg?c=16x9&q=w_800,c_fill"
+  },
+  {
+    "id": "evt_20260523_031",
+    "title": "Israeli Forces Strike Southern Lebanon Killing At Least Seven Despite Active Ceasefire",
+    "summary": "Israeli air forces launched a new wave of attacks across southern Lebanon on Saturday, killing at least seven people in the Tyre district and damaging Hiram Hospital, despite a US-mediated ceasefire that remains in effect. Hezbollah retaliated by striking Iron Dome launchers at Biranit barracks.",
+    "date_event": "2026-05-23T18:00:00Z",
+    "date_published": "2026-05-23T19:15:00Z",
     "geo": {
       "lat": 33.2721,
       "lon": 35.1964,
       "country": "Lebanon",
+      "region": "South Governorate",
       "city": "Tyre"
     },
     "topics": [
-      "lebanon",
       "conflict",
-      "israel",
+      "airstrike",
+      "ceasefire",
       "hezbollah",
-      "ceasefire"
-    ],
-    "confidence": 0.9,
-    "source_name": "Insider Paper (@insiderpaper)",
-    "links": [
-      {
-        "url": "https://www.aljazeera.com/news/2026/5/23/iran-war-day-85-tehran-says-major-gaps-remain-in-us-talks",
-        "label": "Al Jazeera Day 85 Report"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_016",
-    "title": "US Senator Tom Cotton Urges Sanctions on Entities Paying Iran Strait of Hormuz Tolls",
-    "summary": "Senator Tom Cotton sent a letter to Treasury Secretary Scott Bessent urging sanctions on entities paying Iran for passage through the Strait of Hormuz, calling the PGSA an illegal scheme financing the IRGC terrorist organization.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:40:00Z",
-    "geo": {
-      "lat": 38.8951,
-      "lon": -77.0364,
-      "country": "United States",
-      "city": "Washington DC"
-    },
-    "topics": [
-      "sanctions",
-      "strait-of-hormuz",
-      "iran",
-      "shipping",
-      "legislation"
-    ],
-    "confidence": 0.85,
-    "source_name": "Insider Paper (@insiderpaper)",
-    "links": [
-      {
-        "url": "https://www.newkerala.com/news/a/us-senator-urges-sanctions-entities-paying-iran-passage-532.htm",
-        "label": "NewKerala Report"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_013",
-    "title": "China Coal Mine Gas Explosion Kills at Least 90 Workers in Shanxi Province",
-    "summary": "A gas explosion at the Liushenyu Coal Mine in Shanxi province killed at least 90 people, making it China's worst mining disaster since 2009. Of 247 workers on duty, over 100 reached safety while rescue operations continued with 345 personnel deployed.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:25:00Z",
-    "geo": {
-      "lat": 37.0,
-      "lon": 112.0,
-      "country": "China",
-      "region": "Shanxi"
-    },
-    "topics": [
-      "disaster",
-      "mining",
-      "china",
-      "explosion"
-    ],
-    "confidence": 0.95,
-    "source_name": "BBC Breaking News (@BBCBreaking)",
-    "links": [
-      {
-        "url": "https://www.bbc.co.uk/news/articles/c5y0ve18qlko",
-        "label": "BBC News Report"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_014",
-    "title": "Over 40000 Evacuated in Orange County California After Toxic Chemical Tank Leak at Aerospace Facility",
-    "summary": "More than 40,000 people evacuated from Garden Grove, California after a toxic methyl methacrylate leak from a compromised cooling system at an aerospace manufacturing facility. Fire officials warned the tank could fail catastrophically or explode.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:50:00Z",
-    "geo": {
-      "lat": 33.7746,
-      "lon": -117.9464,
-      "country": "United States",
-      "region": "California",
-      "city": "Garden Grove"
-    },
-    "topics": [
-      "disaster",
-      "chemical",
-      "evacuation",
-      "united-state"
-    ],
-    "confidence": 0.9,
-    "source_name": "BBC Breaking News (@BBCBreaking)",
-    "links": [
-      {
-        "url": "https://www.bbc.co.uk/news/articles/c3w2l249j8go",
-        "label": "BBC News Report"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_012",
-    "title": "Japan Receives First Crude Oil Tanker Through Strait of Hormuz Since Regional Conflict Began",
-    "summary": "The Panama-flagged Idemitsu Maru carrying 2 million barrels of Saudi Arabian crude oil navigated the Strait of Hormuz and headed toward Japan's Aichi refinery, marking the first successful Japanese-managed tanker transit since the de facto blockade.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:20:00Z",
-    "geo": {
-      "lat": 35.0,
-      "lon": 137.25,
-      "country": "Japan",
-      "region": "Aichi"
-    },
-    "topics": [
-      "japan",
-      "energy",
-      "strait-of-hormuz",
-      "shipping",
-      "oil"
-    ],
-    "confidence": 0.9,
-    "source_name": "Japan Joint Staff (@JapanJointStaff)",
-    "links": [
-      {
-        "url": "https://www.anews.com.tr/world/2026/05/23/japan-expects-arrival-of-1st-oil-tanker-after-strait-of-hormuz-passage",
-        "label": "ANews Report"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_010",
-    "title": "Iran-US Peace Talks Reach Critical Stage as Pakistan Army Chief Holds Extended Negotiations in Tehran",
-    "summary": "Pakistan Field Marshal Asim Munir arrived in Tehran for intensive mediation as US-Iran peace negotiations entered a decisive phase. Secretary of State Marco Rubio reported slight progress at a NATO meeting in Sweden while Trump stayed in Washington, canceling personal plans.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:30:00Z",
-    "geo": {
-      "lat": 35.6892,
-      "lon": 51.3896,
-      "country": "Iran",
-      "city": "Tehran"
-    },
-    "topics": [
-      "iran",
-      "diplomacy",
-      "conflict",
-      "strait-of-hormuz",
-      "nuclear",
-      "sanctions"
-    ],
-    "confidence": 0.95,
-    "source_name": "Aurora Intel (@AuroraIntel)",
-    "links": [
-      {
-        "url": "https://www.aljazeera.com/news/2026/5/23/iran-weighs-us-peace-proposal-despite-deep-and-significant-disagreements",
-        "label": "Al Jazeera Coverage"
-      },
-      {
-        "url": "https://thedefensepost.com/2026/05/23/iran-weighs-peace-proposal/",
-        "label": "Defense Post Analysis"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_011",
-    "title": "White House Convenes Senior National Security Officials to Weigh Renewed Military Action Against Iran",
-    "summary": "President Trump met with CIA Director John Ratcliffe, Defense Secretary Pete Hegseth, and Joint Chiefs Chair General Dan Caine to assess military and diplomatic options. Axios and CBS News reported the administration actively considered strikes if negotiations fail.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:45:00Z",
-    "geo": {
-      "lat": 38.8951,
-      "lon": -77.0364,
-      "country": "United States",
-      "city": "Washington DC"
-    },
-    "topics": [
-      "iran",
+      "hospital",
       "military",
-      "nuclear",
-      "conflict",
-      "united-state"
+      "lebanon"
     ],
-    "confidence": 0.9,
-    "source_name": "Aurora Intel (@AuroraIntel)",
+    "confidence": 0.95,
+    "source_name": "Yahoo News (news.yahoo.com)",
     "links": [
       {
-        "url": "https://gulfnews.com/world/mena/white-house-mulls-renewed-military-action-against-iran-amid-fears-of-regional-escalation-report-1.500550601",
-        "label": "Gulf News Report"
+        "url": "https://www.aljazeera.com/news/2026/5/23/israel-attacks-southern-lebanon-and-near-syrian-border-despite-ceasefire",
+        "label": "Al Jazeera Report"
       },
       {
-        "url": "https://eurasia.ro/2026/05/23/iran-update-special-report-may-21-2026/",
-        "label": "ISW-CTP Analysis"
-      }
-    ],
-    "link_preview_image": null
-  },
-  {
-    "id": "evt_20260523_010",
-    "title": "TeamPCP Supply Chain Attack Compromises GitHub Internal Repositories and 500+ Open Source Packages",
-    "summary": "Cybercrime group TeamPCP exfiltrated approximately 3,800 internal GitHub source code repositories through a poisoned VS Code extension, marking the largest known supply chain attack against the platform. The self-replicating worm compromised over 500 packages across npm and PyPI ecosystems.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:30:00Z",
-    "geo": {
-      "lat": 37.7879363,
-      "lon": -122.4075201,
-      "country": "United States",
-      "city": "San Francisco"
-    },
-    "topics": [
-      "cybersecurity",
-      "supply-chain-attack",
-      "github",
-      "malware",
-      "software-vulnerability"
-    ],
-    "confidence": 0.92,
-    "source_name": "r/cybersecurity (reddit.com/r/cybersecurity)",
-    "links": [
+        "url": "https://www.timesofisrael.com/idf-says-it-attacked-hezbollah-sites-as-at-least-5-reported-killed-in-south-lebanon/",
+        "label": "Times of Israel Report"
+      },
       {
-        "url": "https://www.techtimes.com/articles/317057/20260523/500-poisoned-packages-hundreds-companies-teampcps-worm-just-reached-github.htm",
-        "label": "TechTimes Coverage"
+        "url": "https://www.aa.com.tr/en/middle-east/israel-pounds-gaza-lebanon-in-daily-breaches-of-ceasefires/3946541",
+        "label": "Anadolu Agency Report"
       }
     ],
-    "link_preview_image": "https://d.techtimes.com/en/full/465280/github.png"
+    "link_preview_image": "https://www.aljazeera.com/wp-content/uploads/2026/05/AFP__20260523__B3TH8WE__v1__HighRes__LebanonIsraelIranUsWar-1779517052.jpg?resize=1920%2C1440"
   },
   {
-    "id": "evt_20260523_011",
-    "title": "Laravel Lang Packages Compromised with Remote Code Execution Backdoor Across 700+ Versions",
-    "summary": "Community-maintained Laravel Lang localization packages received malicious backdoors across roughly 700 historical versions, enabling automatic remote code execution on any PHP application loading the compromised packages through Composer autoload.",
+    "id": "evt_20260523_095",
+    "title": "NYT Reports Israel Sidelined from US-Iran Negotiations as Ceasefire Talks Progress",
+    "summary": "The New York Times reported that Israeli Prime Minister Netanyahu, once treated as a co-pilot by Trump against Iran, now finds himself largely shut out of US-Iran negotiations after the war stalled and ceasefire talks began.",
     "date_event": null,
-    "date_published": "2026-05-23T15:45:00Z",
+    "date_published": "2026-05-23T19:44:02Z",
     "geo": {
-      "lat": 37.7879363,
-      "lon": -122.4075201,
-      "country": "United States",
-      "city": "San Francisco"
-    },
-    "topics": [
-      "cybersecurity",
-      "supply-chain-attack",
-      "php",
-      "laravel",
-      "malware",
-      "remote-code-execution"
-    ],
-    "confidence": 0.9,
-    "source_name": "r/cybersecurity (reddit.com/r/cybersecurity)",
-    "links": [
-      {
-        "url": "https://socket.dev/blog/laravel-lang-compromise",
-        "label": "Socket Security Analysis"
-      }
-    ],
-    "link_preview_image": "https://cdn.sanity.io/images/cgdhsj6q/production/0a717c4d21279ed2770c10f0e6e35b9dd2dde30c-698x531.png?w=1000&q=95&fit=max&auto=format"
-  },
-  {
-    "id": "evt_20260523_012",
-    "title": "US Treasury Freezes Nearly $500 Million in Iranian Cryptocurrency Assets Under Economic Fury Campaign",
-    "summary": "The US Department of the Treasury's Office of Foreign Assets Control froze nearly $500 million in cryptocurrency assets tied to Iran's state-controlled digital infrastructure, targeting interconnected digital wallet networks directly controlled by the Iranian regime as part of the ongoing Economic Fury sanctions enforcement campaign.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:20:00Z",
-    "geo": {
-      "lat": 38.8950982,
-      "lon": -77.0363849,
+      "lat": 38.8951,
+      "lon": -77.0364,
       "country": "United States",
       "city": "Washington"
     },
     "topics": [
-      "sanctions",
-      "cryptocurrency",
+      "diplomacy",
       "iran",
-      "treasury",
-      "ofac",
-      "financial-crime"
+      "israel",
+      "united-states",
+      "negotiation",
+      "conflict"
     ],
-    "confidence": 0.93,
-    "source_name": "US Treasury (@USTreasury)",
+    "confidence": 0.8,
+    "source_name": "Clash Report (@ClashReport)",
     "links": [
       {
-        "url": "https://www.gate.com/news/detail/us-treasury-freezes-nearly-500m-in-iranian-crypto-assets-on-may-22-targets-21302424",
-        "label": "Gate News Coverage"
-      },
-      {
-        "url": "https://content.govdelivery.com/accounts/USTREAS/bulletins/41802c8",
-        "label": "Treasury Press Release - Economic Fury"
+        "url": "https://t.me/ClashReport/82988",
+        "label": "Telegram Post"
       }
     ],
-    "link_preview_image": "https://gimg2.staticimgs.com/share/share_poster_20260302_121136_a0592b2d6e5969154ee79c30e0ad7e6e.webp"
+    "link_preview_image": "https://cdn4.telesco.pe/file/ltS6laIJ-VFyFlyLRkYWCJkqar0MU60wmDCq9_s4t-Fb0L26504IK9iZzJpHPUkI3-6uKf6VK0qthtNneV_4KKm-H23NB1yY8ymBffJ5AIJAQ4JPNgGB_R7dUnNsobyEZiwvwoE81N0IQaaeY_hj09Rw0MTBqp2THvKf0HNyV28bhxB4IS0Ui2lrYkn6N8z8Z6FlJO6a4DdyGD8eUrkuiIP5Vy4XkWP_GC4U5XTcftRcx7T4iGvdmf3paNRleBmBVu6G2nEkJv05qxIT40-mVBeFC5X79sdHdnfqZ6vkbqWTHSPDCSTjVv0N7iBEtXRpLwWNFk1nHOZdoImRrfe_mg.jpg"
   },
   {
-    "id": "evt_20260523_013",
-    "title": "Japan Expects First Oil Tanker Through Strait of Hormuz Since Regional Blockade Began",
-    "summary": "Japan's first crude oil tanker to navigate the Strait of Hormuz since the US-Iran conflict escalated departed the strategic waterway carrying 2 million barrels of Saudi Arabian crude, with a second Japanese tanker expected to follow in June.",
+    "id": "evt_20260523_096",
+    "title": "Israeli Lobby Actively Working Against US-Iran Peace Deal Prospects",
+    "summary": "Reports indicate that the Israeli lobby in Washington has actively mobilized against even the prospect of a US-Iran peace deal, adding domestic political pressure to the already complex negotiations.",
     "date_event": null,
-    "date_published": "2026-05-23T15:40:00Z",
+    "date_published": "2026-05-23T19:45:33Z",
     "geo": {
-      "lat": 26.4494061,
-      "lon": 56.2027702,
+      "lat": 38.8951,
+      "lon": -77.0364,
+      "country": "United States",
+      "city": "Washington"
+    },
+    "topics": [
+      "diplomacy",
+      "iran",
+      "israel",
+      "lobby",
+      "united-state",
+      "sanction"
+    ],
+    "confidence": 0.75,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/82989",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/YYb5odwr5XKT6bui-K3azIHKf4FK8VHRzG_-nl1tHxwGu6Ewm91ubBsDcot4wybEGVtdX2zY8AMmtGCqeNxt6WzK-Km-lBcEePrdTYP-17gy04TWbxaqoy01fP0zMnnhxgs7eHOOKNJipW2wf9G3PiiPj44ra8d0NUWnr0oOsniXrzY3L3BwjUsLOlI1iJud5F6eoIm3nVo3fJLd30lIVCLi031fiqzc_aYQ4d20nUmKhqsWL4QmSolp1pF7qBdBLG8FTuAd8IQdM69smCC8IZ1ec3F46MnwVK_1NHapSpM77phvw8UeUA2X1T7wLv92EDvGbdJ9dlI8cjjOv35Eiw.jpg"
+  },
+  {
+    "id": "evt_20260523_097",
+    "title": "Regional Diplomat Reports Trump's Call with Gulf Leaders on Iran 'Very Positive'",
+    "summary": "A regional diplomat told Fox News that Trump's call with leaders from Saudi Arabia, Qatar, UAE, Egypt, Jordan, Turkey, and Pakistan regarding Iran produced 'very positive' results with 'good progress being made.'",
+    "date_event": null,
+    "date_published": "2026-05-23T19:50:56Z",
+    "geo": {
+      "lat": 26.5667,
+      "lon": 56.25,
       "country": "Iran",
       "region": "Strait of Hormuz"
     },
     "topics": [
-      "shipping",
-      "strait-of-hormuz",
-      "energy",
-      "japan",
+      "diplomacy",
       "iran",
-      "oil",
-      "maritime-security"
+      "united-state",
+      "negotiation",
+      "ceasefire",
+      "strait-of-hormuz"
     ],
-    "confidence": 0.94,
-    "source_name": "Tradewindsnews (@Tradewindsnews)",
+    "confidence": 0.85,
+    "source_name": "Clash Report (@ClashReport)",
     "links": [
       {
-        "url": "https://www.anews.com.tr/world/2026/05/23/japan-expects-arrival-of-1st-oil-tanker-after-strait-of-hormuz-passage",
-        "label": "ANews Coverage"
+        "url": "https://t.me/ClashReport/82992",
+        "label": "Telegram Post"
       },
       {
-        "url": "https://www.aa.com.tr/en/middle-east/iran-says-25-ships-passed-through-strait-of-hormuz-in-past-24-hours/3946701",
-        "label": "Anadolu Agency - Iran Hormuz Transit"
+        "url": "https://www.cnn.com/2026/05/23/middleeast/iran-us-progress-framework-diplomacy-intl",
+        "label": "CNN Coverage"
       }
     ],
-    "link_preview_image": "https://ia.tmgrup.com.tr/9f5802/806/378/0/192/1020/670?u=https://i.tmgrup.com.tr/anews/v1/2026/05/23/japan-expects-arrival-of-1st-oil-tanker-after-strait-of-hormuz-passage-1779517374450.jpg"
+    "link_preview_image": "https://cdn4.telesco.pe/file/HaGnJ1_7WTEihOm1LYp-v4mJ8esYEf_DmVora-gU0ABS68P32Z6mdyE2LZ2gJKX565ft3MiHOYD7H3ufUIUAUMX_8AHMwLo6PXb3-wn4mU8JZPx70vm0FCz1Tke_V1jY5sKbl_TD5bTObOGWvwBdL0gJ4osR6YQf5MCG3KZ6KNljvgMNQRPor0J7RYubPR8rlssJDkqHWKzxeszjhz9afuFxc0Md338lYC0SHKgy-RL-4ZrpG4CAEY6ENZiWg50wYggyJGd562UZsuex3xa5SekXEBAdeUD7e9dMA-_3CLVYqiuljc_Rhb4-Jp7sGIErYB9jYqpgpxXfFmioZOk93Q.jpg"
   },
   {
-    "id": "evt_20260523_014",
-    "title": "IEA Warns Hormuz Oil Crisis Approaching Red Zone as Strategic Reserves Drain Faster Than Expected",
-    "summary": "International Energy Agency Executive Director Fatih Birol warned that global oil markets could enter a dangerous red zone by July or August 2026, with 400 million barrels already released from strategic reserves and approximately 14 million barrels per day removed from global markets by the ongoing Hormuz disruption.",
+    "id": "evt_20260523_098",
+    "title": "Zelensky Warns of Imminent Russian Oreshnik Missile Strike on Ukraine Including Kyiv",
+    "summary": "President Zelensky warned on May 23 that intelligence from Ukraine, the US, and European partners indicates Russia may prepare a strike using the Oreshnik intermediate-range ballistic missile, potentially targeting Kyiv with a combined weapons assault.",
     "date_event": null,
-    "date_published": "2026-05-23T16:00:00Z",
+    "date_published": "2026-05-23T19:53:00Z",
     "geo": {
-      "lat": 26.4494061,
-      "lon": 56.2027702,
-      "country": "Iran",
-      "region": "Strait of Hormuz"
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "city": "Kyiv"
     },
     "topics": [
-      "energy",
-      "oil",
-      "strait-of-hormuz",
-      "iea",
-      "sanctions",
-      "iran",
-      "maritime-security"
-    ],
-    "confidence": 0.95,
-    "source_name": "Tradewindsnews (@Tradewindsnews)",
-    "links": [
-      {
-        "url": "https://gulfnews.com/world/mena/hormuz-crisis-pushes-global-oil-market-toward-red-zone-1.500550533",
-        "label": "Gulf News - Hormuz Red Zone Warning"
-      }
-    ],
-    "link_preview_image": "https://gumlet-images.assettype.com/gulfnews%2F2026-05-22%2F1fz6bnsh%2FHIwreJjWEAAopBd.jpg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100"
-  },
-  {
-    "id": "evt_20260523_015",
-    "title": "Taiwan Reports China Deployed Over 100 Vessels Across Regional Waters Following Trump-Xi Beijing Summit",
-    "summary": "Taiwan's National Security Council chief reported that China deployed more than 100 navy, coast guard, and research vessels across waters stretching from the Yellow Sea to the South China Sea and Western Pacific, with numbers exceeding 100 in the days following the Trump-Xi summit in Beijing.",
-    "date_event": null,
-    "date_published": "2026-05-23T15:50:00Z",
-    "geo": {
-      "lat": 24.4917388,
-      "lon": 119.6054017,
-      "country": "Taiwan",
-      "region": "Taiwan Strait"
-    },
-    "topics": [
-      "china",
-      "taiwan",
+      "missile",
+      "conflict",
+      "ukraine",
+      "russia",
+      "oreshnik",
       "military",
-      "naval-deployment",
-      "indo-pacific",
-      "alliance",
-      "deterrence"
+      "escalation"
     ],
-    "confidence": 0.95,
-    "source_name": "CSIS Korea Chair (@CSISKoreaChair)",
+    "confidence": 0.9,
+    "source_name": "Militarylandnet (@Militarylandnet)",
     "links": [
       {
-        "url": "https://www.wionews.com/world/china-deploys-more-than-100-ships-near-taiwan-after-trump-xi-meeting-says-taipei-1779539283078",
-        "label": "WION Coverage"
+        "url": "https://kyivindependent.com/zelensky-warns-of-russian-oreshnik-missile-attack/",
+        "label": "Kyiv Independent"
       },
       {
-        "url": "https://focustaiwan.tw/politics/202605230004",
-        "label": "Focus Taiwan - Trump Arms Decision"
+        "url": "https://www.pravda.com.ua/eng/news/2026/05/23/8036112/",
+        "label": "Ukrainska Pravda"
       }
     ],
-    "link_preview_image": "https://cdn1.wionews.com/prod/wion/images/2026/20260523/image-1779539936712.jpg?imwidth=1200&imheight=900"
+    "link_preview_image": "https://assets.kyivindependent.com/content/images/2025/06/GettyImages-2186774635.jpg"
   },
   {
-    "id": "evt_20260523_016",
-    "title": "China Conducts Large-Scale Naval Exercises Across Yellow Sea to South China Sea Following Xi-Trump Summit",
-    "summary": "China deployed over 100 naval, coast guard, and maritime research vessels across a broad swath of the Western Pacific following President Xi Jinping's summit with US President Trump, as Beijing signals resolve over Taiwan and regional maritime claims amid shifting US alliance dynamics.",
+    "id": "evt_20260523_099",
+    "title": "Ukraine Strikes Sheskharis Oil Terminal and Shadow Fleet Tanker CHRYSALIS in Novorossiysk",
+    "summary": "Ukrainian Defense Forces struck the Sheskharis oil terminal, the Grushovaya oil depot, and the shadow fleet tanker CHRYSALIS in Novorossiysk, confirming fires at multiple strategic Russian energy facilities on the Black Sea coast.",
     "date_event": null,
-    "date_published": "2026-05-23T16:05:00Z",
+    "date_published": "2026-05-23T19:31:00Z",
     "geo": {
-      "lat": 24.4917388,
-      "lon": 119.6054017,
-      "country": "China",
-      "region": "South China Sea"
+      "lat": 44.7234,
+      "lon": 37.7687,
+      "country": "Russia",
+      "city": "Novorossiysk"
     },
     "topics": [
-      "china",
-      "taiwan",
-      "military",
-      "naval-deployment",
-      "south-china-sea",
-      "information-operation",
-      "nationalism"
+      "conflict",
+      "ukraine",
+      "russia",
+      "oil-infrastructure",
+      "strike",
+      "energy",
+      "shadow-fleet"
     ],
-    "confidence": 0.7,
-    "source_name": "r/Sino (reddit.com/r/Sino)",
+    "confidence": 0.85,
+    "source_name": "r/RussiaUkraineWar2022 (reddit.com/r/RussiaUkraineWar2022)",
     "links": [
       {
-        "url": "https://www.straitstimes.com/asia/east-asia/taiwan-security-chief-says-china-deployed-over-100-vessels-in-regional-waters",
-        "label": "Straits Times Coverage"
+        "url": "https://unn.ua/en/amp/afu-struck-the-sheskharis-oil-terminal-and-a-russian-shadow-fleet-tanker-general-staff",
+        "label": "UNN Report"
       }
     ],
-    "link_preview_image": "https://cassette.sphdigital.com.sg/image/straitstimes/e37c687a1db87f401972ea685a73b7097019fcafafe8a8f1629dea8ac1d70694"
+    "link_preview_image": "https://unn.ua/_next/image?url=https%3A%2F%2Funn.ua%2Fimg%2F2026%2F05%2F23%2F1779539136-2806-large.webp&w=720&q=75"
   },
   {
-    "id": "evt_20260523_017",
-    "title": "Iran Reports Finalizing Memorandum of Understanding with United States as Diplomacy Enters Decisive Phase",
-    "summary": "Iran's Foreign Ministry announced that Tehran has entered a decisive phase in negotiations with the United States, working to finalize a memorandum of understanding as Pakistan's army chief visited Tehran to mediate. Major gaps remain over enriched uranium surrender, Hormuz reopening, and sanctions relief.",
+    "id": "evt_20260523_100",
+    "title": "US and Iran Near 60-Day Ceasefire Extension and Framework Agreement as Mediators Report Progress",
+    "summary": "Mediators reported both the US and Iran moved closer to a 60-day ceasefire extension and framework agreement, with Pakistan's army chief concluding 'highly productive' Tehran talks and Trump indicating a decision could come by Sunday.",
     "date_event": null,
-    "date_published": "2026-05-23T16:10:00Z",
+    "date_published": "2026-05-23T19:30:00Z",
     "geo": {
-      "lat": 35.6892523,
-      "lon": 51.3896004,
+      "lat": 35.6892,
+      "lon": 51.389,
       "country": "Iran",
       "city": "Tehran"
     },
     "topics": [
-      "iran",
-      "nuclear",
       "diplomacy",
-      "sanctions",
-      "united-states",
+      "iran",
+      "united-state",
+      "ceasefire",
       "strait-of-hormuz",
-      "mediation"
+      "nuclear",
+      "negotiation",
+      "pakistan"
     ],
     "confidence": 0.9,
-    "source_name": "JasonBrodsky (@JasonBrodsky)",
+    "source_name": "r/geopolitics (reddit.com/r/geopolitics)",
     "links": [
       {
-        "url": "https://www.aljazeera.com/news/2026/5/23/iran-war-day-85-tehran-says-major-gaps-remain-in-us-talks",
-        "label": "Al Jazeera - Iran War Day 85"
+        "url": "https://www.cnbc.com/2026/05/23/us-iran-war-talks.html",
+        "label": "CNBC Report"
+      },
+      {
+        "url": "https://www.aljazeera.com/news/2026/5/23/iran-weighs-us-peace-proposal-despite-deep-and-significant-disagreements",
+        "label": "Al Jazeera Coverage"
       }
     ],
-    "link_preview_image": "https://www.aljazeera.com/wp-content/uploads/2026/05/2026-05-22T121330Z_48618825_RC2QDLANNWF7_RTRMADP_3_IRAN-CRISIS-1779485468.jpg?resize=1920%2C1440"
+    "link_preview_image": "https://image.cnbcfm.com/api/v1/image/108311027-1779432518409-gettyimages-2276028903-3e7a7050.jpeg?v=1779432590&w=1920&h=1080"
   }
 ]
