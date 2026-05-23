@@ -36,6 +36,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
+## 2026-05-23 16:15Z — @EsriTraining, @John_Pollock22, @Oilcfd dormant; skip API for these
+**Trigger:** Bucket 2 collection. Twitter API returned 0 tweets for all three handles. r.jina.ai mirror confirmed: @EsriTraining last tweet 2024-01-01 (17+ months dormant), @John_Pollock22 last tweet 2025-06-22 (11 months dormant), @Oilcfd last tweet 2025-06-22 (11 months dormant).
+**Finding:** All three accounts have ceased posting relevant content. @EsriTraining (GIS training) has not posted in over 17 months. @John_Pollock22 (defense analysis) and @Oilcfd (oil/sanctions tracking) have not posted in 11 months. Twitter API calls for these handles waste rate-limited API calls. exa_web_search with source-specific topic keywords remains effective for their coverage areas.
+**Action for next run:** Skip Twitter API and r.jina.ai for twitter-esri-training, twitter-john-pollock, and twitter-oilcfd. Use exa_web_search with source-specific topic keywords instead. Flag all three sources for manifest status review.
+**Expires:** 2026-08-23
+
 ## 2026-05-23 06:45Z — reddit-russiaukrainewar2022 subreddit appears inactive; all posts from 2025
 **Trigger:** Bucket 6 collection. Reddit JSON API returned posts but all created_utc timestamps resolved to May 2025, not 2026. Zero posts within the 1-hour collection window or even within the current year.
 **Finding:** The r/RussiaUkraineWar2022 subreddit appears to have stopped receiving new submissions in 2026. The most recent post dates to May 24, 2025. The subreddit may have migrated, gone private for new posts, or effectively died. exa_web_search with Ukraine/Russia keywords yields results from other sources but none attributable to this subreddit.
