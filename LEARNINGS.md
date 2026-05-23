@@ -36,6 +36,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
+## 2026-05-23 06:45Z — reddit-russiaukrainewar2022 subreddit appears inactive; all posts from 2025
+**Trigger:** Bucket 6 collection. Reddit JSON API returned posts but all created_utc timestamps resolved to May 2025, not 2026. Zero posts within the 1-hour collection window or even within the current year.
+**Finding:** The r/RussiaUkraineWar2022 subreddit appears to have stopped receiving new submissions in 2026. The most recent post dates to May 24, 2025. The subreddit may have migrated, gone private for new posts, or effectively died. exa_web_search with Ukraine/Russia keywords yields results from other sources but none attributable to this subreddit.
+**Action for next run:** Skip Reddit JSON API for reddit-russiaukrainewar2022. Use exa_web_search with Russia Ukraine conflict keywords instead. Flag source for manifest status review (recommend status change to inactive or handle update).
+**Expires:** 2026-08-23
+
 ## 2026-05-21 22:49Z — @US5thFleet, @PLATracker, @Borrowed7Time inactive or stale; skip API for these
 **Trigger:** Bucket 10 Twitter API returned 0 results for all three handles. Jina.ai mirror confirmed: @US5thFleet last tweet 2023-10-21, @PLATracker last tweet 2025-03-25, @Borrowed7Time last original tweet 2026-05-02 (only RTs since).
 **Finding:** @US5thFleet appears to have ceased posting entirely (no tweets in 19+ months). @PLATracker has not posted in 14+ months. @Borrowed7Time only retweets non-OSINT content. Twitter API calls for these handles consistently return 0 in-window results and waste rate-limited API calls.
