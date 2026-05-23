@@ -150,3 +150,9 @@ twitter-national-interest (@NationalInterest, 16 chars)
 **Finding:** The twitter-osaindawg source (maritime OSINT, vessel tracking) references handle @Osaindawg which does not resolve via Twitter API v2 user lookup. exa_web_search with maritime OSINT keywords yielded results (Russian navy DPRK ship escort story from NK News) but none published within the 1-hour collection window. The source topic area remains coverable via exa_web_search.
 **Action for next run:** Add twitter-osaindawg (@Osaindawg) to the dead/not-found handles list. Skip Twitter API and r.jina.ai for this source. Use exa_web_search with maritime OSINT, vessel tracking, and AIS keywords.
 **Expires:** 2026-08-21
+
+## 2026-05-23 20:20Z — webpage-cuashub-defense source description misidentifies site content
+**Trigger:** Bucket 6 collection opened cuashub.com; site content covers Counter-UAS (unmanned aircraft systems) defense technology, NOT financial security or credit union threats.
+**Finding:** The source file source/sources/webpage-cuashub-defense.md describes CUASHUB as covering "financial security threats, cybersecurity, fraud prevention" for credit unions. The actual site (cuashub.com) stands for "C-UAS Hub" — a counter-drone defense technology news aggregator (drone detection, NATO counter-UAS integration, military counter-drone capability). Keywords in the source file do not match site content.
+**Action for next run:** Flag webpage-cuashub-defense for source description correction. Update keywords to match actual content: counter-drone, counter-UAS, drone-detection, NATO, military, defense-technology. Do not expect financial security content from this source.
+**Expires:** permanent
