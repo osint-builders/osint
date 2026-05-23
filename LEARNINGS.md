@@ -156,3 +156,8 @@ twitter-national-interest (@NationalInterest, 16 chars)
 **Finding:** The source file source/sources/webpage-cuashub-defense.md describes CUASHUB as covering "financial security threats, cybersecurity, fraud prevention" for credit unions. The actual site (cuashub.com) stands for "C-UAS Hub" — a counter-drone defense technology news aggregator (drone detection, NATO counter-UAS integration, military counter-drone capability). Keywords in the source file do not match site content.
 **Action for next run:** Flag webpage-cuashub-defense for source description correction. Update keywords to match actual content: counter-drone, counter-UAS, drone-detection, NATO, military, defense-technology. Do not expect financial security content from this source.
 **Expires:** permanent
+## 2026-05-23 20:12Z — @Therealshipdude Twitter handle not found; add to dead handles list
+**Trigger:** Bucket 12 collection. Twitter API v2 user lookup for @Therealshipdude returned no .data object — account not found or suspended.
+**Finding:** twitter-therealshipdude source references handle @Therealshipdude which does not resolve via Twitter API v2 user lookup. The maritime OSINT / ship identification specialist may have changed handles, gone private, or left the platform. exa_web_search with maritime OSINT and vessel tracking keywords remains effective for the topic area.
+**Action for next run:** Skip Twitter API and r.jina.ai for twitter-therealshipdude. Use exa_web_search with maritime OSINT, vessel tracking, AIS, and ship identification keywords. Flag source for manifest handle investigation or status change to inactive.
+**Expires:** 2026-08-23
