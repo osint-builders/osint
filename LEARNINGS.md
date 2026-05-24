@@ -36,6 +36,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
+## 2026-05-24 00:15Z — Late-night UTC window (23:15-00:15) yields zero Twitter API results for active handles
+**Trigger:** Bucket 15 collection. Twitter API search/recent returned result_count=0 for all 5 verified-active handles (Thewarzonewire, Gcaptain, AuroraIntel, Esri, USFleetForces) despite confirmed account existence and recent posting activity.
+**Finding:** The 23:15-00:15 UTC collection window falls during late evening in the Americas and early morning in Europe/Middle East. Defense and OSINT Twitter accounts rarely post during this hour, producing zero in-window results from the API even when accounts remain active. exa_web_search proved effective as a fallback for all sources, surfacing 10 events from wire services and 24/7 news outlets that covered the same topic areas.
+**Action for next run:** For buckets scheduled in the 22:00-02:00 UTC range, expect zero or near-zero Twitter API results from most handles. Skip straight to exa_web_search with source-specific keywords to avoid wasting API rate limits. Reserve Twitter API calls for buckets aligned with 12:00-22:00 UTC when posting activity peaks.
+**Expires:** permanent
+
 ## 2026-05-23 16:15Z — @EsriTraining, @John_Pollock22, @Oilcfd dormant; skip API for these
 **Trigger:** Bucket 2 collection. Twitter API returned 0 tweets for all three handles. r.jina.ai mirror confirmed: @EsriTraining last tweet 2024-01-01 (17+ months dormant), @John_Pollock22 last tweet 2025-06-22 (11 months dormant), @Oilcfd last tweet 2025-06-22 (11 months dormant).
 **Finding:** All three accounts have ceased posting relevant content. @EsriTraining (GIS training) has not posted in over 17 months. @John_Pollock22 (defense analysis) and @Oilcfd (oil/sanctions tracking) have not posted in 11 months. Twitter API calls for these handles waste rate-limited API calls. exa_web_search with source-specific topic keywords remains effective for their coverage areas.
