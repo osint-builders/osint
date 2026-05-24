@@ -36,6 +36,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
+## 2026-05-24 21:22Z — @Claudefb Twitter handle resolves to personal account, not security analyst
+**Trigger:** Bucket 11 collection. Twitter API user lookup for @Claudefb returned "Claudenice Borges" (uid 269500165, 103 followers, 443 tweets) — clearly not a security or OSINT analyst.
+**Finding:** The twitter-claudefb source references handle @Claudefb which resolves to a personal account with minimal activity (103 followers, 1 media post). The source file describes "regional observation and analysis covering political developments, security situations" but the actual account produces zero OSINT-relevant content. exa_web_search with the source keywords yielded no in-window results attributable to this account.
+**Action for next run:** Skip Twitter API and exa_web_search for twitter-claudefb. Flag source for manifest handle investigation or status change to inactive.
+**Expires:** 2026-08-24
+
 ## 2026-05-24 20:16Z — satellite.today/government-military/ returns HTTP 000 (connection timeout)
 **Trigger:** Bucket 10 collection. curl returned HTTP 000 for https://www.satellite.today/government-military/ with 10-second timeout.
 **Finding:** The Satellite Today government-military page at satellite.today/government-military/ fails to respond entirely — not a 404 or redirect but a connection-level timeout. The site may have changed domains, gone offline, or blocked agent IP ranges. exa_web_search with defense satellite and military space keywords effectively surfaced relevant articles from SpaceNews, Defence Blog, and Air & Space Forces Magazine covering the same topic area.
