@@ -36,6 +36,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
+## 2026-05-24 20:16Z — satellite.today/government-military/ returns HTTP 000 (connection timeout)
+**Trigger:** Bucket 10 collection. curl returned HTTP 000 for https://www.satellite.today/government-military/ with 10-second timeout.
+**Finding:** The Satellite Today government-military page at satellite.today/government-military/ fails to respond entirely — not a 404 or redirect but a connection-level timeout. The site may have changed domains, gone offline, or blocked agent IP ranges. exa_web_search with defense satellite and military space keywords effectively surfaced relevant articles from SpaceNews, Defence Blog, and Air & Space Forces Magazine covering the same topic area.
+**Action for next run:** Skip direct URL fetch for webpage-satellite-today-gov-mil. Use exa_web_search with "defense satellite military space contract" keywords as primary collection method. Flag source for URL investigation or status change.
+**Expires:** 2026-08-24
+
 ## 2026-05-24 00:15Z — Late-night UTC window (23:15-00:15) yields zero Twitter API results for active handles
 **Trigger:** Bucket 15 collection. Twitter API search/recent returned result_count=0 for all 5 verified-active handles (Thewarzonewire, Gcaptain, AuroraIntel, Esri, USFleetForces) despite confirmed account existence and recent posting activity.
 **Finding:** The 23:15-00:15 UTC collection window falls during late evening in the Americas and early morning in Europe/Middle East. Defense and OSINT Twitter accounts rarely post during this hour, producing zero in-window results from the API even when accounts remain active. exa_web_search proved effective as a fallback for all sources, surfacing 10 events from wire services and 24/7 news outlets that covered the same topic areas.
