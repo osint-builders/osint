@@ -191,3 +191,9 @@ twitter-national-interest (@NationalInterest, 16 chars)
 **Finding:** cuashub.com (C-UAS Hub) has effectively stopped publishing new content since late January 2026. The site loads successfully but contains no articles from the past 4 months. Direct URL fetch yields zero in-window events every run. exa_web_search with counter-drone keywords remains effective for the topic area.
 **Action for next run:** Skip direct URL fetch for webpage-cuashub-defense. Use exa_web_search with counter-UAS, counter-drone, and drone-defense keywords as primary collection method. Consider flagging source for manifest status change to inactive if the site remains stale.
 **Expires:** 2026-08-24
+
+## 2026-05-24 21:22Z — r.jina.ai Telegram output truncation hides in-window posts; use grep for timestamps first
+**Trigger:** Bucket 2 collection. Initial 15KB fetch of MES Telegram channel via r.jina.ai showed latest post at 17:31 UTC, appearing to have no posts in the 20:22-21:22 window. A targeted grep for time patterns revealed posts at 20:25, 20:28, 20:30, 20:36 UTC that the truncated initial read missed.
+**Finding:** r.jina.ai returns Telegram channel preview pages with posts ordered newest-first, but the raw markdown output can exceed typical fetch limits. When the output gets truncated at 15KB, the newest posts (at the top of the page) get cut off, leaving only older posts visible. Using `grep -oP '\[\d+:\d+\]'` on the full output efficiently extracts all post timestamps without reading the full content.
+**Action for next run:** For all Telegram sources, after fetching r.jina.ai output, immediately run `grep -oP '\[\d+:\d+\]'` to extract all post timestamps before reading content. Only then read the full content of posts whose timestamps fall within the collection window.
+**Expires:** permanent
