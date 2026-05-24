@@ -31,7 +31,7 @@ identify -format "%w x %h | %m | %b\n" /tmp/output.png
 # Expected: 720 x 720 | PNG | <500KB
 
 # 4. Move to final location
-mv /tmp/output.png data/media/2026-04/images/2026-04-29/evt_20260429_001_img1.png
+mv /tmp/output.png "data/media/2026-04/images/2026-04-29/${EVENT_ID}_img1.png"
 ```
 
 ## Pipeline Breakdown
@@ -90,9 +90,9 @@ magick normalized.jpg \
 
 **Step 5: Standardized Naming**
 ```
-evt_20260429_001_img1.png  (primary image)
-evt_20260429_001_img2.png  (additional context)
-evt_20260429_001_img3.png  (additional context)
+${EVENT_ID}_img1.png  (primary image)
+${EVENT_ID}_img2.png  (additional context)
+${EVENT_ID}_img3.png  (additional context)
 ```
 
 ## Storage Path Convention
@@ -102,27 +102,27 @@ data/media/
 └── YYYY-MM/              # Year-month folder
     └── images/           # Images subfolder
         └── YYYY-MM-DD/   # Date folder
-            ├── evt_YYYYMMDD_001_img1.png
-            ├── evt_YYYYMMDD_001_img2.png
-            ├── evt_YYYYMMDD_002_img1.png
+            ├── evt_<snowflake>_img1.png
+            ├── evt_<snowflake>_img2.png
+            ├── evt_<snowflake>_img1.png
             └── ...
 ```
 
 Example paths:
 ```
-data/media/2026-04/images/2026-04-29/evt_20260429_001_img1.png
-data/media/2026-04/images/2026-04-29/evt_20260429_001_img2.png
-data/media/2026-04/images/2026-04-30/evt_20260430_001_img1.png
+data/media/2026-04/images/2026-04-29/${EVENT_ID}_img1.png
+data/media/2026-04/images/2026-04-29/${EVENT_ID}_img2.png
+data/media/2026-04/images/2026-04-30/${EVENT_ID}_img1.png
 ```
 
 ### Relative Paths in Event Entity
 
 ```json
 {
-  "id": "evt_20260429_001",
+  "id": "evt_52117619469189120",
   "image_urls": [
-    "./media/2026-04/images/2026-04-29/evt_20260429_001_img1.png",
-    "./media/2026-04/images/2026-04-29/evt_20260429_001_img2.png"
+    "./media/2026-04/images/2026-04-29/evt_52117619469189120_img1.png",
+    "./media/2026-04/images/2026-04-29/evt_52117619469189120_img2.png"
   ]
 }
 ```
@@ -137,10 +137,10 @@ data/media/2026-04/images/2026-04-30/evt_20260430_001_img1.png
 
 Examples:
 ```
-evt_20260429_001_img1.png  ✓ Primary image
-evt_20260429_001_img2.png  ✓ Additional context
-evt_20260429_001_image1.png  ✗ Wrong (use "img" not "image")
-evt_20260429_001_1.png  ✗ Wrong (missing "img" prefix)
+evt_52117619469189120_img1.png  ✓ Primary image
+evt_52117619469189120_img2.png  ✓ Additional context
+evt_52117619469189120_image1.png  ✗ Wrong (use "img" not "image")
+evt_52117619469189120_1.png  ✗ Wrong (missing "img" prefix)
 ```
 
 ## Complete Examples
@@ -158,9 +158,9 @@ magick /tmp/raw_img.jpg \
   +repage \
   -strip \
   -define png:compression-level=9 \
-  evt_20260429_001_img1.png
+  "${EVENT_ID}_img1.png"
 
-jq '.image_urls += ["./media/2026-04/images/2026-04-29/evt_20260429_001_img1.png"]' event.json > event.json.tmp && mv event.json.tmp event.json
+jq --arg p "./media/2026-04/images/2026-04-29/${EVENT_ID}_img1.png" '.image_urls += [$p]' event.json > event.json.tmp && mv event.json.tmp event.json
 ```
 
 ### Example 2: Batch Processing Multiple Events

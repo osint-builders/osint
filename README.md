@@ -72,7 +72,7 @@ cat data/events/$(date +%Y-%m)/$(date +%Y-%m-%d).jsonl | jq .
 
 ```json
 {
-  "id": "evt_20260429_001",
+  "id": "evt_52117619469189120",
   "source": {"name": "Reuters", "provider": "news"},
   "title": "...",
   "summary": "...",

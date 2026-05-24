@@ -46,10 +46,10 @@ magick /tmp/video_frame.jpg \
   +repage \
   -strip \
   -define png:compression-level=9 \
-  evt_20260429_001_img1.png
+  "${EVENT_ID}_img1.png"
 
 # 4. Update event entity
-jq '.image_urls += ["./media/2026-04/images/2026-04-29/evt_20260429_001_img1.png"]' event.json > event.json.tmp && mv event.json.tmp event.json
+jq --arg p "./media/2026-04/images/2026-04-29/${EVENT_ID}_img1.png" '.image_urls += [$p]' event.json > event.json.tmp && mv event.json.tmp event.json
 
 # 5. Cleanup
 rm /tmp/video.mp4 /tmp/video_frame.jpg

@@ -44,14 +44,14 @@ for i in 1 2 3; do
     +repage \
     -strip \
     -define png:compression-level=9 \
-    evt_20260429_001_img${i}.png
+    "${EVENT_ID}_img${i}.png"
 done
 
-# 5. Update event entity
-jq '.image_urls += [
-  "./media/2026-04/images/2026-04-29/evt_20260429_001_img1.png",
-  "./media/2026-04/images/2026-04-29/evt_20260429_001_img2.png",
-  "./media/2026-04/images/2026-04-29/evt_20260429_001_img3.png"
+# 5. Update event entity (EVENT_ID set by snowflake.js earlier)
+jq --arg e "$EVENT_ID" '.image_urls += [
+  "./media/2026-04/images/2026-04-29/" + $e + "_img1.png",
+  "./media/2026-04/images/2026-04-29/" + $e + "_img2.png",
+  "./media/2026-04/images/2026-04-29/" + $e + "_img3.png"
 ]' event.json > event.json.tmp && mv event.json.tmp event.json
 ```
 
@@ -76,7 +76,7 @@ magick /tmp/map.png \
   +repage \
   -strip \
   -define png:compression-level=9 \
-  evt_20260429_001_img1.png
+  "${EVENT_ID}_img1.png"
 
 # 5. Cleanup
 rm /tmp/map.png

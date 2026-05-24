@@ -71,6 +71,9 @@ const CONSTRAINTS = {
   confidence: { min: 0, max: 1 },
 };
 
+// Valid ID formats: Snowflake (evt_<digits 15-20>) or legacy (evt_YYYYMMDD_NNN)
+const ID_FORMAT_RE = /^evt_(\d{8,20}|\d{8}_\d{3,}|example_\d+)$/;
+
 // E-PRIME: forms of "to be" that must not appear in `contents`. Word-boundary
 // matched, case-insensitive. The runtime prompt enforces the same set.
 const EPRIME_RE = /\b(is|are|was|were|be|been|being)\b/i;
@@ -176,6 +179,14 @@ function validateEvent(event, filename, lineNumber) {
     } else if (actualType !== expectedType) {
       issues.push(`Field '${field}' has type '${actualType}', expected '${expectedType}'`);
     }
+  }
+
+  // ID format check
+  if (typeof event.id === 'string' && !ID_FORMAT_RE.test(event.id)) {
+    issues.push(
+      `Field 'id' has invalid format: '${event.id}'. ` +
+      `Expected evt_<snowflake> (15-20 digits) or legacy evt_YYYYMMDD_NNN`
+    );
   }
 
   // String-length constraints
