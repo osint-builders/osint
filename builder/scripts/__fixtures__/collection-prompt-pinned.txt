@@ -385,7 +385,11 @@ fi
 10. **Log** errors, rate limits, rejects to `$WORK_DIR/{source_id}/new-memory.md`.
 
 Required event fields: `id`, `source`, `title`, `summary`, `contents` (≥100 words, E-PRIME), `date_published`, `links`, `geo` (lat+lon), `image_urls`.
-ID format: `evt_20260501_NNN`
+ID format: Snowflake. Generate each event ID via:
+```bash
+EVENT_ID=$(node "$REPO_ROOT/data/scripts/snowflake.js" --worker 2)
+```
+Each call returns a globally unique `evt_<snowflake>` string. The bucket number is encoded in the ID, so parallel agents never collide.
 
 Skills (read SKILL.md first): `agent-browser`, `perplexity-search`, `data-to-markdown`, `world-event-entities`, `remember-as-you-go`.
 
