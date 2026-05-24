@@ -173,3 +173,9 @@ twitter-national-interest (@NationalInterest, 16 chars)
 **Finding:** The source file source/sources/twitter-xkorea.md describes the account as providing "focused updates and news coverage on Korean Peninsula developments with emphasis on breaking news, military activities, and security incidents." The actual @XKorea account operates as X/Twitter's official Korea office account focused on platform marketing. It produces no OSINT-relevant content whatsoever. exa_web_search with Korea security keywords yields results from other sources but none attributable to @XKorea.
 **Action for next run:** Skip Twitter API and r.jina.ai for twitter-xkorea. Flag source for manifest status change to inactive or handle correction. The intended Korea security news source may operate under a different handle.
 **Expires:** permanent
+
+## 2026-05-24 16:17Z — @MofajapanEn Twitter handle not found; API returns user-not-found error
+**Trigger:** Bucket 9 collection. Twitter API v2 user lookup for @MofajapanEn returned "Could not find user with username: [MofajapanEn]" error.
+**Finding:** The twitter-mofajapan-en source references handle @MofajapanEn which does not resolve via Twitter API v2 user lookup. The account may have changed handles, gone private, or left the platform. Japan MOFA official English content remains accessible via mofa.go.jp and exa_web_search with Japan foreign affairs keywords.
+**Action for next run:** Skip Twitter API for twitter-mofajapan-en. Use exa_web_search with Japan MOFA, foreign affairs, and diplomatic keywords. Flag source for manifest handle investigation or status change.
+**Expires:** 2026-08-24
