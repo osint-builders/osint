@@ -140,9 +140,9 @@ function main() {
     if (pubDate) {
       let dateMs = new Date(pubDate).getTime();
       if (!isNaN(dateMs)) {
-        // Clamp pre-epoch dates to epoch to avoid negative snowflakes
+        // Clamp pre-epoch dates to epoch + 1s to avoid tiny/negative snowflakes
         const epochMs = Number(1767225600000n);
-        if (dateMs < epochMs) dateMs = epochMs;
+        if (dateMs < epochMs) dateMs = epochMs + 1000;
         newId = gen.idFromTimestamp(dateMs);
       } else {
         newId = gen.nextId();
