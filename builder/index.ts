@@ -332,7 +332,6 @@ function buildCollectionPrompt(
     executionTimestamp,
     extractionTimestamp,
     extractionDate,
-    extractionDateCompact: extractionDate.replace(/-/g, ""),
     yearMonth,
     timeWindowStart,
     timeWindowEnd,
