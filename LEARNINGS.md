@@ -161,3 +161,9 @@ twitter-national-interest (@NationalInterest, 16 chars)
 **Finding:** twitter-therealshipdude source references handle @Therealshipdude which does not resolve via Twitter API v2 user lookup. The maritime OSINT / ship identification specialist may have changed handles, gone private, or left the platform. exa_web_search with maritime OSINT and vessel tracking keywords remains effective for the topic area.
 **Action for next run:** Skip Twitter API and r.jina.ai for twitter-therealshipdude. Use exa_web_search with maritime OSINT, vessel tracking, AIS, and ship identification keywords. Flag source for manifest handle investigation or status change to inactive.
 **Expires:** 2026-08-23
+
+## 2026-05-24 00:15Z — @XKorea Twitter handle resolves to X/Twitter Korea office, not security/defense content
+**Trigger:** Bucket 6 collection. r.jina.ai mirror confirmed @XKorea account posts about X platform features (subscription services, K-pop engagement, BTS milestones). Zero defense, security, or Korean peninsula content.
+**Finding:** The source file source/sources/twitter-xkorea.md describes the account as providing "focused updates and news coverage on Korean Peninsula developments with emphasis on breaking news, military activities, and security incidents." The actual @XKorea account operates as X/Twitter's official Korea office account focused on platform marketing. It produces no OSINT-relevant content whatsoever. exa_web_search with Korea security keywords yields results from other sources but none attributable to @XKorea.
+**Action for next run:** Skip Twitter API and r.jina.ai for twitter-xkorea. Flag source for manifest status change to inactive or handle correction. The intended Korea security news source may operate under a different handle.
+**Expires:** permanent
