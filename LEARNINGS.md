@@ -179,3 +179,9 @@ twitter-national-interest (@NationalInterest, 16 chars)
 **Finding:** The twitter-mofajapan-en source references handle @MofajapanEn which does not resolve via Twitter API v2 user lookup. The account may have changed handles, gone private, or left the platform. Japan MOFA official English content remains accessible via mofa.go.jp and exa_web_search with Japan foreign affairs keywords.
 **Action for next run:** Skip Twitter API for twitter-mofajapan-en. Use exa_web_search with Japan MOFA, foreign affairs, and diplomatic keywords. Flag source for manifest handle investigation or status change.
 **Expires:** 2026-08-24
+
+## 2026-05-24 20:16Z — webpage-cuashub-defense site content stale since January 2026; skip direct fetch
+**Trigger:** Bucket 5 collection. cuashub.com reachable (HTTP 200) but most recent article date on the page: 2026-01-28, nearly 4 months ago. Zero fresh content available for any hourly collection window.
+**Finding:** cuashub.com (C-UAS Hub) has effectively stopped publishing new content since late January 2026. The site loads successfully but contains no articles from the past 4 months. Direct URL fetch yields zero in-window events every run. exa_web_search with counter-drone keywords remains effective for the topic area.
+**Action for next run:** Skip direct URL fetch for webpage-cuashub-defense. Use exa_web_search with counter-UAS, counter-drone, and drone-defense keywords as primary collection method. Consider flagging source for manifest status change to inactive if the site remains stale.
+**Expires:** 2026-08-24
