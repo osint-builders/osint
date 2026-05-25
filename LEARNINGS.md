@@ -36,6 +36,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
+## 2026-05-25 00:17Z — Telegram t.me embed endpoint reliably extracts post timestamps when agent-browser datetime fails
+**Trigger:** Bucket 10 collection. agent-browser eval for `.tgme_widget_message time[datetime]` returned null for all QudsNen and ourwarstoday posts. Fell back to individual post embed endpoints.
+**Finding:** `curl -sf https://t.me/<channel>/<post_id>?embed=1 | grep -oP 'datetime="[^"]*"'` reliably returns the exact UTC post timestamp from the HTML embed page. This works even when the full channel preview page (`t.me/s/<channel>`) does not expose datetime attributes in agent-browser's DOM. The approach allows checking specific post IDs sequentially (1 request per post) to find in-window content quickly.
+**Action for next run:** When agent-browser datetime extraction returns null for Telegram posts, fall back to checking individual post embeds via `curl https://t.me/<channel>/<last_known_id>?embed=1`. Increment post ID from the last known post to find recent posts, then extract timestamps to filter for the collection window.
+**Expires:** permanent
+
 ## 2026-05-24 21:22Z — @Claudefb Twitter handle resolves to personal account, not security analyst
 **Trigger:** Bucket 11 collection. Twitter API user lookup for @Claudefb returned "Claudenice Borges" (uid 269500165, 103 followers, 443 tweets) — clearly not a security or OSINT analyst.
 **Finding:** The twitter-claudefb source references handle @Claudefb which resolves to a personal account with minimal activity (103 followers, 1 media post). The source file describes "regional observation and analysis covering political developments, security situations" but the actual account produces zero OSINT-relevant content. exa_web_search with the source keywords yielded no in-window results attributable to this account.
