@@ -36,6 +36,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
+## 2026-05-25 18:19Z — @MenchOsint inactive since March 22; skip API and exa for this source
+**Trigger:** Bucket 10 collection. Twitter API returned 0 in-window tweets. exa_web_search and xcancel.com confirmed last tweet on March 22 ("stepping away for personal reasons").
+**Finding:** @MenchOsint, a prominent OSINT military equipment analyst (222K+ followers), announced a personal hiatus on March 22, 2026 and has not posted since. The account remains active but produces no collectible content. The Telegram mirror (t.me/s/MenchOsint) shows the same March cutoff.
+**Action for next run:** Skip Twitter API and exa_web_search for twitter-mench-osint until the account resumes posting. Check xcancel.com/MenchOsint briefly to detect any return to activity.
+**Expires:** 2026-08-25
+
 ## 2026-05-25 00:17Z — Telegram t.me embed endpoint reliably extracts post timestamps when agent-browser datetime fails
 **Trigger:** Bucket 10 collection. agent-browser eval for `.tgme_widget_message time[datetime]` returned null for all QudsNen and ourwarstoday posts. Fell back to individual post embed endpoints.
 **Finding:** `curl -sf https://t.me/<channel>/<post_id>?embed=1 | grep -oP 'datetime="[^"]*"'` reliably returns the exact UTC post timestamp from the HTML embed page. This works even when the full channel preview page (`t.me/s/<channel>`) does not expose datetime attributes in agent-browser's DOM. The approach allows checking specific post IDs sequentially (1 request per post) to find in-window content quickly.
