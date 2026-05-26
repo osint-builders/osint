@@ -215,3 +215,9 @@ twitter-national-interest (@NationalInterest, 16 chars)
 **Finding:** r.jina.ai returns Telegram channel preview pages with posts ordered newest-first, but the raw markdown output can exceed typical fetch limits. When the output gets truncated at 15KB, the newest posts (at the top of the page) get cut off, leaving only older posts visible. Using `grep -oP '\[\d+:\d+\]'` on the full output efficiently extracts all post timestamps without reading the full content.
 **Action for next run:** For all Telegram sources, after fetching r.jina.ai output, immediately run `grep -oP '\[\d+:\d+\]'` to extract all post timestamps before reading content. Only then read the full content of posts whose timestamps fall within the collection window.
 **Expires:** permanent
+
+## 2026-05-26 20:32Z — reddit-northkoreanews subreddit effectively dead; last post 26+ days ago
+**Trigger:** Bucket 3 collection. Reddit JSON API returned successfully but latest post in r/NorthKoreaNews has created_utc from April 30, 2026 — 26 days before collection. Zero posts within any recent 1-hour window.
+**Finding:** The r/NorthKoreaNews subreddit has extremely low posting frequency, with the most recent submission over 26 days old at collection time. The subreddit appears to have effectively ceased receiving regular submissions, making it unusable for hourly collection windows. exa_web_search with DPRK/North Korea keywords remains effective for the topic area.
+**Action for next run:** Skip Reddit JSON API for reddit-northkoreanews. Use exa_web_search with DPRK, North Korea, missile, nuclear, sanctions keywords instead. Flag source for manifest status review (recommend status change to inactive).
+**Expires:** 2026-08-26
