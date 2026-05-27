@@ -36,6 +36,12 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 
 <!-- entries below this line; newest first -->
 
+## 2026-05-27 15:27Z — Bucket 4 sources (mixed Twitter/Telegram/Reddit) yield 1/10 events in 14:26-15:26 UTC window
+**Trigger:** Bucket 4 collection. Only 1 of 10 sources (@AP) produced in-window content. 7 Twitter handles had zero tweets in past 6 hours. Both Telegram channels (warmonitors, wagner_group_pmcr) had latest posts at 12:42 and 14:15 UTC respectively — close but outside window. Reddit r/OSINT had no posts in past 6 hours.
+**Finding:** The 14:26-15:26 UTC window falls during mid-morning Americas (10:26 EST) and late afternoon Europe. Most Twitter defense/OSINT accounts in this bucket post infrequently — only @AP (a 24/7 wire service) had in-window tweets. Telegram channels warmonitors and wagner_group_pmcr post 15-25 times/day but gaps of 2+ hours between posts are common. exa_web_search found abundant content from the broader day but none published within the exact 1-hour window.
+**Action for next run:** For buckets in the 14:00-16:00 UTC range containing primarily Twitter defense/OSINT sources, expect low yield (1-3 events). Wire services (AP, Reuters) and high-velocity Telegram channels are the most likely to have in-window content. Prioritize these sources first and allocate more time to exa_web_search fallback for niche accounts.
+**Expires:** 2026-08-27
+
 ## 2026-05-25 18:19Z — @MenchOsint inactive since March 22; skip API and exa for this source
 **Trigger:** Bucket 10 collection. Twitter API returned 0 in-window tweets. exa_web_search and xcancel.com confirmed last tweet on March 22 ("stepping away for personal reasons").
 **Finding:** @MenchOsint, a prominent OSINT military equipment analyst (222K+ followers), announced a personal hiatus on March 22, 2026 and has not posted since. The account remains active but produces no collectible content. The Telegram mirror (t.me/s/MenchOsint) shows the same March cutoff.
