@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-05-21",
+  "last_updated": "2026-05-27",
   "description": "Master registry of all OSINT data sources for world event collection",
   "sources": [
     {
@@ -11,7 +11,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-combatfootage.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "reddit-credibledefense",
@@ -21,7 +21,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-credibledefense.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "reddit-cybersecurity",
@@ -31,7 +31,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-cybersecurity.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "reddit-geopolitics",
@@ -41,7 +41,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-geopolitics.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "reddit-intelligence",
@@ -51,7 +51,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-intelligence.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "reddit-lesscredibledefence",
@@ -61,7 +61,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-lesscredibledefence.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "reddit-netsec",
@@ -71,7 +71,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-netsec.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "reddit-noncredibledefense",
@@ -81,7 +81,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-noncredibledefense.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "reddit-northkoreanews",
@@ -91,7 +91,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-northkoreanews.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "reddit-osint",
@@ -101,7 +101,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-osint.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "reddit-russiaukrainewar2022",
@@ -111,7 +111,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-russiaukrainewar2022.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "reddit-sino",
@@ -121,7 +121,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-sino.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "reddit-ukrainewarvideorepport",
@@ -131,7 +131,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-ukrainewarvideorepport.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-afustratcom",
@@ -141,7 +141,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-afustratcom.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-bellumacanews",
@@ -151,7 +151,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-bellumacanews.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-clashreport",
@@ -161,7 +161,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-clashreport.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-ddgeopolitics",
@@ -171,7 +171,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-ddgeopolitics.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-diukraine",
@@ -181,7 +181,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-diukraine.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-generalstaffzsu",
@@ -191,7 +191,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-generalstaffzsu.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-geopolitics-prime",
@@ -201,7 +201,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-geopolitics-prime.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-insiderpaper",
@@ -211,7 +211,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-insiderpaper.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-intelrepublic",
@@ -221,7 +221,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-intelrepublic.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-intelslava",
@@ -231,7 +231,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-intelslava.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-lebupdate",
@@ -241,7 +241,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-lebupdate.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-middle-east-spectator",
@@ -251,7 +251,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-middle-east-spectator.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-ourwarstoday",
@@ -261,7 +261,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-ourwarstoday.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-qudsnen",
@@ -271,7 +271,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-qudsnen.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-rnintel",
@@ -281,7 +281,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-rnintel.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-serhii-flash",
@@ -291,7 +291,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-serhii-flash.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-united24media",
@@ -301,7 +301,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-united24media.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-voyna18",
@@ -311,7 +311,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-voyna18.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-wagner-group-pmcr",
@@ -321,7 +321,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-wagner-group-pmcr.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "telegram-warmonitors",
@@ -331,7 +331,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/telegram-warmonitors.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-abc",
@@ -341,7 +341,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-abc.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-africafactszone",
@@ -351,7 +351,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-africafactszone.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-allsource4",
@@ -361,7 +361,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-allsource4.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-ap",
@@ -371,7 +371,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-ap.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-arcgis-storymaps",
@@ -381,7 +381,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-arcgis-storymaps.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-armed-forces-phil",
@@ -391,7 +391,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-armed-forces-phil.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-aurora-intel",
@@ -401,7 +401,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-aurora-intel.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-ausnav",
@@ -411,7 +411,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-ausnav.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-bates-gill",
@@ -421,7 +421,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-bates-gill.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-bbc-breaking",
@@ -431,7 +431,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-bbc-breaking.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-bbc-world",
@@ -441,7 +441,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-bbc-world.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-bbgoriginals",
@@ -451,7 +451,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-bbgoriginals.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-beltelefacts",
@@ -461,7 +461,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-beltelefacts.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-beltelfreeaudio",
@@ -471,7 +471,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-beltelfreeaudio.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-borrowed7time",
@@ -481,7 +481,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-borrowed7time.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-c4ads",
@@ -491,7 +491,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-c4ads.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-ca-jc",
@@ -501,7 +501,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-ca-jc.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-cepa",
@@ -511,7 +511,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-cepa.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-chadobcnews",
@@ -521,7 +521,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-chadobcnews.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-chinapower",
@@ -531,7 +531,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-chinapower.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-chinese-emb-in-us",
@@ -541,7 +541,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-chinese-emb-in-us.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-clash-report",
@@ -551,7 +551,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-clash-report.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-claudefb",
@@ -561,7 +561,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-claudefb.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-cnn",
@@ -571,7 +571,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-cnn.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-cnnbrk",
@@ -581,7 +581,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-cnnbrk.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-cnni",
@@ -591,7 +591,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-cnni.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-coastguard-ph",
@@ -601,7 +601,17 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-coastguard-ph.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
+    },
+    {
+      "id": "twitter-criticalthreats",
+      "name": "",
+      "type": "twitter",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/twitter-criticalthreats.md",
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-csis-korea-chair",
@@ -611,7 +621,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-csis-korea-chair.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-dataminr",
@@ -621,7 +631,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-dataminr.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-defence-aust",
@@ -631,7 +641,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-defence-aust.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-detresfa",
@@ -641,7 +651,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-detresfa.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-dprk-news",
@@ -651,7 +661,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-dprk-news.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-elint-news",
@@ -661,7 +671,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-elint-news.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-esri-training",
@@ -671,7 +681,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-esri-training.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-esri-water",
@@ -681,7 +691,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-esri-water.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-esri",
@@ -691,7 +701,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-esri.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-etienne-lh",
@@ -701,7 +711,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-etienne-lh.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-faa-south",
@@ -711,7 +721,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-faa-south.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-fleetnumbers",
@@ -721,7 +731,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-fleetnumbers.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-foxnews",
@@ -731,7 +741,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-foxnews.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-gcaptain",
@@ -741,7 +751,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-gcaptain.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-hawkeye360",
@@ -751,7 +761,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-hawkeye360.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-ian-bremmer",
@@ -761,7 +771,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-ian-bremmer.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-ianellisjones",
@@ -771,7 +781,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-ianellisjones.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-imo-hq",
@@ -781,7 +791,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-imo-hq.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-info-fusion-ctr",
@@ -791,7 +801,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-info-fusion-ctr.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-inside-nk",
@@ -801,7 +811,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-inside-nk.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-iran-observer",
@@ -811,7 +821,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-iran-observer.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-iran-spectrum",
@@ -821,7 +831,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-iran-spectrum.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-jaime-ocon",
@@ -831,7 +841,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-jaime-ocon.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-japan-joint-staff",
@@ -841,7 +851,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-japan-joint-staff.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-jasdf-pao-eng",
@@ -851,7 +861,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-jasdf-pao-eng.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-jason-brodsky",
@@ -861,7 +871,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-jason-brodsky.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-jkgarokgov",
@@ -871,7 +881,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-jkgarokgov.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-jnb-summary",
@@ -881,7 +891,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-jnb-summary.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-john-pollock",
@@ -891,7 +901,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-john-pollock.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-joseph-dempsey",
@@ -901,7 +911,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-joseph-dempsey.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-kang-daily",
@@ -911,7 +921,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-kang-daily.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-kc-nwt",
@@ -921,7 +931,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-kc-nwt.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-key-to-med",
@@ -931,7 +941,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-key-to-med.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-kl-summary",
@@ -941,7 +951,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-kl-summary.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-korea-econ-inst",
@@ -951,7 +961,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-korea-econ-inst.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-korea-herald",
@@ -961,7 +971,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-korea-herald.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-korea-times-alt",
@@ -971,7 +981,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-korea-times-alt.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-korea-times",
@@ -981,7 +991,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-korea-times.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-kylebass",
@@ -991,7 +1001,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-kylebass.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-mda-space",
@@ -1001,7 +1011,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mda-space.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-mdat-gog",
@@ -1011,7 +1021,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mdat-gog.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-megatronlion",
@@ -1021,7 +1031,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-megatronlion.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-mench-osint",
@@ -1031,7 +1041,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mench-osint.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-middle-east-eye",
@@ -1041,7 +1051,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-middle-east-eye.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-militarylandnet",
@@ -1051,7 +1061,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-militarylandnet.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-minhdr18",
@@ -1061,7 +1071,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-minhdr18.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-mndchina",
@@ -1071,7 +1081,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mndchina.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-modjapan-en",
@@ -1081,7 +1091,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-modjapan-en.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-mofajapan-en",
@@ -1091,7 +1101,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mofajapan-en.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-mondefense",
@@ -1101,7 +1111,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mondefense.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-msc-sealift",
@@ -1111,7 +1121,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-msc-sealift.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-mt-anderson",
@@ -1121,7 +1131,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mt-anderson.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-mylordbebo",
@@ -1131,7 +1141,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mylordbebo.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-nasa",
@@ -1141,7 +1151,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-nasa.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-natalierevolts",
@@ -1151,7 +1161,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-natalierevolts.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-national-interest",
@@ -1161,7 +1171,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-national-interest.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-natlhistships",
@@ -1171,7 +1181,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-natlhistships.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-nato-marcom",
@@ -1181,7 +1191,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-nato-marcom.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-nguyenthiho88",
@@ -1191,7 +1201,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-nguyenthiho88.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-nsa-cyber",
@@ -1201,7 +1211,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-nsa-cyber.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-nsa-gov",
@@ -1211,7 +1221,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-nsa-gov.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-ntonc",
@@ -1221,7 +1231,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-ntonc.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-nytimes-world",
@@ -1231,7 +1241,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-nytimes-world.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-ofac-alert",
@@ -1241,7 +1251,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-ofac-alert.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-oilcfd",
@@ -1251,7 +1261,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-oilcfd.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-olongapo-times",
@@ -1261,7 +1271,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-olongapo-times.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-opennuclear",
@@ -1271,7 +1281,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-opennuclear.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-osaindawg",
@@ -1281,7 +1291,17 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-osaindawg.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
+    },
+    {
+      "id": "twitter-osinttechnical",
+      "name": "",
+      "type": "twitter",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/twitter-osinttechnical.md",
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-pizzainwatch",
@@ -1291,7 +1311,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-pizzainwatch.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-platracker",
@@ -1301,7 +1321,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-platracker.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-pyongyang-today",
@@ -1311,7 +1331,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-pyongyang-today.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-rayfunseth",
@@ -1321,7 +1341,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-rayfunseth.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-raytoribo",
@@ -1331,7 +1351,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-raytoribo.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-riskstaff",
@@ -1341,7 +1361,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-riskstaff.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-sanctions-watch",
@@ -1351,7 +1371,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-sanctions-watch.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-schizoint-rel",
@@ -1361,7 +1381,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-schizoint-rel.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-scmpnews",
@@ -1371,7 +1391,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-scmpnews.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-scpandura",
@@ -1381,7 +1401,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-scpandura.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-scs-pi",
@@ -1391,7 +1411,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-scs-pi.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-seawatch-intl",
@@ -1401,7 +1421,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-seawatch-intl.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-shipnews",
@@ -1411,7 +1431,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-shipnews.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-sim-nasr",
@@ -1421,7 +1441,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-sim-nasr.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-sindikasyontek",
@@ -1431,7 +1451,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-sindikasyontek.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-songss44",
@@ -1441,7 +1461,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-songss44.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-southkoreapro",
@@ -1451,7 +1471,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-southkoreapro.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-tafarms18",
@@ -1461,7 +1481,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-tafarms18.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-taiwan-news-en",
@@ -1471,7 +1491,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-taiwan-news-en.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-tanker-trackers",
@@ -1481,7 +1501,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-tanker-trackers.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-tatarigamiua",
@@ -1491,7 +1511,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-tatarigamiua.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-the-dailynk",
@@ -1501,7 +1521,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-the-dailynk.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-the-diplomat",
@@ -1511,7 +1531,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-the-diplomat.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-the-koreaview",
@@ -1521,7 +1541,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-the-koreaview.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-the-lookout-north",
@@ -1531,7 +1551,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-the-lookout-north.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-the-pacific-brief",
@@ -1541,7 +1561,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-the-pacific-brief.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-therealshipdude",
@@ -1551,7 +1571,17 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-therealshipdude.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
+    },
+    {
+      "id": "twitter-thestudyofwar",
+      "name": "",
+      "type": "twitter",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/twitter-thestudyofwar.md",
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-thewarzonewire",
@@ -1561,7 +1591,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-thewarzonewire.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-tradewindsnews",
@@ -1571,7 +1601,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-tradewindsnews.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-uani",
@@ -1581,7 +1611,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-uani.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-united-nations",
@@ -1591,7 +1621,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-united-nations.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-us-5th-fleet",
@@ -1601,7 +1631,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-us-5th-fleet.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-us-7th-fleet",
@@ -1611,7 +1641,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-us-7th-fleet.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-us-fleet-forces",
@@ -1621,7 +1651,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-us-fleet-forces.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-us-forces-japan",
@@ -1631,7 +1661,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-us-forces-japan.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-us-navy",
@@ -1641,7 +1671,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-us-navy.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-us-pacific-fleet",
@@ -1651,7 +1681,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-us-pacific-fleet.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-us-treasury",
@@ -1661,7 +1691,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-us-treasury.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-vantortech",
@@ -1671,7 +1701,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-vantortech.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-war-tv7890",
@@ -1681,7 +1711,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-war-tv7890.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-warshipcam",
@@ -1691,7 +1721,17 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-warshipcam.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
+    },
+    {
+      "id": "twitter-wartranslated",
+      "name": "",
+      "type": "twitter",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/twitter-wartranslated.md",
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-xinhua-news",
@@ -1701,7 +1741,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-xinhua-news.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-xkorea",
@@ -1711,7 +1751,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-xkorea.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-xnews",
@@ -1721,7 +1761,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-xnews.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-yonkosmc",
@@ -1731,7 +1771,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-yonkosmc.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "twitter-yortukisgk",
@@ -1741,7 +1781,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-yortukisgk.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "webpage-breaking-defense-global",
@@ -1751,7 +1791,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/webpage-breaking-defense-global.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "webpage-cuashub-defense",
@@ -1761,7 +1801,37 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/webpage-cuashub-defense.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
+    },
+    {
+      "id": "webpage-isw-iran-middle-east",
+      "name": "",
+      "type": "webpage",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/webpage-isw-iran-middle-east.md",
+      "added_date": "2026-05-27"
+    },
+    {
+      "id": "webpage-isw-russia-ukraine-research",
+      "name": "",
+      "type": "webpage",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/webpage-isw-russia-ukraine-research.md",
+      "added_date": "2026-05-27"
+    },
+    {
+      "id": "webpage-isw-ukraine-interactive-map",
+      "name": "",
+      "type": "webpage",
+      "status": "active",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/webpage-isw-ukraine-interactive-map.md",
+      "added_date": "2026-05-27"
     },
     {
       "id": "webpage-satellite-today-gov-mil",
@@ -1771,7 +1841,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/webpage-satellite-today-gov-mil.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "webpage-windward-ai-blog",
@@ -1781,7 +1851,7 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/webpage-windward-ai-blog.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     },
     {
       "id": "webpage-yahoo-world-news",
@@ -1791,17 +1861,17 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/webpage-yahoo-world-news.md",
-      "added_date": "2026-05-21"
+      "added_date": "2026-05-27"
     }
   ],
   "statistics": {
-    "total_sources": 179,
-    "active_sources": 100,
+    "total_sources": 186,
+    "active_sources": 107,
     "testing_sources": 36,
     "inactive_sources": 43,
     "by_type": {
-      "twitter": 141,
-      "webpage": 5,
+      "twitter": 145,
+      "webpage": 8,
       "api": 13,
       "email": 0,
       "rss": 0,
@@ -1813,12 +1883,12 @@
     },
     "by_priority": {
       "high": 0,
-      "medium": 179,
+      "medium": 186,
       "low": 0
     },
     "by_reliability": {
       "high": 0,
-      "medium": 179,
+      "medium": 186,
       "low": 0,
       "unverified": 0
     }
@@ -1828,6 +1898,6 @@
     "compatible_versions": [
       "1.0.x"
     ],
-    "last_validated": "2026-05-21"
+    "last_validated": "2026-05-27"
   }
 }
