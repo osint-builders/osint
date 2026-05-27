@@ -41,6 +41,11 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** The 14:26-15:26 UTC window falls during mid-morning Americas (10:26 EST) and late afternoon Europe. Most Twitter defense/OSINT accounts in this bucket post infrequently — only @AP (a 24/7 wire service) had in-window tweets. Telegram channels warmonitors and wagner_group_pmcr post 15-25 times/day but gaps of 2+ hours between posts are common. exa_web_search found abundant content from the broader day but none published within the exact 1-hour window.
 **Action for next run:** For buckets in the 14:00-16:00 UTC range containing primarily Twitter defense/OSINT sources, expect low yield (1-3 events). Wire services (AP, Reuters) and high-velocity Telegram channels are the most likely to have in-window content. Prioritize these sources first and allocate more time to exa_web_search fallback for niche accounts.
 **Expires:** 2026-08-27
+## 2026-05-27 15:30Z — Link preview enrichment with jq must use -c flag to preserve JSONL format
+**Trigger:** Bucket 10 collection. Link preview enrichment step piped event JSON through jq for merging, but jq defaulted to pretty-printed multi-line output, breaking JSONL one-object-per-line format. Validation passed before enrichment but the enriched files contained multi-line JSON objects instead of single-line JSONL.
+**Finding:** When using `jq --argjson preview "$PREVIEW_JSON" '. + {link_preview: $preview}'` to merge link preview data into events, jq outputs pretty-printed JSON by default. The JSONL format requires compact single-line JSON. After enrichment, use `jq -sc '.[]'` on each events.jsonl to recompact multi-line objects back to one-per-line JSONL.
+**Action for next run:** After the link preview enrichment loop, always recompact each events.jsonl with `jq -sc '.[]' "$evfile" > "${evfile}.tmp" && mv "${evfile}.tmp" "$evfile"`. Alternatively, pipe the jq merge through `jq -c` inline: `event_json=$(echo "$event_json" | jq -c --argjson preview "$PREVIEW_JSON" '. + {link_preview: ...}')`.
+**Expires:** permanent
 
 ## 2026-05-25 18:19Z — @MenchOsint inactive since March 22; skip API and exa for this source
 **Trigger:** Bucket 10 collection. Twitter API returned 0 in-window tweets. exa_web_search and xcancel.com confirmed last tweet on March 22 ("stepping away for personal reasons").
