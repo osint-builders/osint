@@ -44,7 +44,7 @@ const DEFAULT_VIBE_CONFIG: Omit<VibeProviderConfig, 'apiKey'> = {
   vibePath: 'vibe',
   workDir: path.join(os.tmpdir(), 'vibe-osint-runs'),
   model: 'mistral-large',
-  defaultTimeoutMs: 60 * 60 * 1000, // 1 hour
+  defaultTimeoutMs: 30 * 60 * 1000, // 30 minutes (shorter than workflow timeout)
 };
 
 // ============================================================================
@@ -201,7 +201,7 @@ export class VibeAgentProvider implements AgentProvider {
     try {
       // Use -p with prompt as argument
       // For large prompts (>100KB), this may hit shell limits, but prompts are typically <100KB
-      const process = cpSpawn(vibePath, ['-p', taskContent, '--output', 'json', '--agent', 'auto-approve', '--max-turns', '1'], {
+      const process = cpSpawn(vibePath, ['-p', taskContent, '--output', 'json', '--agent', 'auto-approve', '--max-turns', '1', '--max-price', '1.0'], {
         cwd: runDir,
         env,
         stdio: ['pipe', 'pipe', 'pipe'],

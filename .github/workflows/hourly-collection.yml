@@ -61,6 +61,7 @@ jobs:
         run: |
           curl -LsSf https://mistral.ai/vibe/install.sh | bash
           echo "$HOME/.vibe/bin" >> $GITHUB_PATH
+          vibe --version
 
       - name: Run OSINT collection
         run: npm run collect
