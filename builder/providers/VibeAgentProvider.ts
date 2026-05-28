@@ -6,7 +6,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as os from 'os';
+import { spawn as cpSpawn } from 'child_process';
 import { execa } from 'execa';
+import { ChildProcess } from 'child_process';
 import {
   AgentProvider,
   SpawnResult,
@@ -184,31 +186,34 @@ export class VibeAgentProvider implements AgentProvider {
     const initialStatus: VibeStatusFile = { state: 'pending', updatedAt: new Date().toISOString() };
     await fs.promises.writeFile(statusPath, JSON.stringify(initialStatus, null, 2), 'utf8');
 
-    // Build vibe command - use shell to pipe prompt via stdin
-    // Vibe CLI reads prompt from stdin
-    // Use sh -c with echo to pipe content
-    const env = { ...process.env, MISTRAL_API_KEY: this.config.apiKey, ...config.env };
-    
-    // Write prompt to temp file to avoid shell escaping issues
-    const promptFile = path.join(runDir, 'prompt.txt');
-    await fs.promises.writeFile(promptFile, taskContent, 'utf8');
+    // Build vibe command - use child_process.spawn with stdin for large prompts
+    // Vibe CLI reads from stdin when no -p argument is provided
+    const env = {
+      ...process.env,
+      MISTRAL_API_KEY: this.config.apiKey,
+      ...config.env,
+      // Force non-interactive mode
+      NO_COLOR: '1',
+      TERM: 'dumb',
+      FORCE_COLOR: '0',
+    };
 
     try {
-      // Use shell to cat the file and pipe to vibe
-      const process = execa('sh', ['-c', `cat "${promptFile}" | ${vibePath} --output json --agent auto-approve --max-turns 1`], {
+      // Use -p with prompt as argument
+      // For large prompts (>100KB), this may hit shell limits, but prompts are typically <100KB
+      const process = cpSpawn(vibePath, ['-p', taskContent, '--output', 'json', '--agent', 'auto-approve', '--max-turns', '1'], {
         cwd: runDir,
         env,
-        preferLocal: true,
-        cleanup: false,
+        stdio: ['pipe', 'pipe', 'pipe'],
       });
 
       // Pipe stdout to output file
       const stdoutStream = fs.createWriteStream(outputPath);
-      process.stdout?.pipe(stdoutStream);
+      process.stdout.pipe(stdoutStream);
       
       // Pipe stderr to error file
       const stderrStream = fs.createWriteStream(errorPath);
-      process.stderr?.pipe(stderrStream);
+      process.stderr.pipe(stderrStream);
 
       this.activeProcesses.add(process);
 
