@@ -184,9 +184,9 @@ export class VibeAgentProvider implements AgentProvider {
     const initialStatus: VibeStatusFile = { state: 'pending', updatedAt: new Date().toISOString() };
     await fs.promises.writeFile(statusPath, JSON.stringify(initialStatus, null, 2), 'utf8');
 
-    // Build vibe command - use programmatic mode (-p) with file input
-    // Vibe CLI: -p for programmatic mode, reads prompt from file
-    const args = ['-p', taskFile, '--output', 'json', '--agent', 'auto-approve', '--max-turns', '1'];
+    // Build vibe command - use programmatic mode with stdin for large prompts
+    // Vibe CLI: reads prompt from stdin when no PROMPT arg is provided
+    const args = ['--output', 'json', '--agent', 'auto-approve', '--max-turns', '1'];
     const env = { ...process.env, MISTRAL_API_KEY: this.config.apiKey, ...config.env };
 
     try {
@@ -195,6 +195,7 @@ export class VibeAgentProvider implements AgentProvider {
         env,
         preferLocal: true,
         cleanup: false,
+        stdin: taskContent,
       });
 
       // Pipe stdout to output file
