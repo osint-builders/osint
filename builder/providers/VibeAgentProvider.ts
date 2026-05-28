@@ -123,7 +123,7 @@ export class VibeAgentProvider implements AgentProvider {
       await execa(vibePath, ['--version'], { timeout: 5000 });
     } catch (error) {
       throw new ProviderUnavailableError(
-        `Vibe CLI not found at ${vibePath}. Install: curl -fsSL https://vibe.mistral.ai | sh`,
+        `Vibe CLI not found at ${vibePath}. Install: curl -LsSf https://mistral.ai/vibe/install.sh | bash`,
         { providerName: this.name, cause: error as Error, isRetryable: false }
       );
     }
@@ -302,8 +302,8 @@ export class VibeAgentProvider implements AgentProvider {
   async isAvailable(): Promise<boolean> {
     try {
       const vibePath = this.config.vibePath!;
-      await execa(vibePath, ['--version'], { timeout: 5000 });
-      return !!this.config.apiKey;
+      const result = await execa(vibePath, ['--version'], { timeout: 5000 });
+      return !!this.config.apiKey && result.exitCode === 0;
     } catch {
       return false;
     }
@@ -314,8 +314,8 @@ export class VibeAgentProvider implements AgentProvider {
       const vibePath = this.config.vibePath!;
       let version = 'unknown';
       try {
-        const { stdout } = await execa(vibePath, ['--version'], { timeout: 5000 });
-        version = stdout.trim().split('\n')[0] || version;
+        const result = await execa(vibePath, ['--version'], { timeout: 5000 });
+        version = result.stdout?.trim().split('\n')[0] || version;
       } catch {}
 
       const isAvailable = await this.isAvailable();

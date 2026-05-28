@@ -59,7 +59,7 @@ jobs:
       - name: Install Mistral Vibe CLI
         if: env.MISTRAL_API_KEY != ''
         run: |
-          curl -fsSL https://vibe.mistral.ai | sh
+          curl -LsSf https://mistral.ai/vibe/install.sh | bash
           echo "$HOME/.vibe/bin" >> $GITHUB_PATH
 
       - name: Run OSINT collection
