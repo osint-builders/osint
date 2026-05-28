@@ -59,6 +59,8 @@ interface VibeRunState {
   startedAt: string;
   updatedAt: string;
   timeoutTimer?: NodeJS.Timeout;
+  stdoutStream?: fs.WriteStream;
+  stderrStream?: fs.WriteStream;
 }
 
 interface VibeStatusFile {
@@ -147,10 +149,12 @@ export class VibeAgentProvider implements AgentProvider {
     });
     this.activeProcesses.clear();
 
-    // Clean up run files
+    // Clean up run files and close streams
     Array.from(this.runs.values()).forEach(runState => {
       try {
         if (runState.timeoutTimer) clearTimeout(runState.timeoutTimer);
+        if (runState.stdoutStream) runState.stdoutStream.end();
+        if (runState.stderrStream) runState.stderrStream.end();
         fs.promises.unlink(runState.statusPath).catch(() => {});
         fs.promises.unlink(runState.outputPath).catch(() => {});
         fs.promises.unlink(runState.errorPath).catch(() => {});
@@ -180,8 +184,9 @@ export class VibeAgentProvider implements AgentProvider {
     const initialStatus: VibeStatusFile = { state: 'pending', updatedAt: new Date().toISOString() };
     await fs.promises.writeFile(statusPath, JSON.stringify(initialStatus, null, 2), 'utf8');
 
-    // Build vibe command
-    const args = ['task', '--file', taskFile, '--output', outputPath, '--model', model, '--yes'];
+    // Build vibe command - use programmatic mode (-p) with file input
+    // Vibe CLI: -p for programmatic mode, reads prompt from file
+    const args = ['-p', taskFile, '--output', 'json', '--agent', 'auto-approve', '--max-turns', '1'];
     const env = { ...process.env, MISTRAL_API_KEY: this.config.apiKey, ...config.env };
 
     try {
@@ -192,6 +197,14 @@ export class VibeAgentProvider implements AgentProvider {
         cleanup: false,
       });
 
+      // Pipe stdout to output file
+      const stdoutStream = fs.createWriteStream(outputPath);
+      process.stdout?.pipe(stdoutStream);
+      
+      // Pipe stderr to error file
+      const stderrStream = fs.createWriteStream(errorPath);
+      process.stderr?.pipe(stderrStream);
+
       this.activeProcesses.add(process);
 
       const runState: VibeRunState = {
@@ -201,6 +214,8 @@ export class VibeAgentProvider implements AgentProvider {
         outputPath,
         statusPath,
         errorPath,
+        stdoutStream,
+        stderrStream,
         startedAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       };
@@ -376,6 +391,16 @@ export class VibeAgentProvider implements AgentProvider {
       runState.process = undefined;
     }
 
+    // Close streams
+    if (runState.stdoutStream) {
+      runState.stdoutStream.end();
+      runState.stdoutStream = undefined;
+    }
+    if (runState.stderrStream) {
+      runState.stderrStream.end();
+      runState.stderrStream = undefined;
+    }
+
     if (code === 0) runState.state = 'SUCCEEDED';
     else if (signal === 'SIGTERM' || signal === 'SIGKILL') runState.state = 'CANCELLED';
     else runState.state = 'FAILED';
@@ -391,6 +416,17 @@ export class VibeAgentProvider implements AgentProvider {
       this.activeProcesses.delete(runState.process);
       runState.process = undefined;
     }
+    
+    // Close streams
+    if (runState.stdoutStream) {
+      runState.stdoutStream.end();
+      runState.stdoutStream = undefined;
+    }
+    if (runState.stderrStream) {
+      runState.stderrStream.end();
+      runState.stderrStream = undefined;
+    }
+    
     runState.state = 'FAILED';
     runState.updatedAt = new Date().toISOString();
 
@@ -411,6 +447,16 @@ export class VibeAgentProvider implements AgentProvider {
       this.activeProcesses.delete(runState.process);
       try { runState.process.kill('SIGTERM'); } catch {}
       runState.process = undefined;
+    }
+
+    // Close streams
+    if (runState.stdoutStream) {
+      runState.stdoutStream.end();
+      runState.stdoutStream = undefined;
+    }
+    if (runState.stderrStream) {
+      runState.stderrStream.end();
+      runState.stderrStream = undefined;
     }
 
     runState.state = 'FAILED';
