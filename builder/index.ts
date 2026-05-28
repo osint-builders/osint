@@ -458,8 +458,12 @@ async function main(): Promise<void> {
     const promptSizeBytes = Buffer.byteLength(prompt, 'utf8');
     const promptSizeKB = (promptSizeBytes / 1024).toFixed(1);
     const promptSizeMB = (promptSizeBytes / 1024 / 1024).toFixed(2);
+    
+    // Estimate token count (approximately 4 characters per token for English text)
+    const estimatedTokens = Math.ceil(promptSizeBytes / 4);
+    const estimatedTokensK = (estimatedTokens / 1000).toFixed(0);
 
-    console.log(`  Bucket ${bucketNum}: ${bucket.length} sources, ${promptSizeKB} KB (${promptSizeMB} MB)`);
+    console.log(`  Bucket ${bucketNum}: ${bucket.length} sources, ${promptSizeKB} KB (${promptSizeMB} MB), ~${estimatedTokens} tokens (~${estimatedTokensK}K tokens)`);
 
     if (promptSizeBytes > 1_048_576) {
       throw new Error(`Bucket ${bucketNum} prompt exceeds 1 MB: ${promptSizeMB} MB`);
