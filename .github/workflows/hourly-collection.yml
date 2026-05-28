@@ -4,30 +4,23 @@ on:
   schedule:
     - cron: '0 9,13,17 * * *'
       timezone: America/New_York
-  workflow_dispatch:      # Manual trigger for testing
+  workflow_dispatch:
   push:
     branches:
       - main
     paths-ignore:
-      # The cloud agent's own commits shouldn't re-trigger the workflow.
       - 'data/**'
       - 'docs/**'
       - 'data/indexes/**'
       - 'LEARNINGS.md'
-      # Documentation changes don't affect runtime behavior.
       - '**/*.md'
-      # Infrastructure-only changes that don't alter collection behavior.
       - 'builder/**/*.py'
       - 'builder/**/*.js'
       - 'builder/**/*.ts'
       - 'frontend/**'
-      # CI/infra changes don't affect what the agents collect.
       - '.github/**'
       - 'skills/**'
 
-# Prevent overlapping collection runs. If a new run is triggered while one is
-# already in progress, queue it rather than running concurrently — the SIGTERM
-# handler in builder/index.ts cancels outstanding agents before exit.
 concurrency:
   group: osint-collection
   cancel-in-progress: false
@@ -39,6 +32,8 @@ permissions:
 env:
   WARP_API_KEY: ${{ secrets.WARP_API_KEY }}
   WARP_ENVIRONMENT_ID: ${{ secrets.WARP_ENVIRONMENT_ID }}
+  MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+  AGENT_PROVIDER: ${{ vars.AGENT_PROVIDER || 'auto' }}
   PARALLEL_AGENT_COUNT: ${{ vars.PARALLEL_AGENT_COUNT || '10' }}
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -61,9 +56,15 @@ jobs:
         run: npm ci
         working-directory: builder
 
+      - name: Install Mistral Vibe CLI
+        if: env.MISTRAL_API_KEY != ''
+        run: |
+          curl -fsSL https://vibe.mistral.ai | sh
+          echo "$HOME/.vibe/bin" >> $GITHUB_PATH
+
       - name: Run OSINT collection
         run: npm run collect
         working-directory: builder
         env:
           REPO_ROOT: ${{ github.workspace }}
-
+          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.OSINT_GH_TOKEN }}

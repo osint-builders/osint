@@ -15,21 +15,25 @@ Automated, hourly collection of world-event intelligence from ~140 OSINT sources
 GitHub Actions (cron @ :00 UTC)
     │
     ▼
-builder/index.ts                       # oz-agent-sdk client
+builder/index.ts                       # Orchestrator with provider abstraction
   • reads source/manifest.json         # deny-list: skip status ∈ {inactive,archived,deprecated}
-  • partitions sources into N buckets  # sized to fit Warp's 1 MB prompt cap
-  • fans out one Warp Cloud Agent per bucket (parallel)
+  • partitions sources into N buckets  # sized to fit 1 MB prompt cap
+  • selects provider: Warp (primary) or Vibe (fallback on quota)
+  • fans out agents per bucket (parallel)
     │
-    ▼
-Warp Cloud Agent (Claude Code)
-  • inlines source/sources/*.md for its bucket
-  • per source: scrape → E-PRIME transform → geocode → confidence-validate
-  • emits World Event Entities to data/events/YYYY-MM/YYYY-MM-DD.jsonl
-  • normalizes media → data/media/YYYY-MM/{images,videos}/YYYY-MM-DD/
-  • commits + pushes
+    ├── Warp Cloud Agent (Claude Code, primary)
+    │     • inlines source/sources/*.md for its bucket
+    │     • per source: scrape → E-PRIME transform → geocode → confidence-validate
+    │     • emits World Event Entities to data/events/YYYY-MM/YYYY-MM-DD.jsonl
+    │     • normalizes media → data/media/YYYY-MM/{images,videos}/YYYY-MM-DD/
+    │     • commits + pushes
+    │
+    └── Mistral Vibe CLI (local, fallback on Warp quota exhaustion)
+          • same collection workflow, executes locally
+          • uses Mistral models via vibe CLI
 ```
 
-The actual prompt sent to the Warp agent is constructed in `builder/index.ts::buildCollectionPrompt()` — that is the source of truth, not this README.
+The actual prompt sent to the agent is constructed in `builder/index.ts::buildCollectionPrompt()` — that is the source of truth, not this README.
 
 ---
 
@@ -37,7 +41,8 @@ The actual prompt sent to the Warp agent is constructed in `builder/index.ts::bu
 
 | Path | Role |
 |---|---|
-| `builder/index.ts` | Orchestrator. Builds the per-bucket prompt and dispatches Warp agents. |
+| `builder/index.ts` | Orchestrator. Builds the per-bucket prompt and dispatches agents to providers. |
+| `builder/providers/` | Agent provider implementations (Warp, Vibe) and interface. |
 | `source/manifest.json` | Authoritative list of sources + status. |
 | `source/sources/*.md` | Per-source collection spec (front matter + body). |
 | `source/CONTRIBUTING.md` | How to add a new source. |
@@ -57,8 +62,17 @@ git clone https://github.com/osint-builders/osint.git
 cd osint
 cd builder && npm install && cd ..
 
+# Warp (default primary provider)
 export WARP_API_KEY="***"
 export WARP_ENVIRONMENT_ID="your-warp-environment-uid"
+
+# For automatic fallback to Vibe on Warp quota errors
+export MISTRAL_API_KEY="your-mistral-key"
+
+# Optional: force a specific provider
+export AGENT_PROVIDER="auto"  # default: uses Warp, falls back to Vibe
+export AGENT_PROVIDER="warp"  # Warp only
+export AGENT_PROVIDER="vibe"  # Vibe only
 
 cd builder && npm run collect
 
@@ -98,12 +112,58 @@ Full schema: [`data/SCHEMA.md`](data/SCHEMA.md).
 
 Set these in **Settings → Secrets and variables → Actions**:
 
-| Name | Type | Purpose |
-|---|---|---|
-| `WARP_API_KEY` | secret | Authenticates `oz-agent-sdk` against Warp. |
-| `WARP_ENVIRONMENT_ID` | secret | UID of the pre-built Warp Cloud Agent environment image (see below). |
-| `OSINT_GH_TOKEN` *or* `GH_TOKEN` | secret | Fine-grained PAT with `Contents: write` on this repo. The agent uses it to push each run's commits. |
-| `PARALLEL_AGENT_COUNT` | variable | Optional. Bucket count override; otherwise auto-sized to fit Warp's 1 MB prompt budget. |
+| Name | Type | Required | Purpose |
+|---|---|---|---|
+| `WARP_API_KEY` | secret | No | Authenticates `oz-agent-sdk` against Warp Cloud Agents. |
+| `WARP_ENVIRONMENT_ID` | secret | No | UID of the pre-built Warp Cloud Agent environment image (see below). |
+| `MISTRAL_API_KEY` | secret | No | Mistral API key for Mistral Vibe provider. Required if using Vibe or auto mode with Warp quota exhaustion. |
+| `OSINT_GH_TOKEN` *or* `GH_TOKEN` | secret | Yes | Fine-grained PAT with `Contents: write` on this repo. The agent uses it to push each run's commits. |
+| `AGENT_PROVIDER` | variable | No | Provider selection mode: `auto` (default), `warp`, or `vibe`. In `auto` mode, Warp is used first with automatic fallback to Vibe on quota errors. |
+| `PARALLEL_AGENT_COUNT` | variable | No | Bucket count override; otherwise auto-sized to fit the 1 MB prompt budget. |
+
+### Agent Providers
+
+The collection orchestrator (`builder/index.ts`) supports multiple agent providers with automatic fallback. 
+
+**Architecture:**
+```
+Orchestrator (builder/index.ts)
+    │
+    ├── WarpAgentProvider (primary) → Warp Cloud Agents via oz-agent-sdk
+    └── VibeAgentProvider (fallback) → Mistral Vibe CLI (local subprocess)
+```
+
+**Provider Modes:**
+
+| Mode | Behavior | Use Case |
+|------|----------|----------|
+| `auto` | Uses Warp first, falls back to Vibe on quota errors | Production: maximize speed, fallback on exhaustion |
+| `warp` | Uses Warp only, errors if unavailable | Warp-only environments |
+| `vibe` | Uses Vibe only, errors if unavailable | Testing or Warp maintenance windows |
+
+**Fallback Behavior:**
+- Only triggers in `auto` mode when Warp throws a `ProviderQuotaError` (credits exhausted)
+- Vibe must be configured (MISTRAL_API_KEY set) for fallback to work
+- Fallback is per-bucket: if Warp quota exhausted mid-run, remaining buckets use Vibe
+- No fallback for authentication errors, rate limits, or network issues
+
+**Local Testing:**
+```bash
+# Use Warp only
+export AGENT_PROVIDER=warp
+export WARP_API_KEY=your-key
+export WARP_ENVIRONMENT_ID=your-env
+
+# Use Vibe only
+export AGENT_PROVIDER=vibe
+export MISTRAL_API_KEY=your-key
+
+# Auto mode (default)
+export WARP_API_KEY=your-key
+export WARP_ENVIRONMENT_ID=your-env
+export MISTRAL_API_KEY=your-key
+# Uses Warp, falls back to Vibe on quota errors
+```
 
 ### Warp Cloud Agent environment image
 
