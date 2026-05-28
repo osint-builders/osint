@@ -451,6 +451,10 @@ async function main(): Promise<void> {
 
   // Spawn agents
   console.log(dryRun ? '[dry-run] Building prompts...' : 'Spawning agents...');
+  
+  // Track progress for GitHub Actions
+  let completedBuckets = 0;
+  const totalBuckets = buckets.length;
 
   const runPromises = buckets.map(async (bucket, bucketIndex) => {
     const bucketNum = bucketIndex + 1;
@@ -477,6 +481,10 @@ async function main(): Promise<void> {
       // Return with a dummy provider reference
       return { bucketNum, runId: `dry-run-${bucketNum}`, bucket, provider: selectProvider(providerMode) };
     }
+
+    // Update progress: spawn starting
+    const spawnProgress = Math.round(((bucketIndex) / totalBuckets) * 50);
+    console.log(`::progress::{"value":${spawnProgress},"total":100,"title":"Spawning bucket ${bucketNum}/${totalBuckets}"}`);
 
     // Select provider
     let provider = selectProvider(providerMode);
@@ -529,10 +537,18 @@ async function main(): Promise<void> {
 
   // Poll all runs
   console.log(`\nPolling ${runs.length} agents...`);
+  
+  // Reset progress for polling phase
+  console.log(`::progress::{"value":50,"total":100,"title":"Polling ${runs.length} agents"}`);
 
   const pollPromises = runs.map(async ({ bucketNum, runId, bucket, provider }) => {
     const finalState = await pollUntilComplete(provider, runId, bucketNum);
     activeRunIds.delete(runId);
+    
+    // Update progress after each bucket completes
+    const pollProgress = Math.round(50 + ((bucketNum) / totalBuckets) * 50);
+    console.log(`::progress::{"value":${pollProgress},"total":100,"title":"Bucket ${bucketNum}/${totalBuckets} completed"}`);
+    
     return { bucketNum, finalState, sourceCount: bucket.length, provider };
   });
 
@@ -544,6 +560,9 @@ async function main(): Promise<void> {
     await cancelActiveRuns();
     process.exit(1);
   }
+
+  // Final progress update
+  console.log(`::progress::{"value":100,"total":100,"title":"All buckets processed"}`);
 
   // Report results
   console.log(`\n=== Collection Results ===`);
