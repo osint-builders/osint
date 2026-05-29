@@ -92,6 +92,20 @@ jobs:
 
           echo "Statistics: ${total_events} events, ${total_images} images"
 
+      - name: Download CLI binaries from cli-latest release
+        continue-on-error: true  # First run may not have CLI binaries yet
+        run: |
+          gh release download cli-latest --pattern 'osintcli-*' --dir cli-binaries/ 2>/dev/null || true
+          if [ -d cli-binaries ] && [ "$(ls -A cli-binaries/ 2>/dev/null)" ]; then
+            echo "cli_available=true" >> $GITHUB_ENV
+            ls -lh cli-binaries/
+          else
+            echo "cli_available=false" >> $GITHUB_ENV
+            echo "No CLI binaries found — skipping attachment."
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+
       - name: Create Release
         if: hashFiles('osint-data-*.tar.gz') != ''
         uses: softprops/action-gh-release@v2
@@ -159,7 +173,9 @@ jobs:
             ---
 
             🤖 Generated automatically via GitHub Actions
-          files: osint-data-${{ steps.date.outputs.date }}.tar.gz
+          files: |
+            osint-data-${{ steps.date.outputs.date }}.tar.gz
+            cli-binaries/osintcli-*
           draft: false
           prerelease: false
           fail_on_unmatched_files: false
