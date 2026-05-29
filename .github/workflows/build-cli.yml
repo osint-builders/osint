@@ -127,30 +127,80 @@ jobs:
             Cross-platform single-file executable for querying OSINT world events
             offline. Data and semantic embeddings are baked into the binary.
 
-            ### Download
+            ---
 
-            | Platform | Binary |
-            |----------|--------|
-            | Linux x86_64 | `osintcli-linux-amd64` |
-            | Linux ARM64 | `osintcli-linux-arm64` |
-            | macOS Intel | `osintcli-darwin-amd64` |
-            | macOS Apple Silicon | `osintcli-darwin-arm64` |
-            | Windows x86_64 | `osintcli-windows-amd64.exe` |
+            ### Install (one-liner)
+
+            **Linux (x86_64)**
+            ```bash
+            curl -fsSL https://github.com/osint-builders/osint/releases/download/cli-latest/osintcli-linux-amd64 -o /usr/local/bin/osintcli && chmod +x /usr/local/bin/osintcli
+            ```
+
+            **Linux (ARM64)**
+            ```bash
+            curl -fsSL https://github.com/osint-builders/osint/releases/download/cli-latest/osintcli-linux-arm64 -o /usr/local/bin/osintcli && chmod +x /usr/local/bin/osintcli
+            ```
+
+            **macOS (Apple Silicon)**
+            ```bash
+            curl -fsSL https://github.com/osint-builders/osint/releases/download/cli-latest/osintcli-darwin-arm64 -o /usr/local/bin/osintcli && chmod +x /usr/local/bin/osintcli
+            ```
+
+            **macOS (Intel)**
+            ```bash
+            curl -fsSL https://github.com/osint-builders/osint/releases/download/cli-latest/osintcli-darwin-amd64 -o /usr/local/bin/osintcli && chmod +x /usr/local/bin/osintcli
+            ```
+
+            **Windows (PowerShell)**
+            ```powershell
+            Invoke-WebRequest -Uri https://github.com/osint-builders/osint/releases/download/cli-latest/osintcli-windows-amd64.exe -OutFile "$env:LOCALAPPDATA\osintcli.exe"
+            # Add to PATH (current session):
+            $env:Path += ";$env:LOCALAPPDATA"
+            # Or permanently:
+            [Environment]::SetEnvironmentVariable('Path', $env:Path + ";$env:LOCALAPPDATA", 'User')
+            ```
+
+            ### Verify Installation
+
+            ```bash
+            osintcli stats
+            ```
+
+            ---
 
             ### Quick Start
 
             ```bash
-            chmod +x osintcli-*        # Linux/macOS
-            ./osintcli-linux-amd64 search "strait of hormuz"
-            ./osintcli-linux-amd64 list --country Iran --limit 10
-            ./osintcli-linux-amd64 get evt_53043659343429632
-            ./osintcli-linux-amd64 similar evt_53043659343429632
-            ./osintcli-linux-amd64 stats
+            osintcli search "strait of hormuz"
+            osintcli list --country Iran --limit 10
+            osintcli get evt_53043659343429632
+            osintcli similar evt_53043659343429632
+            osintcli stats --format json
             ```
 
-            ### Output Formats
+            ### Filters & Options
 
-            `--format table` (default) | `--format json` | `--format markdown`
+            ```
+            --from 2026-05-01       Start date
+            --to 2026-05-27         End date
+            --country Iran          Filter by country
+            --topic hormuz          Filter by topic (repeatable)
+            --source TankerTrackers Filter by source name
+            --min-confidence 0.8    Minimum confidence score
+            --sort date|score|confidence
+            --limit 20              Max results (default 20)
+            --format table|json|markdown
+            ```
+
+            ### Platform Binaries
+
+            | Platform | Binary | Install Path |
+            |----------|--------|--------------|
+            | Linux x86_64 | `osintcli-linux-amd64` | `/usr/local/bin/osintcli` |
+            | Linux ARM64 | `osintcli-linux-arm64` | `/usr/local/bin/osintcli` |
+            | macOS Intel | `osintcli-darwin-amd64` | `/usr/local/bin/osintcli` |
+            | macOS Apple Silicon | `osintcli-darwin-arm64` | `/usr/local/bin/osintcli` |
+            | Windows x86_64 | `osintcli-windows-amd64.exe` | `%LOCALAPPDATA%\osintcli.exe` |
 
             ---
             🤖 Built automatically from the latest embeddings index.
