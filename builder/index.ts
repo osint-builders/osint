@@ -16,6 +16,91 @@ import * as path from 'path';
 import { execSync } from 'child_process';
 import { DateTime } from 'luxon';
 
+// ============================================================================
+// Formatting Utilities for GitHub Actions Logs
+// ============================================================================
+
+const C = {
+  r: '\x1b[0m',     // reset
+  b: '\x1b[1m',     // bold
+  d: '\x1b[2m',     // dim
+  R: '\x1b[31m',    // red
+  G: '\x1b[32m',    // green
+  Y: '\x1b[33m',    // yellow
+  B: '\x1b[34m',    // blue
+  M: '\x1b[35m',    // magenta
+  C: '\x1b[36m',    // cyan
+  W: '\x1b[37m',    // white
+};
+
+const color = (t: string, c: string) => C[c as keyof typeof C] ? `${C[c as keyof typeof C]}${t}${C.r}` : t;
+const dim   = (t: string) => color(t, 'd');
+const bold  = (t: string) => color(t, 'b');
+
+// Box drawing characters (no color)
+const box = {
+  tl: '╭', tr: '╮', bl: '╰', br: '╯',
+  h: '─', v: '│',
+  lt: '├', rt: '┤', tt: '┬', bt: '┴', cross: '┼'
+};
+
+function hr(width: number = 70): void {
+  console.log(box.h.repeat(width));
+}
+
+function header(text: string, width: number = 70): void {
+  const pad = Math.max(0, Math.floor((width - text.length - 2) / 2));
+  const remainder = width - text.length - 2 - pad * 2;
+  console.log(`\n${box.tl}${box.h.repeat(width - 2)}${box.tr}`);
+  console.log(`${box.v}${' '.repeat(pad)}${bold(text)}${' '.repeat(pad + remainder)}${box.v}`);
+  console.log(`${box.bl}${box.h.repeat(width - 2)}${box.br}\n`);
+}
+
+function groupStart(text: string): void {
+  console.log(`\n${color(box.lt + box.h + ' ' + text, 'Y')}`);
+}
+
+function groupEnd(): void {
+  console.log(`${color(box.bt + box.h, 'Y')}\n`);
+}
+
+function table(headers: string[], rows: string[][], colWidths?: number[]): void {
+  if (!colWidths) {
+    colWidths = headers.map(h => h.length);
+    rows.forEach(row => row.forEach((cell, i) => {
+      colWidths![i] = Math.max(colWidths![i], cell.length);
+    }));
+  }
+  
+  const sep = colWidths.map(w => box.h.repeat(w)).join(box.cross);
+  const hdr = headers.map((h, i) => h.padEnd(colWidths[i])).join(` ${box.v} `);
+  
+  console.log(`  ${box.tt}${sep}${box.tt}`);
+  console.log(`  ${box.v} ${hdr} ${box.v}`);
+  console.log(`  ${box.lt}${sep}${box.rt}`);
+  rows.forEach(row => {
+    const cells = row.map((c, i) => c.padEnd(colWidths[i])).join(` ${box.v} `);
+    console.log(`  ${box.v} ${cells} ${box.v}`);
+  });
+  console.log(`  ${box.bt}${sep}${box.bt}`);
+}
+
+function elapsed(startMs: number): string {
+  const ms = performance.now() - startMs;
+  const m = Math.floor(ms / 60000);
+  const s = Math.floor((ms % 60000) / 1000);
+  const msRemain = Math.floor(ms % 1000);
+  return m > 0 ? `${m}m ${s}s` : s > 0 ? `${s}s ${msRemain}ms` : `${msRemain}ms`;
+}
+
+function progress(current: number, total: number, label: string): void {
+  const pct = Math.round((current / total) * 100);
+  const filled = Math.round(pct / 5);
+  const empty = 20 - filled;
+  const bar = color('█'.repeat(filled), 'G') + color('█'.repeat(empty), 'd');
+  console.log(`  ${bar} ${pct}% ${label}`);
+}
+
 import {
   AgentProvider,
   RunState,
@@ -389,38 +474,51 @@ async function pollUntilComplete(provider: AgentProvider, runId: string, bucketN
 // ============================================================================
 
 async function main(): Promise<void> {
+  const startTime = performance.now();
   const repoRoot = process.env.REPO_ROOT ?? process.cwd();
   const dryRun = process.argv.includes("--dry-run");
   const providerMode: ProviderMode = (process.env.AGENT_PROVIDER as ProviderMode) || 'auto';
 
-  console.log(`Starting collection with provider mode: ${providerMode}`);
+  header('OSINT COLLECTION RUN');
+  console.log(`${color('Mode:', 'b')} ${color(providerMode.toUpperCase(), 'C')}   ${color('Dry Run:', 'b')} ${dryRun ? color('YES', 'Y') : color('NO', 'G')}`);
+  console.log(`${color('Timestamp:', 'b')} ${new Date().toISOString()}`);
 
+  groupStart('Initializing Providers');
+  
   // Initialize providers
   if (!dryRun) {
     await createProviders(providerMode);
-    console.log(`Using provider: ${selectProvider(providerMode).name}`);
+    console.log(`  ${color('✓', 'G')} Using provider: ${bold(selectProvider(providerMode).name)}`);
+  } else {
+    console.log(`  ${color('ℹ', 'B')} Dry run mode - skipping provider initialization`);
   }
+  groupEnd();
 
   // Load sources
+  groupStart('Loading Sources');
+  
   let processableSources: Source[];
   try {
     processableSources = loadProcessableSources(repoRoot);
   } catch (err) {
-    console.error(`Error loading source manifest: ${err}`);
+    console.error(`  ${color('✗', 'R')} Error loading source manifest: ${err}`);
     process.exit(1);
   }
 
   if (processableSources.length === 0) {
-    console.log("No processable sources found. Exiting.");
+    console.log(`  ${color('ℹ', 'B')} No processable sources found. Exiting.`);
     process.exit(0);
   }
 
-  console.log(`Found ${processableSources.length} processable source(s)`);
+  console.log(`  ${color('✓', 'G')} Found ${bold(String(processableSources.length))} processable source(s)`);
 
   const originUrl = getOriginUrl(repoRoot);
-  console.log(`Repository: ${originUrl}`);
+  console.log(`  ${color('ℹ', 'B')} Repository: ${originUrl}`);
+  groupEnd();
 
   // Bucketing
+  groupStart('Bucketing Sources');
+  
   const bucketCount = calculateOptimalBucketCount(processableSources.length);
   const buckets = partitionSources(processableSources, bucketCount);
 
@@ -440,34 +538,40 @@ async function main(): Promise<void> {
     for (const id of manifestIds) {
       if (!bucketIds.has(id)) throw new Error(`Source ${id} in manifest but not in any bucket`);
     }
-    console.log(`✓ Coverage: ${bucketIds.size} sources across ${buckets.length} buckets`);
+    console.log(`  ${color('✓', 'G')} Coverage: ${bold(String(bucketIds.size))} sources across ${bold(String(buckets.length))} buckets`);
   }
 
-  console.log(`\nPartitioning ${processableSources.length} sources into ${buckets.length} parallel agents`);
-  buckets.forEach((bucket, i) => {
-    const sourceIds = bucket.map(s => s.id).join(', ');
-    console.log(`  Bucket ${i + 1}: ${bucket.length} sources (${sourceIds.slice(0, 60)}...)`);
-  });
+  console.log(`\n  ${color('Partitioning', 'b')} ${bold(String(processableSources.length))} sources into ${bold(String(buckets.length))} parallel agents`);
+  
+  // Table of buckets
+  const tableRows = buckets.map((bucket, i) => [
+    String(i + 1),
+    String(bucket.length),
+    `${(Buffer.byteLength(JSON.stringify(bucket.map(s => s.id)), 'utf8') / 1024).toFixed(1)} KB`
+  ]);
+  table(['Bucket', 'Sources', 'Size'], tableRows);
+  
+  groupEnd();
 
   // Spawn agents
-  console.log(dryRun ? '[dry-run] Building prompts...' : 'Spawning agents...');
+  groupStart('Spawning Agents');
+  console.log(`  ${color('Target:', 'b')} ${bold(String(buckets.length))} parallel agents${dryRun ? color(' (dry-run)', 'd') : ''}`);
   
-  // Track progress for GitHub Actions
-  let completedBuckets = 0;
+  const bucketStartTime = performance.now();
+  let spawnedCount = 0;
   const totalBuckets = buckets.length;
 
   const runPromises = buckets.map(async (bucket, bucketIndex) => {
     const bucketNum = bucketIndex + 1;
+    const bucketStart = performance.now();
     const prompt = buildCollectionPrompt(repoRoot, bucket, originUrl, bucketNum, buckets.length);
     const promptSizeBytes = Buffer.byteLength(prompt, 'utf8');
     const promptSizeKB = (promptSizeBytes / 1024).toFixed(1);
     const promptSizeMB = (promptSizeBytes / 1024 / 1024).toFixed(2);
-    
-    // Estimate token count (approximately 4 characters per token for English text)
     const estimatedTokens = Math.ceil(promptSizeBytes / 4);
     const estimatedTokensK = (estimatedTokens / 1000).toFixed(0);
 
-    console.log(`  Bucket ${bucketNum}: ${bucket.length} sources, ${promptSizeKB} KB (${promptSizeMB} MB), ~${estimatedTokens} tokens (~${estimatedTokensK}K tokens)`);
+    console.log(`  ${color('[' + String(bucketNum).padStart(2) + ']', 'b')} ${bucket.length} sources │ ${promptSizeKB} KB (${promptSizeMB} MB) │ ~${estimatedTokens} tokens`);
 
     if (promptSizeBytes > 1_048_576) {
       throw new Error(`Bucket ${bucketNum} prompt exceeds 1 MB: ${promptSizeMB} MB`);
@@ -477,14 +581,15 @@ async function main(): Promise<void> {
       const outDir = path.join(repoRoot, ".dry-run-prompts");
       fs.mkdirSync(outDir, { recursive: true });
       fs.writeFileSync(path.join(outDir, `bucket-${bucketNum}.md`), prompt);
-      console.log(`  ✓ Bucket ${bucketNum}: wrote prompt`);
-      // Return with a dummy provider reference
+      console.log(`  ${color('✓', 'G')} Bucket ${bucketNum}: wrote prompt to ${color('.dry-run-prompts/bucket-' + bucketNum + '.md', 'C')}`);
+      spawnedCount++;
+      progress(spawnedCount, totalBuckets, `Dry run: ${spawnedCount}/${totalBuckets} buckets`);
       return { bucketNum, runId: `dry-run-${bucketNum}`, bucket, provider: selectProvider(providerMode) };
     }
 
-    // Update progress: spawn starting
-    const spawnProgress = Math.round(((bucketIndex) / totalBuckets) * 50);
-    console.log(`::progress::{"value":${spawnProgress},"total":100,"title":"Spawning bucket ${bucketNum}/${totalBuckets}"}`);
+    // Update progress
+    spawnedCount++;
+    progress(spawnedCount, totalBuckets, `Spawning: ${spawnedCount}/${totalBuckets}`);
 
     // Select provider
     let provider = selectProvider(providerMode);
@@ -499,11 +604,11 @@ async function main(): Promise<void> {
       runId = result.runId;
       runProviderMap.set(runId, provider);
       activeRunIds.add(runId);
-      console.log(`  ✓ Bucket ${bucketNum}: spawned ${runId} (${provider.name})`);
+      console.log(`  ${color('✓', 'G')} Bucket ${bucketNum}: spawned ${dim(runId)} (${color(provider.name, 'C')}) ${color(`[+${elapsed(bucketStart)}]`, 'd')}`);
     } catch (err) {
       // Fallback on quota error
       if (isAgentProviderError(err) && isQuotaError(err) && providerMode === 'auto' && vibeProvider) {
-        console.warn(`  ⚠ Bucket ${bucketNum}: Warp quota exhausted, falling back to Vibe`);
+        console.log(`  ${color('↳', 'Y')} Bucket ${bucketNum}: ${color('Warp quota exhausted', 'Y')} → ${color('falling back to Vibe', 'C')}`);
         provider = vibeProvider;
         const result = await provider.spawn(prompt, {
           name: `osint-bucket${bucketNum}-fallback`,
@@ -513,7 +618,7 @@ async function main(): Promise<void> {
         runId = result.runId;
         runProviderMap.set(runId, provider);
         activeRunIds.add(runId);
-        console.log(`  ✓ Bucket ${bucketNum}: spawned ${runId} (${provider.name})`);
+        console.log(`  ${color('✓', 'G')} Bucket ${bucketNum}: spawned ${dim(runId)} (${color(provider.name, 'C')}) ${color(`[+${elapsed(bucketStart)}]`, 'd')}`);
       } else {
         throw err;
       }
@@ -526,33 +631,36 @@ async function main(): Promise<void> {
   try {
     runs = await Promise.all(runPromises);
   } catch (err) {
-    console.error(`Error spawning agents: ${err}`);
+    console.error(`\n  ${color('✗', 'R')} Error spawning agents: ${err}`);
     process.exit(1);
   }
 
+  groupEnd();
+
   if (dryRun) {
-    console.log(`\n[dry-run] Built ${runs.length} prompts. No agents dispatched.`);
+    console.log(`\n  ${color('ℹ', 'B')} Dry run: ${bold(String(runs.length))} prompts built. No agents dispatched.`);
     process.exit(0);
   }
 
   // Poll all runs
-  console.log(`\nPolling ${runs.length} agents...`);
+  groupStart('Polling Agents');
+  console.log(`  ${color('Target:', 'b')} ${bold(String(runs.length))} agents`);
   
-  // Reset progress for polling phase
-  console.log(`::progress::{"value":50,"total":100,"title":"Polling ${runs.length} agents"}`);
+  let completedCount = 0;
+  const pollStartTime = performance.now();
 
   const pollPromises = runs.map(async ({ bucketNum, runId, bucket, provider }) => {
+    const bucketPollStart = performance.now();
     const finalState = await pollUntilComplete(provider, runId, bucketNum);
     activeRunIds.delete(runId);
     
-    // Update progress after each bucket completes
-    const pollProgress = Math.round(50 + ((bucketNum) / totalBuckets) * 50);
-    console.log(`::progress::{"value":${pollProgress},"total":100,"title":"Bucket ${bucketNum}/${totalBuckets} completed"}`);
+    completedCount++;
+    progress(50 + Math.round((completedCount / totalBuckets) * 50), 100, `Polling: ${completedCount}/${totalBuckets} completed`);
     
-    return { bucketNum, finalState, sourceCount: bucket.length, provider };
+    return { bucketNum, finalState, sourceCount: bucket.length, provider, elapsed: performance.now() - bucketPollStart };
   });
 
-  let results: { bucketNum: number; finalState: RunState; sourceCount: number; provider: AgentProvider }[];
+  let results: { bucketNum: number; finalState: RunState; sourceCount: number; provider: AgentProvider; elapsed?: number }[];
   try {
     results = await Promise.all(pollPromises);
   } catch (err) {
@@ -561,36 +669,52 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  // Final progress update
-  console.log(`::progress::{"value":100,"total":100,"title":"All buckets processed"}`);
+  groupEnd();
+
+  // Final progress
+  progress(100, 100, `All ${totalBuckets} buckets processed`);
 
   // Report results
-  console.log(`\n=== Collection Results ===`);
-  const stats = new Map<string, { total: number; succeeded: number }>();
+  header('COLLECTION RESULTS');
+  
+  const stats = new Map<string, { total: number; succeeded: number; failed: number }>();
   let allSucceeded = true;
+  const resultRows: string[][] = [];
 
-  results.forEach(({ bucketNum, finalState, sourceCount, provider }) => {
+  results.forEach(({ bucketNum, finalState, sourceCount, provider, elapsed }) => {
     const name = provider.name;
-    if (!stats.has(name)) stats.set(name, { total: 0, succeeded: 0 });
+    if (!stats.has(name)) stats.set(name, { total: 0, succeeded: 0, failed: 0 });
     const s = stats.get(name)!;
     s.total += sourceCount;
-    if (finalState === 'SUCCEEDED') s.succeeded += sourceCount;
-    else allSucceeded = false;
-
-    const symbol = finalState === 'SUCCEEDED' ? '✓' : '✗';
-    console.log(`  ${symbol} Bucket ${bucketNum}: ${finalState} (${sourceCount} sources, ${name})`);
+    if (finalState === 'SUCCEEDED') {
+      s.succeeded += sourceCount;
+      resultRows.push([String(bucketNum), color('✓', 'G'), finalState, String(sourceCount), provider.name, elapsed ? `${(elapsed/1000).toFixed(1)}s` : '-']);
+    } else {
+      allSucceeded = false;
+      s.failed += sourceCount;
+      resultRows.push([String(bucketNum), color('✗', 'R'), finalState, String(sourceCount), provider.name, elapsed ? `${(elapsed/1000).toFixed(1)}s` : '-']);
+    }
   });
 
-  console.log(`\n--- Provider Summary ---`);
-  Array.from(stats.entries()).forEach(([name, s]) => {
-    console.log(`  ${name}: ${s.succeeded}/${s.total} succeeded`);
-  });
+  console.log(`\n${color('Bucket Results:', 'b')}`);
+  table(['#', 'Status', 'State', 'Sources', 'Provider', 'Time'], resultRows);
 
+  console.log(`\n${color('Provider Summary:', 'b')}`);
+  const summaryRows = Array.from(stats.entries()).map(([name, s]) => [
+    name,
+    String(s.succeeded),
+    String(s.failed),
+    String(s.total),
+    `${Math.round((s.succeeded / s.total) * 100)}%`
+  ]);
+  table(['Provider', 'Succeeded', 'Failed', 'Total', 'Rate'], summaryRows);
+
+  const totalElapsed = elapsed(startTime);
   if (allSucceeded) {
-    console.log("\n✓ All collection buckets succeeded.");
+    console.log(`\n${color('✓', 'G')} ${bold('All collection buckets succeeded')} ${color(`in ${totalElapsed}`, 'd')}`);
     process.exit(0);
   } else {
-    console.error("\n✗ One or more collection buckets failed.");
+    console.log(`\n${color('✗', 'R')} ${bold('One or more collection buckets failed')} ${color(`after ${totalElapsed}`, 'd')}`);
     process.exit(1);
   }
 }
