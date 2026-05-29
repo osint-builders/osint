@@ -44,7 +44,7 @@ const DEFAULT_VIBE_CONFIG: Omit<VibeProviderConfig, 'apiKey'> = {
   vibePath: 'vibe',
   workDir: path.join(os.tmpdir(), 'vibe-osint-runs'),
   model: 'mistral-large',
-  defaultTimeoutMs: 30 * 60 * 1000, // 30 minutes (shorter than workflow timeout)
+  defaultTimeoutMs: 55 * 60 * 1000, // 55 minutes (under 60min GitHub job limit)
 };
 
 // ============================================================================
