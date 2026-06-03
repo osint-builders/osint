@@ -42,10 +42,6 @@ export class VectorSearchEngine {
     }
   }
 
-  isReady(): boolean {
-    return this._ready;
-  }
-
   getProgress(): ProgressState {
     return this._progress;
   }

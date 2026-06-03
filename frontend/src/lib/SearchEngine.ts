@@ -40,10 +40,6 @@ export class SearchEngine {
     return results;
   }
 
-  async search(query: string, filters: SearchFilters): Promise<SearchResult[]> {
-    return this.searchSync(query, filters);
-  }
-
   private matchesFilters(event: EventMetadata, filters: SearchFilters): boolean {
     if (filters.dateFrom || filters.dateTo) {
       const eventDate = event.date_event || event.date_published;
@@ -87,6 +83,4 @@ export class SearchEngine {
     return score;
   }
 
-  getMetadata(): EventMetadata[] { return this.metadata; }
-  isReady(): boolean { return this.isInitialized; }
 }

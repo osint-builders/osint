@@ -35,14 +35,6 @@ export class IndexLoader {
     return response.json();
   }
 
-  async loadEmbeddings(): Promise<Float32Array> {
-    const response = await fetch(`${this.baseUrl}/embeddings.bin`);
-    if (!response.ok) {
-      throw new Error(`Failed to load embeddings: ${response.statusText}`);
-    }
-    const buffer = await response.arrayBuffer();
-    return new Float32Array(buffer);
-  }
 
   async loadEventDetail(id: string): Promise<import('../types').EventDetail> {
     const response = await fetch(`${this.baseUrl}/events/${id}.json`);
