@@ -26,6 +26,7 @@ import { usePopout } from './hooks/usePopout';
 import { useBroadcastParent } from './hooks/useBroadcastSync';
 import { useSavedSearches } from './hooks/useSavedSearches';
 import { copyToClipboard, todayISO, daysAgoISO } from './lib/utils';
+import { createKeyboardHandler } from './lib/keyboardHandlers';
 import type {
   SearchResult,
   SearchFilters,
@@ -319,60 +320,30 @@ function App() {
 
   // Keyboard shortcuts — suppressed when the semantic modal is open
   useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if (semanticModalVisible) return;
-
-      const tag = (e.target as Element)?.tagName ?? '';
-      const isInput = ['INPUT', 'TEXTAREA', 'SELECT'].includes(tag);
-
-      if (e.key === '?' && !isInput) {
-        e.preventDefault();
-        setShowHelp(s => !s);
-        return;
-      }
-      if (e.key === 'Escape') {
-        if (showHelp) { setShowHelp(false); return; }
-        if (rightPane === 'detail') { setRightPane('map'); return; }
-        if (isInput) { (e.target as HTMLElement).blur(); return; }
-        if (query) { setQuery(''); return; }
-        return;
-      }
-      if (e.key === '/' && !isInput) {
-        e.preventDefault();
-        setSemanticModalVisible(true);
-        return;
-      }
-      if (!isInput) {
-        if (e.key === 'j' || e.key === 'ArrowDown') {
-          e.preventDefault();
-          setSelectedId(prev => {
-            const idx = results.findIndex(r => r.id === prev);
-            return results[Math.min(idx + 1, results.length - 1)]?.id ?? prev;
-          });
-        } else if (e.key === 'k' || e.key === 'ArrowUp') {
-          e.preventDefault();
-          setSelectedId(prev => {
-            const idx = results.findIndex(r => r.id === prev);
-            return results[Math.max(idx - 1, 0)]?.id ?? prev;
-          });
-        } else if (e.key === 'Enter' && selectedId) {
-          setRightPane('detail');
-        } else if (e.key === 'm' || e.key === 'M') {
-          setRightPane(p => p === 'map' ? 'detail' : 'map');
-        } else if ((e.key === 'c' || e.key === 'C') && selectedId) {
-          const ev = results.find(r => r.id === selectedId);
-          if (ev) { copyToClipboard(JSON.stringify(ev, null, 2)); showToast('Copied JSON'); }
-        } else if (e.key === 's' || e.key === 'S') {
-          saveSearch(query, filters); showToast('Search saved');
-        } else if (e.key === 'f' || e.key === 'F') {
-          setFilterCollapsed(p => !p);
-        } else if (e.key === 'r' || e.key === 'R') {
-          setQuery(''); setFilters(getDefaultFilters()); setSorts([]);
-        } else if (e.key === 't' || e.key === 'T') {
-          setView(v => v === 'search' ? 'timeline' : 'search');
-        }
-      }
-    };
+    const handler = createKeyboardHandler(
+      {
+        results,
+        selectedId,
+        showHelp,
+        rightPane,
+        query,
+        filters,
+        setShowHelp,
+        setRightPane,
+        setQuery,
+        setSelectedId,
+        setFilterCollapsed,
+        setFilters,
+        setSorts,
+        setView,
+        saveSearch,
+        showToast,
+        copyToClipboard,
+        getDefaultFilters,
+      },
+      semanticModalVisible,
+      setSemanticModalVisible
+    );
     document.addEventListener('keydown', handler);
     return () => document.removeEventListener('keydown', handler);
   }, [results, selectedId, showHelp, rightPane, query, filters, saveSearch, showToast, semanticModalVisible]);

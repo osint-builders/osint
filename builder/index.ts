@@ -110,6 +110,34 @@ import {
 import { WarpAgentProvider } from './providers/WarpAgentProvider';
 import { VibeAgentProvider } from './providers/VibeAgentProvider';
 
+// Semaphore for concurrency control
+class Semaphore {
+  private permits: number;
+  private max: number;
+  private waiting: Array<() => void> = [];
+
+  constructor(max: number) {
+    this.permits = max;
+    this.max = max;
+  }
+
+  async acquire(): Promise<void> {
+    if (this.permits > 0) {
+      this.permits--;
+      return;
+    }
+    await new Promise<void>(resolve => this.waiting.push(resolve));
+  }
+
+  release(): void {
+    if (this.waiting.length > 0) {
+      this.waiting.shift()!();
+    } else {
+      this.permits++;
+    }
+  }
+}
+
 // ============================================================================
 // Constants
 // ============================================================================
@@ -555,14 +583,23 @@ async function main(): Promise<void> {
 
   // Spawn agents
   groupStart('Spawning Agents');
-  console.log(`  ${color('Target:', 'b')} ${bold(String(buckets.length))} parallel agents${dryRun ? color(' (dry-run)', 'd') : ''}`);
+  
+  // Get concurrency limit from environment
+  const parallelCount = parseInt(process.env.PARALLEL_AGENT_COUNT || "1");
+  const maxConcurrency = Math.max(1, Math.min(parallelCount, buckets.length));
+  const semaphore = new Semaphore(maxConcurrency);
+  
+  console.log(`  ${color('Target:', 'b')} ${bold(String(buckets.length))} buckets, ${bold(String(maxConcurrency))} concurrent${dryRun ? color(' (dry-run)', 'd') : ''}`);
   
   const bucketStartTime = performance.now();
   let spawnedCount = 0;
   const totalBuckets = buckets.length;
 
   const runPromises = buckets.map(async (bucket, bucketIndex) => {
-    const bucketNum = bucketIndex + 1;
+    // Acquire semaphore permit for concurrency control
+    await semaphore.acquire();
+    try {
+      const bucketNum = bucketIndex + 1;
     const bucketStart = performance.now();
     const prompt = buildCollectionPrompt(repoRoot, bucket, originUrl, bucketNum, buckets.length);
     const promptSizeBytes = Buffer.byteLength(prompt, 'utf8');
@@ -584,6 +621,7 @@ async function main(): Promise<void> {
       console.log(`  ${color('✓', 'G')} Bucket ${bucketNum}: wrote prompt to ${color('.dry-run-prompts/bucket-' + bucketNum + '.md', 'C')}`);
       spawnedCount++;
       progress(spawnedCount, totalBuckets, `Dry run: ${spawnedCount}/${totalBuckets} buckets`);
+      semaphore.release();
       return { bucketNum, runId: `dry-run-${bucketNum}`, bucket, provider: selectProvider(providerMode) };
     }
 
@@ -625,6 +663,10 @@ async function main(): Promise<void> {
     }
 
     return { bucketNum, runId, bucket, provider };
+  } finally {
+    // Always release semaphore permit
+    semaphore.release();
+  }
   });
 
   let runs: { bucketNum: number; runId: string; bucket: Source[]; provider: AgentProvider }[];

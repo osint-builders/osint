@@ -1,6 +1,6 @@
 import type { SearchResult } from '../types';
 
-export type TimeGranularity = 'hour' | 'day' | 'week';
+type TimeGranularity = 'hour' | 'day' | 'week';
 
 export interface TimeGroup {
   key: string;
@@ -9,7 +9,7 @@ export interface TimeGroup {
   events: SearchResult[];
 }
 
-export function deriveGranularity(results: SearchResult[]): TimeGranularity {
+function deriveGranularity(results: SearchResult[]): TimeGranularity {
   if (results.length < 2) return 'day';
   const dates = results
     .map(r => new Date(r.date_event ?? r.date_published).getTime())
@@ -26,7 +26,7 @@ function pad(n: number): string {
   return String(n).padStart(2, '0');
 }
 
-export function getBucketKey(dateStr: string, granularity: TimeGranularity): string {
+function getBucketKey(dateStr: string, granularity: TimeGranularity): string {
   try {
     const d = new Date(dateStr);
     const y = d.getUTCFullYear();
@@ -49,7 +49,7 @@ export function getBucketKey(dateStr: string, granularity: TimeGranularity): str
 
 const MONTH_ABBR = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 
-export function getBucketLabel(key: string, granularity: TimeGranularity): { label: string; sublabel: string } {
+function getBucketLabel(key: string, granularity: TimeGranularity): { label: string; sublabel: string } {
   if (granularity === 'hour') {
     // "2026-05-04T14"
     const [datePart, hourPart] = key.split('T');

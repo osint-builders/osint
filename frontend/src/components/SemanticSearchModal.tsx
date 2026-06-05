@@ -6,7 +6,7 @@ import { highlightMatches, tokenizeQuery } from '../lib/highlightMatches';
 import { formatDateShort, truncate, getSourceIcon, getTagColor } from '../lib/utils';
 import { SourceIconBadge } from './SourceIconBadge';
 
-export interface SemanticHit {
+interface SemanticHit {
   metadata: EventMetadata;
   score: number;
 }
