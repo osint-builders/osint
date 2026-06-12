@@ -1,0 +1,161 @@
+name: Build CLI Tool
+
+# Compiles the Go CLI binary for all target platforms after the embeddings
+# index is rebuilt, or on manual trigger.
+
+on:
+  workflow_run:
+    workflows: ["Build Search Embeddings"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  GO_VERSION: '1.22'
+  CLI_DIR: cli
+
+jobs:
+  # ── Stage 1: prepare embed data ──────────────────────────────────────
+  prepare:
+    # Only run when triggered manually or when the embeddings workflow succeeded.
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare embed data
+        run: bash cli/scripts/prepare-data.sh
+
+      - name: Upload embed artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cli-embed-data
+          path: cli/embed/*.gz
+          retention-days: 1
+
+  # ── Stage 2: cross-compile (matrix) ──────────────────────────────────
+  build:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - goos: linux
+            goarch: amd64
+            suffix: linux-amd64
+          - goos: linux
+            goarch: arm64
+            suffix: linux-arm64
+          - goos: darwin
+            goarch: amd64
+            suffix: darwin-amd64
+          - goos: darwin
+            goarch: arm64
+            suffix: darwin-arm64
+          - goos: windows
+            goarch: amd64
+            suffix: windows-amd64
+            ext: .exe
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ env.GO_VERSION }}
+
+      - name: Download embed data
+        uses: actions/download-artifact@v4
+        with:
+          name: cli-embed-data
+          path: cli/embed
+
+      - name: Build binary
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+          CGO_ENABLED: '0'
+        run: |
+          cd cli
+          go build -trimpath -ldflags="-s -w" -o ../osintcli-${{ matrix.suffix }}${{ matrix.ext }} .
+
+      - name: Upload binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: osintcli-${{ matrix.suffix }}
+          path: osintcli-${{ matrix.suffix }}${{ matrix.ext }}
+          retention-days: 5
+
+  # ── Stage 3: create / update release ─────────────────────────────────
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download all binaries
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          pattern: osintcli-*
+          merge-multiple: true
+
+      - name: List binaries
+        run: ls -lh artifacts/
+
+      - name: Delete previous cli-latest release and move tag
+        run: |
+          # Delete the existing release (if any) so assets don't accumulate
+          gh release delete cli-latest --yes --cleanup-tag 2>/dev/null || true
+          # Force-create the tag at HEAD so the new release points to latest code
+          git tag -f cli-latest
+          git push origin cli-latest --force
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Create cli-latest release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: cli-latest
+          name: OSINT CLI Tool (latest)
+          body: |
+            ## OSINT CLI Tool
+
+            Cross-platform single-file executable for querying OSINT world events
+            offline. Data and semantic embeddings are baked into the binary.
+
+            ### Download
+
+            | Platform | Binary |
+            |----------|--------|
+            | Linux x86_64 | `osintcli-linux-amd64` |
+            | Linux ARM64 | `osintcli-linux-arm64` |
+            | macOS Intel | `osintcli-darwin-amd64` |
+            | macOS Apple Silicon | `osintcli-darwin-arm64` |
+            | Windows x86_64 | `osintcli-windows-amd64.exe` |
+
+            ### Quick Start
+
+            ```bash
+            chmod +x osintcli-*        # Linux/macOS
+            ./osintcli-linux-amd64 search "strait of hormuz"
+            ./osintcli-linux-amd64 list --country Iran --limit 10
+            ./osintcli-linux-amd64 get evt_53043659343429632
+            ./osintcli-linux-amd64 similar evt_53043659343429632
+            ./osintcli-linux-amd64 stats
+            ```
+
+            ### Output Formats
+
+            `--format table` (default) | `--format json` | `--format markdown`
+
+            ---
+            🤖 Built automatically from the latest embeddings index.
+          files: artifacts/osintcli-*
+          draft: false
+          prerelease: false
+          make_latest: true
+          fail_on_unmatched_files: false
