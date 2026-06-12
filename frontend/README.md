@@ -1,88 +1,43 @@
-# OSINT Semantic Search Frontend
+# OSINT Search Frontend
 
-React-based semantic search interface for exploring world events corpus with natural language queries and rich filtering.
-
-## Features
-
-- **Semantic Search**: Natural language queries using client-side search engine
-- **Rich Filtering**: Date range, country, topics, confidence threshold
-- **Fast Performance**: Client-side ANN search (<30ms after index load)
-- **Responsive UI**: Built with React 18 + Tailwind CSS
-- **Static Deployment**: Builds to `../docs/` for GitHub Pages
+React app for exploring the world-events corpus: keyword + semantic search, map, timeline, and rich filtering. Deployed to GitHub Pages at `https://osint.builders/`.
 
 ## Development
 
 ```bash
-# Install dependencies
 npm install
-
-# Start dev server (http://localhost:5173)
-npm run dev
-
-# Build for production
-npm run build
-# Output: ../docs/
+npm run dev      # http://localhost:5173
+npm run build    # output: ../docs/ (gitignored; CI builds it fresh per deploy)
 ```
+
+For working search locally, build the index once (`python builder/embeddings/build_index.py` from the repo root) and copy `data/indexes/` to `docs/indexes/` or serve it at `/indexes/`.
 
 ## Architecture
 
-### Components
+### Key components (`src/components/`)
 
-- **SearchBar.tsx**: Query input with 300ms debouncing
-- **FilterPanel.tsx**: Date, country, topics, confidence filters
-- **ResultsList.tsx**: Event cards with metadata chips
+- `CommandBar.tsx` — query input + actions
+- `FilterRail.tsx` — date, country, topic, confidence filters
+- `ResultsPane.tsx` / `EventRow.tsx` / `EventDetail.tsx` — results list + detail view
+- `MapView.tsx` — MapLibre event map
+- `TimelineView.tsx` — chronological visualization
+- `SemanticSearchModal.tsx` — vector search UI
 
-### Libraries
+### Libraries (`src/lib/`)
 
-- **IndexLoader.ts**: Loads schema, metadata, and HNSW index from `/search-index/`
-- **SearchEngine.ts**: Client-side search with keyword fallback (ONNX integration TBD)
+- `IndexLoader.ts` — loads `schema.json` + `metadata.json` from `/indexes/`
+- `SearchEngine.ts` — keyword search + filtering
+- `VectorSearchEngine.ts` — client-side semantic search (transformers.js MiniLM query embedding against `embeddings.bin`)
 
-### Data Flow
+### Data flow
 
 ```
-User Query → SearchEngine → Apply Filters → Sort by Relevance → ResultsList
+User query → SearchEngine / VectorSearchEngine → filters → ranked results
                 ↓
-         Index Artifacts (/search-index/schema.json, metadata.json)
-```
-
-## Index Artifacts
-
-Expected files in `/search-index/` (relative to build output):
-
-- `schema.json` - Index metadata and quantization parameters
-- `metadata.json` - Event metadata (title, summary, date, geo, topics)
-- `hnsw.bin` - HNSW index binary (for future ONNX integration)
-
-## Configuration
-
-### Base Path
-
-Set in `vite.config.ts`:
-```typescript
-base: '/'  // Custom domain at root
-```
-
-### Build Output
-
-```typescript
-build: {
-  outDir: '../docs',  // Output for GitHub Pages
-  emptyOutDir: true
-}
+        /indexes/{schema,metadata}.json + embeddings.bin
+        (copied from data/indexes/ by pages.yml at deploy time)
 ```
 
 ## Deployment
 
-The build output is deployed to GitHub Pages at https://osint.builders/:
-
-1. Build frontend: `npm run build`
-2. Workflow commits `docs/` to git
-3. GitHub Pages serves from `/docs` folder on `main` branch
-
-## Future Enhancements
-
-- **ONNX Integration**: Load MiniLM-L6-v2 for client-side query embedding
-- **HNSW WebAssembly**: Replace keyword search with true ANN search
-- **Virtual Scrolling**: react-window for 100+ results
-- **Index Caching**: IndexedDB for faster subsequent loads
-- **Hybrid Search**: Combine semantic + keyword search
+`.github/workflows/pages.yml` builds the frontend, copies `data/indexes/` → `docs/indexes/`, and uploads `docs/` as the Pages artifact. Nothing under `docs/` belongs in git.

@@ -1,0 +1,94 @@
+name: OSINT Snapshot Collection
+
+# Three 1-hour snapshot windows per day (09:00, 13:00, 17:00 America/New_York).
+# Each run dispatches parallel Warp Cloud Agents that collect events published
+# during the hour before dispatch. Intentional sampling — not continuous
+# coverage. Downstream workflows (embeddings, pages, CLI) chain off this one
+# by its workflow name; update them together when renaming.
+
+on:
+  schedule:
+    - cron: '0 9,13,17 * * *'
+      timezone: America/New_York
+  workflow_dispatch:      # Manual trigger for testing
+  push:
+    branches:
+      - main
+    # Explicit allow-list: only changes that alter WHAT or HOW the agents
+    # collect justify an immediate (expensive) collection run.
+    paths:
+      - 'source/manifest.json'
+      - 'source/sources/**'
+      - 'builder/index.ts'
+      - 'builder/prompts/collection-prompt.md'
+      - 'builder/runtime/**'
+
+# Prevent overlapping collection runs. If a new run triggers while one
+# remains in progress, queue it rather than running concurrently — the
+# SIGTERM handler in builder/index.ts cancels outstanding agents before exit.
+concurrency:
+  group: osint-collection
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  actions: read
+
+env:
+  WARP_API_KEY: ${{ secrets.WARP_API_KEY }}
+  WARP_ENVIRONMENT_ID: ${{ secrets.WARP_ENVIRONMENT_ID }}
+  # Unset → builder auto-sizes buckets from SOURCES_PER_AGENT.
+  PARALLEL_AGENT_COUNT: ${{ vars.PARALLEL_AGENT_COUNT || '' }}
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+          cache-dependency-path: builder/package-lock.json
+
+      - name: Install builder dependencies
+        run: npm ci
+        working-directory: builder
+
+      - name: Run OSINT collection
+        run: npm run collect
+        working-directory: builder
+        env:
+          REPO_ROOT: ${{ github.workspace }}
+
+  alert-on-failure:
+    # Surfaces silent death (exhausted Warp credits, bad secrets, repeated
+    # bucket failures) as a GitHub issue within one run.
+    needs: collect
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Open or update failure issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          RUN_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          BODY="Collection run failed at $(date -u +%Y-%m-%dT%H:%M:%SZ): $RUN_URL
+
+          Common causes: exhausted Warp credits (HTTP 401/402 at spawn), an expired WARP_API_KEY, or failed buckets. See README → Configuration for key rotation."
+          EXISTING=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open \
+            --search "Collection workflow failing in:title" \
+            --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --repo "$GITHUB_REPOSITORY" --body "$BODY"
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" \
+              --title "Collection workflow failing" --body "$BODY"
+          fi

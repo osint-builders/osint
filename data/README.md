@@ -7,7 +7,6 @@ data/
 ├── SCHEMA.md                           # World Event Entity schema + field spec
 ├── stats.json                          # unified statistics (rebuilt by embeddings.yml)
 ├── events/YYYY-MM/YYYY-MM-DD.jsonl     # collected events (one JSON object per line)
-├── media/YYYY-MM/{images,videos}/      # extracted media (images normalized to 720×720 PNG)
 ├── indexes/                            # search + data indexes
 │   ├── by-source.json                  # events grouped by source
 │   ├── by-topic.json                   # events grouped by topic
@@ -15,11 +14,13 @@ data/
 │   ├── metadata.json                   # lean search index (id + summary fields)
 │   ├── schema.json                     # embedding model schema
 │   ├── fingerprints.json               # change detection fingerprints
-│   ├── pca_transform.json              # PCA reduction transform
+│   ├── embeddings.bin                  # flat float32 vectors (384-dim MiniLM)
 │   └── events/                         # per-event detail JSON (gitignored; generated at deploy)
 ├── examples/                           # sample events for reference
-└── scripts/                            # validation, indexing, normalization, retention
+└── scripts/                            # validation, indexing, dedup, retention
 ```
+
+Events reference imagery via remote URLs (`image_urls`, `link_preview.image`); the repo stores no media files.
 
 ## Schema
 
@@ -30,9 +31,11 @@ See [`SCHEMA.md`](SCHEMA.md). The validator at `scripts/validate-events.js` enfo
 | Script | Purpose |
 |---|---|
 | `validate-events.js` | Schema validator (`--all` baseline in CI; `--strict --time-window` at runtime). |
+| `dedupe-events.js` | Cross-bucket dedupe of recent day files (runs in embeddings.yml after each collection). |
 | `rebuild-indexes.js` | Rebuild all indexes + `data/stats.json` from JSONL. |
-| `normalize-topics.py`| One-time and ongoing topic normalization (lowercase, hyphenate, singularize). |
-| `cleanup-old-data.sh`| 90-day retention sweep (run weekly by `create-release.yml`). |
+| `snowflake.js` | Event ID generator (`evt_<snowflake>`, worker = bucket number). |
+| `normalize-topics.py` | One-time and ongoing topic normalization (lowercase, hyphenate, singularize). |
+| `cleanup-old-data.sh` | 90-day retention sweep (run weekly by `create-release.yml`). |
 
 ```bash
 # Rebuild indexes locally:
@@ -40,16 +43,19 @@ node scripts/rebuild-indexes.js
 
 # Validate (baseline, matches CI):
 node scripts/validate-events.js --all
+
+# Dedupe recent day files:
+node scripts/dedupe-events.js --dry-run
 ```
 
 ## Search UI deploy flow
 
 ```
-collection (hourly-collection.yml) succeeds
+collection (collection.yml) completes
         │
-        ▼
-embeddings.yml  ← rebuilds data/indexes/{metadata,schema,fingerprints,pca}.json
-                   runs rebuild-indexes.js → data/stats.json + data/indexes/by-*.json
+        ▼  (workflow_run)
+embeddings.yml  ← dedupes recent events, rebuilds data/indexes/* + data/stats.json,
+                   commits the result [skip ci]
         │
         ▼  (workflow_run)
 pages.yml       ← runs backfill_event_details.py (generates data/indexes/events/)
@@ -58,7 +64,7 @@ pages.yml       ← runs backfill_event_details.py (generates data/indexes/event
                    uploads docs/ to GitHub Pages
 ```
 
-The site is deployed at `https://osint.builders/`.
+The site deploys to `https://osint.builders/`.
 
 ```bash
 # Local frontend preview (after building the search index once):
@@ -67,4 +73,4 @@ cd frontend && npm install && npm run dev   # http://localhost:5173/
 
 ## Retention
 
-90-day sweep runs weekly via `.github/workflows/create-release.yml`.
+The 90-day sweep runs weekly via `.github/workflows/create-release.yml`.

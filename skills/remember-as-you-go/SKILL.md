@@ -1,25 +1,26 @@
 ---
 name: remember-as-you-go
-description: Strict criteria for what to write into LEARNINGS.md (the cross-run knowledge base read by the next Warp Cloud Agent). Distinguishes durable findings from per-run telemetry, which goes to data/run-logs/ instead. Use this skill at Step 7 of each collection run.
+description: Strict criteria for what to write into LEARNINGS.md (the cross-run knowledge base read by the next Warp Cloud Agent). Distinguishes durable findings from per-run telemetry, which stays in the agent's local work directory. Use this skill at Step 7 of each collection run.
 license: MIT
 compatibility: linux (warp-cloud-agent-env-image)
 metadata:
   author: osint-builders
-  version: "2.0.0"
+  version: "2.1.0"
   reads: "../../LEARNINGS.md"
-  writes: "../../LEARNINGS.md, ../../data/run-logs/YYYY-MM/YYYY-MM-DD.log"
+  writes: "../../LEARNINGS.md"
 ---
 
 # remember-as-you-go
 
-Two files. Two purposes. Don't conflate.
+Three destinations. Three purposes. Don't conflate.
 
-| File | Purpose | Next run reads? |
+| Destination | Purpose | Next run reads? |
 |---|---|---|
-| `data/run-logs/YYYY-MM/YYYY-MM-DD.log` | Per-run telemetry — `Processing <id>`, `Created event:`, dedup skips, window snaps, parse counts. Full firehose. | ❌ |
-| `LEARNINGS.md` | Durable findings, shortcuts, optimization opportunities. Append only when criteria met. | ✅ Injected as `## Prior Learnings`. |
+| `$WORK_DIR/<source_id>/notes.md` | Per-run telemetry — `Processing <id>`, `Created event:`, dedup skips, window snaps, parse counts. Local to the agent; never committed. | ❌ |
+| `source/manifest.json` `note` field | Per-source liveness verdicts (dead handle, wrong account, stale site). A maintainer applies these — the agent only proposes via a LEARNINGS entry. | ✅ (as status filtering) |
+| `LEARNINGS.md` | Durable cross-cutting findings, shortcuts, cost signals. Append only when criteria met. | ✅ Injected as `## Prior learnings`. |
 
-Orchestrator reads `LEARNINGS.md`, drops expired entries, caps at 100 entries / 30 KB, injects result. Never rotate manually.
+Orchestrator reads `LEARNINGS.md`, drops expired entries, caps at 100 entries / 10 KB, injects result into every bucket prompt. Never rotate manually — every byte here multiplies across all bucket prompts.
 
 ## When to write to `LEARNINGS.md`
 
@@ -30,16 +31,17 @@ Append only when:
 3. **Repeated failure (≥3 runs)** — fix outlives this run.
 4. **Schema/validation gap** + workaround.
 5. **Cost signal** — hit Perplexity/Twitter/Nominatim quota next run should know.
+6. **Source liveness verdict** — ONE short entry naming the source + evidence, so a maintainer can set the manifest `status`/`note`. Keep it to two lines; the manifest, not LEARNINGS, owns this fact long-term.
 
 ## When NOT to write to `LEARNINGS.md`
 
-- `No events parsed` / `Created event:` / per-source counts → `data/run-logs/` only.
-- `[skip] dup url` lines → `data/run-logs/` only.
-- `[snap]` time-window notices → `data/run-logs/` only.
+- `No events parsed` / `Created event:` / per-source counts → `$WORK_DIR/<id>/notes.md` only.
+- `[skip] dup url` lines → `$WORK_DIR/<id>/notes.md` only.
+- `[snap]` time-window notices → `$WORK_DIR/<id>/notes.md` only.
 - Standard documented behavior → no entry.
 - One-off cause (network blip, single bad response) → no entry.
 
-Doesn't fit criteria 1-5 → `data/run-logs/` only.
+Doesn't fit criteria 1-6 → `$WORK_DIR/<id>/notes.md` only.
 
 ## Required entry format
 
@@ -82,7 +84,7 @@ All five lines required. Missing fields → silent drop.
 **Expires:** 2026-05-02
 ```
 
-(Belongs in `data/run-logs/`.)
+(Belongs in `$WORK_DIR/<id>/notes.md`.)
 
 ### ❌ Bad — too vague
 
@@ -98,6 +100,6 @@ All five lines required. Missing fields → silent drop.
 
 ## Pitfalls
 
-- **`memory.md` gone** — renamed to `LEARNINGS.md` in PR-3. Old refs stale.
-- **Never trim `LEARNINGS.md`** — orchestrator handles.
+- **Never trim `LEARNINGS.md`** — the orchestrator prunes expired entries; maintainers prune superseded ones.
 - **One finding per entry** — bundling breaks expiry.
+- **Liveness verdicts stay short** — the full evidence trail belongs in the manifest note, not here.

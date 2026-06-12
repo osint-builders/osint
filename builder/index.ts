@@ -1,25 +1,29 @@
 #!/usr/bin/env tsx
 /**
- * OSINT Builder
+ * OSINT Builder — orchestrator.
  *
- * Reads sources from source/manifest.json (every source whose status is NOT
- * in EXCLUDED_STATUSES), constructs a collection prompt, and spawns a single
- * Warp cloud agent via oz-agent-sdk to perform the full collection workflow
- * (collect → validate → write JSONL → commit).
+ * Reads sources from source/manifest.json (every source whose status stays
+ * outside EXCLUDED_STATUSES), partitions them into buckets, renders
+ * builder/prompts/collection-prompt.md per bucket, and spawns one Warp cloud
+ * agent per bucket via oz-agent-sdk. Each agent clones this repo and drives
+ * the versioned helper scripts in builder/runtime/ (pre-check → collect →
+ * enrich → validate → merge → submit).
  *
  * IMPORTANT: this builder uses a deny-list, not an allow-list. New sources
- * (including ones with status "testing" or "unverified") are automatically
- * included in every run. To skip a source, set its status to one of
- * EXCLUDED_STATUSES (e.g. "inactive", "archived", "deprecated"). The prompt
- * also embeds an explicit cross-check step that fails if the source list
- * embedded in the prompt does not match the live manifest.
+ * (including ones with status "testing" or "unverified") automatically join
+ * every run. To skip a source, set its status to one of EXCLUDED_STATUSES
+ * ("inactive", "archived", "deprecated"). The prompt also embeds a sentinel
+ * ID list that the agent cross-checks against the live manifest.
  *
  * Required environment variables:
- *   WARP_API_KEY          — Warp API key
+ *   WARP_API_KEY          — Warp API key (exhausted credits surface as
+ *                           401/402 at spawn time — see the spawn handler)
  *   WARP_ENVIRONMENT_ID   — UID of a pre-configured Warp cloud environment
  *
  * Optional:
  *   REPO_ROOT             — Repository root (defaults to cwd)
+ *   PARALLEL_AGENT_COUNT  — Bucket-count override; otherwise auto-sized
+ *                           from SOURCES_PER_AGENT
  */
 
 import OzAPI from "oz-agent-sdk";
@@ -65,33 +69,28 @@ process.on("SIGINT", async () => {
   process.exit(0);
 });
 
-// Warp's prompt size limit (1 MB = 1,048,576 bytes)
-// We target 80% of limit for safety (838,860 bytes)
-const MAX_PROMPT_SIZE_BYTES = 838_860;
+// Warp's hard prompt size limit (1 MB). Each bucket prompt gets asserted
+// against this before dispatch — slimmed source files keep real prompts far
+// below it, so size no longer drives bucket count.
+const MAX_PROMPT_SIZE_BYTES = 1_048_576;
 
-// Calculate optimal bucket count based on source count
-// Average: ~14,500 bytes per source (based on 2.06 MB / 142 sources)
-const BYTES_PER_SOURCE = 14_500;
-const BASE_PROMPT_OVERHEAD = 50_000; // Base prompt without sources
+// Bucket count derives from wall-clock parallelism, not prompt size: each
+// agent processes its sources sequentially, so SOURCES_PER_AGENT bounds the
+// per-agent workload. PARALLEL_AGENT_COUNT (when set > 0) overrides.
+const SOURCES_PER_AGENT = 12;
 
-function calculateOptimalBucketCount(sourceCount: number): number {
+function calculateBucketCount(sourceCount: number): number {
   const configuredCount = parseInt(process.env.PARALLEL_AGENT_COUNT || "0");
-
-  // Calculate minimum buckets needed to stay under size limit
-  const totalSizeEstimate = BASE_PROMPT_OVERHEAD + (sourceCount * BYTES_PER_SOURCE);
-  const minBucketsNeeded = Math.ceil(totalSizeEstimate / MAX_PROMPT_SIZE_BYTES);
-
-  // Use the larger of: configured count or minimum needed
-  const optimalCount = Math.max(configuredCount, minBucketsNeeded);
+  const autoCount = Math.ceil(sourceCount / SOURCES_PER_AGENT);
+  const count = configuredCount > 0 ? configuredCount : autoCount;
 
   console.log(`\nBucket calculation:`);
   console.log(`  Sources: ${sourceCount}`);
-  console.log(`  Estimated total prompt size: ${(totalSizeEstimate / 1024).toFixed(0)} KB`);
-  console.log(`  Configured PARALLEL_AGENT_COUNT: ${configuredCount}`);
-  console.log(`  Minimum buckets needed: ${minBucketsNeeded}`);
-  console.log(`  Using: ${optimalCount} buckets (max of configured vs minimum)\n`);
+  console.log(`  Auto (ceil(n/${SOURCES_PER_AGENT})): ${autoCount}`);
+  console.log(`  Configured PARALLEL_AGENT_COUNT: ${configuredCount || "(unset)"}`);
+  console.log(`  Using: ${count} buckets\n`);
 
-  return optimalCount;
+  return count;
 }
 
 // Statuses that should be EXCLUDED from a collection run.
@@ -105,6 +104,7 @@ interface Source {
   file: string;
   status: string;
   type?: string;
+  priority?: string;
 }
 
 interface Manifest {
@@ -144,12 +144,23 @@ function getOriginUrl(repoRoot: string): string {
   }
 }
 
+/**
+ * Deterministic partition: sort by priority (high first), then by id, and
+ * deal round-robin so high-priority sources spread evenly across buckets.
+ * The same manifest always produces the same buckets — runs reproduce and
+ * bucket-specific learnings stay meaningful.
+ */
 function partitionSources(sources: Source[], bucketCount: number): Source[][] {
-  // Shuffle sources to distribute high-priority sources across buckets
-  const shuffled = [...sources].sort(() => Math.random() - 0.5);
+  const rank = (s: Source) =>
+    ({ high: 0, medium: 1, low: 2 } as Record<string, number>)[
+      (s.priority ?? "medium").toLowerCase()
+    ] ?? 1;
+  const ordered = [...sources].sort(
+    (a, b) => rank(a) - rank(b) || a.id.localeCompare(b.id)
+  );
 
   const buckets: Source[][] = Array.from({ length: bucketCount }, () => []);
-  shuffled.forEach((source, index) => {
+  ordered.forEach((source, index) => {
     buckets[index % bucketCount].push(source);
   });
 
@@ -169,9 +180,12 @@ function loadPromptTemplate(): string {
   return cachedTemplate;
 }
 
-// LEARNINGS.md cap: 100 entries OR 30 KB, whichever first.
+// LEARNINGS.md injection cap: 100 entries OR 10 KB, whichever first. The
+// injected block repeats in EVERY bucket prompt, so the byte cap directly
+// multiplies into per-run token cost. Per-source liveness facts belong in
+// source/manifest.json notes, not here.
 const LEARNINGS_MAX_ENTRIES = 100;
-const LEARNINGS_MAX_BYTES = 30 * 1024;
+const LEARNINGS_MAX_BYTES = 10 * 1024;
 
 interface LearningEntry {
   raw: string;        // full markdown of the entry, including its `## ...` header
@@ -437,15 +451,14 @@ async function main(): Promise<void> {
   const originUrl = getOriginUrl(repoRoot);
   console.log(`Repository: ${originUrl}`);
 
-  // Calculate optimal bucket count based on source count and size limits
-  const bucketCount = calculateOptimalBucketCount(processableSources.length);
+  // Bucket count derives from per-agent workload (see SOURCES_PER_AGENT).
+  const bucketCount = calculateBucketCount(processableSources.length);
   const buckets = partitionSources(processableSources, bucketCount);
 
   // Total-coverage guarantee: the union of all bucket IDs must exactly
-  // equal the set of processable manifest IDs. This is the real check the
-  // old per-bucket bash sentinel was trying (and failing) to do — see
-  // PR-D in .hermes/plans/2026-05-01_150225-osint-macro-review.md §1.6.
-  // Run it ONCE here in the orchestrator where we still have both sets.
+  // equal the set of processable manifest IDs. Run ONCE here in the
+  // orchestrator, where both sets exist side by side — per-bucket checks
+  // cannot see the whole picture.
   {
     const manifestIds = new Set(processableSources.map((s) => s.id));
     const bucketIds = new Set<string>();
@@ -495,8 +508,8 @@ async function main(): Promise<void> {
 
     console.log(`  Bucket ${bucketNum}: ${bucket.length} sources, prompt size: ${promptSizeKB} KB (${promptSizeMB} MB)`);
 
-    if (promptSizeBytes > 1_048_576) {
-      const errorMsg = `Bucket ${bucketNum} prompt exceeds 1 MB limit: ${promptSizeMB} MB (${promptSizeBytes} bytes). Need more buckets!`;
+    if (promptSizeBytes > MAX_PROMPT_SIZE_BYTES) {
+      const errorMsg = `Bucket ${bucketNum} prompt exceeds 1 MB limit: ${promptSizeMB} MB (${promptSizeBytes} bytes). Raise PARALLEL_AGENT_COUNT or slim the sources.`;
       console.error(`  ❌ ${errorMsg}`);
       throw new Error(errorMsg);
     }
@@ -528,7 +541,16 @@ async function main(): Promise<void> {
       console.log(`  ✓ Bucket ${bucketNum}: spawned (run ID: ${runResponse.run_id})`);
       return { bucketNum, runId: runResponse.run_id, bucket };
     } catch (err) {
-      console.error(`  ✗ Bucket ${bucketNum}: failed to spawn - ${err}`);
+      const status = (err as { status?: number }).status;
+      if (status === 401 || status === 402 || status === 403) {
+        console.error(
+          `  ✗ Bucket ${bucketNum}: spawn rejected (HTTP ${status}). ` +
+          `WARP_API_KEY looks invalid, expired, or out of credits — ` +
+          `rotate the key / top up credits (see README §Configuration).`
+        );
+      } else {
+        console.error(`  ✗ Bucket ${bucketNum}: failed to spawn - ${err}`);
+      }
       throw err;
     }
   });

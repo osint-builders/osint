@@ -797,7 +797,7 @@ All scripts located in `skills/create-source/scripts/`:
 
 ### Related Skills
 - `data-to-markdown` - Convert source data to Markdown
-- `word-event-entities` - World event entity schema
+- `world-event-entities` - World event entity schema
 - `agent-browser` - Web scraping for webpage sources
 
 ### External Resources

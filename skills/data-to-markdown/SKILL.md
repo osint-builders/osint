@@ -15,7 +15,7 @@ Raw input → `contents` Markdown. E-PRIME style, minimal conventions, format po
 
 ## When to use
 
-Use for any `contents` field write — HTML, JSON, PDF, freeform notes. Output: precise, active Markdown, not source prose. Schema: `skills/word-event-entities/`, `data/SCHEMA.md`.
+Use for any `contents` field write — HTML, JSON, PDF, freeform notes. Output: precise, active Markdown, not source prose. Schema: `skills/world-event-entities/`, `data/SCHEMA.md`.
 
 **Non-English content**: translate `title`, `summary`, and body text to English before applying Markdown conventions or E-PRIME. Agent translates directly. Preserve proper nouns verbatim.
 
@@ -52,4 +52,4 @@ Headings `##`+ (entity title supplies `#`); no level-skipping. One blank line be
 - `references/html-conversion.md` — strip HTML/scraper artifacts.
 - `references/document-conversion.md` — Word, PDF, PowerPoint extraction.
 - `references/text-conversion.md` — plain-text normalization.
-- `../word-event-entities/SKILL.md`, `../../data/SCHEMA.md` — entity consuming this Markdown.
+- `../world-event-entities/SKILL.md`, `../../data/SCHEMA.md` — entity consuming this Markdown.

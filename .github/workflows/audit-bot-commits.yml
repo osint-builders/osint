@@ -1,0 +1,72 @@
+name: Audit Bot Commits
+
+# Collection agents push directly to main with a Contents:write PAT while
+# processing untrusted scraped content. This audit compensates: it verifies
+# that every recent bot-authored commit touches ONLY the expected data paths,
+# and opens an issue when one steps outside them (possible prompt injection
+# or a broken runtime script).
+#
+# Bot commits carry [skip ci], so push-triggered checks never see them —
+# this workflow runs after each collection run and on a daily sweep instead.
+
+on:
+  workflow_run:
+    workflows: ["OSINT Snapshot Collection"]
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: '30 6 * * *'   # daily sweep (UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Audit recent bot commits
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          # Paths a bot identity may touch. Everything else trips the audit.
+          ALLOW_RE='^(data/events/|data/indexes/|data/stats\.json$|LEARNINGS\.md$)'
+          BOT_EMAILS='osint-bot@github-actions|embeddings-bot@github-actions|retention-bot@github-actions'
+
+          VIOLATIONS=""
+          while read -r sha; do
+            author=$(git show -s --format='%ae' "$sha")
+            echo "$author" | grep -qE "$BOT_EMAILS" || continue
+            bad=$(git diff-tree --no-commit-id --name-only -r "$sha" \
+              | grep -vE "$ALLOW_RE" || true)
+            if [ -n "$bad" ]; then
+              VIOLATIONS="$VIOLATIONS\n- $sha ($author):\n$(echo "$bad" | sed 's/^/    /')"
+            fi
+          done < <(git log --since='26 hours ago' --format='%H' main)
+
+          if [ -n "$VIOLATIONS" ]; then
+            echo "::error::Bot commit(s) touched paths outside the allow-list."
+            printf 'Violations:%b\n' "$VIOLATIONS"
+            BODY="Bot-authored commit(s) modified files outside the allowed data paths in the last 26 hours. Investigate for prompt injection or broken runtime scripts.
+
+          Allowed: data/events/**, data/indexes/**, data/stats.json, LEARNINGS.md
+          $(printf '%b' "$VIOLATIONS")"
+            EXISTING=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open \
+              --search "Bot commit audit violation in:title" \
+              --json number --jq '.[0].number // empty')
+            if [ -n "$EXISTING" ]; then
+              gh issue comment "$EXISTING" --repo "$GITHUB_REPOSITORY" --body "$BODY"
+            else
+              gh issue create --repo "$GITHUB_REPOSITORY" \
+                --title "Bot commit audit violation" --body "$BODY"
+            fi
+            exit 1
+          fi
+          echo "Audit clean: all recent bot commits stayed within allowed paths."

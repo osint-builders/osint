@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # cleanup-old-data.sh
-# Remove world event data and media older than retention period (90 days)
+# Remove world event data older than the retention period (90 days)
 
 set -euo pipefail
 
@@ -10,7 +10,6 @@ RETENTION_DAYS=90
 DRY_RUN=false
 DATA_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 EVENTS_DIR="$DATA_DIR/events"
-MEDIA_DIR="$DATA_DIR/media"
 MANIFEST_FILE="$DATA_DIR/stats.json"
 
 # Parse arguments
@@ -23,7 +22,7 @@ while [[ $# -gt 0 ]]; do
     --help|-h)
       echo "Usage: $0 [--dry-run]"
       echo ""
-      echo "Remove event data and media older than $RETENTION_DAYS days"
+      echo "Remove event data older than $RETENTION_DAYS days"
       echo ""
       echo "Options:"
       echo "  --dry-run    Show what would be deleted without actually deleting"
@@ -101,11 +100,6 @@ remove_old_months() {
 echo ""
 echo "--- Events ---"
 remove_old_months "$EVENTS_DIR" "events"
-
-# Remove old media
-echo ""
-echo "--- Media ---"
-remove_old_months "$MEDIA_DIR" "media"
 
 # Update manifest if not dry run
 if [ "$DRY_RUN" = false ]; then

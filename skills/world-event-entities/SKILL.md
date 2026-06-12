@@ -1,5 +1,5 @@
 ---
-name: word-event-entities
+name: world-event-entities
 description: Build and validate World Event Entity records (JSONL) representing real-world events with structured metadata, source attribution, and geographic context. Defers to data/SCHEMA.md as the canonical schema.
 license: MIT
 compatibility: linux (warp-cloud-agent-env-image)
@@ -21,13 +21,13 @@ Building/validating event JSONL for OSINT event store. Pair `data-to-markdown` f
 
 `id`, `source`, `title`, `summary`, `contents`, `date_published`, `links`, `image_urls`, `geo`.
 
-(`geo` listed optional in schema but validator requires `geo.lat`/`geo.lon`.)
+`image_urls` holds **remote** image URLs (og:image, article hero, Telegram photo). Twitter/X sources set `[]` — their media requires auth.
 
 ## Optional fields
 
 `date_event`, `topics`, `confidence`, `ingested_at`, `link_preview`.
 
-`link_preview` — fetched automatically at collection time via LinkPreview API (`$LINKPREVIEW_API_KEY`). Structure: `{title, description, image, url}`. Set by step 7.5 of the collection prompt; do NOT construct manually.
+`link_preview` — fetched automatically at collection time by `builder/runtime/enrich-link-preview.sh` (LinkPreview API via `$LINKPREVIEW_API_KEY`, Twitter banner fallback). Structure: `{title, description, image, url}`. Do NOT construct manually.
 
 ## ID format
 

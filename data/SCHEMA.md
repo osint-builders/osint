@@ -1,6 +1,6 @@
 # World Event Entity Schema
 
-**Schema Version**: 2020-12 (JSON Schema) | **Entity Type**: world-event | **Last Updated**: 2026-05-01
+**Schema Version**: 2020-12 (JSON Schema) | **Entity Type**: world-event | **Last Updated**: 2026-06-12
 
 ## Required Fields
 
@@ -13,10 +13,10 @@
 | `contents` | string | ≥100 words, **E-PRIME** | Comprehensive Markdown event description; no forms of "to be" |
 | `date_published` | ISO 8601 | `YYYY-MM-DDTHH:mm:ssZ` | When the source published the event |
 | `links` | array | `[{url, label?}]` | Source URLs |
-| `image_urls` | array | `string[]` | Image paths or remote URLs |
+| `image_urls` | array | `string[]` | **Remote** image URLs (og:image, article hero, Telegram photo). Twitter/X sources use `[]`. Events collected before 2026-06 may carry legacy relative `./media/...` paths. |
 | `geo` | object | `lat` (number), `lon` (number) required | Geographic context; also `country`, `region`, `city` |
 
-> **Validator**: `data/scripts/validate-events.js --strict`. Prompt invokes at Step 4. Keep in lockstep.
+> **Validator**: `data/scripts/validate-events.js --strict`. The collection prompt invokes it at Step 5. Keep in lockstep.
 
 ## Optional Fields
 
@@ -43,7 +43,7 @@ Temporal order: `date_event ≤ date_published ≤ ingested_at`
   "date_event": "2026-04-29T10:15:00Z",
   "geo": {"lat": 37.27, "lon": 37.02, "country": "Turkey", "region": "Gaziantep", "city": "Gaziantep"},
   "links": [{"url": "https://www.reuters.com/...", "label": "Reuters Coverage"}],
-  "image_urls": ["./media/2026-04/images/2026-04-29/evt_20260429_001_img1.jpg"],
+  "image_urls": ["https://www.reuters.com/resizer/og-earthquake-hero.jpg"],
   "topics": ["earthquake", "disaster", "turkey", "syria"],
   "confidence": 0.95,
   "ingested_at": "2026-04-29T10:35:00Z",

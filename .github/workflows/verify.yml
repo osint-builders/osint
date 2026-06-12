@@ -24,8 +24,6 @@ on:
       - main
     paths-ignore:
       - 'data/events/**'
-      - 'data/media/**'
-      - 'data/indexes/**'
       - 'data/indexes/**'
       - 'data/stats.json'
       - 'LEARNINGS.md'
@@ -68,4 +66,13 @@ jobs:
             echo ""
             echo "::error::skills/README.md is stale. Run ./skills/scripts/regenerate-skills-readme.sh and commit."
             exit 1
+          fi
+
+      - name: Lint runtime scripts
+        run: |
+          for f in builder/runtime/*.sh; do
+            bash -n "$f"
+          done
+          if command -v shellcheck >/dev/null 2>&1; then
+            shellcheck -S warning builder/runtime/*.sh
           fi

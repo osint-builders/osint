@@ -1,13 +1,15 @@
 name: Build Search Embeddings
 
-# Rebuilds the semantic search index after every hourly collection run,
-# regardless of whether the collection succeeded or failed. Decoupled from hourly-collection.yml (PR-H) so the two
-# cadences can evolve independently — collection is the OSINT product;
-# embeddings power a downstream search UI.
+# Rebuilds the semantic search index after every collection run, regardless
+# of whether the collection succeeded or failed. Decoupled from
+# collection.yml so the two cadences can evolve independently — collection
+# remains the OSINT product; embeddings power a downstream search UI.
+# Also runs the cross-bucket dedupe pass: parallel agents cannot see events
+# that sibling buckets push at the same moment.
 
 on:
   workflow_run:
-    workflows: ["Daily OSINT Collection"]
+    workflows: ["OSINT Snapshot Collection"]
     types: [completed]
     branches: [main]
   workflow_dispatch:
@@ -44,6 +46,9 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Dedupe recent day files (cross-bucket safety net)
+        run: node data/scripts/dedupe-events.js --days 7
+
       - name: Build search index
         run: python builder/embeddings/build_index.py
         env:
@@ -56,12 +61,13 @@ jobs:
 
           git config user.name "OSINT Embeddings Bot"
           git config user.email "embeddings-bot@github-actions"
-          # Add indexes but exclude generated events/ (regenerated at Pages deploy time)
-          git add data/indexes/fingerprints.json data/indexes/metadata.json data/indexes/schema.json data/indexes/embeddings.bin data/indexes/by-source.json data/indexes/by-topic.json data/indexes/by-location.json data/stats.json
+          # Add deduped events + indexes; exclude generated indexes/events/
+          # (regenerated at Pages deploy time).
+          git add data/events data/indexes/fingerprints.json data/indexes/metadata.json data/indexes/schema.json data/indexes/embeddings.bin data/indexes/by-source.json data/indexes/by-topic.json data/indexes/by-location.json data/stats.json
           # [skip ci] prevents this push from re-triggering anything.
           git diff-index --quiet HEAD || git commit -m "Update search index, indexes, and stats
 
-          Generated embeddings for events collected at $(date -u +%Y-%m-%dT%H:%M:%SZ)
+          Deduped + reindexed events at $(date -u +%Y-%m-%dT%H:%M:%SZ)
 
           [skip ci]"
           git pull --rebase origin main

@@ -1,43 +1,51 @@
 # GitHub Actions Workflows
 
-See [README.md](../../README.md) (top-level) for architecture and secrets setup.
+See the top-level [README.md](../../README.md) for architecture and secrets setup.
 
-## hourly-collection.yml
+## collection.yml — "OSINT Snapshot Collection"
 
-- Cron: every `:00` UTC
-- Triggers: `schedule` | `workflow_dispatch` | `push` (with `paths-ignore`)
-- One job: `collect` — runs `builder/index.ts` (the orchestrator that dispatches Warp Cloud Agents).
-- See [../../README.md](../../README.md) "Configuration" for required secrets.
+- Cron: `0 9,13,17 * * *` in `America/New_York` — three 1-hour snapshot windows per day.
+- Triggers: `schedule` | `workflow_dispatch` | `push` to main touching `source/**`, `builder/index.ts`, `builder/prompts/collection-prompt.md`, or `builder/runtime/**` (explicit allow-list).
+- Job `collect` runs `builder/index.ts`, which dispatches parallel Warp Cloud Agents.
+- Job `alert-on-failure` opens or updates a **"Collection workflow failing"** issue whenever `collect` fails — credit exhaustion can no longer kill the pipeline silently.
+- Downstream workflows chain off this workflow **by name**; rename them together.
 
-## embeddings.yml
+## embeddings.yml — "Build Search Embeddings"
 
-- Trigger: `workflow_run` after every successful `Hourly OSINT Collection` (also `workflow_dispatch`).
-- Rebuilds the semantic search index from collected events and commits artifacts to `docs/search-index/`.
-- Decoupled from `hourly-collection.yml` so the two cadences can evolve independently.
+- Trigger: `workflow_run` after each "OSINT Snapshot Collection" completes (also `workflow_dispatch`).
+- Runs `data/scripts/dedupe-events.js` (cross-bucket dedupe), rebuilds the semantic search index (`builder/embeddings/build_index.py`, local MiniLM), runs `data/scripts/rebuild-indexes.js`, and commits `data/events` + `data/indexes/` + `data/stats.json` with `[skip ci]`.
 
-## verify.yml
+## pages.yml — "Deploy GitHub Pages"
 
-Drift-detection on every PR + push to main. Three checks:
+- Builds the React frontend (`frontend/` → `docs/`, gitignored), copies `data/indexes/` → `docs/indexes/`, and deploys to GitHub Pages at `https://osint.builders/`.
+- Triggers on `push` to main touching `frontend/**` or `data/indexes/**`, on `workflow_run` after embeddings.yml, or `workflow_dispatch`.
+- Pages source must read **GitHub Actions** (not "Deploy from a branch").
 
-1. Prompt snapshot (`builder/prompts/` is up-to-date)
+## build-cli.yml — "Build CLI Tool"
+
+- Trigger: `workflow_run` after embeddings.yml succeeds (also `workflow_dispatch`).
+- Packs `data/indexes/` into `cli/embed/*.gz`, cross-compiles the Go CLI for five platforms, and re-points the `cli-latest` release.
+
+## verify.yml — "Verify"
+
+Drift detection on every PR + push to main. Four checks:
+
+1. Prompt snapshot (`builder/prompts/collection-prompt.md` matches the pinned fixture)
 2. `data/scripts/validate-events.js --all` (baseline schema validation)
-3. `skills/README.md` regeneration is clean
+3. `skills/README.md` regeneration stays clean
+4. `builder/runtime/*.sh` pass `bash -n` (+ shellcheck when available)
 
-## pages.yml
+## audit-bot-commits.yml — "Audit Bot Commits"
 
-Builds the React search frontend and deploys `docs/` to GitHub Pages.
+- Trigger: `workflow_run` after each collection run + a daily sweep.
+- Asserts bot-authored commits touch only `data/events/**`, `data/indexes/**`, `data/stats.json`, `LEARNINGS.md`; opens an issue on violation (prompt-injection tripwire for agents holding a push-capable PAT).
 
-- Triggers on `push` to main touching `frontend/**` or `docs/search-index/**`,
-  on `workflow_run` after `embeddings.yml` succeeds, or `workflow_dispatch`.
-- Pages source must be set to **GitHub Actions** (not "Deploy from a branch").
-- See [`../../docs/README.md`](../../docs/README.md) for the deployment flow.
+## create-release.yml — "Create Data Release"
 
-## create-release.yml
-
-Weekly on Sunday at midnight UTC. Runs the 90-day retention sweep, then archives `data/` to a release tarball.
+Weekly on Sunday at midnight UTC. Runs the 90-day retention sweep (`data/scripts/cleanup-old-data.sh`), then archives `data/events` + `data/indexes` + schema docs to a release tarball.
 
 ## Troubleshooting
 
-- Per-run telemetry lives in `data/run-logs/`.
-- Stale `LEARNINGS.md` entries expire automatically.
-- For workflow failures, inspect the **Actions** tab on GitHub.
+- Run failures → check the **Actions** tab and any open **"Collection workflow failing"** issue.
+- Per-source telemetry stays inside each agent's ephemeral work directory; durable findings land in `LEARNINGS.md` and `source/manifest.json` notes.
+- Stale `LEARNINGS.md` entries expire automatically via the orchestrator.

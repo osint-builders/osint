@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-05-27",
+  "last_updated": "2026-06-12",
   "description": "Master registry of all OSINT data sources for world event collection",
   "sources": [
     {
       "id": "reddit-combatfootage",
-      "name": "",
+      "name": "r/CombatFootage (reddit.com/r/CombatFootage)",
       "type": "api",
       "status": "testing",
       "reliability": "medium",
@@ -15,7 +15,7 @@
     },
     {
       "id": "reddit-credibledefense",
-      "name": "",
+      "name": "r/CredibleDefense (reddit.com/r/CredibleDefense)",
       "type": "api",
       "status": "testing",
       "reliability": "medium",
@@ -25,7 +25,7 @@
     },
     {
       "id": "reddit-cybersecurity",
-      "name": "",
+      "name": "r/cybersecurity (reddit.com/r/cybersecurity)",
       "type": "api",
       "status": "testing",
       "reliability": "medium",
@@ -35,7 +35,7 @@
     },
     {
       "id": "reddit-geopolitics",
-      "name": "",
+      "name": "r/geopolitics (reddit.com/r/geopolitics)",
       "type": "api",
       "status": "testing",
       "reliability": "medium",
@@ -45,7 +45,7 @@
     },
     {
       "id": "reddit-intelligence",
-      "name": "",
+      "name": "r/Intelligence (reddit.com/r/Intelligence)",
       "type": "api",
       "status": "testing",
       "reliability": "medium",
@@ -55,7 +55,7 @@
     },
     {
       "id": "reddit-lesscredibledefence",
-      "name": "",
+      "name": "r/LessCredibleDefence (reddit.com/r/LessCredibleDefence)",
       "type": "api",
       "status": "testing",
       "reliability": "medium",
@@ -65,7 +65,7 @@
     },
     {
       "id": "reddit-netsec",
-      "name": "",
+      "name": "r/netsec (reddit.com/r/netsec)",
       "type": "api",
       "status": "testing",
       "reliability": "medium",
@@ -75,7 +75,7 @@
     },
     {
       "id": "reddit-noncredibledefense",
-      "name": "",
+      "name": "r/NonCredibleDefense (reddit.com/r/NonCredibleDefense)",
       "type": "api",
       "status": "testing",
       "reliability": "medium",
@@ -85,17 +85,18 @@
     },
     {
       "id": "reddit-northkoreanews",
-      "name": "",
+      "name": "r/NorthKoreaNews (reddit.com/r/NorthKoreaNews)",
       "type": "api",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-northkoreanews.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Subreddit effectively dead — newest post 26+ days old at check. Verified 2026-05-26."
     },
     {
       "id": "reddit-osint",
-      "name": "",
+      "name": "r/OSINT (reddit.com/r/OSINT)",
       "type": "api",
       "status": "testing",
       "reliability": "medium",
@@ -105,17 +106,18 @@
     },
     {
       "id": "reddit-russiaukrainewar2022",
-      "name": "",
+      "name": "r/RussiaUkraineWar2022 (reddit.com/r/RussiaUkraineWar2022)",
       "type": "api",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-russiaukrainewar2022.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Subreddit inactive — newest post dates to May 2025. Verified 2026-05-23."
     },
     {
       "id": "reddit-sino",
-      "name": "",
+      "name": "r/Sino (reddit.com/r/Sino)",
       "type": "api",
       "status": "testing",
       "reliability": "medium",
@@ -125,7 +127,7 @@
     },
     {
       "id": "reddit-ukrainewarvideorepport",
-      "name": "",
+      "name": "r/UkraineWarVideoReport (reddit.com/r/UkraineWarVideoReport)",
       "type": "api",
       "status": "testing",
       "reliability": "medium",
@@ -135,7 +137,7 @@
     },
     {
       "id": "telegram-afustratcom",
-      "name": "",
+      "name": "AFU Strategic Communications (@AFUStratCom)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -145,7 +147,7 @@
     },
     {
       "id": "telegram-bellumacanews",
-      "name": "",
+      "name": "Bellum Acta (@BellumActaNews)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -155,7 +157,7 @@
     },
     {
       "id": "telegram-clashreport",
-      "name": "",
+      "name": "Clash Report (@ClashReport)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -165,7 +167,7 @@
     },
     {
       "id": "telegram-ddgeopolitics",
-      "name": "",
+      "name": "DD Geopolitics (@DDGeopolitics)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -175,7 +177,7 @@
     },
     {
       "id": "telegram-diukraine",
-      "name": "",
+      "name": "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -185,7 +187,7 @@
     },
     {
       "id": "telegram-generalstaffzsu",
-      "name": "",
+      "name": "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -195,7 +197,7 @@
     },
     {
       "id": "telegram-geopolitics-prime",
-      "name": "",
+      "name": "Geopolitics Prime (@geopolitics_prime)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -205,7 +207,7 @@
     },
     {
       "id": "telegram-insiderpaper",
-      "name": "",
+      "name": "Insider Paper (@insiderpaper)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -215,7 +217,7 @@
     },
     {
       "id": "telegram-intelrepublic",
-      "name": "",
+      "name": "Intel Republic (@IntelRepublic)",
       "type": "telegram",
       "status": "inactive",
       "reliability": "medium",
@@ -225,7 +227,7 @@
     },
     {
       "id": "telegram-intelslava",
-      "name": "",
+      "name": "Intel Slava Z (@intelslava)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -235,7 +237,7 @@
     },
     {
       "id": "telegram-lebupdate",
-      "name": "",
+      "name": "Lebanese News and Updates (@LebUpdate)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -245,7 +247,7 @@
     },
     {
       "id": "telegram-middle-east-spectator",
-      "name": "",
+      "name": "Middle East Spectator (@Middle_East_Spectator)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -255,7 +257,7 @@
     },
     {
       "id": "telegram-ourwarstoday",
-      "name": "",
+      "name": "Our Wars, Today (@ourwarstoday)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -265,7 +267,7 @@
     },
     {
       "id": "telegram-qudsnen",
-      "name": "",
+      "name": "Quds News Network (@QudsNen)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -275,7 +277,7 @@
     },
     {
       "id": "telegram-rnintel",
-      "name": "",
+      "name": "Rerum Novarum Intel (@rnintel)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -285,7 +287,7 @@
     },
     {
       "id": "telegram-serhii-flash",
-      "name": "",
+      "name": "Serhii FLASH — Technologies (@serhii_flash)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -295,7 +297,7 @@
     },
     {
       "id": "telegram-united24media",
-      "name": "",
+      "name": "UNITED24 Media (@United24media)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -305,7 +307,7 @@
     },
     {
       "id": "telegram-voyna18",
-      "name": "",
+      "name": "WarLife 18+ (@Voyna18)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -315,7 +317,7 @@
     },
     {
       "id": "telegram-wagner-group-pmcr",
-      "name": "",
+      "name": "Wagner Z Group (@wagner_group_pmcr)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -325,7 +327,7 @@
     },
     {
       "id": "telegram-warmonitors",
-      "name": "",
+      "name": "War Monitor (@warmonitors)",
       "type": "telegram",
       "status": "testing",
       "reliability": "medium",
@@ -335,7 +337,7 @@
     },
     {
       "id": "twitter-abc",
-      "name": "",
+      "name": "ABC News (@ABC)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -345,7 +347,7 @@
     },
     {
       "id": "twitter-africafactszone",
-      "name": "",
+      "name": "Africafactszone (@Africafactszone)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -355,17 +357,18 @@
     },
     {
       "id": "twitter-allsource4",
-      "name": "",
+      "name": "Allsource4 (@Allsource4)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-allsource4.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-ap",
-      "name": "",
+      "name": "AP News (@AP)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -375,7 +378,7 @@
     },
     {
       "id": "twitter-arcgis-storymaps",
-      "name": "",
+      "name": "ArcgisStorymaps (@ArcgisStorymaps)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -385,7 +388,7 @@
     },
     {
       "id": "twitter-armed-forces-phil",
-      "name": "",
+      "name": "Armed Forces Philippines (@ArmedForcesPhil)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
@@ -395,7 +398,7 @@
     },
     {
       "id": "twitter-aurora-intel",
-      "name": "",
+      "name": "Aurora Intel (@AuroraIntel)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -405,27 +408,29 @@
     },
     {
       "id": "twitter-ausnav",
-      "name": "",
+      "name": "Royal Australian Navy (@AusNavy)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-ausnav.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Protected (private) account; collection impossible. Verified 2026-05-21."
     },
     {
       "id": "twitter-bates-gill",
-      "name": "",
+      "name": "BatesGill (@BatesGill)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-bates-gill.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-bbc-breaking",
-      "name": "",
+      "name": "BBC Breaking News (@BBCBreaking)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -435,7 +440,7 @@
     },
     {
       "id": "twitter-bbc-world",
-      "name": "",
+      "name": "BBC World News (@BBCWorld)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -445,7 +450,7 @@
     },
     {
       "id": "twitter-bbgoriginals",
-      "name": "",
+      "name": "BBG Originals (@BBGOriginals)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -455,37 +460,40 @@
     },
     {
       "id": "twitter-beltelefacts",
-      "name": "",
+      "name": "Belteleradio Facts (@BelteleFacts)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-beltelefacts.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-beltelfreeaudio",
-      "name": "",
+      "name": "Belteleradio Free Audio (@BeltelFreeAudio)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-beltelfreeaudio.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-borrowed7time",
-      "name": "",
+      "name": "Borrowed7time (@Borrowed7time)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-borrowed7time.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Retweets only since 2026-05-02; no original content. Verified 2026-05-21."
     },
     {
       "id": "twitter-c4ads",
-      "name": "",
+      "name": "C4ADS (@C4ADS)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -495,7 +503,7 @@
     },
     {
       "id": "twitter-ca-jc",
-      "name": "",
+      "name": "CA_JC (@CA_JC)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -505,7 +513,7 @@
     },
     {
       "id": "twitter-cepa",
-      "name": "",
+      "name": "cepa (@cepa)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -515,27 +523,29 @@
     },
     {
       "id": "twitter-chadobcnews",
-      "name": "",
+      "name": "Chadobcnews (@Chadobcnews)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-chadobcnews.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-chinapower",
-      "name": "",
+      "name": "ChinaP0wer (@ChinaP0wer)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-chinapower.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-chinese-emb-in-us",
-      "name": "",
+      "name": "ChineseEmbInUs (@ChineseEmbInUs)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -545,7 +555,7 @@
     },
     {
       "id": "twitter-clash-report",
-      "name": "",
+      "name": "Clash Report (@ClashReport)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -555,7 +565,7 @@
     },
     {
       "id": "twitter-claudefb",
-      "name": "",
+      "name": "Claudefb (@Claudefb)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -565,7 +575,7 @@
     },
     {
       "id": "twitter-cnn",
-      "name": "",
+      "name": "CNN (@CNN)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -575,7 +585,7 @@
     },
     {
       "id": "twitter-cnnbrk",
-      "name": "",
+      "name": "cnnbrk (@cnnbrk)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -585,7 +595,7 @@
     },
     {
       "id": "twitter-cnni",
-      "name": "",
+      "name": "cnni (@cnni)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -595,7 +605,7 @@
     },
     {
       "id": "twitter-coastguard-ph",
-      "name": "",
+      "name": "Philippine Coast Guard (@CoastGuardPH)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -605,7 +615,7 @@
     },
     {
       "id": "twitter-criticalthreats",
-      "name": "",
+      "name": "Critical Threats Project (@criticalthreats)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -615,7 +625,7 @@
     },
     {
       "id": "twitter-csis-korea-chair",
-      "name": "",
+      "name": "CSIS Korea Chair (@CSISKoreaChair)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -625,7 +635,7 @@
     },
     {
       "id": "twitter-dataminr",
-      "name": "",
+      "name": "Dataminr (@Dataminr)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -635,7 +645,7 @@
     },
     {
       "id": "twitter-defence-aust",
-      "name": "",
+      "name": "Australian Defence (@DefenceAust)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -645,7 +655,7 @@
     },
     {
       "id": "twitter-detresfa",
-      "name": "",
+      "name": "Detresfa (@Detresfa)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
@@ -655,17 +665,18 @@
     },
     {
       "id": "twitter-dprk-news",
-      "name": "",
+      "name": "DPRK_News (@DPRK_News)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-dprk-news.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Well-known parody/satire account; zero OSINT value. Verified 2026-05-21."
     },
     {
       "id": "twitter-elint-news",
-      "name": "",
+      "name": "ELINT News (@ELINTNews)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -675,17 +686,18 @@
     },
     {
       "id": "twitter-esri-training",
-      "name": "",
+      "name": "Esri Training (@EsriTraining)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-esri-training.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Dormant — last tweet 2024-01-01. Verified 2026-05-23."
     },
     {
       "id": "twitter-esri-water",
-      "name": "",
+      "name": "Esri Water Resources (@EsriWater)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -695,7 +707,7 @@
     },
     {
       "id": "twitter-esri",
-      "name": "",
+      "name": "Esri (@Esri)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -705,37 +717,40 @@
     },
     {
       "id": "twitter-etienne-lh",
-      "name": "",
+      "name": "EtienneLh (@EtienneLh)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-etienne-lh.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Handle does not resolve via API. Verified 2026-05-21."
     },
     {
       "id": "twitter-faa-south",
-      "name": "",
+      "name": "FAA Southern Region (@FAASouth)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-faa-south.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-fleetnumbers",
-      "name": "",
+      "name": "FleetNumbers Maritime (@Fleetnumbers)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-fleetnumbers.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-foxnews",
-      "name": "",
+      "name": "Fox News (@FoxNews)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -745,7 +760,7 @@
     },
     {
       "id": "twitter-gcaptain",
-      "name": "",
+      "name": "Gcaptain (@Gcaptain)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -755,7 +770,7 @@
     },
     {
       "id": "twitter-hawkeye360",
-      "name": "",
+      "name": "HawkEye 360 (@HawkEye360)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -765,7 +780,7 @@
     },
     {
       "id": "twitter-ian-bremmer",
-      "name": "",
+      "name": "ianbremmer (@ianbremmer)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -775,7 +790,7 @@
     },
     {
       "id": "twitter-ianellisjones",
-      "name": "",
+      "name": "Ianellisjones (@Ianellisjones)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -785,7 +800,7 @@
     },
     {
       "id": "twitter-imo-hq",
-      "name": "",
+      "name": "IMO HQ (@IMOHQ)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -795,17 +810,18 @@
     },
     {
       "id": "twitter-info-fusion-ctr",
-      "name": "",
+      "name": "InfoFusionCtr (@InfoFusionCtr)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-info-fusion-ctr.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-inside-nk",
-      "name": "",
+      "name": "inside_nk (@inside_nk)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -815,17 +831,18 @@
     },
     {
       "id": "twitter-iran-observer",
-      "name": "",
+      "name": "IranObserver (@IranObserver)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-iran-observer.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Dormant since January 2016. Verified 2026-05-21."
     },
     {
       "id": "twitter-iran-spectrum",
-      "name": "",
+      "name": "Iran Spectrum (@IranSpec)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -835,7 +852,7 @@
     },
     {
       "id": "twitter-jaime-ocon",
-      "name": "",
+      "name": "JaimeOcon (@JaimeOcon)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
@@ -845,7 +862,7 @@
     },
     {
       "id": "twitter-japan-joint-staff",
-      "name": "",
+      "name": "Japan Joint Staff (@JapanJointStaff)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -855,67 +872,73 @@
     },
     {
       "id": "twitter-jasdf-pao-eng",
-      "name": "",
+      "name": "JasdfPaoEng (@JasdfPaoEng)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-jasdf-pao-eng.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-jason-brodsky",
-      "name": "",
+      "name": "JasonBrodsky (@JasonBrodsky)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-jason-brodsky.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Protected (private) account; collection impossible. Verified 2026-05-21."
     },
     {
       "id": "twitter-jkgarokgov",
-      "name": "",
+      "name": "Jkgarokgov (@Jkgarokgov)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-jkgarokgov.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Account page does not exist. Verified 2026-05-21."
     },
     {
       "id": "twitter-jnb-summary",
-      "name": "",
+      "name": "JnbSummary (@JnbSummary)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-jnb-summary.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-john-pollock",
-      "name": "",
+      "name": "John_Pollock22 (@John_Pollock22)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-john-pollock.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Dormant — last tweet 2025-06-22. Verified 2026-05-23."
     },
     {
       "id": "twitter-joseph-dempsey",
-      "name": "",
+      "name": "Joseph Dempsey (@JosephDempsey)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-joseph-dempsey.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-kang-daily",
-      "name": "",
+      "name": "Kang Daily (@KAngDaily)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -925,37 +948,40 @@
     },
     {
       "id": "twitter-kc-nwt",
-      "name": "",
+      "name": "KC_NWT (@KC_NWT)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-kc-nwt.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-key-to-med",
-      "name": "",
+      "name": "key2med (@key2med)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-key-to-med.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Protected (private) account; collection impossible. Verified 2026-05-21."
     },
     {
       "id": "twitter-kl-summary",
-      "name": "",
+      "name": "KlSummary (@KlSummary)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-kl-summary.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-korea-econ-inst",
-      "name": "",
+      "name": "Korea Economic Institute (@KoreaEconInst)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -965,7 +991,7 @@
     },
     {
       "id": "twitter-korea-herald",
-      "name": "",
+      "name": "KoreaHerald (@KoreaHerald)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
@@ -975,27 +1001,29 @@
     },
     {
       "id": "twitter-korea-times-alt",
-      "name": "",
+      "name": "KoreaTimesAlt (@KoreaTimesAlt)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-korea-times-alt.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-korea-times",
-      "name": "",
+      "name": "Korea Times (@TheKorea_Times)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-korea-times.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-kylebass",
-      "name": "",
+      "name": "kyleBass (@kyleBass)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
@@ -1005,7 +1033,7 @@
     },
     {
       "id": "twitter-mda-space",
-      "name": "",
+      "name": "MdaSpace (@MdaSpace)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
@@ -1015,7 +1043,7 @@
     },
     {
       "id": "twitter-mdat-gog",
-      "name": "",
+      "name": "MDAT Gulf of Guinea (@MDAT_GoG)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1025,7 +1053,7 @@
     },
     {
       "id": "twitter-megatronlion",
-      "name": "",
+      "name": "Megatronlion (@Megatronlion)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
@@ -1035,17 +1063,18 @@
     },
     {
       "id": "twitter-mench-osint",
-      "name": "",
+      "name": "MenchOsint (@MenchOsint)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mench-osint.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Personal hiatus since 2026-03-22; re-activate when posting resumes. Verified 2026-05-25."
     },
     {
       "id": "twitter-middle-east-eye",
-      "name": "",
+      "name": "Middle East Eye (@MiddleEastEye)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1055,7 +1084,7 @@
     },
     {
       "id": "twitter-militarylandnet",
-      "name": "",
+      "name": "Militarylandnet (@Militarylandnet)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1065,7 +1094,7 @@
     },
     {
       "id": "twitter-minhdr18",
-      "name": "",
+      "name": "Minhdr18 OSINT (@Minhdr18)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1075,7 +1104,7 @@
     },
     {
       "id": "twitter-mndchina",
-      "name": "",
+      "name": "China Ministry of National Defence (@MNDChina)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
@@ -1085,27 +1114,29 @@
     },
     {
       "id": "twitter-modjapan-en",
-      "name": "",
+      "name": "ModjapanEn (@ModjapanEn)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-modjapan-en.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-mofajapan-en",
-      "name": "",
+      "name": "MofajapanEn (@MofajapanEn)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mofajapan-en.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Handle not found via API user lookup. Verified 2026-05-24."
     },
     {
       "id": "twitter-mondefense",
-      "name": "",
+      "name": "Mondefense (@Mondefense)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1115,7 +1146,7 @@
     },
     {
       "id": "twitter-msc-sealift",
-      "name": "",
+      "name": "MSC Sealift (@MSCSealift)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1125,7 +1156,7 @@
     },
     {
       "id": "twitter-mt-anderson",
-      "name": "",
+      "name": "MT Anderson (@MT_Anderson)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1135,7 +1166,7 @@
     },
     {
       "id": "twitter-mylordbebo",
-      "name": "",
+      "name": "My Lord Bebo (@MyLordBebo)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1145,7 +1176,7 @@
     },
     {
       "id": "twitter-nasa",
-      "name": "",
+      "name": "Nasa (@Nasa)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1155,7 +1186,7 @@
     },
     {
       "id": "twitter-natalierevolts",
-      "name": "",
+      "name": "Natalierevolts (@Natalierevolts)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1165,7 +1196,7 @@
     },
     {
       "id": "twitter-national-interest",
-      "name": "",
+      "name": "National Interest (@NationalInterest)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
@@ -1175,17 +1206,18 @@
     },
     {
       "id": "twitter-natlhistships",
-      "name": "",
+      "name": "Natlhistships (@Natlhistships)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-natlhistships.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-nato-marcom",
-      "name": "",
+      "name": "NATO Maritime Command (@NATO_MARCOM)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1195,17 +1227,18 @@
     },
     {
       "id": "twitter-nguyenthiho88",
-      "name": "",
+      "name": "Nguyenthiho88 (@Nguyenthiho88)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-nguyenthiho88.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-nsa-cyber",
-      "name": "",
+      "name": "NSA Cybersecurity (@NSACyber)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1215,7 +1248,7 @@
     },
     {
       "id": "twitter-nsa-gov",
-      "name": "",
+      "name": "NSA (@NSAGov)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1225,7 +1258,7 @@
     },
     {
       "id": "twitter-ntonc",
-      "name": "",
+      "name": "ntonc (@ntonc)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
@@ -1235,7 +1268,7 @@
     },
     {
       "id": "twitter-nytimes-world",
-      "name": "",
+      "name": "NytimesWorld (@NytimesWorld)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1245,37 +1278,40 @@
     },
     {
       "id": "twitter-ofac-alert",
-      "name": "",
+      "name": "ofacalert (@ofacalert)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-ofac-alert.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-oilcfd",
-      "name": "",
+      "name": "Oilcfd (@Oilcfd)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-oilcfd.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Dormant — last tweet 2025-06-22. Verified 2026-05-23."
     },
     {
       "id": "twitter-olongapo-times",
-      "name": "",
+      "name": "olongapotimes (@olongapotimes)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-olongapo-times.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-opennuclear",
-      "name": "",
+      "name": "Opennuclear (@Opennuclear)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1285,17 +1321,18 @@
     },
     {
       "id": "twitter-osaindawg",
-      "name": "",
+      "name": "Osaindawg (@Osaindawg)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-osaindawg.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Handle not found via API user lookup. Verified 2026-05-21."
     },
     {
       "id": "twitter-osinttechnical",
-      "name": "",
+      "name": "OSINT Technical (@Osinttechnical)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1305,57 +1342,62 @@
     },
     {
       "id": "twitter-pizzainwatch",
-      "name": "",
+      "name": "pizzainwatch (@pizzainwatch)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-pizzainwatch.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-platracker",
-      "name": "",
+      "name": "Platracker (@Platracker)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-platracker.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Dormant — last tweet 2025-03-25. Verified 2026-05-21."
     },
     {
       "id": "twitter-pyongyang-today",
-      "name": "",
+      "name": "PyongyangToday (@PyongyangToday)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-pyongyang-today.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-rayfunseth",
-      "name": "",
+      "name": "Rayfunseth (@Rayfunseth)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-rayfunseth.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-raytoribo",
-      "name": "",
+      "name": "Raytoribo (@Raytoribo)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-raytoribo.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-riskstaff",
-      "name": "",
+      "name": "Riskstaff (@Riskstaff)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1365,7 +1407,7 @@
     },
     {
       "id": "twitter-sanctions-watch",
-      "name": "",
+      "name": "sanctionswatch (@sanctionswatch)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1375,17 +1417,18 @@
     },
     {
       "id": "twitter-schizoint-rel",
-      "name": "",
+      "name": "SchizointRel (@SchizointRel)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-schizoint-rel.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-scmpnews",
-      "name": "",
+      "name": "Scmpnews (@Scmpnews)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1395,17 +1438,18 @@
     },
     {
       "id": "twitter-scpandura",
-      "name": "",
+      "name": "Scpandura (@Scpandura)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-scpandura.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-scs-pi",
-      "name": "",
+      "name": "SCS Probing Initiative (@SCS_PI)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1415,7 +1459,7 @@
     },
     {
       "id": "twitter-seawatch-intl",
-      "name": "",
+      "name": "seawatch_intl (@seawatch_intl)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1425,7 +1469,7 @@
     },
     {
       "id": "twitter-shipnews",
-      "name": "",
+      "name": "Ship News (@ShipNews)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1435,7 +1479,7 @@
     },
     {
       "id": "twitter-sim-nasr",
-      "name": "",
+      "name": "Sim Nasr (@SimNasr)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1445,27 +1489,29 @@
     },
     {
       "id": "twitter-sindikasyontek",
-      "name": "",
+      "name": "Sindikasyontek (@Sindikasyontek)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-sindikasyontek.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-songss44",
-      "name": "",
+      "name": "Songss44 (@Songss44)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-songss44.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-southkoreapro",
-      "name": "",
+      "name": "Southkoreapro (@Southkoreapro)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1475,17 +1521,18 @@
     },
     {
       "id": "twitter-tafarms18",
-      "name": "",
+      "name": "TaFarms18 (@TaFarms18)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-tafarms18.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-taiwan-news-en",
-      "name": "",
+      "name": "Taiwan News (@TaiwanNewsEN)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1495,7 +1542,7 @@
     },
     {
       "id": "twitter-tanker-trackers",
-      "name": "",
+      "name": "TankerTrackers (@TankerTrackers)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1505,17 +1552,18 @@
     },
     {
       "id": "twitter-tatarigamiua",
-      "name": "",
+      "name": "Tatarigami Ukraine (@TatarigamiUA)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-tatarigamiua.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-the-dailynk",
-      "name": "",
+      "name": "TheDailynk (@TheDailynk)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1525,7 +1573,7 @@
     },
     {
       "id": "twitter-the-diplomat",
-      "name": "",
+      "name": "TheDiplomat (@TheDiplomat)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
@@ -1535,7 +1583,7 @@
     },
     {
       "id": "twitter-the-koreaview",
-      "name": "",
+      "name": "TheKoreaview (@TheKoreaview)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
@@ -1545,7 +1593,7 @@
     },
     {
       "id": "twitter-the-lookout-north",
-      "name": "",
+      "name": "The Lookout North (@The_Lookout_N)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1555,27 +1603,29 @@
     },
     {
       "id": "twitter-the-pacific-brief",
-      "name": "",
+      "name": "The Pacific Brief (@ThePacificBrief)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-the-pacific-brief.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-therealshipdude",
-      "name": "",
+      "name": "Therealshipdude (@Therealshipdude)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-therealshipdude.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Handle not found via API user lookup. Verified 2026-05-23."
     },
     {
       "id": "twitter-thestudyofwar",
-      "name": "",
+      "name": "Institute for the Study of War (@TheStudyofWar)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1585,7 +1635,7 @@
     },
     {
       "id": "twitter-thewarzonewire",
-      "name": "",
+      "name": "Thewarzonewire (@Thewarzonewire)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1595,7 +1645,7 @@
     },
     {
       "id": "twitter-tradewindsnews",
-      "name": "",
+      "name": "Tradewindsnews (@Tradewindsnews)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1605,7 +1655,7 @@
     },
     {
       "id": "twitter-uani",
-      "name": "",
+      "name": "UANI (@UANI)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1615,27 +1665,29 @@
     },
     {
       "id": "twitter-united-nations",
-      "name": "",
+      "name": "United_Nations (@United_Nations)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-united-nations.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-us-5th-fleet",
-      "name": "",
+      "name": "US 5th Fleet (@US5thFleet)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-us-5th-fleet.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Dormant — last tweet 2023-10-21. Verified 2026-05-21."
     },
     {
       "id": "twitter-us-7th-fleet",
-      "name": "",
+      "name": "US 7th Fleet (@US7thFleet)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1645,7 +1697,7 @@
     },
     {
       "id": "twitter-us-fleet-forces",
-      "name": "",
+      "name": "US Fleet Forces (@USFleetForces)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1655,7 +1707,7 @@
     },
     {
       "id": "twitter-us-forces-japan",
-      "name": "",
+      "name": "US Forces Japan (@USForcesJapan)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1665,7 +1717,7 @@
     },
     {
       "id": "twitter-us-navy",
-      "name": "",
+      "name": "US Navy (@USNavy)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1675,7 +1727,7 @@
     },
     {
       "id": "twitter-us-pacific-fleet",
-      "name": "",
+      "name": "US Pacific Fleet (@USPacificFleet)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1685,7 +1737,7 @@
     },
     {
       "id": "twitter-us-treasury",
-      "name": "",
+      "name": "US Treasury (@USTreasury)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1695,7 +1747,7 @@
     },
     {
       "id": "twitter-vantortech",
-      "name": "",
+      "name": "vantortech (@vantortech)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1705,17 +1757,18 @@
     },
     {
       "id": "twitter-war-tv7890",
-      "name": "",
+      "name": "War TV (@WarTV7890)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-war-tv7890.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-warshipcam",
-      "name": "",
+      "name": "Warshipcam (@Warshipcam)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1725,7 +1778,7 @@
     },
     {
       "id": "twitter-wartranslated",
-      "name": "",
+      "name": "War Translated (@wartranslated)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1735,7 +1788,7 @@
     },
     {
       "id": "twitter-xinhua-news",
-      "name": "",
+      "name": "Xinhua News (@XHNews)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1745,17 +1798,18 @@
     },
     {
       "id": "twitter-xkorea",
-      "name": "",
+      "name": "X Korea (@XKorea)",
       "type": "twitter",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-xkorea.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Resolves to X/Twitter Korea office marketing account; zero OSINT content. Verified 2026-05-24."
     },
     {
       "id": "twitter-xnews",
-      "name": "",
+      "name": "X News (@XNews)",
       "type": "twitter",
       "status": "active",
       "reliability": "medium",
@@ -1765,27 +1819,29 @@
     },
     {
       "id": "twitter-yonkosmc",
-      "name": "",
+      "name": "Yonkos MC (@YonkosMC)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-yonkosmc.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "twitter-yortukisgk",
-      "name": "",
+      "name": "Yortuk ISGK (@YortukIsgk)",
       "type": "twitter",
       "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-yortukisgk.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Twitter handle does not resolve (not found, deleted, or suspended). Verified 2026-05-21 via API + mirror checks; see LEARNINGS."
     },
     {
       "id": "webpage-breaking-defense-global",
-      "name": "",
+      "name": "Breaking Defense (breakingdefense.com)",
       "type": "webpage",
       "status": "testing",
       "reliability": "medium",
@@ -1795,17 +1851,18 @@
     },
     {
       "id": "webpage-cuashub-defense",
-      "name": "",
+      "name": "CUASHUB Defense (cuashub.com)",
       "type": "webpage",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/webpage-cuashub-defense.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "No new site content since 2026-01-28; source description also mismatches the site. Verified 2026-05-24."
     },
     {
       "id": "webpage-isw-iran-middle-east",
-      "name": "",
+      "name": "ISW Iran and Middle East Updates",
       "type": "webpage",
       "status": "active",
       "reliability": "medium",
@@ -1815,7 +1872,7 @@
     },
     {
       "id": "webpage-isw-russia-ukraine-research",
-      "name": "",
+      "name": "Institute for the Study of War - Russia-Ukraine Research",
       "type": "webpage",
       "status": "active",
       "reliability": "medium",
@@ -1825,7 +1882,7 @@
     },
     {
       "id": "webpage-isw-ukraine-interactive-map",
-      "name": "",
+      "name": "ISW Ukraine Interactive Territorial Control Map",
       "type": "webpage",
       "status": "active",
       "reliability": "medium",
@@ -1835,17 +1892,18 @@
     },
     {
       "id": "webpage-satellite-today-gov-mil",
-      "name": "",
+      "name": "Satellite Today (DoD) (satellite.today)",
       "type": "webpage",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/webpage-satellite-today-gov-mil.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "URL times out (HTTP 000) — site offline or blocking. Verified 2026-05-24."
     },
     {
       "id": "webpage-windward-ai-blog",
-      "name": "",
+      "name": "Windward AI Blog (windward.ai/blog)",
       "type": "webpage",
       "status": "active",
       "reliability": "medium",
@@ -1855,7 +1913,7 @@
     },
     {
       "id": "webpage-yahoo-world-news",
-      "name": "",
+      "name": "Yahoo News (news.yahoo.com)",
       "type": "webpage",
       "status": "testing",
       "reliability": "medium",

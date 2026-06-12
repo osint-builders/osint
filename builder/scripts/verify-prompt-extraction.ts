@@ -20,7 +20,7 @@ import * as crypto from "crypto";
 import { Settings, DateTime } from "luxon";
 
 // Pin "now" so DateTime.now() is deterministic.
-// 2026-05-01T15:34:55Z (matches a real run from memory.md).
+// 2026-05-01T15:34:55Z (matches a real 2026-05-01 collection run).
 const PINNED_NOW_ISO = "2026-05-01T15:34:55.000Z";
 const pinnedMs = new Date(PINNED_NOW_ISO).getTime();
 Settings.now = () => pinnedMs;
