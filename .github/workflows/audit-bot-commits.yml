@@ -11,7 +11,7 @@ name: Audit Bot Commits
 
 on:
   workflow_run:
-    workflows: ["OSINT Snapshot Collection"]
+    workflows: ["OSINT Snapshot Collection", "Identify OSINT Tips", "Qualify OSINT Tips"]
     types: [completed]
     branches: [main]
   schedule:
@@ -40,8 +40,8 @@ jobs:
         run: |
           set -euo pipefail
           # Paths a bot identity may touch. Everything else trips the audit.
-          ALLOW_RE='^(data/events/|data/indexes/|data/stats\.json$|LEARNINGS\.md$)'
-          BOT_EMAILS='osint-bot@github-actions|embeddings-bot@github-actions|retention-bot@github-actions'
+          ALLOW_RE='^(data/events/|data/indexes/|data/queue/|data/stats\.json$|LEARNINGS\.md$)'
+          BOT_EMAILS='osint-bot@github-actions|embeddings-bot@github-actions|retention-bot@github-actions|identify-bot@github-actions'
 
           VIOLATIONS=""
           while read -r sha; do
@@ -59,7 +59,7 @@ jobs:
             printf 'Violations:%b\n' "$VIOLATIONS"
             BODY="Bot-authored commit(s) modified files outside the allowed data paths in the last 26 hours. Investigate for prompt injection or broken runtime scripts.
 
-          Allowed: data/events/**, data/indexes/**, data/stats.json, LEARNINGS.md
+          Allowed: data/events/**, data/indexes/**, data/queue/**, data/stats.json, LEARNINGS.md
           $(printf '%b' "$VIOLATIONS")"
             EXISTING=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open \
               --search "Bot commit audit violation in:title" \

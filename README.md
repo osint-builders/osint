@@ -1,9 +1,12 @@
 # OSINT Data Collector
 
-Automated collection of world-event intelligence from OSINT sources (Twitter/X, Telegram, Reddit, news sites, APIs). Three times a day, the pipeline samples a 1-hour window, normalizes findings into structured **World Event Entities** (JSONL), and commits them back to this repo. A search UI at [osint.builders](https://osint.builders/) and a cross-platform CLI consume the data downstream.
+Automated collection of world-event intelligence from OSINT sources (Twitter/X, Telegram, Reddit, news sites, APIs), using a **Tip & Queue** pipeline: a cheap non-LLM scan identifies candidate content, then a separate stage does the LLM-heavy extraction in small batches. Findings normalize into structured **World Event Entities** (JSONL) and commit back to this repo. A search UI at [osint.builders](https://osint.builders/) and a cross-platform CLI consume the data downstream.
 
-![Snapshot Collection](https://github.com/osint-builders/osint/actions/workflows/collection.yml/badge.svg)
+![Identify Tips](https://github.com/osint-builders/osint/actions/workflows/identify.yml/badge.svg)
+![Qualify Tips](https://github.com/osint-builders/osint/actions/workflows/qualify.yml/badge.svg)
 ![Data Release](https://github.com/osint-builders/osint/actions/workflows/create-release.yml/badge.svg)
+
+> **Cadence right now**: both `identify.yml` and `qualify.yml` have no cron while the new pipeline gets validated. The legacy `collection.yml` single-phase flow still exists but also runs on demand only. See [`.github/workflows/README.md`](.github/workflows/README.md) for details.
 
 > **For agents/contributors editing this repo:** see [`AGENTS.md`](AGENTS.md). The runtime prompt and conventions live there. This README serves humans getting their bearings.
 
@@ -11,30 +14,33 @@ Automated collection of world-event intelligence from OSINT sources (Twitter/X, 
 
 ## How a run works
 
-The schedule fires at 09:00, 13:00, and 17:00 America/New_York. Each run samples the hour before dispatch — intentional snapshots, not continuous coverage.
+Two stages, each on demand for now (see the cadence note above):
 
 ```
-GitHub Actions cron (3×/day)
+identify.yml (GitHub Actions runner — no Warp agent, no LLM)
+  • reads source/manifest.json          # deny-list: skip status ∈ {inactive,archived,deprecated}
+  • builder/runtime/identify.sh scans every processable source in parallel
+    (curl/jq for Twitter API, Reddit JSON API, webpages; python3 for Telegram HTML)
+  • writes one tip per hit to data/queue/pending/*.json, commits with github.token
+    │
+    ▼  (workflow_run)
+qualify.yml
+  • builder/qualify.ts groups data/queue/pending/*.json into small batches (default 3 tips)
+  • fans out one Warp Cloud Agent per batch (parallel)
     │
     ▼
-builder/index.ts                       # oz-agent-sdk orchestrator
-  • reads source/manifest.json         # deny-list: skip status ∈ {inactive,archived,deprecated}
-  • partitions sources into buckets    # deterministic: priority desc, then id; ~12 sources/agent
-  • fans out one Warp Cloud Agent per bucket (parallel)
-    │
-    ▼
-Warp Cloud Agent (per bucket)
+Warp Cloud Agent (per batch)
   • clones this repo, then drives builder/runtime/*.sh:
-    init → verify-ids → precheck → [collect → translate → E-PRIME → geocode
-    → enrich-link-preview → validate-confidence] per source → validate
-    → merge-events (dedup) → submit (commit + push)
+    init (token check) → [fetch → translate → E-PRIME → geocode → enrich
+    → validate-confidence] per tip → validate → merge-events (dedup)
+    → archive tip to data/queue/processed/ → submit (commit + push)
     │
     ▼
-embeddings.yml                         # cross-bucket dedupe + search index rebuild
+embeddings.yml                         # cross-batch dedupe + search index rebuild
 deploy-downstream.yml                  # UI deploy + CLI release (parallel jobs)
 ```
 
-`builder/index.ts::buildCollectionPrompt()` renders the prompt from `builder/prompts/collection-prompt.md` — that template, plus the scripts in `builder/runtime/`, form the source of truth. Not this README.
+A legacy single-phase flow (`collection.yml` → `builder/index.ts`) still exists, paused: one Warp agent processes a whole bucket of ~12 sources sequentially instead of small per-tip batches. `builder/qualify.ts::buildQualifyPrompt()` renders the prompt from `builder/prompts/qualify-prompt.md` — that template, plus the scripts in `builder/runtime/` and the shared spawn/poll logic in `builder/lib/agent-runner.ts`, form the source of truth. Not this README.
 
 ---
 
@@ -42,17 +48,21 @@ deploy-downstream.yml                  # UI deploy + CLI release (parallel jobs)
 
 | Path | Role |
 |---|---|
-| `builder/index.ts` | Orchestrator. Buckets sources, renders prompts, dispatches Warp agents. |
-| `builder/prompts/collection-prompt.md` | Runtime prompt template (one per bucket). |
-| `builder/runtime/*.sh` | Versioned helper scripts the agent invokes (pre-check, geocode, enrich, merge, submit). |
+| `builder/runtime/identify.sh` | Non-LLM tip scan (stage 1), run directly by `identify.yml`. |
+| `builder/qualify.ts` | Queue-drain orchestrator (stage 2). Batches tips, dispatches Warp agents. |
+| `builder/prompts/qualify-prompt.md` | Runtime prompt template (one per batch of tips). |
+| `builder/lib/agent-runner.ts` | Shared spawn/poll/cancel logic (per-run deadline, BLOCKED handling) used by both `builder/index.ts` and `builder/qualify.ts`. |
+| `builder/index.ts` | Legacy orchestrator (paused). Buckets whole sources, renders `collection-prompt.md`. |
+| `builder/runtime/*.sh` | Versioned helper scripts the agent invokes (init/token-check, geocode, enrich, merge, submit). |
 | `source/manifest.json` | Authoritative source registry + status + liveness notes. |
 | `source/sources/*.md` | Per-source collection spec (front matter + body). |
 | `source/REVIEW.md` | Manual-review queue for wrong-handle / fixable-URL sources. |
 | `skills/<name>/SKILL.md` | Procedural references the cloud agent reads on demand. |
 | `data/SCHEMA.md` | World Event Entity schema (canonical). |
+| `data/queue/README.md` | Tip record schema + pending/processed queue lifecycle. |
 | `data/events/YYYY-MM/YYYY-MM-DD.jsonl` | Output: one JSON event per line. |
 | `LEARNINGS.md` | Cross-run learnings injected into the next run's prompts. |
-| `.github/workflows/collection.yml` | Cron entry point. |
+| `.github/workflows/identify.yml`, `.github/workflows/qualify.yml` | Tip & Queue entry points (on demand for now). |
 
 ---
 
@@ -66,10 +76,14 @@ cd builder && npm install && cd ..
 export WARP_API_KEY="***"
 export WARP_ENVIRONMENT_ID="your-warp-environment-uid"
 
-cd builder && npm run collect      # or: npm run dry-run (no agents dispatched)
+cd builder
+REPO_ROOT=.. TIME_WINDOW_START=$(date -u -d '1 hour ago' +%Y-%m-%dT%H:%M:%SZ) TIME_WINDOW_END=$(date -u +%Y-%m-%dT%H:%M:%SZ) \
+  bash ../builder/runtime/identify.sh $(jq -r '.sources[].id' ../source/manifest.json)  # writes data/queue/pending/*.json, no agents
+npm run qualify-dry-run            # renders qualify prompts without dispatching agents
+# or: npm run dry-run              # legacy single-phase flow (builder/index.ts)
 
 # inspect what was written
-cat data/events/$(date +%Y-%m)/$(date +%Y-%m-%d).jsonl | jq .
+cat ../data/events/$(date +%Y-%m)/$(date +%Y-%m-%d).jsonl | jq .
 ```
 
 ---
@@ -106,15 +120,17 @@ Set these in **Settings → Secrets and variables → Actions**:
 
 | Name | Type | Purpose |
 |---|---|---|
-| `WARP_API_KEY` | secret | Authenticates `oz-agent-sdk` against Warp. |
+| `WARP_API_KEY` | secret | Authenticates `oz-agent-sdk` against Warp. Used by `qualify.yml`/legacy `collection.yml` only — `identify.yml` never touches Warp. |
 | `WARP_ENVIRONMENT_ID` | secret | UID of the pre-built Warp Cloud Agent environment image (see below). |
-| `OSINT_GH_TOKEN` *or* `GH_TOKEN` | secret | Fine-grained PAT with `Contents: write` on this repo. The agent uses it to push each run's commits. |
-| `PARALLEL_AGENT_COUNT` | variable | Optional. Bucket-count override; unset → auto-sized at ~12 sources/agent. |
-| `WARP_MODEL_ID` | variable | Optional. Overrides the pinned Oz `model_id` (default: `claude-4-5-haiku` in `builder/index.ts`). Keeps every collection run on a Warp/Anthropic model instead of the account/environment default. |
+| `OSINT_GH_TOKEN` *or* `GH_TOKEN` | secret | Fine-grained PAT with `Contents: write` on this repo. The **Warp environment** (not GitHub Actions) needs this — `builder/runtime/init.sh` checks it fast, before any qualify work starts. `identify.yml` pushes with the ephemeral `github.token` instead and needs no PAT at all. |
+| `TWITTER_BEARER_TOKEN` | secret | Optional but recommended. Used by both `identify.yml` (tip scan) and the qualify agent; Twitter sources produce no tips without it. |
+| `PARALLEL_AGENT_COUNT` | variable | Optional. Legacy `collection.yml` bucket-count override; unset → auto-sized at ~12 sources/agent. |
+| `QUALIFY_BATCH_SIZE` | variable | Optional. Tips per qualify agent; unset → defaults to 3 (`builder/qualify.ts`). |
+| `WARP_MODEL_ID` | variable | Optional. Overrides the pinned Oz `model_id` (default: `claude-4-5-haiku`). Keeps every agent run on a Warp/Anthropic model instead of the account/environment default. |
 
 ### Key rotation / credit exhaustion
 
-When Warp credits run out or the key expires, agent spawns fail with HTTP 401/402, the orchestrator exits non-zero, and the `alert-on-failure` job opens (or updates) a **"Collection workflow failing"** issue. To recover: generate a fresh key in Warp, update the `WARP_API_KEY` secret, and re-run via **Actions → OSINT Snapshot Collection → Run workflow**. Collection resumes at the next scheduled slot either way.
+When Warp credits run out, the `WARP_API_KEY` expires, or the `OSINT_GH_TOKEN` push token expires, agent spawns/pushes fail, the orchestrator exits non-zero, and the `alert-on-failure` job opens (or updates) a **"Qualify workflow failing"** (or legacy **"Collection workflow failing"**) issue. `builder/runtime/init.sh` checks the push token up front so an expired `OSINT_GH_TOKEN` surfaces in seconds, not after a full batch of work. To recover: rotate the relevant secret (`oz secret update OSINT_GH_TOKEN --team --value` for the push token; the Warp dashboard for `WARP_API_KEY`), then re-run via **Actions → Qualify OSINT Tips → Run workflow**.
 
 ### Warp Cloud Agent environment image
 
@@ -169,6 +185,7 @@ Walks you through type, metadata, and validation. Full guide: [`source/CONTRIBUT
 - [`AGENTS.md`](AGENTS.md) — conventions for AI agents and humans editing this repo.
 - [`data/SCHEMA.md`](data/SCHEMA.md) — entity schema.
 - [`data/README.md`](data/README.md) — storage layout, retention, validation scripts.
+- [`data/queue/README.md`](data/queue/README.md) — Tip & Queue record schema + lifecycle.
 - [`source/README.md`](source/README.md) — source system overview.
 - [`source/CONTRIBUTING.md`](source/CONTRIBUTING.md) — adding sources.
 - [`skills/README.md`](skills/README.md) — skill index.

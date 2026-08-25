@@ -6,22 +6,26 @@ name: OSINT Snapshot Collection
 # coverage. Downstream workflows (embeddings, pages, CLI) chain off this one
 # by its workflow name; update them together when renaming.
 
+# Cadence: on demand only for now (workflow_dispatch), while the Tip & Queue
+# pipeline (identify.yml + qualify.yml) is validated end-to-end. Re-add
+# `schedule:` and `push:` below once you're confident in the new pipeline
+# (or decide to keep this one running in parallel).
 on:
-  schedule:
-    - cron: '0 9,13,17 * * *'
-      timezone: America/New_York
   workflow_dispatch:      # Manual trigger for testing
-  push:
-    branches:
-      - main
-    # Explicit allow-list: only changes that alter WHAT or HOW the agents
-    # collect justify an immediate (expensive) collection run.
-    paths:
-      - 'source/manifest.json'
-      - 'source/sources/**'
-      - 'builder/index.ts'
-      - 'builder/prompts/collection-prompt.md'
-      - 'builder/runtime/**'
+  # schedule:
+  #   - cron: '0 9,13,17 * * *'
+  #     timezone: America/New_York
+  # push:
+  #   branches:
+  #     - main
+  #   # Explicit allow-list: only changes that alter WHAT or HOW the agents
+  #   # collect justify an immediate (expensive) collection run.
+  #   paths:
+  #     - 'source/manifest.json'
+  #     - 'source/sources/**'
+  #     - 'builder/index.ts'
+  #     - 'builder/prompts/collection-prompt.md'
+  #     - 'builder/runtime/**'
 
 # Prevent overlapping collection runs. If a new run triggers while one
 # remains in progress, queue it rather than running concurrently — the
@@ -47,7 +51,11 @@ env:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # Backstop only — builder/index.ts now enforces a 10-minute per-bucket
+    # deadline (cancelling any run that's stuck/BLOCKED), so the orchestrator
+    # itself should never approach this ceiling. If it does, something is
+    # wrong with the orchestrator loop itself, not an individual bucket.
+    timeout-minutes: 15
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -85,7 +93,7 @@ jobs:
           RUN_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
           BODY="Collection run failed at $(date -u +%Y-%m-%dT%H:%M:%SZ): $RUN_URL
 
-          Common causes: exhausted Warp credits (HTTP 401/402 at spawn), an expired WARP_API_KEY, or failed buckets. See README → Configuration for key rotation."
+          Common causes: exhausted Warp credits (HTTP 401/402 at spawn), an expired WARP_API_KEY or OSINT_GH_TOKEN, or failed/stuck buckets. See README → Configuration for key rotation."
           EXISTING=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open \
             --search "Collection workflow failing in:title" \
             --json number --jq '.[0].number // empty')

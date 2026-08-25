@@ -1,0 +1,96 @@
+name: Qualify OSINT Tips
+
+# Tip & Queue architecture, stage 2 ("qualify"): drains data/queue/pending/
+# (written by identify.yml) in small fixed-size batches, spawning one
+# short-lived Warp cloud agent per batch to do the LLM-heavy work
+# (translate, extract, E-PRIME, geocode, enrich, confidence) and commit the
+# resulting World Event Entities.
+#
+# Cadence: on demand only for now (workflow_dispatch), plus automatically
+# after identify.yml completes so a manual identify run drains itself. Add a
+# `schedule:` trigger once the new pipeline is validated end-to-end.
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Identify OSINT Tips"]
+    types: [completed]
+    branches: [main]
+  # schedule:
+  #   - cron: '15 9,13,17 * * *'
+  #     timezone: America/New_York
+
+# Prevent overlapping qualify runs racing on the same queue files. Queue if
+# a new run triggers while one remains in progress — the SIGTERM handler in
+# builder/qualify.ts cancels outstanding agents before exit.
+concurrency:
+  group: osint-qualify
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  actions: read
+
+env:
+  WARP_API_KEY: ${{ secrets.WARP_API_KEY }}
+  WARP_ENVIRONMENT_ID: ${{ secrets.WARP_ENVIRONMENT_ID }}
+  # Unset → qualify.ts defaults to 3 tips per agent.
+  QUALIFY_BATCH_SIZE: ${{ vars.QUALIFY_BATCH_SIZE || '' }}
+  WARP_MODEL_ID: ${{ vars.WARP_MODEL_ID || '' }}
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  qualify:
+    # Only run when triggered manually, or when identify.yml actually ran
+    # (any conclusion — even a partial identify pass may have left tips).
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_run'
+    runs-on: ubuntu-latest
+    # Backstop only — builder/qualify.ts enforces a 10-minute per-batch
+    # deadline (cancelling any run that's stuck/BLOCKED) via the same
+    # agent-runner lib as collection.yml.
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+          cache-dependency-path: builder/package-lock.json
+
+      - name: Install builder dependencies
+        run: npm ci
+        working-directory: builder
+
+      - name: Run OSINT qualify
+        run: npm run qualify
+        working-directory: builder
+        env:
+          REPO_ROOT: ${{ github.workspace }}
+
+  alert-on-failure:
+    needs: qualify
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Open or update failure issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          RUN_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          BODY="Qualify run failed at $(date -u +%Y-%m-%dT%H:%M:%SZ): $RUN_URL
+
+          Common causes: exhausted Warp credits (HTTP 401/402 at spawn), an expired WARP_API_KEY or OSINT_GH_TOKEN, or failed/stuck batches. See README → Configuration for key rotation."
+          EXISTING=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open \
+            --search "Qualify workflow failing in:title" \
+            --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --repo "$GITHUB_REPOSITORY" --body "$BODY"
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" \
+              --title "Qualify workflow failing" --body "$BODY"
+          fi

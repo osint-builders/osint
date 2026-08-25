@@ -7,15 +7,17 @@
 # merge-events.sh to $WORK_DIR/.added-count), not the day-file total.
 #
 # Usage (from repo root):
-#   WORK_DIR=... bash builder/runtime/submit.sh <YYYY-MM> <YYYY-MM-DD> <bucket> <total-buckets>
+#   WORK_DIR=... bash builder/runtime/submit.sh <YYYY-MM> <YYYY-MM-DD> <unit> <total-units> [label]
+#   [label] defaults to "bucket" (collect); qualify.yml passes "batch".
 # Env: OSINT_GH_TOKEN or GH_TOKEN (push token, required)
 set -euo pipefail
 
 : "${WORK_DIR:?WORK_DIR must point at the bucket work directory}"
-YEAR_MONTH="${1:?usage: submit.sh <YYYY-MM> <YYYY-MM-DD> <bucket> <total-buckets>}"
-DATE="${2:?usage: submit.sh <YYYY-MM> <YYYY-MM-DD> <bucket> <total-buckets>}"
-BUCKET="${3:?bucket number required}"
-TOTAL="${4:?total bucket count required}"
+YEAR_MONTH="${1:?usage: submit.sh <YYYY-MM> <YYYY-MM-DD> <unit> <total-units> [label]}"
+DATE="${2:?usage: submit.sh <YYYY-MM> <YYYY-MM-DD> <unit> <total-units> [label]}"
+BUCKET="${3:?unit number required}"
+TOTAL="${4:?total unit count required}"
+LABEL="${5:-bucket}"
 
 ADDED=$(cat "$WORK_DIR/.added-count" 2>/dev/null || echo 0)
 
@@ -28,10 +30,12 @@ if git diff --cached --quiet; then
   exit 0
 fi
 
-git commit -m "Collect $ADDED world events on $DATE (bucket $BUCKET/$TOTAL)
+git commit -m "Collect $ADDED world events on $DATE ($LABEL $BUCKET/$TOTAL)
 
 $(date -u +%Y-%m-%dT%H:%M:%SZ) | [skip ci]"
 
+# Token validity was already confirmed once in init.sh (Step 1); re-derive
+# the push URL here since it isn't passed between steps.
 PUSH_TOKEN="${OSINT_GH_TOKEN:-${GH_TOKEN:-}}"
 [ -n "$PUSH_TOKEN" ] || { echo "ERROR: No push token (OSINT_GH_TOKEN/GH_TOKEN)." >&2; exit 1; }
 REPO_PATH=$(git remote get-url origin | sed -E 's|^git@github\.com:|https://github.com/|; s|^https?://github\.com/||; s|\.git$||')
@@ -53,4 +57,4 @@ if [ "$PUSHED" -eq 0 ]; then
   echo "ERROR: Push to main failed after 5 attempts. Do NOT open a pull request — exit and let the next scheduled run collect fresh events." >&2
   exit 1
 fi
-echo "submit: pushed $ADDED event(s) for bucket $BUCKET/$TOTAL."
+echo "submit: pushed $ADDED event(s) for $LABEL $BUCKET/$TOTAL."

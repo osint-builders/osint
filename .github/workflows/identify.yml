@@ -1,0 +1,66 @@
+name: Identify OSINT Tips
+
+# Tip & Queue architecture, stage 1 ("tip"): a cheap, fast, non-LLM scan
+# across every processable source, looking for anything published in the
+# last hour. Runs entirely on the GitHub Actions runner via curl/jq/python3
+# — no Warp cloud agent, no LLM spend, no OSINT_GH_TOKEN (pushes with the
+# ephemeral github.token instead). Sources with a hit get a lightweight tip
+# record committed to data/queue/pending/ for qualify.yml to process.
+#
+# Cadence: on demand only for now (workflow_dispatch). Re-add a `schedule:`
+# trigger once the new pipeline is validated end-to-end.
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '0 9,13,17 * * *'
+  #     timezone: America/New_York
+
+concurrency:
+  group: osint-identify
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+
+jobs:
+  identify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compute 1-hour lookback window
+        id: window
+        run: |
+          echo "start=$(date -u -d '1 hour ago' +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
+          echo "end=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
+
+      - name: Identify tips across processable sources
+        env:
+          TIME_WINDOW_START: ${{ steps.window.outputs.start }}
+          TIME_WINDOW_END: ${{ steps.window.outputs.end }}
+        run: |
+          IDS=$(jq -r '.sources[] | select((.status // "") | ascii_downcase | IN("inactive","archived","deprecated") | not) | .id' source/manifest.json)
+          echo "Scanning $(echo "$IDS" | wc -l) processable source(s) for window $TIME_WINDOW_START -> $TIME_WINDOW_END"
+          # shellcheck disable=SC2086
+          bash builder/runtime/identify.sh $IDS
+
+      - name: Commit new tips
+        run: |
+          git add data/queue/pending/
+          if git diff --cached --quiet; then
+            echo "identify: no new tips this run."
+            exit 0
+          fi
+          git config user.name "OSINT Identify Bot"
+          git config user.email "identify-bot@github-actions"
+          COUNT=$(git diff --cached --name-only | wc -l)
+          git commit -m "Identify $COUNT tip(s) for ${{ steps.window.outputs.start }} -> ${{ steps.window.outputs.end }}
+
+          [skip ci]"
+          git push
