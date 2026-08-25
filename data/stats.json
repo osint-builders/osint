@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-08-25T21:14:53.820Z",
+  "last_updated": "2026-08-25T21:26:33.096Z",
   "data_range": {
     "oldest_date": "2024-12-12",
     "newest_date": "2026-08-25"
   },
   "statistics": {
-    "total_events": 3730,
+    "total_events": 3750,
     "events_by_month": {
       "2024-12": 1,
       "2026-02": 1,
       "2026-04": 430,
       "2026-05": 3269,
-      "2026-08": 29
+      "2026-08": 49
     },
     "events_by_source": {
       "Twitter @NguyenThiHo88": 5,
@@ -308,7 +308,7 @@
       "Focus on Africa South": 1,
       "The Daily NK": 1,
       "Key to Middle East Defense": 2,
-      "CSIS Korea Chair": 2,
+      "CSIS Korea Chair": 3,
       "Minhdr18": 1,
       "The National Interest": 1,
       "Japan Ministry of Foreign Affairs": 1,
@@ -606,7 +606,7 @@
       "CA_JC (@CA_JC)": 15,
       "KlSummary (@KlSummary)": 16,
       "War TV (@WarTV7890)": 19,
-      "Ianellisjones (@Ianellisjones)": 6,
+      "Ianellisjones (@Ianellisjones)": 7,
       "Armed Forces Philippines (@ArmedForcesPhil)": 8,
       "US Pacific Fleet (@USPacificFleet)": 19,
       "MdaSpace (@MdaSpace)": 8,
@@ -614,7 +614,7 @@
       "KoreaHerald (@KoreaHerald)": 7,
       "Thewarzonewire (@Thewarzonewire)": 14,
       "olongapotimes (@olongapotimes)": 9,
-      "Clash Report (@ClashReport)": 64,
+      "Clash Report (@ClashReport)": 67,
       "Esri Water Resources (@EsriWater)": 13,
       "PyongyangToday (@PyongyangToday)": 8,
       "Nasa (@Nasa)": 14,
@@ -634,7 +634,7 @@
       "National Interest (@NationalInterest)": 12,
       "Chadobcnews (@Chadobcnews)": 10,
       "SchizointRel (@SchizointRel)": 13,
-      "Ship News (@ShipNews)": 22,
+      "Ship News (@ShipNews)": 23,
       "cepa (@cepa)": 19,
       "Pizza in Watch - Maritime Vessel Tracking & AIS Intelligence (@pizzainwatch)": 1,
       "John_Pollock22 (@John_Pollock22)": 13,
@@ -645,10 +645,10 @@
       "Claudefb (@Claudefb)": 15,
       "UANI (@UANI)": 15,
       "Rayfunseth (@Rayfunseth)": 17,
-      "inside_nk (@inside_nk)": 14,
+      "inside_nk (@inside_nk)": 17,
       "Allsource4 (@Allsource4)": 8,
       "MDAT Gulf of Guinea (@MDAT_GoG)": 14,
-      "Middle East Eye (@MiddleEastEye)": 52,
+      "Middle East Eye (@MiddleEastEye)": 55,
       "KC_NWT (@KC_NWT)": 13,
       "Raytoribo (@Raytoribo)": 13,
       "Therealshipdude (@Therealshipdude)": 17,
@@ -674,7 +674,7 @@
       "Riskstaff (@Riskstaff)": 9,
       "Opennuclear (@Opennuclear)": 12,
       "BBC Breaking News (@BBCBreaking)": 21,
-      "AP News (@AP)": 16,
+      "AP News (@AP)": 17,
       "Breaking Defense (breakingdefense.com)": 20,
       "Oilcfd (@Oilcfd)": 17,
       "Yortuk ISGK (@YortukIsgk)": 13,
@@ -700,7 +700,7 @@
       "Belteleradio Free Audio (@BeltelFreeAudio)": 13,
       "United_Nations (@United_Nations)": 10,
       "Platracker (@Platracker)": 10,
-      "MT Anderson (@MT_Anderson)": 12,
+      "MT Anderson (@MT_Anderson)": 13,
       "China Ministry of National Defence (@MNDChina)": 9,
       "Detresfa (@Detresfa)": 10,
       "MenchOsint (@MenchOsint)": 15,
@@ -814,14 +814,14 @@
       "r/UkraineWarVideoReport": 3,
       "Dr. Minh Tran (@MinhDr18)": 4,
       "Pandura (@Scpandura)": 1,
-      "Rerum Novarum Intel (@rnintel)": 21,
+      "Rerum Novarum Intel (@rnintel)": 22,
       "DD Geopolitics (@DDGeopolitics)": 17,
       "Insider Paper (@insiderpaper)": 6,
       "mdaspace (@MdaSpace)": 1,
       "UNITED24 Media (@United24media)": 7,
       "r/NonCredibleDefense (reddit.com/r/NonCredibleDefense)": 3,
       "Bellum Acta (@BellumActaNews)": 13,
-      "Quds News Network (@QudsNen)": 38,
+      "Quds News Network (@QudsNen)": 39,
       "War Monitor (@warmonitors)": 5,
       "TradeWinds (@tradewindsnews)": 1,
       "Wagner Z Group (@wagner_group_pmcr)": 5,
@@ -831,9 +831,9 @@
       "Lebanese News and Updates (@LebUpdate)": 12,
       "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)": 8,
       "Middle East Spectator (@Middle_East_Spectator)": 8,
-      "Our Wars, Today (@ourwarstoday)": 6,
+      "Our Wars, Today (@ourwarstoday)": 7,
       "The Associated Press (@AP)": 1,
-      "Geopolitics Prime (@geopolitics_prime)": 8,
+      "Geopolitics Prime (@geopolitics_prime)": 9,
       "Korea Economic Institute of America (@KoreaEconInst)": 1,
       "TradeWinds (@Tradewindsnews)": 1,
       "WarshipCam (@Warshipcam)": 3,
@@ -849,10 +849,12 @@
       "UNITED24 Media": 2,
       "Wagner Z Group": 3,
       "ABC News": 3,
-      "OSINT Technical (@Osinttechnical)": 1
+      "OSINT Technical (@Osinttechnical)": 1,
+      "War Translated": 1,
+      "Middle East Spectator": 1
     },
     "media_files": {
-      "images": 10,
+      "images": 11,
       "videos": 0
     }
   },
@@ -902,7 +904,7 @@
     "2026-05-25": 125,
     "2026-05-26": 162,
     "2026-05-27": 150,
-    "2026-08-25": 29
+    "2026-08-25": 49
   },
   "average_confidence": null
 }
