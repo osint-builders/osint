@@ -110,6 +110,7 @@ Set these in **Settings → Secrets and variables → Actions**:
 | `WARP_ENVIRONMENT_ID` | secret | UID of the pre-built Warp Cloud Agent environment image (see below). |
 | `OSINT_GH_TOKEN` *or* `GH_TOKEN` | secret | Fine-grained PAT with `Contents: write` on this repo. The agent uses it to push each run's commits. |
 | `PARALLEL_AGENT_COUNT` | variable | Optional. Bucket-count override; unset → auto-sized at ~12 sources/agent. |
+| `WARP_MODEL_ID` | variable | Optional. Overrides the pinned Oz `model_id` (default: `claude-4-5-haiku` in `builder/index.ts`). Keeps every collection run on a Warp/Anthropic model instead of the account/environment default. |
 
 ### Key rotation / credit exhaustion
 

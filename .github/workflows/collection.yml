@@ -39,6 +39,9 @@ env:
   WARP_ENVIRONMENT_ID: ${{ secrets.WARP_ENVIRONMENT_ID }}
   # Unset → builder auto-sizes buckets from SOURCES_PER_AGENT.
   PARALLEL_AGENT_COUNT: ${{ vars.PARALLEL_AGENT_COUNT || '' }}
+  # Unset → builder pins DEFAULT_MODEL_ID (a Warp/Anthropic model), so runs
+  # never fall back to a non-Warp-native model.
+  WARP_MODEL_ID: ${{ vars.WARP_MODEL_ID || '' }}
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:

@@ -24,6 +24,10 @@
  *   REPO_ROOT             — Repository root (defaults to cwd)
  *   PARALLEL_AGENT_COUNT  — Bucket-count override; otherwise auto-sized
  *                           from SOURCES_PER_AGENT
+ *   WARP_MODEL_ID         — Oz model_id pinned on every agent run. Defaults
+ *                           to DEFAULT_MODEL_ID below. Pinning avoids the
+ *                           account/environment default resolving to a
+ *                           non-Warp-native model (e.g. Mistral).
  */
 
 import OzAPI from "oz-agent-sdk";
@@ -97,6 +101,11 @@ function calculateBucketCount(sourceCount: number): number {
 // Anything else (active, testing, unverified, etc.) is processed so that
 // new sources are never silently dropped from the prompt.
 const EXCLUDED_STATUSES = new Set(["inactive", "archived", "deprecated"]);
+
+// Pinned model for every collection agent run. Overridable via WARP_MODEL_ID
+// so we never silently fall back to whatever default model the Warp account
+// or environment resolves to (which could be a non-Warp-native model).
+const DEFAULT_MODEL_ID = "claude-4-5-haiku";
 
 interface Source {
   id: string;
@@ -421,6 +430,7 @@ async function main(): Promise<void> {
   const dryRun = process.argv.includes("--dry-run");
   const warpApiKey = process.env["WARP_API_KEY"];
   const environmentId = process.env["WARP_ENVIRONMENT_ID"];
+  const modelId = process.env["WARP_MODEL_ID"] || DEFAULT_MODEL_ID;
 
   if (!warpApiKey && !dryRun) {
     console.error("Error: WARP_API_KEY environment variable is required.");
@@ -450,6 +460,7 @@ async function main(): Promise<void> {
   // Read git origin URL
   const originUrl = getOriginUrl(repoRoot);
   console.log(`Repository: ${originUrl}`);
+  console.log(`Model: ${modelId}`);
 
   // Bucket count derives from per-agent workload (see SOURCES_PER_AGENT).
   const bucketCount = calculateBucketCount(processableSources.length);
@@ -528,6 +539,7 @@ async function main(): Promise<void> {
       prompt,
       config: {
         name: `osint-collection-bucket${bucketNum}-${new Date().toISOString()}`,
+        model_id: modelId,
         ...(environmentId ? { environment_id: environmentId } : {}),
       },
     };
