@@ -36,7 +36,7 @@ export WORK_DIR
 
 For each tip above (create `mkdir -p "$WORK_DIR/$source_id"` first, using that tip's `source_id`):
 
-1. **Fetch full content** for each candidate URL. If `Snippet` already looks complete (e.g. a full Reddit/Telegram post), you may skip re-fetching; otherwise `curl` the URL (or use `agent-browser` per `skills/agent-browser/SKILL.md` for Twitter/X, which needs a real browser session to render).
+1. **Fetch full content** for each candidate URL. `agent-browser` is NOT pre-installed in this environment — prefer `curl` first (Twitter tips already carry full text captured via the API in `identify.sh`; Telegram/webpage content is fetchable via plain `curl`). Only if `curl` genuinely isn't enough (e.g. a JS-rendered page with no usable HTML) install it yourself on demand: `npm install -g agent-browser && agent-browser install`, then use it per `skills/agent-browser/SKILL.md`. If that install fails, fall back to what `curl` gave you rather than failing the whole tip.
 2. **Translate to English** — mandatory, in full (title, summary, body), before E-PRIME. Preserve proper nouns verbatim. Check the source context's front matter for a `language:` note — sources marked `uk/ru/mixed` always need translation, translate without checking first.
 3. **Extract** a World Event Entity per `data/SCHEMA.md` (skill: `skills/world-event-entities/SKILL.md`):
    - `id`: `EVENT_ID=$(node data/scripts/snowflake.js --worker ${batchNum})` — globally unique across parallel batches.

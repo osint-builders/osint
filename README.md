@@ -134,39 +134,25 @@ When Warp credits run out, the `WARP_API_KEY` expires, or the `OSINT_GH_TOKEN` p
 
 ### Warp Cloud Agent environment image
 
-`WARP_ENVIRONMENT_ID` points at a pre-configured Warp environment that the orchestrator launches per bucket. **The image — not this repo — installs the CLI tools and bakes in API keys.** Rebuild the image with this install list:
+`WARP_ENVIRONMENT_ID` points at a pre-configured Warp environment (`osint-collection`, base image `warpdotdev/dev-web:latest-agents`) that the orchestrator launches per bucket/batch. Setup commands run fresh on every single run, so **keep this list minimal and reliable** — a failing setup command fails every run in the batch before the agent even starts, with no retry:
 
 ```bash
-# Node 20+ (LTS)
-npm install -g agent-browser
-agent-browser install                  # downloads Chrome for Testing
-
-apt-get install -y \
-    git curl jq bc \
-    ca-certificates
+apt-get update && apt-get install -y jq python3 wget
 ```
 
-Bake these env vars into the image as Warp environment-level secrets:
+`agent-browser` is deliberately **not** a setup command. `npm install -g agent-browser && agent-browser install` (which downloads a full Chrome for Testing binary) proved unreliable as a mandatory pre-run step — a transient failure there took down 100% of qualify batches even though most tips never need a real browser (Twitter/Reddit/Telegram/webpage content is fetchable via the API/`curl` paths in `identify.sh` and the prompt templates). Agents install it themselves, on demand, only when `curl` genuinely isn't enough — see `skills/agent-browser/SKILL.md` and the "Fetch full content" step in `builder/prompts/qualify-prompt.md` / `collection-prompt.md`.
+
+Bake these env vars into the environment as Warp Team-scope secrets:
 
 | Variable | Required | Purpose |
 |---|---|---|
 | `ANTHROPIC_API_KEY` | ✅ | Claude API used by the agent. |
-| `OSINT_GH_TOKEN` *or* `GH_TOKEN` | ✅ | Push token (same value as the GitHub Actions secret). |
+| `OSINT_GH_TOKEN` *or* `GH_TOKEN` | ✅ | Push token. `init.sh` checks it fast at the start of every run — rotate with `oz secret update OSINT_GH_TOKEN --team --value`. |
 | `PERPLEXITY_API_KEY` | optional | Confidence validation (model `sonar`, priority-high events only); degrades gracefully when absent. |
 | `LINKPREVIEW_API_KEY` | optional | `link_preview` enrichment; non-blocking when absent. |
-| `TWITTER_BEARER_TOKEN` | optional | Twitter API path + banner-image fallback; the `agent-browser` scraping path works without it. |
+| `TWITTER_BEARER_TOKEN` | optional | Twitter API path used by both `identify.sh` and the qualify agent; also used as a banner-image fallback. |
 
-Verify a freshly built image with this throwaway prompt before running production collection against it:
-
-```bash
-node --version            # ≥ 20
-agent-browser --version
-jq --version
-test -n "$ANTHROPIC_API_KEY" && echo "ANTHROPIC_API_KEY set"
-test -n "$OSINT_GH_TOKEN" -o -n "$GH_TOKEN" && echo "push token set"
-```
-
-When you add a CLI dependency in a new skill, update this section in the same PR and rebuild the image before merge. The collection prompt does not introspect the env at runtime — a missing tool fails the agent partway through a bucket.
+When you add a CLI dependency in a new skill, prefer having the agent install it on demand inside its own prompt steps rather than adding another mandatory `Setup command` — that keeps a single flaky install from failing every run regardless of whether that run's work actually needs it.
 
 ---
 
