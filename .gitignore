@@ -51,6 +51,8 @@ frontend/node_modules/
 frontend/dist/
 # Exception: frontend source lib/ is not a Python lib dir
 !frontend/src/lib/
+# Exception: builder's shared TS helpers dir is not a Python lib dir either
+!builder/lib/
 
 # Built frontend artifacts. The Pages job group in
 # .github/workflows/deploy-downstream.yml builds these on demand and

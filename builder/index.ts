@@ -35,48 +35,18 @@ import * as fs from "fs";
 import * as path from "path";
 import { execSync } from "child_process";
 import { DateTime } from "luxon";
-
-const POLL_BASE_MS = 15_000;         // base poll interval
-const POLL_JITTER_MS = 5_000;         // ±jitter added to every poll sleep
-const POLL_MAX_BACKOFF_MS = 120_000;  // max backoff on 429: 2 minutes
-const SPAWN_STAGGER_MS = 500;         // delay between consecutive agent spawns
-const POLL_MAX_TRANSIENT_RETRIES = 5; // retry non-429 transient errors before giving up
-const TERMINAL_STATES = new Set(["SUCCEEDED", "FAILED", "CANCELLED"]);
-
-// Track spawned run IDs so the SIGTERM handler can cancel them before the
-// process exits. This prevents the Warp platform from leaving runs orphaned
-// and auto-cancelling them as "Cancelled by user".
-const activeRunIds = new Set<string>();
-let ozClient: OzAPI | null = null;
-
-async function cancelActiveRuns(): Promise<void> {
-  if (!ozClient || activeRunIds.size === 0) return;
-  console.log(`\nCancelling ${activeRunIds.size} in-progress run(s) before exit...`);
-  await Promise.allSettled(
-    [...activeRunIds].map(id =>
-      ozClient!.agent.runs.cancel(id)
-        .then(() => console.log(`  ✓ Cancelled ${id}`))
-        .catch(err => console.warn(`  ⚠ Could not cancel ${id}: ${err?.message ?? err}`))
-    )
-  );
-}
-
-process.on("SIGTERM", async () => {
-  console.log("\nSIGTERM received — cancelling outstanding runs...");
-  await cancelActiveRuns();
-  process.exit(0);
-});
-
-process.on("SIGINT", async () => {
-  console.log("\nSIGINT received — cancelling outstanding runs...");
-  await cancelActiveRuns();
-  process.exit(0);
-});
-
-// Warp's hard prompt size limit (1 MB). Each bucket prompt gets asserted
-// against this before dispatch — slimmed source files keep real prompts far
-// below it, so size no longer drives bucket count.
-const MAX_PROMPT_SIZE_BYTES = 1_048_576;
+import {
+  MAX_PROMPT_SIZE_BYTES,
+  DEFAULT_MODEL_ID,
+  SPAWN_STAGGER_MS,
+  activeRunIds,
+  setOzClient,
+  registerShutdownHandlers,
+  cancelActiveRuns,
+  sleep,
+  renderTemplate,
+  pollUntilComplete,
+} from "./lib/agent-runner";
 
 // Bucket count derives from wall-clock parallelism, not prompt size: each
 // agent processes its sources sequentially, so SOURCES_PER_AGENT bounds the
@@ -102,12 +72,7 @@ function calculateBucketCount(sourceCount: number): number {
 // new sources are never silently dropped from the prompt.
 const EXCLUDED_STATUSES = new Set(["inactive", "archived", "deprecated"]);
 
-// Pinned model for every collection agent run. Overridable via WARP_MODEL_ID
-// so we never silently fall back to whatever default model the Warp account
-// or environment resolves to (which could be a non-Warp-native model).
-const DEFAULT_MODEL_ID = "claude-4-5-haiku";
-
-interface Source {
+export interface Source {
   id: string;
   name: string;
   file: string;
@@ -116,7 +81,7 @@ interface Source {
   priority?: string;
 }
 
-interface Manifest {
+export interface Manifest {
   sources: Source[];
 }
 
@@ -127,7 +92,7 @@ interface Manifest {
  * disappear from the collection run. To skip a source, set its status to one
  * of the EXCLUDED_STATUSES values.
  */
-function loadProcessableSources(repoRoot: string): Source[] {
+export function loadProcessableSources(repoRoot: string): Source[] {
   const manifestPath = path.join(repoRoot, "source", "manifest.json");
   const manifest: Manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
   return manifest.sources.filter(
@@ -135,7 +100,7 @@ function loadProcessableSources(repoRoot: string): Source[] {
   );
 }
 
-function readSourceFile(repoRoot: string, source: Source): string {
+export function readSourceFile(repoRoot: string, source: Source): string {
   const sourcePath = path.join(repoRoot, "source", source.file);
   if (!fs.existsSync(sourcePath)) {
     return `(source file not found: source/${source.file})`;
@@ -143,7 +108,7 @@ function readSourceFile(repoRoot: string, source: Source): string {
   return fs.readFileSync(sourcePath, "utf-8");
 }
 
-function getOriginUrl(repoRoot: string): string {
+export function getOriginUrl(repoRoot: string): string {
   try {
     return execSync("git remote get-url origin", { cwd: repoRoot })
       .toString()
@@ -292,29 +257,6 @@ function loadLearnings(repoRoot: string): string {
   return out || "_No prior learnings recorded yet._";
 }
 
-/**
- * Substitutes `${KEY}` placeholders in the template with values from `vars`.
- * Throws on unknown placeholder OR unfilled placeholder, so drift between
- * the template and the orchestrator surfaces immediately.
- */
-function renderTemplate(template: string, vars: Record<string, string | number>): string {
-  const placeholderRe = /\$\{([a-zA-Z_][a-zA-Z0-9_]*)\}/g;
-  const seen = new Set<string>();
-  const result = template.replace(placeholderRe, (_match, key: string) => {
-    seen.add(key);
-    if (!(key in vars)) {
-      throw new Error(`Prompt template references unknown placeholder \${${key}}`);
-    }
-    return String(vars[key]);
-  });
-  for (const k of Object.keys(vars)) {
-    if (!seen.has(k)) {
-      throw new Error(`Prompt template never used variable ${k}; check for drift`);
-    }
-  }
-  return result;
-}
-
 function buildCollectionPrompt(
   repoRoot: string,
   sources: Source[],
@@ -367,63 +309,7 @@ function buildCollectionPrompt(
   });
 }
 
-function sleep(ms: number): Promise<void> {
-  return new Promise((r) => setTimeout(r, ms));
-}
-
-/**
- * Polls a run until it reaches a terminal state.
- *
- * Uses an initial random jitter delay to spread 15 concurrent pollers apart
- * so they don't all fire at the same instant and trigger API rate limits.
- * On a 429 response the backoff doubles (capped at POLL_MAX_BACKOFF_MS)
- * instead of crashing the whole collection run.
- */
-async function pollUntilComplete(
-  client: OzAPI,
-  runId: string
-): Promise<string> {
-  process.stdout.write(`Polling run ${runId}`);
-
-  // Stagger concurrent pollers: random initial offset in [0, POLL_BASE_MS).
-  await sleep(Math.random() * POLL_BASE_MS);
-
-  let backoffMs = POLL_BASE_MS;
-  let transientRetries = 0;
-
-  while (true) {
-    try {
-      const run = await client.agent.runs.retrieve(runId);
-      process.stdout.write(` [${run.state}]`);
-      transientRetries = 0; // reset on successful poll
-      if (TERMINAL_STATES.has(run.state)) {
-        process.stdout.write("\n");
-        return run.state;
-      }
-      backoffMs = POLL_BASE_MS;
-      await sleep(POLL_BASE_MS + Math.random() * POLL_JITTER_MS);
-    } catch (err: unknown) {
-      const status = (err as { status?: number }).status;
-      if (status === 429) {
-        process.stdout.write(` [429, retrying in ${(backoffMs / 1000).toFixed(0)}s]`);
-        await sleep(backoffMs);
-        backoffMs = Math.min(backoffMs * 2, POLL_MAX_BACKOFF_MS);
-      } else {
-        // Retry transient errors (5xx, network blips) up to the limit before
-        // giving up. Re-throwing immediately was crashing Promise.all and
-        // leaving other in-progress buckets orphaned.
-        transientRetries++;
-        if (transientRetries > POLL_MAX_TRANSIENT_RETRIES) {
-          process.stdout.write(` [fatal poll error after ${transientRetries} retries]\n`);
-          throw err;
-        }
-        const delay = Math.min(backoffMs * transientRetries, POLL_MAX_BACKOFF_MS);
-        process.stdout.write(` [transient error ${transientRetries}/${POLL_MAX_TRANSIENT_RETRIES}, retry in ${(delay / 1000).toFixed(0)}s]`);
-        await sleep(delay);
-      }
-    }
-  }
-}
+registerShutdownHandlers();
 
 async function main(): Promise<void> {
   const repoRoot = process.env["REPO_ROOT"] ?? process.cwd();
@@ -439,7 +325,7 @@ async function main(): Promise<void> {
   }
 
   const client = dryRun ? null : new OzAPI({ apiKey: warpApiKey! });
-  ozClient = client; // expose to SIGTERM handler
+  setOzClient(client); // expose to SIGTERM handler
 
   // Load every processable source
   let processableSources: Source[];

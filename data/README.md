@@ -31,7 +31,7 @@ See [`SCHEMA.md`](SCHEMA.md). The validator at `scripts/validate-events.js` enfo
 | Script | Purpose |
 |---|---|
 | `validate-events.js` | Schema validator (`--all` baseline in CI; `--strict --time-window` at runtime). |
-| `dedupe-events.js` | Cross-bucket dedupe of recent day files (runs in embeddings.yml after each collection). |
+| `dedupe-events.js` | Cross-batch dedupe of recent day files (runs in embeddings.yml after each collection/qualify run). |
 | `rebuild-indexes.js` | Rebuild all indexes + `data/stats.json` from JSONL. |
 | `snowflake.js` | Event ID generator (`evt_<snowflake>`, worker = bucket number). |
 | `normalize-topics.py` | One-time and ongoing topic normalization (lowercase, hyphenate, singularize). |
@@ -51,7 +51,7 @@ node scripts/dedupe-events.js --dry-run
 ## Search UI deploy flow
 
 ```
-collection (collection.yml) completes
+identify.yml → qualify.yml (Tip & Queue) completes, or legacy collection.yml
         │
         ▼  (workflow_run)
 embeddings.yml  ← dedupes recent events, rebuilds data/indexes/* + data/stats.json,
@@ -64,6 +64,8 @@ deploy-downstream.yml (pages-build/pages-deploy jobs)
                    builds frontend/ → docs/
                    uploads docs/ to GitHub Pages
 ```
+
+See [`queue/README.md`](queue/README.md) for the Tip & Queue handoff format.
 
 The site deploys to `https://osint.builders/`.
 

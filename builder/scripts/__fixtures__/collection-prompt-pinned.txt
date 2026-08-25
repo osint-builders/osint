@@ -151,9 +151,11 @@ rm -rf "$WORK_DIR"
 
 ## Error handling
 
+This run is unattended — nobody will see or answer a question you ask. On ANY unrecoverable failure (init.sh's token check fails, verify-ids.sh fails, validation fails, submit.sh exhausts its push retries, or anything else that leaves you unable to proceed): **stop and end your turn immediately** reporting what failed and why. Do NOT try alternative credentials, do NOT attempt `gh auth login` or any other workaround, and do NOT ask a question and wait for a reply. An unresolved question here does not get answered — it just wastes the run until it gets force-cancelled. Ending your turn cleanly on failure is what allows this run to be marked FAILED and retried at the next scheduled window.
+
 - **Source fails**: log to `$WORK_DIR/$sid/notes.md`, continue with the next source.
-- **Validation fails**: exit 1 without committing.
-- **Push fails**: `submit.sh` retries 5× with jitter, then exits 1. No PRs, ever.
+- **Validation fails**: exit 1 without committing, end your turn.
+- **Push fails**: `submit.sh` retries 5× with jitter, then exits 1. No PRs, ever. End your turn — do not try to fix the token yourself.
 - **Zero events**: `submit.sh` exits 0 without a commit.
 
 ## Quality bar
