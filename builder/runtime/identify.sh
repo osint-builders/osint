@@ -31,7 +31,8 @@ _write_tip() {
   local sid="$1" name="$2" type="$3" candidates="$4" n
   n=$(printf '%s' "$candidates" | jq 'length' 2>/dev/null || echo 0)
   [ "$n" -gt 0 ] || return 0
-  local out="$QUEUE_DIR/${sid}-$(date +%s%N).json"
+  local out
+  out="$QUEUE_DIR/${sid}-$(date +%s%N).json"
   jq -nc --arg sid "$sid" --arg name "$name" --arg type "$type" \
     --arg ws "$TIME_WINDOW_START" --arg we "$TIME_WINDOW_END" \
     --arg ts "$(date -u +%Y-%m-%dT%H:%M:%SZ)" --argjson candidates "$candidates" \
