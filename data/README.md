@@ -35,7 +35,7 @@ See [`SCHEMA.md`](SCHEMA.md). The validator at `scripts/validate-events.js` enfo
 | `rebuild-indexes.js` | Rebuild all indexes + `data/stats.json` from JSONL. |
 | `snowflake.js` | Event ID generator (`evt_<snowflake>`, worker = bucket number). |
 | `normalize-topics.py` | One-time and ongoing topic normalization (lowercase, hyphenate, singularize). |
-| `cleanup-old-data.sh` | 90-day retention sweep (run weekly by `create-release.yml`). |
+| `cleanup-old-data.sh` | 90-day retention sweep (run weekly by `create-release.yml`, "Create Weekly Data Release"). |
 
 ```bash
 # Rebuild indexes locally:
@@ -58,7 +58,8 @@ embeddings.yml  ← dedupes recent events, rebuilds data/indexes/* + data/stats.
                    commits the result [skip ci]
         │
         ▼  (workflow_run)
-pages.yml       ← runs backfill_event_details.py (generates data/indexes/events/)
+deploy-downstream.yml (pages-build/pages-deploy jobs)
+                ← runs backfill_event_details.py (generates data/indexes/events/)
                    copies data/indexes/ → docs/indexes/
                    builds frontend/ → docs/
                    uploads docs/ to GitHub Pages

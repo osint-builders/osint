@@ -52,9 +52,10 @@ frontend/dist/
 # Exception: frontend source lib/ is not a Python lib dir
 !frontend/src/lib/
 
-# Built frontend artifacts. The Pages workflow (.github/workflows/pages.yml)
-# builds these on demand and uploads them as a Pages artifact — no need to
-# commit. Local `npm run build` puts the output here too; ignore it.
+# Built frontend artifacts. The Pages job group in
+# .github/workflows/deploy-downstream.yml builds these on demand and
+# uploads them as a Pages artifact — no need to commit. Local `npm run
+# build` puts the output here too; ignore it.
 docs/
 data/indexes/events/
 

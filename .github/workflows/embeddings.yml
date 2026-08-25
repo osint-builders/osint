@@ -20,6 +20,12 @@ permissions:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
+# Single in-flight run at a time; overlapping runs would race pushing to
+# main (each commits data/indexes/ + data/stats.json).
+concurrency:
+  group: embeddings
+  cancel-in-progress: false
+
 jobs:
   build-embeddings:
     runs-on: ubuntu-latest

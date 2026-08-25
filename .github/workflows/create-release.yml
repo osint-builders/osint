@@ -1,4 +1,4 @@
-name: Create Data Release
+name: Create Weekly Data Release
 
 on:
   schedule:
@@ -8,9 +8,13 @@ on:
 permissions:
   contents: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   release:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
