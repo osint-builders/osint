@@ -1,28 +1,121 @@
-name: Build CLI Tool
+name: Deploy Downstream Artifacts
 
-# Compiles the Go CLI binary for all target platforms after the embeddings
-# index is rebuilt, or on manual trigger.
+# Two independent consumers of "Build Search Embeddings" output, run as
+# parallel job groups in one workflow:
+#   - Pages:  builds the React search frontend + deploys docs/ to GitHub Pages
+#   - CLI:    cross-compiles the Go CLI and re-points the cli-latest release
+#
+# Each job group keeps its own concurrency group (see per-job `concurrency:`
+# blocks) since they have different cancellation semantics: a stale Pages
+# deploy is safe to cancel and replace, but a partially-built CLI release
+# should run to completion before a newer trigger reuses the runner.
+#
+# Triggers:
+#   1. push to main when frontend source OR the search index changes
+#      (Pages only — a frontend-only change has no reason to rebuild the CLI)
+#   2. workflow_run after "Build Search Embeddings" completes (both groups;
+#      the CLI group additionally requires that run to have succeeded)
+#   3. workflow_dispatch for manual rebuilds of either artifact
+#
+# Pages source must be configured to "GitHub Actions" in
+# Settings → Pages → Source. (One-time manual step.)
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'frontend/**'
+      - 'data/indexes/**'
+      - '.github/workflows/deploy-downstream.yml'
   workflow_run:
     workflows: ["Build Search Embeddings"]
     types: [completed]
     branches: [main]
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  GO_VERSION: '1.22'
+
 permissions:
   contents: write
-
-env:
-  GO_VERSION: '1.22'
-  CLI_DIR: cli
+  pages: write
+  id-token: write
 
 jobs:
-  # ── Stage 1: prepare embed data ──────────────────────────────────────
-  prepare:
+  # ══════════════════════════════ Pages ═══════════════════════════════
+  pages-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend dependencies
+        run: npm ci
+        working-directory: frontend
+
+      - name: Build frontend
+        # PAGES_BASE='/' for custom domain deployment at https://osint.builders/
+        # Vite emits asset URLs relative to the domain root.
+        run: PAGES_BASE="/" npm run build
+        working-directory: frontend
+
+      - name: Generate event detail files for frontend (from JSONL)
+        run: python3 builder/embeddings/backfill_event_details.py
+
+      - name: Copy indexes into docs for Pages upload
+        run: |
+          if [ -d data/indexes ]; then
+            cp -r data/indexes docs/indexes
+          else
+            echo "::warning::data/indexes/ not found. Searches will fail until embeddings.yml runs."
+          fi
+
+      - name: Verify build output
+        run: |
+          test -f docs/index.html || { echo "::error::docs/index.html missing after build"; exit 1; }
+          if [ ! -d docs/indexes ] || [ -z "$(ls -A docs/indexes 2>/dev/null)" ]; then
+            echo "::warning::docs/indexes/ is empty. The site will deploy but searches will fail until embeddings.yml runs at least once."
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  pages-deploy:
+    needs: pages-build
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  # ═══════════════════════════════ CLI ═════════════════════════════════
+  cli-prepare:
     # Only run when triggered manually or when the embeddings workflow succeeded.
     if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: build-cli
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
 
@@ -36,10 +129,13 @@ jobs:
           path: cli/embed/*.gz
           retention-days: 1
 
-  # ── Stage 2: cross-compile (matrix) ──────────────────────────────────
-  build:
-    needs: prepare
+  cli-build:
+    needs: cli-prepare
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: build-cli
+      cancel-in-progress: false
     strategy:
       matrix:
         include:
@@ -89,10 +185,13 @@ jobs:
           path: osintcli-${{ matrix.suffix }}${{ matrix.ext }}
           retention-days: 5
 
-  # ── Stage 3: create / update release ─────────────────────────────────
-  release:
-    needs: build
+  cli-release:
+    needs: cli-build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: build-cli
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
 

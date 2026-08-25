@@ -31,7 +31,7 @@ Warp Cloud Agent (per bucket)
     │
     ▼
 embeddings.yml                         # cross-bucket dedupe + search index rebuild
-pages.yml / build-cli.yml              # UI deploy + CLI release
+deploy-downstream.yml                  # UI deploy + CLI release (parallel jobs)
 ```
 
 `builder/index.ts::buildCollectionPrompt()` renders the prompt from `builder/prompts/collection-prompt.md` — that template, plus the scripts in `builder/runtime/`, form the source of truth. Not this README.

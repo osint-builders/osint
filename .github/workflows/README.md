@@ -15,16 +15,12 @@ See the top-level [README.md](../../README.md) for architecture and secrets setu
 - Trigger: `workflow_run` after each "OSINT Snapshot Collection" completes (also `workflow_dispatch`).
 - Runs `data/scripts/dedupe-events.js` (cross-bucket dedupe), rebuilds the semantic search index (`builder/embeddings/build_index.py`, local MiniLM), runs `data/scripts/rebuild-indexes.js`, and commits `data/events` + `data/indexes/` + `data/stats.json` with `[skip ci]`.
 
-## pages.yml — "Deploy GitHub Pages"
+## deploy-downstream.yml — "Deploy Downstream Artifacts"
 
-- Builds the React frontend (`frontend/` → `docs/`, gitignored), copies `data/indexes/` → `docs/indexes/`, and deploys to GitHub Pages at `https://osint.builders/`.
-- Triggers on `push` to main touching `frontend/**` or `data/indexes/**`, on `workflow_run` after embeddings.yml, or `workflow_dispatch`.
-- Pages source must read **GitHub Actions** (not "Deploy from a branch").
+Two independent job groups sharing one workflow, each with its own `concurrency` group:
 
-## build-cli.yml — "Build CLI Tool"
-
-- Trigger: `workflow_run` after embeddings.yml succeeds (also `workflow_dispatch`).
-- Packs `data/indexes/` into `cli/embed/*.gz`, cross-compiles the Go CLI for five platforms, and re-points the `cli-latest` release.
+- **Pages** (`pages-build` → `pages-deploy`): builds the React frontend (`frontend/` → `docs/`, gitignored), copies `data/indexes/` → `docs/indexes/`, and deploys to GitHub Pages at `https://osint.builders/`. Triggers on `push` to main touching `frontend/**` or `data/indexes/**`, on `workflow_run` after embeddings.yml (any conclusion), or `workflow_dispatch`. Pages source must read **GitHub Actions** (not "Deploy from a branch").
+- **CLI** (`cli-prepare` → `cli-build` → `cli-release`): packs `data/indexes/` into `cli/embed/*.gz`, cross-compiles the Go CLI for five platforms, and re-points the `cli-latest` release. Only runs on `workflow_dispatch` or when the embeddings `workflow_run` succeeded.
 
 ## verify.yml — "Verify"
 
@@ -40,9 +36,9 @@ Drift detection on every PR + push to main. Four checks:
 - Trigger: `workflow_run` after each collection run + a daily sweep.
 - Asserts bot-authored commits touch only `data/events/**`, `data/indexes/**`, `data/stats.json`, `LEARNINGS.md`; opens an issue on violation (prompt-injection tripwire for agents holding a push-capable PAT).
 
-## create-release.yml — "Create Data Release"
+## create-release.yml — "Create Weekly Data Release"
 
-Weekly on Sunday at midnight UTC. Runs the 90-day retention sweep (`data/scripts/cleanup-old-data.sh`), then archives `data/events` + `data/indexes` + schema docs to a release tarball.
+Weekly on Sunday at midnight UTC. Runs the 90-day retention sweep (`data/scripts/cleanup-old-data.sh`), then archives `data/events` + `data/indexes` to a release tarball.
 
 ## Troubleshooting
 
