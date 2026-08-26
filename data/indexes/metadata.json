@@ -119277,5 +119277,629 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_86201957982691328",
+    "title": "United Kingdom Approves £71 Million Investment to Restart Hemerdon Tungsten Mine",
+    "summary": "The British government committed £71 million from its National Wealth Fund to reopen the Hemerdon tungsten mine in Devon. The government secures an ownership stake in the mine and control of up to 50% of planned tungsten output.",
+    "date_event": null,
+    "date_published": "2026-08-26T20:18:07Z",
+    "geo": {
+      "lat": 54.7023545,
+      "lon": -3.2765753,
+      "display_name": "United Kingdom"
+    },
+    "topics": [
+      "uk-government",
+      "tungsten-mining",
+      "critical-minerals",
+      "economic-policy",
+      "supply-chain",
+      "industrial-strategy"
+    ],
+    "confidence": null,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2092708187187064953",
+        "title": "UK tungsten mine investment announcement"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HQrKUukXUAAAHdR.jpg"
+  },
+  {
+    "id": "evt_1875474551",
+    "title": "Dozens of US and Canadian Citizens Missing After Flash Flooding in Nepal",
+    "summary": "Flash flooding in Nepal has resulted in dozens of US and Canadian citizens being reported missing.",
+    "date_event": null,
+    "date_published": "2026-08-26T20:02:14Z",
+    "geo": {
+      "city": "Nepal",
+      "country": "Nepal",
+      "lat": 28.3949,
+      "lon": 84.124
+    },
+    "topics": [
+      "disaster",
+      "flood",
+      "nepal",
+      "natural-disaster",
+      "humanitarian-crisis"
+    ],
+    "confidence": null,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2092704191277883685",
+        "title": "BBC World News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_1869462655",
+    "title": "Hospital Fire Kills 14 Newborns in Islamabad, Pakistan",
+    "summary": "A fire broke out Wednesday morning in the gynecology ward of a hospital in Islamabad, Pakistan, killing 14 newborns.",
+    "date_event": null,
+    "date_published": "2026-08-26T20:48:43Z",
+    "geo": {
+      "city": "Islamabad",
+      "country": "Pakistan",
+      "lat": 33.6844,
+      "lon": 73.0479
+    },
+    "topics": [
+      "disaster",
+      "hospital-fire",
+      "pakistan",
+      "tragedy"
+    ],
+    "confidence": null,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2092715889535652219",
+        "title": "ABC News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86201903146364928",
+    "title": "Satellite Imagery Shows Reversal of Assad Demographic Engineering in Hama and Idlib",
+    "summary": "Satellite imagery analysis reveals significant demographic reversal in the Hama and Idlib countryside regions, showing changes to the settlement patterns established during Assad's regime.",
+    "date_event": null,
+    "date_published": "2026-08-26T20:02:30.000Z",
+    "geo": {
+      "lat": 35.1983,
+      "lon": 36.7634
+    },
+    "topics": [
+      "syria",
+      "demographics",
+      "satellite-imagery",
+      "hama",
+      "idlib",
+      "post-conflict"
+    ],
+    "confidence": null,
+    "source_name": "Sim Nasr (@SimNasr)",
+    "links": [
+      {
+        "url": "https://x.com/SimNasr/status/2092704259628245168",
+        "title": "Sim Nasr on Syria Demographics",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/tweet_video_thumb/HQp1wXLWAAA0369.jpg"
+  },
+  {
+    "id": "evt_86202002308100096",
+    "title": "USNS Hector A. Cafferata Jr. Expeditionary Sea Base Delivered to US Navy",
+    "summary": "The United States Navy has received delivery of USNS Hector A. Cafferata Jr. (ESB 8), a new Expeditionary Sea Base that will provide critical operational capabilities to the Fleet in support of regional security operations.",
+    "date_event": null,
+    "date_published": "2026-08-26T20:07:24.000Z",
+    "geo": {
+      "lat": 37.5407,
+      "lon": -122.271
+    },
+    "topics": [
+      "us-navy",
+      "naval-operations",
+      "expeditionary-sea-base",
+      "fleet-deployment",
+      "maritime-security"
+    ],
+    "confidence": null,
+    "source_name": "US Navy (@USNavy)",
+    "links": [
+      {
+        "url": "https://x.com/USNavy/status/2092705491352764512",
+        "title": "US Navy - USNS Hector A. Cafferata Jr. Delivery",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2092675740974112768/img/WJkwQ9tiFlXi9agN.jpg"
+  },
+  {
+    "id": "evt_86201965532430336",
+    "title": "Former Trump Ukraine Envoy Keith Kellogg Defends American Support for Ukraine",
+    "summary": "Keith Kellogg, former Trump Ukraine envoy, responded to polling data about American support for Ukraine, noting that while the majority of Americans support Ukraine, predictable percentages of respondents hold contrarian views regardless of the topic.",
+    "date_event": "2026-08-26T20:52:56Z",
+    "date_published": "2026-08-26T20:52:56Z",
+    "geo": {
+      "lat": 38.9072,
+      "lon": -77.0369,
+      "country": "United States",
+      "region": "Washington, DC"
+    },
+    "topics": [
+      "geopolitics",
+      "ukraine",
+      "us-diplomacy",
+      "military-conflict"
+    ],
+    "confidence": 0.75,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2092716949499478434",
+        "title": "Keith Kellogg on Ukraine Support",
+        "source": "Twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86201965591150592",
+    "title": "Keith Kellogg Criticizes Trump Negotiators Witkoff and Kushner on Ukraine Understanding",
+    "summary": "Former Trump Ukraine envoy Keith Kellogg publicly criticized White House negotiators Witkoff and Kushner, asserting they lack understanding of warfare complexity, human factors, and Russian capabilities required for Ukraine peace negotiations.",
+    "date_event": "2026-08-26T20:51:07Z",
+    "date_published": "2026-08-26T20:51:07Z",
+    "geo": {
+      "lat": 38.9072,
+      "lon": -77.0369,
+      "country": "United States",
+      "region": "Washington, DC"
+    },
+    "topics": [
+      "geopolitics",
+      "ukraine",
+      "us-diplomacy",
+      "military-conflict",
+      "negotiations"
+    ],
+    "confidence": 0.75,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2092716493167620347",
+        "title": "Kellogg Criticizes Trump Negotiators",
+        "source": "Twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86201965670842368",
+    "title": "Syrian President Ahmad al-Sharaa Declares New Era for Damascus and Syrian Sovereignty",
+    "summary": "Syrian President Ahmad al-Sharaa delivered remarks in Damascus announcing a new chapter for the nation, emphasizing the restoration of Syrian will and popular freedom. His speech marked a significant statement on Syria's political transition and national sovereignty.",
+    "date_event": "2026-08-26T20:36:37Z",
+    "date_published": "2026-08-26T20:36:37Z",
+    "geo": {
+      "lat": 33.5128,
+      "lon": 36.2765,
+      "country": "Syria",
+      "city": "Damascus",
+      "region": "Rif Dimashq"
+    },
+    "topics": [
+      "geopolitics",
+      "syria",
+      "middle-east",
+      "sovereignty",
+      "governance"
+    ],
+    "confidence": 0.8,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2092712842478682488",
+        "title": "Syrian President al-Sharaa Damascus Speech",
+        "source": "Twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86201965758922752",
+    "title": "Federal Judge Declines to Order ICE Agent into Custody in Immigrant Shooting Case",
+    "summary": "A federal judge declined to order the detention of a Texas ICE agent accused of shooting an immigrant while extradition proceedings continue through Minnesota's effort to extradite him. The judicial decision impacts the agent's custody status amid ongoing legal proceedings.",
+    "date_event": "2026-08-26T20:30:01Z",
+    "date_published": "2026-08-26T20:30:01Z",
+    "geo": {
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "country": "United States",
+      "state": "Texas",
+      "city": "Austin"
+    },
+    "topics": [
+      "law-enforcement",
+      "immigration",
+      "justice",
+      "united-states",
+      "accountability"
+    ],
+    "confidence": 0.7,
+    "source_name": "CNN (@CNN)",
+    "links": [
+      {
+        "url": "https://x.com/CNN/status/2092711181462970879",
+        "title": "Federal Judge ICE Custody Decision",
+        "source": "Twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86201859542384640",
+    "title": "Russia's Lukoil Oil Refineries Cease Operations Following Damage",
+    "summary": "Reuters reported on August 26, 2026 that all of Lukoil's major oil refineries in Russia have shut down operations due to damage. The Lukoil-Nizhegorodnefteorgsintez refinery, Russia's fourth-largest, ceased operations, with unclear recovery timeline.",
+    "date_event": "2026-08-26T20:51:03Z",
+    "date_published": "2026-08-26T20:51:03Z",
+    "geo": {
+      "lat": 64.6863136,
+      "lon": 97.7453061,
+      "country": "Russia"
+    },
+    "topics": [
+      "energy",
+      "petroleum",
+      "infrastructure",
+      "russia",
+      "disruption",
+      "refinery"
+    ],
+    "confidence": 0.8,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2092716476478222655",
+        "label": "War Translated report on Lukoil refinery shutdown"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86201859462692864",
+    "title": "US Naval Vessels Depart Norfolk: Replenishment Oiler and Guided Missile Destroyer",
+    "summary": "Multiple US naval vessels departed Norfolk, Virginia on August 26, 2026. The USNS Leroy Grumman (T-AO-195), a Henry J. Kaiser-class replenishment oiler, and the USS Harvey C Barnum Jr (DDG 124), an Arleigh Burke-class guided missile destroyer, were documented leaving the naval station.",
+    "date_event": "2026-08-26T20:31:34Z",
+    "date_published": "2026-08-26T20:31:34Z",
+    "geo": {
+      "lat": 36.8493695,
+      "lon": -76.2899539,
+      "country": "United States",
+      "region": "Virginia",
+      "city": "Norfolk"
+    },
+    "topics": [
+      "military",
+      "naval",
+      "deployment",
+      "us-navy",
+      "vessel-tracking",
+      "norfolk"
+    ],
+    "confidence": 0.85,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2092711573311627554",
+        "label": "USNS Leroy Grumman departure tweet"
+      },
+      {
+        "url": "https://x.com/Warshipcam/status/2092711116707082322",
+        "label": "USS Harvey C Barnum Jr departure tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86201859613687808",
+    "title": "Colombia Earthquake Recovery: 50,000 Receive Humanitarian Assistance",
+    "summary": "Following a 7.4-magnitude earthquake that struck Colombia more than two weeks prior, UN humanitarians reported on August 26, 2026 that nearly 50,000 people have received assistance across 25 municipalities in the most affected areas.",
+    "date_event": "2026-08-26T20:45:32Z",
+    "date_published": "2026-08-26T20:45:32Z",
+    "geo": {
+      "lat": 4.099917,
+      "lon": -72.9088133,
+      "country": "Colombia"
+    },
+    "topics": [
+      "disaster",
+      "earthquake",
+      "humanitarian",
+      "colombia",
+      "relief",
+      "un"
+    ],
+    "confidence": 0.82,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2092715086792347898",
+        "label": "Xinhua report on Colombia earthquake assistance"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86201859694903936",
+    "title": "China Formulates Nearly 200 AI Standards for Industry Development",
+    "summary": "An official with China's Ministry of Industry and Information Technology reported on August 26, 2026 that China has formulated nearly 200 key standards for artificial intelligence to steer the sector toward sound and orderly development.",
+    "date_event": "2026-08-26T20:19:06Z",
+    "date_published": "2026-08-26T20:19:06Z",
+    "geo": {
+      "lat": 34.5412252,
+      "lon": 108.9237067,
+      "country": "China"
+    },
+    "topics": [
+      "technology",
+      "artificial-intelligence",
+      "standards",
+      "policy",
+      "china",
+      "regulation"
+    ],
+    "confidence": 0.78,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2092708438036148712",
+        "label": "Xinhua report on China AI standards"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86201956195913728",
+    "title": "Federal Judge Declines to Order Custody of ICE Agent Accused of Shooting Immigrant",
+    "summary": "A federal judge has declined to order Texas officials to keep an Immigration and Customs Enforcement agent accused of shooting an immigrant in custody while Minnesota works to extradite him. The decision affects the detention status of the agent facing charges related to the shooting incident.",
+    "date_event": null,
+    "date_published": "2026-08-26T20:29:34Z",
+    "geo": {
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "country": "United States",
+      "region": "Texas",
+      "city": "Austin"
+    },
+    "topics": [
+      "law-enforcement",
+      "immigration",
+      "court-decision",
+      "custody",
+      "extradition",
+      "united-states"
+    ],
+    "confidence": 0.85,
+    "source_name": "cnnbrk (@cnnbrk)",
+    "links": [
+      {
+        "url": "https://x.com/cnnbrk/status/2092711072163619163",
+        "label": "CNN Breaking News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86202205375320064",
+    "title": "Houthis Fire Ballistic Missiles at Mocha Port in Yemen",
+    "summary": "Yemen's Iran-aligned Houthis fired ballistic missiles at Mocha port on Wednesday, according to a Yemeni army source who spoke to Al Jazeera. The attack marks an escalation in military operations in the Red Sea region.",
+    "date_event": null,
+    "date_published": "2026-08-26T20:46:27Z",
+    "geo": {
+      "lat": 13.3126,
+      "lon": 43.3275,
+      "country": "Yemen",
+      "region": "Hodeidah",
+      "city": "Mocha"
+    },
+    "topics": [
+      "houthis",
+      "yemen",
+      "missiles",
+      "military-attack",
+      "red-sea",
+      "middle-east"
+    ],
+    "confidence": 0.88,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2092715318632194450",
+        "label": "Middle East Eye Report on Houthi Missile Strike"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86202081689489408",
+    "title": "President Trump Marks 5th Anniversary of Abbey Gate Bombing, Honors 13 Service Members",
+    "summary": "President Trump commemorates the fifth anniversary of the Abbey Gate bombing that killed 13 American service members during the Afghanistan withdrawal. Trump renewed his criticism of the Biden administration's handling of the chaotic exit from Afghanistan, honoring the fallen troops.",
+    "date_event": null,
+    "date_published": "2026-08-26T20:39:31Z",
+    "geo": {
+      "lat": 34.5553,
+      "lon": 69.2075,
+      "country": "Afghanistan",
+      "region": "Kabul",
+      "city": "Kabul"
+    },
+    "topics": [
+      "military",
+      "afghanistan",
+      "bombing",
+      "casualties",
+      "government",
+      "memorial"
+    ],
+    "confidence": 0.92,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2092713575110291563",
+        "label": "Fox News Tweet on Abbey Gate Anniversary"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86202109367689216",
+    "title": "Israeli Forces Detonate Homes in Al-Mansouri, Southern Lebanon",
+    "summary": "Quds News Network reported israeli occupation forces detonated homes of displaced lebanese civilians in the town of al-mansouri...",
+    "date_event": null,
+    "date_published": "2026-08-26T20:07:14Z",
+    "geo": {
+      "lat": 33.3156,
+      "lon": 35.2371,
+      "city": "Al-Mansouri",
+      "country": "Lebanon"
+    },
+    "topics": [
+      "lebanon",
+      "israel",
+      "homes",
+      "demolition",
+      "civilians"
+    ],
+    "confidence": 0.75,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/236737",
+        "label": "Quds News Network"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86202109380272128",
+    "title": "Israeli Settlers Storm Joseph's Tomb in Nablus",
+    "summary": "Quds News Network reported buses carrying israeli settlers arrived to storm joseph's tomb east of nablus in the northern occupi...",
+    "date_event": null,
+    "date_published": "2026-08-26T20:19:45Z",
+    "geo": {
+      "lat": 32.2211,
+      "lon": 35.2344,
+      "city": "Nablus",
+      "country": "Palestine"
+    },
+    "topics": [
+      "west-bank",
+      "settlers",
+      "nablus",
+      "joseph-tomb",
+      "conflict"
+    ],
+    "confidence": 0.75,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/236738",
+        "label": "Quds News Network"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86202109380272129",
+    "title": "Israeli Settlers Raid Joseph's Tomb Site Near Nablus",
+    "summary": "Quds News Network reported israeli settlers conducted a raid on joseph's tomb site east of nablus under protection of israeli o...",
+    "date_event": null,
+    "date_published": "2026-08-26T20:43:52Z",
+    "geo": {
+      "lat": 32.2211,
+      "lon": 35.2344,
+      "city": "Nablus",
+      "country": "Palestine"
+    },
+    "topics": [
+      "west-bank",
+      "settlers",
+      "nablus",
+      "joseph-tomb",
+      "conflict"
+    ],
+    "confidence": 0.75,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/236739",
+        "label": "Quds News Network"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86202109380272130",
+    "title": "Ukrainian Forces Report Continued Frontline Operations",
+    "summary": "UNITED24 Media reported united24 media reported ongoing ukrainian operations along the russia-ukraine frontline with updates...",
+    "date_event": null,
+    "date_published": "2026-08-26T20:11:01Z",
+    "geo": {
+      "lat": 48.3794,
+      "lon": 31.1656,
+      "city": "Ukraine",
+      "country": "Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "war",
+      "russia",
+      "frontline",
+      "military"
+    ],
+    "confidence": 0.75,
+    "source_name": "UNITED24 Media",
+    "links": [
+      {
+        "url": "https://t.me/United24media/45517",
+        "label": "UNITED24 Media"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86202109380272131",
+    "title": "Wagner Group Reports Combat Operations in Ukraine",
+    "summary": "Wagner Z Group reported wagner-affiliated forces posted combat footage from active operations in ukraine, including drone st...",
+    "date_event": null,
+    "date_published": "2026-08-26T20:34:11Z",
+    "geo": {
+      "lat": 48.3794,
+      "lon": 31.1656,
+      "city": "Ukraine",
+      "country": "Ukraine"
+    },
+    "topics": [
+      "wagner",
+      "ukraine",
+      "combat",
+      "drone",
+      "military"
+    ],
+    "confidence": 0.75,
+    "source_name": "Wagner Z Group",
+    "links": [
+      {
+        "url": "https://t.me/wagner_group_pmcr/99234",
+        "label": "Wagner Z Group"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
