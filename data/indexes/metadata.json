@@ -119901,5 +119901,936 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_86469739018215424",
+    "title": "Saudi Arabia Prepares Military Response to Houthi Escalation",
+    "summary": "Saudi Arabia signals renewed military preparations following sustained Houthi attacks on critical infrastructure, with analysts warning of potential escalation in the broader Iran-regional conflict.",
+    "date_event": null,
+    "date_published": "2026-08-27T14:25:39Z",
+    "geo": {
+      "lat": 25.6242618,
+      "lon": 42.3528328,
+      "display_name": "Saudi Arabia"
+    },
+    "topics": [
+      "military",
+      "saudi-arabia",
+      "houthis",
+      "iran",
+      "middle-east",
+      "escalation",
+      "conflict"
+    ],
+    "confidence": 0.82,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2092981876428312935",
+        "title": "Clash Report - Saudi Military Response",
+        "source": "twitter-clash-report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86469632373841920",
+    "title": "CIA Director Ratcliffe Conducts Diplomatic Visit to Moscow",
+    "summary": "CIA Director John Ratcliffe traveled to Moscow for high-level talks, marking an unusual direct diplomatic channel between US intelligence and Russian officials during heightened geopolitical tensions.",
+    "date_event": null,
+    "date_published": "2026-08-27T14:38:10Z",
+    "geo": {
+      "lat": 55.625578,
+      "lon": 37.6063916,
+      "display_name": "Moscow, Russia"
+    },
+    "topics": [
+      "diplomacy",
+      "russia",
+      "united-states",
+      "intelligence",
+      "geopolitics",
+      "moscow"
+    ],
+    "confidence": 0.85,
+    "source_name": "cepa (@cepa)",
+    "links": [
+      {
+        "url": "https://x.com/cepa/status/2092985025507582365",
+        "title": "CEPA Tweet - CIA Ratcliffe Moscow Visit",
+        "source": "twitter-cepa"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HQvGxXfXwAAa5QO.jpg"
+  },
+  {
+    "id": "evt_86469715660144640",
+    "title": "Ratko Mladic, Convicted Genocide Perpetrator, Dies",
+    "summary": "Ratko Mladic, the former Bosnian Serb general convicted of genocide during the Bosnian War, dies.",
+    "date_event": null,
+    "date_published": "2026-08-27T14:17:30Z",
+    "geo": {
+      "lat": 43.9159,
+      "lon": 17.6791
+    },
+    "topics": [
+      "war-crimes",
+      "genocide",
+      "bosnia",
+      "justice",
+      "international-law",
+      "death",
+      "serbia"
+    ],
+    "confidence": null,
+    "source_name": "ELINT News (@ELINTNews)",
+    "links": [
+      {
+        "url": "https://x.com/ELINTNews/status/2092979824272814480",
+        "title": "ELINT News Tweet"
+      },
+      {
+        "url": "https://news.sky.com",
+        "title": "Sky News Report"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2092592675635515393/Gmjswv2t?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_86469784216043520",
+    "title": "Qatar Prime Minister Visits Tehran as Iran Tensions Remain High",
+    "summary": "Qatar's prime minister arrives in Tehran amid efforts to de-escalate tensions, while the U.S. warns it will continue military operations as long as necessary, with concerns about the Strait of Hormuz.",
+    "date_event": null,
+    "date_published": "2026-08-27T14:35:05Z",
+    "geo": {
+      "lat": 35.6892,
+      "lon": 51.389
+    },
+    "topics": [
+      "diplomacy",
+      "middle-east",
+      "iran",
+      "qatar",
+      "usa",
+      "military",
+      "strait-of-hormuz",
+      "tensions",
+      "geopolitics"
+    ],
+    "confidence": null,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2092978830889627770",
+        "title": "Fox News Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2092978354961932288/img/hkmU9jCicjxf66Kk.jpg"
+  },
+  {
+    "id": "evt_86469931612270592",
+    "title": "Trump Cites 57 Nuclear Weapons for North Korea; Diplomacy Prospects Under Review",
+    "summary": "President Trump recently stated that North Korea possesses 57 nuclear weapons, prompting analysis from CSIS experts regarding potential renewal of direct diplomatic engagement with North Korea",
+    "date_event": null,
+    "date_published": "2026-08-27T14:01:38Z",
+    "geo": {
+      "lat": 39.0167979,
+      "lon": 125.7473609
+    },
+    "topics": [
+      "north-korea",
+      "nuclear-weapons",
+      "diplomacy",
+      "trump-administration",
+      "korean-peninsula",
+      "strategic-policy"
+    ],
+    "confidence": null,
+    "source_name": "CSIS Korea Chair (@CSISKoreaChair)",
+    "links": [
+      {
+        "url": "https://x.com/CSISKoreaChair/status/2092975830926299579",
+        "title": "CSIS Korea Chair Tweet",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HQu-bQiWAAAqRb2.jpg"
+  },
+  {
+    "id": "evt_86469769384980480",
+    "title": "Iran Announces Shift to Offensive Military Doctrine",
+    "summary": "Iranian military leadership announces strategic pivot from defensive to offensive military posture with focus on rapid response and expanded geographic scope",
+    "date_event": null,
+    "date_published": "2026-08-27T13:39:04Z",
+    "geo": {
+      "lat": 35.6892523,
+      "lon": 51.3896004
+    },
+    "topics": [
+      "iran",
+      "military-doctrine",
+      "offensive-operations",
+      "middle-east",
+      "strategy"
+    ],
+    "confidence": null,
+    "source_name": "Critical Threats Project (@criticalthreats)",
+    "links": [
+      {
+        "url": "https://x.com/criticalthreats/status/2092970150563635524",
+        "title": "Critical Threats Tweet",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HQu5PtKXwAAnrt-.jpg"
+  },
+  {
+    "id": "evt_86470016983142400",
+    "title": "Israel Expels UK from Gaza Monitoring Centre",
+    "summary": "Israel has taken action to expel the United Kingdom from its monitoring centre in Gaza, marking an escalation in diplomatic tensions between the two nations regarding Gaza oversight.",
+    "date_event": null,
+    "date_published": "2026-08-27T14:19:46Z",
+    "geo": {
+      "lat": 31.5128679,
+      "lon": 34.4581358,
+      "country": "Palestinian Territories",
+      "region": "Gaza",
+      "city": "Gaza City"
+    },
+    "topics": [
+      "gaza",
+      "uk",
+      "israel",
+      "monitoring",
+      "diplomatic"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2092980394517750118",
+        "label": "Middle East Eye Tweet"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_86470026999140352",
+    "title": "Iranian Military Official Details New Targeting Strategy Against US and Israel",
+    "summary": "A senior Iranian military official articulated new targeting principles designed to reestablish deterrence capabilities against the United States and Israel, signaling Iranian military doctrine evolution amid preparations for potential future conflict.",
+    "date_event": null,
+    "date_published": "2026-08-27T14:00:02Z",
+    "geo": {
+      "lat": 35.6892523,
+      "lon": 51.3896004,
+      "country": "Iran",
+      "region": "Tehran",
+      "city": "Tehran"
+    },
+    "topics": [
+      "iran",
+      "military",
+      "strategy",
+      "deterrence",
+      "middle-east"
+    ],
+    "confidence": null,
+    "source_name": "Institute for the Study of War (@TheStudyofWar)",
+    "links": [
+      {
+        "url": "https://x.com/TheStudyofWar/status/2092975429338415300",
+        "label": "Institute for the Study of War Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HQu0cs7WkAAJKjo.png"
+  },
+  {
+    "id": "evt_86470037031915520",
+    "title": "US Navy EA-18G Electronic Warfare Aircraft Conducting Operations Over Middle East",
+    "summary": "US Navy electronic-warfare aircraft (EA-18G Growler) conduct patrols over the Middle East as the United States continues maritime security and blockade enforcement operations in the region.",
+    "date_event": null,
+    "date_published": "2026-08-27T14:10:13Z",
+    "geo": {
+      "lat": 27.2381259,
+      "lon": 51.1972311,
+      "country": "International Waters",
+      "region": "Persian Gulf",
+      "city": "Persian Gulf"
+    },
+    "topics": [
+      "us-navy",
+      "middle-east",
+      "electronic-warfare",
+      "military",
+      "operations"
+    ],
+    "confidence": null,
+    "source_name": "US Navy (@USNavy)",
+    "links": [
+      {
+        "url": "https://x.com/USNavy/status/2092977993278685520",
+        "label": "US Navy Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HQu_E9lW4AE3lyD.jpg"
+  },
+  {
+    "id": "evt_86469817623683072",
+    "title": "Escaped Convicts Conduct Unsanctioned Operations in Rostov",
+    "summary": "Reports emerge from Rostov region indicating escaped convicts being transported to Ukraine initiated unauthorized military actions, including attacks on civilians.",
+    "date_event": null,
+    "date_published": "2026-08-27T14:33:34.000Z",
+    "geo": {
+      "lat": 44.4858713,
+      "lon": 42.5106958,
+      "display_name": "Rostov Region, Russia"
+    },
+    "topics": [
+      "military",
+      "russian-federation",
+      "crime",
+      "mobilization",
+      "operational-security",
+      "ukraine"
+    ],
+    "confidence": null,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2092983868999565777",
+        "title": "War Translated report on escaped convicts"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86469817715957760",
+    "title": "Drone Attack on Sterlitamak Industrial Zone",
+    "summary": "Explosions reported in Sterlitamak following drone strikes on an industrial zone, with Bashkir Soda Company facilities likely targeted.",
+    "date_event": null,
+    "date_published": "2026-08-27T14:08:24.000Z",
+    "geo": {
+      "lat": 53.6194416,
+      "lon": 55.9616172,
+      "display_name": "Sterlitamak, Russia"
+    },
+    "topics": [
+      "military",
+      "russian-federation",
+      "drone-attack",
+      "infrastructure",
+      "industrial-facility",
+      "ukraine"
+    ],
+    "confidence": null,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2092977535793410196",
+        "title": "War Translated report on Sterlitamak drone attack"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86469817799843840",
+    "title": "Vehicle Explosion in Saint Petersburg",
+    "summary": "A Russian serviceman died in a vehicle explosion in Saint Petersburg; Russian channels report the victim was a Ministry of Defense representative.",
+    "date_event": null,
+    "date_published": "2026-08-27T13:53:53.000Z",
+    "geo": {
+      "lat": 59.9606739,
+      "lon": 30.1586551,
+      "display_name": "Saint Petersburg, Russia"
+    },
+    "topics": [
+      "military",
+      "russian-federation",
+      "explosion",
+      "casualty",
+      "targeted-operation",
+      "defense-ministry"
+    ],
+    "confidence": null,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2092973880226759083",
+        "title": "War Translated report on Saint Petersburg explosion"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86469717442732032",
+    "title": "USS Farragut (DDG 99) Departs Norfolk",
+    "summary": "Arleigh Burke-class Flight IIA guided missile destroyer USS Farragut (DDG 99) departing Naval Station Norfolk, Virginia on August 27, 2026.",
+    "date_event": null,
+    "date_published": "2026-08-27T13:41:50.000Z",
+    "geo": {
+      "lat": 36.8493695,
+      "lon": -76.2899539,
+      "display_name": "Norfolk, Virginia, United States"
+    },
+    "topics": [
+      "military",
+      "united-states",
+      "naval-movement",
+      "warship",
+      "destroyer"
+    ],
+    "confidence": null,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2092970850366415015",
+        "title": "USS Farragut departure post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86469717539201024",
+    "title": "USS Mahan (DDG 72) Departs Norfolk",
+    "summary": "Arleigh Burke-class Flight II guided missile destroyer USS Mahan (DDG 72) departing Naval Station Norfolk, Virginia on August 27, 2026.",
+    "date_event": null,
+    "date_published": "2026-08-27T13:38:31.000Z",
+    "geo": {
+      "lat": 36.8493695,
+      "lon": -76.2899539,
+      "display_name": "Norfolk, Virginia, United States"
+    },
+    "topics": [
+      "military",
+      "united-states",
+      "naval-movement",
+      "warship",
+      "destroyer"
+    ],
+    "confidence": null,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2092970015704150529",
+        "title": "USS Mahan departure post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86469964428517376",
+    "title": "Light Show Honors U.S.-China Friendship at Tianjin Tower",
+    "summary": "Tianjin Radio and Television Tower hosts themed light show commemorating decades-long friendship between American teacher Ronald Sakolsky and Chinese environmental hero Yin Yuzhen.",
+    "date_event": null,
+    "date_published": "2026-08-27T14:26:45.000Z",
+    "geo": {
+      "lat": 39.3032619,
+      "lon": 117.4163641,
+      "display_name": "Tianjin, China"
+    },
+    "topics": [
+      "culture",
+      "china",
+      "international-relations",
+      "environment",
+      "united-states",
+      "public-diplomacy"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2092982150505337120",
+        "title": "Xinhua news on Tianjin light show"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86469964516597760",
+    "title": "Xizang Infrastructure Recovery Following Mudslide Disaster",
+    "summary": "China reports progress on emergency communications support and infrastructure restoration following mudslide strike at a border port in southwest Xizang Autonomous Region.",
+    "date_event": null,
+    "date_published": "2026-08-27T14:06:01.000Z",
+    "geo": {
+      "lat": 29.8556443,
+      "lon": 90.8749807,
+      "display_name": "Xizang Autonomous Region, China"
+    },
+    "topics": [
+      "disaster",
+      "china",
+      "infrastructure",
+      "xizang",
+      "emergency-response",
+      "border"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2092976935009960291",
+        "title": "Xinhua report on Xizang infrastructure recovery"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86469964604678144",
+    "title": "China Central Bank Deploys Disaster Relief Funding for Xizang",
+    "summary": "China's central bank announces 5 billion yuan relief funding allocation for agricultural lending and small business support in Xizang disaster relief and reconstruction efforts.",
+    "date_event": null,
+    "date_published": "2026-08-27T13:39:54.000Z",
+    "geo": {
+      "lat": 29.8556443,
+      "lon": 90.8749807,
+      "display_name": "Xizang Autonomous Region, China"
+    },
+    "topics": [
+      "economic-policy",
+      "china",
+      "disaster-relief",
+      "xizang",
+      "agriculture",
+      "financing"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2092970363672309933",
+        "title": "Xinhua report on central bank disaster relief funding"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_2503647160301594",
+    "title": "US Government Designates Palestine Action Group as Terrorist Organization",
+    "summary": "The United States government formally labeled Palestine Action as a terrorist organization. This designation marks an escalation in the categorization of activist groups involved in Palestinian advocacy efforts.",
+    "date_event": null,
+    "date_published": "2026-08-27T13:41:29Z",
+    "geo": {
+      "lat": 38.9072,
+      "lon": -77.0369,
+      "country": "United States",
+      "city": "Washington",
+      "region": "District of Columbia"
+    },
+    "topics": [
+      "terrorism",
+      "designation",
+      "palestine",
+      "activism",
+      "united-states",
+      "policy"
+    ],
+    "confidence": 0.65,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/93873",
+        "label": "Clash Report Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/GBVQWWUcgxKRnrtylV2O-CBeXeruPgl0G5B3HsUul6rzCcOaoDvWicr8c1DD83VRTUZP33omZ-vx4Y-ViMqVh1YIE3mkKb2ZZ4jxOe1gaF29a_djGfyyV-GpQxwt1oni_xH_LJS7DSPcpWf2gFhsVCuFLKzX7tmKfEp9BFcQCT_3WYjE007SnapuNGayCA_jZ5CJvDOeatv9G1l9jSUn10z5gNITRcvnYwZ6zb7iEuogzmOD8DjRypseNEfbuNVyG48SmP0hsSlo9E432Wmaud38cPedpQsMJBKthVmxsFzKenWkKyTFdJJCMPHizevt70QkfOYAfmE9bAhDWOmarw.jpg"
+  },
+  {
+    "id": "evt_061581926216074834",
+    "title": "Sudan Deploys Modern Air Defense Systems in Response to Drone Strikes",
+    "summary": "Sudan's military deployed advanced air defense systems in Damazin, Blue Nile State, following multiple drone intercepts allegedly launched from Ethiopian territory. The deployment reflects escalating military tensions between Sudan and Ethiopia.",
+    "date_event": null,
+    "date_published": "2026-08-27T13:46:00Z",
+    "geo": {
+      "lat": 13.1,
+      "lon": 34.4,
+      "country": "Sudan",
+      "city": "Damazin",
+      "region": "Blue Nile"
+    },
+    "topics": [
+      "sudan",
+      "military",
+      "air-defense",
+      "drone",
+      "ethiopia",
+      "conflict"
+    ],
+    "confidence": 0.75,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/93874",
+        "label": "Clash Report Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/GBVQWWUcgxKRnrtylV2O-CBeXeruPgl0G5B3HsUul6rzCcOaoDvWicr8c1DD83VRTUZP33omZ-vx4Y-ViMqVh1YIE3mkKb2ZZ4jxOe1gaF29a_djGfyyV-GpQxwt1oni_xH_LJS7DSPcpWf2gFhsVCuFLKzX7tmKfEp9BFcQCT_3WYjE007SnapuNGayCA_jZ5CJvDOeatv9G1l9jSUn10z5gNITRcvnYwZ6zb7iEuogzmOD8DjRypseNEfbuNVyG48SmP0hsSlo9E432Wmaud38cPedpQsMJBKthVmxsFzKenWkKyTFdJJCMPHizevt70QkfOYAfmE9bAhDWOmarw.jpg"
+  },
+  {
+    "id": "evt_9232759536112659",
+    "title": "Serbian President Vucic Warns of Croatia Military Threat",
+    "summary": "Serbian President Aleksandar Vucic stated that Serbia considers Croatia's military alliance with Pristina and Tirana as a significant threat. Vucic emphasized Serbia will pursue diplomatic efforts while strengthening its military capabilities.",
+    "date_event": null,
+    "date_published": "2026-08-27T13:43:15Z",
+    "geo": {
+      "lat": 44.8153318,
+      "lon": 20.4456588,
+      "country": "Serbia",
+      "city": "Belgrade",
+      "region": "Central Serbia"
+    },
+    "topics": [
+      "serbia",
+      "military",
+      "diplomacy",
+      "regional-threat",
+      "balkans",
+      "defense"
+    ],
+    "confidence": 0.75,
+    "source_name": "Bellum Acta (@BellumActaNews)",
+    "links": [
+      {
+        "url": "https://t.me/BellumActaNews/176723",
+        "label": "Bellum Acta Post"
+      }
+    ],
+    "link_preview_image": "https://cdn1.telesco.pe/file/JqoqBsqO3P8qPRYbvRvqAd547R1pgz9Vk25dsgRDI8um0FHHRiRx4s00Vf4B5RrrDlPwc0b5BQlDyn5NvbDdVDMe69jFSYUFj9ILQeRvEldQqYcka92JpZOrz3Tk_u5icZCjaYhKOhm_5tZQL6y8OMVvOVnoMECzqv1mE95y0XrFkVWRkd2k8-glMBRLJOpFZbMXbg4J96LtP0l3hIRUjmdE5S03ypZSt7rtNQ4iSWzCgB7Bufzx54RRyDJdy7KVv26LnnpQKzXG-j82CKaFoM3Gel-WJNWeb7PVJxKbDeTpR5wlweav9SFONG8yXqzRx0ovwydR0RHV-y9PA6rniA.jpg"
+  },
+  {
+    "id": "evt_5023721229797633",
+    "title": "Anti-Migration Protest in Spain's Ceuta Demands Deportation of Moroccan Migrants",
+    "summary": "Local residents in Ceuta, Spain's autonomous city in North Africa, staged an anti-migrant demonstration demanding deportation of undocumented Moroccan migrants and implementation of stronger border controls.",
+    "date_event": null,
+    "date_published": "2026-08-27T14:27:11Z",
+    "geo": {
+      "lat": 35.8883,
+      "lon": -5.3144,
+      "country": "Spain",
+      "city": "Ceuta",
+      "region": "Ceuta"
+    },
+    "topics": [
+      "migration",
+      "spain",
+      "ceuta",
+      "border-security",
+      "protest",
+      "morocco"
+    ],
+    "confidence": 0.7,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/191977",
+        "label": "DD Geopolitics Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/Cae5Gc_3vfJ97pwb0lWZOeIKTzBsQQRZohyQMhZ4tXli8wW1DwCMrtD9f2KE9kMCtQeKau48y87BEtmXDYwA9-LeDqlZjdKIveXyttGCw0Z9mPBFxxk4wlU9LsaXcYfBS_H4oVD-hm2F3TSj3EuO7A9dPdCZi7RFrWjuMysU1i8964U2cq4pvbWFp-JCJpr9yz7Oe-b3-3IvwDdPqWVlQNilwNmL_noulpVCkmH1k5Mzysv5fFafaUYB_3O4i7U91xVj2hOoX2da0Xz399h7_5MJPpp_HGjYxNeSD6xtF3uA-Tb9awzxr4Q_MCUVHU-2mDC8dg4HvsZjVm1Yyv7Zow"
+  },
+  {
+    "id": "evt_9162679192530704",
+    "title": "Protesters Stage Mock Funerals for European Defense Executives Supporting Ukraine",
+    "summary": "Anti-war activists staged theatrical funeral processions targeting two European defense industry executives involved in supplying military equipment to Ukraine.",
+    "date_event": null,
+    "date_published": "2026-08-27T14:30:52Z",
+    "geo": {
+      "lat": 52.52,
+      "lon": 13.405,
+      "country": "Germany",
+      "city": "Berlin",
+      "region": "Berlin"
+    },
+    "topics": [
+      "ukraine",
+      "protest",
+      "defense-industry",
+      "military",
+      "europe",
+      "activism"
+    ],
+    "confidence": 0.6,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/191980",
+        "label": "DD Geopolitics Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/Cae5Gc_3vfJ97pwb0lWZOeIKTzBsQQRZohyQMhZ4tXli8wW1DwCMrtD9f2KE9kMCtQeKau48y87BEtmXDYwA9-LeDqlZjdKIveXyttGCw0Z9mPBFxxk4wlU9LsaXcYfBS_H4oVD-hm2F3TSj3EuO7A9dPdCZi7RFrWjuMysU1i8964U2cq4pvbWFp-JCJpr9yz7Oe-b3-3IvwDdPqWVlQNilwNmL_noulpVCkmH1k5Mzysv5fFafaUYB_3O4i7U91xVj2hOoX2da0Xz399h7_5MJPpp_HGjYxNeSD6xtF3uA-Tb9awzxr4Q_MCUVHU-2mDC8dg4HvsZjVm1Yyv7Zow"
+  },
+  {
+    "id": "evt_86469807544741888",
+    "title": "Israeli settlers release livestock on Palestinian land in West Bank",
+    "summary": "Extremist Israeli settlers released livestock onto Palestinian farmland in Burqa village, east of Ramallah, in the occupied West Bank. The action represents escalating settler aggression and land appropriation tactics targeting Palestinian communities.",
+    "date_event": "2026-08-27T13:44:23Z",
+    "date_published": "2026-08-27T13:44:23Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.2056,
+      "country": "Palestinian Territory",
+      "region": "West Bank",
+      "city": "Ramallah"
+    },
+    "topics": [
+      "settlers",
+      "west-bank",
+      "palestine",
+      "land-dispute",
+      "ramallah"
+    ],
+    "confidence": 0.75,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/236819",
+        "label": "Quds News Network"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/QMJrC9K1s2dZpqrQor9NbZEHxqXIPQlwxaK2tnTGo7NqG-o6bHhJOq7q9tYMtXfa3uOU0QgYzsEhJsg512CtRU8-UJLCrPmHsPtqk4TP1rZWbdmn30zq2Yg6A9wOaFsl3vIeYByC-msxuHej_1lBWZ2dOyXMHM1Xtw-NRZFVya8mPx2kPogIkkb7jm70DwW5DaFRZipiDc8Ccj9CgSR4T3LH_5CNAvMs2fm5iuUg_O0h_9UObX751pOn26fybx397wGHmMZWXPpFIDl9J8TfA8OH12I5NwmpVc08INNlzd2c8AZEzHp5wo8Uc7MJC1H60dX7u6r-Yp_bGRXfOupVtA"
+  },
+  {
+    "id": "evt_86469807649599488",
+    "title": "Israeli drone targets Gaza City",
+    "summary": "An Israeli occupation drone conducted a strike targeting central Gaza City on 2026-08-27. The operation reflects ongoing airborne surveillance and strike operations by Israeli forces within Gaza territorial airspace.",
+    "date_event": "2026-08-27T13:54:02Z",
+    "date_published": "2026-08-27T13:54:02Z",
+    "geo": {
+      "lat": 31.5254,
+      "lon": 34.4521,
+      "country": "Palestinian Territory",
+      "region": "Gaza",
+      "city": "Gaza City"
+    },
+    "topics": [
+      "drone-strike",
+      "gaza",
+      "military-operation",
+      "palestinian-territory"
+    ],
+    "confidence": 0.8,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/236820",
+        "label": "Quds News Network"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/QMJrC9K1s2dZpqrQor9NbZEHxqXIPQlwxaK2tnTGo7NqG-o6bHhJOq7q9tYMtXfa3uOU0QgYzsEhJsg512CtRU8-UJLCrPmHsPtqk4TP1rZWbdmn30zq2Yg6A9wOaFsl3vIeYByC-msxuHej_1lBWZ2dOyXMHM1Xtw-NRZFVya8mPx2kPogIkkb7jm70DwW5DaFRZipiDc8Ccj9CgSR4T3LH_5CNAvMs2fm5iuUg_O0h_9UObX751pOn26fybx397wGHmMZWXPpFIDl9J8TfA8OH12I5NwmpVc08INNlzd2c8AZEzHp5wo8Uc7MJC1H60dX7u6r-Yp_bGRXfOupVtA"
+  },
+  {
+    "id": "evt_86469807741874176",
+    "title": "Israeli drone strike on Gaza City civilians results in casualties",
+    "summary": "An Israeli drone strike targeted a group of civilians in central Gaza City on 2026-08-27, killing at least one Palestinian and wounding multiple others. The incident highlights civilian exposure to aerial military operations in densely populated urban Gaza.",
+    "date_event": "2026-08-27T14:12:56Z",
+    "date_published": "2026-08-27T14:12:56Z",
+    "geo": {
+      "lat": 31.5254,
+      "lon": 34.4521,
+      "country": "Palestinian Territory",
+      "region": "Gaza",
+      "city": "Gaza City"
+    },
+    "topics": [
+      "drone-strike",
+      "civilian-casualties",
+      "gaza",
+      "military-operation",
+      "palestinian-territory"
+    ],
+    "confidence": 0.85,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/236821",
+        "label": "Quds News Network"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/QMJrC9K1s2dZpqrQor9NbZEHxqXIPQlwxaK2tnTGo7NqG-o6bHhJOq7q9tYMtXfa3uOU0QgYzsEhJsg512CtRU8-UJLCrPmHsPtqk4TP1rZWbdmn30zq2Yg6A9wOaFsl3vIeYByC-msxuHej_1lBWZ2dOyXMHM1Xtw-NRZFVya8mPx2kPogIkkb7jm70DwW5DaFRZipiDc8Ccj9CgSR4T3LH_5CNAvMs2fm5iuUg_O0h_9UObX751pOn26fybx397wGHmMZWXPpFIDl9J8TfA8OH12I5NwmpVc08INNlzd2c8AZEzHp5wo8Uc7MJC1H60dX7u6r-Yp_bGRXfOupVtA"
+  },
+  {
+    "id": "evt_86469807846731776",
+    "title": "Air defense activity reported in Ethiopia",
+    "summary": "Unusual air defense activity got reported in Bamadon, southwest Ethiopia on 2026-08-27. The incident involves military alert responses in the southwestern regional zone and warrants monitoring for potential security implications.",
+    "date_event": "2026-08-27T13:50:21Z",
+    "date_published": "2026-08-27T13:50:21Z",
+    "geo": {
+      "lat": 5.4667,
+      "lon": 35.5333,
+      "country": "Ethiopia",
+      "region": "Southwest",
+      "city": "Bamadon"
+    },
+    "topics": [
+      "air-defense",
+      "ethiopia",
+      "military-alert",
+      "regional-security"
+    ],
+    "confidence": 0.6,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/65796",
+        "label": "Rerum Novarum Intel"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/kqbz2ShMgG1kc1emMpb4LB_3ygFb9uA2MevDvK4ptAOcR220EI1rKpQ6Li4EqozmEdZosQk7a0YD0RveaKcoLglx54IF6cA48iw_JqfXuAMWSsFhIXZWoCeJhg4CbKJ95YMFeizDbCjdbr43ThwnAej5thVhTh2cy3fF8yMvM-weoEdc5IoppupZ4IIgyXADX_XYyK7TNwmegCSecs5DxYcKrTE1thsxcCWMhf_mLmoOPnIeP_8ebrwdJLGQ9TNH91uSUKKJj56oem9qB6HPwm2sMnbSKsI3Y94E0lMkkFo-4E33bw8b6qlE_7IHwB6BhJYhU3zBbJ4cbVs5Hz0TGA.jpg"
+  },
+  {
+    "id": "evt_86469807947395072",
+    "title": "Ratko Mladic, Butcher of the Balkans, dies in The Hague prison",
+    "summary": "Ratko Mladic, the Bosnian Serb military leader convicted of war crimes and crimes against humanity, died in a prison hospital in The Hague on 2026-08-27 at age 84. Mladic served a life sentence for his role in the Srebrenica genocide and other atrocities during the Bosnian War.",
+    "date_event": "2026-08-27T14:19:20Z",
+    "date_published": "2026-08-27T14:19:20Z",
+    "geo": {
+      "lat": 52.0676,
+      "lon": 4.3039,
+      "country": "Netherlands",
+      "region": "North Holland",
+      "city": "The Hague"
+    },
+    "topics": [
+      "war-crimes",
+      "genocide",
+      "balkans",
+      "international-justice",
+      "serbia"
+    ],
+    "confidence": 0.95,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/65797",
+        "label": "Rerum Novarum Intel"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/kqbz2ShMgG1kc1emMpb4LB_3ygFb9uA2MevDvK4ptAOcR220EI1rKpQ6Li4EqozmEdZosQk7a0YD0RveaKcoLglx54IF6cA48iw_JqfXuAMWSsFhIXZWoCeJhg4CbKJ95YMFeizDbCjdbr43ThwnAej5thVhTh2cy3fF8yMvM-weoEdc5IoppupZ4IIgyXADX_XYyK7TNwmegCSecs5DxYcKrTE1thsxcCWMhf_mLmoOPnIeP_8ebrwdJLGQ9TNH91uSUKKJj56oem9qB6HPwm2sMnbSKsI3Y94E0lMkkFo-4E33bw8b6qlE_7IHwB6BhJYhU3zBbJ4cbVs5Hz0TGA.jpg"
+  },
+  {
+    "id": "evt_86469808035475456",
+    "title": "Shahed drone carrying FPV drones intercepted over Konotop Ukraine",
+    "summary": "A Shahed unmanned aerial vehicle carrying two FPV drones got shot down over Konotop in Ukraine. The engagement resulted in the recovery of a combat warhead by local youth, raising security concerns about unexploded ordnance in civilian areas.",
+    "date_event": "2026-08-27T14:03:29Z",
+    "date_published": "2026-08-27T14:03:29Z",
+    "geo": {
+      "lat": 51.4982,
+      "lon": 33.2878,
+      "country": "Ukraine",
+      "region": "Chernihiv",
+      "city": "Konotop"
+    },
+    "topics": [
+      "drone-intercept",
+      "ukraine",
+      "military-technology",
+      "fpv-drone",
+      "electronic-warfare"
+    ],
+    "confidence": 0.7,
+    "source_name": "Serhii FLASH — Technologies (@serhii_flash)",
+    "links": [
+      {
+        "url": "https://t.me/serhii_flash/7703",
+        "label": "Serhii FLASH Technologies"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/oVjtv8FvcK8Dxu61lWQDJ3GVkUg-s35Qg-1clDIROAYsN6trdWCHypZ_xNjQE65F4s5AP_b2w1ySKlP00VCw_tjWbgcMos5JyQwl0lJZAlb7VAQqEFKQrpTIeuqQvwkHlwpV6Xr8Ul38fQaWcPg6iFRScfRVjPFEvxLGtWhPVEElfITwV7_Wom8vW3z9PRzlhBHlgw14SEWGQrmDx2k5W53jhvidVTUz3FzbrAez1P-1DyOpQ1ZHpyXo3PibF8zpxr9Bjpgt2lN9dz-Z5EnPjYqIYp5kjwIyBCHtw3JtX-Clny3kEmByf5wC6qNGAVhs3ne5ehXTNV2aAaCcjJrH7g.jpg"
+  },
+  {
+    "id": "evt_86470132498448384",
+    "title": "Wildberries Warehouse Destroyed in Kotovsk, Tambov Region",
+    "summary": "Ukrainian sources report the destruction of a 108,000-square-meter Wildberries warehouse facility in Kotovsk, Tambov region. The facility appears completely destroyed based on satellite or reconnaissance imagery.",
+    "date_event": "2026-08-27T14:03:01Z",
+    "date_published": "2026-08-27T14:03:01Z",
+    "geo": {
+      "lat": 52.5,
+      "lon": 41.0,
+      "city": "Kotovsk",
+      "region": "Tambov",
+      "country": "Russia"
+    },
+    "topics": [
+      "infrastructure",
+      "destroyed-facility",
+      "warehouse",
+      "russia",
+      "ukraine",
+      "economic"
+    ],
+    "confidence": 0.75,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/45553",
+        "label": "UNITED24 Media Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86470132716552192",
+    "title": "Protest Posters Placed on Azerbaijani Embassy in Moscow",
+    "summary": "Unknown activists placed three protest posters on the building of Azerbaijan's embassy in Moscow. The posters contain Russian-language slogans criticizing Russia's treatment of citizens and allegations against Azerbaijan's leadership regarding human rights violations.",
+    "date_event": "2026-08-27T13:55:02Z",
+    "date_published": "2026-08-27T13:55:02Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "city": "Moscow",
+      "region": "Moscow City",
+      "country": "Russia"
+    },
+    "topics": [
+      "protest",
+      "embassy",
+      "azerbaijan",
+      "russia",
+      "political-demonstration",
+      "human-rights",
+      "activism"
+    ],
+    "confidence": 0.65,
+    "source_name": "Wagner Z Group (@wagner_group_pmcr)",
+    "links": [
+      {
+        "url": "https://t.me/wagner_group_pmcr/99261",
+        "label": "Wagner Z Group Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86470132607500288",
+    "title": "Ukrainian FPV Drone Strike on Russian BM-27 Uragan MLRS Near Kreminna",
+    "summary": "Combat footage from the Voyna18 channel captures a Ukrainian FPV drone strike on a Russian BM-27 Uragan multiple-launch rocket system near Kreminna in Luhansk region. The strike triggers a catastrophic explosion of the MLRS, sending a missile through a nearby vehicle carrying Russian military personnel.",
+    "date_event": "2026-08-27T14:05:08Z",
+    "date_published": "2026-08-27T14:05:08Z",
+    "geo": {
+      "lat": 48.95,
+      "lon": 38.27,
+      "city": "Kreminna",
+      "region": "Luhansk",
+      "country": "Ukraine"
+    },
+    "topics": [
+      "drone-strike",
+      "fpv-drone",
+      "uragan-mlrs",
+      "combat",
+      "luhansk",
+      "ukraine",
+      "russia",
+      "military"
+    ],
+    "confidence": 0.7,
+    "source_name": "WarLife 18+ (@Voyna18)",
+    "links": [
+      {
+        "url": "https://t.me/Voyna18/8699",
+        "label": "WarLife 18+ Combat Footage"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
