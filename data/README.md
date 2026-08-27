@@ -48,32 +48,13 @@ node scripts/validate-events.js --all
 node scripts/dedupe-events.js --dry-run
 ```
 
-## Search UI deploy flow
+## Pipeline context
 
-```
-identify.yml → qualify.yml (Tip & Queue) completes, or legacy collection.yml
-        │
-        ▼  (workflow_run)
-embeddings.yml  ← dedupes recent events, rebuilds data/indexes/* + data/stats.json,
-                   commits the result [skip ci]
-        │
-        ▼  (workflow_run)
-deploy-pages.yml
-                ← runs backfill_event_details.py (generates data/indexes/events/)
-                   copies data/indexes/ → docs/indexes/
-                   builds frontend/ → docs/
-                   uploads docs/ to GitHub Pages
-```
+The Tip & Queue pipeline writes `events/`; `indexes/` and `stats.json` get
+rebuilt downstream from it. Tip handoff format: [`queue/README.md`](queue/README.md).
 
-See [`queue/README.md`](queue/README.md) for the Tip & Queue handoff format.
-
-The site deploys to `https://osint.builders/`.
-
-```bash
-# Local frontend preview (after building the search index once):
-cd frontend && npm install && npm run dev   # http://localhost:5173/
-```
-
-## Retention
-
-The 90-day sweep runs weekly via `.github/workflows/create-release.yml`.
+Run flow, per-workflow triggers, and the 90-day retention schedule live in the
+repository rather than here — see the root `README.md` and
+`.github/workflows/README.md` at <https://github.com/osint-builders/osint>.
+(This file also ships inside the weekly data release tarball, where those paths
+do not exist.)

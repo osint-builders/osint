@@ -173,10 +173,11 @@ Walks you through type, metadata, and validation. Full guide: [`source/CONTRIBUT
 
 - [`AGENTS.md`](AGENTS.md) — conventions for AI agents and humans editing this repo.
 - [`data/SCHEMA.md`](data/SCHEMA.md) — entity schema.
-- [`data/README.md`](data/README.md) — storage layout, retention, validation scripts.
+- [`data/README.md`](data/README.md) — storage layout + `data/scripts/` reference. Also ships inside the weekly release tarball.
 - [`data/queue/README.md`](data/queue/README.md) — Tip & Queue record schema + lifecycle.
 - [`source/README.md`](source/README.md) — source system overview.
 - [`source/CONTRIBUTING.md`](source/CONTRIBUTING.md) — adding sources.
+- [`frontend/README.md`](frontend/README.md) — search UI components, libraries, local dev.
 - [`skills/README.md`](skills/README.md) — skill index.
 - [`.github/workflows/README.md`](.github/workflows/README.md) — workflow config & troubleshooting.
 

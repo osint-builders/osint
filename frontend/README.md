@@ -40,4 +40,4 @@ User query → SearchEngine / VectorSearchEngine → filters → ranked results
 
 ## Deployment
 
-`.github/workflows/deploy-pages.yml` builds the frontend, copies `data/indexes/` → `docs/indexes/`, and uploads `docs/` as the Pages artifact. Nothing under `docs/` belongs in git.
+Built and deployed by `.github/workflows/deploy-pages.yml`; triggers and concurrency are documented in [`.github/workflows/README.md`](../.github/workflows/README.md). Nothing under `docs/` belongs in git — CI rebuilds it per deploy.
