@@ -35,8 +35,7 @@ jobs:
           bash data/scripts/cleanup-old-data.sh
 
           if ! git diff --quiet; then
-            git config user.name  "OSINT Retention Bot"
-            git config user.email "retention-bot@github-actions"
+            bash builder/runtime/git-identity.sh
             git add data/events data/stats.json
             git commit -m "Apply 90-day retention sweep on ${{ steps.date.outputs.date }}
 

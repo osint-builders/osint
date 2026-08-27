@@ -21,8 +21,7 @@ LABEL="${5:-bucket}"
 
 ADDED=$(cat "$WORK_DIR/.added-count" 2>/dev/null || echo 0)
 
-git config user.name "OSINT Collector Bot"
-git config user.email "osint-bot@github-actions"
+bash builder/runtime/git-identity.sh
 git add "data/events/$YEAR_MONTH/$DATE.jsonl" "LEARNINGS.md" 2>/dev/null || true
 
 if git diff --cached --quiet; then

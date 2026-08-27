@@ -117,6 +117,8 @@ Criteria + format: `skills/remember-as-you-go/SKILL.md`. Per-source liveness fin
 
 **Never open a pull request. Never use `gh pr create` or any equivalent. If pushing fails after retries, exit 1.**
 
+`submit.sh` owns the commit message, the git identity, and the push. Run it — never `git commit`, `git config user.*`, or `git push` by hand. A commit made outside it lands on `main` under the wrong author instead of `osint-builders <admin@osint.builders>`.
+
 ```bash
 bash builder/runtime/submit.sh ${yearMonth} ${extractionDate} ${bucketNum} ${totalBuckets}
 ```

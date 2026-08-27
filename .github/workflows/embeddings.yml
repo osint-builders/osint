@@ -65,8 +65,7 @@ jobs:
           # Rebuild data indexes + unified stats before committing
           node data/scripts/rebuild-indexes.js
 
-          git config user.name "OSINT Embeddings Bot"
-          git config user.email "embeddings-bot@github-actions"
+          bash builder/runtime/git-identity.sh
           # Add deduped events + indexes; exclude generated indexes/events/
           # (regenerated at Pages deploy time).
           git add data/events data/indexes/fingerprints.json data/indexes/metadata.json data/indexes/schema.json data/indexes/embeddings.bin data/indexes/by-source.json data/indexes/by-topic.json data/indexes/by-location.json data/stats.json

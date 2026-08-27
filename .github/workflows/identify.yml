@@ -57,8 +57,7 @@ jobs:
             echo "identify: no new tips this run."
             exit 0
           fi
-          git config user.name "OSINT Identify Bot"
-          git config user.email "identify-bot@github-actions"
+          bash builder/runtime/git-identity.sh
           COUNT=$(git diff --cached --name-only | wc -l)
           git commit -m "Identify $COUNT tip(s) for ${{ steps.window.outputs.start }} -> ${{ steps.window.outputs.end }}
 

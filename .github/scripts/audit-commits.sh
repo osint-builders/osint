@@ -2,15 +2,16 @@
 # audit-commits.sh — tripwire for the pipeline's direct-push lane.
 #
 # Cloud agents process untrusted scraped content while holding a
-# Contents:write PAT and push straight to main (AGENTS.md: never open a PR).
-# Those commits carry [skip ci], so no push-triggered check sees them. This
-# script is the only thing that notices when one writes outside data/**.
+# Contents:write PAT and push straight to main. Those commits carry [skip ci],
+# so no push-triggered check sees them. This script is the only thing that
+# notices when one writes outside data/**.
 #
-# Scope = commits on main's FIRST-PARENT line, excluding merges. Reviewed work
-# arrives via pull request, so it lives on merged side branches and never
-# appears here; the pipeline's pushes are always first-parent. Selecting by
-# structure instead of by bot author email means a runtime agent committing
-# under an unexpected identity still gets audited.
+# This repo does not use pull requests — everything lands on main — so the
+# discriminator is authorship, not branch structure: anything not authored by a
+# maintainer is treated as automation and held to the data-path allow-list. The
+# pipeline has exactly one identity (builder/runtime/git-identity.sh), so an
+# agent that commits under any other identity is still caught by this default.
+# --first-parent --no-merges keeps the walk on main's own line of history.
 #
 # Usage:  [AUDIT_REF=main] [AUDIT_SINCE='26 hours ago'] bash .github/scripts/audit-commits.sh
 # Output: one TAB-separated line per violating commit: <sha> <author> <paths>
@@ -29,6 +30,8 @@ SINCE="${AUDIT_SINCE:-26 hours ago}"
 ALLOW_RE='^(data/events/|data/indexes/|data/queue/|data/stats\.json$|LEARNINGS\.md$)'
 
 # Humans. Their direct pushes are a maintainer's own call, not a tripwire.
+# Do NOT add admin@osint.builders here: that is the pipeline's own identity
+# (builder/runtime/git-identity.sh), and auditing it is the entire point.
 MAINTAINER_RE='^(erik@zettersten\.com|erik@veefriends\.com|.*@users\.noreply\.github\.com)$'
 
 RANGE="$REF"

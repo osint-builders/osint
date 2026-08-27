@@ -53,7 +53,7 @@ Drift detection on every PR + push to main. Four checks:
 - Trigger: `workflow_run` after each collection/identify/qualify run + a daily sweep.
 - Prompt-injection tripwire for agents holding a push-capable PAT. Asserts that commits reaching `main` **outside a pull request** touch only `data/events/**`, `data/indexes/**`, `data/queue/**`, `data/stats.json`, `LEARNINGS.md`; opens or comments on a **"Bot commit audit violation"** issue.
 - Detection lives in `.github/scripts/audit-commits.sh`; run it locally with `AUDIT_REF=main AUDIT_SINCE='7 days ago' bash .github/scripts/audit-commits.sh`.
-- Scope is `git log --first-parent --no-merges`, not an author-email allow-list. Reviewed work arrives on merged side branches and never appears there, while every pipeline push does — so an agent committing under an unexpected identity still gets audited. Maintainer emails are the only exclusion.
+- Scope is `git log --first-parent --no-merges`, not an author-email allow-list. Reviewed work arrives on merged side branches and never appears there, while every pipeline push does — so an agent committing under an unexpected identity still gets audited. Maintainer emails are the only exclusion; the pipeline identity `admin@osint.builders` is deliberately in scope.
 - `AUDIT_FLOOR_SHA` in the script pins the oldest auditable commit. Move it forward only deliberately.
 
 ## create-release.yml — "Create Weekly Data Release"
