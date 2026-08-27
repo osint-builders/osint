@@ -1,0 +1,142 @@
+name: Release CLI
+
+# Packs the search index into cli/embed/*.gz, cross-compiles the Go CLI for
+# five platforms, and re-points the cli-latest release.
+#
+# This ran as cli-prepare -> cli-build (5-way matrix) -> cli-release, with all
+# seven jobs sharing one JOB-level concurrency group. A concurrency group holds
+# one running and one pending entry, and cancel-in-progress: false protects
+# only the running one, so every extra matrix leg evicted the pending leg:
+# three of five were cancelled ~1s after queuing and cli-release then reported
+# "skipped". Go cross-compiles in-process and the embed payload is ~10 MB, so
+# one job looping the targets is both simpler and faster than the matrix ever
+# was -- no artifact round-trip, nothing left to cancel.
+#
+# Concurrency is workflow-level. queue: max gives real FIFO queuing instead of
+# single-slot eviction, so back-to-back triggers all release in order.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cli/**'
+      - '.github/workflows/release-cli.yml'
+  workflow_run:
+    workflows: ["Build Search Embeddings"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+concurrency:
+  group: release-cli
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  release:
+    # A failed embeddings run leaves the index half-written; only ship on success.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      TARGETS: linux/amd64 linux/arm64 darwin/amd64 darwin/arm64 windows/amd64
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+          cache-dependency-path: cli/go.sum
+
+      - name: Prepare embed data
+        run: bash cli/scripts/prepare-data.sh
+
+      - name: Cross-compile
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          for target in $TARGETS; do
+            goos="${target%%/*}"
+            goarch="${target##*/}"
+            ext=""
+            if [ "$goos" = "windows" ]; then ext=".exe"; fi
+            echo "--> osintcli-${goos}-${goarch}${ext}"
+            (cd cli && GOOS="$goos" GOARCH="$goarch" CGO_ENABLED=0 \
+              go build -trimpath -ldflags="-s -w" \
+              -o "../dist/osintcli-${goos}-${goarch}${ext}" .)
+          done
+
+      # Guards the old failure mode where a partial build still published a
+      # release: fail loudly instead of shipping a half-empty cli-latest.
+      - name: Verify every target built
+        run: |
+          set -euo pipefail
+          expected=$(echo "$TARGETS" | wc -w)
+          actual=$(find dist -type f -name 'osintcli-*' | wc -l)
+          ls -lh dist/
+          if [ "$actual" -ne "$expected" ]; then
+            echo "::error::Built $actual binaries, expected $expected."
+            exit 1
+          fi
+
+      - name: Re-point the cli-latest tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          # Drop the old release so its assets don't accumulate, then move the
+          # tag to HEAD. Runs immediately before publishing to keep the window
+          # in which cli-latest 404s as short as possible.
+          gh release delete cli-latest --yes --cleanup-tag 2>/dev/null || true
+          git tag -f cli-latest
+          git push origin cli-latest --force
+
+      - name: Publish cli-latest release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: cli-latest
+          name: OSINT CLI Tool (latest)
+          body: |
+            ## OSINT CLI Tool
+
+            Cross-platform single-file executable for querying OSINT world events
+            offline. Data and semantic embeddings are baked into the binary.
+
+            ### Download
+
+            | Platform | Binary |
+            |----------|--------|
+            | Linux x86_64 | `osintcli-linux-amd64` |
+            | Linux ARM64 | `osintcli-linux-arm64` |
+            | macOS Intel | `osintcli-darwin-amd64` |
+            | macOS Apple Silicon | `osintcli-darwin-arm64` |
+            | Windows x86_64 | `osintcli-windows-amd64.exe` |
+
+            ### Quick Start
+
+            ```bash
+            chmod +x osintcli-*        # Linux/macOS
+            ./osintcli-linux-amd64 search "strait of hormuz"
+            ./osintcli-linux-amd64 list --country Iran --limit 10
+            ./osintcli-linux-amd64 get evt_53043659343429632
+            ./osintcli-linux-amd64 similar evt_53043659343429632
+            ./osintcli-linux-amd64 stats
+            ```
+
+            ### Output Formats
+
+            `--format table` (default) | `--format json` | `--format markdown`
+
+            ---
+            🤖 Built automatically from the latest embeddings index.
+          files: dist/osintcli-*
+          draft: false
+          prerelease: false
+          make_latest: true
+          fail_on_unmatched_files: true

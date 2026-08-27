@@ -35,9 +35,9 @@ For working search locally, build the index once (`python builder/embeddings/bui
 User query → SearchEngine / VectorSearchEngine → filters → ranked results
                 ↓
         /indexes/{schema,metadata}.json + embeddings.bin
-        (copied from data/indexes/ by deploy-downstream.yml at deploy time)
+        (copied from data/indexes/ by deploy-pages.yml at deploy time)
 ```
 
 ## Deployment
 
-`.github/workflows/deploy-downstream.yml` (`pages-build`/`pages-deploy` jobs) builds the frontend, copies `data/indexes/` → `docs/indexes/`, and uploads `docs/` as the Pages artifact. Nothing under `docs/` belongs in git.
+`.github/workflows/deploy-pages.yml` builds the frontend, copies `data/indexes/` → `docs/indexes/`, and uploads `docs/` as the Pages artifact. Nothing under `docs/` belongs in git.

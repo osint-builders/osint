@@ -37,7 +37,10 @@ Warp Cloud Agent (per batch)
     │
     ▼
 embeddings.yml                         # cross-batch dedupe + search index rebuild
-deploy-downstream.yml                  # UI deploy + CLI release (parallel jobs)
+    │
+    ▼  (workflow_run, in parallel)
+deploy-pages.yml                       # UI deploy
+release-cli.yml                        # CLI cross-compile + cli-latest release
 ```
 
 A legacy single-phase flow (`collection.yml` → `builder/index.ts`) still exists, paused: one Warp agent processes a whole bucket of ~12 sources sequentially instead of small per-tip batches. `builder/qualify.ts::buildQualifyPrompt()` renders the prompt from `builder/prompts/qualify-prompt.md` — that template, plus the scripts in `builder/runtime/` and the shared spawn/poll logic in `builder/lib/agent-runner.ts`, form the source of truth. Not this README.

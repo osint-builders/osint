@@ -99,6 +99,8 @@ ${queueFilesList}
 
 **Never open a pull request. Never use `gh pr create` or any equivalent. If pushing fails after retries, exit 1.**
 
+`submit.sh` owns the commit message, the git identity, and the push. Run it — never `git commit`, `git config user.*`, or `git push` by hand. A commit made outside it lands on `main` under the wrong identity and defeats `.github/workflows/audit-bot-commits.yml`.
+
 ```bash
 bash builder/runtime/submit.sh ${yearMonth} ${extractionDate} ${batchNum} ${totalBatches} batch
 ```

@@ -58,7 +58,7 @@ embeddings.yml  ← dedupes recent events, rebuilds data/indexes/* + data/stats.
                    commits the result [skip ci]
         │
         ▼  (workflow_run)
-deploy-downstream.yml (pages-build/pages-deploy jobs)
+deploy-pages.yml
                 ← runs backfill_event_details.py (generates data/indexes/events/)
                    copies data/indexes/ → docs/indexes/
                    builds frontend/ → docs/

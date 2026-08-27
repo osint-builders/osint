@@ -54,10 +54,9 @@ frontend/dist/
 # Exception: builder's shared TS helpers dir is not a Python lib dir either
 !builder/lib/
 
-# Built frontend artifacts. The Pages job group in
-# .github/workflows/deploy-downstream.yml builds these on demand and
-# uploads them as a Pages artifact — no need to commit. Local `npm run
-# build` puts the output here too; ignore it.
+# Built frontend artifacts. .github/workflows/deploy-pages.yml builds these
+# on demand and uploads them as a Pages artifact — no need to commit. Local
+# `npm run build` puts the output here too; ignore it.
 docs/
 data/indexes/events/
 
