@@ -4,6 +4,10 @@
 builder/prompts/** text eol=lf
 builder/scripts/__fixtures__/** text eol=lf
 
+# Shell scripts run on Linux runners and inside the cloud agent image. A CRLF
+# committed from a Windows checkout makes them fail at the shebang.
+*.sh text eol=lf
+
 # JSONL data files are append-only event stores. On merge conflicts always
 # take the union (ours + theirs) rather than leaving conflict markers in the
 # data. Use the 'union' merge driver which concatenates both sides.

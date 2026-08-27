@@ -1,13 +1,12 @@
 name: Audit Bot Commits
 
-# Collection agents push directly to main with a Contents:write PAT while
-# processing untrusted scraped content. This audit compensates: it verifies
-# that every recent bot-authored commit touches ONLY the expected data paths,
-# and opens an issue when one steps outside them (possible prompt injection
-# or a broken runtime script).
+# Tripwire for the pipeline's direct-push lane. Collection/qualify agents push
+# straight to main with a Contents:write PAT while processing untrusted scraped
+# content, and their commits carry [skip ci] so no push-triggered check sees
+# them. This workflow runs after each pipeline run and on a daily sweep.
 #
-# Bot commits carry [skip ci], so push-triggered checks never see them —
-# this workflow runs after each collection run and on a daily sweep instead.
+# Detection logic lives in .github/scripts/audit-commits.sh so it can be run
+# and tested locally. This file only turns its output into a GitHub issue.
 
 on:
   workflow_run:
@@ -22,54 +21,68 @@ permissions:
   contents: read
   issues: write
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   audit:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
-      - name: Audit recent bot commits
+      - name: Audit direct pushes to main
+        id: audit
+        run: |
+          set -uo pipefail
+          if bash .github/scripts/audit-commits.sh > violations.tsv; then
+            echo "Audit clean: every direct push to main stayed within the allowed data paths."
+            echo "clean=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "clean=false" >> "$GITHUB_OUTPUT"
+            cat violations.tsv
+          fi
+
+      # Only fails on violations this workflow has not already reported, so a
+      # single unresolved incident cannot produce an endless run of red X's.
+      - name: Report new violations
+        if: steps.audit.outputs.clean == 'false'
         env:
           GH_TOKEN: ${{ github.token }}
+          TITLE: Bot commit audit violation
         run: |
           set -euo pipefail
-          # Paths a bot identity may touch. Everything else trips the audit.
-          ALLOW_RE='^(data/events/|data/indexes/|data/queue/|data/stats\.json$|LEARNINGS\.md$)'
-          BOT_EMAILS='osint-bot@github-actions|embeddings-bot@github-actions|retention-bot@github-actions|identify-bot@github-actions'
+          ISSUE=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open \
+            --search "$TITLE in:title" --json number --jq '.[0].number // empty')
 
-          VIOLATIONS=""
-          while read -r sha; do
-            author=$(git show -s --format='%ae' "$sha")
-            echo "$author" | grep -qE "$BOT_EMAILS" || continue
-            bad=$(git diff-tree --no-commit-id --name-only -r "$sha" \
-              | grep -vE "$ALLOW_RE" || true)
-            if [ -n "$bad" ]; then
-              VIOLATIONS="$VIOLATIONS\n- $sha ($author):\n$(echo "$bad" | sed 's/^/    /')"
-            fi
-          done < <(git log --since='26 hours ago' --format='%H' main)
-
-          if [ -n "$VIOLATIONS" ]; then
-            echo "::error::Bot commit(s) touched paths outside the allow-list."
-            printf 'Violations:%b\n' "$VIOLATIONS"
-            BODY="Bot-authored commit(s) modified files outside the allowed data paths in the last 26 hours. Investigate for prompt injection or broken runtime scripts.
-
-          Allowed: data/events/**, data/indexes/**, data/queue/**, data/stats.json, LEARNINGS.md
-          $(printf '%b' "$VIOLATIONS")"
-            EXISTING=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open \
-              --search "Bot commit audit violation in:title" \
-              --json number --jq '.[0].number // empty')
-            if [ -n "$EXISTING" ]; then
-              gh issue comment "$EXISTING" --repo "$GITHUB_REPOSITORY" --body "$BODY"
-            else
-              gh issue create --repo "$GITHUB_REPOSITORY" \
-                --title "Bot commit audit violation" --body "$BODY"
-            fi
-            exit 1
+          REPORTED=""
+          if [ -n "$ISSUE" ]; then
+            REPORTED=$(gh issue view "$ISSUE" --repo "$GITHUB_REPOSITORY" \
+              --json body,comments --jq '.body, .comments[].body')
           fi
-          echo "Audit clean: all recent bot commits stayed within allowed paths."
+
+          NEW=""
+          while IFS=$'\t' read -r sha author paths; do
+            [ -n "$sha" ] || continue
+            case "$REPORTED" in *"$sha"*) continue ;; esac
+            NEW="${NEW}- \`${sha}\` (${author}): ${paths}"$'\n'
+          done < violations.tsv
+
+          if [ -z "$NEW" ]; then
+            echo "::notice::Violations already reported on issue #${ISSUE}; nothing new."
+            exit 0
+          fi
+
+          echo "::error::Direct push(es) to main touched paths outside the allow-list."
+          BODY="Commit(s) pushed directly to \`main\` (not via a pull request) modified files outside the allowed data paths. Investigate for prompt injection or a broken runtime script.
+
+          Allowed: \`data/events/**\`, \`data/indexes/**\`, \`data/queue/**\`, \`data/stats.json\`, \`LEARNINGS.md\`
+
+          ${NEW}
+          Run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+
+          if [ -n "$ISSUE" ]; then
+            gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body "$BODY"
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$TITLE" --body "$BODY"
+          fi
+          exit 1

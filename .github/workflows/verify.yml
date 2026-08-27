@@ -73,9 +73,9 @@ jobs:
 
       - name: Lint runtime scripts
         run: |
-          for f in builder/runtime/*.sh; do
+          for f in builder/runtime/*.sh .github/scripts/*.sh; do
             bash -n "$f"
           done
           if command -v shellcheck >/dev/null 2>&1; then
-            shellcheck -S warning builder/runtime/*.sh
+            shellcheck -S warning builder/runtime/*.sh .github/scripts/*.sh
           fi
