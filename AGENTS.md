@@ -50,7 +50,7 @@ Human overview: [`README.md`](README.md). Schema: [`data/SCHEMA.md`](data/SCHEMA
 - Twitter/X sources: `image_urls: []` — their media requires auth.
 
 ### Time window
-- Each run: **1-hour lookback** from dispatch time (UTC). Three runs per day — intentional sampling, not continuous coverage.
+- Each run: **1-hour lookback** from dispatch time. One scheduled run per day (09:00 America/New_York) — deliberate sampling, not continuous coverage. Widening the cadence or the lookback both increase qualify-stage LLM spend roughly linearly with tip count.
 - Reject + log events outside the window; `validate-events.js --strict --time-window` enforces.
 
 ### Dedup
@@ -106,4 +106,4 @@ Skill editing rules:
 - Don't introduce `os.getenv`-style secret reading from the agent prompt; secrets flow through the Warp env, not the repo.
 - Don't commit `node_modules/` or media files to the repo.
 - **Don't open pull requests or merge requests — ever, for any change.** This repo works directly on `main`. Never use `gh pr create` or any equivalent. Runtime agents commit and push via `builder/runtime/submit.sh`; if push fails after retries, exit 1. For development work, commit to `main` and push — rebase onto `origin/main` rather than creating merge commits, so history stays linear and the audit can walk it.
-- Don't add a `schedule:` trigger back to `identify.yml`/`qualify.yml`/`collection.yml` without confirming with the maintainer — they're intentionally on-demand-only while the new pipeline is validated.
+- Don't add a `schedule:` trigger to `qualify.yml` or `collection.yml`. `identify.yml` carries the only approved cron (daily 09:00 America/New_York); `qualify.yml` reaches the schedule through its `workflow_run` chain, and a second cron would process every tip twice. `collection.yml` stays on-demand-only.

@@ -4,12 +4,13 @@ See the top-level [README.md](../../README.md) for architecture and secrets setu
 
 ## identify.yml — "Identify OSINT Tips" (Tip & Queue, stage 1)
 
-- Trigger: `workflow_dispatch` only for now (schedule commented out until the pipeline is validated).
+- Triggers: daily at **09:00 America/New_York** (`cron: '0 9 * * *'` with an IANA `timezone:`, so DST is handled and it does not drift), plus `workflow_dispatch`.
+- This is the only scheduled entry point for collection — `qualify.yml` chains off it via `workflow_run`. Do not add a schedule to `qualify.yml` too, or every tip gets processed twice.
 - Runs `builder/runtime/identify.sh` directly on the GitHub Actions runner — **no Warp agent, no LLM spend**. Cheap curl/jq/python3 scan across every processable source for the last hour; writes tip records to `data/queue/pending/` and commits with the ephemeral `github.token` (no `OSINT_GH_TOKEN` needed for this stage).
 
 ## qualify.yml — "Qualify OSINT Tips" (Tip & Queue, stage 2)
 
-- Triggers: `workflow_dispatch`, plus `workflow_run` after identify.yml completes (schedule commented out until the pipeline is validated).
+- Triggers: `workflow_dispatch`, plus `workflow_run` after identify.yml completes. Intentionally has **no** `schedule:` of its own — the daily cadence lives on identify.yml and reaches this stage through the chain.
 - Job `qualify` runs `builder/qualify.ts`, which partitions `data/queue/pending/*.json` into small batches (default 3 tips, `QUALIFY_BATCH_SIZE` override) and spawns one short-lived Warp Cloud Agent per batch to translate/extract/geocode/enrich each tip, then archives consumed tips to `data/queue/processed/`.
 - Shares spawn/poll/cancel infrastructure with `collect` via `builder/lib/agent-runner.ts`, including the 10-minute per-run deadline and BLOCKED-state cancellation.
 - Job `alert-on-failure` opens or updates a **"Qualify workflow failing"** issue on failure.

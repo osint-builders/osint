@@ -7,14 +7,25 @@ name: Identify OSINT Tips
 # ephemeral github.token instead). Sources with a hit get a lightweight tip
 # record committed to data/queue/pending/ for qualify.yml to process.
 #
-# Cadence: on demand only for now (workflow_dispatch). Re-add a `schedule:`
-# trigger once the new pipeline is validated end-to-end.
+# Cadence: once daily at 09:00 America/New_York, plus manual dispatch.
+# qualify.yml chains off this run via `workflow_run`, so this single trigger
+# drives the whole Tip & Queue pipeline — do not also schedule qualify.yml or
+# each tip gets picked up twice.
+#
+# `timezone:` (IANA) is supported on cron entries as of March 2026 and handles
+# daylight saving, so this stays 9 AM Eastern year-round rather than drifting
+# an hour twice a year the way a fixed UTC offset would. 09:00 also sits well
+# clear of the 01:00-03:00 DST transition window, where fall-back behaviour is
+# undocumented.
+#
+# NOTE: identify.sh scans a 1-hour lookback, so one run/day samples one hour of
+# each day. Widen the window below if you want broader daily coverage.
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: '0 9,13,17 * * *'
-  #     timezone: America/New_York
+  schedule:
+    - cron: '0 9 * * *'
+      timezone: America/New_York
 
 concurrency:
   group: osint-identify
