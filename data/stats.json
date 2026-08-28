@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-08-28T18:12:23.756Z",
+  "last_updated": "2026-08-28T18:23:28.730Z",
   "data_range": {
     "oldest_date": "2024-12-12",
-    "newest_date": "2026-08-27"
+    "newest_date": "2026-08-28"
   },
   "statistics": {
-    "total_events": 3802,
+    "total_events": 3839,
     "events_by_month": {
       "2024-12": 1,
       "2026-02": 1,
       "2026-04": 430,
       "2026-05": 3269,
-      "2026-08": 101
+      "2026-08": 138
     },
     "events_by_source": {
       "Twitter @NguyenThiHo88": 5,
@@ -207,7 +207,7 @@
       "The Diplomat (@TheDiplomat)": 2,
       "China Power Project (@ChinaP0wer)": 1,
       "Sindikasyon Teknolohiya (@SindikasyonTek)": 2,
-      "ABC News (@ABC)": 50,
+      "ABC News (@ABC)": 54,
       "CNN International (@cnni)": 3,
       "Taiwan News (@TaiwanNewsEN)": 19,
       "PLA Tracker (@PLATracker)": 1,
@@ -612,9 +612,9 @@
       "MdaSpace (@MdaSpace)": 8,
       "Natalierevolts (@Natalierevolts)": 16,
       "KoreaHerald (@KoreaHerald)": 7,
-      "Thewarzonewire (@Thewarzonewire)": 14,
+      "Thewarzonewire (@Thewarzonewire)": 17,
       "olongapotimes (@olongapotimes)": 9,
-      "Clash Report (@ClashReport)": 73,
+      "Clash Report (@ClashReport)": 76,
       "Esri Water Resources (@EsriWater)": 13,
       "PyongyangToday (@PyongyangToday)": 8,
       "Nasa (@Nasa)": 14,
@@ -626,7 +626,7 @@
       "BatesGill (@BatesGill)": 17,
       "EtienneLh (@EtienneLh)": 16,
       "IMO HQ (@IMOHQ)": 14,
-      "Gcaptain (@Gcaptain)": 16,
+      "Gcaptain (@Gcaptain)": 17,
       "TheDailynk (@TheDailynk)": 14,
       "ChinaP0wer (@ChinaP0wer)": 12,
       "cnni (@cnni)": 20,
@@ -648,7 +648,7 @@
       "inside_nk (@inside_nk)": 17,
       "Allsource4 (@Allsource4)": 8,
       "MDAT Gulf of Guinea (@MDAT_GoG)": 14,
-      "Middle East Eye (@MiddleEastEye)": 57,
+      "Middle East Eye (@MiddleEastEye)": 58,
       "KC_NWT (@KC_NWT)": 13,
       "Raytoribo (@Raytoribo)": 13,
       "Therealshipdude (@Therealshipdude)": 17,
@@ -814,14 +814,14 @@
       "r/UkraineWarVideoReport": 3,
       "Dr. Minh Tran (@MinhDr18)": 4,
       "Pandura (@Scpandura)": 1,
-      "Rerum Novarum Intel (@rnintel)": 24,
-      "DD Geopolitics (@DDGeopolitics)": 19,
-      "Insider Paper (@insiderpaper)": 6,
+      "Rerum Novarum Intel (@rnintel)": 25,
+      "DD Geopolitics (@DDGeopolitics)": 22,
+      "Insider Paper (@insiderpaper)": 7,
       "mdaspace (@MdaSpace)": 1,
-      "UNITED24 Media (@United24media)": 8,
+      "UNITED24 Media (@United24media)": 9,
       "r/NonCredibleDefense (reddit.com/r/NonCredibleDefense)": 3,
       "Bellum Acta (@BellumActaNews)": 14,
-      "Quds News Network (@QudsNen)": 42,
+      "Quds News Network (@QudsNen)": 43,
       "War Monitor (@warmonitors)": 5,
       "TradeWinds (@tradewindsnews)": 1,
       "Wagner Z Group (@wagner_group_pmcr)": 6,
@@ -830,10 +830,10 @@
       "BBC News (World) (@BBCWorld)": 3,
       "Lebanese News and Updates (@LebUpdate)": 12,
       "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)": 8,
-      "Middle East Spectator (@Middle_East_Spectator)": 8,
+      "Middle East Spectator (@Middle_East_Spectator)": 10,
       "Our Wars, Today (@ourwarstoday)": 7,
       "The Associated Press (@AP)": 1,
-      "Geopolitics Prime (@geopolitics_prime)": 9,
+      "Geopolitics Prime (@geopolitics_prime)": 11,
       "Korea Economic Institute of America (@KoreaEconInst)": 1,
       "TradeWinds (@Tradewindsnews)": 1,
       "WarshipCam (@Warshipcam)": 3,
@@ -841,21 +841,25 @@
       "Middle East Spectator — MES (@Middle_East_Spectator)": 2,
       "Serhii FLASH — Technologies (@serhii_flash)": 3,
       "AFU Strategic Communications (@AFUStratCom)": 4,
-      "Intel Slava Z (@intelslava)": 5,
+      "Intel Slava Z (@intelslava)": 8,
       "Bloomberg Originals (@BBGOriginals)": 1,
       "Institute for the Study of War (@TheStudyofWar)": 2,
       "Critical Threats Project (@criticalthreats)": 2,
-      "War Translated (@wartranslated)": 7,
+      "War Translated (@wartranslated)": 9,
       "UNITED24 Media": 3,
       "Wagner Z Group": 4,
       "ABC News": 3,
-      "OSINT Technical (@Osinttechnical)": 2,
+      "OSINT Technical (@Osinttechnical)": 3,
       "War Translated": 1,
       "Middle East Spectator": 1,
-      "Quds News Network": 3
+      "Quds News Network": 3,
+      "cnni": 1,
+      "twitter-criticalthreats": 1,
+      "BBC World News": 5,
+      "BBC Breaking News": 1
     },
     "media_files": {
-      "images": 20,
+      "images": 33,
       "videos": 0
     }
   },
@@ -907,7 +911,8 @@
     "2026-05-27": 150,
     "2026-08-25": 49,
     "2026-08-26": 21,
-    "2026-08-27": 31
+    "2026-08-27": 37,
+    "2026-08-28": 31
   },
-  "average_confidence": 0.8772727272727273
+  "average_confidence": 0.8807692307692309
 }

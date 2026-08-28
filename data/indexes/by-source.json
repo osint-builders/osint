@@ -2,9 +2,9 @@
   {
     "source_id": "unknown",
     "source_name": "Twitter @NguyenThiHo88",
-    "count": 3785,
+    "count": 3804,
     "earliest_date": "2024-12-12T00:00:00Z",
-    "latest_date": "2026-08-27T14:35:05Z"
+    "latest_date": "2026-08-28T17:59:48.000Z"
   },
   {
     "source_id": "telegram-qudsnen",
@@ -23,9 +23,9 @@
   {
     "source_id": "telegram-intelslava",
     "source_name": "Intel Slava Z (@intelslava)",
-    "count": 2,
+    "count": 5,
     "earliest_date": "2026-08-25T20:38:50+00:00",
-    "latest_date": "2026-08-25T20:46:48+00:00"
+    "latest_date": "2026-08-28T17:27:46Z"
   },
   {
     "source_id": "twitter-sim-nasr",
@@ -75,5 +75,47 @@
     "count": 1,
     "earliest_date": "2026-08-27T13:39:04Z",
     "latest_date": "2026-08-27T13:39:04Z"
+  },
+  {
+    "source_id": "twitter-abc",
+    "source_name": "ABC News (@ABC)",
+    "count": 4,
+    "earliest_date": "2026-08-27T13:56:20.000Z",
+    "latest_date": "2026-08-28T17:33:41.000Z"
+  },
+  {
+    "source_id": "telegram-insiderpaper",
+    "source_name": "Insider Paper (@insiderpaper)",
+    "count": 1,
+    "earliest_date": "2026-08-28T17:10:19Z",
+    "latest_date": "2026-08-28T17:10:19Z"
+  },
+  {
+    "source_id": "telegram-middle-east-spectator",
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "count": 2,
+    "earliest_date": "2026-08-28T17:07:22Z",
+    "latest_date": "2026-08-28T17:20:40Z"
+  },
+  {
+    "source_id": "telegram-clashreport",
+    "source_name": "Clash Report (@ClashReport)",
+    "count": 3,
+    "earliest_date": "2026-08-28T17:03:30+00:00",
+    "latest_date": "2026-08-28T17:08:36+00:00"
+  },
+  {
+    "source_id": "telegram-geopolitics-prime",
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "count": 2,
+    "earliest_date": "2026-08-28T17:03:52+00:00",
+    "latest_date": "2026-08-28T17:44:01+00:00"
+  },
+  {
+    "source_id": "telegram-ddgeopolitics",
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "count": 3,
+    "earliest_date": "2026-08-28T17:23:02+00:00",
+    "latest_date": "2026-08-28T17:33:16+00:00"
   }
 ]
