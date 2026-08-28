@@ -121860,5 +121860,407 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_86954789925044224",
+    "title": "UANI CEO discusses Iranian regime's nuclear threat on Al Arabiya",
+    "summary": "United Against Nuclear Iran CEO Ambassador Mark D. Wallace appeared on Al Arabiya television to discuss the Iranian regime's nuclear threat and related policy concerns.",
+    "date_event": null,
+    "date_published": "2026-08-28T22:31:18Z",
+    "geo": {
+      "lat": 35.6762,
+      "lon": 51.4243
+    },
+    "topics": [
+      "iran",
+      "nuclear",
+      "sanctions",
+      "proliferation"
+    ],
+    "confidence": null,
+    "source_name": "UANI (@UANI)",
+    "links": [
+      {
+        "title": "Tweet",
+        "url": "https://x.com/UANI/status/2093466480268480584"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HQ170n0WQAApc7m.jpg"
+  },
+  {
+    "id": "evt_86954745536724992",
+    "title": "Iran ready for regional cooperation, Pezeshkian says",
+    "summary": "Iranian President Masoud Pezeshkian announced Iran's readiness for cooperation and understanding with regional countries, including Saudi Arabia and United Arab Emirates, amid ongoing sanctions.",
+    "date_event": null,
+    "date_published": "2026-08-28T22:44:18Z",
+    "geo": {
+      "lat": 32.4279,
+      "lon": 53.688
+    },
+    "topics": [
+      "iran",
+      "diplomacy",
+      "sanctions",
+      "regional-cooperation"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "title": "Tweet",
+        "url": "https://x.com/MiddleEastEye/status/2093469753511649422"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2093294084794257408/pnOsN-HL?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_86954767712010240",
+    "title": "Artemis II crew members receive Congressional Space Medal of Honor from President Trump",
+    "summary": "The four crew members of Artemis II received the Congressional Space Medal of Honor from President Donald J. Trump at NASA Johnson Space Center for their historic, record-setting mission around the Moon.",
+    "date_event": null,
+    "date_published": "2026-08-28T22:03:45Z",
+    "geo": {
+      "lat": 29.5502,
+      "lon": -95.0975
+    },
+    "topics": [
+      "space",
+      "artemis",
+      "nasa",
+      "lunar-exploration"
+    ],
+    "confidence": null,
+    "source_name": "Nasa (@Nasa)",
+    "links": [
+      {
+        "title": "Tweet",
+        "url": "https://x.com/Nasa/status/2093459546425475519"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HQ12UUGXoAADaYm.jpg"
+  },
+  {
+    "id": "evt_1787957239695066",
+    "title": "Israeli Airstrike Strikes Lebanese Town of Al-Mansouri",
+    "summary": "Israeli forces conduct an airstrike targeting the town of Al-Mansouri in southern Lebanon, part of ongoing military operations in the region.",
+    "date_event": null,
+    "date_published": "2026-08-28T21:45:17Z",
+    "geo": {
+      "lat": 33.3823,
+      "lon": 35.2167,
+      "country": "Lebanon",
+      "city": "Al-Mansouri"
+    },
+    "topics": [
+      "lebanon",
+      "israel",
+      "airstrike",
+      "military",
+      "conflict"
+    ],
+    "confidence": 0.75,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/236970",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_1787957239695146",
+    "title": "Israeli Forces Storm West Bank Neighborhoods in Ramallah",
+    "summary": "Israeli occupation forces conduct military incursions into Batn al-Hawa neighborhood in Ramallah, occupied West Bank, intensifying tensions in the region.",
+    "date_event": null,
+    "date_published": "2026-08-28T21:54:25Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.2034,
+      "country": "Palestine",
+      "city": "Ramallah"
+    },
+    "topics": [
+      "palestine",
+      "west-bank",
+      "israel",
+      "occupation",
+      "conflict"
+    ],
+    "confidence": 0.8,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/236971",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_1787957239695770",
+    "title": "US Embassy Issues Security Warning for US Citizens in Ukraine",
+    "summary": "The United States Embassy in Kyiv warns American citizens against travel to Ukraine citing ongoing security concerns related to the conflict.",
+    "date_event": null,
+    "date_published": "2026-08-28T21:52:00Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "ukraine",
+      "security",
+      "conflict",
+      "united-states",
+      "travel"
+    ],
+    "confidence": 0.85,
+    "source_name": "Intel Slava Z",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/93426",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_1787957239695911",
+    "title": "Reports of Patriot Air Defense Systems Destroyed in Russian Strike on Kyiv",
+    "summary": "Multiple sources report that newly delivered U.S.-supplied Patriot air defense systems targeted in a Russian military operation against Ukrainian positions in Kyiv.",
+    "date_event": null,
+    "date_published": "2026-08-28T22:09:20Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "ukraine",
+      "military",
+      "russia",
+      "weapons",
+      "conflict"
+    ],
+    "confidence": 0.65,
+    "source_name": "Intel Slava Z",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/93428",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_1787957239695805",
+    "title": "United States Prepares New COVID-19 mRNA Vaccine Campaign",
+    "summary": "Americans prepare for an updated COVID-19 mRNA vaccine rollout as public health authorities continue vaccination efforts against evolving coronavirus variants.",
+    "date_event": null,
+    "date_published": "2026-08-28T22:12:01Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "country": "United States"
+    },
+    "topics": [
+      "covid-19",
+      "vaccine",
+      "health",
+      "united-states"
+    ],
+    "confidence": 0.7,
+    "source_name": "Geopolitics Prime",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/73855",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86954613743300608",
+    "title": "Flash floods devastate Tibet as China restricts footage access",
+    "summary": "A catastrophic flash flood struck the Nepal-Tibet border region on August 28, 2026, causing significant damage to communities in Gyirong, Tibet. Chinese authorities have restricted media coverage while rescue operations continue, leaving many details about casualties and victims unclear.",
+    "date_event": "2026-08-28T21:30:00Z",
+    "date_published": "2026-08-28T22:10:23Z",
+    "geo": {
+      "lat": 28.4,
+      "lon": 85.6,
+      "country": "China",
+      "region": "Tibet",
+      "city": "Gyirong"
+    },
+    "topics": [
+      "flood",
+      "disaster",
+      "tibet",
+      "china",
+      "weather",
+      "emergency"
+    ],
+    "confidence": 0.92,
+    "source_name": "BBC World News",
+    "links": [
+      {
+        "url": "https://www.bbc.com/news/articles/cx2z415w2gpo",
+        "label": "BBC News - Tibet Floods Article"
+      }
+    ],
+    "link_preview_image": "https://ichef.bbci.co.uk/news/1024/branded_news/8d37/live/67a7cd10-a2fa-11f1-8d5b-155abe464768.jpg"
+  },
+  {
+    "id": "evt_86954871797854208",
+    "title": "China rapidly expands secretive northwest airbase amid military modernization",
+    "summary": "Satellite imagery from Planet Labs captured on August 27, 2026, reveals rapid expansion of a secretive Chinese airbase in the northwest region, comparable to the United States' Area 51 testing facility. The facility functions as a proving ground for experimental aircraft and next-generation combat platforms.",
+    "date_event": "2026-08-27T00:00:00Z",
+    "date_published": "2026-08-28T22:16:25Z",
+    "geo": {
+      "lat": 40.8,
+      "lon": 96.0,
+      "country": "China",
+      "region": "Gansu"
+    },
+    "topics": [
+      "military",
+      "airbase",
+      "china",
+      "aircraft",
+      "defense",
+      "infrastructure",
+      "geopolitics"
+    ],
+    "confidence": 0.88,
+    "source_name": "Ianellisjones",
+    "links": [
+      {
+        "url": "https://x.com/Ianellisjones/status/2093462735572848966",
+        "label": "Maritime Intelligence Analysis"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HQ15QL_WkAABF3X.jpg"
+  },
+  {
+    "id": "evt_86954585981198336",
+    "title": "Rapid Support Forces capture Bukuri area in Blue Nile region, Sudan",
+    "summary": "The Rapid Support Forces have captured the Bukuri area in the Blue Nile region of Sudan. Fighting is ongoing on the outskirts of the town of Atmoor in the Ad Damazin direction.",
+    "date_event": "2026-08-28T21:55:35Z",
+    "date_published": "2026-08-28T21:55:35Z",
+    "geo": {
+      "lat": 10.9,
+      "lon": 35.15,
+      "country": "Sudan",
+      "region": "Blue Nile",
+      "city": "Ad Damazin"
+    },
+    "topics": [
+      "sudan",
+      "conflict",
+      "military",
+      "blue-nile"
+    ],
+    "confidence": 0.85,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/65828",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86954586073473024",
+    "title": "Justice Department sues to block non-citizen in-state tuition laws in four states",
+    "summary": "The Justice Department filed lawsuits challenging state laws in four states that permit residents without U.S. citizenship to qualify for in-state tuition and financial aid at state colleges and universities.",
+    "date_event": "2026-08-28T22:28:31Z",
+    "date_published": "2026-08-28T22:28:31Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369,
+      "country": "United States",
+      "region": "Washington, D.C.",
+      "city": "Washington, D.C."
+    },
+    "topics": [
+      "united-states",
+      "education",
+      "immigration",
+      "law",
+      "policy"
+    ],
+    "confidence": 0.82,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2093465780461408269",
+        "label": "ABC News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86954716772179968",
+    "title": "U.S. Immigration and Customs Enforcement seeks funding for robot dogs",
+    "summary": "U.S. Immigration and Customs Enforcement is looking to spend up to $2 million on robot dogs, according to a federal procurement notice.",
+    "date_event": "2026-08-28T22:04:44Z",
+    "date_published": "2026-08-28T22:04:44Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369,
+      "country": "United States",
+      "region": "Washington, D.C.",
+      "city": "Washington, D.C."
+    },
+    "topics": [
+      "united-states",
+      "technology",
+      "robotics",
+      "enforcement",
+      "procurement"
+    ],
+    "confidence": 0.78,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2093459793704812674",
+        "label": "ABC News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_86954716860260352",
+    "title": "Chinese tech startup CoolFly debuts $100,000 personal aircraft evTOL",
+    "summary": "Chinese tech startup CoolFly unveiled a $100,000 personal aircraft called evTOL that can stay airborne for approximately 11 minutes, depending on the weight of the rider.",
+    "date_event": "2026-08-28T22:00:38Z",
+    "date_published": "2026-08-28T22:00:38Z",
+    "geo": {
+      "lat": 39.9042,
+      "lon": 116.4074,
+      "country": "China",
+      "region": "Beijing",
+      "city": "Beijing"
+    },
+    "topics": [
+      "china",
+      "technology",
+      "aviation",
+      "electric-vehicles",
+      "innovation"
+    ],
+    "confidence": 0.75,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2093458763357569379",
+        "label": "ABC News Tweet"
+      }
+    ],
+    "link_preview_image": null
   }
 ]

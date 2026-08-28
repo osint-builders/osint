@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-08-28T18:23:28.730Z",
+  "last_updated": "2026-08-28T22:51:43.318Z",
   "data_range": {
     "oldest_date": "2024-12-12",
     "newest_date": "2026-08-28"
   },
   "statistics": {
-    "total_events": 3839,
+    "total_events": 3853,
     "events_by_month": {
       "2024-12": 1,
       "2026-02": 1,
       "2026-04": 430,
       "2026-05": 3269,
-      "2026-08": 138
+      "2026-08": 152
     },
     "events_by_source": {
       "Twitter @NguyenThiHo88": 5,
@@ -207,7 +207,7 @@
       "The Diplomat (@TheDiplomat)": 2,
       "China Power Project (@ChinaP0wer)": 1,
       "Sindikasyon Teknolohiya (@SindikasyonTek)": 2,
-      "ABC News (@ABC)": 54,
+      "ABC News (@ABC)": 57,
       "CNN International (@cnni)": 3,
       "Taiwan News (@TaiwanNewsEN)": 19,
       "PLA Tracker (@PLATracker)": 1,
@@ -617,7 +617,7 @@
       "Clash Report (@ClashReport)": 76,
       "Esri Water Resources (@EsriWater)": 13,
       "PyongyangToday (@PyongyangToday)": 8,
-      "Nasa (@Nasa)": 14,
+      "Nasa (@Nasa)": 15,
       "OsainDawg (@Osaindawg)": 1,
       "HawkEye 360 (@HawkEye360)": 16,
       "Scmpnews (@Scmpnews)": 17,
@@ -643,12 +643,12 @@
       "pizzainwatch (@pizzainwatch)": 11,
       "Africafactszone (@Africafactszone)": 23,
       "Claudefb (@Claudefb)": 15,
-      "UANI (@UANI)": 15,
+      "UANI (@UANI)": 16,
       "Rayfunseth (@Rayfunseth)": 17,
       "inside_nk (@inside_nk)": 17,
       "Allsource4 (@Allsource4)": 8,
       "MDAT Gulf of Guinea (@MDAT_GoG)": 14,
-      "Middle East Eye (@MiddleEastEye)": 58,
+      "Middle East Eye (@MiddleEastEye)": 59,
       "KC_NWT (@KC_NWT)": 13,
       "Raytoribo (@Raytoribo)": 13,
       "Therealshipdude (@Therealshipdude)": 17,
@@ -814,7 +814,7 @@
       "r/UkraineWarVideoReport": 3,
       "Dr. Minh Tran (@MinhDr18)": 4,
       "Pandura (@Scpandura)": 1,
-      "Rerum Novarum Intel (@rnintel)": 25,
+      "Rerum Novarum Intel (@rnintel)": 26,
       "DD Geopolitics (@DDGeopolitics)": 22,
       "Insider Paper (@insiderpaper)": 7,
       "mdaspace (@MdaSpace)": 1,
@@ -852,14 +852,17 @@
       "OSINT Technical (@Osinttechnical)": 3,
       "War Translated": 1,
       "Middle East Spectator": 1,
-      "Quds News Network": 3,
+      "Quds News Network": 5,
       "cnni": 1,
       "twitter-criticalthreats": 1,
-      "BBC World News": 5,
-      "BBC Breaking News": 1
+      "BBC World News": 6,
+      "BBC Breaking News": 1,
+      "Intel Slava Z": 2,
+      "Geopolitics Prime": 1,
+      "Ianellisjones": 1
     },
     "media_files": {
-      "images": 33,
+      "images": 36,
       "videos": 0
     }
   },
@@ -912,7 +915,7 @@
     "2026-08-25": 49,
     "2026-08-26": 21,
     "2026-08-27": 37,
-    "2026-08-28": 31
+    "2026-08-28": 45
   },
   "average_confidence": 0.8807692307692309
 }
