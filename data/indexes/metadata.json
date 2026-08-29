@@ -122262,5 +122262,577 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_87228641599041536",
+    "title": "U.S.-Iran War Six Months: American Casualties Mount",
+    "summary": "Six months into the U.S.-Iran war, 18 American service members have been killed, over 750 wounded, and the conflict has cost taxpayers more than $37 billion.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:28:37Z",
+    "geo": {
+      "lat": 39.7837304,
+      "lon": -100.445882
+    },
+    "topics": [
+      "us-iran-conflict",
+      "military",
+      "casualties",
+      "war"
+    ],
+    "confidence": 0.85,
+    "source_name": "ABC News",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2093737598321651808",
+        "title": "ABC News",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/ext_tw_video_thumb/2093737442922713088/pu/img/Z-dAPOXAO5rJbvqd.jpg"
+  },
+  {
+    "id": "evt_87228581729562624",
+    "title": "Vehicle Carrying Olenivka Prison Deputy Chief Destroyed in Donetsk",
+    "summary": "A vehicle carrying Dmitry Neyelov, deputy chief of Olenivka prison, reportedly destroyed in occupied Donetsk.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:11:39Z",
+    "geo": {
+      "lat": 48.0159,
+      "lon": 37.8063
+    },
+    "topics": [
+      "ukraine-russia-war",
+      "donetsk",
+      "military-personnel",
+      "detention-facility",
+      "operational-strike"
+    ],
+    "confidence": null,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2093733327425446203",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2093733247989518336/img/r3bqv_pLk4-YGy39.jpg"
+  },
+  {
+    "id": "evt_87228735551467520",
+    "title": "China-Kyrgyzstan Cooperation Advances Regional Peace and Stability",
+    "summary": "A Kyrgyz political expert highlighted China-Kyrgyzstan cooperation as contributing to peace and stability in Central Asia, describing it as an example of good-neighborliness.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:00:49Z",
+    "geo": {
+      "lat": 42.5245,
+      "lon": 77.231
+    },
+    "topics": [
+      "china-kyrgyzstan-relations",
+      "central-asia",
+      "regional-stability",
+      "diplomatic-cooperation",
+      "bilateral-partnership"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2093730599794323546",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HQ5s4fnbkAAAhy9.jpg"
+  },
+  {
+    "id": "evt_87228716987465728",
+    "title": "Ethiopia's Nile gamble risks turning water into a weapon",
+    "summary": "Ethiopia's hydro-political strategy regarding the Nile River carries significant risks, potentially weaponizing water resources in regional conflicts.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:00:01Z",
+    "geo": {
+      "lat": 10.2116702,
+      "lon": 38.6521203
+    },
+    "topics": [
+      "water-dispute",
+      "nile-river",
+      "ethiopia",
+      "regional-conflict",
+      "resource-competition"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2093730398077321303",
+        "title": "Clash Report Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2093715512253390848/img/Gb5DgxmvfadV-5tZ.jpg"
+  },
+  {
+    "id": "evt_87228633676005376",
+    "title": "Missing sisters in video posted before Nepal flood",
+    "summary": "Two sisters remain missing in Nepal following devastating flash floods. Video footage documenting their absence emerged prior to the flooding event.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:17:07Z",
+    "geo": {
+      "lat": 28.3780464,
+      "lon": 83.9999901
+    },
+    "topics": [
+      "disaster",
+      "flood",
+      "missing-persons",
+      "nepal"
+    ],
+    "confidence": null,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2093734703480119355",
+        "title": "BBC World News Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2093734704549593088/whZ2LejS?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_87228822910418944",
+    "title": "AI Moment for the U.S.-ROK Alliance",
+    "summary": "Strategic analysis on the U.S.-South Korea alliance's response to artificial intelligence competition. South Korea emerges as pivotal for connecting American AI innovation with real-world deployment.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:02:14Z",
+    "geo": {
+      "lat": 36.638392,
+      "lon": 127.6961188
+    },
+    "topics": [
+      "ai",
+      "technology",
+      "us-korea-alliance",
+      "national-security",
+      "strategic-competition"
+    ],
+    "confidence": null,
+    "source_name": "CSIS Korea Chair (@CSISKoreaChair)",
+    "links": [
+      {
+        "url": "https://x.com/CSISKoreaChair/status/2093730958746816996",
+        "title": "CSIS Korea Chair Tweet"
+      },
+      {
+        "url": "https://www.csis.org/analysis/ai-moment-us-rok-alliance",
+        "title": "Full CSIS Article"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2091900921106386944/lDQ3VWZc?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_87228859048546304",
+    "title": "Palestinian Residents Trapped by Israeli Settlers; Land Burned in Qusra Siege",
+    "summary": "Palestinian residents in the occupied West Bank village of Qusra remain trapped as Israeli settlers surround their homes. Settlers have reportedly set fire to Palestinian land in the area, which has endured a siege lasting several weeks.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:29:17Z",
+    "geo": {
+      "lat": 32.0842608,
+      "lon": 35.3304412
+    },
+    "topics": [
+      "israel",
+      "palestine",
+      "west-bank",
+      "settlers",
+      "conflict",
+      "land-dispute"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2093737766563537067",
+        "title": "Middle East Eye Tweet",
+        "source": "twitter-middle-east-eye"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_87228588125868032",
+    "title": "Catastrophic Flooding and Mudslides Devastate Nepal-China Border Region; 676+ Dead",
+    "summary": "At least 676 people have died and nearly 3,000 remain missing after catastrophic flooding and mudslides devastated areas along the Nepal-China border. Officials attribute the disaster to a massive chunk of ice that broke off a glacier and crashed into a river, triggering flash floods across Nepal.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:17:28Z",
+    "geo": {
+      "lat": 27.708317,
+      "lon": 85.3205817
+    },
+    "topics": [
+      "natural-disaster",
+      "flooding",
+      "mudslide",
+      "nepal",
+      "china",
+      "glacier"
+    ],
+    "confidence": null,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2093734791459832294",
+        "title": "Fox News Tweet",
+        "source": "twitter-foxnews"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HQ5wrkjWQAADokI.jpg"
+  },
+  {
+    "id": "evt_87228729696210944",
+    "title": "Russia Preparing Ground Attack on Chernihiv and Kyiv; Russia-Belarus Military Coordination",
+    "summary": "Russia continues preparations for ground attacks on the Ukrainian cities of Chernihiv and Kyiv, according to Bloomberg reporting. Russia and Belarus have met for the second time within a week, suggesting ongoing military coordination between the two nations regarding the conflict.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:16:28Z",
+    "geo": {
+      "lat": 50.4500336,
+      "lon": 30.5241361
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military-conflict",
+      "ground-attack",
+      "belarus",
+      "warfare"
+    ],
+    "confidence": null,
+    "source_name": "inside_nk (@inside_nk)",
+    "links": [
+      {
+        "url": "https://x.com/inside_nk/status/2093734539751235658",
+        "title": "inside_nk Tweet",
+        "source": "twitter-inside-nk"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_87228857291137024",
+    "title": "Italian Navy San Giorgio-class Dock Landing Ship Arrives in Valletta",
+    "summary": "The Italian Navy's San Giorgio-class dock landing ship ITS San Marco (L 9893) arrived in Valletta, Malta on August 29, 2026.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:53:26Z",
+    "geo": {
+      "lat": 35.8989979,
+      "lon": 14.5136607,
+      "city": "Valletta",
+      "country": "Malta"
+    },
+    "topics": [
+      "warship",
+      "italian-navy",
+      "naval-deployment",
+      "mediterranean"
+    ],
+    "confidence": 0.85,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2093743841962574153",
+        "label": "Twitter/X"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HQ547VmWEAA3mUn.jpg"
+  },
+  {
+    "id": "evt_87228902199549952",
+    "title": "China Coast Guard Shuke II-class Cutter Operations in Xiamen",
+    "summary": "The China Coast Guard operated Shuke II-class cutter CCGS Xiaodeng (14603) conducted operations in Xiamen, China on August 29, 2026, documented through maritime photographic intelligence.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:34:40Z",
+    "geo": {
+      "lat": 24.4801069,
+      "lon": 118.0853479,
+      "city": "Xiamen",
+      "country": "China"
+    },
+    "topics": [
+      "coast-guard",
+      "china",
+      "south-china-sea",
+      "maritime-operations"
+    ],
+    "confidence": 0.8,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2093739120153563141",
+        "label": "Twitter/X"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HQ50oinWUAAcdKN.jpg"
+  },
+  {
+    "id": "evt_87228657990377472",
+    "title": "Israeli Forces Storm Village of Burqa in West Bank",
+    "summary": "Israeli occupation forces stormed the village of Burqa, located east of Ramallah in the occupied West Bank, in a military operation that followed an attack by Israeli settlers on the village.",
+    "date_event": null,
+    "date_published": "2026-08-29T15:57:21Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.1981,
+      "location": "Burqa, West Bank"
+    },
+    "topics": [
+      "west-bank",
+      "military-operation",
+      "israeli-forces",
+      "palestinian-village",
+      "settlers",
+      "burqa"
+    ],
+    "confidence": 0.85,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/237048",
+        "title": "Quds News Network Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87228658070069248",
+    "title": "Israeli Forces Detonate Homes in Lebanese Town of Markaba",
+    "summary": "Israeli occupation forces detonated homes belonging to displaced residents in the southern Lebanese town of Markaba. The destroyed structures housed people who had relocated due to regional conflict.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:03:38Z",
+    "geo": {
+      "lat": 33.3157,
+      "lon": 35.3841,
+      "location": "Markaba, South Lebanon"
+    },
+    "topics": [
+      "lebanon",
+      "displaced-persons",
+      "home-demolition",
+      "israeli-military",
+      "south-lebanon",
+      "humanitarian-crisis"
+    ],
+    "confidence": 0.8,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/237049",
+        "title": "Quds News Network Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87228658166538240",
+    "title": "Palestinians Mourn Delivery Worker Killed in Gaza City Strike",
+    "summary": "Palestinians gathered to mourn the death of delivery worker Raed Adel Alyan, who was killed in an Israeli occupation strike while working on his motorcycle in the Tal Al-Hawa neighborhood of southwestern Gaza City.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:18:50Z",
+    "geo": {
+      "lat": 31.5,
+      "lon": 34.45,
+      "location": "Gaza City, Gaza Strip"
+    },
+    "topics": [
+      "gaza-city",
+      "civilian-casualties",
+      "strike",
+      "delivery-worker",
+      "tal-al-hawa",
+      "palestinian-deaths"
+    ],
+    "confidence": 0.85,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/237050",
+        "title": "Quds News Network Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87228658254618624",
+    "title": "Niger Situation Remains Unresolved Despite Official Statement",
+    "summary": "Local reports in Niamey indicate the situation in Niger remains unresolved despite statements by Salifou Mody regarding stability. Intelligence sources suggest the official narrative may not reflect ground reality.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:23:05Z",
+    "geo": {
+      "lat": 13.5116,
+      "lon": 2.1257,
+      "location": "Niamey, Niger"
+    },
+    "topics": [
+      "niger",
+      "niamey",
+      "political-crisis",
+      "governance",
+      "security",
+      "intelligence"
+    ],
+    "confidence": 0.7,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/65857",
+        "title": "Rerum Novarum Intel Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87228658338504704",
+    "title": "Russia's Reliability as Strategic Partner Questioned Again",
+    "summary": "Reports indicate Russia's reliability and commitment as a strategic partner continue to face scrutiny. Recent developments have prompted reassessment of partnership stability among allied nations.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:39:40Z",
+    "geo": {
+      "lat": 61.52,
+      "lon": 104.3068,
+      "location": "Russia"
+    },
+    "topics": [
+      "russia",
+      "strategic-partnership",
+      "geopolitics",
+      "international-relations",
+      "reliability",
+      "diplomacy"
+    ],
+    "confidence": 0.65,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/65858",
+        "title": "Rerum Novarum Intel Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87228658414002176",
+    "title": "Breaking: Chief of Niger's National Gendarmerie Joins Mutineers",
+    "summary": "Initial reports indicate Kimba Tahirou, Chief of the National Gendarmerie, has joined mutineers opposing the junta in Niamey, Niger, marking a significant military and political development.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:53:54Z",
+    "geo": {
+      "lat": 13.5116,
+      "lon": 2.1257,
+      "location": "Niamey, Niger"
+    },
+    "topics": [
+      "niger",
+      "military",
+      "mutiny",
+      "gendarmerie",
+      "junta",
+      "political-crisis",
+      "kimba-tahirou"
+    ],
+    "confidence": 0.75,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/65859",
+        "title": "Rerum Novarum Intel Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87228658506276864",
+    "title": "Russia's Gasoline Production Falls to 70% of Domestic Consumption",
+    "summary": "Reuters reports that Russia's gasoline production has declined significantly, falling to 70% of its domestic consumption levels. This shortfall indicates growing strain on Russia's fuel production capacity amid international sanctions.",
+    "date_event": null,
+    "date_published": "2026-08-29T16:19:01Z",
+    "geo": {
+      "lat": 61.52,
+      "lon": 104.3068,
+      "location": "Russia"
+    },
+    "topics": [
+      "russia",
+      "gasoline-production",
+      "sanctions",
+      "energy-sector",
+      "economic-impact",
+      "fuel-shortage"
+    ],
+    "confidence": 0.85,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/45615",
+        "title": "UNITED24 Media Post"
+      },
+      {
+        "url": "https://www.reuters.com",
+        "title": "Reuters"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87229916843610112",
+    "title": "Ukrainian Media Reports on Russian Shahed Drone Campaign Against Kyiv",
+    "summary": "Ukrainian media outlet Strana reports escalating Russian drone tactics against Kyiv, with nightly attacks involving over 250 unmanned aerial vehicles. The campaign employs round-the-clock strikes on infrastructure and warehouses, creating sustained air-raid conditions lasting 11-13 hours daily.",
+    "date_event": "2026-08-29T15:59:07Z",
+    "date_published": "2026-08-29T15:59:07Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "defense",
+      "geopolitics",
+      "infrastructure",
+      "military-conflict",
+      "ukraine-russia-war"
+    ],
+    "confidence": 0.82,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/192102",
+        "label": "source"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87229916923301888",
+    "title": "Belgium Opposes Using Frozen Russian Assets to Fund Ukraine",
+    "summary": "Belgian Defense Minister Theo Franken declares Belgium will not support proposals to redirect frozen Russian assets held in Euroclear toward Ukraine financing, citing legal liability concerns.",
+    "date_event": "2026-08-29T16:41:37Z",
+    "date_published": "2026-08-29T16:41:37Z",
+    "geo": {
+      "lat": 50.8503,
+      "lon": 4.3517,
+      "country": "Belgium",
+      "city": "Brussels"
+    },
+    "topics": [
+      "economic-warfare",
+      "geopolitics",
+      "ukraine-russia-war"
+    ],
+    "confidence": 0.83,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/192103",
+        "label": "source"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
