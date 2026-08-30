@@ -1,658 +1,74 @@
 [
   {
-    "country": "United States",
-    "count": 546
-  },
-  {
-    "country": "Iran",
-    "count": 473
-  },
-  {
     "country": "Ukraine",
-    "count": 286
+    "count": 17
   },
   {
-    "country": "Philippines",
-    "count": 212
-  },
-  {
-    "country": "South Korea",
-    "count": 179
-  },
-  {
-    "country": "China",
-    "count": 168
-  },
-  {
-    "country": "North Korea",
-    "count": 162
-  },
-  {
-    "country": "Taiwan",
-    "count": 134
+    "country": "United States",
+    "count": 16
   },
   {
     "country": "Russia",
-    "count": 124
-  },
-  {
-    "country": "Lebanon",
-    "count": 102
-  },
-  {
-    "country": "Oman",
-    "count": 98
-  },
-  {
-    "country": "Japan",
-    "count": 94
-  },
-  {
-    "country": "United Arab Emirates",
-    "count": 88
-  },
-  {
-    "country": "International Waters",
-    "count": 75
-  },
-  {
-    "country": "United Kingdom",
-    "count": 56
-  },
-  {
-    "country": "Belgium",
-    "count": 51
-  },
-  {
-    "country": "Israel",
-    "count": 47
+    "count": 14
   },
   {
     "country": "Palestine",
-    "count": 46
+    "count": 9
   },
   {
-    "country": "Mali",
-    "count": 31
+    "country": "China",
+    "count": 6
   },
   {
-    "country": "India",
-    "count": 26
-  },
-  {
-    "country": "Somalia",
-    "count": 23
-  },
-  {
-    "country": "Poland",
-    "count": 23
-  },
-  {
-    "country": "Pakistan",
-    "count": 23
-  },
-  {
-    "country": "Democratic Republic of Congo",
-    "count": 23
-  },
-  {
-    "country": "Germany",
-    "count": 22
-  },
-  {
-    "country": "Australia",
-    "count": 22
+    "country": "Iran",
+    "count": 5
   },
   {
     "country": "Syria",
-    "count": 20
-  },
-  {
-    "country": "Qatar",
-    "count": 20
-  },
-  {
-    "country": "Nigeria",
-    "count": 19
-  },
-  {
-    "country": "Yemen",
-    "count": 18
-  },
-  {
-    "country": "Vietnam",
-    "count": 17
-  },
-  {
-    "country": "Sudan",
-    "count": 17
-  },
-  {
-    "country": "UAE",
-    "count": 15
-  },
-  {
-    "country": "Latvia",
-    "count": 15
-  },
-  {
-    "country": "Norway",
-    "count": 14
-  },
-  {
-    "country": "Sweden",
-    "count": 14
-  },
-  {
-    "country": "Turkey",
-    "count": 14
-  },
-  {
-    "country": "Estonia",
-    "count": 13
-  },
-  {
-    "country": "Bahrain",
-    "count": 13
-  },
-  {
-    "country": "Cuba",
-    "count": 13
-  },
-  {
-    "country": "Greece",
-    "count": 10
-  },
-  {
-    "country": "Libya",
-    "count": 10
-  },
-  {
-    "country": "Italy",
-    "count": 10
-  },
-  {
-    "country": "Belarus",
-    "count": 10
-  },
-  {
-    "country": "Romania",
-    "count": 9
-  },
-  {
-    "country": "France",
-    "count": 9
-  },
-  {
-    "country": "Saudi Arabia",
-    "count": 9
-  },
-  {
-    "country": "South China Sea",
-    "count": 8
-  },
-  {
-    "country": "Global",
-    "count": 8
-  },
-  {
-    "country": "Malaysia",
-    "count": 8
-  },
-  {
-    "country": "Unknown",
-    "count": 8
-  },
-  {
-    "country": "Netherlands",
-    "count": 8
-  },
-  {
-    "country": "Iran/Oman",
-    "count": 8
-  },
-  {
-    "country": "USA",
-    "count": 7
-  },
-  {
-    "country": "Canada",
-    "count": 7
-  },
-  {
-    "country": "Austria",
-    "count": 7
-  },
-  {
-    "country": "Gibraltar",
-    "count": 7
-  },
-  {
-    "country": "Singapore",
-    "count": 6
-  },
-  {
-    "country": "Indonesia",
-    "count": 6
-  },
-  {
-    "country": "Spain",
-    "count": 6
-  },
-  {
-    "country": "South Africa",
-    "count": 6
-  },
-  {
-    "country": "Venezuela",
     "count": 5
   },
   {
-    "country": "Peru",
+    "country": "Lebanon",
     "count": 5
-  },
-  {
-    "country": "Egypt",
-    "count": 5
-  },
-  {
-    "country": "Disputed",
-    "count": 5
-  },
-  {
-    "country": "Denmark",
-    "count": 4
-  },
-  {
-    "country": "DC",
-    "count": 4
-  },
-  {
-    "country": "Ethiopia",
-    "count": 4
-  },
-  {
-    "country": "Democratic Republic of the Congo",
-    "count": 4
-  },
-  {
-    "country": "Finland",
-    "count": 4
-  },
-  {
-    "country": "Multiple",
-    "count": 4
-  },
-  {
-    "country": "Lithuania",
-    "count": 4
-  },
-  {
-    "country": "Caribbean Sea",
-    "count": 4
-  },
-  {
-    "country": "Nepal",
-    "count": 4
-  },
-  {
-    "country": "Gulf of Guinea",
-    "count": 3
-  },
-  {
-    "country": "Iraq",
-    "count": 3
-  },
-  {
-    "country": "Persian Gulf",
-    "count": 3
-  },
-  {
-    "country": "Україна",
-    "count": 3
-  },
-  {
-    "country": "Burkina Faso",
-    "count": 3
-  },
-  {
-    "country": "Kenya",
-    "count": 3
-  },
-  {
-    "country": "Kuwait",
-    "count": 3
-  },
-  {
-    "country": "Afghanistan",
-    "count": 3
-  },
-  {
-    "country": "Jordan",
-    "count": 3
   },
   {
     "country": "Palestinian Territory",
     "count": 3
   },
   {
-    "country": "Strait of Hormuz",
+    "country": "United Kingdom",
     "count": 2
   },
   {
-    "country": "대한민국",
+    "country": "Nepal",
     "count": 2
   },
   {
-    "country": "日本",
+    "country": "Sudan",
     "count": 2
   },
   {
-    "country": "Korean Peninsula",
+    "country": "Spain",
     "count": 2
   },
   {
-    "country": "Russia/Ukraine",
+    "country": "Netherlands",
     "count": 2
   },
   {
-    "country": "Thailand",
+    "country": "Taiwan",
     "count": 2
   },
   {
-    "country": "Niger",
+    "country": "Greece",
     "count": 2
-  },
-  {
-    "country": "Cyprus",
-    "count": 2
-  },
-  {
-    "country": "Mexico",
-    "count": 2
-  },
-  {
-    "country": "Malta",
-    "count": 2
-  },
-  {
-    "country": "Ghana",
-    "count": 2
-  },
-  {
-    "country": "Argentina",
-    "count": 2
-  },
-  {
-    "country": "Chad",
-    "count": 2
-  },
-  {
-    "country": "International",
-    "count": 2
-  },
-  {
-    "country": "Mozambique",
-    "count": 2
-  },
-  {
-    "country": "Kazakhstan",
-    "count": 2
-  },
-  {
-    "country": "Ivory Coast",
-    "count": 2
-  },
-  {
-    "country": "Caribbean",
-    "count": 2
-  },
-  {
-    "country": "Nauru",
-    "count": 2
-  },
-  {
-    "country": "Serbia",
-    "count": 2
-  },
-  {
-    "country": "Gulf region",
-    "count": 1
-  },
-  {
-    "country": "Cambodia",
-    "count": 1
-  },
-  {
-    "country": "Eastern Europe region",
-    "count": 1
-  },
-  {
-    "country": "Eastern Europe/Nordic region",
-    "count": 1
-  },
-  {
-    "country": "West Philippine Sea",
-    "count": 1
-  },
-  {
-    "country": "DPRK",
-    "count": 1
-  },
-  {
-    "country": "eastern Libya",
-    "count": 1
-  },
-  {
-    "country": "Tunisia",
-    "count": 1
-  },
-  {
-    "country": "Baltic Sea",
-    "count": 1
-  },
-  {
-    "country": "eastern ADIZ",
-    "count": 1
-  },
-  {
-    "country": "near Lebanon border",
-    "count": 1
-  },
-  {
-    "country": "Hong Kong",
-    "count": 1
-  },
-  {
-    "country": "Kiribati",
-    "count": 1
-  },
-  {
-    "country": "Taiwan southwestern ADIZ",
-    "count": 1
-  },
-  {
-    "country": "Not specified",
-    "count": 1
-  },
-  {
-    "country": "International waters",
-    "count": 1
-  },
-  {
-    "country": "Asia-Pacific",
-    "count": 1
-  },
-  {
-    "country": "East Sea, North Korea",
-    "count": 1
-  },
-  {
-    "country": "مصر",
-    "count": 1
-  },
-  {
-    "country": "조선민주주의인민공화국",
-    "count": 1
-  },
-  {
-    "country": "中国",
-    "count": 1
-  },
-  {
-    "country": "België / Belgique / Belgien",
-    "count": 1
-  },
-  {
-    "country": "لبنان",
-    "count": 1
-  },
-  {
-    "country": "Türkiye",
-    "count": 1
-  },
-  {
-    "country": "Strait of Hormuz, Persian Gulf",
-    "count": 1
-  },
-  {
-    "country": "New York",
-    "count": 1
-  },
-  {
-    "country": "南海/Biển Đông/South China Sea",
-    "count": 1
-  },
-  {
-    "country": "Congo",
-    "count": 1
-  },
-  {
-    "country": "Georgia",
-    "count": 1
-  },
-  {
-    "country": "Azerbaijan",
-    "count": 1
-  },
-  {
-    "country": "Ukraine/Russia",
-    "count": 1
-  },
-  {
-    "country": "Myanmar",
-    "count": 1
-  },
-  {
-    "country": "Djibouti",
-    "count": 1
-  },
-  {
-    "country": "Eswatini",
-    "count": 1
-  },
-  {
-    "country": "Armenia",
-    "count": 1
-  },
-  {
-    "country": "Algeria",
-    "count": 1
-  },
-  {
-    "country": "Chile",
-    "count": 1
-  },
-  {
-    "country": "Disputed - South China Sea",
-    "count": 1
-  },
-  {
-    "country": "Haiti",
-    "count": 1
-  },
-  {
-    "country": "Brazil",
-    "count": 1
-  },
-  {
-    "country": "Tanzania",
-    "count": 1
-  },
-  {
-    "country": "Africa",
-    "count": 1
-  },
-  {
-    "country": "Iceland",
-    "count": 1
-  },
-  {
-    "country": "Botswana",
-    "count": 1
-  },
-  {
-    "country": "Jamaica",
-    "count": 1
-  },
-  {
-    "country": "Moldova",
-    "count": 1
-  },
-  {
-    "country": "Turkiye",
-    "count": 1
-  },
-  {
-    "country": "South Sudan",
-    "count": 1
-  },
-  {
-    "country": "Somaliland",
-    "count": 1
-  },
-  {
-    "country": "Luxembourg",
-    "count": 1
-  },
-  {
-    "country": "Panama",
-    "count": 1
-  },
-  {
-    "country": "Bolivia",
-    "count": 1
-  },
-  {
-    "country": "Honduras",
-    "count": 1
-  },
-  {
-    "country": "Central African Republic",
-    "count": 1
-  },
-  {
-    "country": "Uganda",
-    "count": 1
-  },
-  {
-    "country": "Western Sahara",
-    "count": 1
-  },
-  {
-    "country": "Israel/Palestine",
-    "count": 1
-  },
-  {
-    "country": "Togo",
-    "count": 1
-  },
-  {
-    "country": "Baltic Sea Region",
-    "count": 1
   },
   {
     "country": "Iran/USA",
+    "count": 1
+  },
+  {
+    "country": "Iran/Oman",
     "count": 1
   },
   {
@@ -664,7 +80,39 @@
     "count": 1
   },
   {
+    "country": "USA",
+    "count": 1
+  },
+  {
+    "country": "Jordan",
+    "count": 1
+  },
+  {
+    "country": "United Arab Emirates",
+    "count": 1
+  },
+  {
+    "country": "Oman",
+    "count": 1
+  },
+  {
+    "country": "North Korea",
+    "count": 1
+  },
+  {
+    "country": "Pakistan",
+    "count": 1
+  },
+  {
     "country": "Colombia",
+    "count": 1
+  },
+  {
+    "country": "Yemen",
+    "count": 1
+  },
+  {
+    "country": "Afghanistan",
     "count": 1
   },
   {
@@ -672,7 +120,43 @@
     "count": 1
   },
   {
+    "country": "International Waters",
+    "count": 1
+  },
+  {
+    "country": "Serbia",
+    "count": 1
+  },
+  {
+    "country": "Germany",
+    "count": 1
+  },
+  {
+    "country": "Ethiopia",
+    "count": 1
+  },
+  {
+    "country": "Indonesia",
+    "count": 1
+  },
+  {
     "country": "Cameroon",
+    "count": 1
+  },
+  {
+    "country": "Austria",
+    "count": 1
+  },
+  {
+    "country": "Malta",
+    "count": 1
+  },
+  {
+    "country": "Belgium",
+    "count": 1
+  },
+  {
+    "country": "Uzbekistan",
     "count": 1
   }
 ]

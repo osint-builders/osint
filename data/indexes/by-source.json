@@ -1,10 +1,10 @@
 [
   {
     "source_id": "unknown",
-    "source_name": "Twitter @NguyenThiHo88",
-    "count": 3821,
-    "earliest_date": "2024-12-12T00:00:00Z",
-    "latest_date": "2026-08-29T16:53:26Z"
+    "source_name": "War Translated (@wartranslated)",
+    "count": 135,
+    "earliest_date": "2026-08-25T19:59:00Z",
+    "latest_date": "2026-08-30T17:00:24Z"
   },
   {
     "source_id": "telegram-qudsnen",
@@ -79,9 +79,9 @@
   {
     "source_id": "twitter-abc",
     "source_name": "ABC News (@ABC)",
-    "count": 5,
+    "count": 7,
     "earliest_date": "2026-08-27T13:56:20.000Z",
-    "latest_date": "2026-08-29T16:28:37Z"
+    "latest_date": "2026-08-30T16:55:18.000Z"
   },
   {
     "source_id": "telegram-insiderpaper",
@@ -128,9 +128,9 @@
   {
     "source_id": "twitter-middle-east-eye",
     "source_name": "Middle East Eye (@MiddleEastEye)",
-    "count": 2,
+    "count": 5,
     "earliest_date": "2026-08-28T22:44:18Z",
-    "latest_date": "2026-08-29T16:29:17Z"
+    "latest_date": "2026-08-30T16:58:43Z"
   },
   {
     "source_id": "twitter-nasa",
@@ -142,9 +142,9 @@
   {
     "source_id": "twitter-bbc-world",
     "source_name": "BBC World News (@BBCWorld)",
-    "count": 1,
+    "count": 3,
     "earliest_date": "2026-08-29T16:17:07Z",
-    "latest_date": "2026-08-29T16:17:07Z"
+    "latest_date": "2026-08-30T16:37:02.000Z"
   },
   {
     "source_id": "twitter-foxnews",
@@ -166,5 +166,12 @@
     "count": 1,
     "earliest_date": "2026-08-29T16:19:01Z",
     "latest_date": "2026-08-29T16:19:01Z"
+  },
+  {
+    "source_id": "twitter-xinhua-news",
+    "source_name": "Xinhua News (@XHNews)",
+    "count": 1,
+    "earliest_date": "2026-08-30T16:41:07Z",
+    "latest_date": "2026-08-30T16:41:07Z"
   }
 ]
