@@ -6740,5 +6740,463 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_87989184135995392",
+    "title": "Russian Finance Minister Attends G20 Meeting as European Delegates Protest",
+    "summary": "Russia's Finance Minister Anton Siluanov attended a G20 finance ministers' meeting in the US, where he met with US Treasury Secretary Scott Bessent to discuss peace in Ukraine. European representatives protested his attendance and boycotted the joint photo opportunity.",
+    "date_event": null,
+    "date_published": "2026-08-31T18:36:23Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "location": "Washington, District of Columbia, United States"
+    },
+    "topics": [
+      "g20",
+      "diplomacy",
+      "ukraine",
+      "russia",
+      "finance",
+      "international-relations"
+    ],
+    "confidence": null,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2094494524735099098",
+        "title": "War Translated (@wartranslated)",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HREhfCbW4AEU87V.jpg"
+  },
+  {
+    "id": "evt_87989235105161216",
+    "title": "NYC Parks Maps 800,000 Street Trees Using ArcGIS Field Maps",
+    "summary": "Volunteers are using ArcGIS Field Maps to help NYC Parks map over 800,000 street trees to reveal how the urban canopy changes and identify where additional shade is needed. Data from the 2015 tree count is being visualized to inform urban planning.",
+    "date_event": null,
+    "date_published": "2026-08-31T18:31:16Z",
+    "geo": {
+      "lat": 40.7127281,
+      "lon": -74.0060152
+    },
+    "topics": [
+      "urban-planning",
+      "environmental-data",
+      "geospatial-technology",
+      "public-works",
+      "urban-forest"
+    ],
+    "confidence": null,
+    "source_name": "Esri (@Esri)",
+    "links": [
+      {
+        "url": "https://x.com/Esri/status/2094493239365570779",
+        "title": "Esri Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HREicomXgAAtxDE.jpg"
+  },
+  {
+    "id": "evt_87989271171989504",
+    "title": "Xi and Putin Vow to Deepen Strategic Ties at SCO Summit",
+    "summary": "Chinese President Xi Jinping and Russian President Vladimir Putin have committed to deepening their countries' strategic partnership following a bilateral meeting during the Shanghai Cooperation Organisation (SCO) summit.",
+    "date_event": null,
+    "date_published": "2026-08-31T18:23:15Z",
+    "geo": {
+      "lat": 51.1282804,
+      "lon": 71.4304708,
+      "location": "Astana, Kazakhstan"
+    },
+    "topics": [
+      "china-russia-relations",
+      "geopolitics",
+      "shanghai-cooperation-organisation",
+      "strategic-partnership",
+      "bilateral-summit",
+      "xi-jinping",
+      "vladimir-putin",
+      "asia-pacific-security"
+    ],
+    "confidence": null,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2094491220470796434",
+        "title": "Xi, Putin vow to deepen strategic ties after meeting at SCO summit",
+        "description": "Chinese and Russian leaders reaffirm commitment to strengthening strategic partnership"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_87989321281327104",
+    "title": "Trump Signals Interest in Second Meeting with Kim Jong-un",
+    "summary": "Trump has signaled renewed interest in meeting with North Korean leader Kim Jong-un following his 2018 summit. CSIS analysis examines prospects for a second Trump-Kim summit and potential outcomes.",
+    "date_event": null,
+    "date_published": "2026-08-31T19:06:10Z",
+    "geo": {
+      "lat": 37.5665,
+      "lon": 126.978,
+      "location": "North Korea"
+    },
+    "topics": [
+      "north-korea",
+      "diplomacy",
+      "nuclear-policy",
+      "us-foreign-policy",
+      "kim-jong-un",
+      "summit"
+    ],
+    "confidence": 0.75,
+    "source_name": "CSIS Korea Chair",
+    "links": [
+      {
+        "url": "https://x.com/CSISKoreaChair/status/2094502021273383331",
+        "title": "Trump-Kim Summit 2.0: What to Look Out For?",
+        "source": "Twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87989321373601792",
+    "title": "Expert Analysis: Trump's Renewed Diplomatic Outreach to North Korea",
+    "summary": "CSIS expert Victor Cha discusses Trump's renewed diplomatic overtures toward North Korea and the realistic prospects for nuclear diplomacy with Pyongyang in current geopolitical context.",
+    "date_event": null,
+    "date_published": "2026-08-31T19:00:53Z",
+    "geo": {
+      "lat": 37.5665,
+      "lon": 126.978,
+      "location": "North Korea"
+    },
+    "topics": [
+      "north-korea",
+      "diplomacy",
+      "nuclear-policy",
+      "us-foreign-policy",
+      "csis",
+      "expert-analysis"
+    ],
+    "confidence": 0.75,
+    "source_name": "CSIS Korea Chair",
+    "links": [
+      {
+        "url": "https://x.com/CSISKoreaChair/status/2094500691154792607",
+        "title": "Trump's Renewed Outreach to Kim Jong-un",
+        "source": "Twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87989408204075008",
+    "title": "Palestinian Detainee Abuse in Hebron",
+    "summary": "Israeli occupation forces released a Palestinian detainee from Hebron in the occupied West Bank, with visible marks of plastic restraints and abuse on his body.",
+    "date_event": null,
+    "date_published": "2026-08-31T18:32:22Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.2023,
+      "location": "Hebron, occupied West Bank"
+    },
+    "topics": [
+      "detention",
+      "human-rights",
+      "west-bank",
+      "abuse"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/237280",
+        "title": "Quds News Network Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87989408283766784",
+    "title": "Israeli Forces Detonate Displaced Lebanese Homes",
+    "summary": "Israeli occupation forces detonated displaced Lebanese homes in the town of Zawtar al-Sharqiya in southern Lebanon.",
+    "date_event": null,
+    "date_published": "2026-08-31T19:11:45Z",
+    "geo": {
+      "lat": 33.2137,
+      "lon": 35.3654,
+      "location": "Zawtar al-Sharqiya, southern Lebanon"
+    },
+    "topics": [
+      "home-demolition",
+      "displacement",
+      "lebanon",
+      "civilian-impact"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/237281",
+        "title": "Quds News Network Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87989408350875648",
+    "title": "Ukraine-Russia War Frontline Report",
+    "summary": "UNITED24 Media reports on Ukraine-Russia conflict developments from the Ukrainian perspective.",
+    "date_event": null,
+    "date_published": "2026-08-31T18:36:01Z",
+    "geo": {
+      "lat": 48.3794,
+      "lon": 31.1656,
+      "location": "Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "war",
+      "military-conflict",
+      "russia"
+    ],
+    "confidence": null,
+    "source_name": "UNITED24 Media",
+    "links": [
+      {
+        "url": "https://t.me/United24media/45665",
+        "title": "UNITED24 Media Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87989408417984512",
+    "title": "Trump Administration Seeks Removal of Transgender Service Members",
+    "summary": "The Trump administration has filed an urgent appeal with the Supreme Court seeking immediate removal of 29 active-duty transgender service members before their legal challenge to the Pentagon ban goes to trial in January.",
+    "date_event": null,
+    "date_published": "2026-08-31T19:04:18Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369,
+      "location": "Washington D.C., United States"
+    },
+    "topics": [
+      "military-policy",
+      "transgender-rights",
+      "legal-challenge",
+      "united-states"
+    ],
+    "confidence": null,
+    "source_name": "ABC News",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2094501550550819171",
+        "title": "ABC News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87989408489287680",
+    "title": "Deadly Flooding on Nepal-Tibet Border",
+    "summary": "Rescuers conducted tunnel search-and-rescue efforts following deadly flooding along the Nepal-Tibet border that killed over 900 people and left more than 4,400 missing.",
+    "date_event": null,
+    "date_published": "2026-08-31T18:40:53Z",
+    "geo": {
+      "lat": 27.9881,
+      "lon": 86.925,
+      "location": "Nepal-Tibet Border Region"
+    },
+    "topics": [
+      "natural-disaster",
+      "flooding",
+      "nepal",
+      "rescue-operations"
+    ],
+    "confidence": null,
+    "source_name": "ABC News",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2094495658681958766",
+        "title": "ABC News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87989373919850496",
+    "title": "Jordan Arrests American-Jordanian Journalist Ali Younes",
+    "summary": "Jordan's General Intelligence Department arrested prominent investigative journalist Ali Younes. Security officials cited his reposting of an article about US aid to Jordan as justification for the arrest, raising serious concerns about press freedom and government surveillance.",
+    "date_event": null,
+    "date_published": "2026-08-31T19:00:01Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.9284,
+      "country": "Jordan",
+      "city": "Amman"
+    },
+    "topics": [
+      "journalism",
+      "arrest",
+      "freedom-of-press",
+      "jordan",
+      "security"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2094500472514031625",
+        "label": "Middle East Eye Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87989433239891968",
+    "title": "German NGO Mission Lifeline Provides Humanitarian Assistance to Migrants in Ceuta",
+    "summary": "Mission Lifeline, a German humanitarian NGO, established operations in Ceuta to provide comprehensive assistance to migrants, including food, necessities, and basic services. The presence of international NGOs coordinating humanitarian aid to migrant populations highlights the evolving regional humanitarian response.",
+    "date_event": null,
+    "date_published": "2026-08-31T18:26:31Z",
+    "geo": {
+      "lat": 35.8919,
+      "lon": -5.3109,
+      "country": "Spain",
+      "city": "Ceuta"
+    },
+    "topics": [
+      "migration",
+      "humanitarian-aid",
+      "ngo",
+      "ceuta",
+      "spain"
+    ],
+    "confidence": null,
+    "source_name": "My Lord Bebo (@MyLordBebo)",
+    "links": [
+      {
+        "url": "https://x.com/MyLordBebo/status/2094492042663481783",
+        "label": "My Lord Bebo Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87989491049984000",
+    "title": "NASA ISS Spacewalk Scheduled for September 1 with Astronauts Jessica and Sophia",
+    "summary": "NASA announced a spacewalk scheduled for September 1, 2026, at 7:00 AM ET, with astronauts Jessica and Sophia conducting extravehicular maintenance operations on the International Space Station. The mission involves installation and replacement of orbital hardware systems.",
+    "date_event": null,
+    "date_published": "2026-08-31T18:22:20Z",
+    "geo": {
+      "lat": 0.0,
+      "lon": 0.0,
+      "country": "International",
+      "region": "Space Station"
+    },
+    "topics": [
+      "space-exploration",
+      "iss",
+      "spacewalk",
+      "nasa",
+      "satellite"
+    ],
+    "confidence": null,
+    "source_name": "Nasa (@Nasa)",
+    "links": [
+      {
+        "url": "https://x.com/Nasa/status/2094490990841151667",
+        "label": "NASA Announcement"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87989353988526080",
+    "title": "UANI Congratulates Tom Tugendhat on Appointment as U.K. Shadow Foreign Secretary",
+    "summary": "United Against Nuclear Iran (UANI) issued a statement congratulating Tom Tugendhat on his appointment as U.K. Shadow Foreign Secretary. The appointment comes at a critical time for Iran nuclear policy and counter-proliferation efforts.",
+    "date_event": null,
+    "date_published": "2026-08-31T18:54:19.000Z",
+    "geo": {
+      "lat": 51.5074,
+      "lon": -0.1278
+    },
+    "topics": [
+      "uk-politics",
+      "iran-nuclear-policy",
+      "foreign-secretary",
+      "counter-proliferation",
+      "sanctions",
+      "international-relations"
+    ],
+    "confidence": null,
+    "source_name": "UANI (@UANI)",
+    "links": [
+      {
+        "title": "Tweet",
+        "url": "https://x.com/UANI/status/2094499040046010575"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87989274070257664",
+    "title": "North and sub-Saharan African actors mediate prisoner releases with Tuareg rebels and militants in Sahel",
+    "summary": "Several North and sub-Saharan African actors have mediated high-profile prisoner releases involving Tuareg rebels and Salafi-jihadi militants in the Sahel region since mid-August. These mediations serve to advance regional aims and influence, while Russia has engaged with these efforts.",
+    "date_event": null,
+    "date_published": "2026-08-31T18:33:03.000Z",
+    "geo": {
+      "lat": 15.5007,
+      "lon": -4.9821
+    },
+    "topics": [
+      "sahel",
+      "prisoner-releases",
+      "tuareg-rebels",
+      "jihadist-groups",
+      "regional-mediation",
+      "russia-influence",
+      "north-africa",
+      "sub-saharan-africa"
+    ],
+    "confidence": null,
+    "source_name": "Institute for the Study of War (@TheStudyofWar)",
+    "links": [
+      {
+        "title": "Tweet",
+        "url": "https://x.com/TheStudyofWar/status/2094493688705486936"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_87989420715708416",
+    "title": "USS North Dakota Returns to Fleet After Maintenance at Portsmouth Naval Shipyard",
+    "summary": "The USS North Dakota, a nuclear attack submarine, completed maintenance and sustainment operations at Portsmouth Naval Shipyard and returned to the fleet. The submarine underwent extensive maintenance as part of the Navy's commitment to fleet readiness.",
+    "date_event": null,
+    "date_published": "2026-08-31T18:52:17.000Z",
+    "geo": {
+      "lat": 43.0886,
+      "lon": -70.7493
+    },
+    "topics": [
+      "submarine",
+      "uss-north-dakota",
+      "fleet-readiness",
+      "naval-maintenance",
+      "portsmouth-naval-shipyard",
+      "us-navy",
+      "undersea-warfare"
+    ],
+    "confidence": null,
+    "source_name": "US Navy (@USNavy)",
+    "links": [
+      {
+        "title": "Tweet",
+        "url": "https://x.com/USNavy/status/2094498528550683110"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
