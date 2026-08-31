@@ -89,3 +89,9 @@ The orchestrator (`builder/index.ts`) reads this file, drops entries whose `Expi
 **Finding:** `https://r.jina.ai/http://x.com/<handle>` returns readable profile snapshots for X accounts, including tweet status IDs. Snowflake ID decoding formula: `timestamp_ms = (snowflake_id >> 22) + 1288834974657` recovers exact UTC posting time even when the page shows relative labels ("1m", "2h"). Broken or zero-activity accounts still return stale or missing timelines.
 **Action for next run:** When Twitter API unavailable or returns no results, fetch r.jina.ai mirror as second-pass. Decode snowflake IDs from status URLs to recover UTC timestamps. Keep only tweets whose decoded times fall within the bucket window.
 **Expires:** 2026-07-15
+
+## 2026-08-31 — twitter-clash-report: recent scan yielded off-topic political content
+**Trigger:** Batch 5 processing showed all 3 candidates for twitter-clash-report (2026-08-31 18:16–19:16 window) contained JD Vance political commentary, inconsistent with source scope (military conflicts, security incidents, MENA).
+**Finding:** The identify stage incorrectly flagged JD Vance posts as matching "military/security" keywords. Account remains active and matches stated profile; false positives were keyword-driven rather than editorial drift.
+**Action for next run:** Tighten identify.sh keyword matching for twitter-clash-report to exclude US domestic political figures (JD Vance, etc.) not involved in armed conflict. Consider adding exclusion pattern for campaign-related content.
+**Expires:** 2026-09-30
