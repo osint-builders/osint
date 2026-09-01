@@ -1,11 +1,15 @@
 [
   {
     "country": "Ukraine",
-    "count": 18
+    "count": 20
   },
   {
     "country": "United States",
     "count": 17
+  },
+  {
+    "country": "Iran",
+    "count": 16
   },
   {
     "country": "Russia",
@@ -13,10 +17,10 @@
   },
   {
     "country": "Palestine",
-    "count": 11
+    "count": 13
   },
   {
-    "country": "Iran",
+    "country": "Lebanon",
     "count": 7
   },
   {
@@ -28,11 +32,15 @@
     "count": 6
   },
   {
-    "country": "Lebanon",
+    "country": "Global",
     "count": 6
   },
   {
     "country": "Spain",
+    "count": 4
+  },
+  {
+    "country": "Nepal",
     "count": 3
   },
   {
@@ -48,15 +56,15 @@
     "count": 2
   },
   {
-    "country": "Nepal",
-    "count": 2
-  },
-  {
     "country": "Yemen",
     "count": 2
   },
   {
     "country": "Sudan",
+    "count": 2
+  },
+  {
+    "country": "Germany",
     "count": 2
   },
   {
@@ -128,10 +136,6 @@
     "count": 1
   },
   {
-    "country": "Germany",
-    "count": 1
-  },
-  {
     "country": "Ethiopia",
     "count": 1
   },
@@ -173,6 +177,14 @@
   },
   {
     "country": "International",
+    "count": 1
+  },
+  {
+    "country": "Cyprus",
+    "count": 1
+  },
+  {
+    "country": "Luxembourg",
     "count": 1
   }
 ]
