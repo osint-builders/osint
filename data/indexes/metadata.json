@@ -8578,5 +8578,701 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_88678058030047232",
+    "title": "Crude Oil Blockade Line Traffic Declines to 7.54 Mbpd Over 28-Day Period",
+    "summary": "TankerTrackers reports significant reduction in crude oil shipments via USN Blockade Line, averaging 7.54 million barrels per day over the past 28 days, down from 17.67 Mbpd in January-February 2026.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:43:01Z",
+    "geo": {
+      "lat": 36.3236517,
+      "lon": 50.0119968
+    },
+    "topics": [
+      "crude-oil",
+      "energy-security",
+      "sanctions-enforcement",
+      "maritime-shipping",
+      "geopolitical-dynamics"
+    ],
+    "confidence": 0.92,
+    "source_name": "TankerTrackers (@TankerTrackers)",
+    "links": [
+      {
+        "title": "TankerTrackers Tweet",
+        "url": "https://x.com/TankerTrackers/status/2095190772924535135"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRObx2WWkAANUfk.jpg"
+  },
+  {
+    "id": "evt_88678154067013632",
+    "title": "Two Seafarers Killed in Strait of Hormuz Tanker Attack",
+    "summary": "A tanker vessel came under attack in the Strait of Hormuz, resulting in the deaths of two seafarers.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:24:29Z",
+    "geo": {
+      "lat": 26.5,
+      "lon": 56.0
+    },
+    "topics": [
+      "maritime",
+      "security",
+      "attack",
+      "tanker",
+      "strait-of-hormuz",
+      "persian-gulf",
+      "incident"
+    ],
+    "confidence": 0.85,
+    "source_name": "Gcaptain (@Gcaptain)",
+    "links": [
+      {
+        "url": "https://x.com/Gcaptain/status/2095186109919817755",
+        "title": "Gcaptain Report"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2092846095735177216/M_8ltDZ5?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_88678086761017344",
+    "title": "US Seals Major Venezuela Oil Deal",
+    "summary": "Fox News reports on a landmark oil agreement signing between the United States and Venezuela.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:31:37Z",
+    "geo": {
+      "lat": 6.4238,
+      "lon": -66.5897
+    },
+    "topics": [
+      "diplomacy",
+      "energy",
+      "oil",
+      "venezuela",
+      "united-states",
+      "agreement"
+    ],
+    "confidence": 0.72,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2095187902204404097",
+        "title": "Fox News Tweet"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_88678260497481728",
+    "title": "Ukrainian Air Force MiG-29 Shoots Down Russian Cruise Missile Over Odesa",
+    "summary": "Cockpit footage captured from a Ukrainian Air Force MiG-29 Fulcrum fighter jet documents the interception and destruction of a Russian Banderol cruise missile at close range over the city of Odesa. The footage provides visual confirmation of air defense engagement during ongoing conflict operations.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:36:32Z",
+    "geo": {
+      "lat": 46.4825,
+      "lon": 30.7233,
+      "country": "Ukraine",
+      "region": "Odesa Oblast",
+      "city": "Odesa"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "conflict",
+      "air-defense",
+      "military",
+      "weapons-verification"
+    ],
+    "confidence": 0.9,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2095189142388814298"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2095189119307567110/img/F5uhG-tsinAMTyR9.jpg"
+  },
+  {
+    "id": "evt_88678099985661952",
+    "title": "Tony Blair Tasked With Requesting Palestinian Authority Change Schoolbook Language",
+    "summary": "Former UK Prime Minister Tony Blair, acting as an envoy for Trump's Board of Peace, allegedly requested the Palestinian Authority replace the word \"Palestine\" with \"Samaria\" in Palestinian schoolbooks, according to sources familiar with the matter. The initiative reflects ongoing diplomatic pressure regarding Palestinian educational curriculum.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:32:40Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.2338,
+      "country": "Palestine",
+      "region": "West Bank",
+      "city": "Ramallah"
+    },
+    "topics": [
+      "palestine",
+      "education",
+      "diplomacy",
+      "blair",
+      "united-states"
+    ],
+    "confidence": 0.75,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2095188168576311698"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2095120810998681600/gFM4ob80?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_88678100107296768",
+    "title": "Israeli Defence Minister Claims Gaza Solution Requires Palestinian Migration",
+    "summary": "Israeli Defence Minister Israel Katz stated that no lasting solution for Gaza can exist without Palestinian migration from the territory. The statement reflects Israeli government positioning on the future of Gaza and Palestinian displacement.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:29:47Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.2338,
+      "country": "Palestine",
+      "region": "Gaza",
+      "city": "Gaza City"
+    },
+    "topics": [
+      "gaza",
+      "israel",
+      "palestine",
+      "migration",
+      "conflict"
+    ],
+    "confidence": 0.85,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2095187443729186872"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2095120810998681600/gFM4ob80?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_88678100207960064",
+    "title": "Trump Proposes Renaming Strait of Hormuz to \"Trump Strait\"",
+    "summary": "US President Donald Trump proposed renaming the Strait of Hormuz, one of the world's most critical shipping routes, to the \"Trump Strait\" via a post on Truth Social. The proposal emerged despite international control of the waterway remaining contested amid ongoing US military operations against Iran.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:22:30Z",
+    "geo": {
+      "lat": 26.0667,
+      "lon": 56.5333,
+      "country": "Iran",
+      "region": "Hormozgan",
+      "city": "Strait of Hormuz"
+    },
+    "topics": [
+      "united-states",
+      "iran",
+      "strait-of-hormuz",
+      "diplomacy",
+      "geopolitics"
+    ],
+    "confidence": 0.9,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2095185607651729652"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2095120810998681600/gFM4ob80?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_88678100329594880",
+    "title": "Putin's Aide Suggests Possible Trump-Putin Meeting in China in November",
+    "summary": "Yuri Ushakov, foreign policy advisor to Russian President Putin, indicated that Trump and Putin might meet in China during November 2026. Ushakov mentioned discussions about a three-party meeting hosted by Chinese President Xi Jinping, though separate bilateral talks between the two leaders remain a possibility.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:04:46Z",
+    "geo": {
+      "lat": 39.9042,
+      "lon": 116.4074,
+      "country": "China",
+      "region": "Beijing",
+      "city": "Beijing"
+    },
+    "topics": [
+      "diplomacy",
+      "trump",
+      "putin",
+      "united-states",
+      "russia",
+      "china",
+      "geopolitics"
+    ],
+    "confidence": 0.7,
+    "source_name": "My Lord Bebo (@MyLordBebo)",
+    "links": [
+      {
+        "url": "https://x.com/MyLordBebo/status/2095181144899649626"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2095181050469351424/img/I_HYS4HIhgqVLtZp.jpg"
+  },
+  {
+    "id": "evt_88678161671303168",
+    "title": "Peng Liyuan Meets Egyptian First Lady Entissar El-Sisi",
+    "summary": "Peng Liyuan, wife of Chinese President Xi Jinping, met with Entissar El-Sisi, wife of Egyptian President Abdel Fattah El-Sisi, for tea and visited a handicrafts exhibition on Wednesday during an official visit.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:27:24.000Z",
+    "geo": {
+      "lat": 30.0443879,
+      "lon": 31.2357257,
+      "display_name": "Cairo, Egypt"
+    },
+    "topics": [
+      "diplomacy",
+      "china",
+      "egypt",
+      "official-visit",
+      "cultural-exchange"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2095186840752124161",
+        "title": "Tweet by Xinhua News"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HROZVD7acAEQq4D.jpg"
+  },
+  {
+    "id": "evt_88678168528990208",
+    "title": "China Provides Emergency Assistance Following Devastating Mudslides in Nepal",
+    "summary": "Following devastating mudslides in Nepal's border regions, China provides swift emergency assistance and rescue support, strengthening the long-standing friendship between the two nations.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:05:14.000Z",
+    "geo": {
+      "lat": 28.3780464,
+      "lon": 83.9999901,
+      "display_name": "Nepal"
+    },
+    "topics": [
+      "disaster",
+      "mudslide",
+      "nepal",
+      "china",
+      "emergency-relief",
+      "humanitarian-aid"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2095181265410650364",
+        "title": "Tweet by Xinhua News"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HROUQFWbwAArQ6d.jpg"
+  },
+  {
+    "id": "evt_88678295884816384",
+    "title": "Polish authorities confirm deliberate sabotage at WB Electronics drone facility",
+    "summary": "Polish authorities determined that a fire at WB Electronics, a major producer of drone components for FlyEye and Warmate systems used by Poland and Ukraine, resulted from deliberate arson. Prime Minister Donald Tusk confirmed there doubt regarding the deliberate nature of the incident.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:36:54.000Z",
+    "geo": {
+      "lat": 51.9194,
+      "lon": 19.1451,
+      "place": "Poland"
+    },
+    "topics": [
+      "sabotage",
+      "ukraine",
+      "poland",
+      "nato",
+      "defense",
+      "manufacturing",
+      "infrastructure-attack"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2095189233652637885",
+        "title": "Clash Report tweet",
+        "type": "primary"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_88678295985479680",
+    "title": "Iran's rial reaches record low amid currency crisis",
+    "summary": "Iran's currency hit a historic low as the dollar exceeded 2.2 million rials on open markets. The rial has depreciated approximately 60% in value since March, reflecting broader economic and international pressure on the Iranian economy.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:31:04.000Z",
+    "geo": {
+      "lat": 32.4279,
+      "lon": 53.688,
+      "place": "Iran"
+    },
+    "topics": [
+      "iran",
+      "currency-crisis",
+      "economics",
+      "sanctions",
+      "middle-east"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2095187763591069788",
+        "title": "Clash Report tweet",
+        "type": "primary"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_88678296069365760",
+    "title": "US Army awards $192 million contract for AI-powered TITAN tactical intelligence vehicles",
+    "summary": "The US Army awarded a $192 million contract to Palantir and Anduril for production of eight AI-powered TITAN tactical intelligence vehicles. The system integrates AI and machine learning to process multi-source sensor data for target identification and location.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:27:39.000Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369,
+      "place": "United States"
+    },
+    "topics": [
+      "united-states",
+      "military",
+      "ai",
+      "defense-technology",
+      "intelligence"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2095186905671315948",
+        "title": "Clash Report tweet",
+        "type": "primary"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_88678333256065024",
+    "title": "Analysis: Trump-Kim diplomacy possibility amid renewed discussion of North Korean nuclear arsenal",
+    "summary": "CSIS Korea Chair experts analyze potential renewed diplomatic engagement between Trump administration and North Korea, amid Trump's recent statements about his relationship with Kim Jong-un and assessment of North Korea's nuclear weapons arsenal at 57 warheads.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:02:56.000Z",
+    "geo": {
+      "lat": 37.5665,
+      "lon": 126.978,
+      "place": "Korea"
+    },
+    "topics": [
+      "north-korea",
+      "united-states",
+      "diplomacy",
+      "nuclear-weapons",
+      "korea",
+      "defense-policy"
+    ],
+    "confidence": null,
+    "source_name": "CSIS Korea Chair",
+    "links": [
+      {
+        "url": "https://x.com/CSISKoreaChair/status/2095180685065531797",
+        "title": "CSIS Korea Chair tweet",
+        "type": "primary"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_88678221268148224",
+    "title": "Europe's Spies: Fighting as a Team",
+    "summary": "Leading think tank analysis on European intelligence agency cooperation, examining how Britain and France lead Europe's spy league while highlighting the need to integrate capabilities from smaller agencies into continental intelligence coordination.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:23:00.000Z",
+    "geo": {
+      "lat": 52.52,
+      "lon": 13.405,
+      "place": "Europe"
+    },
+    "topics": [
+      "intelligence",
+      "europe",
+      "nato",
+      "security",
+      "international-relations"
+    ],
+    "confidence": null,
+    "source_name": "cepa",
+    "links": [
+      {
+        "url": "https://x.com/cepa/status/2095185735594676649",
+        "title": "CEPA tweet",
+        "type": "primary"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_88678187101327360",
+    "title": "Chinese Shipping Firm COSCO Allegedly Using Concealed Military Surveillance Equipment",
+    "summary": "U.S. officials report that COSCO, a Chinese state-owned shipping company, employs hidden equipment on its vessels to intercept military communications and track naval and aircraft movements near coastlines, raising concerns about espionage and maritime security.",
+    "date_event": null,
+    "date_published": "2026-09-02T15:55:43Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "country": "Global",
+      "region": "International Waters"
+    },
+    "topics": [
+      "espionage",
+      "surveillance",
+      "maritime-security",
+      "military-communications",
+      "china",
+      "shipping"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/94749"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/Ds_vNXpflMDULAk7BXv-RNQr5455uBMF2xwpg01zHxIa4LwOdWl3cVyumVf62SjdD5S4UzbCE0ixjwnqFzu2oZc66n2kRl3y1f_RJnVKUGoSM4-evIOHN9Sv-SyRuVooMcRBwdxMh9d9pRKmGTY0LbiJTNq3PXynT1RgIbGwAfYmNIS0AVTbNczCCl4XwRrd3zDOc1Y_B5pXI-QOiZrOKMHd5-cUiCUk-Mbl7Oo8IZSbHCVpD-Pr3Swtz1Qrg5045_VlEEGq1SUHxN0bXZgej5QKuSMir3bjA2EcC5e11i3XFmiOnCxzUBnmYuvsRvWpaHvJAiLoO8WH2FH32mN26g.jpg"
+  },
+  {
+    "id": "evt_88678187315236864",
+    "title": "Argentina's President Milei Reaffirms Sovereignty Claims Over Falkland Islands",
+    "summary": "Argentine President Javier Milei renewed his country's territorial claim to the Falkland Islands during a public statement, using strong rhetoric and pledging to defend Argentina's interests with determination.",
+    "date_event": null,
+    "date_published": "2026-09-02T15:57:37Z",
+    "geo": {
+      "lat": -51.7934,
+      "lon": -59.5432,
+      "country": "Argentina",
+      "region": "Malvinas (Falkland Islands)",
+      "city": "Stanley"
+    },
+    "topics": [
+      "territorial-dispute",
+      "argentina",
+      "falkland-islands",
+      "sovereignty",
+      "diplomacy"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/94751"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/Ds_vNXpflMDULAk7BXv-RNQr5455uBMF2xwpg01zHxIa4LwOdWl3cVyumVf62SjdD5S4UzbCE0ixjwnqFzu2oZc66n2kRl3y1f_RJnVKUGoSM4-evIOHN9Sv-SyRuVooMcRBwdxMh9d9pRKmGTY0LbiJTNq3PXynT1RgIbGwAfYmNIS0AVTbNczCCl4XwRrd3zDOc1Y_B5pXI-QOiZrOKMHd5-cUiCUk-Mbl7Oo8IZSbHCVpD-Pr3Swtz1Qrg5045_VlEEGq1SUHxN0bXZgej5QKuSMir3bjA2EcC5e11i3XFmiOnCxzUBnmYuvsRvWpaHvJAiLoO8WH2FH32mN26g.jpg"
+  },
+  {
+    "id": "evt_88678187415900160",
+    "title": "EU Foreign Minister Advocates Moratorium on Black Sea Military Operations",
+    "summary": "An EU foreign policy official expressed support for a moratorium on military operations in the Black Sea during an informal meeting of EU foreign ministers in Ireland, signaling a shift toward diplomatic solutions.",
+    "date_event": null,
+    "date_published": "2026-09-02T15:55:17Z",
+    "geo": {
+      "lat": 46.4917,
+      "lon": 30.7453,
+      "country": "Ukraine",
+      "region": "Black Sea",
+      "city": "Odesa"
+    },
+    "topics": [
+      "diplomacy",
+      "military-operations",
+      "black-sea",
+      "european-union",
+      "moratorium"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/192452"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/P5wRcOWdnOUYu8nsKkWneb62EE0y-nkB7IxGvNhu3u-eqqwYmcpHIQ3VjNCs98osjRYqkkhFN9Wr9ub7NeiGLjTPzuve_TnJ2JRUYkcggoMMU8NWDtaxw2tv13DHHylXmsbPaYOnurxcoqVv8AiKNB_YJUTV8wLb0cnzXwYHLo20CVw2enzdULIuLeArG-eCVqQQ8EMN1sDwlxY3RhXuquRu1OqXqzDQRw3GrmvPnGUBlh3HD164H-j_zhR6tnL_teOQlwU2XfX2u1Y7DnOFjTzekeWvvqvjeL9H7qQgoFTggmpKqOi1weo4sKq7yFYSwN5xgVKxLAYhSFwZz1FBxw.jpg"
+  },
+  {
+    "id": "evt_88678336003346432",
+    "title": "Syrian Security Appointment in Hasakah Aims to Address Public Pressure",
+    "summary": "Syrian authorities made a security leadership appointment in Hasakah, selecting a local figure from the Goyran neighborhood to head security operations. The move appears designed to reduce public pressure and tensions in the northeastern Syrian region.",
+    "date_event": "2026-09-02T16:07:44Z",
+    "date_published": "2026-09-02T16:07:44Z",
+    "geo": {
+      "lat": 36.5,
+      "lon": 40.75,
+      "country": "Syria",
+      "city": "Hasakah"
+    },
+    "topics": [
+      "syria",
+      "hasakah",
+      "security-appointment",
+      "governance",
+      "middle-east"
+    ],
+    "confidence": 0.7,
+    "source_name": "Sim Nasr",
+    "links": [
+      {
+        "url": "https://x.com/SimNasr/status/2095181891183780269",
+        "label": "Sim Nasr on X/Twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_88678211134722048",
+    "title": "Saudi Arabia Reports Iranian Attack on Oil Tanker in Hormuz Strait",
+    "summary": "Saudi Arabia reported that Iran attacked a Saudi oil tanker in the Strait of Hormuz, resulting in the deaths of two sailors. The incident raises concerns about regional escalation and global energy security.",
+    "date_event": "2026-09-02T16:42:30Z",
+    "date_published": "2026-09-02T16:42:30Z",
+    "geo": {
+      "lat": 26.5,
+      "lon": 55.5,
+      "country": "United Arab Emirates",
+      "region": "Hormuz Strait"
+    },
+    "topics": [
+      "maritime-security",
+      "iran",
+      "saudi-arabia",
+      "oil-tanker",
+      "strait-of-hormuz",
+      "shipping-incident"
+    ],
+    "confidence": 0.85,
+    "source_name": "Ship News",
+    "links": [
+      {
+        "url": "https://x.com/ShipNews/status/2095190642678731171",
+        "label": "Ship News on X/Twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_88678207741513728",
+    "title": "Myanmar Civil War: Bloomberg Investigates Illicit Funding and Human Cost",
+    "summary": "Bloomberg Investigates obtains rare access to Myanmar to document the ongoing civil war that has ravaged the nation since 2021. The investigation traces illicit funding flows and examines the human impact of the multifaceted conflict affecting millions.",
+    "date_event": null,
+    "date_published": "2026-09-02T16:22:07Z",
+    "geo": {
+      "lat": 21.9162,
+      "lon": 95.956,
+      "country": "Myanmar",
+      "region": "Southeast Asia",
+      "city": "Yangon"
+    },
+    "topics": [
+      "civil-war",
+      "myanmar",
+      "conflict",
+      "human-rights",
+      "investigation",
+      "funding",
+      "southeast-asia"
+    ],
+    "confidence": 0.85,
+    "source_name": "BBG Originals (@BBGOriginals)",
+    "links": [
+      {
+        "url": "https://x.com/BBGOriginals/status/2095185513183367304",
+        "label": "BBG Originals Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2095141074096230405/img/h1w_36hL6UZRLMK3.jpg"
+  },
+  {
+    "id": "evt_88680054535495680",
+    "title": "US Forces Launch Strikes Against Iran's Revolutionary Guards",
+    "summary": "United States military forces conducted strikes against Iran's Revolutionary Guards in response to attempted attacks on commercial shipping.",
+    "date_event": "2026-09-02T15:58:46Z",
+    "date_published": "2026-09-02T15:58:46Z",
+    "geo": {
+      "lat": 27.15,
+      "lon": 49.44,
+      "country": "Iran"
+    },
+    "topics": [
+      "us-military",
+      "iran",
+      "military-strikes",
+      "middle-east"
+    ],
+    "confidence": 0.75,
+    "source_name": "Insider Paper (@insiderpaper)",
+    "links": [
+      {
+        "url": "https://t.me/insiderpaper/44312",
+        "label": "Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_88680054619381760",
+    "title": "Ukrainian Intelligence Agencies Clash in Armed Confrontation in Kiev",
+    "summary": "Security Service of Ukraine (SBU) special forces engaged in gunfight with Main Intelligence Directorate (HUR) personnel in Kiev over custody of a Russian defector.",
+    "date_event": "2026-09-02T16:20:16Z",
+    "date_published": "2026-09-02T16:20:16Z",
+    "geo": {
+      "lat": 50.45,
+      "lon": 30.52,
+      "country": "Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "conflict",
+      "intelligence",
+      "security"
+    ],
+    "confidence": 0.75,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/93796",
+        "label": "Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_88680054703267840",
+    "title": "Iraqi Resistance Movement Issues September 30 Ultimatum to US Military",
+    "summary": "Leadership of the Nujabaa Resistance Movement demands complete US military withdrawal from Iraq by September 30, 2026, threatening armed confrontation if deadline remains unmet.",
+    "date_event": "2026-09-02T16:37:19Z",
+    "date_published": "2026-09-02T16:37:19Z",
+    "geo": {
+      "lat": 33.31,
+      "lon": 44.36,
+      "country": "Iraq"
+    },
+    "topics": [
+      "iraq",
+      "us-military",
+      "resistance",
+      "middle-east"
+    ],
+    "confidence": 0.75,
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36274",
+        "label": "Telegram"
+      }
+    ],
+    "link_preview_image": null
   }
 ]

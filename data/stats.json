@@ -1,32 +1,32 @@
 {
-  "last_updated": "2026-09-01T17:08:19.387Z",
+  "last_updated": "2026-09-02T17:05:50.634Z",
   "data_range": {
     "oldest_date": "2026-08-25",
-    "newest_date": "2026-09-01"
+    "newest_date": "2026-09-02"
   },
   "statistics": {
-    "total_events": 302,
+    "total_events": 326,
     "events_by_month": {
       "2026-08": 257,
-      "2026-09": 45
+      "2026-09": 69
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 13,
       "Quds News Network (@QudsNen)": 17,
       "Rerum Novarum Intel (@rnintel)": 16,
-      "Intel Slava Z (@intelslava)": 12,
+      "Intel Slava Z (@intelslava)": 13,
       "UNITED24 Media": 5,
       "Wagner Z Group": 4,
       "ABC News": 8,
-      "Insider Paper (@insiderpaper)": 5,
-      "Clash Report (@ClashReport)": 22,
-      "DD Geopolitics (@DDGeopolitics)": 12,
-      "OSINT Technical (@Osinttechnical)": 6,
+      "Insider Paper (@insiderpaper)": 6,
+      "Clash Report (@ClashReport)": 24,
+      "DD Geopolitics (@DDGeopolitics)": 13,
+      "OSINT Technical (@Osinttechnical)": 7,
       "NSA (@NSAGov)": 1,
       "Sim Nasr (@SimNasr)": 2,
-      "TankerTrackers (@TankerTrackers)": 1,
+      "TankerTrackers (@TankerTrackers)": 2,
       "US Pacific Fleet (@USPacificFleet)": 1,
-      "Middle East Eye (@MiddleEastEye)": 16,
+      "Middle East Eye (@MiddleEastEye)": 19,
       "MT Anderson (@MT_Anderson)": 2,
       "inside_nk (@inside_nk)": 5,
       "Ship News (@ShipNews)": 5,
@@ -35,16 +35,16 @@
       "Middle East Spectator": 1,
       "Geopolitics Prime (@geopolitics_prime)": 6,
       "AP News (@AP)": 1,
-      "CSIS Korea Chair": 5,
+      "CSIS Korea Chair": 6,
       "Our Wars, Today (@ourwarstoday)": 1,
       "BBC World News (@BBCWorld)": 4,
       "ABC News (@ABC)": 11,
       "US Navy (@USNavy)": 4,
       "CNN (@CNN)": 1,
       "Warshipcam (@Warshipcam)": 7,
-      "Xinhua News (@XHNews)": 12,
+      "Xinhua News (@XHNews)": 14,
       "cnnbrk (@cnnbrk)": 1,
-      "Fox News (@FoxNews)": 4,
+      "Fox News (@FoxNews)": 5,
       "Quds News Network": 10,
       "cepa (@cepa)": 1,
       "ELINT News (@ELINTNews)": 1,
@@ -56,11 +56,11 @@
       "UNITED24 Media (@United24media)": 5,
       "Wagner Z Group (@wagner_group_pmcr)": 1,
       "WarLife 18+ (@Voyna18)": 3,
-      "Gcaptain (@Gcaptain)": 1,
+      "Gcaptain (@Gcaptain)": 2,
       "cnni": 1,
       "twitter-criticalthreats": 1,
       "Thewarzonewire (@Thewarzonewire)": 3,
-      "Middle East Spectator (@Middle_East_Spectator)": 6,
+      "Middle East Spectator (@Middle_East_Spectator)": 7,
       "BBC World News": 6,
       "BBC Breaking News": 1,
       "UANI (@UANI)": 2,
@@ -71,10 +71,10 @@
       "inside_nk": 1,
       "ISW Ukraine Interactive Territorial Control Map": 1,
       "The Lookout North (@The_Lookout_N)": 1,
-      "My Lord Bebo (@MyLordBebo)": 4,
+      "My Lord Bebo (@MyLordBebo)": 5,
       "cnni (@cnni)": 1,
       "Philippine Coast Guard (@CoastGuardPH)": 1,
-      "Clash Report": 3,
+      "Clash Report": 6,
       "DD Geopolitics": 3,
       "Esri (@Esri)": 1,
       "Scmpnews (@Scmpnews)": 1,
@@ -82,7 +82,11 @@
       "BBC Breaking News (@BBCBreaking)": 1,
       "AP News": 1,
       "War Monitor (@warmonitors)": 2,
-      "Rerum Novarum Intel": 3
+      "Rerum Novarum Intel": 3,
+      "cepa": 1,
+      "Sim Nasr": 1,
+      "Ship News": 1,
+      "BBG Originals (@BBGOriginals)": 1
     },
     "media_files": {
       "images": 66,
@@ -97,7 +101,8 @@
     "2026-08-29": 20,
     "2026-08-30": 23,
     "2026-08-31": 62,
-    "2026-09-01": 45
+    "2026-09-01": 45,
+    "2026-09-02": 24
   },
-  "average_confidence": 0.8531034482758624
+  "average_confidence": 0.8629411764705885
 }
