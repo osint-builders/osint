@@ -1,14 +1,14 @@
 {
-  "last_updated": "2026-09-03T16:51:04.977Z",
+  "last_updated": "2026-09-03T17:58:34.302Z",
   "data_range": {
     "oldest_date": "2026-08-25",
     "newest_date": "2026-09-03"
   },
   "statistics": {
-    "total_events": 384,
+    "total_events": 399,
     "events_by_month": {
       "2026-08": 257,
-      "2026-09": 127
+      "2026-09": 142
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 14,
@@ -19,17 +19,17 @@
       "Wagner Z Group": 4,
       "ABC News": 8,
       "Insider Paper (@insiderpaper)": 9,
-      "Clash Report (@ClashReport)": 25,
-      "DD Geopolitics (@DDGeopolitics)": 13,
+      "Clash Report (@ClashReport)": 29,
+      "DD Geopolitics (@DDGeopolitics)": 17,
       "OSINT Technical (@Osinttechnical)": 7,
       "NSA (@NSAGov)": 1,
       "Sim Nasr (@SimNasr)": 2,
       "TankerTrackers (@TankerTrackers)": 2,
       "US Pacific Fleet (@USPacificFleet)": 1,
-      "Middle East Eye (@MiddleEastEye)": 24,
+      "Middle East Eye (@MiddleEastEye)": 25,
       "MT Anderson (@MT_Anderson)": 2,
       "inside_nk (@inside_nk)": 6,
-      "Ship News (@ShipNews)": 5,
+      "Ship News (@ShipNews)": 6,
       "Ianellisjones (@Ianellisjones)": 1,
       "War Translated": 1,
       "Middle East Spectator": 1,
@@ -51,7 +51,7 @@
       "CSIS Korea Chair (@CSISKoreaChair)": 4,
       "Critical Threats Project (@criticalthreats)": 2,
       "Institute for the Study of War (@TheStudyofWar)": 6,
-      "Bellum Acta (@BellumActaNews)": 4,
+      "Bellum Acta (@BellumActaNews)": 7,
       "Serhii FLASH — Technologies (@serhii_flash)": 1,
       "UNITED24 Media (@United24media)": 6,
       "Wagner Z Group (@wagner_group_pmcr)": 1,
@@ -77,7 +77,7 @@
       "Clash Report": 8,
       "DD Geopolitics": 6,
       "Esri (@Esri)": 1,
-      "Scmpnews (@Scmpnews)": 1,
+      "Scmpnews (@Scmpnews)": 2,
       "CNN International": 1,
       "BBC Breaking News (@BBCBreaking)": 1,
       "AP News": 1,
@@ -88,10 +88,11 @@
       "Ship News": 1,
       "BBG Originals (@BBGOriginals)": 1,
       "Critical Threats Project": 1,
-      "CNN": 1
+      "CNN": 1,
+      "Thewarzonewire": 1
     },
     "media_files": {
-      "images": 88,
+      "images": 96,
       "videos": 0
     }
   },
@@ -105,7 +106,7 @@
     "2026-08-31": 62,
     "2026-09-01": 45,
     "2026-09-02": 24,
-    "2026-09-03": 58
+    "2026-09-03": 73
   },
-  "average_confidence": 0.8397777777777782
+  "average_confidence": 0.82622641509434
 }
