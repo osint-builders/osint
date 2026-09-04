@@ -1,25 +1,25 @@
 {
-  "last_updated": "2026-09-03T17:58:34.302Z",
+  "last_updated": "2026-09-04T08:44:02.979Z",
   "data_range": {
     "oldest_date": "2026-08-25",
-    "newest_date": "2026-09-03"
+    "newest_date": "2026-09-04"
   },
   "statistics": {
-    "total_events": 399,
+    "total_events": 416,
     "events_by_month": {
       "2026-08": 257,
-      "2026-09": 142
+      "2026-09": 159
     },
     "events_by_source": {
-      "War Translated (@wartranslated)": 14,
+      "War Translated (@wartranslated)": 17,
       "Quds News Network (@QudsNen)": 23,
       "Rerum Novarum Intel (@rnintel)": 20,
       "Intel Slava Z (@intelslava)": 16,
-      "UNITED24 Media": 5,
+      "UNITED24 Media": 6,
       "Wagner Z Group": 4,
       "ABC News": 8,
       "Insider Paper (@insiderpaper)": 9,
-      "Clash Report (@ClashReport)": 29,
+      "Clash Report (@ClashReport)": 32,
       "DD Geopolitics (@DDGeopolitics)": 17,
       "OSINT Technical (@Osinttechnical)": 7,
       "NSA (@NSAGov)": 1,
@@ -37,7 +37,7 @@
       "AP News (@AP)": 2,
       "CSIS Korea Chair": 6,
       "Our Wars, Today (@ourwarstoday)": 1,
-      "BBC World News (@BBCWorld)": 6,
+      "BBC World News (@BBCWorld)": 8,
       "ABC News (@ABC)": 15,
       "US Navy (@USNavy)": 5,
       "CNN (@CNN)": 2,
@@ -45,7 +45,7 @@
       "Xinhua News (@XHNews)": 17,
       "cnnbrk (@cnnbrk)": 2,
       "Fox News (@FoxNews)": 8,
-      "Quds News Network": 10,
+      "Quds News Network": 13,
       "cepa (@cepa)": 1,
       "ELINT News (@ELINTNews)": 1,
       "CSIS Korea Chair (@CSISKoreaChair)": 4,
@@ -86,10 +86,13 @@
       "cepa": 1,
       "Sim Nasr": 1,
       "Ship News": 1,
-      "BBG Originals (@BBGOriginals)": 1,
+      "BBG Originals (@BBGOriginals)": 2,
       "Critical Threats Project": 1,
       "CNN": 1,
-      "Thewarzonewire": 1
+      "Thewarzonewire": 1,
+      "Southkoreapro": 1,
+      "Insider Paper": 2,
+      "Taiwan News (@TaiwanNewsEN)": 1
     },
     "media_files": {
       "images": 96,
@@ -106,7 +109,8 @@
     "2026-08-31": 62,
     "2026-09-01": 45,
     "2026-09-02": 24,
-    "2026-09-03": 73
+    "2026-09-03": 73,
+    "2026-09-04": 17
   },
-  "average_confidence": 0.82622641509434
+  "average_confidence": 0.823770491803279
 }
