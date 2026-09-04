@@ -12603,5 +12603,849 @@
       }
     ],
     "link_preview_image": "https://pbs.twimg.com/ext_tw_video_thumb/2095874609015058432/pu/img/pxeYcAXfQUW5PApA.jpg"
+  },
+  {
+    "id": "evt_89376757098000384",
+    "title": "Ukraine Prepares Scaled Military Response to Russian Strikes",
+    "summary": "SBU chief Poklad reports preparations for active response to Russian strikes, with Zelensky confirming geographic scope determined and timing optimized for maximum effect.",
+    "date_event": null,
+    "date_published": "2026-09-04T15:07:49Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "location": "Kyiv, Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "military-response",
+      "escalation",
+      "sbu",
+      "zelensky"
+    ],
+    "confidence": null,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2095891588010385771",
+        "title": "War Translated - SBU Response Announcement"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89376757098000385",
+    "title": "Russia Strikes SBU Headquarters; Ukraine Foreign Minister Denounces Escalation",
+    "summary": "Foreign Minister Sybiga condemns Russian strike on central SBU building as serious escalation, noting Moscow struck during renewed diplomatic peace efforts, revealing rejection of negotiation.",
+    "date_event": null,
+    "date_published": "2026-09-04T15:06:47Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "location": "Kyiv, Ukraine"
+    },
+    "topics": [
+      "russia",
+      "ukraine",
+      "military-strike",
+      "sbu",
+      "escalation",
+      "diplomacy"
+    ],
+    "confidence": null,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2095891330572378487",
+        "title": "War Translated - Foreign Minister Statement on SBU Strike"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89376922571665408",
+    "title": "Lindsay Clancy Trial Jury Enters Day 7 of Deliberations Without Verdict",
+    "summary": "The jury in the Lindsay Clancy trial entered Day 7 of deliberations without having reached a verdict. The ongoing deliberations indicate the complexity of the case and the difficulty the jury has in reaching a unanimous decision.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:29:09Z",
+    "geo": {
+      "lat": 42.3588336,
+      "lon": -71.0578303,
+      "country": "United States",
+      "region": "Massachusetts",
+      "city": "Boston"
+    },
+    "topics": [
+      "trial",
+      "legal-proceeding",
+      "jury",
+      "criminal-justice",
+      "united-states"
+    ],
+    "confidence": 0.8,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2095881857933992168",
+        "label": "Fox News Tweet"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_89376816732598272",
+    "title": "Trump Threatens Trade Restrictions Unless Federal Reserve Cuts Interest Rates",
+    "summary": "President Trump announced that he would prevent the United States from trading with many countries unless the Federal Reserve reduces interest rates. This statement represents a significant escalation in Trump's ongoing pressure on the Federal Reserve regarding monetary policy, combining trade policy with interest rate demands.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:52:40Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "country": "United States",
+      "region": "District of Columbia",
+      "city": "Washington"
+    },
+    "topics": [
+      "trade-policy",
+      "federal-reserve",
+      "monetary-policy",
+      "politics",
+      "economic-policy"
+    ],
+    "confidence": 0.85,
+    "source_name": "cnnbrk (@cnnbrk)",
+    "links": [
+      {
+        "url": "https://x.com/cnnbrk/status/2095887777439101195",
+        "label": "CNN Breaking News Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRYWz1qWoAA48E2.jpg"
+  },
+  {
+    "id": "evt_89376888618770432",
+    "title": "Former US Official Ronald Sakolsky Thanks China in Farewell Letter",
+    "summary": "Ronald Sakolsky penned a heartfelt letter to the Chinese people before departing China, expressing gratitude for the warmth and hospitality received. The gesture reflects positive bilateral cultural exchange and diplomatic goodwill between US officials and China.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:37:51Z",
+    "geo": {
+      "lat": 39.9042,
+      "lon": 116.4074,
+      "country": "China",
+      "city": "Beijing"
+    },
+    "topics": [
+      "diplomacy",
+      "us-china-relations",
+      "cultural-exchange"
+    ],
+    "confidence": 0.75,
+    "source_name": "ChineseEmbInUs (@ChineseEmbInUs)",
+    "links": [
+      {
+        "url": "https://x.com/ChineseEmbInUs/status/2095884047322951810",
+        "label": "Embassy of China Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89376974987878400",
+    "title": "Trump Threatens Trade Restrictions Over Federal Reserve Interest Rate Policy",
+    "summary": "President Trump issued a threat to restrict US trade with multiple countries unless the Federal Reserve lowers interest rates. The statement links trade policy with monetary policy decisions, signaling an approach that ties geopolitical leverage to domestic economic objectives.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:52:29Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369,
+      "country": "United States",
+      "city": "Washington"
+    },
+    "topics": [
+      "trade-policy",
+      "federal-reserve",
+      "interest-rates",
+      "economic-policy"
+    ],
+    "confidence": 0.88,
+    "source_name": "CNN (@CNN)",
+    "links": [
+      {
+        "url": "https://x.com/CNN/status/2095887732321013836",
+        "label": "CNN Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89376823820959744",
+    "title": "Budanov Advises Zelenskyy Not to Compromise on Donbas at Abu Dhabi Negotiations",
+    "summary": "At negotiations in Abu Dhabi, Ukrainian military intelligence chief Kyrylo Budanov advised President Zelenskyy against compromising on the Donbas region, according to reporting from the New York Times.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:38:01Z",
+    "geo": {
+      "lat": 24.4539,
+      "lon": 54.3773
+    },
+    "topics": [
+      "ukraine",
+      "military",
+      "diplomacy",
+      "conflict",
+      "donbas",
+      "negotiations"
+    ],
+    "confidence": null,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "title": "UNITED24 Media Post 45774",
+        "url": "https://t.me/United24media/45774"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89376823900651520",
+    "title": "Russian Attack Damages Saint Sophia Cathedral Grounds in Central Kyiv",
+    "summary": "A Russian attack has caused damage to the grounds of Saint Sophia Cathedral, the historic UNESCO World Heritage site located in central Kyiv, Ukraine.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:53:31Z",
+    "geo": {
+      "lat": 50.4539,
+      "lon": 30.5383
+    },
+    "topics": [
+      "ukraine",
+      "attack",
+      "cultural-heritage",
+      "kyiv",
+      "military",
+      "infrastructure"
+    ],
+    "confidence": null,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "title": "UNITED24 Media Post 45776",
+        "url": "https://t.me/United24media/45776"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89376823984537600",
+    "title": "Python Snake Damages Australian Kitchen with Rampage Through Home",
+    "summary": "A python snake infiltrated a residential kitchen in Australia, causing significant damage by breaking items and scattering shattered glass throughout the space.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:36:59Z",
+    "geo": {
+      "lat": -25.2744,
+      "lon": 133.7751
+    },
+    "topics": [
+      "australia",
+      "wildlife",
+      "incident",
+      "animal",
+      "property-damage"
+    ],
+    "confidence": null,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "title": "ABC News Tweet",
+        "url": "https://x.com/ABC/status/2095883828984222018"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89377109285310464",
+    "title": "Ukrainian FPV Attack Drones Strike Russian K-300P Bastion Missile Launcher in Crimea",
+    "summary": "Ukrainian forces deployed FPV attack drones launched from an unmanned surface vessel (USV) on the Black Sea to target and destroy a Russian K-300P Bastion missile launcher stationed in Crimea. The Bastion system had been conducting Onyx and Zircon missile attacks against Ukrainian targets.",
+    "date_event": "2026-09-04T15:08:45Z",
+    "date_published": "2026-09-04T15:08:45Z",
+    "geo": {
+      "lat": 44.6025,
+      "lon": 33.9825,
+      "country": "Ukraine",
+      "region": "Crimea",
+      "city": "Yalta"
+    },
+    "topics": [
+      "ukraine",
+      "military",
+      "drone",
+      "missile",
+      "black-sea",
+      "russia",
+      "crimea"
+    ],
+    "confidence": 0.85,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2095891826641150204",
+        "label": "OSINT Technical Twitter Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89377109373390848",
+    "title": "European Union Restricts Arctic Shipping Development as China and Russia Advance Operations",
+    "summary": "The European Union has adopted a cautious stance toward Arctic shipping expansion, declining to invest heavily in infrastructure and transportation corridor development. Meanwhile, China and Russia continue advancing their Arctic operational capabilities and shipping initiatives.",
+    "date_event": "2026-09-04T15:08:54Z",
+    "date_published": "2026-09-04T15:08:54Z",
+    "geo": {
+      "lat": 75.0,
+      "lon": 25.0,
+      "country": "Arctic Region",
+      "region": "Arctic",
+      "city": "Arctic"
+    },
+    "topics": [
+      "arctic",
+      "shipping",
+      "european-union",
+      "china",
+      "russia",
+      "geopolitics",
+      "maritime"
+    ],
+    "confidence": 0.75,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2095891861122470042",
+        "label": "SCMP News Article"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89377259403640832",
+    "title": "NASA ER-2 Aircraft and F-104 Starfighters Featured at MAX POWER Event in Florida",
+    "summary": "NASA announces participation in the MAX POWER event in Florida on November 7-8, featuring static display of the ER-2 high-altitude research aircraft and F-104 Starfighter flypast.",
+    "date_event": null,
+    "date_published": "2026-09-04T15:01:47.000Z",
+    "geo": {
+      "lat": 28.5355,
+      "lon": -81.3795
+    },
+    "topics": [
+      "nasa",
+      "aviation",
+      "aircraft",
+      "research",
+      "florida"
+    ],
+    "confidence": null,
+    "source_name": "Nasa (@Nasa)",
+    "links": [
+      {
+        "url": "https://x.com/Nasa/status/2095890073031966734"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89377259089068032",
+    "title": "UAE Pardons Egyptian Poet Abdul Rahman Yusuf al-Qaradawi",
+    "summary": "The president of the United Arab Emirates pardoned Egyptian poet and high-profile activist Abdul Rahman Yusuf al-Qaradawi, who faced a ten-year prison sentence in the country.",
+    "date_event": null,
+    "date_published": "2026-09-04T15:00:09.000Z",
+    "geo": {
+      "lat": 23.4241,
+      "lon": 53.8478
+    },
+    "topics": [
+      "pardon",
+      "egypt",
+      "activism",
+      "uae",
+      "legal"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2095889660702503397"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89377259168759808",
+    "title": "US Imposes New Iran-Related Sanctions on Turkey-Based Entities",
+    "summary": "The United States issued a new round of Iran-related sanctions targeting three Turkey-based entities on Friday.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:58:44.000Z",
+    "geo": {
+      "lat": 39.0,
+      "lon": 35.0
+    },
+    "topics": [
+      "sanctions",
+      "iran",
+      "usa",
+      "turkey",
+      "economy"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2095889303574298772"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89377259244257280",
+    "title": "Thousands of Children Displaced from South Lebanon Amid School Uncertainty",
+    "summary": "Thousands of children remain displaced from south Lebanon months after renewed conflict erupted, with many living in school shelters and uncertain educational prospects.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:54:58.000Z",
+    "geo": {
+      "lat": 33.3547,
+      "lon": 35.1264
+    },
+    "topics": [
+      "displacement",
+      "lebanon",
+      "humanitarian",
+      "children",
+      "conflict"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2095888356617924811"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89377205573918720",
+    "title": "Breaking News from Insider Paper",
+    "summary": "An event appeared on Insider Paper during the monitoring window but the full content could not emerge from available data.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:58:29Z",
+    "geo": {
+      "lat": 20.5937,
+      "lon": 78.9629,
+      "city": "Global",
+      "region": "Global",
+      "country": "Global"
+    },
+    "topics": [
+      "breaking-news",
+      "news-aggregator"
+    ],
+    "confidence": 0.35,
+    "source_name": "Insider Paper (@insiderpaper)",
+    "links": [
+      {
+        "url": "https://t.me/s/insiderpaper/44364",
+        "label": "Insider Paper Post 44364"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/u_M1XYxPWrWi34cflF_aVuHR8LcATJMGGp_rrXnGvIveBe0rPUPH_ACYAsCbPh67Kt6XFrTU_SDhP23kLDi-tY1dmjeCSwoMcdwpd5acCvXZYJW8U5gQI51Jh9o1r0ktSrOAGetGaXD9Ytce0yKrS7-Z4rd8ivWHXJ5BEzZ0tE9iTgra7h1LPuAKV82JSGgN74N58coRCMSYVrlViD3_ZBLDskmcZQi191ZnBJDgr78R2A7RaXuDjpwFwBaOUJV9PQrQUGtIDYyZkIUh-8YYrLGhQ3bU77xrJWXNJ0KTYj_bNIGHRZFz64IMYOcJTXRRhxALKmINRjFe2pT4uOADyQ.jpg"
+  },
+  {
+    "id": "evt_89377205485838336",
+    "title": "Volkswagen Announces Approximately 50,000 Job Cuts",
+    "summary": "Volkswagen announced a major workforce reduction affecting approximately 50,000 employees. The cuts represent a significant restructuring effort as the automotive company navigates industry challenges and transition to electric vehicles.",
+    "date_event": null,
+    "date_published": "2026-09-04T15:08:34Z",
+    "geo": {
+      "lat": 51.4556,
+      "lon": 10.0226,
+      "city": "Wolfsburg",
+      "region": "Lower Saxony",
+      "country": "Germany"
+    },
+    "topics": [
+      "volkswagen",
+      "job-cuts",
+      "automotive",
+      "germany",
+      "manufacturing",
+      "economy"
+    ],
+    "confidence": 0.85,
+    "source_name": "Insider Paper (@insiderpaper)",
+    "links": [
+      {
+        "url": "https://t.me/s/insiderpaper/44365",
+        "label": "Insider Paper Post 44365"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/u_M1XYxPWrWi34cflF_aVuHR8LcATJMGGp_rrXnGvIveBe0rPUPH_ACYAsCbPh67Kt6XFrTU_SDhP23kLDi-tY1dmjeCSwoMcdwpd5acCvXZYJW8U5gQI51Jh9o1r0ktSrOAGetGaXD9Ytce0yKrS7-Z4rd8ivWHXJ5BEzZ0tE9iTgra7h1LPuAKV82JSGgN74N58coRCMSYVrlViD3_ZBLDskmcZQi191ZnBJDgr78R2A7RaXuDjpwFwBaOUJV9PQrQUGtIDYyZkIUh-8YYrLGhQ3bU77xrJWXNJ0KTYj_bNIGHRZFz64IMYOcJTXRRhxALKmINRjFe2pT4uOADyQ.jpg"
+  },
+  {
+    "id": "evt_89377205397757952",
+    "title": "Trump Meets with Anti-Zionist Rabbis at White House",
+    "summary": "Former President Trump held a White House meeting with Hasidic and ultra-Orthodox Jewish leaders, including several anti-Zionist and non-Zionist rabbis. The gathering drew attention for its unusual political alignment and discussion of Israeli-Palestinian issues.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:25:49Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369,
+      "city": "Washington",
+      "region": "DC",
+      "country": "United States"
+    },
+    "topics": [
+      "geopolitics",
+      "jewish-politics",
+      "united-states",
+      "israel",
+      "white-house"
+    ],
+    "confidence": 0.72,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/s/geopolitics_prime/74104",
+        "label": "Geopolitics Prime Post 74104"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/eWchW_5GKBohYZkdx3SH_RMWbnfqllB_NKeqAPCDV3QNyjw0n2f2QgseEFyzi-68f7PIVIvLjPs42WuiG11ugyLFZ-u0RZ2_3tWl51pp-Qz0ZXB7AKnPRI06WUUXYqc_tIHjc4n9anyZUffdlbVR6FD9JqL990cVx7V2qsKa_xjM5zbdGyVPgXI1JE-dQlwfOXhEyhNB5LPJ3Nx5ZjDRMWNmaxQDk8HoOAIaVT5qhHBAssTCaBIPPntWhKAHsyZYXsU87Zpu_h7AB1fxQ7QanETfALu3874tE3JuzI5y0rL4xKeCyI-bwojf4DSQqSuI0LAggwHlrbrYG4Kp0xgXfA.jpg"
+  },
+  {
+    "id": "evt_89377205674582016",
+    "title": "Geopolitical Update from Intel Slava",
+    "summary": "A geopolitical update appeared on the Intel Slava news aggregator during the monitoring period, covering conflict and military developments from a Russian perspective.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:12:41Z",
+    "geo": {
+      "lat": 50,
+      "lon": 36,
+      "city": "Kharkiv",
+      "region": "Kharkiv Oblast",
+      "country": "Ukraine"
+    },
+    "topics": [
+      "geopolitics",
+      "conflict",
+      "military",
+      "ukraine"
+    ],
+    "confidence": 0.4,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/s/intelslava/93906",
+        "label": "Intel Slava Post 93906"
+      }
+    ],
+    "link_preview_image": "https://cdn5.telesco.pe/file/AzOioCH56S9BVdtOQoipK2C3EvsSkyIrGr9lSZvzfI3zU674bYoruf808bBGBnusOCAjnRIgJE7c-AMdxrRdF8okrn6Jba_bFCqmklCVq2BOXIpnZ10DVnn8mNY3cWmsXJwToGpYhg4wyDjur5mXzznGbqMhpetdsSdkiuEr5tOpsWmFfypuD7gyCv0eZ7FWFLmI30PBukEzzM5D8ij2uEj_UFMyRJq4Bc6NzvPVxhv3LdHxpKmc15lZkCgjBD8y6jglDz5Jcfw4q3-HLcEIcRvaRb7PXBCLntkOo_aciAOvDVKvti0sTDyhvhFwIZsRDypJ7CsEAabPo-BsDV3g5w.jpg"
+  },
+  {
+    "id": "evt_89376892020346880",
+    "title": "Trump's Peace Envoys to Visit Moscow and Kyiv Over Weekend",
+    "summary": "U.S. peace envoys representing the Trump administration plan weekend diplomatic visits to Moscow and Kyiv in an effort to mediate Ukraine conflict discussions.",
+    "date_event": "2026-09-04T14:28:28Z",
+    "date_published": "2026-09-04T14:28:28Z",
+    "geo": {
+      "lat": 55.625578,
+      "lon": 37.6063916,
+      "country": "Russia",
+      "city": "Moscow"
+    },
+    "topics": [
+      "ukraine",
+      "diplomacy",
+      "russia",
+      "usa",
+      "peace-negotiations",
+      "conflict"
+    ],
+    "confidence": 0.85,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2095881688689562081",
+        "title": "BBC World News Tweet",
+        "type": "twitter"
+      },
+      {
+        "url": "https://t.co/EDxI7ErKdG",
+        "title": "BBC News Story",
+        "type": "article"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2095881689847275521/TyA7ssuJ?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_89377000195641344",
+    "title": "Strategic Scenario Exercise: Russia-China Arctic Biotech Deployment Challenge",
+    "summary": "A strategic scenario exercise examines how a Russia-China alliance deploying biotechnology at scale in the Arctic could affect U.S. and allied interests in the High North region.",
+    "date_event": "2026-09-04T14:15:11Z",
+    "date_published": "2026-09-04T14:15:11Z",
+    "geo": {
+      "lat": 74.0,
+      "lon": -93.5,
+      "region": "Arctic"
+    },
+    "topics": [
+      "arctic",
+      "russia-china",
+      "biotechnology",
+      "geopolitics",
+      "usa-strategy",
+      "security"
+    ],
+    "confidence": 0.8,
+    "source_name": "cepa (@cepa)",
+    "links": [
+      {
+        "url": "https://x.com/cepa/status/2095878342712992195",
+        "title": "CEPA Tweet",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRYONdlXsAMR905.jpg"
+  },
+  {
+    "id": "evt_89377117221137408",
+    "title": "US Treasury Designates Turkish Golden Global Bank and Subsidiaries Under Operation Economic Outcast Sanctions",
+    "summary": "The US Department of Treasury Office of Foreign Assets Control (OFAC) designated Türkiye-based Golden Global Bank and its subsidiary entities as part of Operation Economic Outcast, targeting the Iranian regime's financial infrastructure. The designation severs critical financial access that facilitated tens of millions of dollars in transactions.",
+    "date_event": "2026-09-04T14:57:14.000Z",
+    "date_published": "2026-09-04T14:57:14.000Z",
+    "geo": {
+      "lat": 39.0,
+      "lon": 35.0,
+      "country": "Turkey",
+      "region": "Istanbul Region",
+      "city": "Istanbul"
+    },
+    "topics": [
+      "sanctions",
+      "iran",
+      "turkey",
+      "ofac",
+      "financial-controls",
+      "economic-statecraft",
+      "us-foreign-policy"
+    ],
+    "confidence": 0.9,
+    "source_name": "US Treasury (@USTreasury)",
+    "links": [
+      {
+        "url": "https://x.com/USTreasury/status/2095888925646553249",
+        "label": "US Treasury Sanctions Announcement"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89377116717621248",
+    "title": "Russian Occupation Forces Intensify Pro-Russian Curriculum and Behavioral Monitoring in Occupied Ukraine",
+    "summary": "Russian occupation officials in Ukraine leveraged the start of the 2026-2027 school year to advance institutional indoctrination programs, including pro-Russian curricula, military-patriotic education initiatives, and behavioral monitoring systems targeting the local population.",
+    "date_event": "2026-09-04T15:01:48.000Z",
+    "date_published": "2026-09-04T15:01:48.000Z",
+    "geo": {
+      "lat": 48.3,
+      "lon": 31.2,
+      "country": "Ukraine",
+      "region": "Multiple Occupied Regions",
+      "city": "Occupied Territory"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "occupation",
+      "education",
+      "indoctrination",
+      "military-strategy",
+      "geopolitics"
+    ],
+    "confidence": 0.85,
+    "source_name": "Institute for the Study of War (@TheStudyofWar)",
+    "links": [
+      {
+        "url": "https://x.com/TheStudyofWar/status/2095890075405967749",
+        "label": "Institute for the Study of War Assessment"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89377725340463104",
+    "title": "Iran Launches Missiles Toward Strait of Hormuz",
+    "summary": "Intelligence sources report two missiles allegedly launched from Iran toward the Strait of Hormuz. This escalation follows ongoing U.S.-Iran military posturing.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:46:47Z",
+    "geo": {
+      "lat": 26.1667,
+      "lon": 55.2167
+    },
+    "topics": [
+      "iran",
+      "missile",
+      "military",
+      "strait-of-hormuz",
+      "united-states",
+      "middle-east",
+      "defense"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Spectator",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36301",
+        "label": "Middle East Spectator"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89377725508235264",
+    "title": "U.S. Sanctions Turkish Bank Golden Global Over Iran Operations",
+    "summary": "The U.S. Department of Treasury imposed sanctions on Turkey-based Golden Global Bank and severed its access to the U.S. financial system as part of Operation Economic Outcast.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:53:19Z",
+    "geo": {
+      "lat": 39.9334,
+      "lon": 32.8597
+    },
+    "topics": [
+      "turkey",
+      "united-states",
+      "sanctions",
+      "finance",
+      "iran",
+      "treasury",
+      "economic"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Spectator",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36302",
+        "label": "Middle East Spectator"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89377725671813120",
+    "title": "Israeli Forces Storm Children's Playground in West Bank Community",
+    "summary": "Israeli occupation forces conducted a military operation at a children's playground in Khirbet Umm Al-Khair, Masafer Yatta, south of Hebron.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:19:01Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.2075
+    },
+    "topics": [
+      "palestine",
+      "west-bank",
+      "hebron",
+      "israeli-occupation",
+      "military",
+      "civilian",
+      "community"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/237711",
+        "label": "Quds News Network"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89377725868945408",
+    "title": "Israeli Artillery Shells Southern Lebanese Towns",
+    "summary": "Israeli occupation forces shelled the towns of Al-Mansouri and Baraachit in southern Lebanon with intensive artillery fire.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:25:30Z",
+    "geo": {
+      "lat": 33.8547,
+      "lon": 35.8623
+    },
+    "topics": [
+      "lebanon",
+      "israel",
+      "military",
+      "shelling",
+      "artillery",
+      "civilian",
+      "middle-east"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/237712",
+        "label": "Quds News Network"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89377726049300480",
+    "title": "U.S. House Passes Bill Penalizing Universities for Israel Boycotts",
+    "summary": "The U.S. House of Representatives approved a Republican-sponsored bill that would penalize universities for participating in boycotts of Israel or restricting academic exchange with Israeli institutions.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:36:01Z",
+    "geo": {
+      "lat": 38.9072,
+      "lon": -77.0369
+    },
+    "topics": [
+      "united-states",
+      "israel",
+      "academic-freedom",
+      "boycott",
+      "legislation",
+      "congress",
+      "education"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/237713",
+        "label": "Quds News Network"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89377726217072640",
+    "title": "Shahed Drone Attack on Ukrainian Security Service Building",
+    "summary": "Russian forces conducted a coordinated attack using Shahed kamikaze drones against a Security Service of Ukraine (SBU) facility. Military analysts identified the operation as a specially planned tactical action.",
+    "date_event": null,
+    "date_published": "2026-09-04T15:07:29Z",
+    "geo": {
+      "lat": 48.3794,
+      "lon": 31.1656
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "drone",
+      "shahed",
+      "military",
+      "security-service",
+      "warfare"
+    ],
+    "confidence": null,
+    "source_name": "Serhii FLASH — Technologies",
+    "links": [
+      {
+        "url": "https://t.me/serhii_flash/7733",
+        "label": "Serhii FLASH — Technologies"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
