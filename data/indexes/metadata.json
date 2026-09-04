@@ -11799,5 +11799,809 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_89370414291116032",
+    "title": "Russia strikes Ukraine Security Service headquarters in central Kyiv",
+    "summary": "Russian drone strikes targeted one of the most important government buildings in Ukraine—the Security Service headquarters in Kyiv—following days of near-continuous assaults on the capital city.",
+    "date_event": null,
+    "date_published": "2026-09-04T13:52:15Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234
+    },
+    "topics": [
+      "russia-ukraine-conflict",
+      "military-strike",
+      "drone-attack",
+      "kyiv",
+      "government-facility"
+    ],
+    "confidence": null,
+    "source_name": "cnnbrk (@cnnbrk)",
+    "links": [
+      {
+        "url": "https://x.com/cnnbrk/status/2095872573925920992",
+        "title": "CNN Breaking News - Russian drone strikes"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRYI-4YWwAAmkcQ.jpg"
+  },
+  {
+    "id": "evt_89370332380553216",
+    "title": "Russia strikes Ukraine Security Service headquarters in central Kyiv",
+    "summary": "Russian drone strikes targeted one of the most important government buildings in Ukraine—the Security Service headquarters in Kyiv—following days of near-continuous assaults on the capital city.",
+    "date_event": null,
+    "date_published": "2026-09-04T13:52:56Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234
+    },
+    "topics": [
+      "russia-ukraine-conflict",
+      "military-strike",
+      "drone-attack",
+      "kyiv",
+      "government-facility"
+    ],
+    "confidence": null,
+    "source_name": "CNN (@CNN)",
+    "links": [
+      {
+        "url": "https://x.com/CNN/status/2095872743703003152",
+        "title": "CNN Tweet - Russian drone strikes"
+      },
+      {
+        "url": "https://cnn.it/4zX0nAv",
+        "title": "Russia strikes Ukraine Security Service headquarters in central Kyiv"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRYJIwfW8AYjpif.jpg"
+  },
+  {
+    "id": "evt_89370460826918912",
+    "title": "Russia strikes Ukraine Security Service headquarters in central Kyiv",
+    "summary": "Russian drone strikes targeted one of the most important government buildings in Ukraine—the Security Service headquarters in Kyiv—following days of near-continuous assaults on the capital city.",
+    "date_event": null,
+    "date_published": "2026-09-04T13:52:32Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234
+    },
+    "topics": [
+      "russia-ukraine-conflict",
+      "military-strike",
+      "drone-attack",
+      "kyiv",
+      "government-facility"
+    ],
+    "confidence": null,
+    "source_name": "cnni (@cnni)",
+    "links": [
+      {
+        "url": "https://x.com/cnni/status/2095872645052903609",
+        "title": "CNN International - Russian drone strikes"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRYJDBmWcAEMnS-.jpg"
+  },
+  {
+    "id": "evt_89370428774039552",
+    "title": "Trump Peace Envoys to Visit Moscow and Kyiv",
+    "summary": "U.S. peace envoys plan visits to Moscow and Kyiv over the weekend, signaling diplomatic efforts regarding the Ukraine-Russia conflict.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:28:28.000Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173
+    },
+    "topics": [
+      "diplomacy",
+      "ukraine",
+      "russia",
+      "united-states",
+      "conflict",
+      "peace-negotiations"
+    ],
+    "confidence": null,
+    "source_name": "BBC World News",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2095881688689562081",
+        "title": "BBC World News Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2095881689847275521/TyA7ssuJ?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_89370333290733568",
+    "title": "Aftermath of Struck Russian Vessel Documented",
+    "summary": "War Translated reports footage showing the destruction and aftermath of a Russian naval vessel struck during ongoing operations in the Black Sea region. The documentation provides visual evidence of military engagement effects on enemy assets.",
+    "date_event": "2026-09-04T14:24:50.000Z",
+    "date_published": "2026-09-04T14:24:50.000Z",
+    "geo": {
+      "lat": 44.6121769,
+      "lon": 33.5159348,
+      "country": "Ukraine",
+      "region": "Black Sea",
+      "city": "Sevastopol"
+    },
+    "topics": [
+      "military",
+      "ukraine",
+      "russia",
+      "naval",
+      "vessel",
+      "destroyed",
+      "conflict"
+    ],
+    "confidence": 0.85,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2095880771747672471",
+        "label": "War Translated Post"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2095880406642143232/img/p9D_837rW91gIJBT.jpg"
+  },
+  {
+    "id": "evt_89370333303316480",
+    "title": "S-400 Air Defense System Destroyed in Sochi",
+    "summary": "War Translated reports footage showing the destruction of an S-400 advanced air defense system in Sochi. The documented strike eliminates a critical component of Russian air defense infrastructure in the region.",
+    "date_event": "2026-09-04T14:22:02.000Z",
+    "date_published": "2026-09-04T14:22:02.000Z",
+    "geo": {
+      "lat": 43.5854823,
+      "lon": 39.723109,
+      "country": "Russia",
+      "region": "Krasnodar Krai",
+      "city": "Sochi"
+    },
+    "topics": [
+      "military",
+      "russia",
+      "s-400",
+      "air-defense",
+      "sochi",
+      "destroyed",
+      "system"
+    ],
+    "confidence": 0.82,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2095880070153834701",
+        "label": "War Translated Post"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2095880406642143232/img/p9D_837rW91gIJBT.jpg"
+  },
+  {
+    "id": "evt_89370333303316481",
+    "title": "Ukrainian Border Guards Execute Evacuation and Capture Operation",
+    "summary": "Ukrainian border guards breach the front line to evacuate wounded personnel while capturing two Russian soldiers. The captured Russians subsequently assist in transporting the injured over 25 kilometers to safe positions.",
+    "date_event": "2026-09-04T14:13:49.000Z",
+    "date_published": "2026-09-04T14:13:49.000Z",
+    "geo": {
+      "lat": 49.4871968,
+      "lon": 31.2718321,
+      "country": "Ukraine",
+      "region": "Eastern Front",
+      "city": "Ukraine"
+    },
+    "topics": [
+      "military",
+      "ukraine",
+      "russia",
+      "border-guard",
+      "evacuation",
+      "capture",
+      "prisoners"
+    ],
+    "confidence": 0.8,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2095878000118059418",
+        "label": "War Translated Post"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2095880406642143232/img/p9D_837rW91gIJBT.jpg"
+  },
+  {
+    "id": "evt_89370333303316482",
+    "title": "BYD Demonstrates Advanced EV Battery Charging Technology",
+    "summary": "Chinese automaker BYD demonstrates breakthrough battery charging technology capable of charging electric vehicle batteries from 20% to 97% capacity in 12 minutes at -30°C temperatures, showcasing advances in cold-weather EV performance.",
+    "date_event": "2026-09-04T14:36:21.000Z",
+    "date_published": "2026-09-04T14:36:21.000Z",
+    "geo": {
+      "lat": 22.5445741,
+      "lon": 114.0545429,
+      "country": "China",
+      "region": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "topics": [
+      "technology",
+      "china",
+      "byd",
+      "electric-vehicle",
+      "battery",
+      "innovation"
+    ],
+    "confidence": 0.75,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2095883672494985242",
+        "label": "Xinhua News Post"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/ext_tw_video_thumb/2095883281447485440/pu/img/J4aYRhRsNax1UMD2.jpg"
+  },
+  {
+    "id": "evt_89370525050105856",
+    "title": "Niger Coup Attempt Thwarted with Russian Military Assistance",
+    "summary": "Junta forces repel major coup attempt on August 29, 2026 with critical Russian support; Russia deploys Africa Corps soldiers and drones.",
+    "date_event": "2026-08-29T06:00:00Z",
+    "date_published": "2026-09-03T10:00:00Z",
+    "geo": {
+      "lat": 13.5116,
+      "lon": 2.1257,
+      "city": "Niamey",
+      "country": "Niger"
+    },
+    "topics": [
+      "coup-attempt",
+      "niger",
+      "military-mutiny",
+      "russia-africa",
+      "algeria-intervention",
+      "sahel-security",
+      "insurgency"
+    ],
+    "confidence": null,
+    "source_name": "Critical Threats Project (@criticalthreats)",
+    "links": [
+      {
+        "url": "https://www.criticalthreats.org/analysis/niger-coup-russia-algeria-sudan-rsf-chad-ethiopia-drc-m23-fardc",
+        "label": "Africa File: Niger Thwarts Coup"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89370498332397568",
+    "title": "Russian Burevestnik Testing Preparations Reported",
+    "summary": "Multiple indications suggest Russia will conduct testing of the Burevestnik nuclear-powered cruise missile, Putin's advanced strategic weapon system, with significant preparations underway at test facilities.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:40:59.000Z",
+    "geo": {
+      "lat": 68.96,
+      "lon": 33.08,
+      "country": "Russia",
+      "region": "Arctic Region"
+    },
+    "topics": [
+      "russia",
+      "military",
+      "nuclear-weapons",
+      "burevestnik",
+      "cruise-missile",
+      "arctic",
+      "strategic-weapons"
+    ],
+    "confidence": 0.65,
+    "source_name": "The Lookout North (@The_Lookout_N)",
+    "links": [
+      {
+        "url": "https://x.com/The_Lookout_N/status/2095884836590206982",
+        "label": "Twitter Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89370455584051200",
+    "title": "KR Endorses ShipWatch Vessel Performance Calculation Methodology",
+    "summary": "Korean Register releases statement of fact endorsing ShipWatch's vessel performance calculation methodology, aligning with ISO standards for maritime excellence and vessel efficiency improvements.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:37:29.000Z",
+    "geo": {
+      "lat": 37.27,
+      "lon": 126.98,
+      "country": "South Korea",
+      "city": "Busan"
+    },
+    "topics": [
+      "maritime",
+      "shipping",
+      "vessel-efficiency",
+      "iso-standards",
+      "vessel-performance"
+    ],
+    "confidence": 0.72,
+    "source_name": "Ship News (@ShipNews)",
+    "links": [
+      {
+        "url": "https://x.com/ShipNews/status/2095883957778727328",
+        "label": "Twitter Post"
+      },
+      {
+        "url": "https://marinelink.com",
+        "label": "Marine Link Source"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89370545056944128",
+    "title": "ISW Assesses Three Possible Iranian Responses to Ali al Taher Killing",
+    "summary": "The Institute for the Study of War's Conflict Trends Program identifies three possible Iranian courses of action in response to the death of Ali al Taher: a large-scale missile and drone attack, a limited symbolic attack, or no military response. Iranian officials reportedly warned the United States of potential consequences.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:35:33.000Z",
+    "geo": {
+      "lat": 32.09,
+      "lon": 34.85,
+      "country": "Israel",
+      "city": "Tel Aviv"
+    },
+    "topics": [
+      "iran",
+      "israel",
+      "military-response",
+      "middle-east",
+      "conflict",
+      "strategic-analysis"
+    ],
+    "confidence": 0.78,
+    "source_name": "Institute for the Study of War (@TheStudyofWar)",
+    "links": [
+      {
+        "url": "https://x.com/TheStudyofWar/status/2095883470312493546",
+        "label": "ISW Assessment"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89370545178578944",
+    "title": "ISW: Putin Deflects Air Defense Responsibility While Addressing Drone Threats",
+    "summary": "The Institute for the Study of War reports that Putin attempted to portray the Russian government as promptly responding to Ukrainian drone threats while deflecting responsibility for air defense provision to private businesses. Meanwhile, Putin downplayed mounting economic and demographic costs through rhetoric about resilience and gradual stabilization.",
+    "date_event": null,
+    "date_published": "2026-09-04T13:55:33.000Z",
+    "geo": {
+      "lat": 55.75,
+      "lon": 37.62,
+      "country": "Russia",
+      "city": "Moscow"
+    },
+    "topics": [
+      "russia",
+      "ukraine",
+      "putin",
+      "drone-attacks",
+      "air-defense",
+      "economic-challenges",
+      "strategic-communications"
+    ],
+    "confidence": 0.82,
+    "source_name": "Institute for the Study of War (@TheStudyofWar)",
+    "links": [
+      {
+        "url": "https://x.com/TheStudyofWar/status/2095873405270495668",
+        "label": "ISW Analysis - Drone Threat"
+      },
+      {
+        "url": "https://x.com/TheStudyofWar/status/2095873402611376304",
+        "label": "ISW Analysis - Economic Messaging"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89370524848771072",
+    "title": "Israel Threatens Retaliation Against UK Over West Bank Settlement Sanctions",
+    "summary": "Israeli Foreign Minister Gideon Sa'ar announced that Israel plans retaliatory measures against the United Kingdom in response to potential British sanctions targeting illegal settlement expansion in the occupied West Bank. The statement reflects escalating tensions between Israel and Western allies over Palestinian territorial issues.",
+    "date_event": null,
+    "date_published": "2026-09-04T13:58:03.000Z",
+    "geo": {
+      "lat": 30.8124247,
+      "lon": 34.8594762,
+      "country": "Israel"
+    },
+    "topics": [
+      "israel-palestine",
+      "west-bank",
+      "settlements",
+      "uk-israel-relations",
+      "sanctions"
+    ],
+    "confidence": 0.87,
+    "source_name": "Clash Report",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2095874033178808763"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRYONdlXsAMR905.jpg"
+  },
+  {
+    "id": "evt_89370284808753152",
+    "title": "China's Solar Capacity Overtakes Coal-Fired Power Generation",
+    "summary": "China's installed solar power capacity reached 1.286 billion kilowatts by the end of July 2026, surpassing coal-fired power generation for the first time. Solar power now accounts for 31.5% of China's total installed power capacity, reflecting the country's accelerating shift toward renewable energy sources.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:40:26.000Z",
+    "geo": {
+      "lat": 39.9057136,
+      "lon": 116.3912972,
+      "country": "China"
+    },
+    "topics": [
+      "renewable-energy",
+      "solar-power",
+      "clean-energy",
+      "energy-transition",
+      "china"
+    ],
+    "confidence": 0.92,
+    "source_name": "ChineseEmbInUs",
+    "links": [
+      {
+        "url": "https://x.com/ChineseEmbInUs/status/2095884697335132660"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRYONdlXsAMR905.jpg"
+  },
+  {
+    "id": "evt_89370284917805056",
+    "title": "Xi Jinping Proposes Four-Point Regional Security Framework During Cairo Visit",
+    "summary": "During talks with Egyptian President Abdel Fattah El-Sisi in Cairo, President Xi Jinping outlined four proposals for regional common security and articulated a new security architecture for the Middle East. The proposals reflect China's strategic engagement in addressing Middle Eastern geopolitical challenges and regional stability.",
+    "date_event": null,
+    "date_published": "2026-09-04T13:58:52.000Z",
+    "geo": {
+      "lat": 30.0443879,
+      "lon": 31.2357257,
+      "country": "Egypt"
+    },
+    "topics": [
+      "middle-east",
+      "regional-security",
+      "china-diplomacy",
+      "egypt",
+      "geopolitics"
+    ],
+    "confidence": 0.85,
+    "source_name": "ChineseEmbInUs",
+    "links": [
+      {
+        "url": "https://x.com/ChineseEmbInUs/status/2095874237839904956"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRYONdlXsAMR905.jpg"
+  },
+  {
+    "id": "evt_89370284716478464",
+    "title": "Strategic Scenario Exercise on Russia-China Arctic Biotech Deployment",
+    "summary": "CEPA and the National Security Commission on Emerging Biotechnology conducted a strategic scenario exercise examining potential implications of a Russia-China alliance deploying advanced biotechnology capabilities at scale in the Arctic region. The exercise explored potential vulnerabilities and response strategies for the US and its allies in the High North.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:15:11.000Z",
+    "geo": {
+      "lat": 78.7198519,
+      "lon": 20.3493328,
+      "region": "Svalbard",
+      "country": "Norway"
+    },
+    "topics": [
+      "arctic-security",
+      "biotechnology",
+      "russia-china-cooperation",
+      "strategic-exercise",
+      "nato"
+    ],
+    "confidence": 0.88,
+    "source_name": "cepa",
+    "links": [
+      {
+        "url": "https://x.com/cepa/status/2095878342712992195"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89370406661685248",
+    "title": "Iranian diplomat warns regional countries against allowing US attacks from their territory",
+    "summary": "Iranian diplomat Mojtaba Ferdowsi Pour stated that Middle Eastern countries must not permit their territory and airspace used as a launchpad for attacks on Iran, emphasizing that international law prohibits such actions.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:34:50Z",
+    "geo": {
+      "lat": 30.0444,
+      "lon": 31.2357
+    },
+    "topics": [
+      "iran",
+      "us-iran-conflict",
+      "diplomacy",
+      "middle-east",
+      "regional-security"
+    ],
+    "confidence": 0.85,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2095883291354148916",
+        "label": "Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89370561691549696",
+    "title": "UK police raid 84-year-old retired priest's home over activism",
+    "summary": "British police raided the home of Sue Parfitt, an 84-year-old retired priest known for her climate change and pro-Palestine activism, on Friday, according to campaign group Defend Our Juries. Parfitt has supported Palestine Action and attended environmental protests.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:23:11Z",
+    "geo": {
+      "lat": 51.5074,
+      "lon": -0.1278
+    },
+    "topics": [
+      "uk",
+      "palestine",
+      "activism",
+      "police",
+      "climate-change",
+      "protest"
+    ],
+    "confidence": 0.82,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2095880357971198203",
+        "label": "Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89370561779630080",
+    "title": "Russia strikes SBU headquarters in central Kyiv with drone targeting security chief's office",
+    "summary": "Russia conducted a strike on the Security Service of Ukraine (SBU) headquarters in central Kyiv using a geranium drone (Lancet), reportedly targeting the office of SBU head Poklad. The strike occurred amid recent tensions between SBU and GRU special services.",
+    "date_event": "2026-09-04T14:24:53Z",
+    "date_published": "2026-09-04T14:24:53Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234
+    },
+    "topics": [
+      "russia",
+      "ukraine",
+      "military-strike",
+      "kyiv",
+      "sbu",
+      "drone",
+      "war"
+    ],
+    "confidence": 0.75,
+    "source_name": "My Lord Bebo (@MyLordBebo)",
+    "links": [
+      {
+        "url": "https://x.com/MyLordBebo/status/2095880786167607568",
+        "label": "Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89370690196606976",
+    "title": "🎥 “10 запитань розвіднику” — перший випуск до Дня воєнної розвідки вже на YouTub",
+    "summary": "🎥 “10 запитань розвіднику” — перший випуск до Дня воєнної розвідки вже на YouTube-каналі ГУР!\n\nВін командує підрозділом, який змінив правила морської війни: “Тринадцятий” — перший гість [нового формат",
+    "date_event": null,
+    "date_published": "2026-09-04T14:12:02+00:00",
+    "geo": {
+      "lat": 48.3794,
+      "lon": 31.1656
+    },
+    "topics": [
+      "ukraine"
+    ],
+    "confidence": null,
+    "source_name": "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)",
+    "links": [
+      {
+        "url": "https://t.me/s/DIUkraine/9323",
+        "title": "🎥 “10 запитань розвіднику” — перший випуск до Дня воєнної ро",
+        "description": "🎥 “10 запитань розвіднику” — перший випуск до Дня воєнної розвідки вже на YouTube-каналі ГУР!\n\nВін к"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89370675495571456",
+    "title": "NEW: Trump envoys Witkoff and Kushner will travel to Moscow and Kyiv this weeken",
+    "summary": "NEW: Trump envoys Witkoff and Kushner will travel to Moscow and Kyiv this weekend for war talks. \n\nIt's their first visit to Kyiv since Trump's second term began.\n\nSource: Axios",
+    "date_event": null,
+    "date_published": "2026-09-04T13:45:23+00:00",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234
+    },
+    "topics": [
+      "diplomacy",
+      "russia",
+      "ukraine",
+      "usa",
+      "war"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/s/ClashReport/95065",
+        "title": "NEW: Trump envoys Witkoff and Kushner will travel to Moscow ",
+        "description": "NEW: Trump envoys Witkoff and Kushner will travel to Moscow and Kyiv this weekend for war talks. \n\nI"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89370677936656384",
+    "title": "WATCH: A shop worker in China's Guizhou Province flipped a light switch in a gas",
+    "summary": "WATCH: A shop worker in China's Guizhou Province flipped a light switch in a gas-filled room. \n\nThe spark triggered an explosion that blew him out of the shop, ripping his clothes off. \n\nHe got up in ",
+    "date_event": null,
+    "date_published": "2026-09-04T13:51:55+00:00",
+    "geo": {
+      "lat": 26.5783,
+      "lon": 106.7155
+    },
+    "topics": [
+      "accident"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/s/ClashReport/95066",
+        "title": "WATCH: A shop worker in China's Guizhou Province flipped a l",
+        "description": "WATCH: A shop worker in China's Guizhou Province flipped a light switch in a gas-filled room. \n\nThe "
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89370680511959040",
+    "title": "A view of the U.S. Capitol as the storm hit Washington, D.C. last night.",
+    "summary": "A view of the U.S. Capitol as the storm hit Washington, D.C. last night.",
+    "date_event": null,
+    "date_published": "2026-09-04T13:52:11+00:00",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369
+    },
+    "topics": [
+      "weather"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/s/ClashReport/95067",
+        "title": "A view of the U.S. Capitol as the storm hit Washington, D.C.",
+        "description": "A view of the U.S. Capitol as the storm hit Washington, D.C. last night."
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89370683456360448",
+    "title": "🇷🇺⚔️🇺🇦 SVR Chief Naryshkin: Ukraine's Mobilization Reserves Will Soon Run Dry\n\nA",
+    "summary": "🇷🇺⚔️🇺🇦 SVR Chief Naryshkin: Ukraine's Mobilization Reserves Will Soon Run Dry\n\nAccording to a number of European intelligence assessments, Ukraine's military mobilization potential will be effectively",
+    "date_event": null,
+    "date_published": "2026-09-04T13:55:42+00:00",
+    "geo": {
+      "lat": 48.3794,
+      "lon": 31.1656
+    },
+    "topics": [
+      "russia",
+      "ukraine",
+      "war"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/s/DDGeopolitics/192639",
+        "title": "🇷🇺⚔️🇺🇦 SVR Chief Naryshkin: Ukraine's Mobilization Reserves ",
+        "description": "🇷🇺⚔️🇺🇦 SVR Chief Naryshkin: Ukraine's Mobilization Reserves Will Soon Run Dry\n\nAccording to a number"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89370687671635968",
+    "title": "🇩🇪 Volkswagen Approves Deepest Restructuring in Its History as Germany's Industr",
+    "summary": "🇩🇪 Volkswagen Approves Deepest Restructuring in Its History as Germany's Industrial Base Erodes\n\nVolkswagen's supervisory board approved a plan on September 3 to cut a further 50,000 jobs on top of 50",
+    "date_event": null,
+    "date_published": "2026-09-04T14:16:19+00:00",
+    "geo": {
+      "lat": 51.1657,
+      "lon": 10.4515
+    },
+    "topics": [
+      "germany",
+      "war"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/s/DDGeopolitics/192640",
+        "title": "🇩🇪 Volkswagen Approves Deepest Restructuring in Its History ",
+        "description": "🇩🇪 Volkswagen Approves Deepest Restructuring in Its History as Germany's Industrial Base Erodes\n\nVol"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89370666242945024",
+    "title": "Romanian prosecutors indict influencer Andrew Tate on trafficking and money laundering charges",
+    "summary": "Romanian prosecutors filed formal charges against social media influencer Andrew Tate for trafficking minors, sexual abuse of a minor, and money laundering.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:04:16.000Z",
+    "geo": {
+      "lat": 44.4361414,
+      "lon": 26.102684,
+      "display_name": "București, România"
+    },
+    "topics": [
+      "romania",
+      "legal",
+      "criminal-justice",
+      "trafficking",
+      "indictment",
+      "influencer"
+    ],
+    "confidence": null,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2095875596697882947",
+        "title": "ABC News Tweet",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2095875598132424704/cIhEQSdN?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_89370675302641664",
+    "title": "Two hydropower workers rescued alive from mud and debris following catastrophic Nepal-Tibet landslide",
+    "summary": "Two hydropower workers were found alive and in reportedly stable condition in a tunnel filled with mud and debris nine days after a catastrophic landslide devastated Nepal and Tibet.",
+    "date_event": null,
+    "date_published": "2026-09-04T14:00:32.000Z",
+    "geo": {
+      "lat": 28.3780464,
+      "lon": 83.9999901,
+      "display_name": "नेपाल"
+    },
+    "topics": [
+      "nepal",
+      "natural-disaster",
+      "landslide",
+      "rescue",
+      "humanitarian",
+      "infrastructure"
+    ],
+    "confidence": null,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2095874657127977280",
+        "title": "ABC News Tweet with James Longman report",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/ext_tw_video_thumb/2095874609015058432/pu/img/pxeYcAXfQUW5PApA.jpg"
   }
 ]
