@@ -1,19 +1,23 @@
 [
   {
     "topic": "military",
-    "count": 120
+    "count": 133
   },
   {
     "topic": "ukraine",
+    "count": 78
+  },
+  {
+    "topic": "conflict",
     "count": 74
   },
   {
     "topic": "russia",
-    "count": 68
+    "count": 70
   },
   {
-    "topic": "conflict",
-    "count": 66
+    "topic": "geopolitic",
+    "count": 59
   },
   {
     "topic": "iran",
@@ -21,19 +25,15 @@
   },
   {
     "topic": "diplomacy",
-    "count": 56
+    "count": 57
   },
   {
     "topic": "united-state",
     "count": 55
   },
   {
-    "topic": "geopolitic",
-    "count": 52
-  },
-  {
     "topic": "israel",
-    "count": 41
+    "count": 43
   },
   {
     "topic": "middle-east",
@@ -57,11 +57,15 @@
   },
   {
     "topic": "defense",
-    "count": 18
+    "count": 19
   },
   {
     "topic": "strait-of-hormuz",
     "count": 17
+  },
+  {
+    "topic": "lebanon",
+    "count": 16
   },
   {
     "topic": "disaster",
@@ -72,7 +76,7 @@
     "count": 15
   },
   {
-    "topic": "lebanon",
+    "topic": "nepal",
     "count": 15
   },
   {
@@ -80,12 +84,8 @@
     "count": 14
   },
   {
-    "topic": "nepal",
-    "count": 14
-  },
-  {
     "topic": "war",
-    "count": 13
+    "count": 14
   },
   {
     "topic": "intelligence",
@@ -136,19 +136,23 @@
     "count": 10
   },
   {
+    "topic": "flood",
+    "count": 10
+  },
+  {
+    "topic": "natural-disaster",
+    "count": 10
+  },
+  {
     "topic": "kyiv",
     "count": 10
   },
   {
+    "topic": "humanitarian",
+    "count": 9
+  },
+  {
     "topic": "shipping",
-    "count": 9
-  },
-  {
-    "topic": "flood",
-    "count": 9
-  },
-  {
-    "topic": "natural-disaster",
     "count": 9
   },
   {
@@ -164,7 +168,15 @@
     "count": 9
   },
   {
+    "topic": "air-defense",
+    "count": 9
+  },
+  {
     "topic": "education",
+    "count": 9
+  },
+  {
+    "topic": "attack",
     "count": 9
   },
   {
@@ -182,18 +194,6 @@
   {
     "topic": "international-relation",
     "count": 8
-  },
-  {
-    "topic": "air-defense",
-    "count": 8
-  },
-  {
-    "topic": "attack",
-    "count": 8
-  },
-  {
-    "topic": "humanitarian",
-    "count": 7
   },
   {
     "topic": "occupation",
@@ -288,6 +288,14 @@
     "count": 6
   },
   {
+    "topic": "global-new",
+    "count": 6
+  },
+  {
+    "topic": "combat",
+    "count": 5
+  },
+  {
     "topic": "yemen",
     "count": 5
   },
@@ -305,6 +313,10 @@
   },
   {
     "topic": "negotiation",
+    "count": 5
+  },
+  {
+    "topic": "saudi-arabia",
     "count": 5
   },
   {
@@ -336,6 +348,10 @@
     "count": 5
   },
   {
+    "topic": "logistic",
+    "count": 5
+  },
+  {
     "topic": "finance",
     "count": 5
   },
@@ -356,11 +372,15 @@
     "count": 5
   },
   {
-    "topic": "wagner",
+    "topic": "weapon",
     "count": 4
   },
   {
-    "topic": "combat",
+    "topic": "frontline",
+    "count": 4
+  },
+  {
+    "topic": "wagner",
     "count": 4
   },
   {
@@ -393,10 +413,6 @@
   },
   {
     "topic": "artificial-intelligence",
-    "count": 4
-  },
-  {
-    "topic": "saudi-arabia",
     "count": 4
   },
   {
@@ -450,14 +466,6 @@
   {
     "topic": "mistrial",
     "count": 4
-  },
-  {
-    "topic": "weapon",
-    "count": 3
-  },
-  {
-    "topic": "frontline",
-    "count": 3
   },
   {
     "topic": "donetsk",
@@ -517,6 +525,10 @@
   },
   {
     "topic": "bosnia",
+    "count": 3
+  },
+  {
+    "topic": "uk",
     "count": 3
   },
   {
@@ -588,6 +600,10 @@
     "count": 3
   },
   {
+    "topic": "strike",
+    "count": 3
+  },
+  {
     "topic": "sport",
     "count": 3
   },
@@ -640,6 +656,10 @@
     "count": 3
   },
   {
+    "topic": "air-force",
+    "count": 3
+  },
+  {
     "topic": "government-facility",
     "count": 3
   },
@@ -685,6 +705,10 @@
   },
   {
     "topic": "asylum",
+    "count": 2
+  },
+  {
+    "topic": "ceasefire",
     "count": 2
   },
   {
@@ -780,10 +804,6 @@
     "count": 2
   },
   {
-    "topic": "uk",
-    "count": 2
-  },
-  {
     "topic": "electronic-warfare",
     "count": 2
   },
@@ -876,10 +896,6 @@
     "count": 2
   },
   {
-    "topic": "strike",
-    "count": 2
-  },
-  {
     "topic": "political-crisi",
     "count": 2
   },
@@ -889,6 +905,10 @@
   },
   {
     "topic": "strategic-analysi",
+    "count": 2
+  },
+  {
+    "topic": "red-cross",
     "count": 2
   },
   {
@@ -1076,10 +1096,6 @@
     "count": 2
   },
   {
-    "topic": "air-force",
-    "count": 2
-  },
-  {
     "topic": "pentagon",
     "count": 2
   },
@@ -1117,6 +1133,10 @@
   },
   {
     "topic": "military-response",
+    "count": 2
+  },
+  {
+    "topic": "strategic-communication",
     "count": 2
   },
   {
@@ -1193,10 +1213,6 @@
   },
   {
     "topic": "music",
-    "count": 1
-  },
-  {
-    "topic": "ceasefire",
     "count": 1
   },
   {
@@ -1976,10 +1992,6 @@
     "count": 1
   },
   {
-    "topic": "red-cross",
-    "count": 1
-  },
-  {
     "topic": "detainee",
     "count": 1
   },
@@ -2153,10 +2165,6 @@
   },
   {
     "topic": "electric-propulsion",
-    "count": 1
-  },
-  {
-    "topic": "logistic",
     "count": 1
   },
   {
@@ -3164,10 +3172,6 @@
     "count": 1
   },
   {
-    "topic": "strategic-communication",
-    "count": 1
-  },
-  {
     "topic": "israel-palestine",
     "count": 1
   },
@@ -3497,6 +3501,50 @@
   },
   {
     "topic": "palestinian-displacement",
+    "count": 1
+  },
+  {
+    "topic": "medical",
+    "count": 1
+  },
+  {
+    "topic": "detainee-release",
+    "count": 1
+  },
+  {
+    "topic": "ukrainian-military",
+    "count": 1
+  },
+  {
+    "topic": "armed-force",
+    "count": 1
+  },
+  {
+    "topic": "military-messaging",
+    "count": 1
+  },
+  {
+    "topic": "military-defense",
+    "count": 1
+  },
+  {
+    "topic": "overseas-base",
+    "count": 1
+  },
+  {
+    "topic": "anti-aircraft",
+    "count": 1
+  },
+  {
+    "topic": "hold-fire",
+    "count": 1
+  },
+  {
+    "topic": "us",
+    "count": 1
+  },
+  {
+    "topic": "recruitment",
     "count": 1
   }
 ]

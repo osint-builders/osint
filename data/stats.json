@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-09-04T16:51:05.033Z",
+  "last_updated": "2026-09-04T20:44:21.581Z",
   "data_range": {
     "oldest_date": "2026-08-25",
     "newest_date": "2026-09-04"
   },
   "statistics": {
-    "total_events": 503,
+    "total_events": 523,
     "events_by_month": {
       "2026-08": 257,
-      "2026-09": 246
+      "2026-09": 266
     },
     "events_by_source": {
-      "War Translated (@wartranslated)": 24,
+      "War Translated (@wartranslated)": 25,
       "Quds News Network (@QudsNen)": 23,
       "Rerum Novarum Intel (@rnintel)": 20,
       "Intel Slava Z (@intelslava)": 18,
@@ -19,7 +19,7 @@
       "Wagner Z Group": 4,
       "ABC News": 8,
       "Insider Paper (@insiderpaper)": 13,
-      "Clash Report (@ClashReport)": 37,
+      "Clash Report (@ClashReport)": 44,
       "DD Geopolitics (@DDGeopolitics)": 19,
       "OSINT Technical (@Osinttechnical)": 9,
       "NSA (@NSAGov)": 1,
@@ -37,7 +37,7 @@
       "AP News (@AP)": 2,
       "CSIS Korea Chair": 6,
       "Our Wars, Today (@ourwarstoday)": 1,
-      "BBC World News (@BBCWorld)": 11,
+      "BBC World News (@BBCWorld)": 12,
       "ABC News (@ABC)": 19,
       "US Navy (@USNavy)": 5,
       "CNN (@CNN)": 4,
@@ -53,13 +53,13 @@
       "Institute for the Study of War (@TheStudyofWar)": 10,
       "Bellum Acta (@BellumActaNews)": 7,
       "Serhii FLASH — Technologies (@serhii_flash)": 1,
-      "UNITED24 Media (@United24media)": 9,
+      "UNITED24 Media (@United24media)": 10,
       "Wagner Z Group (@wagner_group_pmcr)": 1,
       "WarLife 18+ (@Voyna18)": 3,
       "Gcaptain (@Gcaptain)": 2,
       "cnni": 1,
       "twitter-criticalthreats": 1,
-      "Thewarzonewire (@Thewarzonewire)": 6,
+      "Thewarzonewire (@Thewarzonewire)": 7,
       "Middle East Spectator (@Middle_East_Spectator)": 8,
       "BBC World News": 7,
       "BBC Breaking News": 1,
@@ -75,7 +75,7 @@
       "cnni (@cnni)": 2,
       "Philippine Coast Guard (@CoastGuardPH)": 1,
       "Clash Report": 9,
-      "DD Geopolitics": 6,
+      "DD Geopolitics": 12,
       "Esri (@Esri)": 1,
       "Scmpnews (@Scmpnews)": 3,
       "CNN International": 1,
@@ -100,10 +100,13 @@
       "Serhii FLASH — Technologies": 1,
       "Quds News Network (@QudsNen)\n": 3,
       "Middle East Spectator — MES\n": 3,
-      "Rerum Novarum Intel (@rnintel)\n": 3
+      "Rerum Novarum Intel (@rnintel)\n": 3,
+      "Middle East Eye": 1,
+      "AFU Strategic Communications (@AFUStratCom)": 1,
+      "Defence Intelligence of Ukraine – GUR MO": 1
     },
     "media_files": {
-      "images": 107,
+      "images": 115,
       "videos": 0
     }
   },
@@ -118,7 +121,7 @@
     "2026-09-01": 45,
     "2026-09-02": 24,
     "2026-09-03": 74,
-    "2026-09-04": 103
+    "2026-09-04": 123
   },
-  "average_confidence": 0.8282432432432436
+  "average_confidence": 0.8312987012987018
 }
