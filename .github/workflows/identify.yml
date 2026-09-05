@@ -7,25 +7,20 @@ name: Identify OSINT Tips
 # ephemeral github.token instead). Sources with a hit get a lightweight tip
 # record committed to data/queue/pending/ for qualify.yml to process.
 #
-# Cadence: once daily at 09:00 America/New_York, plus manual dispatch.
+# Cadence: every 2 hours (UTC-based cron), plus manual dispatch.
 # qualify.yml chains off this run via `workflow_run`, so this single trigger
 # drives the whole Tip & Queue pipeline — do not also schedule qualify.yml or
 # each tip gets picked up twice.
 #
-# `timezone:` (IANA) is supported on cron entries as of March 2026 and handles
-# daylight saving, so this stays 9 AM Eastern year-round rather than drifting
-# an hour twice a year the way a fixed UTC offset would. 09:00 also sits well
-# clear of the 01:00-03:00 DST transition window, where fall-back behaviour is
-# undocumented.
-#
-# NOTE: identify.sh scans a 1-hour lookback, so one run/day samples one hour of
-# each day. Widen the window below if you want broader daily coverage.
+# NOTE: identify.sh scans a lookback window matching the cadence below (2
+# hours), so back-to-back runs cover the full day with no gaps. If you change
+# the cadence, update the lookback window in the "Compute lookback window"
+# step to match.
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 9 * * *'
-      timezone: America/New_York
+    - cron: '0 */2 * * *'
 
 concurrency:
   group: osint-identify
@@ -45,10 +40,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Compute 1-hour lookback window
+      - name: Compute lookback window
         id: window
         run: |
-          echo "start=$(date -u -d '1 hour ago' +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
+          echo "start=$(date -u -d '2 hours ago' +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
           echo "end=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
 
       - name: Identify tips across processable sources
