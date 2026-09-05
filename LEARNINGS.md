@@ -35,3 +35,6 @@ Cap: max 10 KB and 100 entries; orchestrator auto-prunes expired entries. Each e
 
 During 2026-09-05 batch 1, all three telegram-clashreport candidates were US domestic defense policy posts (Pentagon leak investigation, Deputy Defense Secretary replacement, DOJ-Canada trade cooperation). These do not align with the documented source profile ("breaking conflict zones worldwide" — Ukraine, Middle East, Africa). This indicates either a recent channel pivot or a data error. Recommend maintainer review ClashReport's recent posts to confirm scope change and update manifest accordingly.
 
+
+- **telegram-warmonitors (testing)**: t.me URLs not directly fetchable via curl; requires authenticated Telegram client or agent-browser with Telegram session. Fetches consistently return authentication walls. Consider marking status as `testing` with note about authentication barriers if this persists.
+
