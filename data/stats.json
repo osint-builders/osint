@@ -1,19 +1,19 @@
 {
-  "last_updated": "2026-09-04T20:44:21.581Z",
+  "last_updated": "2026-09-05T02:11:59.169Z",
   "data_range": {
     "oldest_date": "2026-08-25",
-    "newest_date": "2026-09-04"
+    "newest_date": "2026-09-05"
   },
   "statistics": {
-    "total_events": 523,
+    "total_events": 539,
     "events_by_month": {
       "2026-08": 257,
-      "2026-09": 266
+      "2026-09": 282
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 25,
       "Quds News Network (@QudsNen)": 23,
-      "Rerum Novarum Intel (@rnintel)": 20,
+      "Rerum Novarum Intel (@rnintel)": 21,
       "Intel Slava Z (@intelslava)": 18,
       "UNITED24 Media": 6,
       "Wagner Z Group": 4,
@@ -26,7 +26,7 @@
       "Sim Nasr (@SimNasr)": 3,
       "TankerTrackers (@TankerTrackers)": 2,
       "US Pacific Fleet (@USPacificFleet)": 1,
-      "Middle East Eye (@MiddleEastEye)": 31,
+      "Middle East Eye (@MiddleEastEye)": 34,
       "MT Anderson (@MT_Anderson)": 2,
       "inside_nk (@inside_nk)": 6,
       "Ship News (@ShipNews)": 7,
@@ -37,15 +37,15 @@
       "AP News (@AP)": 2,
       "CSIS Korea Chair": 6,
       "Our Wars, Today (@ourwarstoday)": 1,
-      "BBC World News (@BBCWorld)": 12,
-      "ABC News (@ABC)": 19,
+      "BBC World News (@BBCWorld)": 14,
+      "ABC News (@ABC)": 20,
       "US Navy (@USNavy)": 5,
       "CNN (@CNN)": 4,
       "Warshipcam (@Warshipcam)": 8,
       "Xinhua News (@XHNews)": 18,
       "cnnbrk (@cnnbrk)": 5,
       "Fox News (@FoxNews)": 10,
-      "Quds News Network": 16,
+      "Quds News Network": 17,
       "cepa (@cepa)": 2,
       "ELINT News (@ELINTNews)": 1,
       "CSIS Korea Chair (@CSISKoreaChair)": 5,
@@ -53,19 +53,19 @@
       "Institute for the Study of War (@TheStudyofWar)": 10,
       "Bellum Acta (@BellumActaNews)": 7,
       "Serhii FLASH — Technologies (@serhii_flash)": 1,
-      "UNITED24 Media (@United24media)": 10,
+      "UNITED24 Media (@United24media)": 11,
       "Wagner Z Group (@wagner_group_pmcr)": 1,
       "WarLife 18+ (@Voyna18)": 3,
       "Gcaptain (@Gcaptain)": 2,
       "cnni": 1,
       "twitter-criticalthreats": 1,
-      "Thewarzonewire (@Thewarzonewire)": 7,
+      "Thewarzonewire (@Thewarzonewire)": 8,
       "Middle East Spectator (@Middle_East_Spectator)": 8,
       "BBC World News": 7,
       "BBC Breaking News": 1,
       "UANI (@UANI)": 2,
       "Nasa (@Nasa)": 4,
-      "Intel Slava Z": 2,
+      "Intel Slava Z": 4,
       "Geopolitics Prime": 2,
       "Ianellisjones": 1,
       "inside_nk": 1,
@@ -75,7 +75,7 @@
       "cnni (@cnni)": 2,
       "Philippine Coast Guard (@CoastGuardPH)": 1,
       "Clash Report": 9,
-      "DD Geopolitics": 12,
+      "DD Geopolitics": 14,
       "Esri (@Esri)": 1,
       "Scmpnews (@Scmpnews)": 3,
       "CNN International": 1,
@@ -103,10 +103,11 @@
       "Rerum Novarum Intel (@rnintel)\n": 3,
       "Middle East Eye": 1,
       "AFU Strategic Communications (@AFUStratCom)": 1,
-      "Defence Intelligence of Ukraine – GUR MO": 1
+      "Defence Intelligence of Ukraine – GUR MO": 1,
+      "Southkoreapro (@Southkoreapro)": 2
     },
     "media_files": {
-      "images": 115,
+      "images": 122,
       "videos": 0
     }
   },
@@ -121,7 +122,8 @@
     "2026-09-01": 45,
     "2026-09-02": 24,
     "2026-09-03": 74,
-    "2026-09-04": 123
+    "2026-09-04": 123,
+    "2026-09-05": 16
   },
   "average_confidence": 0.8312987012987018
 }
