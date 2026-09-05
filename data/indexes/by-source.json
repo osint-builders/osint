@@ -2,9 +2,9 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 433,
+    "count": 473,
     "earliest_date": "2026-08-25T19:59:00Z",
-    "latest_date": "2026-09-05T13:13:17Z"
+    "latest_date": "2026-09-05T16:28:12Z"
   },
   {
     "source_id": "telegram-qudsnen",
@@ -65,9 +65,9 @@
   {
     "source_id": "twitter-csis-korea-chair",
     "source_name": "CSIS Korea Chair (@CSISKoreaChair)",
-    "count": 4,
+    "count": 5,
     "earliest_date": "2026-08-27T14:01:38Z",
-    "latest_date": "2026-09-05T13:01:51Z"
+    "latest_date": "2026-09-05T16:02:23.000Z"
   },
   {
     "source_id": "twitter-criticalthreats",
@@ -264,5 +264,19 @@
     "count": 1,
     "earliest_date": "2026-09-05T11:59:25Z",
     "latest_date": "2026-09-05T11:59:25Z"
+  },
+  {
+    "source_id": "twitter-cnnbrk",
+    "source_name": "cnnbrk (@cnnbrk)",
+    "count": 1,
+    "earliest_date": "2026-09-05T14:37:30.000Z",
+    "latest_date": "2026-09-05T14:37:30.000Z"
+  },
+  {
+    "source_id": "twitter-tanker-trackers",
+    "source_name": "TankerTrackers (@TankerTrackers)",
+    "count": 1,
+    "earliest_date": "2026-09-05T16:31:46.000Z",
+    "latest_date": "2026-09-05T16:31:46.000Z"
   }
 ]
