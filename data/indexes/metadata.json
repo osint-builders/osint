@@ -18227,5 +18227,908 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_89812424403746816",
+    "title": "Putin Claims Russia Limited Ceasefire to Moscow and Kyiv for 3 Days",
+    "summary": "Putin stated that Ukraine sought a comprehensive ceasefire across the entire front, but Russia agreed only to a limited ceasefire confined to Moscow and Kyiv regions for three days. Russian strikes on Odessa and other regions remain ongoing.",
+    "date_event": "2026-09-05T19:04:02.000Z",
+    "date_published": "2026-09-05T19:04:02.000Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "country": "Russia",
+      "city": "Moscow"
+    },
+    "topics": [
+      "russia",
+      "ukraine",
+      "ceasefire",
+      "military",
+      "diplomatic",
+      "conflict",
+      "putin"
+    ],
+    "confidence": 0.75,
+    "source_name": "My Lord Bebo (@MyLordBebo)",
+    "links": [
+      {
+        "url": "https://x.com/MyLordBebo/status/2096313424414208323",
+        "label": "Twitter Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812424403746817",
+    "title": "Russian Project R-1039 Icebreaker Admiral Makarov Catches Fire During Repairs",
+    "summary": "The Russian icebreaker Admiral Makarov experienced a fire at the Kronstadt Marine Plant in St. Petersburg during repairs. The vessel required yard repairs due to damage from a previous shipyard fire in 2024.",
+    "date_event": "2026-09-05T18:09:06.000Z",
+    "date_published": "2026-09-05T18:09:06.000Z",
+    "geo": {
+      "lat": 59.9906,
+      "lon": 29.3676,
+      "country": "Russia",
+      "city": "St. Petersburg"
+    },
+    "topics": [
+      "russia",
+      "military",
+      "naval",
+      "vessel",
+      "fire",
+      "incident",
+      "repairs"
+    ],
+    "confidence": 0.85,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2096299601049387436",
+        "label": "Twitter Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812424403746818",
+    "title": "China Passes Revision to National Defense Mobilization Law",
+    "summary": "The People's Republic of China National People's Congress approved amendments to the National Defense Mobilization Law. The revision represents an update to China's legal framework governing defense mobilization procedures.",
+    "date_event": "2026-09-05T19:29:23.000Z",
+    "date_published": "2026-09-05T19:29:23.000Z",
+    "geo": {
+      "lat": 39.9042,
+      "lon": 116.4074,
+      "country": "China",
+      "city": "Beijing"
+    },
+    "topics": [
+      "china",
+      "military",
+      "defense",
+      "law",
+      "mobilization",
+      "security"
+    ],
+    "confidence": 0.75,
+    "source_name": "Institute for the Study of War (@TheStudyofWar)",
+    "links": [
+      {
+        "url": "https://x.com/TheStudyofWar/status/2096319802100912202",
+        "label": "Twitter Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812418296815616",
+    "title": "IRGC Navy Targets U.S.-Linked Oil Tankers in Persian Gulf",
+    "summary": "Iran's Islamic Revolutionary Guard Corps Navy announced targeting three U.S.-linked oil tankers in the Persian Gulf as a response to earlier American actions that disabled three Iranian tankers. The Iranian military's action represents an escalation in maritime tensions in the strategic waterway.",
+    "date_event": null,
+    "date_published": "2026-09-05T19:47:39Z",
+    "geo": {
+      "lat": 27.1589,
+      "lon": 54.3773,
+      "name": "Persian Gulf"
+    },
+    "topics": [
+      "iran",
+      "military",
+      "united-states",
+      "persian-gulf",
+      "tankers",
+      "navy",
+      "maritime-conflict"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36322",
+        "title": "IRGC Navy announcement",
+        "source": "Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812418380701696",
+    "title": "UK Foreign Secretary Miliband Calls Gaza Situation 'Horrific', Demands More Decisive Government Action",
+    "summary": "UK Foreign Secretary Ed Miliband characterized the situation in Gaza as horrific after hearing firsthand accounts from individuals affected by the Israeli military operations. He called for the UK government to take more decisive steps regarding the situation.",
+    "date_event": null,
+    "date_published": "2026-09-05T18:14:31Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.2268,
+      "name": "Gaza"
+    },
+    "topics": [
+      "gaza",
+      "united-kingdom",
+      "government",
+      "humanitarian-crisis",
+      "military-conflict",
+      "diplomacy"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/237833",
+        "title": "Ed Miliband statement on Gaza",
+        "source": "Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812418464587776",
+    "title": "Three Palestinians Injured in Israeli Strike on Al-Tuffah Neighborhood in Gaza City",
+    "summary": "Three Palestinians suffered injuries in an Israeli military strike targeting the Al-Tuffah neighborhood located northeast of Gaza City. The incident occurred during the ongoing military operations in the Gaza Strip.",
+    "date_event": null,
+    "date_published": "2026-09-05T18:40:14Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.2268,
+      "name": "Gaza"
+    },
+    "topics": [
+      "gaza",
+      "palestine",
+      "military-strike",
+      "civilian-casualties",
+      "israel",
+      "conflict"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/237834",
+        "title": "Al-Tuffah strike report",
+        "source": "Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812418556862464",
+    "title": "Hundreds Participate in Red Line Solidarity Action in Swansea, UK Demanding End to Gaza Genocide",
+    "summary": "Hundreds of participants joined a Red Line solidarity demonstration in Swansea, Wales, organized by Swansea Palestine and the Palestine Solidarity Movement. Demonstrators held a continuous red fabric line through city streets and along the waterfront to protest the Israeli military operations in Gaza and call for UK government accountability.",
+    "date_event": null,
+    "date_published": "2026-09-05T18:54:57Z",
+    "geo": {
+      "lat": 51.6214,
+      "lon": -3.9436,
+      "name": "Swansea, UK"
+    },
+    "topics": [
+      "gaza",
+      "palestine",
+      "protest",
+      "solidarity",
+      "united-kingdom",
+      "humanitarian"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/237835",
+        "title": "Red Line solidarity action in Swansea",
+        "source": "Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812595275501568",
+    "title": "HMS Queen Elizabeth Aircraft Carrier Departs Portsmouth",
+    "summary": "HMS Queen Elizabeth (R08), a Queen Elizabeth-class aircraft carrier, departed Portsmouth, England on September 5, 2026. The vessel photographed during departure operations.",
+    "date_event": "2026-09-05T20:00:02Z",
+    "date_published": "2026-09-05T20:00:02Z",
+    "geo": {
+      "lat": 50.8197,
+      "lon": -1.088,
+      "country": "United Kingdom",
+      "region": "England",
+      "city": "Portsmouth"
+    },
+    "topics": [
+      "warship",
+      "aircraft-carrier",
+      "uk-navy",
+      "military",
+      "naval-deployment"
+    ],
+    "confidence": 0.85,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2096327518634512587",
+        "label": "Warshipcam Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812595367776256",
+    "title": "USS Theodore Roosevelt Aircraft Carrier Departs San Diego",
+    "summary": "USS Theodore Roosevelt (CVN 71), a Nimitz-class nuclear-powered aircraft carrier, departed San Diego naval base on September 5, 2026. Multiple sources documented the vessel's departure from the port.",
+    "date_event": "2026-09-05T19:35:10Z",
+    "date_published": "2026-09-05T19:35:10Z",
+    "geo": {
+      "lat": 32.7157,
+      "lon": -117.1611,
+      "country": "United States",
+      "region": "California",
+      "city": "San Diego"
+    },
+    "topics": [
+      "warship",
+      "aircraft-carrier",
+      "us-navy",
+      "military",
+      "naval-deployment",
+      "san-diego"
+    ],
+    "confidence": 0.85,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2096321258904232251",
+        "label": "Warshipcam Tweet (Primary)"
+      },
+      {
+        "url": "https://x.com/Warshipcam/status/2096320296219201707",
+        "label": "Warshipcam Tweet (Secondary Source)"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812595464245248",
+    "title": "Steve Witkoff Describes Memorable Meeting with Putin",
+    "summary": "Steve Witkoff, a special envoy, reported his recent meeting with Russian President Vladimir Putin will rank among his most memorable experiences. Witkoff emphasized the significance of his discussions with Putin.",
+    "date_event": "2026-09-05T19:01:50Z",
+    "date_published": "2026-09-05T19:01:50Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "country": "Russia",
+      "region": "Moscow",
+      "city": "Moscow"
+    },
+    "topics": [
+      "diplomacy",
+      "usa",
+      "russia",
+      "ukraine",
+      "putin",
+      "special-envoy"
+    ],
+    "confidence": 0.75,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2096312870522794405",
+        "label": "War Translated Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812595556519936",
+    "title": "Putin Claims Russia Rejected Long-Term Ceasefire Proposals",
+    "summary": "Russian President Vladimir Putin claimed that Russia has not agreed to any ceasefire with Ukraine lasting longer than three days. Putin also stated that Ukraine has reduced strikes inside Russian territory, allowing Russian forces to similarly hold back on attacks.",
+    "date_event": "2026-09-05T18:06:24Z",
+    "date_published": "2026-09-05T18:06:24Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "country": "Russia",
+      "region": "Moscow",
+      "city": "Moscow"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military",
+      "ceasefire",
+      "putin",
+      "conflict",
+      "diplomacy"
+    ],
+    "confidence": 0.8,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2096298920062095869",
+        "label": "War Translated Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812321794289664",
+    "title": "U.S. Destroys Iranian Tanker, Disables Two Others After Missile Attacks on Navy Warships",
+    "summary": "The United States military conducted operations against Iranian vessels following missile attacks on U.S. Navy warships. One Iranian tanker reported destroyed while two additional vessels sustained damage in the maritime engagement.",
+    "date_event": "2026-09-05T15:13:09Z",
+    "date_published": "2026-09-05T15:13:09Z",
+    "geo": {
+      "lat": 27.1667,
+      "lon": 51.4167,
+      "country": "Iran",
+      "region": "Persian Gulf"
+    },
+    "topics": [
+      "maritime",
+      "iran",
+      "military",
+      "tanker",
+      "naval-conflict",
+      "u-s-military"
+    ],
+    "confidence": 0.75,
+    "source_name": "Gcaptain (@Gcaptain)",
+    "links": [
+      {
+        "url": "https://x.com/Gcaptain/status/2096255321107001523",
+        "label": "Gcaptain Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812418816929792",
+    "title": "Gaza's Destroyed Sewage System Linked to Algae Bloom Shutting Israeli Desalination Plants",
+    "summary": "Scientists investigate whether wastewater from Gaza's destroyed sewage system fueled a rare algae bloom that forced the closure of five of Israel's six major water desalination plants, creating a critical water supply crisis.",
+    "date_event": "2026-09-05T16:06:27Z",
+    "date_published": "2026-09-05T16:06:27Z",
+    "geo": {
+      "lat": 31.9,
+      "lon": 35.2,
+      "country": "Palestine",
+      "region": "Gaza Strip",
+      "city": "Gaza City"
+    },
+    "topics": [
+      "gaza",
+      "sewage",
+      "environment",
+      "water-crisis",
+      "israel",
+      "algae-bloom",
+      "desalination",
+      "infrastructure"
+    ],
+    "confidence": 0.82,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2096268734247711111",
+        "label": "Middle East Eye Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812466661355520",
+    "title": "US Non-Profit Threatens Legal Action Against UK Over Israeli Settlement Goods Entering Tariff-Free",
+    "summary": "A US-based non-profit legal organization has threatened litigation against Britain's HM Revenue and Customs (HMRC), alleging the agency permitted goods from Israeli settlements to enter the United Kingdom without tariffs in violation of trade regulations.",
+    "date_event": "2026-09-05T19:59:47Z",
+    "date_published": "2026-09-05T19:59:47Z",
+    "geo": {
+      "lat": 51.5074,
+      "lon": -0.1278,
+      "country": "United Kingdom",
+      "region": "England",
+      "city": "London"
+    },
+    "topics": [
+      "israel",
+      "settlements",
+      "trade",
+      "united-kingdom",
+      "legal",
+      "tariffs",
+      "international-law"
+    ],
+    "confidence": 0.78,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2096327452918194514",
+        "label": "Middle East Eye Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812466749435904",
+    "title": "Iran Threatens Expanded Strikes on US Warships if Blockade Continues",
+    "summary": "Iran issued a threat to conduct expanded military strikes against US Navy warships operating in the region, conditional on the continuation of what Tehran characterizes as an economic and military blockade against the Islamic Republic.",
+    "date_event": "2026-09-05T18:40:04Z",
+    "date_published": "2026-09-05T18:40:04Z",
+    "geo": {
+      "lat": 27.1667,
+      "lon": 51.4167,
+      "country": "Iran",
+      "region": "Persian Gulf"
+    },
+    "topics": [
+      "iran",
+      "military",
+      "u-s",
+      "warships",
+      "maritime",
+      "sanctions",
+      "blockade",
+      "threats"
+    ],
+    "confidence": 0.76,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2096307391205642400",
+        "label": "Middle East Eye Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812547577851904",
+    "title": "NATO Conducts Major Submarine Tracking Exercises Without US Participation",
+    "summary": "NATO conducted large-scale exercises focused on tracking Russian nuclear submarines without American participation, marking a significant diplomatic and military development.",
+    "date_event": null,
+    "date_published": "2026-09-05T18:59:01Z",
+    "geo": {
+      "lat": 50.8467372,
+      "lon": 4.352493,
+      "display_name": "Brussels, Belgium"
+    },
+    "topics": [
+      "nato",
+      "military-exercise",
+      "nuclear-submarines",
+      "russia",
+      "international-security",
+      "ukraine-conflict"
+    ],
+    "confidence": null,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/45799",
+        "title": "NATO submarine tracking exercises",
+        "source": "Telegram United24 Media"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/sVyNVZ2bbHqi6uLPbNvWlXR59QEKmGS-0vr32b2eZu3euAZuW5DZXUbHWSMkg5G7ji9ahcB6oNeH7X5coqK4VpbgMCVXd-RsgETHxdk-kzPPQ2W0Saryhp8__BgsZfCoNz_PD2he35l8mcF9xirMa10gIcREKkw8XBKKWcz59_g0nBmDwgaBjaahNfsvJ4fjM6EEV1ZW9yW0pypueTlBwELCO6OqZyr_AFPYrsekvtnXfWOsVd5auUidgEisCEd9m3GfE-AftLwRhjLiiTtBxe_1aDpCHYRN_ra-NXo4MWGMt3evf_dYdM_c2yBVmise4f5IotEjjzKXqJ-BuJfLQQ.jpg"
+  },
+  {
+    "id": "evt_89812473154134016",
+    "title": "U.S. Military Strikes Three Iranian Oil Tankers Following IRGC Missile Attack on U.S. Navy Warships",
+    "summary": "The United States military conducted retaliatory strikes against three Iranian Revolutionary Guard Corps (IRGC) oil tankers after the IRGC launched missile attacks on U.S. Navy warships. CENTCOM confirmed the operation, with Admiral Brad Cooper stating the U.S. will not hesitate to defend American forces and destroy Iran's oil fleet.",
+    "date_event": null,
+    "date_published": "2026-09-05T15:23:39Z",
+    "geo": {
+      "lat": 36.3200516,
+      "lon": 50.0119434,
+      "country": "Iran",
+      "region": "Persian Gulf"
+    },
+    "topics": [
+      "iran",
+      "military",
+      "usa",
+      "persian-gulf",
+      "irgc",
+      "naval-conflict",
+      "retaliation"
+    ],
+    "confidence": 0.95,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2096257961752506647",
+        "label": "Fox News Coverage"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2096257412026036224/img/DIC8gLHf91wUmQmm.jpg"
+  },
+  {
+    "id": "evt_89812579945308160",
+    "title": "Trump Negotiators Conduct Moscow Talks as Russia and Ukraine Exchange Attacks",
+    "summary": "U.S. envoys Steve Witkoff and Jared Kushner traveled to Moscow for diplomatic discussions on ending the Russia-Ukraine conflict. The talks come during ongoing military exchanges between Russian and Ukrainian forces, with negotiators expected to present a fresh U.S. proposal for conflict resolution.",
+    "date_event": null,
+    "date_published": "2026-09-05T19:47:57Z",
+    "geo": {
+      "lat": 55.625578,
+      "lon": 37.6063916,
+      "city": "Moscow",
+      "country": "Russia"
+    },
+    "topics": [
+      "russia",
+      "ukraine",
+      "diplomacy",
+      "usa",
+      "kremlin",
+      "conflict",
+      "peace-negotiations"
+    ],
+    "confidence": 0.93,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2096324475658568101",
+        "label": "Fox News Coverage"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2096324137002336256/img/R7hZeSfynT8Amla4.jpg"
+  },
+  {
+    "id": "evt_89812320808624128",
+    "title": "CSIS Podcast: U.S.-Korea Trade Tensions and Alliance Issues",
+    "summary": "The Center for Strategic and International Studies released a podcast episode addressing recent U.S.-Korea trade dynamics and tensions. The discussion featured expert voices from Bloomberg Economics, the Chosun Ilbo, and the Hankyoreh analyzing key bilateral economic and security concerns.",
+    "date_event": null,
+    "date_published": "2026-09-05T19:01:16Z",
+    "geo": {
+      "lat": 37.5666791,
+      "lon": 126.9782914,
+      "city": "Seoul",
+      "region": "Seoul",
+      "country": "South Korea"
+    },
+    "topics": [
+      "korea",
+      "trade",
+      "alliance",
+      "us-korea-relations",
+      "economic-policy",
+      "security"
+    ],
+    "confidence": 0.92,
+    "source_name": "CSIS Korea Chair (@CSISKoreaChair)",
+    "links": [
+      {
+        "url": "https://x.com/CSISKoreaChair/status/2096312729522802936",
+        "label": "CSIS Korea Chair Twitter Post"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_89812674459750400",
+    "title": "Russia sustains record military casualties in Ukraine conflict reaching 1.4 million",
+    "summary": "Former CIA Director David Petraeus reports Russian casualties exceed 1.4 million killed and wounded exceeding U.S. historical totals with daily losses unsustainable.",
+    "date_event": null,
+    "date_published": "2026-09-05T20:00:27Z",
+    "geo": {
+      "lat": 48.3794,
+      "lon": 31.1656
+    },
+    "topics": [
+      "ukraine-war",
+      "russia-casualties",
+      "military-operations",
+      "conflict-assessment"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2096327622599053570",
+        "title": "Petraeus assessment of Russian casualties"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812674598162432",
+    "title": "Ukraine strikes Russian refinery infrastructure across 3000-kilometer range",
+    "summary": "Ukraine successfully targets Russian oil storage and refinery capabilities across extended range destroying or disabling multiple facilities.",
+    "date_event": null,
+    "date_published": "2026-09-05T19:58:08Z",
+    "geo": {
+      "lat": 48.3794,
+      "lon": 31.1656
+    },
+    "topics": [
+      "ukraine-war",
+      "infrastructure-damage",
+      "russian-economy",
+      "military-operations"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2096327036583235592",
+        "title": "Petraeus on Ukrainian refinery strikes"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812674736574464",
+    "title": "Ukraine employs mass drone strategy exhausting Iranian air defense resources",
+    "summary": "Former CIA Director notes Ukraine deploys ten thousand low-cost drones daily achieving massive exchange rates while Iran depletes missile interceptors.",
+    "date_event": null,
+    "date_published": "2026-09-05T19:55:01Z",
+    "geo": {
+      "lat": 32.4279,
+      "lon": 53.688
+    },
+    "topics": [
+      "ukraine-war",
+      "drone-warfare",
+      "iran-operations",
+      "military-tactics",
+      "air-defense"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2096326255779992037",
+        "title": "Petraeus on drone tactics and air defense"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812674317144064",
+    "title": "NATO alliance cohesion threatened by coordinated hybrid warfare operations",
+    "summary": "Defense expert argues NATO must build resilience across energy communications and governance to counter hybrid attacks targeting alliance unity.",
+    "date_event": null,
+    "date_published": "2026-09-05T19:54:31Z",
+    "geo": {
+      "lat": 50.8503,
+      "lon": 4.3517
+    },
+    "topics": [
+      "nato",
+      "hybrid-warfare",
+      "cybersecurity",
+      "energy-security",
+      "disinformation",
+      "alliance-resilience"
+    ],
+    "confidence": null,
+    "source_name": "cepa (@cepa)",
+    "links": [
+      {
+        "url": "https://x.com/cepa/status/2096326129640407126",
+        "title": "CEPA tweet on NATO resilience"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812674170343424",
+    "title": "Europe faces heat adaptation challenges amid political and economic crisis",
+    "summary": "Bloomberg Originals documentary examines how European governments confront record temperatures while managing political instability and economic constraints.",
+    "date_event": null,
+    "date_published": "2026-09-05T18:53:07Z",
+    "geo": {
+      "lat": 54.526,
+      "lon": 15.2551
+    },
+    "topics": [
+      "climate-change",
+      "extreme-weather",
+      "european-politics",
+      "economic-crisis",
+      "infrastructure",
+      "adaptation"
+    ],
+    "confidence": null,
+    "source_name": "BBG Originals (@BBGOriginals)",
+    "links": [
+      {
+        "url": "https://x.com/BBGOriginals/status/2096310677237289336",
+        "title": "BBG Originals tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812527499710464",
+    "title": "Egyptian Television Presenter Sentenced to Death in Major Drug Case",
+    "summary": "Egyptian television presenter Sarah Khalifa received a death sentence in Egypt over a major drug trafficking operation.",
+    "date_event": null,
+    "date_published": "2026-09-05T18:56:32Z",
+    "geo": {
+      "lat": 30.0444,
+      "lon": 31.2357
+    },
+    "topics": [
+      "egypt",
+      "drug-trafficking",
+      "organized-crime",
+      "justice"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/95200"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812527579402240",
+    "title": "Nigel Farage Predicts Marine Le Pen Victory in French Presidential Race",
+    "summary": "Nigel Farage expressed confidence that Marine Le Pen will become the next President of France with Jordan Bardella as Prime Minister.",
+    "date_event": null,
+    "date_published": "2026-09-05T19:05:17Z",
+    "geo": {
+      "lat": 48.8566,
+      "lon": 2.3522
+    },
+    "topics": [
+      "france",
+      "politics",
+      "elections",
+      "marine-le-pen"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/95201"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812527650705408",
+    "title": "Nigel Farage Critiques EU Regulations and Contrasts European Economic Performance",
+    "summary": "Nigel Farage discussed EU regulatory burdens and economic comparisons between European and American economies in the post-2008 period.",
+    "date_event": null,
+    "date_published": "2026-09-05T19:08:23Z",
+    "geo": {
+      "lat": 50.8503,
+      "lon": 4.3517
+    },
+    "topics": [
+      "european-union",
+      "brexit",
+      "economics",
+      "regulation"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/95202"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812527713619968",
+    "title": "Putin Declines Extended Truce, Sets Territorial and NATO Demands for Ceasefire",
+    "summary": "Russian President Putin rejected Ukraine's proposal for a wider three-day truce, instead conditioning any ceasefire on Ukraine's territorial recognition and NATO withdrawal.",
+    "date_event": null,
+    "date_published": "2026-09-05T18:22:40Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173
+    },
+    "topics": [
+      "russia",
+      "ukraine",
+      "ceasefire",
+      "nato",
+      "diplomacy"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/192786"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812527805894656",
+    "title": "Ukrainian President Zelensky Claims Lack of Knowledge Regarding Cabinet Conspiracy Allegations",
+    "summary": "President Zelensky denied knowledge of cabinet members' involvement in alleged conspiracy, citing backdoor negotiations with Russian officials.",
+    "date_event": null,
+    "date_published": "2026-09-05T18:45:24Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234
+    },
+    "topics": [
+      "ukraine",
+      "conspiracy",
+      "government",
+      "security-breach"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/192787"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812527893975040",
+    "title": "Russian Mobile Air Defense Units Deploy on Strategic Novorossiya Highway Corridor",
+    "summary": "Russian military deployed mobile air defense groups along the R-28 Novorossiya highway, indicating preparations for sustained combat operations.",
+    "date_event": null,
+    "date_published": "2026-09-05T19:35:01Z",
+    "geo": {
+      "lat": 47.2,
+      "lon": 39.7
+    },
+    "topics": [
+      "russia",
+      "military",
+      "air-defense",
+      "logistics"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/192788"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_89812527977861120",
+    "title": "Ukrainian General Staff Reports Over 1200 Russian Military Units Destroyed Since Year Start",
+    "summary": "Ukrainian Armed Forces reported destruction of more than 1200 Russian military units including tanks, artillery, and drones, with ongoing counteroffensive operations.",
+    "date_event": null,
+    "date_published": "2026-09-05T19:02:20Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234
+    },
+    "topics": [
+      "ukraine",
+      "military",
+      "russia",
+      "counteroffensive",
+      "casualties"
+    ],
+    "confidence": null,
+    "source_name": "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)",
+    "links": [
+      {
+        "url": "https://t.me/GeneralStaffZSU/42131"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
