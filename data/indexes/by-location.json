@@ -1,23 +1,23 @@
 [
   {
     "country": "Ukraine",
-    "count": 70
+    "count": 75
   },
   {
     "country": "United States",
-    "count": 42
+    "count": 47
   },
   {
     "country": "Russia",
-    "count": 35
+    "count": 36
   },
   {
     "country": "Iran",
-    "count": 32
+    "count": 35
   },
   {
     "country": "Palestine",
-    "count": 30
+    "count": 32
   },
   {
     "country": "China",
@@ -25,6 +25,14 @@
   },
   {
     "country": "Germany",
+    "count": 17
+  },
+  {
+    "country": "Global",
+    "count": 14
+  },
+  {
+    "country": "Lebanon",
     "count": 11
   },
   {
@@ -34,14 +42,6 @@
   {
     "country": "United Kingdom",
     "count": 10
-  },
-  {
-    "country": "Lebanon",
-    "count": 10
-  },
-  {
-    "country": "Global",
-    "count": 9
   },
   {
     "country": "Israel",
@@ -113,6 +113,10 @@
   },
   {
     "country": "Egypt",
+    "count": 2
+  },
+  {
+    "country": "Turkey",
     "count": 2
   },
   {
@@ -244,10 +248,6 @@
     "count": 1
   },
   {
-    "country": "Turkey",
-    "count": 1
-  },
-  {
     "country": "Ireland",
     "count": 1
   },
@@ -269,6 +269,18 @@
   },
   {
     "country": "Europe",
+    "count": 1
+  },
+  {
+    "country": "Miami, Florida",
+    "count": 1
+  },
+  {
+    "country": "West Bank",
+    "count": 1
+  },
+  {
+    "country": "Greenland",
     "count": 1
   }
 ]
