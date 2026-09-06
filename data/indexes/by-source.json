@@ -2,30 +2,30 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 639,
+    "count": 658,
     "earliest_date": "2026-08-25T19:59:00Z",
     "latest_date": "2026-09-07T03:53:02Z"
   },
   {
     "source_id": "telegram-qudsnen",
     "source_name": "Quds News Network (@QudsNen)",
-    "count": 23,
+    "count": 26,
     "earliest_date": "2026-08-25T20:06:14+00:00",
-    "latest_date": "2026-09-06T06:59:06Z"
+    "latest_date": "2026-09-06T22:13:58Z"
   },
   {
     "source_id": "telegram-rnintel",
     "source_name": "Rerum Novarum Intel (@rnintel)",
-    "count": 15,
+    "count": 17,
     "earliest_date": "2026-08-25T20:28:02+00:00",
-    "latest_date": "2026-09-06T15:45:07Z"
+    "latest_date": "2026-09-06T22:14:44Z"
   },
   {
     "source_id": "telegram-intelslava",
     "source_name": "Intel Slava Z (@intelslava)",
-    "count": 6,
+    "count": 12,
     "earliest_date": "2026-08-25T20:38:50+00:00",
-    "latest_date": "2026-09-01T16:06:16Z"
+    "latest_date": "2026-09-06T18:44:47Z"
   },
   {
     "source_id": "twitter-sim-nasr",
@@ -79,9 +79,9 @@
   {
     "source_id": "twitter-abc",
     "source_name": "ABC News (@ABC)",
-    "count": 16,
+    "count": 19,
     "earliest_date": "2026-08-27T13:56:20.000Z",
-    "latest_date": "2026-09-06T19:13:39.000Z"
+    "latest_date": "2026-09-06T23:16:20Z"
   },
   {
     "source_id": "telegram-insiderpaper",
@@ -163,9 +163,9 @@
   {
     "source_id": "telegram-united24media",
     "source_name": "UNITED24 Media (@United24media)",
-    "count": 14,
+    "count": 15,
     "earliest_date": "2026-08-29T16:19:01Z",
-    "latest_date": "2026-09-06T16:21:01Z"
+    "latest_date": "2026-09-06T21:43:01Z"
   },
   {
     "source_id": "twitter-xinhua-news",
@@ -275,9 +275,9 @@
   {
     "source_id": "twitter-tanker-trackers",
     "source_name": "TankerTrackers (@TankerTrackers)",
-    "count": 1,
+    "count": 2,
     "earliest_date": "2026-09-05T16:31:46.000Z",
-    "latest_date": "2026-09-05T16:31:46.000Z"
+    "latest_date": "2026-09-06T22:29:15Z"
   },
   {
     "source_id": "telegram-generalstaffzsu",
@@ -296,8 +296,22 @@
   {
     "source_id": "twitter-ap",
     "source_name": "AP News (@AP)",
-    "count": 1,
+    "count": 2,
     "earliest_date": "2026-09-06T19:27:40.000Z",
-    "latest_date": "2026-09-06T19:27:40.000Z"
+    "latest_date": "2026-09-06T21:43:07.000Z"
+  },
+  {
+    "source_id": "twitter-scmpnews",
+    "source_name": "South China Morning Post",
+    "count": 1,
+    "earliest_date": "2026-09-06T21:52:20Z",
+    "latest_date": "2026-09-06T21:52:20Z"
+  },
+  {
+    "source_id": "twitter-osinttechnical",
+    "source_name": "OSINT Technical",
+    "count": 1,
+    "earliest_date": "2026-09-06T21:45:50Z",
+    "latest_date": "2026-09-06T21:45:50Z"
   }
 ]
