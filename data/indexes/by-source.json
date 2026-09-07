@@ -2,9 +2,9 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 712,
+    "count": 726,
     "earliest_date": "2026-08-25T19:59:00Z",
-    "latest_date": "2026-09-07T15:29:31Z"
+    "latest_date": "2026-09-07T19:35:08Z"
   },
   {
     "source_id": "telegram-qudsnen",
@@ -107,9 +107,9 @@
   {
     "source_id": "telegram-geopolitics-prime",
     "source_name": "Geopolitics Prime (@geopolitics_prime)",
-    "count": 3,
+    "count": 4,
     "earliest_date": "2026-08-28T17:03:52+00:00",
-    "latest_date": "2026-08-31T13:18:03Z"
+    "latest_date": "2026-09-06T18:40:28+00:00"
   },
   {
     "source_id": "telegram-ddgeopolitics",
@@ -170,16 +170,16 @@
   {
     "source_id": "twitter-xinhua-news",
     "source_name": "Xinhua News (@XHNews)",
-    "count": 13,
+    "count": 14,
     "earliest_date": "2026-08-30T16:41:07Z",
-    "latest_date": "2026-09-07T02:18:01Z"
+    "latest_date": "2026-09-07T18:23:05Z"
   },
   {
     "source_id": "twitter-wartranslated",
     "source_name": "War Translated (@wartranslated)",
-    "count": 8,
+    "count": 9,
     "earliest_date": "2026-08-31T13:00:41.000Z",
-    "latest_date": "2026-09-04T08:23:40.000Z"
+    "latest_date": "2026-09-07T18:48:02Z"
   },
   {
     "source_id": "webpage-isw-ukraine-interactive-map",
@@ -282,9 +282,9 @@
   {
     "source_id": "telegram-generalstaffzsu",
     "source_name": "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)",
-    "count": 1,
+    "count": 2,
     "earliest_date": "2026-09-05T19:02:20Z",
-    "latest_date": "2026-09-05T19:02:20Z"
+    "latest_date": "2026-09-07T19:01:07+00:00"
   },
   {
     "source_id": "twitter-mylordbebo",
@@ -334,5 +334,12 @@
     "count": 1,
     "earliest_date": "2026-09-07T14:23:56Z",
     "latest_date": "2026-09-07T14:23:56Z"
+  },
+  {
+    "source_id": "telegram-diukraine",
+    "source_name": "Defence Intelligence of Ukraine – GUR MO",
+    "count": 1,
+    "earliest_date": "2026-09-07T18:22:01+00:00",
+    "latest_date": "2026-09-07T18:22:01+00:00"
   }
 ]

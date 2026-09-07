@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-09-07T15:38:36.570Z",
+  "last_updated": "2026-09-07T19:51:05.866Z",
   "data_range": {
     "oldest_date": "2026-08-25",
     "newest_date": "2026-09-07"
   },
   "statistics": {
-    "total_events": 971,
+    "total_events": 990,
     "events_by_month": {
       "2026-08": 257,
-      "2026-09": 714
+      "2026-09": 733
     },
     "events_by_source": {
-      "War Translated (@wartranslated)": 47,
+      "War Translated (@wartranslated)": 48,
       "Quds News Network (@QudsNen)": 51,
       "Rerum Novarum Intel (@rnintel)": 31,
       "Intel Slava Z (@intelslava)": 40,
@@ -19,14 +19,14 @@
       "Wagner Z Group": 4,
       "ABC News": 10,
       "Insider Paper (@insiderpaper)": 21,
-      "Clash Report (@ClashReport)": 83,
+      "Clash Report (@ClashReport)": 86,
       "DD Geopolitics (@DDGeopolitics)": 41,
-      "OSINT Technical (@Osinttechnical)": 11,
+      "OSINT Technical (@Osinttechnical)": 12,
       "NSA (@NSAGov)": 1,
       "Sim Nasr (@SimNasr)": 8,
       "TankerTrackers (@TankerTrackers)": 3,
       "US Pacific Fleet (@USPacificFleet)": 1,
-      "Middle East Eye (@MiddleEastEye)": 50,
+      "Middle East Eye (@MiddleEastEye)": 51,
       "MT Anderson (@MT_Anderson)": 2,
       "inside_nk (@inside_nk)": 6,
       "Ship News (@ShipNews)": 7,
@@ -42,7 +42,7 @@
       "US Navy (@USNavy)": 6,
       "CNN (@CNN)": 11,
       "Warshipcam (@Warshipcam)": 24,
-      "Xinhua News (@XHNews)": 35,
+      "Xinhua News (@XHNews)": 36,
       "cnnbrk (@cnnbrk)": 6,
       "Fox News (@FoxNews)": 18,
       "Quds News Network": 26,
@@ -51,9 +51,9 @@
       "CSIS Korea Chair (@CSISKoreaChair)": 8,
       "Critical Threats Project (@criticalthreats)": 6,
       "Institute for the Study of War (@TheStudyofWar)": 17,
-      "Bellum Acta (@BellumActaNews)": 14,
+      "Bellum Acta (@BellumActaNews)": 15,
       "Serhii FLASH — Technologies (@serhii_flash)": 2,
-      "UNITED24 Media (@United24media)": 27,
+      "UNITED24 Media (@United24media)": 30,
       "Wagner Z Group (@wagner_group_pmcr)": 3,
       "WarLife 18+ (@Voyna18)": 4,
       "Gcaptain (@Gcaptain)": 3,
@@ -66,7 +66,7 @@
       "UANI (@UANI)": 2,
       "Nasa (@Nasa)": 5,
       "Intel Slava Z": 5,
-      "Geopolitics Prime": 8,
+      "Geopolitics Prime": 9,
       "Ianellisjones": 1,
       "inside_nk": 1,
       "ISW Ukraine Interactive Territorial Control Map": 3,
@@ -94,7 +94,7 @@
       "Insider Paper": 4,
       "Taiwan News (@TaiwanNewsEN)": 4,
       "ChineseEmbInUs": 2,
-      "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)": 3,
+      "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)": 6,
       "ChineseEmbInUs (@ChineseEmbInUs)": 1,
       "US Treasury (@USTreasury)": 2,
       "Serhii FLASH — Technologies": 1,
@@ -103,13 +103,13 @@
       "Rerum Novarum Intel (@rnintel)\n": 3,
       "Middle East Eye": 9,
       "AFU Strategic Communications (@AFUStratCom)": 1,
-      "Defence Intelligence of Ukraine – GUR MO": 2,
+      "Defence Intelligence of Ukraine – GUR MO": 3,
       "Southkoreapro (@Southkoreapro)": 5,
       "Minhdr18 OSINT (@Minhdr18)": 2,
       "Africafactszone (@Africafactszone)": 1,
       "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)": 4,
       "Fox News": 2,
-      "General Staff of the Armed Forces of Ukraine": 1,
+      "General Staff of the Armed Forces of Ukraine": 2,
       "My Lord Bebo": 2,
       "OSINT Technical": 3,
       "Australian Defence (@DefenceAust)": 1,
@@ -122,10 +122,11 @@
       "Riskstaff (@Riskstaff)": 1,
       "Japan Joint Staff (@JapanJointStaff)": 2,
       "NATO Maritime Command (@NATO_MARCOM)": 1,
-      "ianbremmer (@ianbremmer)": 1
+      "ianbremmer (@ianbremmer)": 1,
+      "Natalierevolts (@Natalierevolts)": 2
     },
     "media_files": {
-      "images": 234,
+      "images": 248,
       "videos": 0
     }
   },
@@ -142,8 +143,8 @@
     "2026-09-03": 75,
     "2026-09-04": 123,
     "2026-09-05": 182,
-    "2026-09-06": 189,
-    "2026-09-07": 76
+    "2026-09-06": 190,
+    "2026-09-07": 94
   },
-  "average_confidence": 0.8238202247191009
+  "average_confidence": 0.8239890710382511
 }
