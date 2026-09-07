@@ -38,3 +38,5 @@ During 2026-09-05 batch 1, all three telegram-clashreport candidates were US dom
 
 - **telegram-warmonitors (testing)**: t.me URLs not directly fetchable via curl; requires authenticated Telegram client or agent-browser with Telegram session. Fetches consistently return authentication walls. Consider marking status as `testing` with note about authentication barriers if this persists.
 
+
+- **twitter-minhdr18 (batch 7)**: All 3 candidates filtered out (off-scope: volcano disaster; insufficient context: 2× unattributed claims). Monitor for future content alignment with military systems focus. Source remains active but produced zero events this run.
