@@ -1,14 +1,14 @@
 {
-  "last_updated": "2026-09-06T23:39:49.070Z",
+  "last_updated": "2026-09-07T03:31:02.013Z",
   "data_range": {
     "oldest_date": "2026-08-25",
     "newest_date": "2026-09-07"
   },
   "statistics": {
-    "total_events": 896,
+    "total_events": 919,
     "events_by_month": {
       "2026-08": 257,
-      "2026-09": 639
+      "2026-09": 662
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 46,
@@ -34,22 +34,22 @@
       "War Translated": 1,
       "Middle East Spectator": 3,
       "Geopolitics Prime (@geopolitics_prime)": 18,
-      "AP News (@AP)": 5,
+      "AP News (@AP)": 6,
       "CSIS Korea Chair": 7,
       "Our Wars, Today (@ourwarstoday)": 2,
-      "BBC World News (@BBCWorld)": 21,
-      "ABC News (@ABC)": 36,
+      "BBC World News (@BBCWorld)": 22,
+      "ABC News (@ABC)": 39,
       "US Navy (@USNavy)": 6,
       "CNN (@CNN)": 11,
       "Warshipcam (@Warshipcam)": 24,
       "Xinhua News (@XHNews)": 32,
       "cnnbrk (@cnnbrk)": 6,
       "Fox News (@FoxNews)": 17,
-      "Quds News Network": 23,
+      "Quds News Network": 26,
       "cepa (@cepa)": 3,
       "ELINT News (@ELINTNews)": 1,
       "CSIS Korea Chair (@CSISKoreaChair)": 8,
-      "Critical Threats Project (@criticalthreats)": 5,
+      "Critical Threats Project (@criticalthreats)": 6,
       "Institute for the Study of War (@TheStudyofWar)": 17,
       "Bellum Acta (@BellumActaNews)": 11,
       "Serhii FLASH — Technologies (@serhii_flash)": 2,
@@ -86,12 +86,12 @@
       "cepa": 2,
       "Sim Nasr": 1,
       "Ship News": 1,
-      "BBG Originals (@BBGOriginals)": 8,
+      "BBG Originals (@BBGOriginals)": 9,
       "Critical Threats Project": 1,
       "CNN": 1,
       "Thewarzonewire": 1,
       "Southkoreapro": 1,
-      "Insider Paper": 3,
+      "Insider Paper": 4,
       "Taiwan News (@TaiwanNewsEN)": 3,
       "ChineseEmbInUs": 2,
       "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)": 3,
@@ -101,7 +101,7 @@
       "Quds News Network (@QudsNen)\n": 3,
       "Middle East Spectator — MES\n": 3,
       "Rerum Novarum Intel (@rnintel)\n": 3,
-      "Middle East Eye": 6,
+      "Middle East Eye": 9,
       "AFU Strategic Communications (@AFUStratCom)": 1,
       "Defence Intelligence of Ukraine – GUR MO": 2,
       "Southkoreapro (@Southkoreapro)": 4,
@@ -114,7 +114,11 @@
       "OSINT Technical": 3,
       "Australian Defence (@DefenceAust)": 1,
       "TankerTrackers": 1,
-      "South China Morning Post": 1
+      "South China Morning Post": 1,
+      "Our Wars, Today": 3,
+      "Taiwan News": 3,
+      "Xinhua News": 2,
+      "Institute for the Study of War": 1
     },
     "media_files": {
       "images": 225,
@@ -134,8 +138,8 @@
     "2026-09-03": 74,
     "2026-09-04": 123,
     "2026-09-05": 182,
-    "2026-09-06": 188,
-    "2026-09-07": 3
+    "2026-09-06": 189,
+    "2026-09-07": 25
   },
   "average_confidence": 0.8242514970059874
 }
