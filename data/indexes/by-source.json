@@ -2,9 +2,9 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 795,
+    "count": 826,
     "earliest_date": "2026-08-25T19:59:00Z",
-    "latest_date": "2026-09-08T08:33:14Z"
+    "latest_date": "2026-09-08T14:00:02Z"
   },
   {
     "source_id": "telegram-qudsnen",
@@ -23,9 +23,9 @@
   {
     "source_id": "telegram-intelslava",
     "source_name": "Intel Slava Z (@intelslava)",
-    "count": 12,
+    "count": 15,
     "earliest_date": "2026-08-25T20:38:50+00:00",
-    "latest_date": "2026-09-06T18:44:47Z"
+    "latest_date": "2026-09-08T13:10:57Z"
   },
   {
     "source_id": "twitter-sim-nasr",
@@ -44,16 +44,16 @@
   {
     "source_id": "twitter-clash-report",
     "source_name": "Clash Report (@ClashReport)",
-    "count": 14,
+    "count": 17,
     "earliest_date": "2026-08-26T20:36:37Z",
-    "latest_date": "2026-09-05T20:00:27Z"
+    "latest_date": "2026-09-08T14:03:17.000Z"
   },
   {
     "source_id": "twitter-cnn",
     "source_name": "CNN (@CNN)",
-    "count": 3,
+    "count": 5,
     "earliest_date": "2026-08-26T20:30:01Z",
-    "latest_date": "2026-09-08T01:35:12Z"
+    "latest_date": "2026-09-08T13:24:53Z"
   },
   {
     "source_id": "twitter-cepa",
@@ -79,23 +79,23 @@
   {
     "source_id": "twitter-abc",
     "source_name": "ABC News (@ABC)",
-    "count": 23,
+    "count": 26,
     "earliest_date": "2026-08-27T13:56:20.000Z",
-    "latest_date": "2026-09-07T22:31:21Z"
+    "latest_date": "2026-09-08T13:58:11.000Z"
   },
   {
     "source_id": "telegram-insiderpaper",
     "source_name": "Insider Paper (@insiderpaper)",
-    "count": 2,
+    "count": 5,
     "earliest_date": "2026-08-28T17:10:19Z",
-    "latest_date": "2026-09-06T23:17:00Z"
+    "latest_date": "2026-09-08T13:22:29Z"
   },
   {
     "source_id": "telegram-middle-east-spectator",
     "source_name": "Middle East Spectator (@Middle_East_Spectator)",
-    "count": 11,
+    "count": 14,
     "earliest_date": "2026-08-28T17:07:22Z",
-    "latest_date": "2026-09-05T19:47:39Z"
+    "latest_date": "2026-09-08T12:53:14Z"
   },
   {
     "source_id": "telegram-clashreport",
@@ -142,9 +142,9 @@
   {
     "source_id": "twitter-bbc-world",
     "source_name": "BBC World News (@BBCWorld)",
-    "count": 14,
+    "count": 17,
     "earliest_date": "2026-08-29T16:17:07Z",
-    "latest_date": "2026-09-07T14:54:05Z"
+    "latest_date": "2026-09-08T14:02:53.000Z"
   },
   {
     "source_id": "twitter-foxnews",
@@ -177,9 +177,9 @@
   {
     "source_id": "twitter-wartranslated",
     "source_name": "War Translated (@wartranslated)",
-    "count": 9,
+    "count": 10,
     "earliest_date": "2026-08-31T13:00:41.000Z",
-    "latest_date": "2026-09-07T18:48:02Z"
+    "latest_date": "2026-09-08T12:13:42.000Z"
   },
   {
     "source_id": "webpage-isw-ukraine-interactive-map",
@@ -219,9 +219,9 @@
   {
     "source_id": "twitter-warshipcam",
     "source_name": "Warshipcam (@Warshipcam)",
-    "count": 2,
+    "count": 4,
     "earliest_date": "2026-08-31T00:00:00Z",
-    "latest_date": "2026-09-01T16:05:07Z"
+    "latest_date": "2026-09-08T12:42:16.000Z"
   },
   {
     "source_id": "twitter-southkoreapro",
@@ -261,16 +261,16 @@
   {
     "source_id": "telegram-warmonitors",
     "source_name": "War Monitor (@warmonitors)",
-    "count": 1,
+    "count": 4,
     "earliest_date": "2026-09-05T11:59:25Z",
-    "latest_date": "2026-09-05T11:59:25Z"
+    "latest_date": "2026-09-08T13:29:28Z"
   },
   {
     "source_id": "twitter-cnnbrk",
     "source_name": "cnnbrk (@cnnbrk)",
-    "count": 1,
+    "count": 2,
     "earliest_date": "2026-09-05T14:37:30.000Z",
-    "latest_date": "2026-09-05T14:37:30.000Z"
+    "latest_date": "2026-09-08T13:24:20Z"
   },
   {
     "source_id": "twitter-tanker-trackers",
@@ -348,5 +348,12 @@
     "count": 1,
     "earliest_date": "2026-09-08T07:15:03Z",
     "latest_date": "2026-09-08T07:15:03Z"
+  },
+  {
+    "source_id": "twitter-chinese-emb-in-us",
+    "source_name": "ChineseEmbInUs (@ChineseEmbInUs)",
+    "count": 1,
+    "earliest_date": "2026-09-08T13:33:37.000Z",
+    "latest_date": "2026-09-08T13:33:37.000Z"
   }
 ]
