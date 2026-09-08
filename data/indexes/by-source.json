@@ -2,9 +2,9 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 773,
+    "count": 795,
     "earliest_date": "2026-08-25T19:59:00Z",
-    "latest_date": "2026-09-08T02:40:06Z"
+    "latest_date": "2026-09-08T08:33:14Z"
   },
   {
     "source_id": "telegram-qudsnen",
@@ -16,9 +16,9 @@
   {
     "source_id": "telegram-rnintel",
     "source_name": "Rerum Novarum Intel (@rnintel)",
-    "count": 17,
+    "count": 19,
     "earliest_date": "2026-08-25T20:28:02+00:00",
-    "latest_date": "2026-09-06T22:14:44Z"
+    "latest_date": "2026-09-08T07:43:44Z"
   },
   {
     "source_id": "telegram-intelslava",
@@ -163,9 +163,9 @@
   {
     "source_id": "telegram-united24media",
     "source_name": "UNITED24 Media (@United24media)",
-    "count": 15,
+    "count": 18,
     "earliest_date": "2026-08-29T16:19:01Z",
-    "latest_date": "2026-09-06T21:43:01Z"
+    "latest_date": "2026-09-08T08:31:55Z"
   },
   {
     "source_id": "twitter-xinhua-news",
@@ -341,5 +341,12 @@
     "count": 1,
     "earliest_date": "2026-09-07T18:22:01+00:00",
     "latest_date": "2026-09-07T18:22:01+00:00"
+  },
+  {
+    "source_id": "telegram-wagner-group-pmcr",
+    "source_name": "Wagner Z Group (@wagner_group_pmcr)",
+    "count": 1,
+    "earliest_date": "2026-09-08T07:15:03Z",
+    "latest_date": "2026-09-08T07:15:03Z"
   }
 ]

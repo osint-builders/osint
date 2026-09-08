@@ -29716,5 +29716,805 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_90728231489007616",
+    "title": "Houthi attacks on Saudi Arabia wound dozens as coalition vows response",
+    "summary": "Houthi forces conducted attacks on Saudi Arabia causing dozens of casualties. A military coalition statement indicated a planned response to the attacks, escalating regional tensions in the ongoing conflict.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:42:14.000Z",
+    "geo": {
+      "lat": 24.7136,
+      "lon": 46.6753,
+      "country": "Saudi Arabia",
+      "region": "Central Region"
+    },
+    "topics": [
+      "houthi",
+      "saudi-arabia",
+      "attack",
+      "yemen",
+      "conflict",
+      "military"
+    ],
+    "confidence": 0.75,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2097229004814032913",
+        "label": "SCMP News Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90728118125350912",
+    "title": "UK announces £100 million winter air defense package for Ukraine",
+    "summary": "The United Kingdom committed £100 million in military support for Ukraine's air defense capabilities, including Patriot system missiles, interceptor missiles, large-caliber artillery shells, and drones aligned with NATO coordination through the PURL mechanism.",
+    "date_event": null,
+    "date_published": "2026-09-08T08:28:47Z",
+    "geo": {
+      "lat": 51.5074,
+      "lon": -0.1278,
+      "country": "United Kingdom",
+      "city": "London"
+    },
+    "topics": [
+      "military-aid",
+      "ukraine",
+      "air-defense",
+      "conflict",
+      "nato",
+      "uk"
+    ],
+    "confidence": 0.88,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2097240723196158363",
+        "label": "Clash Report tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRrkqPGbEAADWJn.jpg"
+  },
+  {
+    "id": "evt_90728117936607232",
+    "title": "Nepal authorities crack down on online abuse targeting flood survivors",
+    "summary": "Nepal's government has intensified efforts to combat online abuse and harassment directed at flood survivors, implementing digital enforcement measures and victim support protocols in response to widespread cyberbullying on social media platforms.",
+    "date_event": null,
+    "date_published": "2026-09-08T08:33:14Z",
+    "geo": {
+      "lat": 28.3949,
+      "lon": 84.124,
+      "country": "Nepal",
+      "city": "Kathmandu"
+    },
+    "topics": [
+      "flood",
+      "disaster",
+      "nepal",
+      "cyberbullying",
+      "digital-safety",
+      "government-response"
+    ],
+    "confidence": 0.82,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2097241840751620451",
+        "label": "BBC World tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2097241842320334848/7OWTGAxW?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_90728118037270528",
+    "title": "Four works of art stolen from Renoir museum in France in daring heist",
+    "summary": "Thieves executed a coordinated theft of four artworks from a Renoir museum in France, successfully escaping with their haul but accidentally dropping one piece during their flight from the scene.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:46:06Z",
+    "geo": {
+      "lat": 48.8566,
+      "lon": 2.3522,
+      "country": "France",
+      "city": "Paris"
+    },
+    "topics": [
+      "art-theft",
+      "crime",
+      "museum",
+      "france",
+      "cultural-heritage"
+    ],
+    "confidence": 0.85,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2097229981646495915",
+        "label": "BBC Breaking via BBC World"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2097241842320334848/7OWTGAxW?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_90728118213431296",
+    "title": "Eiffel Tower closure sparked by staff strike protesting religious group visit policies",
+    "summary": "The Eiffel Tower in Paris closed as employees staged a strike to protest allegations that female staff members received orders to remain out of sight during a visit by a Hindu religious group, drawing sharp criticism from French politicians.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:30:08Z",
+    "geo": {
+      "lat": 48.8584,
+      "lon": 2.2945,
+      "country": "France",
+      "city": "Paris"
+    },
+    "topics": [
+      "labor-strike",
+      "workplace-discrimination",
+      "religion",
+      "france",
+      "tourism",
+      "protest"
+    ],
+    "confidence": 0.8,
+    "source_name": "cnni (@cnni)",
+    "links": [
+      {
+        "url": "https://x.com/cnni/status/2097225962597269741",
+        "label": "CNN International tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRrX4fNWkAA8hT-.jpg"
+  },
+  {
+    "id": "evt_90728134692847616",
+    "title": "Russian Complex Attack on Kyiv Kills At Least Two, Ukraine Reports",
+    "summary": "Russia resumed strikes on the Ukrainian capital Kyiv after a three-day pause coinciding with a U.S. delegation visit, killing at least two people in what President Zelenskyy characterized as a complex attack.",
+    "date_event": "2026-09-08T08:04:00Z",
+    "date_published": "2026-09-08T08:32:44Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military",
+      "attack",
+      "kyiv",
+      "conflict"
+    ],
+    "confidence": 0.92,
+    "source_name": "ABC News",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2097241715027423243",
+        "label": "ABC News"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90728134822871040",
+    "title": "Thieves Steal Four Artworks from Renoir Museum in Cagnes-sur-Mer, France",
+    "summary": "Suspects broke into the Renoir Museum in Cagnes-sur-Mer, France early Tuesday morning, stealing four works of art. One painting the perpetrators abandoned during their escape.",
+    "date_event": "2026-09-08T05:30:00Z",
+    "date_published": "2026-09-08T08:11:44Z",
+    "geo": {
+      "lat": 43.6808,
+      "lon": 7.15,
+      "country": "France",
+      "city": "Cagnes-sur-Mer"
+    },
+    "topics": [
+      "art",
+      "theft",
+      "museum",
+      "france",
+      "crime"
+    ],
+    "confidence": 0.88,
+    "source_name": "ABC News",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2097236432574148856",
+        "label": "ABC News"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_1788856796000000004",
+    "title": "Gaza Operations Continue as Humanitarian Crisis Deepens",
+    "summary": "Reports from Gaza indicate ongoing military operations with significant humanitarian impacts as the conflict between Israeli forces and Palestinian groups continues.",
+    "date_event": null,
+    "date_published": "2026-09-08T06:49:16Z",
+    "geo": {
+      "lat": 31.9522,
+      "lon": 35.2332
+    },
+    "topics": [
+      "gaza",
+      "palestine",
+      "israel",
+      "military-operations",
+      "humanitarian-crisis"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "title": "Quds News Network",
+        "url": "https://t.me/QudsNen/238127"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_1788856796000000005",
+    "title": "Palestinian Resistance Reports Continued Engagement in Gaza",
+    "summary": "Reports indicate ongoing Palestinian resistance operations in response to Israeli military activities in Gaza.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:02:30Z",
+    "geo": {
+      "lat": 31.9522,
+      "lon": 35.2332
+    },
+    "topics": [
+      "gaza",
+      "palestine",
+      "resistance",
+      "military-operations",
+      "conflict"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "title": "Quds News Network",
+        "url": "https://t.me/QudsNen/238128"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_1788856796000000001",
+    "title": "Iran Warns Regional Aggressors as Kharg Island Proves Resilient to Attacks",
+    "summary": "Iranian officials warn regional aggressors that attacking Iranian assets will result in strikes against their own interests, as the nation's critical Kharg Island oil facility continues operating at full capacity despite over 550 attacks.",
+    "date_event": null,
+    "date_published": "2026-09-08T08:03:01Z",
+    "geo": {
+      "lat": 29.9435,
+      "lon": 49.2435
+    },
+    "topics": [
+      "iran",
+      "energy",
+      "geopolitics",
+      "military",
+      "conflict"
+    ],
+    "confidence": null,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "title": "Geopolitics Prime",
+        "url": "https://t.me/geopolitics_prime/74247"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/nFZNLG8LcESr8uT4rPDDDpv_aXSjUgJ-SBIgC_SF_s2L2fCVuVH_DKVZh1R4_m8ioFYP-ak8qjZuFAzRs3wMvNRXCizDZVomhsAwXsXsensKx15dCyAS1o1WiiuYuQU-IxLudAM0yv7Uc7S70TCVmFvpKbaYN94ucOc4DkJ0zxBZQ4n4SOqW_VpYLtvYECMrRkTmHvvYnGBB_DpKL7JaXgJ6w5ZoamxCEzTKa8FhILuya31Q14mhnp9QXUv6ruC8Jq1UljTmyfDiZ-j7lT_uL-Lk1Sf1MaTufAMqTkA5H-c0ZT6335seDLQ7b_O7N0LHCcIr8bGrrbKrns_DB7Gy8w.jpg"
+  },
+  {
+    "id": "evt_1788856796000000002",
+    "title": "Canada Implements Retaliatory Tariffs on $20 Billion Worth of US Goods",
+    "summary": "Canada has implemented retaliatory tariffs targeting approximately $20 billion in US merchandise, escalating trade tensions between the two North American neighbors.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:19:33Z",
+    "geo": {
+      "lat": 56.1304,
+      "lon": -106.3468
+    },
+    "topics": [
+      "trade",
+      "tariffs",
+      "canada",
+      "united-states",
+      "commerce"
+    ],
+    "confidence": null,
+    "source_name": "Insider Paper (@insiderpaper)",
+    "links": [
+      {
+        "title": "Insider Paper",
+        "url": "https://t.me/insiderpaper/44407"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_1788856796000000003",
+    "title": "French Museum Thieves Steal Renoir Artworks Worth $10 Million",
+    "summary": "Art thieves have stolen paintings valued at $10 million from a Renoir museum in France, according to reports from the local mayor.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:29:10Z",
+    "geo": {
+      "lat": 48.8566,
+      "lon": 2.3522
+    },
+    "topics": [
+      "art-theft",
+      "crime",
+      "france",
+      "museum",
+      "cultural-heritage"
+    ],
+    "confidence": null,
+    "source_name": "Insider Paper (@insiderpaper)",
+    "links": [
+      {
+        "title": "Insider Paper",
+        "url": "https://t.me/insiderpaper/44408"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90728309033283584",
+    "title": "Ukraine War Update - UNITED24 Report",
+    "summary": "Official update from UNITED24 regarding the Ukraine-Russia conflict and humanitarian impact.",
+    "date_event": null,
+    "date_published": "2026-09-08T06:57:11Z",
+    "geo": {
+      "lat": 48.5,
+      "lon": 31.0
+    },
+    "topics": [
+      "ukraine-war",
+      "military-conflict",
+      "russia",
+      "humanitarian-crisis"
+    ],
+    "confidence": null,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/45864",
+        "title": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90728309133946880",
+    "title": "Ukraine Military Operations - Frontline Report",
+    "summary": "UNITED24 provides frontline military situation report from the Ukraine conflict.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:47:42Z",
+    "geo": {
+      "lat": 48.5,
+      "lon": 31.0
+    },
+    "topics": [
+      "ukraine-war",
+      "military-operation",
+      "frontline-combat"
+    ],
+    "confidence": null,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/45865",
+        "title": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90728309222027264",
+    "title": "Ukraine Humanitarian Update - International Aid",
+    "summary": "UNITED24 reports on humanitarian situation and international aid efforts for Ukraine.",
+    "date_event": null,
+    "date_published": "2026-09-08T08:31:55Z",
+    "geo": {
+      "lat": 48.5,
+      "lon": 31.0
+    },
+    "topics": [
+      "humanitarian-aid",
+      "ukraine-war",
+      "international-support"
+    ],
+    "confidence": null,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/45866",
+        "title": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90728308844539904",
+    "title": "US SOUTHCOM Interdicts Drug Trafficking Vessel in Eastern Pacific",
+    "summary": "On September 7, Joint Task Force Western Hemisphere forces interdicted a floating refueling station in the Eastern Pacific supporting illicit drug trafficking operations.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:15:37Z",
+    "geo": {
+      "lat": -8.5,
+      "lon": -77.0
+    },
+    "topics": [
+      "military-operation",
+      "drug-trafficking",
+      "narco-terrorism",
+      "united-states"
+    ],
+    "confidence": null,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66182",
+        "title": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90728308936814592",
+    "title": "Breaking News Alert - Additional SOUTHCOM Operation",
+    "summary": "Additional military intelligence report from SOUTHCOM regarding ongoing operations in the Western Hemisphere.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:43:44Z",
+    "geo": {
+      "lat": 20.0,
+      "lon": -95.0
+    },
+    "topics": [
+      "military-operation",
+      "geopolitics"
+    ],
+    "confidence": null,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66183",
+        "title": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90728309305913344",
+    "title": "Wagner Combat Operations - Unverified Combat Footage",
+    "summary": "Wagner-affiliated channel posts unverified combat footage from Ukraine operations.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:15:03Z",
+    "geo": {
+      "lat": 48.5,
+      "lon": 31.0
+    },
+    "topics": [
+      "ukraine-war",
+      "wagner-pmc",
+      "combat-footage",
+      "military-operation"
+    ],
+    "confidence": null,
+    "source_name": "Wagner Z Group (@wagner_group_pmcr)",
+    "links": [
+      {
+        "url": "https://t.me/wagner_group_pmcr/99610",
+        "title": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90728561819803648",
+    "title": "Russia Conducts Strike on Kiev Using North Korean Hwasong-11A Missiles",
+    "summary": "Russian forces conducted a significant missile strike on Kiev using North Korean-supplied Hwasong-11A (KN-23) ballistic missiles. The strike came immediately after the expiration of a ceasefire agreement negotiated by Witkoff and Kushner, marking an escalation in the Russia-Ukraine conflict and demonstration of North Korean military technology integration into Russian operations.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:32:32Z",
+    "geo": {
+      "lat": 50.4500336,
+      "lon": 30.5241361
+    },
+    "topics": [
+      "russia",
+      "ukraine",
+      "missiles",
+      "north-korea",
+      "conflict",
+      "military-strike"
+    ],
+    "confidence": null,
+    "source_name": "My Lord Bebo",
+    "links": [
+      {
+        "url": "https://x.com/MyLordBebo/status/2097226564396077525",
+        "title": "Russia strikes Kiev with North Korean Hwasong-11A missiles"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2097226479696334848/img/CkT3wxtMwxmnFBct.jpg"
+  },
+  {
+    "id": "evt_90728306789343232",
+    "title": "Israeli Ministers Call for Sanctions on Britain Over Falkland Islands",
+    "summary": "Israeli ministers Itamar Ben Gvir and Bezalel Smotrich called for Israel to sanction Britain in response to the UK government's plan to ban trade with illegal Israeli settlements in occupied Palestinian territory. The Israeli response invoked the Falkland Islands dispute, calling for Israel to recognize Argentine claims over the territory.",
+    "date_event": null,
+    "date_published": "2026-09-07T23:05:53Z",
+    "geo": {
+      "lat": 51.5074456,
+      "lon": -0.1277653
+    },
+    "topics": [
+      "israel",
+      "sanctions",
+      "uk",
+      "settlements",
+      "palestine",
+      "diplomacy"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2097225872012972049",
+        "title": "Israeli ministers call for sanctions on Britain over Falkland Islands"
+      },
+      {
+        "url": "https://www.middleeasteye.net/news/israeli-ministers-call-sanctions-britain-over-falkland-islands",
+        "title": "Israeli ministers call for sanctions on Britain over Falkland Islands"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2097095982567522304/jOPyCZyZ?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_90728306873229312",
+    "title": "Israeli Drone Strike Narrowly Misses Journalists in Southern Lebanon",
+    "summary": "An Israeli drone strike narrowly missed Al-Manar television journalist Ali Chbib and cameraman Mohammed Barjawi as they prepared to broadcast from Nabatieh in southern Lebanon. The incident reflects growing concerns about journalist safety in Lebanon amid heightened military tensions.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:08:46Z",
+    "geo": {
+      "lat": 33.3079104,
+      "lon": 35.5059689
+    },
+    "topics": [
+      "israel",
+      "lebanon",
+      "drone-strike",
+      "journalists",
+      "safety",
+      "military"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2097220586057748842",
+        "title": "Israeli drone strike narrowly misses Al-Manar journalist in southern Lebanon"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2097216479750189056/img/a5cC6o_9_Jz0QuFu.jpg"
+  },
+  {
+    "id": "evt_90728236782194688",
+    "title": "Ukrainian MP Kritisiert von Witkoff und Kushner Überbrachte Friedensbedingungen",
+    "summary": "Ukrainian Member of Parliament Anna Skorokhod characterizes peace terms delivered by envoys Witkoff and Kushner as more unfavorable than previous proposals, including constitutional provisions mandating territorial concessions.",
+    "date_event": null,
+    "date_published": "2026-09-08T06:44:40Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "region": "Kyiv Oblast",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "ukraine",
+      "diplomacy",
+      "peace-negotiation",
+      "territorial-loss",
+      "political-opposition",
+      "us-foreign-policy"
+    ],
+    "confidence": 0.82,
+    "source_name": "DD Geopolitics",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/192955",
+        "label": "DD Geopolitics - Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90728236874469376",
+    "title": "Secondary Explosions Reported in Kyiv Following Military Strike",
+    "summary": "Video evidence documents secondary explosions occurring in Kyiv following an apparent military strike, with multiple detonations recorded during the morning incident.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:08:08Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "region": "Kyiv Oblast",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "ukraine",
+      "military",
+      "explosion",
+      "strike",
+      "kyiv",
+      "conflict"
+    ],
+    "confidence": 0.85,
+    "source_name": "DD Geopolitics",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/192956",
+        "label": "DD Geopolitics - Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90728236962549760",
+    "title": "Russian Military Strike on Ukrainian Drone Manufacturing Facility",
+    "summary": "Russian Ministry of Defense announces a strike on the Combat Birds of Ukraine enterprise in Belaya Tserkov, which manufactures long-range TRX drones with approximately 450 kilometers strike capability.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:10:07Z",
+    "geo": {
+      "lat": 49.8203,
+      "lon": 30.158,
+      "country": "Ukraine",
+      "region": "Kyiv Oblast",
+      "city": "Belaya Tserkov"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military-strike",
+      "drone-manufacturing",
+      "weapons-production",
+      "conflict"
+    ],
+    "confidence": 0.88,
+    "source_name": "DD Geopolitics",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/192957",
+        "label": "DD Geopolitics - Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90728236501176320",
+    "title": "British Diplomats Assure US on Israeli Settlement Sanctions",
+    "summary": "British diplomatic officials have privately informed the United States that new sanctions targeting Israeli settlements remain largely symbolic and will not substantially impact UK-Israel bilateral trade or security partnerships.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:16:20Z",
+    "geo": {
+      "lat": 51.5074,
+      "lon": -0.1278,
+      "country": "United Kingdom",
+      "region": "England",
+      "city": "London"
+    },
+    "topics": [
+      "diplomacy",
+      "sanctions",
+      "israel",
+      "settlement",
+      "uk",
+      "us"
+    ],
+    "confidence": 0.85,
+    "source_name": "Clash Report",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/95546",
+        "label": "Clash Report - Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90728236597645312",
+    "title": "Ballistic Missiles Strike Kyiv in Multiple Impacts",
+    "summary": "Eyewitnesses in Kyiv document the impact of two ballistic missiles striking the same location in a coordinated attack, capturing video evidence of the explosions.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:31:02Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "region": "Kyiv Oblast",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "military",
+      "ukraine",
+      "ballistic-missile",
+      "conflict",
+      "strike"
+    ],
+    "confidence": 0.9,
+    "source_name": "Clash Report",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/95547",
+        "label": "Clash Report - Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90728236685725696",
+    "title": "Houthis Launch Ballistic Missiles and Drones Against Saudi Arabian Targets",
+    "summary": "Yemen's Houthi movement announced a large-scale attack involving dozens of ballistic missiles and unmanned aerial vehicles targeting Aramco facilities and military installations in southern Saudi Arabia.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:46:06Z",
+    "geo": {
+      "lat": 21.5433,
+      "lon": 55.9236,
+      "country": "Saudi Arabia",
+      "region": "Southern Province",
+      "city": "Riyadh"
+    },
+    "topics": [
+      "yemen",
+      "houthi",
+      "saudi-arabia",
+      "military",
+      "drone",
+      "ballistic-missile",
+      "conflict"
+    ],
+    "confidence": 0.88,
+    "source_name": "Clash Report",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/95548",
+        "label": "Clash Report - Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90728237054824448",
+    "title": "Ukraine Releases Intelligence on Russian Electronics Manufacturing Infrastructure",
+    "summary": "Ukraine's Defence Intelligence Directorate (GUR) publishes detailed information regarding 155 Roselectronics enterprises manufacturing critical components for Russian ballistic missiles, aviation systems, unmanned aerial vehicles, and electronic warfare platforms.",
+    "date_event": null,
+    "date_published": "2026-09-08T07:07:01Z",
+    "geo": {
+      "lat": 52.52,
+      "lon": 13.405,
+      "country": "Russia",
+      "region": "Russian Federation",
+      "city": "Moscow"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military-intelligence",
+      "electronics-manufacturing",
+      "sanctions",
+      "military-production"
+    ],
+    "confidence": 0.87,
+    "source_name": "Defence Intelligence of Ukraine – GUR MO",
+    "links": [
+      {
+        "url": "https://t.me/DIUkraine/9409",
+        "label": "Defence Intelligence of Ukraine – Telegram"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
