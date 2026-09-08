@@ -33407,5 +33407,996 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_90935657588883456",
+    "title": "UK Announces Ban on Imports of Goods from Israeli Settlements",
+    "summary": "The United Kingdom announced a ban on the import of goods produced in Israeli settlements in the occupied Palestinian territory. Foreign Secretary Ed Miliband announced the policy in parliament on September 8, 2026.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:30:02.000Z",
+    "geo": {
+      "lat": 32.2591449,
+      "lon": 35.3015948
+    },
+    "topics": [
+      "israel",
+      "palestine",
+      "trade-policy",
+      "settlements",
+      "united-kingdom",
+      "sanctions",
+      "middle-east"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2097437327689670868",
+        "title": "Middle East Eye - UK Settlement Import Ban"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_90935624906858496",
+    "title": "United States Targets Iranian Tankers in Strait of Hormuz",
+    "summary": "The United States conducted operations targeting multiple Iranian tankers near Kharg Island in the Strait of Hormuz, according to US officials. This incident marks a significant escalation in regional tensions involving Iran's oil transport infrastructure.",
+    "date_event": "2026-09-08T20:55:02Z",
+    "date_published": "2026-09-08T20:55:02Z",
+    "geo": {
+      "lat": 29.2405943,
+      "lon": 50.3117293,
+      "country": "Iran",
+      "region": "Bushehr",
+      "city": "Kharg Island"
+    },
+    "topics": [
+      "iran",
+      "military",
+      "united-states",
+      "strait-of-hormuz",
+      "tanker",
+      "geopolitics",
+      "gulf-security"
+    ],
+    "confidence": 0.85,
+    "source_name": "CNN",
+    "links": [
+      {
+        "url": "https://x.com/CNN/status/2097428521496854819",
+        "label": "CNN Coverage"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRuQG8sWwAAK9hv.jpg"
+  },
+  {
+    "id": "evt_90935722223112192",
+    "title": "US Forces Attack Iranian Oil Tankers in Gulf of Oman",
+    "summary": "US forces attacked five Iranian oil tankers in the Gulf of Oman on September 8, 2026. Newly released footage documents munitions impacts on the M/T RIESCO, causing catastrophic damage to the vessel. The attack follows ongoing tensions and previous Iranian attempts on US Navy assets in the region.",
+    "date_event": "2026-09-08T22:20:00Z",
+    "date_published": "2026-09-08T22:20:21Z",
+    "geo": {
+      "lat": 25.0,
+      "lon": 56.0,
+      "country": "Oman",
+      "region": "Gulf of Oman",
+      "city": "Gulf of Oman"
+    },
+    "topics": [
+      "iran",
+      "military",
+      "attack",
+      "tanker",
+      "gulf-of-oman",
+      "us-forces",
+      "maritime"
+    ],
+    "confidence": 0.75,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2097449991585268160",
+        "label": "OSINT Technical"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90935600999346176",
+    "title": "U.S. Treasury Secretary Scott Bessent Fireside Chat at SMU Cox School of Business",
+    "summary": "U.S. Treasury Secretary Scott Bessent participates in fireside chat at SMU Cox School of Business.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:00:20Z",
+    "geo": {
+      "lat": 32.7157,
+      "lon": -96.7023
+    },
+    "topics": [
+      "treasury",
+      "economic-policy",
+      "fiscal-policy",
+      "government"
+    ],
+    "confidence": null,
+    "source_name": "US Treasury (@USTreasury)",
+    "links": [
+      {
+        "url": "https://x.com/USTreasury/status/2097429854081691811",
+        "title": "Tweet"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_90935601095815168",
+    "title": "Norwegian Navy and Coast Guard Vessels Arrive in Oslo for King Harald Funeral",
+    "summary": "Royal Norwegian Navy and Norwegian Coast Guard vessels arrive in Oslo for the state funeral of King Harald of Norway.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:30:32Z",
+    "geo": {
+      "lat": 59.9139,
+      "lon": 10.7522
+    },
+    "topics": [
+      "naval",
+      "norway",
+      "military",
+      "vessel",
+      "deployment"
+    ],
+    "confidence": null,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2097437453971833272",
+        "title": "Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRuYPkXaEAA8NMK.jpg"
+  },
+  {
+    "id": "evt_90935697036324864",
+    "title": "Brazilian Navy Inhaûma-Class Corvette Observed in Guanabara Bay",
+    "summary": "Brazilian Navy Inhaûma-class corvette CV Inhaûma (V34) spotted conducting operations in Guanabara Bay, Rio de Janeiro.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:19:15Z",
+    "geo": {
+      "lat": -22.883,
+      "lon": -43.24
+    },
+    "topics": [
+      "naval",
+      "brazil",
+      "military",
+      "corvette",
+      "vessel"
+    ],
+    "confidence": null,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2097434615736590658",
+        "title": "Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRuVqQ5WAAAYXVd.jpg"
+  },
+  {
+    "id": "evt_90935721468145664",
+    "title": "USS Chung-Hoon Arleigh Burke-Class Destroyer Departs San Diego",
+    "summary": "USS Chung-Hoon (DDG 93), an Arleigh Burke-class guided missile destroyer, departs San Diego Naval Base.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:05:19Z",
+    "geo": {
+      "lat": 32.7357,
+      "lon": -117.2316
+    },
+    "topics": [
+      "naval",
+      "destroyer",
+      "united-states",
+      "military",
+      "deployment"
+    ],
+    "confidence": null,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2097431111274054067",
+        "title": "Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRuSeZxaYAARx_j.jpg"
+  },
+  {
+    "id": "evt_90935746684301312",
+    "title": "Ukraine President Zelenskyy Proposes Trilateral Meeting with United States and Russia",
+    "summary": "Ukrainian President Zelenskyy proposes holding a trilateral meeting between Ukraine, the United States, and Russia as early as September 2026.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:43:09Z",
+    "geo": {
+      "lat": 48.3794,
+      "lon": 31.1656
+    },
+    "topics": [
+      "ukraine",
+      "diplomacy",
+      "negotiation",
+      "conflict",
+      "russia",
+      "united-states"
+    ],
+    "confidence": null,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2097440629584175132",
+        "title": "Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2097439841474482177/img/QurC2R-3CZB1ZCen.jpg"
+  },
+  {
+    "id": "evt_90935687498448896",
+    "title": "Illinois Mother Denied Bond in First Court Appearance for 2-Year-Old's Death",
+    "summary": "A 40-year-old Illinois mother, Corie Walsh, faced her first court appearance and was denied a request for release while charged with first-degree murder in the September 1 death of her 2-year-old son. The criminal case involves a young child's death and is proceeding through the judicial system.",
+    "date_event": "2026-09-08T22:04:23Z",
+    "date_published": "2026-09-08T22:04:23Z",
+    "geo": {
+      "lat": 40.1164,
+      "lon": -88.2425,
+      "country": "United States",
+      "region": "Illinois",
+      "city": "Illinois"
+    },
+    "topics": [
+      "criminal-justice",
+      "murder-charge",
+      "court-proceedings",
+      "united-states"
+    ],
+    "confidence": 0.75,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2097445973970628978",
+        "label": "ABC News Twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRuf_igXUAA7LbY.jpg"
+  },
+  {
+    "id": "evt_90935687615889408",
+    "title": "Frito-Lay Employee Killed at Nashville Sam's Club",
+    "summary": "A Frito-Lay employee died while working at a Sam's Club warehouse in Nashville, Tennessee, early Sunday morning. Police investigators examined the incident, which marks a workplace fatality at the retail warehouse facility.",
+    "date_event": "2026-09-08T21:22:00Z",
+    "date_published": "2026-09-08T21:22:00Z",
+    "geo": {
+      "lat": 36.1627,
+      "lon": -86.7816,
+      "country": "United States",
+      "region": "Tennessee",
+      "city": "Nashville"
+    },
+    "topics": [
+      "workplace-safety",
+      "workplace-fatality",
+      "tennessee",
+      "united-states"
+    ],
+    "confidence": 0.7,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2097435307796812118",
+        "label": "ABC News Twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRuf_igXUAA7LbY.jpg"
+  },
+  {
+    "id": "evt_90935607936708608",
+    "title": "Russia and North Korea Open First Road Bridge Across Tumen River",
+    "summary": "Russia and North Korea completed construction of their first road bridge spanning the Tumen River, marking expanded bilateral trade and military cooperation between the two nations.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:26:54Z",
+    "geo": {
+      "lat": 42.2497316,
+      "lon": 130.3113296
+    },
+    "topics": [
+      "russia",
+      "north-korea",
+      "trade",
+      "military",
+      "infrastructure",
+      "border",
+      "geopolitics"
+    ],
+    "confidence": null,
+    "source_name": "CSIS Korea Chair (@CSISKoreaChair)",
+    "links": [
+      {
+        "url": "https://x.com/CSISKoreaChair/status/2097436540997906635",
+        "title": "CSIS Korea Chair Tweet"
+      },
+      {
+        "url": "https://bbc.com/news/articles/cj9xvg1kz0mo",
+        "title": "BBC News - Russia and North Korea Open Road Bridge"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2097280754636222464/TTIasoCh?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_90935723984711680",
+    "title": "Iranian Ballistic Missile Barrage Over Jordan",
+    "summary": "Reports indicate a large ballistic missile attack against targets in Jordan, attributed to Iran.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:35:42Z",
+    "geo": {
+      "lat": 31.1667049,
+      "lon": 36.941628
+    },
+    "topics": [
+      "iran",
+      "jordan",
+      "missile",
+      "attack",
+      "military",
+      "conflict",
+      "middle-east"
+    ],
+    "confidence": null,
+    "source_name": "ELINT News (@ELINTNews)",
+    "links": [
+      {
+        "url": "https://x.com/ELINTNews/status/2097438756340916539",
+        "title": "ELINT News Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2097437939978342400/img/n-QTP_SO6LEMe8vW.jpg"
+  },
+  {
+    "id": "evt_90935975907184640",
+    "title": "Marco Rubio: Cuba Oil Theft from Venezuela Has Ended",
+    "summary": "US Secretary of State Marco Rubio announced that Cuba's theft of Venezuelan oil supplies has ceased following changed circumstances.",
+    "date_event": null,
+    "date_published": "2026-09-08T22:22:18.000Z",
+    "geo": {
+      "lat": 21.5087,
+      "lon": -77.5623,
+      "city": "Havana",
+      "country": "Cuba"
+    },
+    "topics": [],
+    "confidence": 0.83,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2097450484625764827"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90935975986876416",
+    "title": "CENTCOM Destroys Iranian Oil Carriers After Ballistic Missile Attack",
+    "summary": "US CENTCOM forces destroyed five Iranian crude oil carriers following ballistic missile attacks on a US Navy warship that the vessel successfully evaded.",
+    "date_event": null,
+    "date_published": "2026-09-08T22:18:34.000Z",
+    "geo": {
+      "lat": 26.0667,
+      "lon": 56.3833,
+      "city": "Strait of Hormuz",
+      "country": "Iran"
+    },
+    "topics": [],
+    "confidence": 0.94,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2097449544229531955"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90935976058179584",
+    "title": "Marco Rubio Outlines Ukraine Peace Roadmap Opportunity",
+    "summary": "Secretary of State Marco Rubio expressed potential for developing a peace roadmap for Ukraine with opportunities for resolution over coming weeks.",
+    "date_event": null,
+    "date_published": "2026-09-08T22:17:35.000Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "city": "Kyiv",
+      "country": "Ukraine"
+    },
+    "topics": [],
+    "confidence": 0.79,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2097449296446521777"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90935975835881472",
+    "title": "Private Credit Market Reaches 1 Trillion Dollar Milestone",
+    "summary": "The private credit market has expanded to a 1 trillion dollar industry, though its sustained growth faces increasing scrutiny and market testing.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:43:05.000Z",
+    "geo": {
+      "lat": 40.7489,
+      "lon": -73.968,
+      "city": "New York",
+      "country": "United States"
+    },
+    "topics": [],
+    "confidence": 0.88,
+    "source_name": "BBG Originals (@BBGOriginals)",
+    "links": [
+      {
+        "url": "https://x.com/BBGOriginals/status/2097440613150887997"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90935975592611840",
+    "title": "French Police Search for Thieves in Renoir Museum Heist",
+    "summary": "French authorities investigate a major art theft at the Renoir Museum where thieves stole paintings valued at approximately 7 million pounds. The case focuses on identifying suspects.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:32:51.000Z",
+    "geo": {
+      "lat": 48.8566,
+      "lon": 2.3522,
+      "city": "Paris",
+      "country": "France"
+    },
+    "topics": [],
+    "confidence": 0.9,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2097438038670319769"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90935975684886528",
+    "title": "British-Israeli Relations Reach Historic Low",
+    "summary": "Diplomatic tensions between Britain and Israel have escalated to their lowest point in decades, according to BBC analysis. Relations continue deteriorating.",
+    "date_event": null,
+    "date_published": "2026-09-08T20:49:47.000Z",
+    "geo": {
+      "lat": 51.5074,
+      "lon": -0.1278,
+      "city": "London",
+      "country": "United Kingdom"
+    },
+    "topics": [],
+    "confidence": 0.85,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2097427201805189304"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90935975768772608",
+    "title": "Toxic Air Quality in Manhattan Post-9/11 Understated by Officials",
+    "summary": "Newly released files reveal toxic air quality in Manhattan after 9/11 attacks, despite officials downplaying health risks to the public at the time.",
+    "date_event": null,
+    "date_published": "2026-09-08T20:48:53.000Z",
+    "geo": {
+      "lat": 40.7128,
+      "lon": -74.006,
+      "city": "New York",
+      "country": "United States"
+    },
+    "topics": [],
+    "confidence": 0.92,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2097426972477374490"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90936487943643136",
+    "title": "Hanwha's Austal bid signals where South Korea's MASGA plan heads",
+    "summary": "South Korea's Hanwha pursues a bid for Austal USA as US policy steers Korean shipbuilders toward American yards, signaling the direction of South Korea's $150 billion shipbuilding plan.",
+    "date_event": null,
+    "date_published": "2026-09-08T22:11:35.000Z",
+    "geo": {
+      "lat": 37.5665,
+      "lon": 126.978,
+      "country": "South Korea",
+      "city": "Seoul"
+    },
+    "topics": [
+      "south-korea",
+      "defense",
+      "shipbuilding",
+      "maritime",
+      "military"
+    ],
+    "confidence": 0.85,
+    "source_name": "Southkoreapro (@Southkoreapro)",
+    "links": [
+      {
+        "url": "https://koreapro.org/2026/09/hanwhas-austal-bid-shows-where-south-koreas-masga-plan-may-be-heading/",
+        "label": "Original Article (twitter-southkoreapro)"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90936488107220992",
+    "title": "Poland Unveils New Heavy Infantry Fighting Vehicle",
+    "summary": "Poland unveiled its new Ciężki Bojowy Wóz Piechoty (CBWP), or Heavy Infantry Fighting Vehicle, at MSPO 2026, bringing advanced protection and firepower capabilities to the modernizing Polish Army.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:34:35.000Z",
+    "geo": {
+      "lat": 51.7192,
+      "lon": 19.1451,
+      "country": "Poland",
+      "city": "Warsaw"
+    },
+    "topics": [
+      "poland",
+      "military",
+      "armor",
+      "defense"
+    ],
+    "confidence": 0.85,
+    "source_name": "Thewarzonewire (@Thewarzonewire)",
+    "links": [
+      {
+        "url": "https://x.com/Thewarzonewire/status/2097438475448402139",
+        "label": "Original Article (twitter-thewarzonewire)"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90936669556977664",
+    "title": "Freed Palestinian Detainee Ramzi Abu Rida Dies from Israeli Bombing Injuries",
+    "summary": "Freed Palestinian detainee Ramzi Abu Rida succumbed to injuries sustained in an Israeli occupation bombing in the southern Gaza Strip several days ago. Ramzi, who had already endured detention under the Israeli occupation, died while trying to rebuild his life amid Israel's destruction of the Gaza S",
+    "date_event": null,
+    "date_published": "2026-09-08T20:50:55Z",
+    "geo": {
+      "lat": 31.5256543,
+      "lon": 34.43524
+    },
+    "topics": [
+      "gaza",
+      "palestine",
+      "israel",
+      "casualties",
+      "humanitarian"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/238209",
+        "text": "Quds News Network"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90936669653446656",
+    "title": "Israeli Forces Fire Flares Over Southern Lebanon Towns of Aitaroun and Blida",
+    "summary": "Israeli occupation forces fired illumination flares over the towns of Aitaroun and Blida in southern Lebanon. The flares indicate ongoing military activity in the border region between Israel and Lebanon. Such operations have occurred with increasing frequency along the Lebanese-Israeli frontier.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:04:33Z",
+    "geo": {
+      "lat": 33.1163867,
+      "lon": 35.4715009
+    },
+    "topics": [
+      "lebanon",
+      "israel",
+      "military-activity",
+      "border-conflict"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/238210",
+        "text": "Quds News Network"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90936669741527040",
+    "title": "UN Reports Gaza Confinement to Less Than 40 Percent of Territory Following Ceasefire",
+    "summary": "The space available to Palestinians in Gaza continued to become increasingly restricted following Israel's expansion of the so-called Yellow Line after the US-backed ceasefire agreement. The United Nations reported that most of Gaza's population of around 2.1 million people remained displaced, with ",
+    "date_event": null,
+    "date_published": "2026-09-08T21:35:17Z",
+    "geo": {
+      "lat": 31.5256543,
+      "lon": 34.43524
+    },
+    "topics": [
+      "gaza",
+      "palestine",
+      "humanitarian",
+      "ceasefire",
+      "displacement"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/238211",
+        "text": "Quds News Network"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90936671788347392",
+    "title": "Zelenskyy and First Lady Arrive in Norway for King Harald V Farewell Ceremony",
+    "summary": "President Volodymyr Zelenskyy and First Lady Olena Zelenska arrived in Norway to attend a farewell ceremony for King Harald V. During the visit, they met with Norwegian Prime Minister Jonas Gahr Støre and companies developing the FREYJA anti-ballistic system. The primary focus centered on strengthen",
+    "date_event": null,
+    "date_published": "2026-09-08T20:54:01Z",
+    "geo": {
+      "lat": 59.9133301,
+      "lon": 10.7389701
+    },
+    "topics": [
+      "ukraine",
+      "norway",
+      "air-defense",
+      "international-relations",
+      "diplomacy"
+    ],
+    "confidence": null,
+    "source_name": "UNITED24 Media",
+    "links": [
+      {
+        "url": "https://t.me/United24media/45888",
+        "text": "UNITED24 Media"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90936671897399296",
+    "title": "Ukrainian Strike-Wing Operators Conduct Strikes Against Russian Logistics in Donetsk and Luhansk",
+    "summary": "Ukrainian strike-wing operators conducted strikes against Russian logistical equipment in the Donetsk and Luhansk regions. Dynamic video footage documented the operations targeting Russian supply lines and supporting infrastructure in contested areas of eastern Ukraine.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:55:00Z",
+    "geo": {
+      "lat": 47.9212914,
+      "lon": 37.7809825
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military-operations",
+      "donetsk",
+      "luhansk"
+    ],
+    "confidence": null,
+    "source_name": "UNITED24 Media",
+    "links": [
+      {
+        "url": "https://t.me/United24media/45889",
+        "text": "UNITED24 Media"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90936670655885312",
+    "title": "Another Ballistic Missile Launched from Arak, Iran",
+    "summary": "Another ballistic missile launched from Arak, Iran. This launch represents continued ballistic missile activity from Iran in the ongoing regional tensions.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:30:47Z",
+    "geo": {
+      "lat": 34.0862719,
+      "lon": 49.6893884
+    },
+    "topics": [
+      "iran",
+      "ballistic-missile",
+      "military-activity",
+      "middle-east"
+    ],
+    "confidence": null,
+    "source_name": "Rerum Novarum Intel",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66246",
+        "text": "Rerum Novarum Intel"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90936670764937216",
+    "title": "Explosions Reported at Muwaffaq Salti Air Base in Jordan",
+    "summary": "Explosions reported in the vicinity of Muwaffaq Salti Air Base (MSAB) in Jordan. Air defenses activated in response to the incident.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:31:13Z",
+    "geo": {
+      "lat": 31.8205079,
+      "lon": 36.7794153
+    },
+    "topics": [
+      "jordan",
+      "military-base",
+      "explosions",
+      "air-defense",
+      "middle-east"
+    ],
+    "confidence": null,
+    "source_name": "Rerum Novarum Intel",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66247",
+        "text": "Rerum Novarum Intel"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90936670861406208",
+    "title": "Ballistic Missile Impacts Reported at Muwaffaq Salti Air Base in Jordan",
+    "summary": "Ballistic missile impacts reported at Muwaffaq Salti Air Base in Jordan following earlier reports of explosions in the vicinity of the base.",
+    "date_event": null,
+    "date_published": "2026-09-08T21:31:54Z",
+    "geo": {
+      "lat": 31.8205079,
+      "lon": 36.7794153
+    },
+    "topics": [
+      "jordan",
+      "military-base",
+      "ballistic-missile",
+      "middle-east"
+    ],
+    "confidence": null,
+    "source_name": "Rerum Novarum Intel",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66248",
+        "text": "Rerum Novarum Intel"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90937120511762432",
+    "title": "BREAKING: President Trump says he is directing the GSA and USTR to remove Canadian products from fed",
+    "summary": "BREAKING: President Trump says he is directing the GSA and USTR to remove Canadian products from federal purchasing schedules unless Canada grants full reciprocal access to American farmers and compan",
+    "date_event": "2026-09-08T20:33:57+00:00",
+    "date_published": "2026-09-08T20:33:57+00:00",
+    "geo": {
+      "lat": 56.1304,
+      "lon": -106.3468,
+      "country": "Canada"
+    },
+    "topics": [
+      "north-america"
+    ],
+    "confidence": 0.7,
+    "source_name": "Insider Paper (@insiderpaper)",
+    "links": [
+      {
+        "url": "https://t.me/insiderpaper/44438",
+        "title": "Original Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90937120599842816",
+    "title": "BREAKING 🚨 LIV Golf has filed for Chapter 11 bankruptcy",
+    "summary": "BREAKING 🚨 LIV Golf has filed for Chapter 11 bankruptcy",
+    "date_event": "2026-09-08T20:41:15+00:00",
+    "date_published": "2026-09-08T20:41:15+00:00",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "country": "United States"
+    },
+    "topics": [
+      "news"
+    ],
+    "confidence": 0.7,
+    "source_name": "Insider Paper (@insiderpaper)",
+    "links": [
+      {
+        "url": "https://t.me/insiderpaper/44439",
+        "title": "Original Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90937120679534592",
+    "title": "Canada news today (Sept 8):\n\n- EU & Canada advancing deeper trade/security alliance\n\n- First Canada-",
+    "summary": "Canada news today (Sept 8):\n\n- EU & Canada advancing deeper trade/security alliance\n\n- First Canada-China defence talks in 8+ years\n\n- Canadian counter-tariffs on $20 billion+ US goods now in effect\n\n",
+    "date_event": "2026-09-08T21:09:43+00:00",
+    "date_published": "2026-09-08T21:09:43+00:00",
+    "geo": {
+      "lat": 56.1304,
+      "lon": -106.3468,
+      "country": "Canada"
+    },
+    "topics": [
+      "trade",
+      "north-america"
+    ],
+    "confidence": 0.7,
+    "source_name": "Insider Paper (@insiderpaper)",
+    "links": [
+      {
+        "url": "https://t.me/insiderpaper/44440",
+        "title": "Original Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90937120759226368",
+    "title": "— A second tanker has been hit off Jask, bringing the total number of Iranian tankers struck to four",
+    "summary": "— A second tanker has been hit off Jask, bringing the total number of Iranian tankers struck to four.\n\nIntelSlava",
+    "date_event": "2026-09-08T20:37:46+00:00",
+    "date_published": "2026-09-08T20:37:46+00:00",
+    "geo": {
+      "lat": 32.4279,
+      "lon": 53.688,
+      "country": "Iran"
+    },
+    "topics": [
+      "iran"
+    ],
+    "confidence": 0.7,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94228",
+        "title": "Original Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90937120830529536",
+    "title": "— A Russian drone strike targeted the REEVA instant-food factory in the industrial zone of Bila Tser",
+    "summary": "— A Russian drone strike targeted the REEVA instant-food factory in the industrial zone of Bila Tserkva, Kyiv Oblast.\n\nIntelSlava",
+    "date_event": "2026-09-08T21:03:09+00:00",
+    "date_published": "2026-09-08T21:03:09+00:00",
+    "geo": {
+      "lat": 61.524,
+      "lon": 105.3188,
+      "country": "Russia"
+    },
+    "topics": [
+      "military",
+      "north-america"
+    ],
+    "confidence": 0.7,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94229",
+        "title": "Original Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90937120901832704",
+    "title": "— Iran launched +10 ballistic missiles from Khorramabad, Tabriz, Khomeyn, Tehran, Yazd, and Isfahan ",
+    "summary": "— Iran launched +10 ballistic missiles from Khorramabad, Tabriz, Khomeyn, Tehran, Yazd, and Isfahan toward an unknown destination.\n\nIntelSlava",
+    "date_event": "2026-09-08T21:31:57+00:00",
+    "date_published": "2026-09-08T21:31:57+00:00",
+    "geo": {
+      "lat": 32.4279,
+      "lon": 53.688,
+      "country": "Iran"
+    },
+    "topics": [
+      "iran",
+      "military"
+    ],
+    "confidence": 0.7,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94230",
+        "title": "Original Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90937120977330176",
+    "title": "—// Incoming missiles\n\nMiddle_East_Spectator",
+    "summary": "—// Incoming missiles\n\nMiddle_East_Spectator",
+    "date_event": "2026-09-08T21:44:32+00:00",
+    "date_published": "2026-09-08T21:44:32+00:00",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "country": "United States"
+    },
+    "topics": [
+      "military"
+    ],
+    "confidence": 0.7,
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36471",
+        "title": "Original Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90937121052827648",
+    "title": "—// Dozens of patriot interceptors are launched\n\nMiddle_East_Spectator",
+    "summary": "—// Dozens of patriot interceptors are launched\n\nMiddle_East_Spectator",
+    "date_event": "2026-09-08T21:46:05+00:00",
+    "date_published": "2026-09-08T21:46:05+00:00",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "country": "United States"
+    },
+    "topics": [
+      "news"
+    ],
+    "confidence": 0.7,
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36473",
+        "title": "Original Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_90937121128325120",
+    "title": "—// Missiles incoming towards U",
+    "summary": "—// Missiles incoming towards U.S. terrorist bases in Jordan\n\nMiddle_East_Spectator",
+    "date_event": "2026-09-08T21:47:23+00:00",
+    "date_published": "2026-09-08T21:47:23+00:00",
+    "geo": {
+      "lat": 30.5852,
+      "lon": 36.2384,
+      "country": "Jordan"
+    },
+    "topics": [
+      "military"
+    ],
+    "confidence": 0.7,
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36474",
+        "title": "Original Post"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
