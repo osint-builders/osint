@@ -2,16 +2,16 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 826,
+    "count": 855,
     "earliest_date": "2026-08-25T19:59:00Z",
-    "latest_date": "2026-09-08T14:00:02Z"
+    "latest_date": "2026-09-08T19:01:58+00:00"
   },
   {
     "source_id": "telegram-qudsnen",
     "source_name": "Quds News Network (@QudsNen)",
-    "count": 29,
+    "count": 32,
     "earliest_date": "2026-08-25T20:06:14+00:00",
-    "latest_date": "2026-09-07T02:03:01Z"
+    "latest_date": "2026-09-08T17:40:58Z"
   },
   {
     "source_id": "telegram-rnintel",
@@ -23,9 +23,9 @@
   {
     "source_id": "telegram-intelslava",
     "source_name": "Intel Slava Z (@intelslava)",
-    "count": 15,
+    "count": 18,
     "earliest_date": "2026-08-25T20:38:50+00:00",
-    "latest_date": "2026-09-08T13:10:57Z"
+    "latest_date": "2026-09-08T17:43:54Z"
   },
   {
     "source_id": "twitter-sim-nasr",
@@ -93,9 +93,9 @@
   {
     "source_id": "telegram-middle-east-spectator",
     "source_name": "Middle East Spectator (@Middle_East_Spectator)",
-    "count": 14,
+    "count": 17,
     "earliest_date": "2026-08-28T17:07:22Z",
-    "latest_date": "2026-09-08T12:53:14Z"
+    "latest_date": "2026-09-08T17:34:22Z"
   },
   {
     "source_id": "telegram-clashreport",
@@ -128,9 +128,9 @@
   {
     "source_id": "twitter-middle-east-eye",
     "source_name": "Middle East Eye (@MiddleEastEye)",
-    "count": 18,
+    "count": 21,
     "earliest_date": "2026-08-28T22:44:18Z",
-    "latest_date": "2026-09-08T01:59:45Z"
+    "latest_date": "2026-09-08T19:16:56Z"
   },
   {
     "source_id": "twitter-nasa",
@@ -275,9 +275,9 @@
   {
     "source_id": "twitter-tanker-trackers",
     "source_name": "TankerTrackers (@TankerTrackers)",
-    "count": 2,
+    "count": 3,
     "earliest_date": "2026-09-05T16:31:46.000Z",
-    "latest_date": "2026-09-06T22:29:15Z"
+    "latest_date": "2026-09-08T18:21:26Z"
   },
   {
     "source_id": "telegram-generalstaffzsu",
@@ -355,5 +355,19 @@
     "count": 1,
     "earliest_date": "2026-09-08T13:33:37.000Z",
     "latest_date": "2026-09-08T13:33:37.000Z"
+  },
+  {
+    "source_id": "twitter-thewarzonewire",
+    "source_name": "Thewarzonewire (@Thewarzonewire)",
+    "count": 1,
+    "earliest_date": "2026-09-08T18:37:47Z",
+    "latest_date": "2026-09-08T18:37:47Z"
+  },
+  {
+    "source_id": "twitter-tradewindsnews",
+    "source_name": "Tradewindsnews (@Tradewindsnews)",
+    "count": 1,
+    "earliest_date": "2026-09-08T18:40:36Z",
+    "latest_date": "2026-09-08T18:40:36Z"
   }
 ]
