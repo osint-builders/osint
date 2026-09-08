@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-09-07T22:42:46.339Z",
+  "last_updated": "2026-09-08T03:35:54.864Z",
   "data_range": {
     "oldest_date": "2026-08-25",
-    "newest_date": "2026-09-07"
+    "newest_date": "2026-09-08"
   },
   "statistics": {
-    "total_events": 1032,
+    "total_events": 1052,
     "events_by_month": {
       "2026-08": 257,
-      "2026-09": 775
+      "2026-09": 795
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 48,
-      "Quds News Network (@QudsNen)": 51,
+      "Quds News Network (@QudsNen)": 53,
       "Rerum Novarum Intel (@rnintel)": 37,
       "Intel Slava Z (@intelslava)": 45,
       "UNITED24 Media": 8,
@@ -26,30 +26,30 @@
       "Sim Nasr (@SimNasr)": 8,
       "TankerTrackers (@TankerTrackers)": 3,
       "US Pacific Fleet (@USPacificFleet)": 1,
-      "Middle East Eye (@MiddleEastEye)": 54,
+      "Middle East Eye (@MiddleEastEye)": 55,
       "MT Anderson (@MT_Anderson)": 2,
       "inside_nk (@inside_nk)": 7,
       "Ship News (@ShipNews)": 7,
       "Ianellisjones (@Ianellisjones)": 4,
       "War Translated": 3,
       "Middle East Spectator": 4,
-      "Geopolitics Prime (@geopolitics_prime)": 22,
-      "AP News (@AP)": 6,
+      "Geopolitics Prime (@geopolitics_prime)": 23,
+      "AP News (@AP)": 7,
       "CSIS Korea Chair": 7,
       "Our Wars, Today (@ourwarstoday)": 2,
-      "BBC World News (@BBCWorld)": 25,
+      "BBC World News (@BBCWorld)": 27,
       "ABC News (@ABC)": 39,
       "US Navy (@USNavy)": 6,
-      "CNN (@CNN)": 11,
+      "CNN (@CNN)": 12,
       "Warshipcam (@Warshipcam)": 24,
-      "Xinhua News (@XHNews)": 36,
+      "Xinhua News (@XHNews)": 37,
       "cnnbrk (@cnnbrk)": 6,
       "Fox News (@FoxNews)": 18,
       "Quds News Network": 32,
       "cepa (@cepa)": 3,
       "ELINT News (@ELINTNews)": 1,
       "CSIS Korea Chair (@CSISKoreaChair)": 8,
-      "Critical Threats Project (@criticalthreats)": 6,
+      "Critical Threats Project (@criticalthreats)": 7,
       "Institute for the Study of War (@TheStudyofWar)": 17,
       "Bellum Acta (@BellumActaNews)": 16,
       "Serhii FLASH — Technologies (@serhii_flash)": 2,
@@ -77,7 +77,7 @@
       "Clash Report": 9,
       "DD Geopolitics": 14,
       "Esri (@Esri)": 1,
-      "Scmpnews (@Scmpnews)": 9,
+      "Scmpnews (@Scmpnews)": 12,
       "CNN International": 2,
       "BBC Breaking News (@BBCBreaking)": 4,
       "AP News": 2,
@@ -86,13 +86,13 @@
       "cepa": 2,
       "Sim Nasr": 1,
       "Ship News": 1,
-      "BBG Originals (@BBGOriginals)": 9,
+      "BBG Originals (@BBGOriginals)": 10,
       "Critical Threats Project": 1,
       "CNN": 1,
       "Thewarzonewire": 2,
       "Southkoreapro": 1,
       "Insider Paper": 4,
-      "Taiwan News (@TaiwanNewsEN)": 4,
+      "Taiwan News (@TaiwanNewsEN)": 7,
       "ChineseEmbInUs": 2,
       "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)": 6,
       "ChineseEmbInUs (@ChineseEmbInUs)": 1,
@@ -104,7 +104,7 @@
       "Middle East Eye": 9,
       "AFU Strategic Communications (@AFUStratCom)": 1,
       "Defence Intelligence of Ukraine – GUR MO": 3,
-      "Southkoreapro (@Southkoreapro)": 5,
+      "Southkoreapro (@Southkoreapro)": 7,
       "Minhdr18 OSINT (@Minhdr18)": 2,
       "Africafactszone (@Africafactszone)": 1,
       "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)": 4,
@@ -118,7 +118,7 @@
       "Our Wars, Today": 3,
       "Taiwan News": 3,
       "Xinhua News": 2,
-      "Institute for the Study of War": 1,
+      "Institute for the Study of War": 2,
       "Riskstaff (@Riskstaff)": 1,
       "Japan Joint Staff (@JapanJointStaff)": 2,
       "NATO Maritime Command (@NATO_MARCOM)": 1,
@@ -127,7 +127,7 @@
       "Warshipcam": 2
     },
     "media_files": {
-      "images": 258,
+      "images": 259,
       "videos": 0
     }
   },
@@ -145,7 +145,8 @@
     "2026-09-04": 123,
     "2026-09-05": 182,
     "2026-09-06": 190,
-    "2026-09-07": 136
+    "2026-09-07": 136,
+    "2026-09-08": 20
   },
-  "average_confidence": 0.822198952879581
+  "average_confidence": 0.822708333333333
 }
