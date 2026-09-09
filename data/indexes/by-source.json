@@ -2,9 +2,9 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 1015,
+    "count": 1051,
     "earliest_date": "2026-08-25T19:59:00Z",
-    "latest_date": "2026-09-09T19:03:57Z"
+    "latest_date": "2026-09-09T22:16:13Z"
   },
   {
     "source_id": "telegram-qudsnen",
@@ -16,9 +16,9 @@
   {
     "source_id": "telegram-rnintel",
     "source_name": "Rerum Novarum Intel (@rnintel)",
-    "count": 19,
+    "count": 22,
     "earliest_date": "2026-08-25T20:28:02+00:00",
-    "latest_date": "2026-09-08T07:43:44Z"
+    "latest_date": "2026-09-09T20:49:20Z"
   },
   {
     "source_id": "telegram-intelslava",
@@ -128,9 +128,9 @@
   {
     "source_id": "twitter-middle-east-eye",
     "source_name": "Middle East Eye (@MiddleEastEye)",
-    "count": 22,
+    "count": 25,
     "earliest_date": "2026-08-28T22:44:18Z",
-    "latest_date": "2026-09-08T21:30:02.000Z"
+    "latest_date": "2026-09-09T21:29:47Z"
   },
   {
     "source_id": "twitter-nasa",
@@ -156,16 +156,16 @@
   {
     "source_id": "twitter-inside-nk",
     "source_name": "inside_nk (@inside_nk)",
-    "count": 1,
+    "count": 2,
     "earliest_date": "2026-08-29T16:16:28Z",
-    "latest_date": "2026-08-29T16:16:28Z"
+    "latest_date": "2026-09-09T20:43:26Z"
   },
   {
     "source_id": "telegram-united24media",
     "source_name": "UNITED24 Media (@United24media)",
-    "count": 20,
+    "count": 21,
     "earliest_date": "2026-08-29T16:19:01Z",
-    "latest_date": "2026-09-09T07:55:11Z"
+    "latest_date": "2026-09-09T21:52:01Z"
   },
   {
     "source_id": "twitter-xinhua-news",
@@ -177,9 +177,9 @@
   {
     "source_id": "twitter-wartranslated",
     "source_name": "War Translated (@wartranslated)",
-    "count": 11,
+    "count": 12,
     "earliest_date": "2026-08-31T13:00:41.000Z",
-    "latest_date": "2026-09-09T18:15:17Z"
+    "latest_date": "2026-09-09T20:41:18.000Z"
   },
   {
     "source_id": "webpage-isw-ukraine-interactive-map",
@@ -376,5 +376,19 @@
     "count": 1,
     "earliest_date": "2026-09-09T08:42:15.000Z",
     "latest_date": "2026-09-09T08:42:15.000Z"
+  },
+  {
+    "source_id": "twitter-us-pacific-fleet",
+    "source_name": "US Pacific Fleet (@USPacificFleet)",
+    "count": 1,
+    "earliest_date": "2026-09-09T21:43:32.000Z",
+    "latest_date": "2026-09-09T21:43:32.000Z"
+  },
+  {
+    "source_id": "twitter-us-treasury",
+    "source_name": "US Treasury (@USTreasury)",
+    "count": 1,
+    "earliest_date": "2026-09-09T21:49:02.000Z",
+    "latest_date": "2026-09-09T21:49:02.000Z"
   }
 ]
