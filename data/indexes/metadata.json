@@ -34398,5 +34398,639 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_91012438392066048",
+    "title": "China aircraft activity over East China Sea detected by Japan Air Self-Defense Force",
+    "summary": "Japan Air Self-Defense Force detected a Chinese aircraft over the East China Sea on Saturday, September 5, 2026. JASDF fighters conducted scrambles to monitor the activity.",
+    "date_event": null,
+    "date_published": "2026-09-09T03:00:00Z",
+    "geo": {
+      "location": "East China Sea",
+      "lat": 30.5,
+      "lon": 125.0,
+      "country": "Japan"
+    },
+    "topics": [
+      "military-operations",
+      "china-japan-relations",
+      "air-defense",
+      "regional-security"
+    ],
+    "confidence": null,
+    "source_name": "Japan Joint Staff",
+    "links": [
+      {
+        "url": "https://x.com/JapanJointStaff/status/2097520370181968273",
+        "title": "Japan Joint Staff - Chinese aircraft activity around Japan",
+        "description": "Official Japan Joint Staff announcement of JASDF detection of Chinese aircraft over East China Sea"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012767716225024",
+    "title": "New York Tribute in Light Activated for 9/11 Anniversary",
+    "summary": "The Tribute in Light memorial in New York City was activated early to commemorate the 25th anniversary of September 11, 2001. This annual memorial light display marks the significant milestone.",
+    "date_event": null,
+    "date_published": "2026-09-09T02:21:10Z",
+    "geo": {
+      "lat": 40.7128,
+      "lon": -74.006,
+      "city": "New York City",
+      "country": "United States"
+    },
+    "topics": [
+      "september-11",
+      "memorial",
+      "commemoration",
+      "new-york",
+      "anniversary"
+    ],
+    "confidence": 0.85,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66269",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012767426818048",
+    "title": "Thailand Addresses Complaints Against Israeli Nationals",
+    "summary": "Thailand's Foreign Minister held discussions with the Israeli Ambassador regarding complaints from Thai provinces about Israeli nationals and tourists. Thai authorities conduct investigations into alleged harassment and business misconduct.",
+    "date_event": null,
+    "date_published": "2026-09-09T01:30:59Z",
+    "geo": {
+      "lat": 13.7563,
+      "lon": 100.5018,
+      "city": "Bangkok",
+      "country": "Thailand"
+    },
+    "topics": [
+      "israel",
+      "thailand",
+      "diplomacy",
+      "harassment",
+      "business"
+    ],
+    "confidence": 0.75,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/238219",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012767527481344",
+    "title": "UN Rapporteur Welcomes UK Settlement Goods Ban",
+    "summary": "The UN's special rapporteur on occupied territories confirms that the UK government implemented a ban on settlement goods, marking a significant shift in policy stance. This development received international recognition for its humanitarian implications.",
+    "date_event": null,
+    "date_published": "2026-09-09T01:51:43Z",
+    "geo": {
+      "lat": 51.5074,
+      "lon": -0.1278,
+      "city": "London",
+      "country": "United Kingdom"
+    },
+    "topics": [
+      "united-kingdom",
+      "settlement-goods",
+      "trade-policy",
+      "occupation",
+      "diplomacy"
+    ],
+    "confidence": 0.8,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/238220",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012767619756032",
+    "title": "Gaza Ceasefire Violations Continue, Human Rights Monitor Reports",
+    "summary": "The Euro-Med Human Rights Monitor reported ongoing killing and ceasefire violations in Gaza despite the agreement. The organization highlighted the disconnect between ceasefire terms and ground reality.",
+    "date_event": null,
+    "date_published": "2026-09-09T02:06:01Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.2338,
+      "city": "Gaza",
+      "country": "Palestine"
+    },
+    "topics": [
+      "gaza",
+      "ceasefire",
+      "human-rights",
+      "casualties",
+      "violation"
+    ],
+    "confidence": 0.78,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/238221",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012767825276928",
+    "title": "Russian Air Defense Operator Mistakes Duck for Drone",
+    "summary": "A Russian air defense interceptor operator came close to killing a duck after misidentifying it as a Ukrainian military drone. The incident highlights operational challenges in conflict zones.",
+    "date_event": null,
+    "date_published": "2026-09-09T02:02:00Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "city": "Kyiv",
+      "country": "Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military",
+      "air-defense",
+      "incident"
+    ],
+    "confidence": 0.7,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/45896",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012767921745920",
+    "title": "Ukrainian Forces Intercept Russian Geran-4 Jet-Powered Drone",
+    "summary": "Ukrainian air defense forces successfully intercepted a Russian Geran-4 jet-powered drone, presumably using an air-to-air missile. The incident demonstrates ongoing drone warfare in the conflict.",
+    "date_event": null,
+    "date_published": "2026-09-09T03:21:00Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "city": "Kyiv",
+      "country": "Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "drone",
+      "air-defense",
+      "military"
+    ],
+    "confidence": 0.8,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/45897",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012719955689472",
+    "title": "Soybean Production Reshaping Amazon Basin in Bolivia",
+    "summary": "Investigation into soybean production transforming the Amazon region of Bolivia. Documentary reveals land ownership challenges and environmental impact of agricultural expansion.",
+    "date_event": null,
+    "date_published": "2026-09-09T02:51:03Z",
+    "geo": {
+      "lat": -14.8971,
+      "lon": -64.8899
+    },
+    "topics": [
+      "amazon",
+      "deforestation",
+      "agriculture",
+      "soybean",
+      "bolivia",
+      "land-use",
+      "environmental-impact",
+      "documentary"
+    ],
+    "confidence": 0.72,
+    "source_name": "BBG Originals",
+    "links": [
+      {
+        "url": "https://x.com/BBGOriginals/status/2097518117387743581"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012720047964160",
+    "title": "Russian Military Advances in Eastern Ukraine Pokrovsk Direction",
+    "summary": "Critical Threats Project reports Russian forces have advanced in the Pokrovsk direction and Kostyantynivka-Druzhkivka tactical area during ongoing Ukraine-Russia conflict.",
+    "date_event": null,
+    "date_published": "2026-09-09T03:01:23Z",
+    "geo": {
+      "lat": 48.4467,
+      "lon": 37.7169
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military-advance",
+      "pokrovsk",
+      "donetsk",
+      "conflict",
+      "warfare"
+    ],
+    "confidence": 0.85,
+    "source_name": "Critical Threats Project",
+    "links": [
+      {
+        "url": "https://x.com/criticalthreats/status/2097520715826155965"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012720127655936",
+    "title": "Ukrainian Long-Range Strikes Against Russian Oil Infrastructure",
+    "summary": "Ukrainian forces conduct sustained long-range strike campaign targeting Russian oil and energy infrastructure. Russia responds with air defense and anti-ship missile systems.",
+    "date_event": null,
+    "date_published": "2026-09-09T03:01:22Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "strikes",
+      "oil-infrastructure",
+      "military-escalation",
+      "warfare",
+      "missiles"
+    ],
+    "confidence": 0.88,
+    "source_name": "Critical Threats Project",
+    "links": [
+      {
+        "url": "https://x.com/criticalthreats/status/2097520712634302887"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012501604429824",
+    "title": "Tung Chee-hwa, Former Hong Kong Chief Executive, Dies at 89",
+    "summary": "Tung Chee-hwa, the former Chief Executive of the Hong Kong Special Administrative Region and vice chairman of the Chinese People's Political Consultative Conference, died of illness at age 89. The Xinhua News Agency announced his death occurred in Hong Kong at 9:57 p.m. on Tuesday, September 8, 2026.",
+    "date_event": "2026-09-08T21:57:00.000Z",
+    "date_published": "2026-09-09T03:08:33.000Z",
+    "geo": {
+      "lat": 22.3193,
+      "lon": 114.1694,
+      "country": "Hong Kong",
+      "region": "Hong Kong Island",
+      "city": "Hong Kong"
+    },
+    "topics": [
+      "hong-kong",
+      "china",
+      "politics",
+      "death",
+      "leadership"
+    ],
+    "confidence": 0.98,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2097522519393886655",
+        "label": "Xinhua News Announcement"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012501679927296",
+    "title": "UN General Assembly 81st Session Officially Opens",
+    "summary": "The 81st session of the United Nations General Assembly was officially declared open by Khalilur Rahman, the newly elected president of the General Assembly. The opening marks the beginning of the annual gathering of UN member states for diplomatic discussions and international governance.",
+    "date_event": "2026-09-08T00:00:00.000Z",
+    "date_published": "2026-09-09T02:56:22.000Z",
+    "geo": {
+      "lat": 40.748,
+      "lon": -73.9862,
+      "country": "United States",
+      "region": "New York",
+      "city": "New York"
+    },
+    "topics": [
+      "united-nations",
+      "diplomacy",
+      "international-law",
+      "multilateral",
+      "governance"
+    ],
+    "confidence": 0.95,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2097519452594343956",
+        "label": "Xinhua UNGA Opening Coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012501432463360",
+    "title": "Iranian Mariners Report Explosion Aboard DERYA Tanker Vessel",
+    "summary": "Unverified video footage from Iranian mariners documents an explosion aboard the DERYA tanker (IMO 9569700) captured on social media. The video shows an initial explosion followed by radio transmissions on Channel 16, suggesting a critical incident in regional maritime traffic.",
+    "date_event": "2026-09-09T01:57:25.000Z",
+    "date_published": "2026-09-09T01:57:25.000Z",
+    "geo": {
+      "lat": 26.1207,
+      "lon": 56.4734,
+      "country": "Iran",
+      "region": "Persian Gulf",
+      "city": "Hormuz Strait"
+    },
+    "topics": [
+      "tanker",
+      "explosion",
+      "iran",
+      "maritime",
+      "energy",
+      "vessel"
+    ],
+    "confidence": 0.65,
+    "source_name": "TankerTrackers (@TankerTrackers)",
+    "links": [
+      {
+        "url": "https://x.com/TankerTrackers/status/2097504620419445070",
+        "label": "TankerTrackers Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012501516349440",
+    "title": "ISW Reports Putin Used Trump Call to Misrepresent Battlefield Situation",
+    "summary": "The Institute for the Study of War released a breaking assessment that Russian President Vladimir Putin leveraged his September 8 phone conversation with U.S. President Donald Trump to disseminate inaccurate representations of the military situation. ISW simultaneously published a detailed Russian Offensive Campaign Assessment analyzing the battlefield dynamics as of September 8, 2026.",
+    "date_event": "2026-09-08T00:00:00.000Z",
+    "date_published": "2026-09-09T03:20:29.000Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "country": "Russia",
+      "region": "Moscow",
+      "city": "Moscow"
+    },
+    "topics": [
+      "russia",
+      "ukraine",
+      "military",
+      "strategic-analysis",
+      "diplomacy",
+      "putin",
+      "trump"
+    ],
+    "confidence": 0.92,
+    "source_name": "Institute for the Study of War (@TheStudyofWar)",
+    "links": [
+      {
+        "url": "https://x.com/TheStudyofWar/status/2097525522766954910",
+        "label": "ISW Trump-Putin Call Analysis"
+      },
+      {
+        "url": "https://x.com/TheStudyofWar/status/2097525555977478233",
+        "label": "ISW Russian Offensive Assessment"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012928148348928",
+    "title": "🇸🇦 Saudi Arabia’s return to war in Yemen could permanently shut Bab el-Mandeb, ignite Africa\n\nAnsar Allah (the Houthis) has carried out a large-scale ",
+    "summary": "🇸🇦 Saudi Arabia’s return to war in Yemen could permanently shut Bab el-Mandeb, ignite Africa\n\nAnsar Allah (the Houthis) has carried out a large-scale military operation targeting Saudi Aramco faciliti",
+    "date_event": null,
+    "date_published": "2026-09-08T20:28:03+00:00",
+    "geo": {
+      "lat": 16.3471243,
+      "lon": 47.8915271
+    },
+    "topics": [
+      "geopolitics",
+      "conflict"
+    ],
+    "confidence": null,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74276"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012929440194560",
+    "title": "❗️For our Spanish-speaking audience❗️\n\nTraductor de Putin: todo lo que necesitas saber sobre el Kremlin está aquí.\n\n🔐SOLICITAR ACCESO🔐",
+    "summary": "❗️For our Spanish-speaking audience❗️\n\nTraductor de Putin: todo lo que necesitas saber sobre el Kremlin está aquí.\n\n🔐SOLICITAR ACCESO🔐",
+    "date_event": null,
+    "date_published": "2026-09-08T21:57:01+00:00",
+    "geo": {
+      "lat": 55.702215,
+      "lon": 12.5592485
+    },
+    "topics": [
+      "geopolitics",
+      "conflict"
+    ],
+    "confidence": null,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74281"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012930711068672",
+    "title": "🤥 Trump’s failed Iran war represents stinging American wallets - and its painful\n\nThe US has found itself trapped in an energy crisis of its own making:\n\n🔴 th",
+    "summary": "🤥 Trump’s failed Iran war represents stinging American wallets - and its painful\n\nThe US has found itself trapped in an energy crisis of its own making:\n\n🔴 the national average for regular gasoline hit a Labo",
+    "date_event": null,
+    "date_published": "2026-09-08T21:59:01+00:00",
+    "geo": {
+      "lat": 32.6475314,
+      "lon": 54.5643516
+    },
+    "topics": [
+      "geopolitics",
+      "conflict"
+    ],
+    "confidence": null,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74282"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012936935415808",
+    "title": "👁👁 Welcome to the Corporate Police State: How US Companies Turned the Workplace into a Surveillance Laboratory\n\nThe American workplace represents becoming a t",
+    "summary": "👁👁 Welcome to the Corporate Police State: How US Companies Turned the Workplace into a Surveillance Laboratory\n\nThe American workplace represents becoming a testing ground for a new era of corporate control. ",
+    "date_event": null,
+    "date_published": "2026-09-09T01:35:12+00:00",
+    "geo": {
+      "lat": 55.702215,
+      "lon": 12.5592485
+    },
+    "topics": [
+      "geopolitics",
+      "conflict"
+    ],
+    "confidence": null,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74297"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012938218872832",
+    "title": "Join for Geopolitical updates:\n\nhttps://t.me/+iR4h0LjF1lVjYzY1",
+    "summary": "Join for Geopolitical updates:\n\nhttps://t.me/+iR4h0LjF1lVjYzY1",
+    "date_event": null,
+    "date_published": "2026-09-09T02:59:01+00:00",
+    "geo": {
+      "lat": 55.702215,
+      "lon": 12.5592485
+    },
+    "topics": [
+      "geopolitics",
+      "conflict"
+    ],
+    "confidence": null,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74298"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012939649130496",
+    "title": "😒 Seedless gene-modified plants herald corporate stranglehold on global food supply\n\nSeedless fruits and vegetables have proven quite popular in the Wes",
+    "summary": "😒 Seedless gene-modified plants herald corporate stranglehold on global food supply\n\nSeedless fruits and vegetables have proven quite popular in the West for some time – no fuss, no muss, no pesky seeds",
+    "date_event": null,
+    "date_published": "2026-09-09T03:02:31+00:00",
+    "geo": {
+      "lat": 55.702215,
+      "lon": 12.5592485
+    },
+    "topics": [
+      "geopolitics",
+      "conflict"
+    ],
+    "confidence": null,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74299"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012940869672960",
+    "title": "🇮🇷🇺🇸⚡️ Iran’s IRGC says it struck two US vessels and eight oil tankers in the Persian Gulf in retaliation for US attacks on five Iranian tankers.\n\nIRG",
+    "summary": "🇮🇷🇺🇸⚡️ Iran’s IRGC says it struck two US vessels and eight oil tankers in the Persian Gulf in retaliation for US attacks on five Iranian tankers.\n\nIRGC says the vessels had targeted after entering a ",
+    "date_event": null,
+    "date_published": "2026-09-09T02:58:24+00:00",
+    "geo": {
+      "lat": 32.6475314,
+      "lon": 54.5643516
+    },
+    "topics": [
+      "geopolitics",
+      "conflict"
+    ],
+    "confidence": null,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94249"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91012481866031104",
+    "title": "Patriot SAM Battery Engages Iranian Ballistic Missiles Over Jordan",
+    "summary": "Video footage captures a U.S. Patriot air defense system firing in response to a significant Iranian ballistic missile attack over Jordan on September 9, 2026. The engagement showcases advanced air defense capabilities against a large incoming salvo.",
+    "date_event": "2026-09-09T01:42:24Z",
+    "date_published": "2026-09-09T01:42:24Z",
+    "geo": {
+      "lat": 31.1667049,
+      "lon": 36.941628,
+      "country": "Jordan"
+    },
+    "topics": [
+      "missile-defense",
+      "patriot-system",
+      "iran",
+      "middle-east",
+      "air-defense",
+      "military-conflict"
+    ],
+    "confidence": 0.85,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2097500840881791171",
+        "label": "OSINT Technical Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2097500818509602816/img/nwQmcdFkflj67NF8.jpg"
+  },
+  {
+    "id": "evt_91012637264994304",
+    "title": "Taiwan Tracks 11 Chinese Ships and 6 Military Aircraft",
+    "summary": "Taiwan's defense ministry reported tracking 11 Chinese naval vessels and 6 military aircraft operating in waters and airspace near the island on September 9, 2026. The activity reflects ongoing cross-strait military surveillance and potential operational movements.",
+    "date_event": "2026-09-09T02:52:01Z",
+    "date_published": "2026-09-09T02:52:01Z",
+    "geo": {
+      "lat": 23.9739374,
+      "lon": 120.9820179,
+      "country": "Taiwan"
+    },
+    "topics": [
+      "cross-strait-military",
+      "pla-activity",
+      "taiwan-defense",
+      "military-aircraft",
+      "naval-operations",
+      "geopolitical-tension"
+    ],
+    "confidence": 0.8,
+    "source_name": "Taiwan News (@TaiwanNewsEN)",
+    "links": [
+      {
+        "url": "https://x.com/TaiwanNewsEN/status/2097518361114710378",
+        "label": "Taiwan News Report"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HRvh03SboAAnkUi.jpg"
   }
 ]
