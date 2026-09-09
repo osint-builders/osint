@@ -2,9 +2,9 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 908,
+    "count": 928,
     "earliest_date": "2026-08-25T19:59:00Z",
-    "latest_date": "2026-09-09T03:21:00Z"
+    "latest_date": "2026-09-09T08:43:08Z"
   },
   {
     "source_id": "telegram-qudsnen",
@@ -51,9 +51,9 @@
   {
     "source_id": "twitter-cnn",
     "source_name": "CNN (@CNN)",
-    "count": 5,
+    "count": 6,
     "earliest_date": "2026-08-26T20:30:01Z",
-    "latest_date": "2026-09-08T13:24:53Z"
+    "latest_date": "2026-09-09T08:20:58Z"
   },
   {
     "source_id": "twitter-cepa",
@@ -79,9 +79,9 @@
   {
     "source_id": "twitter-abc",
     "source_name": "ABC News (@ABC)",
-    "count": 26,
+    "count": 28,
     "earliest_date": "2026-08-27T13:56:20.000Z",
-    "latest_date": "2026-09-08T13:58:11.000Z"
+    "latest_date": "2026-09-09T08:05:29Z"
   },
   {
     "source_id": "telegram-insiderpaper",
@@ -107,16 +107,16 @@
   {
     "source_id": "telegram-geopolitics-prime",
     "source_name": "Geopolitics Prime (@geopolitics_prime)",
-    "count": 10,
+    "count": 11,
     "earliest_date": "2026-08-28T17:03:52+00:00",
-    "latest_date": "2026-09-09T03:02:31+00:00"
+    "latest_date": "2026-09-09T07:34:03Z"
   },
   {
     "source_id": "telegram-ddgeopolitics",
     "source_name": "DD Geopolitics (@DDGeopolitics)",
-    "count": 9,
+    "count": 13,
     "earliest_date": "2026-08-28T17:23:02+00:00",
-    "latest_date": "2026-09-05T19:35:01Z"
+    "latest_date": "2026-09-09T07:52:29Z"
   },
   {
     "source_id": "twitter-uani",
@@ -163,9 +163,9 @@
   {
     "source_id": "telegram-united24media",
     "source_name": "UNITED24 Media (@United24media)",
-    "count": 18,
+    "count": 20,
     "earliest_date": "2026-08-29T16:19:01Z",
-    "latest_date": "2026-09-08T08:31:55Z"
+    "latest_date": "2026-09-09T07:55:11Z"
   },
   {
     "source_id": "twitter-xinhua-news",
@@ -205,9 +205,9 @@
   {
     "source_id": "twitter-cnni",
     "source_name": "CNN International",
-    "count": 4,
+    "count": 5,
     "earliest_date": "2026-09-01T16:03:27Z",
-    "latest_date": "2026-09-06T19:26:34.000Z"
+    "latest_date": "2026-09-09T07:00:16Z"
   },
   {
     "source_id": "twitter-bbc-breaking",
@@ -369,5 +369,12 @@
     "count": 1,
     "earliest_date": "2026-09-08T18:40:36Z",
     "latest_date": "2026-09-08T18:40:36Z"
+  },
+  {
+    "source_id": "twitter-shipnews",
+    "source_name": "Ship News (@ShipNews)",
+    "count": 1,
+    "earliest_date": "2026-09-09T08:42:15.000Z",
+    "latest_date": "2026-09-09T08:42:15.000Z"
   }
 ]
