@@ -2,23 +2,23 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 1142,
+    "count": 1182,
     "earliest_date": "2026-08-25T19:59:00Z",
-    "latest_date": "2026-09-10T14:02:18Z"
+    "latest_date": "2026-09-10T18:50:00Z"
   },
   {
     "source_id": "telegram-qudsnen",
     "source_name": "Quds News Network (@QudsNen)",
-    "count": 37,
+    "count": 40,
     "earliest_date": "2026-08-25T20:06:14+00:00",
-    "latest_date": "2026-09-10T07:09:01Z"
+    "latest_date": "2026-09-10T17:40:48Z"
   },
   {
     "source_id": "telegram-rnintel",
     "source_name": "Rerum Novarum Intel (@rnintel)",
-    "count": 22,
+    "count": 25,
     "earliest_date": "2026-08-25T20:28:02+00:00",
-    "latest_date": "2026-09-09T20:49:20Z"
+    "latest_date": "2026-09-10T17:44:33Z"
   },
   {
     "source_id": "telegram-intelslava",
@@ -128,9 +128,9 @@
   {
     "source_id": "twitter-middle-east-eye",
     "source_name": "Middle East Eye (@MiddleEastEye)",
-    "count": 25,
+    "count": 28,
     "earliest_date": "2026-08-28T22:44:18Z",
-    "latest_date": "2026-09-09T21:29:47Z"
+    "latest_date": "2026-09-10T18:29:31Z"
   },
   {
     "source_id": "twitter-nasa",
@@ -163,9 +163,9 @@
   {
     "source_id": "telegram-united24media",
     "source_name": "UNITED24 Media (@United24media)",
-    "count": 22,
+    "count": 25,
     "earliest_date": "2026-08-29T16:19:01Z",
-    "latest_date": "2026-09-09T21:52:01Z"
+    "latest_date": "2026-09-10T18:18:01Z"
   },
   {
     "source_id": "twitter-xinhua-news",
@@ -331,9 +331,9 @@
   {
     "source_id": "twitter-ian-bremmer",
     "source_name": "ianbremmer (@ianbremmer)",
-    "count": 1,
+    "count": 2,
     "earliest_date": "2026-09-07T14:23:56Z",
-    "latest_date": "2026-09-07T14:23:56Z"
+    "latest_date": "2026-09-10T17:45:34Z"
   },
   {
     "source_id": "telegram-diukraine",
@@ -397,5 +397,12 @@
     "count": 1,
     "earliest_date": "2026-09-10T08:19:12Z",
     "latest_date": "2026-09-10T08:19:12Z"
+  },
+  {
+    "source_id": "twitter-mt-anderson",
+    "source_name": "MT Anderson (@MT_Anderson)",
+    "count": 1,
+    "earliest_date": "2026-09-10T17:40:53Z",
+    "latest_date": "2026-09-10T17:40:53Z"
   }
 ]
