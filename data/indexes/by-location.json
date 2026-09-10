@@ -1,7 +1,7 @@
 [
   {
     "country": "Ukraine",
-    "count": 117
+    "count": 118
   },
   {
     "country": "United States",
@@ -9,7 +9,7 @@
   },
   {
     "country": "Iran",
-    "count": 58
+    "count": 63
   },
   {
     "country": "Russia",
@@ -25,11 +25,15 @@
   },
   {
     "country": "Yemen",
-    "count": 28
+    "count": 30
   },
   {
     "country": "Germany",
     "count": 27
+  },
+  {
+    "country": "Global",
+    "count": 21
   },
   {
     "country": "Lebanon",
@@ -40,15 +44,11 @@
     "count": 18
   },
   {
-    "country": "Global",
-    "count": 15
+    "country": "Israel",
+    "count": 12
   },
   {
     "country": "Syria",
-    "count": 11
-  },
-  {
-    "country": "Israel",
     "count": 11
   },
   {
@@ -88,12 +88,20 @@
     "count": 5
   },
   {
+    "country": "Iraq",
+    "count": 5
+  },
+  {
     "country": "South Korea",
     "count": 5
   },
   {
     "country": "Japan",
     "count": 5
+  },
+  {
+    "country": "USA",
+    "count": 4
   },
   {
     "country": "Greece",
@@ -117,10 +125,6 @@
   },
   {
     "country": "Algeria",
-    "count": 3
-  },
-  {
-    "country": "Iraq",
     "count": 3
   },
   {
@@ -177,10 +181,6 @@
   },
   {
     "country": "British Indian Ocean Territory",
-    "count": 1
-  },
-  {
-    "country": "USA",
     "count": 1
   },
   {
@@ -337,6 +337,14 @@
   },
   {
     "country": "Regional",
+    "count": 1
+  },
+  {
+    "country": "International Waters / Iran-Oman Border",
+    "count": 1
+  },
+  {
+    "country": "Peru",
     "count": 1
   }
 ]
