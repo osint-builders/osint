@@ -41769,5 +41769,1630 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_91535114682224640",
+    "title": "IRGC Aerospace Force Attacks on US Navy Warships",
+    "summary": "The Islamic Revolutionary Guards Corps (IRGC) Aerospace Force attempted attacks against two US Navy warships on September 5, 2026. US Central Command confirmed multiple ballistic missile launches targeting a Navy warship within two days.",
+    "date_event": "2026-09-05T00:00:00Z",
+    "date_published": "2026-09-10T13:38:29Z",
+    "geo": {
+      "lat": 25.2854,
+      "lon": 55.3571,
+      "country": "United Arab Emirates",
+      "region": "Persian Gulf"
+    },
+    "topics": [
+      "iran",
+      "military",
+      "middle-east",
+      "usnavy",
+      "missile",
+      "escalation",
+      "irgc"
+    ],
+    "confidence": 0.9,
+    "source_name": "Critical Threats Project (@criticalthreats)",
+    "links": [
+      {
+        "url": "https://x.com/criticalthreats/status/2098043434774777922",
+        "label": "Critical Threats Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535113661218816",
+    "title": "US Wholesale Inflation Accelerates Amid Iran War",
+    "summary": "The Producer Price Index, tracking wholesale inflation received by US manufacturers, increased 5.4% in the 12 months ending August 2026. Energy prices surged due to the ongoing conflict with Iran.",
+    "date_event": "2026-09-10T14:02:18Z",
+    "date_published": "2026-09-10T14:02:18Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "country": "United States"
+    },
+    "topics": [
+      "inflation",
+      "economics",
+      "iran",
+      "energy",
+      "united-states",
+      "geopolitical"
+    ],
+    "confidence": 0.85,
+    "source_name": "CNN (@CNN)",
+    "links": [
+      {
+        "url": "https://x.com/CNN/status/2098049427906625890",
+        "label": "CNN Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535246977163264",
+    "title": "Congressional Call for Release of Palestinian Doctor Detained 500+ Days",
+    "summary": "Nearly 70 Democratic and independent members of Congress have called on Secretary of State Marco Rubio to work with the Israeli government to secure the release of a prominent Palestinian doctor who has been held in custody for over 500 days.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:28:43.000Z",
+    "geo": {
+      "lat": 32.2591449,
+      "lon": 35.3015948,
+      "display_name": "Palestine"
+    },
+    "topics": [
+      "detention",
+      "palestinian-rights",
+      "israel-palestine",
+      "diplomacy",
+      "us-congress"
+    ],
+    "confidence": null,
+    "source_name": "ABC News",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2098025876772274421",
+        "title": "ABC News - Congressional Statement"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535193071968256",
+    "title": "Passenger Ferry Fire in Philippines Kills At Least 5, Dozens Missing",
+    "summary": "A fire broke out on a passenger ferry near Coron in the Philippines' Palawan province, resulting in at least five deaths and dozens of missing persons. Of the 134 people aboard, 43 have been rescued so far.",
+    "date_event": null,
+    "date_published": "2026-09-10T13:58:43.000Z",
+    "geo": {
+      "lat": 11.9985507,
+      "lon": 120.2051611,
+      "display_name": "Coron, Palawan, Philippines"
+    },
+    "topics": [
+      "maritime-disaster",
+      "fire",
+      "philippines",
+      "casualties",
+      "rescue-operations"
+    ],
+    "confidence": null,
+    "source_name": "AP News",
+    "links": [
+      {
+        "url": "https://x.com/AP/status/2098048529008595453",
+        "title": "AP News - Ferry Fire Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535071852412928",
+    "title": "Hoover Institution Delegation Addresses Taiwan Political Polarization",
+    "summary": "A Hoover Institution delegation held discussions with Taiwan's Democratic Progressive Party regarding internal political divisions.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:58:19Z",
+    "geo": {
+      "lat": 23.9739374,
+      "lon": 120.9820179
+    },
+    "topics": [
+      "taiwan",
+      "politics",
+      "polarization",
+      "diplomacy"
+    ],
+    "confidence": 0.7,
+    "source_name": "Taiwan News (@TaiwanNewsEN)",
+    "links": [
+      {
+        "url": "https://x.com/TaiwanNewsEN/status/2098033329174171701"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535071617531904",
+    "title": "Al-Qaeda Activity 25 Years After 9/11 Attacks",
+    "summary": "Recent Al-Qaeda claims in Western countries represent ongoing security threats, marking significant timeline milestones since the 2001 attacks.",
+    "date_event": null,
+    "date_published": "2026-09-10T13:19:04Z",
+    "geo": {
+      "lat": 61.0666922,
+      "lon": -107.991707
+    },
+    "topics": [
+      "terrorism",
+      "al-qaeda",
+      "security"
+    ],
+    "confidence": 0.7,
+    "source_name": "Sim Nasr (@SimNasr)",
+    "links": [
+      {
+        "url": "https://x.com/SimNasr/status/2098038548062462036"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535071726583808",
+    "title": "Yemen Houthi Resilience and Military Dynamics in Regional Context",
+    "summary": "Analysis of Houthi military cohesion in Yemen compared with Syrian insurgent dynamics, highlighting contrasts in organizational resilience.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:23:10Z",
+    "geo": {
+      "lat": 15.3694,
+      "lon": 44.2044
+    },
+    "topics": [
+      "yemen",
+      "houthis",
+      "military",
+      "syria",
+      "conflict"
+    ],
+    "confidence": 0.75,
+    "source_name": "Sim Nasr (@SimNasr)",
+    "links": [
+      {
+        "url": "https://x.com/SimNasr/status/2098024482757546283"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535082615005184",
+    "title": "Drone Attack on Makhachkala Port, Dagestan",
+    "summary": "OSINT channels report drones struck the port facilities in Makhachkala, Dagestan, Russia, overnight. Additional details regarding the attack remain under investigation.",
+    "date_event": null,
+    "date_published": "2026-09-10T13:02:35.000Z",
+    "geo": {
+      "lat": 42.9830241,
+      "lon": 47.5048717
+    },
+    "topics": [
+      "drone-strike",
+      "makhachkala",
+      "dagestan",
+      "russia",
+      "port-attack",
+      "military-operations",
+      "osint"
+    ],
+    "confidence": null,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2098034402575937629",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2098033642807197702/img/uNtJrun2QGFYpXaM.jpg"
+  },
+  {
+    "id": "evt_91535164605259776",
+    "title": "Asia-Pacific Economic Cooperation CEO Summit 2026 Scheduled for Shenzhen",
+    "summary": "The APEC CEO Summit 2026 will occur in Shenzhen, Guangdong Province, China, from November 17-18, 2026. The announcement comes from the China Council for the Promotion of International Trade.",
+    "date_event": null,
+    "date_published": "2026-09-10T13:51:48.000Z",
+    "geo": {
+      "lat": 22.5445741,
+      "lon": 114.0545429
+    },
+    "topics": [
+      "apec",
+      "economic-summit",
+      "trade",
+      "shenzhen",
+      "china",
+      "asia-pacific",
+      "business"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2098046788376875473",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/ext_tw_video_thumb/2098046706051080192/pu/img/zWq7cDCbJ89kxYPR.jpg"
+  },
+  {
+    "id": "evt_91535164705923072",
+    "title": "2026 China International Fair for Trade in Services Opens with Hebei Cultural Week",
+    "summary": "The 2026 China International Fair for Trade in Services (CIFTIS) has opened, featuring the 2nd Hebei International Cultural Exchange Week. The event showcases Hebei's culture, tourism, intangible cultural heritage, and local specialties in Hall 12.",
+    "date_event": null,
+    "date_published": "2026-09-10T13:31:55.000Z",
+    "geo": {
+      "lat": 39.9057136,
+      "lon": 116.3912972
+    },
+    "topics": [
+      "trade-fair",
+      "ciftis",
+      "services",
+      "china",
+      "hebei",
+      "cultural-exchange",
+      "economy"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2098041782881992855",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/ext_tw_video_thumb/2098041514987581440/pu/img/GXCggqMYtL1Ia6cy.jpg"
+  },
+  {
+    "id": "evt_91535164802392064",
+    "title": "China-Namibia Cultural Fair Celebrates Bilateral People-to-People Exchanges",
+    "summary": "Chinese and Namibian participants gathered in Windhoek for a cultural fair featuring games, music, and dance, celebrating the 2026 China-Africa Year of People-to-People Exchanges.",
+    "date_event": null,
+    "date_published": "2026-09-10T13:12:34.000Z",
+    "geo": {
+      "lat": -22.5335601,
+      "lon": 17.0454775
+    },
+    "topics": [
+      "cultural-exchange",
+      "china-africa",
+      "namibia",
+      "windhoek",
+      "diplomacy",
+      "people-to-people",
+      "africa"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2098036915245085051",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HR25dPOXsAQVPao.jpg"
+  },
+  {
+    "id": "evt_91535135893123072",
+    "title": "Frontex involvement in Mediterranean maritime deaths and migrant interceptions",
+    "summary": "Frontex maritime operations resulted in at least 19 deaths in April, with authorities failing to intervene in human rights violations. The organization also conducted interceptions that resulted in migrants returned to Libya and Tunisia.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:38:05.000Z",
+    "geo": {
+      "lat": 37.2671,
+      "lon": 15.5007,
+      "display_name": "Central Mediterranean"
+    },
+    "topics": [
+      "maritime",
+      "migrants",
+      "mediterranean",
+      "human-rights",
+      "border-control"
+    ],
+    "confidence": null,
+    "source_name": "seawatch_intl (@seawatch_intl)",
+    "links": [
+      {
+        "url": "https://x.com/seawatch_intl/status/2098028237574062192"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535136058925056",
+    "title": "Houthi militants control Mocha, threatening Bab el-Mandeb shipping route and global oil supply",
+    "summary": "Houthi militant forces have taken control of Mocha Island, positioning themselves to threaten the strategic Bab el-Mandeb strait, a critical global shipping chokepoint. This development poses significant risks to maritime commerce and energy supplies.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:37:07.000Z",
+    "geo": {
+      "lat": 12.7,
+      "lon": 43.3,
+      "display_name": "Bab el-Mandeb Strait"
+    },
+    "topics": [
+      "maritime-security",
+      "houthi",
+      "shipping",
+      "energy",
+      "red-sea"
+    ],
+    "confidence": null,
+    "source_name": "Ship News (@ShipNews)",
+    "links": [
+      {
+        "url": "https://x.com/ShipNews/status/2098027992685445175"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535135727464448",
+    "title": "Trump threat to Taiwan's Washington office sparks debate over island's US policy",
+    "summary": "Former President Trump's threat to Taiwan's Washington representative office has triggered debate regarding Taiwan's diplomatic position and US policy toward the island nation.",
+    "date_event": null,
+    "date_published": "2026-09-10T13:38:23.000Z",
+    "geo": {
+      "lat": 25.033,
+      "lon": 121.5654,
+      "display_name": "Taiwan"
+    },
+    "topics": [
+      "taiwan",
+      "us-policy",
+      "diplomacy",
+      "geopolitics"
+    ],
+    "confidence": null,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2098043409353040342"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535512065560576",
+    "title": "WAGNER Z GROUP/Z PMC WAGNER'Z",
+    "summary": "✈️ «Яки» оформляют визу.\n\nПервый экспортный контракт на поставку учебно-боевых самолетов Як-130М уже заключен, сообщили в «Рособоронэкспорте».\n\nМашина, кстати, получила новый комплекс бортовой обороны",
+    "date_event": null,
+    "date_published": "2026-09-10T06:46:39+00:00",
+    "geo": {
+      "lat": 48.5,
+      "lon": 34.8,
+      "country": "Ukraine",
+      "region": "Donetsk",
+      "city": "Donetsk"
+    },
+    "topics": [
+      "wagner",
+      "combat",
+      "ukraine",
+      "war",
+      "russia"
+    ],
+    "confidence": 0.7,
+    "source_name": "Wagner Z Group (@wagner_group_pmcr)",
+    "links": [
+      {
+        "url": "https://t.me/wagner_group_pmcr/99662",
+        "label": "Wagner Z Group (@wagner_group_pmcr)"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535513734893568",
+    "title": "WAGNER Z GROUP/Z PMC WAGNER'Z",
+    "summary": "Как пишут, на кадрах видео эвакуация поврежденных в результате иранских ударов американских вертолетов Black Hawk с используемой США авиабазы  Муваффак ас-Салти (Аль-Азрак) в Иордании.",
+    "date_event": null,
+    "date_published": "2026-09-10T06:55:01+00:00",
+    "geo": {
+      "lat": 48.5,
+      "lon": 34.8,
+      "country": "Ukraine",
+      "region": "Donetsk",
+      "city": "Donetsk"
+    },
+    "topics": [
+      "wagner",
+      "combat",
+      "ukraine",
+      "war",
+      "russia"
+    ],
+    "confidence": 0.7,
+    "source_name": "Wagner Z Group (@wagner_group_pmcr)",
+    "links": [
+      {
+        "url": "https://t.me/wagner_group_pmcr/99666",
+        "label": "Wagner Z Group (@wagner_group_pmcr)"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535515542638592",
+    "title": "WAGNER Z GROUP/Z PMC WAGNER'Z",
+    "summary": "Дистанционно управляемая модификация Т-62 с колейным минным тралом. \nP.S. возможен вариант Т-72, несколько трудно сходу опознать точную модель.\n#сво #танки #инженерное",
+    "date_event": null,
+    "date_published": "2026-09-10T07:45:02+00:00",
+    "geo": {
+      "lat": 48.5,
+      "lon": 34.8,
+      "country": "Ukraine",
+      "region": "Donetsk",
+      "city": "Donetsk"
+    },
+    "topics": [
+      "wagner",
+      "combat",
+      "ukraine",
+      "war",
+      "russia"
+    ],
+    "confidence": 0.7,
+    "source_name": "Wagner Z Group (@wagner_group_pmcr)",
+    "links": [
+      {
+        "url": "https://t.me/wagner_group_pmcr/99667",
+        "label": "Wagner Z Group (@wagner_group_pmcr)"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535508496207872",
+    "title": "WarLife 18+ Ukraine Russia War 18+",
+    "summary": "Момент детонации БК сирийского танка Т-72 после попадания РПГ-29 «Вампир» во время уличного боя в Дарайе, запечатленный на установленную GoPro на соседнем танке\n\nWarLife 18+",
+    "date_event": null,
+    "date_published": "2026-09-10T12:31:35+00:00",
+    "geo": {
+      "lat": 48.2,
+      "lon": 33.5,
+      "country": "Ukraine",
+      "region": "Zaporizhzhia",
+      "city": "Zaporizhzhia"
+    },
+    "topics": [
+      "combat",
+      "drone",
+      "strike",
+      "ukraine",
+      "war"
+    ],
+    "confidence": 0.7,
+    "source_name": "WarLife 18+ (@Voyna18)",
+    "links": [
+      {
+        "url": "https://t.me/Voyna18/8721",
+        "label": "WarLife 18+ (@Voyna18)"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535510169735168",
+    "title": "WarLife 18+ Ukraine Russia War 18+",
+    "summary": "🔞 Осторожно, жестокие кадры.\n \n☠️ НЕВІДОМИЙ ☠️ - тут бойцы показывают как 🔪 🐷 уничтожают солдат ВС РФ\n\n⛔️ Детям та слабонервным вход запрещен 18+👇\nhttps://t.me/+F0lEWobQQAxiNTRi\n\n#реклама",
+    "date_event": null,
+    "date_published": "2026-09-10T13:40:07+00:00",
+    "geo": {
+      "lat": 48.2,
+      "lon": 33.5,
+      "country": "Ukraine",
+      "region": "Zaporizhzhia",
+      "city": "Zaporizhzhia"
+    },
+    "topics": [
+      "combat",
+      "drone",
+      "strike",
+      "ukraine",
+      "war"
+    ],
+    "confidence": 0.7,
+    "source_name": "WarLife 18+ (@Voyna18)",
+    "links": [
+      {
+        "url": "https://t.me/Voyna18/8722",
+        "label": "WarLife 18+ (@Voyna18)"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535517388132352",
+    "title": "Global News Monitor",
+    "summary": "Source tells me Charlie is stable.\n\nPlease god\n\n💧 Rainbet.com the #1 Non-KYC Crypto Casino & Sportsbook @rainbetcom +18",
+    "date_event": null,
+    "date_published": "2026-09-10T08:24:25+00:00",
+    "geo": {
+      "lat": 50.4,
+      "lon": 30.5,
+      "country": "Ukraine",
+      "region": "Kyiv",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "breaking",
+      "war",
+      "conflict",
+      "military"
+    ],
+    "confidence": 0.7,
+    "source_name": "War Monitor (@warmonitors)",
+    "links": [
+      {
+        "url": "https://t.me/warmonitors/45527",
+        "label": "War Monitor (@warmonitors)"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535519111991296",
+    "title": "Global News Monitor",
+    "summary": "The Great Charlie Kirk was assassinated a year ago. \n\n💧 Rainbet.com the #1 Non-KYC Crypto Casino & Sportsbook @rainbetcom +18",
+    "date_event": null,
+    "date_published": "2026-09-10T08:29:26+00:00",
+    "geo": {
+      "lat": 50.4,
+      "lon": 30.5,
+      "country": "Ukraine",
+      "region": "Kyiv",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "breaking",
+      "war",
+      "conflict",
+      "military"
+    ],
+    "confidence": 0.7,
+    "source_name": "War Monitor (@warmonitors)",
+    "links": [
+      {
+        "url": "https://t.me/warmonitors/45528",
+        "label": "War Monitor (@warmonitors)"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535520907153408",
+    "title": "Global News Monitor",
+    "summary": "x.com/newswire_us/st…\n\n💧 Rainbet.com the #1 Non-KYC Crypto Casino & Sportsbook @rainbetcom +18",
+    "date_event": null,
+    "date_published": "2026-09-10T08:29:26+00:00",
+    "geo": {
+      "lat": 50.4,
+      "lon": 30.5,
+      "country": "Ukraine",
+      "region": "Kyiv",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "breaking",
+      "war",
+      "conflict",
+      "military"
+    ],
+    "confidence": 0.7,
+    "source_name": "War Monitor (@warmonitors)",
+    "links": [
+      {
+        "url": "https://t.me/warmonitors/45529",
+        "label": "War Monitor (@warmonitors)"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535146000000001",
+    "title": "Chinese Defense-Linked Universities Obtain Advanced US Chips Through Maginfra and Inspur Suppliers",
+    "summary": "Investigation reveals that defense-linked Chinese universities successfully obtained advanced US semiconductor chips through blacklisted suppliers Maginfra and Inspur, circumventing export controls.",
+    "date_event": null,
+    "date_published": "2026-09-10T14:00:12Z",
+    "geo": {
+      "lat": 39.9057136,
+      "lon": 116.3912972
+    },
+    "topics": [
+      "china",
+      "sanctions-evasion",
+      "semiconductor-technology",
+      "export-controls",
+      "defense-research",
+      "illicit-procurement"
+    ],
+    "confidence": null,
+    "source_name": "C4ADS (@C4ADS)",
+    "links": [
+      {
+        "url": "https://x.com/C4ADS/status/2098048902943420686",
+        "title": "C4ADS - Chinese universities obtain advanced US chips through blacklisted suppliers",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535145676337152",
+    "title": "Russia to Open More Cultural Centres in Africa",
+    "summary": "Russia announces plans to establish additional cultural centers across African nations as part of its broader strategy to expand geopolitical influence on the continent.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:51:25Z",
+    "geo": {
+      "lat": 11.8749,
+      "lon": 34.5085
+    },
+    "topics": [
+      "geopolitics",
+      "africa",
+      "russia",
+      "diplomatic-expansion",
+      "cultural-diplomacy"
+    ],
+    "confidence": null,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2098031591771537603",
+        "title": "BBC World News - Russia to open more cultural centres in Africa",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535145781194752",
+    "title": "Presidential Pardon for Controversial Monk Overturned",
+    "summary": "A Thai court overturns a presidential pardon granted to a controversial Buddhist monk, restoring previous legal proceedings.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:15:25Z",
+    "geo": {
+      "lat": 13.7524938,
+      "lon": 100.4935089
+    },
+    "topics": [
+      "thailand",
+      "legal-proceedings",
+      "pardon-overturned",
+      "buddhism",
+      "judicial-review"
+    ],
+    "confidence": null,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2098022531588391373",
+        "title": "BBC World News - Presidential pardon for controversial monk overturned",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535145881858048",
+    "title": "Man Charged in Court Over Russian Plot Against Drone Firms",
+    "summary": "A man appears in court facing charges related to an alleged Russian plot targeting Western drone manufacturing companies.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:10:55Z",
+    "geo": {
+      "lat": 51.5074456,
+      "lon": -0.1277653
+    },
+    "topics": [
+      "russia",
+      "espionage",
+      "drone-technology",
+      "defense-industry",
+      "security-threat",
+      "legal-proceedings"
+    ],
+    "confidence": null,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2098021400690745844",
+        "title": "BBC World News - Man in court over Russian plot against drone firms",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535354389098496",
+    "title": "Iran Suspends 10% Freight Charge on Foreign Vessels",
+    "summary": "Iran temporarily suspends a 10% freight charge on foreign vessels carrying oil, gas, and petroleum products to reduce transport costs and attract foreign shipping amid disruptions to seaborne oil exports.",
+    "date_event": null,
+    "date_published": "2026-09-10T13:55:42Z",
+    "geo": {
+      "lat": 35.6892523,
+      "lon": 51.3896004
+    },
+    "topics": [
+      "iran",
+      "shipping",
+      "energy-exports",
+      "sanctions",
+      "maritime-trade",
+      "economic-policy"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2098047768308634098",
+        "title": "Clash Report - Iran suspends 10% freight charge on foreign vessels",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_91535363520110592",
+    "title": "Houthi Leader Displays Captured Saudi Military Vehicle in Al-Jarrahi",
+    "summary": "Mohammed Ali al-Houthi, the Houthi movement leader, drove through newly captured Al-Jarrahi in a Saudi-backed government armored vehicle, demonstrating Houthi territorial gains in Yemen. The symbolic display mocked Saudi military forces as Saudi-backed troops retreated and Houthis captured the town.",
+    "date_event": "2026-09-10T12:36:00Z",
+    "date_published": "2026-09-10T12:36:25Z",
+    "geo": {
+      "lat": 15.3694,
+      "lon": 49.1831,
+      "country": "Yemen",
+      "city": "Al-Jarrahi"
+    },
+    "topics": [
+      "yemen",
+      "houthis",
+      "military",
+      "saudi-arabia",
+      "territorial-conflict",
+      "middle-east"
+    ],
+    "confidence": 0.85,
+    "source_name": "My Lord Bebo (@MyLordBebo)",
+    "links": [
+      {
+        "url": "https://x.com/MyLordBebo/status/2098027817598333086",
+        "label": "Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535363692077056",
+    "title": "NSA Emphasizes Cybersecurity Fundamentals Against Nation-State Adversaries at Billington Summit",
+    "summary": "The NSA participated in the Billington Summit where Director David Imbordino of the NSA Cybersecurity Directorate emphasized that fundamental cybersecurity practices remain the best defense against nation-state threats, even as artificial intelligence reshapes the threat landscape.",
+    "date_event": "2026-09-10T13:00:00Z",
+    "date_published": "2026-09-10T13:00:37Z",
+    "geo": {
+      "lat": 38.9072,
+      "lon": -77.0369,
+      "country": "United States",
+      "city": "Washington"
+    },
+    "topics": [
+      "cybersecurity",
+      "nation-state-threats",
+      "artificial-intelligence",
+      "critical-infrastructure",
+      "nsa",
+      "government"
+    ],
+    "confidence": 0.82,
+    "source_name": "NSA (@NSAGov)",
+    "links": [
+      {
+        "url": "https://x.com/NSAGov/status/2098033907799081315",
+        "label": "Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535363608190976",
+    "title": "NSA Cybersecurity Director Discusses Nation-State Threats and AI at Billington Summit",
+    "summary": "NSA Cybersecurity Directorate Director David Imbordino joined government, industry, and Five Eyes cyber leaders at the Billington Summit to discuss nation-state threats, artificial intelligence capabilities, and strategies for strengthening collective cyber defense against adversarial actors.",
+    "date_event": "2026-09-10T13:30:00Z",
+    "date_published": "2026-09-10T13:33:11Z",
+    "geo": {
+      "lat": 38.9072,
+      "lon": -77.0369,
+      "country": "United States",
+      "city": "Washington"
+    },
+    "topics": [
+      "cybersecurity",
+      "nation-state-threats",
+      "artificial-intelligence",
+      "five-eyes",
+      "critical-infrastructure",
+      "government"
+    ],
+    "confidence": 0.8,
+    "source_name": "NSA Cybersecurity (@NSACyber)",
+    "links": [
+      {
+        "url": "https://x.com/NSACyber/status/2098042102097535261",
+        "label": "Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535375729696768",
+    "title": "General Staff of the Armed Forces of Ukraine",
+    "summary": "The Ukrainian Armed Forces General Staff reports on military responses to FPV drone threats against transport and supply columns. These measures address one of the primary threats on the modern battlefield.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:23:49Z",
+    "geo": {
+      "lat": 49.7496,
+      "lon": 25.3,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "ukraine",
+      "military",
+      "drone-warfare",
+      "defense"
+    ],
+    "confidence": null,
+    "source_name": "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)",
+    "links": [
+      {
+        "url": "https://t.me/GeneralStaffZSU/42189"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535375742279680",
+    "title": "Houthis Destroy Saudi Aramco Oil Tanks",
+    "summary": "Houthi forces have destroyed at least 14 oil tanks at the Saudi Aramco refinery in Jizan, with four additional tanks destroyed in recent operations. The attacks represent an escalation of regional conflict and energy infrastructure targeting.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:22:01Z",
+    "geo": {
+      "lat": 16.8892,
+      "lon": 42.5561,
+      "country": "Saudi Arabia",
+      "city": "Jizan"
+    },
+    "topics": [
+      "saudi-arabia",
+      "yemen",
+      "houthis",
+      "oil-infrastructure",
+      "military-attack"
+    ],
+    "confidence": null,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74360"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535375742279681",
+    "title": "Israel Escalates Military Operations in Southern Lebanon",
+    "summary": "Israeli military forces have intensified attacks in southern Lebanon, with Prime Minister Netanyahu asserting claims of operational control in the region. The escalation marks a significant intensification of cross-border military operations.",
+    "date_event": null,
+    "date_published": "2026-09-10T13:06:02Z",
+    "geo": {
+      "lat": 33.3157,
+      "lon": 35.1964,
+      "country": "Lebanon",
+      "region": "South Lebanon"
+    },
+    "topics": [
+      "israel",
+      "lebanon",
+      "military-conflict",
+      "middle-east"
+    ],
+    "confidence": null,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74362"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535375742279682",
+    "title": "Trump Administration Legislation on Border Policy",
+    "summary": "US political developments include proposed legislation by the Trump administration aimed at restricting border opening powers of future presidential administrations. The bill represents continued focus on immigration and border control policy.",
+    "date_event": null,
+    "date_published": "2026-09-10T13:39:20Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369,
+      "country": "United States",
+      "city": "Washington D.C."
+    },
+    "topics": [
+      "united-states",
+      "border-policy",
+      "immigration",
+      "legislation"
+    ],
+    "confidence": null,
+    "source_name": "Insider Paper (@insiderpaper)",
+    "links": [
+      {
+        "url": "https://t.me/insiderpaper/44489"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535672891985920",
+    "title": "China Coast Guard Vessels Return from North Pacific Enforcement Patrol",
+    "summary": "Chinese Coast Guard patrol vessels returned to Qingdao after completing a 45-day enforcement patrol in the North Pacific, demonstrating extended operational reach.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:37:50Z",
+    "geo": {
+      "lat": 36.0627,
+      "lon": 120.3826
+    },
+    "topics": [
+      "china",
+      "coast-guard",
+      "maritime",
+      "naval-patrol",
+      "pacific",
+      "law-enforcement"
+    ],
+    "confidence": null,
+    "source_name": "Warshipcam",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2098028171597606939",
+        "title": "China Coast Guard patrol activity"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535455224385536",
+    "title": "US Army Tests Anthem Long-Range Strike Weapon for Mass Production",
+    "summary": "The US Army conducted testing of the Anthem long-range strike weapon system, which shows progress toward serial production of the advanced military capability.",
+    "date_event": null,
+    "date_published": "2026-09-10T13:49:28Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369
+    },
+    "topics": [
+      "us-military",
+      "weapons",
+      "long-range-strike",
+      "production",
+      "army",
+      "technology"
+    ],
+    "confidence": null,
+    "source_name": "Thewarzonewire",
+    "links": [
+      {
+        "url": "https://x.com/Thewarzonewire/status/2098046201526403495",
+        "title": "Anthem Strike Weapon Testing"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535738771918848",
+    "title": "Iran Fires Ballistic Missiles at US Naval Forces",
+    "summary": "Iran has fired ballistic missiles at US Navy aircraft carrier and destroyer vessels in the Middle East region.",
+    "date_event": null,
+    "date_published": "2026-09-10T13:40:00Z",
+    "geo": {
+      "lat": 27.0,
+      "lon": 54.0
+    },
+    "topics": [
+      "iran",
+      "military",
+      "ballistic-missiles",
+      "us-navy",
+      "middle-east",
+      "escalation"
+    ],
+    "confidence": null,
+    "source_name": "Institute for the Study of War (@TheStudyofWar)",
+    "links": [
+      {
+        "url": "https://x.com/TheStudyofWar/status/2098043818171859425",
+        "title": "ISW on Iran missile attacks"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7503817131385959450",
+    "title": "Oh boy what a bright wonderful day I hope my failed casino owner president and government aren't try",
+    "summary": "Oh boy what a bright wonderful day I hope my failed casino owner president and government aren't trying to bribe voters again by making another false...",
+    "date_event": null,
+    "date_published": "2026-09-10T13:24:18.000Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194
+    },
+    "topics": [],
+    "confidence": null,
+    "source_name": "Our Wars, Today (@ourwarstoday)",
+    "links": [
+      {
+        "url": "https://t.me/ourwarstoday/45484"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7503817131377569856",
+    "title": "—❗️🇾🇪/🇸🇦 BREAKING: Ansarallah forces have landed on Mayun Island (Perim Island), known as the ‘P",
+    "summary": "—❗️🇾🇪/🇸🇦 BREAKING: Ansarallah forces have landed on Mayun Island (Perim Island), known as the ‘Pearl of Bab Al-Mandab’",
+    "date_event": null,
+    "date_published": "2026-09-10T12:26:35.000Z",
+    "geo": {
+      "lat": 12.6552,
+      "lon": 43.4208,
+      "city": "Mayun Island",
+      "country": "Yemen"
+    },
+    "topics": [],
+    "confidence": null,
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36586"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7503817131381766563",
+    "title": "— 🇾🇪 Ansarallah chilling on the liberated Red Sea coast",
+    "summary": "— 🇾🇪 Ansarallah chilling on the liberated Red Sea coast",
+    "date_event": null,
+    "date_published": "2026-09-10T12:32:14.000Z",
+    "geo": {
+      "lat": 18.0735,
+      "lon": 39
+    },
+    "topics": [],
+    "confidence": null,
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36587"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7503817131381764779",
+    "title": "PSA: From now on, we will be referring to the Mecca Defense Treaty as the ‘Mecca Discussion Panel’ o",
+    "summary": "PSA: From now on, we will be referring to the Mecca Defense Treaty as the ‘Mecca Discussion Panel’ or the ‘Paper Pact’, whatever feels suitable.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:36:00.000Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194
+    },
+    "topics": [],
+    "confidence": null,
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36588"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7503817131364990345",
+    "title": "🇷🇺🇺🇦🇦🇿⚡️ — Two Azerbaijani citizens were killed and two others were injured in yesterday's dro",
+    "summary": "🇷🇺🇺🇦🇦🇿⚡️ — Two Azerbaijani citizens were killed and two others were injured in yesterday's drone attack on a ship off the coast of Odesa, accord...",
+    "date_event": null,
+    "date_published": "2026-09-10T12:20:13.000Z",
+    "geo": {
+      "lat": 46.4857,
+      "lon": 30.7326,
+      "city": "Odesa",
+      "country": "Ukraine"
+    },
+    "topics": [],
+    "confidence": null,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94298"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7503817131377573504",
+    "title": "🇮🇷🇺🇸⚡️ — Follow us on WhatsApp for more geopolitical news and trading signals",
+    "summary": "🇮🇷🇺🇸⚡️ — Follow us on WhatsApp for more geopolitical news and trading signals",
+    "date_event": null,
+    "date_published": "2026-09-10T12:20:46.000Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194
+    },
+    "topics": [],
+    "confidence": null,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94299"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7503817131377570837",
+    "title": "🇵🇰🇸🇦🇾🇪 ⚡️ — Pakistan says no discussions are currently underway regarding a military response",
+    "summary": "🇵🇰🇸🇦🇾🇪 ⚡️ — Pakistan says no discussions are currently underway regarding a military response to Houthi attacks against Saudi Arabia under the M...",
+    "date_event": null,
+    "date_published": "2026-09-10T13:01:42.000Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194
+    },
+    "topics": [],
+    "confidence": null,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94301"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535504415166464",
+    "title": "Houthis Advance Toward Bab al-Mandab, Capturing Key Port Cities",
+    "summary": "Houthi forces continue rapid military advance down the Red Sea coast, reportedly capturing the port city of Mocha and Zuqar Island. The advance positions the militia closer to the critical Bab al-Mandab chokepoint, potentially threatening global shipping routes.",
+    "date_event": "2026-09-10T00:00:00Z",
+    "date_published": "2026-09-10T13:57:46Z",
+    "geo": {
+      "lat": 12.6264,
+      "lon": 44.0028,
+      "country": "Yemen",
+      "region": "Red Sea",
+      "city": "Mocha"
+    },
+    "topics": [
+      "houthi",
+      "yemen",
+      "red-sea",
+      "bab-al-mandab",
+      "military",
+      "shipping-threats",
+      "middle-east"
+    ],
+    "confidence": 0.88,
+    "source_name": "ianbremmer (@ianbremmer)",
+    "links": [
+      {
+        "url": "https://x.com/ianbremmer/status/2098048289413230739",
+        "label": "Ian Bremmer Tweet"
+      },
+      {
+        "url": "https://x.com/Osint613/status/2097990504298246411",
+        "label": "Open Source Intelligence Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535297342377984",
+    "title": "Surging Tanker Rates Signal a Deepening Global Energy Crisis",
+    "summary": "Global tanker freight rates reached record levels as traders and shipping companies contend with the ongoing conflict in the Persian Gulf. Vessel owners face increasingly complex workarounds to navigate the geopolitical constraints affecting oil transportation.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:13:21Z",
+    "geo": {
+      "lat": 26.1207,
+      "lon": 55.2708,
+      "country": "United Arab Emirates",
+      "region": "Persian Gulf",
+      "city": "Strait of Hormuz"
+    },
+    "topics": [
+      "energy-crisis",
+      "shipping",
+      "tanker-rates",
+      "persian-gulf",
+      "oil-markets",
+      "geopolitics"
+    ],
+    "confidence": 0.92,
+    "source_name": "Gcaptain (@Gcaptain)",
+    "links": [
+      {
+        "url": "https://x.com/Gcaptain/status/2098022011205279982",
+        "label": "Tweet"
+      },
+      {
+        "url": "https://gcaptain.com/surging-tanker-rates-signal-a-deepening-global-energy-crisis/",
+        "label": "Full Article"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535297438846976",
+    "title": "Hormuz Shipping Traffic in Single Digits, Data Shows",
+    "summary": "Vessel transits through the Strait of Hormuz plummeted to record lows, falling to seven ships from twelve the previous day. Traffic levels remain significantly below historical averages, reflecting the severe impact of regional instability on global shipping.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:13:01Z",
+    "geo": {
+      "lat": 26.1207,
+      "lon": 55.2708,
+      "country": "United Arab Emirates",
+      "region": "Persian Gulf",
+      "city": "Strait of Hormuz"
+    },
+    "topics": [
+      "hormuz",
+      "shipping",
+      "strait-of-hormuz",
+      "persian-gulf",
+      "energy-security",
+      "maritime-disruption"
+    ],
+    "confidence": 0.94,
+    "source_name": "Gcaptain (@Gcaptain)",
+    "links": [
+      {
+        "url": "https://x.com/Gcaptain/status/2098021927537226139",
+        "label": "Tweet"
+      },
+      {
+        "url": "https://gcaptain.com/hormuz-shipping-traffic-in-single-digits-data-shows/",
+        "label": "Full Article"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535624355483648",
+    "title": "Syria's Daraa Province Faces Severe Water Crisis as Lakes Dry Up",
+    "summary": "Syria's Daraa province confronts an unprecedented collapse in water resources, with once-vital bodies of water like Lake al-Muzayrib completely dried up. The crisis devastates the agricultural sector and displaces fishermen and farmers whose families depend on irrigation for survival.",
+    "date_event": null,
+    "date_published": "2026-09-10T14:00:14Z",
+    "geo": {
+      "lat": 32.6375,
+      "lon": 36.0927,
+      "country": "Syria",
+      "region": "Daraa",
+      "city": "Daraa"
+    },
+    "topics": [
+      "water-crisis",
+      "syria",
+      "drought",
+      "agriculture",
+      "daraa",
+      "humanitarian-crisis",
+      "middle-east"
+    ],
+    "confidence": 0.91,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2098048910119891149",
+        "label": "Thread on X"
+      },
+      {
+        "url": "https://www.middleeasteye.net/news/syria-daraa-water-life-and-today-land-parched",
+        "label": "Full Article"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535988718845952",
+    "title": "Israeli airstrikes target Al-Nabatieh Al-Fawqa, southern Lebanon",
+    "summary": "Israeli occupation aircraft bombard the town of Al-Nabatieh Al-Fawqa, southern Lebanon.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:16:15Z",
+    "geo": {
+      "lat": 33.2232,
+      "lon": 35.2028
+    },
+    "topics": [
+      "middle-east",
+      "military",
+      "airstrike",
+      "lebanon",
+      "israel"
+    ],
+    "confidence": 0.8,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/238407",
+        "title": "Israeli airstrikes target Al-Nabatieh Al-Fawqa, southern Lebanon"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535988848869376",
+    "title": "Israeli airstrikes hit Al-Nusierat refugee camp, Gaza",
+    "summary": "Breaking | Israeli occupation aircraft bombard Al-Nusierat refugee camp, central Gaza Strip, injuring multiple Palestinians.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:20:16Z",
+    "geo": {
+      "lat": 31.9254,
+      "lon": 34.2821
+    },
+    "topics": [
+      "middle-east",
+      "military",
+      "airstrike",
+      "gaza",
+      "israel",
+      "palestinian-casualties"
+    ],
+    "confidence": 0.8,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/238408",
+        "title": "Israeli airstrikes hit Al-Nusierat refugee camp, Gaza"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535988974698496",
+    "title": "Family killed in bombing of Beit Lahia home, Gaza",
+    "summary": "Sisters Lana and Bana Moamen Ahmed were killed today alongside their parents when Israeli occupation forces bombed the Ahmed family home in Beit Lahia, northern Gaza.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:27:46Z",
+    "geo": {
+      "lat": 31.9254,
+      "lon": 34.2821
+    },
+    "topics": [
+      "middle-east",
+      "military",
+      "airstrike",
+      "gaza",
+      "israel",
+      "palestinian-casualties"
+    ],
+    "confidence": 0.8,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/238409",
+        "title": "Family killed in bombing of Beit Lahia home, Gaza"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535989083750400",
+    "title": "Ansarullah attempts landing operation on Mayun Island, Yemen",
+    "summary": "BREAKING: Ansarullah attempting landing operation on Mayun Island.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:12:25Z",
+    "geo": {
+      "lat": 13.5833,
+      "lon": 43.4333
+    },
+    "topics": [
+      "middle-east",
+      "military",
+      "yemen",
+      "ansarullah",
+      "strategic-operation"
+    ],
+    "confidence": 0.8,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66360",
+        "title": "Ansarullah attempts landing operation on Mayun Island, Yemen"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535989196996608",
+    "title": "Russian strikes injure at least 19 people in Kramatorsk, Donetsk",
+    "summary": "At least 19 people were injured in Russian morning strikes on Kramatorsk, Donetsk region, including an eight-month-old infant.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:33:00Z",
+    "geo": {
+      "lat": 48.7626,
+      "lon": 37.5952
+    },
+    "topics": [
+      "europe",
+      "military",
+      "ukraine",
+      "russia",
+      "airstrike",
+      "civilian-casualties"
+    ],
+    "confidence": 0.8,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/45958",
+        "title": "Russian strikes injure at least 19 people in Kramatorsk, Donetsk"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535264131846144",
+    "title": "Brent crude price surge past $100 per barrel",
+    "summary": "Brent crude oil prices exceed $100, reaching mid-$105 range, marking substantial increase from August lows and year-to-date gains.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:49:09Z",
+    "geo": {
+      "lat": 0,
+      "lon": 0
+    },
+    "topics": [
+      "oil-prices",
+      "commodities",
+      "energy-markets"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/95928"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535264224120832",
+    "title": "UK military expands reliance on SpaceX Starlink and Starshield",
+    "summary": "Britain invests nearly $40 million in SpaceX satellite services, becoming the first non-US nation to publicly acknowledge military use of Starshield for strategic communications.",
+    "date_event": null,
+    "date_published": "2026-09-10T13:05:22Z",
+    "geo": {
+      "lat": 51.5074,
+      "lon": -0.1278
+    },
+    "topics": [
+      "military-communications",
+      "satellite-technology",
+      "defense-spending",
+      "uk-military"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/95929"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535264312201216",
+    "title": "Putin to meet Modi at Innoprom exhibition September 11",
+    "summary": "Russian President Putin and Indian Prime Minister Modi scheduled for talks on September 11, with plans to tour Innoprom industrial exhibition.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:09:52Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173
+    },
+    "topics": [
+      "russia-india-relations",
+      "diplomacy",
+      "industrial-cooperation",
+      "geopolitics"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/193182"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535264400281600",
+    "title": "Houthi leader photographed in Al-Jarrahi after UAE-backed forces retreat",
+    "summary": "Yemen's Houthi leadership demonstrates presence in liberated territories following withdrawal of UAE-aligned military forces.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:10:25Z",
+    "geo": {
+      "lat": 14.6928,
+      "lon": 48.5164
+    },
+    "topics": [
+      "yemen-conflict",
+      "houthi-movement",
+      "military-operations",
+      "territorial-control"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/193183"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535264496750592",
+    "title": "Yemen mercenaries claim AI-generated audio hoax precipitated retreat from Al-Khawka",
+    "summary": "Fighters aligned with UAE-backed forces allege communication devices compromised by AI-synthesized audio impersonating military commander.",
+    "date_event": null,
+    "date_published": "2026-09-10T12:13:55Z",
+    "geo": {
+      "lat": 14.7522,
+      "lon": 48.3286
+    },
+    "topics": [
+      "yemen-conflict",
+      "military-deception",
+      "synthetic-media",
+      "military-communications",
+      "ai-technology"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/193184"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91535264584830976",
+    "title": "Ukrainian GUR deploys unmanned interceptor platforms protecting Kyiv airspace",
+    "summary": "Ukrainian special forces conducted advanced air defense operation using Katran drone carrier platforms and F-16 coordination.",
+    "date_event": null,
+    "date_published": "2026-09-10T13:35:01Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234
+    },
+    "topics": [
+      "ukraine-conflict",
+      "air-defense",
+      "drone-technology",
+      "military-operations",
+      "unmanned-systems"
+    ],
+    "confidence": null,
+    "source_name": "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)",
+    "links": [
+      {
+        "url": "https://t.me/DIUkraine/9434"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
