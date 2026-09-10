@@ -40,3 +40,8 @@ During 2026-09-05 batch 1, all three telegram-clashreport candidates were US dom
 
 
 - **twitter-minhdr18 (batch 7)**: All 3 candidates filtered out (off-scope: volcano disaster; insufficient context: 2× unattributed claims). Monitor for future content alignment with military systems focus. Source remains active but produced zero events this run.
+
+## 2026-09-10 08:45Z — ClashReport second consecutive batch of off-topic content
+
+Batch 1/9 (2026-09-10) confirms ClashReport content misalignment. All three candidates (95899–95901) are George W. Bush 9/11 anniversary quotes unrelated to documented source scope (breaking conflict, military, strikes, etc.). Combined with 2026-09-05 findings (Pentagon/DOJ posts), this indicates either systematic channel pivot or persistent data error. Recommend maintainer review manifest status; source may need marking as `inactive` or scope redefinition.
+
