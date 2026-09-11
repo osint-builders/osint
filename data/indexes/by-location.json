@@ -1,11 +1,11 @@
 [
   {
     "country": "Ukraine",
-    "count": 126
+    "count": 127
   },
   {
     "country": "United States",
-    "count": 87
+    "count": 92
   },
   {
     "country": "Iran",
@@ -13,7 +13,7 @@
   },
   {
     "country": "Russia",
-    "count": 50
+    "count": 51
   },
   {
     "country": "Palestine",
@@ -21,7 +21,7 @@
   },
   {
     "country": "Yemen",
-    "count": 38
+    "count": 41
   },
   {
     "country": "China",
@@ -29,19 +29,23 @@
   },
   {
     "country": "Germany",
-    "count": 28
+    "count": 29
+  },
+  {
+    "country": "Lebanon",
+    "count": 24
   },
   {
     "country": "Global",
     "count": 24
   },
   {
-    "country": "Lebanon",
-    "count": 23
-  },
-  {
     "country": "United Kingdom",
     "count": 18
+  },
+  {
+    "country": "Saudi Arabia",
+    "count": 14
   },
   {
     "country": "Israel",
@@ -58,10 +62,6 @@
   {
     "country": "Taiwan",
     "count": 11
-  },
-  {
-    "country": "Saudi Arabia",
-    "count": 9
   },
   {
     "country": "Nepal",
@@ -124,6 +124,10 @@
     "count": 3
   },
   {
+    "country": "Belgium",
+    "count": 3
+  },
+  {
     "country": "Algeria",
     "count": 3
   },
@@ -172,10 +176,6 @@
     "count": 2
   },
   {
-    "country": "Belgium",
-    "count": 2
-  },
-  {
     "country": "International",
     "count": 2
   },
@@ -189,6 +189,22 @@
   },
   {
     "country": "Norway",
+    "count": 2
+  },
+  {
+    "country": "Ireland",
+    "count": 2
+  },
+  {
+    "country": "Europe",
+    "count": 2
+  },
+  {
+    "country": "Moldova",
+    "count": 2
+  },
+  {
+    "country": "India",
     "count": 2
   },
   {
@@ -280,19 +296,11 @@
     "count": 1
   },
   {
-    "country": "Ireland",
-    "count": 1
-  },
-  {
     "country": "Bosnia and Herzegovina",
     "count": 1
   },
   {
     "country": "Venezuela",
-    "count": 1
-  },
-  {
-    "country": "Europe",
     "count": 1
   },
   {
@@ -344,10 +352,6 @@
     "count": 1
   },
   {
-    "country": "Moldova",
-    "count": 1
-  },
-  {
     "country": "Regional",
     "count": 1
   },
@@ -360,7 +364,11 @@
     "count": 1
   },
   {
-    "country": "India",
+    "country": "Tanzania",
+    "count": 1
+  },
+  {
+    "country": "Somalia",
     "count": 1
   }
 ]

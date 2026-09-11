@@ -2,23 +2,23 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 1308,
+    "count": 1327,
     "earliest_date": "2026-08-25T19:59:00Z",
-    "latest_date": "2026-09-11T14:05:11.000Z"
+    "latest_date": "2026-09-11T18:59:53Z"
   },
   {
     "source_id": "telegram-qudsnen",
     "source_name": "Quds News Network (@QudsNen)",
-    "count": 40,
+    "count": 43,
     "earliest_date": "2026-08-25T20:06:14+00:00",
-    "latest_date": "2026-09-10T17:40:48Z"
+    "latest_date": "2026-09-11T17:59:24Z"
   },
   {
     "source_id": "telegram-rnintel",
     "source_name": "Rerum Novarum Intel (@rnintel)",
-    "count": 25,
+    "count": 26,
     "earliest_date": "2026-08-25T20:28:02+00:00",
-    "latest_date": "2026-09-10T17:44:33Z"
+    "latest_date": "2026-09-11T18:37:17Z"
   },
   {
     "source_id": "telegram-intelslava",
@@ -44,9 +44,9 @@
   {
     "source_id": "twitter-clash-report",
     "source_name": "Clash Report (@ClashReport)",
-    "count": 21,
+    "count": 22,
     "earliest_date": "2026-08-26T20:36:37Z",
-    "latest_date": "2026-09-10T21:03:23.000Z"
+    "latest_date": "2026-09-11T18:32:06Z"
   },
   {
     "source_id": "twitter-cnn",
@@ -58,9 +58,9 @@
   {
     "source_id": "twitter-cepa",
     "source_name": "cepa (@cepa)",
-    "count": 3,
+    "count": 4,
     "earliest_date": "2026-08-27T14:38:10Z",
-    "latest_date": "2026-09-05T19:54:31Z"
+    "latest_date": "2026-09-10T00:00:00Z"
   },
   {
     "source_id": "twitter-csis-korea-chair",
@@ -149,9 +149,9 @@
   {
     "source_id": "twitter-foxnews",
     "source_name": "Fox News (@FoxNews)",
-    "count": 6,
+    "count": 7,
     "earliest_date": "2026-08-29T16:17:28Z",
-    "latest_date": "2026-09-07T14:07:05Z"
+    "latest_date": "2026-09-11T18:16:09Z"
   },
   {
     "source_id": "twitter-inside-nk",
@@ -163,9 +163,9 @@
   {
     "source_id": "telegram-united24media",
     "source_name": "UNITED24 Media (@United24media)",
-    "count": 25,
+    "count": 27,
     "earliest_date": "2026-08-29T16:19:01Z",
-    "latest_date": "2026-09-10T18:18:01Z"
+    "latest_date": "2026-09-11T18:16:01Z"
   },
   {
     "source_id": "twitter-xinhua-news",
@@ -275,9 +275,9 @@
   {
     "source_id": "twitter-tanker-trackers",
     "source_name": "TankerTrackers (@TankerTrackers)",
-    "count": 3,
+    "count": 4,
     "earliest_date": "2026-09-05T16:31:46.000Z",
-    "latest_date": "2026-09-08T18:21:26Z"
+    "latest_date": "2026-09-11T18:09:22.000Z"
   },
   {
     "source_id": "telegram-generalstaffzsu",
@@ -324,16 +324,16 @@
   {
     "source_id": "twitter-thestudyofwar",
     "source_name": "Institute for the Study of War",
-    "count": 6,
+    "count": 7,
     "earliest_date": "2026-09-07T02:30:15Z",
-    "latest_date": "2026-09-11T14:05:10Z"
+    "latest_date": "2026-09-11T18:26:08.000Z"
   },
   {
     "source_id": "twitter-ian-bremmer",
     "source_name": "ianbremmer (@ianbremmer)",
-    "count": 2,
+    "count": 4,
     "earliest_date": "2026-09-07T14:23:56Z",
-    "latest_date": "2026-09-10T17:45:34Z"
+    "latest_date": "2026-09-11T18:50:04Z"
   },
   {
     "source_id": "telegram-diukraine",
@@ -352,16 +352,16 @@
   {
     "source_id": "twitter-chinese-emb-in-us",
     "source_name": "ChineseEmbInUs (@ChineseEmbInUs)",
-    "count": 1,
+    "count": 2,
     "earliest_date": "2026-09-08T13:33:37.000Z",
-    "latest_date": "2026-09-08T13:33:37.000Z"
+    "latest_date": "2026-09-11T18:50:50Z"
   },
   {
     "source_id": "twitter-thewarzonewire",
     "source_name": "Thewarzonewire (@Thewarzonewire)",
-    "count": 6,
+    "count": 7,
     "earliest_date": "2026-09-08T18:37:47Z",
-    "latest_date": "2026-09-11T13:36:56Z"
+    "latest_date": "2026-09-11T17:14:56.000Z"
   },
   {
     "source_id": "twitter-tradewindsnews",
@@ -411,5 +411,12 @@
     "count": 1,
     "earliest_date": "2026-09-10T22:00:39.000Z",
     "latest_date": "2026-09-10T22:00:39.000Z"
+  },
+  {
+    "source_id": "twitter-gcaptain",
+    "source_name": "Gcaptain (@Gcaptain)",
+    "count": 2,
+    "earliest_date": "2026-09-11T17:10:13Z",
+    "latest_date": "2026-09-11T17:31:29Z"
   }
 ]
