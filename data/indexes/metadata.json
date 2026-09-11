@@ -47098,7 +47098,7 @@
     "link_preview_image": null
   },
   {
-    "id": "evt_evt_91815391931707392",
+    "id": "evt_91815391931707392",
     "title": "Xi Jinping and Indian PM Modi Arrange Bilateral Meeting",
     "summary": "President Xi Jinping and Indian Prime Minister Modi schedule bilateral diplomatic meeting, signaling China-India engagement",
     "date_event": null,
@@ -47123,7 +47123,7 @@
     "link_preview_image": "https://pbs.twimg.com/media/HR63mc6aoAAoTMX.jpg"
   },
   {
-    "id": "evt_evt_91815397413662720",
+    "id": "evt_91815397413662720",
     "title": "US Military Campaign Against Iran Draws Historical Parallels",
     "summary": "Six months of US military conflict with Iran compared to prolonged wars in Afghanistan and Iraq despite stated commitment to end foreign conflicts",
     "date_event": null,
@@ -47149,7 +47149,7 @@
     "link_preview_image": "https://pbs.twimg.com/media/HR60qqQaYAADj6K.jpg"
   },
   {
-    "id": "evt_evt_91815374890250240",
+    "id": "evt_91815374890250240",
     "title": "Drone Strike Reported on Russian Ammonia Plant in Berezniki",
     "summary": "Ukrainian drone reportedly strikes critical ammonia synthesis equipment at Uralhim's Azot plant in Berezniki, Perm Krai, Russia",
     "date_event": null,
@@ -47176,7 +47176,7 @@
     "link_preview_image": "https://pbs.twimg.com/media/HR7BvW5WkAM2ul1.jpg"
   },
   {
-    "id": "evt_evt_91815380590309376",
+    "id": "evt_91815380590309376",
     "title": "Chemical Facility Fire and Collapse in Volgograd, Russia",
     "summary": "Volgogradpromproekt facility experiences building collapse and fire, affecting Russian defense-industrial chemical production",
     "date_event": null,
@@ -47202,7 +47202,7 @@
     "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
   },
   {
-    "id": "evt_evt_91815386374254592",
+    "id": "evt_91815386374254592",
     "title": "Polish Foreign Minister Visits Kyiv",
     "summary": "Polish Foreign Minister Radoslaw Sikorski arrives in Kyiv, signaling diplomatic engagement with Ukraine",
     "date_event": null,
@@ -48395,6 +48395,1140 @@
       {
         "url": "https://t.me/rnintel/66406",
         "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897200442920960",
+    "title": "2026 China International Fair for Trade in Services Showcases Cultural and Creative Products",
+    "summary": "The 2026 China International Fair for Trade in Services (CIFTIS) in Beijing features a wide range of cultural and creative products, including museum-inspired merchandise and trendy lifestyle items.",
+    "date_event": null,
+    "date_published": "2026-09-11T13:45:40Z",
+    "geo": {
+      "lat": 39.9042,
+      "lon": 116.4074
+    },
+    "topics": [
+      "china",
+      "trade",
+      "cultural-products",
+      "services-fair",
+      "beijing"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2098407631765594247",
+        "title": "Xinhua News Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HR8KnSjaUAAuOEY.jpg"
+  },
+  {
+    "id": "evt_91897243786858496",
+    "title": "Comprehensive Survey Discovers Over 500 Ancient Cliff Paintings in Northwest China's Helan Mountains",
+    "summary": "A new round of comprehensive surveys has discovered more than 500 ancient cliff paintings in the Helan Mountains of northwest China, adding to the mountains' collection of over 20,000 such artworks.",
+    "date_event": null,
+    "date_published": "2026-09-11T13:30:20Z",
+    "geo": {
+      "lat": 38.8,
+      "lon": 106.3
+    },
+    "topics": [
+      "china",
+      "archaeology",
+      "cliff-paintings",
+      "cultural-heritage",
+      "helan-mountains"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2098403771957277028",
+        "title": "Xinhua News Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/ext_tw_video_thumb/2098403653560553472/pu/img/eFWQI32TKCy8NdIm.jpg"
+  },
+  {
+    "id": "evt_91897243912687616",
+    "title": "CIFTIS 2026: Exhibitors and Speakers Focus on Opportunities, Partnerships, and Shared Prosperity",
+    "summary": "Exhibitors and guest speakers at the 2026 CIFTIS major services trade fair in Beijing emphasize opportunities, partnerships, and shared prosperity as key themes.",
+    "date_event": null,
+    "date_published": "2026-09-11T13:25:15Z",
+    "geo": {
+      "lat": 39.9042,
+      "lon": 116.4074
+    },
+    "topics": [
+      "china",
+      "trade",
+      "services-fair",
+      "partnerships",
+      "economic-cooperation"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2098402494359781620",
+        "title": "Xinhua News Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/ext_tw_video_thumb/2098402303736983552/pu/img/khKoFF-5lsd0qAvB.jpg"
+  },
+  {
+    "id": "evt_91897337378557952",
+    "title": "ISW Interactive StoryMap: Real-Time Ukraine Territorial Control and Frontline Movements",
+    "summary": "Interactive ArcGIS StoryMap providing real-time visualization of territorial control, frontline movements, advances, retreats, and contested zones in the Ukraine conflict.",
+    "date_event": null,
+    "date_published": "2026-09-11T12:27:02Z",
+    "geo": {
+      "lat": 48.3794,
+      "lon": 31.1656
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "conflict",
+      "territorial-control",
+      "military",
+      "frontline",
+      "geospatial-intelligence"
+    ],
+    "confidence": null,
+    "source_name": "ISW Ukraine Interactive Territorial Control Map",
+    "links": [
+      {
+        "url": "https://storymaps.arcgis.com/stories/36a7f6a6f5a9448496de641cf64bd375",
+        "title": "ISW Ukraine Interactive Map"
+      }
+    ],
+    "link_preview_image": "https://www.arcgis.com/sharing/rest/content/items/36a7f6a6f5a9448496de641cf64bd375/resources/airL4YNhyTQQNLL2XfarW.png?w=400"
+  },
+  {
+    "id": "evt_91897208433061888",
+    "title": "Houthi Offensive Advances Iranian Strategic Objectives in Red Sea",
+    "summary": "The Institute for the Study of War reports that Houthi forces captured Mokha Port and gained positions near the Bab al Mandeb Strait, which advances Iranian strategic objectives in the region. The Houthis and Iran maintain shared interests in Red Sea control, though the Houthis operate with strategic independence.",
+    "date_event": null,
+    "date_published": "2026-09-11T14:05:10Z",
+    "geo": {
+      "lat": 13.5,
+      "lon": 43.3
+    },
+    "topics": [
+      "yemen",
+      "houthis",
+      "red-sea",
+      "bab-al-mandeb",
+      "iran",
+      "maritime",
+      "regional-conflict"
+    ],
+    "confidence": 0.92,
+    "source_name": "Institute for the Study of War (@TheStudyofWar)",
+    "links": [
+      {
+        "url": "https://x.com/TheStudyofWar/status/2098412537599365330",
+        "title": "Institute for the Study of War - Houthi Red Sea Operations"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897208533725184",
+    "title": "US Navy USS Mustin Deploys Enhanced Point Defense Weapon System",
+    "summary": "Recently released pictures reveal that the US Navy's Arleigh Burke-class destroyer USS Mustin features an upgraded point defense system configuration. The vessel carries a piggy-backed .50 caliber machine gun mounted on top of its 30mm chain gun, part of the Mk 38 Mod 4 Gun Weapon System upgrade.",
+    "date_event": null,
+    "date_published": "2026-09-11T13:36:56Z",
+    "geo": {
+      "lat": 36.95,
+      "lon": -76.34
+    },
+    "topics": [
+      "united-states",
+      "navy",
+      "military-technology",
+      "destroyer",
+      "defense",
+      "maritime-security"
+    ],
+    "confidence": 0.85,
+    "source_name": "Thewarzonewire (@Thewarzonewire)",
+    "links": [
+      {
+        "url": "https://x.com/Thewarzonewire/status/2098405431479591060",
+        "title": "Thewarzonewire - USS Mustin CIWS Upgrade"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897270772981760",
+    "title": "9/11 25th Anniversary Ceremony at World Trade Center Site",
+    "summary": "A solemn ceremony marks 25 years since the September 11 terrorist attacks at the World Trade Center in New York. The event honors the nearly 3,000 victims who lost their lives in the 2001 attacks.",
+    "date_event": "2026-09-11T12:00:00Z",
+    "date_published": "2026-09-11T12:36:03.000Z",
+    "geo": {
+      "lat": 40.7128,
+      "lon": -74.006,
+      "city": "New York",
+      "region": "New York",
+      "country": "United States"
+    },
+    "topics": [
+      "memorial",
+      "september-11",
+      "terrorism",
+      "anniversary",
+      "new-york"
+    ],
+    "confidence": 0.85,
+    "source_name": "BBC Breaking News (@BBCBreaking)",
+    "links": [
+      {
+        "url": "https://x.com/BBCBreaking/status/2098390110370775356",
+        "label": "BBC Breaking News"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897374259044352",
+    "title": "Houthis Use AI to Develop Missile Guidance Software, Anthropic Reports",
+    "summary": "Anthropic reports that Houthi operators in northern Yemen utilized Claude Code AI to develop missile guidance software, simulate trajectories, and analyze failed rocket tests. This represents a significant integration of advanced AI technology into militant capabilities.",
+    "date_event": "2026-09-11T13:49:00Z",
+    "date_published": "2026-09-11T13:49:01.000Z",
+    "geo": {
+      "lat": 15.5007,
+      "lon": 48.5164,
+      "city": "Sana'a",
+      "region": "Yemen",
+      "country": "Yemen"
+    },
+    "topics": [
+      "houthi",
+      "missile",
+      "artificial-intelligence",
+      "yemen",
+      "military-technology",
+      "armed-group"
+    ],
+    "confidence": 0.8,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2098408475734708294",
+        "label": "Clash Report on Anthropic Finding"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897186018689024",
+    "title": "General Dan Caine Honors 9/11 First Responders and Passengers on 25th Anniversary",
+    "summary": "On the 25th anniversary of the September 11 attacks, General Dan Caine paid tribute to the courage and sacrifice of first responders and passengers who responded heroically on 9/11.",
+    "date_event": null,
+    "date_published": "2026-09-11T14:05:11.000Z",
+    "geo": {
+      "lat": 40.7128,
+      "lon": -74.006,
+      "description": "New York City"
+    },
+    "topics": [
+      "9-11-anniversary",
+      "memorial",
+      "first-responders",
+      "september-11"
+    ],
+    "confidence": 0.85,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "title": "Fox News Tweet",
+        "url": "https://x.com/FoxNews/status/2098412542758408571",
+        "type": "social"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897224149106688",
+    "title": "NYC Mayor Zohran Mamdani and Former Mayor Rudy Giuliani Commemorate 25th Anniversary of 9/11",
+    "summary": "New York City Mayor Zohran Mamdani and former Mayor Rudy Giuliani, who led the city during the 9/11 attacks, participated together in the 25th anniversary remembrance ceremony.",
+    "date_event": null,
+    "date_published": "2026-09-11T13:49:11.000Z",
+    "geo": {
+      "lat": 40.7128,
+      "lon": -74.006,
+      "description": "New York City"
+    },
+    "topics": [
+      "9-11-anniversary",
+      "memorial",
+      "new-york-city",
+      "civic-ceremony"
+    ],
+    "confidence": 0.82,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "title": "Fox News Tweet with Photo",
+        "url": "https://x.com/FoxNews/status/2098408515253534800",
+        "type": "social"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897313269678080",
+    "title": "Ian Bremmer Analysis: India's Strategic Position at BRICS Summit in New Delhi",
+    "summary": "Ian Bremmer, president of Eurasia Group, provides analysis on India's unique geopolitical positioning at the BRICS summit in New Delhi relative to the USA, G7, and China.",
+    "date_event": null,
+    "date_published": "2026-09-11T13:43:30.000Z",
+    "geo": {
+      "lat": 28.6139,
+      "lon": 77.209,
+      "description": "New Delhi, India"
+    },
+    "topics": [
+      "brics-summit",
+      "india",
+      "geopolitics",
+      "diplomatic-relations"
+    ],
+    "confidence": 0.78,
+    "source_name": "ianbremmer (@ianbremmer)",
+    "links": [
+      {
+        "title": "Ian Bremmer Tweet",
+        "url": "https://x.com/ianbremmer/status/2098407085897593138",
+        "type": "social"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897400200839168",
+    "title": "Ukrainian Forces Strike Russian Facilities Across Multiple Regions",
+    "summary": "Ukrainian forces conducted coordinated long-range strikes on Russian military and infrastructure targets across multiple regions on September 11, 2026.",
+    "date_event": null,
+    "date_published": "2026-09-11T13:28:23Z",
+    "geo": {
+      "lat": 51.2,
+      "lon": 46.4
+    },
+    "topics": [
+      "ukraine-russia-conflict",
+      "military-strikes",
+      "infrastructure-damage",
+      "war"
+    ],
+    "confidence": 0.85,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2098403283903639918",
+        "title": "War Translated",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": ""
+  },
+  {
+    "id": "evt_91897400351834112",
+    "title": "Ukrainian Forces Destroy Multiple Russian Military Systems",
+    "summary": "Ukrainian General Staff reports destruction of Pantsir-S1 air defense systems, radar station, drone facility, and training center in Russian territory.",
+    "date_event": null,
+    "date_published": "2026-09-11T12:47:40Z",
+    "geo": {
+      "lat": 47.2,
+      "lon": 39.7
+    },
+    "topics": [
+      "ukraine-russia-conflict",
+      "military-strikes",
+      "air-defense",
+      "infrastructure-damage",
+      "war"
+    ],
+    "confidence": 0.88,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2098393035360874745",
+        "title": "War Translated",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": ""
+  },
+  {
+    "id": "evt_91897400465080320",
+    "title": "Ukrainian Strike Destroys Major Russian Logistics Facility",
+    "summary": "Large Ozon warehouse covering 100,000 square meters near Saratov destroyed in strike, marking the seventh warehouse damaged since August 22.",
+    "date_event": null,
+    "date_published": "2026-09-11T12:45:20Z",
+    "geo": {
+      "lat": 51.5,
+      "lon": 46.0
+    },
+    "topics": [
+      "ukraine-russia-conflict",
+      "logistics",
+      "infrastructure-damage",
+      "supply-chain",
+      "war"
+    ],
+    "confidence": 0.82,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2098392449752203475",
+        "title": "War Translated",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": ""
+  },
+  {
+    "id": "evt_91897375928389632",
+    "title": "Myanmar resistance drone attacks target Junta airbase near Mandalay",
+    "summary": "Myanmar resistance forces launched a suicide-drone attack on Tada-U Airbase near Mandalay. While the junta claimed no damage or casualties, video evidence contradicts the official statement, confirming damage to the military installation.",
+    "date_event": null,
+    "date_published": "2026-09-11T12:44:33Z",
+    "geo": {
+      "lat": 21.9305,
+      "lon": 95.37,
+      "country": "Myanmar",
+      "city": "Mandalay"
+    },
+    "topics": [
+      "myanmar",
+      "resistance",
+      "military",
+      "drone",
+      "airbase"
+    ],
+    "confidence": 0.85,
+    "source_name": "Minhdr18 OSINT (@Minhdr18)",
+    "links": [
+      {
+        "url": "https://x.com/Minhdr18/status/2098389922193477636",
+        "label": "Minhdr18 OSINT tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897375831920640",
+    "title": "UAE-directed campaign used Claude to target Muslim Brotherhood and Sudan",
+    "summary": "Anthropic detected and disrupted a UAE-directed influence operation using Claude AI to target the Muslim Brotherhood and shape discourse around the war in Sudan. The campaign deployed approximately 300 inauthentic social media accounts and created a front NGO to conduct coordinated transatlantic operations.",
+    "date_event": null,
+    "date_published": "2026-09-11T14:03:12Z",
+    "geo": {
+      "lat": 24.4539,
+      "lon": 54.3773,
+      "country": "United Arab Emirates",
+      "city": "Abu Dhabi"
+    },
+    "topics": [
+      "disinformation",
+      "ai-influence",
+      "uae",
+      "sudan",
+      "muslim-brotherhood"
+    ],
+    "confidence": 0.92,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://www.middleeasteye.net/live-blog/live-blog-update/uae-directed-campaign-used-claude-target-muslim-brotherhood-and-sudan",
+        "label": "Middle East Eye coverage"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897376020664320",
+    "title": "Sweden shifts diplomatic stance toward Beijing amid geopolitical tensions",
+    "summary": "Sweden, once a vocal critic of Beijing's policies, has moderated its public criticism and changed its diplomatic approach toward China. The shift reflects broader geopolitical realignments in Europe's relationship with Beijing.",
+    "date_event": null,
+    "date_published": "2026-09-11T12:15:47Z",
+    "geo": {
+      "lat": 60.1282,
+      "lon": 18.6435,
+      "country": "Sweden",
+      "city": "Stockholm"
+    },
+    "topics": [
+      "sweden",
+      "china",
+      "diplomacy",
+      "europe",
+      "geopolitics"
+    ],
+    "confidence": 0.78,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2098385010998874188",
+        "label": "SCMP News"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897612994621440",
+    "title": "Ukraine will continue to fight for as long as it takes – Head of Zelenskyy's O",
+    "summary": "Ukraine will continue to fight for as long as it takes – Head of Zelenskyy's Office.@Intelslava",
+    "date_event": null,
+    "date_published": "2026-09-11T12:07:40+00:00",
+    "geo": {
+      "country": "Ukraine",
+      "lat": 49.4432,
+      "lon": 31.9896
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "strike",
+      "missile",
+      "attack",
+      "ukraine-russia-war"
+    ],
+    "confidence": 0.65,
+    "source_name": "Intel Slava Z",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94368",
+        "label": "Intel Slava Z Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897613103673344",
+    "title": "Overnight strikes sparked warehouse fires in Kyiv and the Bucha district of Ky",
+    "summary": "Overnight strikes sparked warehouse fires in Kyiv and the Bucha district of Kyiv region.Warehouse facilities burned in the Bucha area, while a separate single-story warehouse caught fire in Kyiv’s Ob",
+    "date_event": null,
+    "date_published": "2026-09-11T12:08:19+00:00",
+    "geo": {
+      "country": "Ukraine",
+      "lat": 49.4432,
+      "lon": 31.9896
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "strike",
+      "missile",
+      "attack",
+      "ukraine-russia-war"
+    ],
+    "confidence": 0.65,
+    "source_name": "Intel Slava Z",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94369",
+        "label": "Intel Slava Z Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897613208530944",
+    "title": "Russian strikes reportedly targeted several gas stations in Kyiv, raising fear",
+    "summary": "Russian strikes reportedly targeted several gas stations in Kyiv, raising fears of an attempt to disrupt the capital’s fuel supply and transportation network.Ukrainian authorities said three gas stat",
+    "date_event": null,
+    "date_published": "2026-09-11T12:13:10+00:00",
+    "geo": {
+      "country": "Ukraine",
+      "lat": 49.4432,
+      "lon": 31.9896
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "strike",
+      "missile",
+      "attack",
+      "ukraine-russia-war"
+    ],
+    "confidence": 0.65,
+    "source_name": "Intel Slava Z",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94374",
+        "label": "Intel Slava Z Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897613296611328",
+    "title": "/ NEW: Footage of Ansarallah forces encountering abandoned Saudi vehicles on t",
+    "summary": "/ NEW: Footage of Ansarallah forces encountering abandoned Saudi vehicles on the outskirts of Dhubab@Middle_East_Spectator",
+    "date_event": null,
+    "date_published": "2026-09-11T12:08:43+00:00",
+    "geo": {
+      "country": "Yemen",
+      "lat": 15.3694,
+      "lon": 44.2044
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "missile",
+      "yemen",
+      "saudi-arabia",
+      "middle-east"
+    ],
+    "confidence": 0.65,
+    "source_name": "Middle East Spectator",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36635",
+        "label": "Middle East Spectator Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897613367914496",
+    "title": "// NEW: The gatherings of Saudi-backed PLC forces, which were prevented by pro-",
+    "summary": "// NEW: The gatherings of Saudi-backed PLC forces, which were prevented by pro-Emirati factions from entering Aden, were targeted with ballistic missiles by Ansarallah@Middle_East_Spectator",
+    "date_event": null,
+    "date_published": "2026-09-11T12:15:36+00:00",
+    "geo": {
+      "country": "Yemen",
+      "lat": 15.3694,
+      "lon": 44.2044
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "missile",
+      "yemen",
+      "saudi-arabia",
+      "middle-east"
+    ],
+    "confidence": 0.65,
+    "source_name": "Middle East Spectator",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36637",
+        "label": "Middle East Spectator Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897613460189184",
+    "title": "// NEW: The gatherings of Saudi-backed PLC forces, which were prevented by pro-",
+    "summary": "// NEW: The gatherings of Saudi-backed PLC forces, which were prevented by pro-Emirati factions from entering Aden, were targeted with ballistic missiles by Ansarallah @Middle_East_Spectator",
+    "date_event": null,
+    "date_published": "2026-09-11T12:16:20+00:00",
+    "geo": {
+      "country": "Yemen",
+      "lat": 15.3694,
+      "lon": 44.2044
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "missile",
+      "yemen",
+      "saudi-arabia",
+      "middle-east"
+    ],
+    "confidence": 0.65,
+    "source_name": "Middle East Spectator",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36638",
+        "label": "Middle East Spectator Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897613569241088",
+    "title": "Before and after | Al-Mansouri School, which was hit by an Israeli airstrike two",
+    "summary": "Before and after | Al-Mansouri School, which was hit by an Israeli airstrike two days ago, destroying its largest building in the town of Al-Mansouri in southern Lebanon.",
+    "date_event": null,
+    "date_published": "2026-09-11T12:09:33+00:00",
+    "geo": {
+      "country": "Lebanon",
+      "lat": 33.8547,
+      "lon": 35.8623
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "airstrike",
+      "palestine",
+      "israel"
+    ],
+    "confidence": 0.65,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/238511",
+        "label": "Quds News Network Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897613669904384",
+    "title": "Israeli artillery shelling targets the Ali al-Taher Ridge, southern Lebanon.",
+    "summary": "Israeli artillery shelling targets the Ali al-Taher Ridge, southern Lebanon.",
+    "date_event": null,
+    "date_published": "2026-09-11T12:15:01+00:00",
+    "geo": {
+      "country": "Lebanon",
+      "lat": 33.8547,
+      "lon": 35.8623
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "airstrike",
+      "palestine",
+      "israel"
+    ],
+    "confidence": 0.65,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/238512",
+        "label": "Quds News Network Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897613753790464",
+    "title": "Haaretz rejected war criminal Netanyahu’s demands to remove a report revealing t",
+    "summary": "Haaretz rejected war criminal Netanyahu’s demands to remove a report revealing that UAE President Mohammed bin Zayed warned him 10 days before October 7, 2023, that Hamas was planning a major operatio",
+    "date_event": null,
+    "date_published": "2026-09-11T12:25:29+00:00",
+    "geo": {
+      "country": "Lebanon",
+      "lat": 33.8547,
+      "lon": 35.8623
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "airstrike",
+      "palestine",
+      "israel"
+    ],
+    "confidence": 0.65,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/238513",
+        "label": "Quds News Network Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897596141899776",
+    "title": "## Event Details  Bessent on Iran:  They’re just a bunch of losers, like sitting",
+    "summary": "## Event Details  Bessent on Iran:  They’re just a bunch of losers, like sitting around saying, \"Yeah, we’re going to do this. We’re going to do that....",
+    "date_event": null,
+    "date_published": "2026-09-11T12:43:34+00:00",
+    "geo": {
+      "lat": 54.526,
+      "lon": 15.2551,
+      "city": "Europe",
+      "country": "Multiple"
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "telegram-aggregator"
+    ],
+    "confidence": 0.75,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/96062",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897596225785856",
+    "title": "## Event Details  Bessent on Iran:  What we’re seeing with Iran now constitutes a cornere",
+    "summary": "## Event Details  Bessent on Iran:  What we’re seeing with Iran now constitutes a cornered and wounded animal.  It’s the last gasp of the dying regime.  ### So...",
+    "date_event": null,
+    "date_published": "2026-09-11T12:45:00+00:00",
+    "geo": {
+      "lat": 54.526,
+      "lon": 15.2551,
+      "city": "Europe",
+      "country": "Multiple"
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "telegram-aggregator"
+    ],
+    "confidence": 0.75,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/96063",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897596318060544",
+    "title": "## Event Details  Putin:  All the time we formed told that competition constitutes a sacred",
+    "summary": "## Event Details  Putin:  All the time we formed told that competition constitutes a sacred cow, and you cannot touch it.   But unfortunately, your Western compe...",
+    "date_event": null,
+    "date_published": "2026-09-11T12:45:56+00:00",
+    "geo": {
+      "lat": 54.526,
+      "lon": 15.2551,
+      "city": "Europe",
+      "country": "Multiple"
+    },
+    "topics": [
+      "conflict",
+      "military",
+      "telegram-aggregator"
+    ],
+    "confidence": 0.75,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/96064",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897596406140928",
+    "title": "## Event Details  🇮🇳🇷🇺 Vladimir Putin and Indian Prime Minister Modi visited INN",
+    "summary": "## Event Details  🇮🇳🇷🇺 Vladimir Putin and Indian Prime Minister Modi visited INNOPROM exhibition in New Delhi  🔴@DDGeopolitics  ### Source Information...",
+    "date_event": null,
+    "date_published": "2026-09-11T12:16:39+00:00",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "city": "Global",
+      "country": "Global"
+    },
+    "topics": [
+      "geopolitics",
+      "international-relations",
+      "multipolar"
+    ],
+    "confidence": 0.75,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/193296",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897596485832704",
+    "title": "## Event Details  🇾🇪🇾🇪⚡️The Bab-el-Mandeb Strait constitutes under the control of the Yem",
+    "summary": "## Event Details  🇾🇪🇾🇪⚡️The Bab-el-Mandeb Strait constitutes under the control of the Yemeni armed forces.  🚩 ResistanceTrench | Boost  ### Source Information...",
+    "date_event": null,
+    "date_published": "2026-09-11T12:19:57+00:00",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "city": "Global",
+      "country": "Global"
+    },
+    "topics": [
+      "geopolitics",
+      "international-relations",
+      "multipolar"
+    ],
+    "confidence": 0.75,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/193298",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897596561330176",
+    "title": "## Event Details  🇾🇪🇾🇪 ANSARALLAH LIBERATED YEMEN’S ENTIRE RED SEA COAST IN JUST",
+    "summary": "## Event Details  🇾🇪🇾🇪 ANSARALLAH LIBERATED YEMEN’S ENTIRE RED SEA COAST IN JUST 18 HOURS!  ### Source Information This report originates from DD Geop...",
+    "date_event": null,
+    "date_published": "2026-09-11T12:46:05+00:00",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "city": "Global",
+      "country": "Global"
+    },
+    "topics": [
+      "geopolitics",
+      "international-relations",
+      "multipolar"
+    ],
+    "confidence": 0.75,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/193299",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897596645216256",
+    "title": "[TRANSLATED MANUALLY: Ukrainian] 25-ті роковини трагедії 11 вересня — вшановуємо",
+    "summary": "[TRANSLATED MANUALLY: Ukrainian] 25-ті роковини трагедії 11 вересня — вшановуємо жертв тероризму в Америці   Сьогодні виповнюється 25 років від одного...",
+    "date_event": null,
+    "date_published": "2026-09-11T12:37:01+00:00",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "city": "Kyiv",
+      "country": "Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "intelligence",
+      "military",
+      "government"
+    ],
+    "confidence": 0.75,
+    "source_name": "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)",
+    "links": [
+      {
+        "url": "https://t.me/DIUkraine/9453",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91897596729102336",
+    "title": "[TRANSLATED MANUALLY: Ukrainian] Україна скористається шансом остаточно порвати",
+    "summary": "[TRANSLATED MANUALLY: Ukrainian] Україна скористається шансом остаточно порвати з імперією, — Олег Іващенко у книзі “Командири перемоги”  10 вересня 2...",
+    "date_event": null,
+    "date_published": "2026-09-11T14:02:01+00:00",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "city": "Kyiv",
+      "country": "Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "intelligence",
+      "military",
+      "government"
+    ],
+    "confidence": 0.75,
+    "source_name": "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)",
+    "links": [
+      {
+        "url": "https://t.me/DIUkraine/9454",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_91898040050270208",
+    "title": "Man Shot Three Times in Seattle Teen Takeover Robbery",
+    "summary": "A 21-year-old man encountered Black teenagers during a robbery attempt in Seattle. After enduring three gunshot wounds while resisting, he survived emergency surgery. His friend died in the incident.",
+    "date_event": null,
+    "date_published": "2026-09-11T07:01:27+00:00",
+    "geo": {
+      "lat": 47.6062,
+      "lon": -122.3321,
+      "city": "Seattle",
+      "region": "Washington",
+      "country": "United States"
+    },
+    "topics": [
+      "shooting",
+      "robbery",
+      "crime",
+      "seattle",
+      "violence"
+    ],
+    "confidence": 0.6,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/s/rnintel/66417",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": "https://cdn1.telesco.pe/file/sd8sxBwNrWeUI2TEQxVo5YXBRJzxJzXD357mgdRejMomqOQX9IYD-17MKRrZHVZpqa6dYuCTIgP7qWNW5fZg6fe8FpAgT3tWbivKZhz4lBNxFpgfV_kOvGoJpi_C66S1JMV0xUKNQ7RiA-ncalRtPejNPjxxxL84xs64YOk8jA12Kn-hXKg8VO9xchrOIytVwaDUFLObsn-Sa5xAV0hesWyhCndOGpnxfIOeXGB7mhKR4oeLdqmYYEWZUHnqxxWz8Y9gCpSRpODrug1x1kUM6opa82FV41C1WEfdSkzYe1zEtMQpJkz5wVEyQULBwstavcI6oBbHiZxgCgsEAvk2bQ.jpg"
+  },
+  {
+    "id": "evt_7504179782708372259",
+    "title": "Houthi Official Spotted in Liberated Mokha",
+    "summary": "Muhammad al-Houthi, former de facto president of Yemen and top Ansar Allah administrator, rode through Mokha in an open pickup after Houthis seized the strategic port city on September 10, 2026.",
+    "date_event": null,
+    "date_published": "2026-09-11T12:32:53Z",
+    "geo": {
+      "lat": 13.323,
+      "lon": 43.7021,
+      "city": "Mokha",
+      "country": "Yemen"
+    },
+    "topics": [
+      "yemen",
+      "houthis",
+      "military",
+      "territorial-control",
+      "conflict"
+    ],
+    "confidence": 0.85,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74411",
+        "label": "Telegram post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7504179782708371822",
+    "title": "Pakistan to Resume IMF Program Review on September 22",
+    "summary": "Pakistan prepares for its fourth review of the extended $7 billion IMF Extended Fund Facility program, scheduled for September 22, 2026. The country faces mounting external debt and structural economic challenges while exploring alternative financing sources.",
+    "date_event": null,
+    "date_published": "2026-09-11T13:10:27Z",
+    "geo": {
+      "lat": 30.1575,
+      "lon": 69.2075,
+      "city": "Islamabad",
+      "country": "Pakistan"
+    },
+    "topics": [
+      "pakistan",
+      "imf",
+      "debt",
+      "economic-policy",
+      "financing"
+    ],
+    "confidence": 0.85,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74413",
+        "label": "Telegram post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7504179782708371747",
+    "title": "Israeli Minister Advocates Economic Starvation as Iran Policy",
+    "summary": "Israeli Finance Minister Bezalel Smotrich stated that economic pressure causing deprivation and joblessness in Iran will weaken the government. Critics characterize the statement as advocating economic warfare and collective punishment.",
+    "date_event": null,
+    "date_published": "2026-09-11T13:51:01Z",
+    "geo": {
+      "lat": 32.4279,
+      "lon": 53.688,
+      "city": "Tehran",
+      "country": "Iran"
+    },
+    "topics": [
+      "iran",
+      "israel",
+      "sanctions",
+      "economic-policy",
+      "conflict"
+    ],
+    "confidence": 0.85,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74414",
+        "label": "Telegram post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7504180223701688597",
+    "title": "Russia Threatens Nuclear Warheads Pointed at Lithuania Over NATO Weapons",
+    "summary": "Russia threatened to direct nuclear weapons at Lithuania if the country hosts weapons from NATO allies, escalating tensions over Baltic militarization and NATO expansion near Russia's borders.",
+    "date_event": null,
+    "date_published": "2026-09-11T12:23:00Z",
+    "geo": {
+      "lat": 55.1694,
+      "lon": 25.2501,
+      "city": "Vilnius",
+      "country": "Lithuania"
+    },
+    "topics": [
+      "russia",
+      "nato",
+      "nuclear-threats",
+      "lithuania",
+      "military",
+      "baltic"
+    ],
+    "confidence": 0.8,
+    "source_name": "Insider Paper (@insiderpaper)",
+    "links": [
+      {
+        "url": "https://t.me/insiderpaper/44521",
+        "label": "Telegram post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7504180223701688899",
+    "title": "Swedish Prime Minister Pledges \"Make Sweden Great Again\" in Re-election Campaign",
+    "summary": "Sweden's Prime Minister invoked the phrase 'make Sweden great again' in campaign rhetoric for his re-election bid, echoing similar nationalist messaging from U.S. political figures.",
+    "date_event": null,
+    "date_published": "2026-09-11T13:18:09Z",
+    "geo": {
+      "lat": 59.3293,
+      "lon": 18.0686,
+      "city": "Stockholm",
+      "country": "Sweden"
+    },
+    "topics": [
+      "sweden",
+      "politics",
+      "elections",
+      "nationalism",
+      "campaign"
+    ],
+    "confidence": 0.8,
+    "source_name": "Insider Paper (@insiderpaper)",
+    "links": [
+      {
+        "url": "https://t.me/insiderpaper/44522",
+        "label": "Telegram post"
       }
     ],
     "link_preview_image": null
