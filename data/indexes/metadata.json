@@ -50593,5 +50593,941 @@
       }
     ],
     "link_preview_image": "https://pbs.twimg.com/card_img/2096556258992250880/1RKHX_WQ?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_92021187835645952",
+    "title": "Houthis Preparing to Close Strait with Enhanced Strategic Position",
+    "summary": "Intelligence reports indicate Houthis preparing to close the strait with significantly improved tactical and strategic positioning, controlling multiple key chokepoints.",
+    "date_event": null,
+    "date_published": "2026-09-11T20:48:30Z",
+    "geo": {
+      "lat": 12.5547,
+      "lon": 48.5164,
+      "location": "Strait of Hormuz, Yemen/Oman"
+    },
+    "topics": [
+      "houthi",
+      "strait-closure",
+      "maritime-security",
+      "yemen",
+      "military-operations"
+    ],
+    "confidence": null,
+    "source_name": "Thewarzonewire (@Thewarzonewire)",
+    "links": [
+      {
+        "url": "https://x.com/Thewarzonewire/status/2098514039722660301",
+        "title": "Thewarzonewire Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021167287746560",
+    "title": "Hanwha Austal Bid Signals Direction of South Korea MASGA Plan",
+    "summary": "Hanwha's bid for Austal indicates the strategic direction of South Korea's MASGA (Multi-purpose Ship based Amphibious Group Arrangement) naval expansion initiative.",
+    "date_event": "2026-09-11T22:13:36.000Z",
+    "date_published": "2026-09-11T22:13:36.000Z",
+    "geo": {
+      "lat": 37.5665,
+      "lon": 126.978,
+      "country": "South Korea",
+      "city": "Seoul"
+    },
+    "topics": [
+      "south-korea",
+      "military",
+      "defense",
+      "shipbuilding",
+      "naval",
+      "masga"
+    ],
+    "confidence": null,
+    "source_name": "Southkoreapro (@Southkoreapro)",
+    "links": [
+      {
+        "url": "https://x.com/Southkoreapro/status/2098535458276040772",
+        "title": "Southkoreapro (@Southkoreapro)"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021167380021248",
+    "title": "Hormuz Deployment, France Nuclear Deal, and Olympic Park Protests Analyzed",
+    "summary": "Episode 149 covers critical regional developments: Hormuz Strait deployment, France-Korea nuclear collaboration, and Olympic Park political tensions.",
+    "date_event": "2026-09-11T22:11:33.000Z",
+    "date_published": "2026-09-11T22:11:33.000Z",
+    "geo": {
+      "lat": 37.5665,
+      "lon": 126.978,
+      "country": "South Korea",
+      "city": "Seoul"
+    },
+    "topics": [
+      "south-korea",
+      "france",
+      "hormuz",
+      "nuclear",
+      "geopolitics",
+      "regional-security"
+    ],
+    "confidence": null,
+    "source_name": "Southkoreapro (@Southkoreapro)",
+    "links": [
+      {
+        "url": "https://x.com/Southkoreapro/status/2098534939772043472",
+        "title": "Southkoreapro (@Southkoreapro) - Episode 149"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021267053441024",
+    "title": "Saudi Arabia Oil Pipeline System Shuts Down After Multiple Attacks",
+    "summary": "A key oil pipeline system in Saudi Arabia halted operations following multiple attacks, according to Saudi officials. The incident marks a significant security threat to the kingdom's critical energy infrastructure.",
+    "date_event": "2026-09-11T20:26:12Z",
+    "date_published": "2026-09-11T20:26:12Z",
+    "geo": {
+      "lat": 24.7136,
+      "lon": 46.6753,
+      "country": "Saudi Arabia",
+      "city": "Riyadh"
+    },
+    "topics": [
+      "infrastructure-attack",
+      "saudi-arabia",
+      "energy-security",
+      "pipeline",
+      "attack"
+    ],
+    "confidence": 0.75,
+    "source_name": "CNN (@CNN)",
+    "links": [
+      {
+        "url": "https://x.com/CNN/status/2098508428557558090",
+        "label": "CNN Breaking News"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021182831833088",
+    "title": "Internal Security Forces Move to Checkpoint in Kobani as Syrian Government Operations Continue",
+    "summary": "An OSINT analyst with ground sources reported that Syrian internal security forces have moved from within Kobani city to a checkpoint outside the settlement. The movement involved gunfire in the air from withdrawing military units attempting to prevent pursuit.",
+    "date_event": "2026-09-11T21:30:00Z",
+    "date_published": "2026-09-11T21:32:29Z",
+    "geo": {
+      "lat": 36.8116,
+      "lon": 38.8046,
+      "country": "Syria",
+      "region": "Aleppo Governorate",
+      "city": "Kobani"
+    },
+    "topics": [
+      "syria",
+      "kobani",
+      "security-forces",
+      "military-operations",
+      "kurdish-region",
+      "middle-east"
+    ],
+    "confidence": 0.78,
+    "source_name": "Sim Nasr (@SimNasr)",
+    "links": [
+      {
+        "url": "https://x.com/SimNasr/status/2098525109510094855",
+        "label": "Kobani security operations observation"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2098525086236196864/img/LKEyi5e3NUJlVSI2.jpg"
+  },
+  {
+    "id": "evt_92021182747947008",
+    "title": "Saudi Arabia Declines to Retaliate After Iraqi Drone Attacks Damage East-West Pipeline",
+    "summary": "Saudi Arabia announced it will not retaliate following drone attacks launched from Iraq that struck multiple pumping stations along the Saudi East-West oil pipeline, rendering the critical energy infrastructure offline. Iraq announced plans to conduct an internal investigation into the incident.",
+    "date_event": "2026-09-11T21:58:00Z",
+    "date_published": "2026-09-11T21:59:47Z",
+    "geo": {
+      "lat": 27.1932,
+      "lon": 49.5832,
+      "country": "Saudi Arabia",
+      "region": "Eastern Province",
+      "city": "Khobar"
+    },
+    "topics": [
+      "saudi-arabia",
+      "drone-attack",
+      "oil-pipeline",
+      "infrastructure",
+      "iraq",
+      "middle-east",
+      "energy-security"
+    ],
+    "confidence": 0.85,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2098531978370785283",
+        "label": "Saudi statement"
+      },
+      {
+        "url": "https://x.com/Osinttechnical/status/2098531749491818524",
+        "label": "Iraqi statement"
+      },
+      {
+        "url": "https://x.com/Osinttechnical/status/2098531696882618541",
+        "label": "Pipeline attack details"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HR97tYhXgAUQxPc.jpg"
+  },
+  {
+    "id": "evt_92021250251071488",
+    "title": "RFE/RL Obtains Exclusive Photos of Russian Naval Flotilla at Tartus Port",
+    "summary": "RFE/RL publishes exclusive photographs showing Russian naval flotilla at Tartus port, marking first documented instance of such configuration.",
+    "date_event": null,
+    "date_published": "2026-09-11T21:42:14.000Z",
+    "geo": {
+      "lat": 34.2485,
+      "lon": 35.8581
+    },
+    "topics": [
+      "military",
+      "russia",
+      "navy",
+      "syria",
+      "mediterranean",
+      "intelligence"
+    ],
+    "confidence": null,
+    "source_name": "MT Anderson (@MT_Anderson)",
+    "links": [
+      {
+        "url": "https://x.com/MT_Anderson/status/2098527561227931821"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021157225603072",
+    "title": "Water Crisis in Syria's Daraa: Farmers Resort to Illegal Well-Drilling",
+    "summary": "MEE investigates the water crisis in Syria's Daraa province, where farmers break regulations to survive.",
+    "date_event": null,
+    "date_published": "2026-09-11T21:59:58.000Z",
+    "geo": {
+      "lat": 32.7275,
+      "lon": 35.7345
+    },
+    "topics": [
+      "water-crisis",
+      "syria",
+      "daraa",
+      "environment",
+      "agriculture"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2098532025066016961"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021181305102336",
+    "title": "Iraq Orders Investigation into Saudi East-West Pipeline Attack",
+    "summary": "Iraqi authorities launch investigation following an attack on the Saudi East-West Pipeline.",
+    "date_event": null,
+    "date_published": "2026-09-11T21:50:14.000Z",
+    "geo": {
+      "lat": 33.3128,
+      "lon": 44.3615
+    },
+    "topics": [
+      "infrastructure-attack",
+      "pipeline",
+      "iraq",
+      "saudi-arabia",
+      "energy"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2098529577077264618"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021206856802304",
+    "title": "Texas Board of Education Approves Islamophobic Curriculum Changes",
+    "summary": "Texas Board of Education votes to introduce Islamophobic and orientalist standards into social studies curriculum.",
+    "date_event": null,
+    "date_published": "2026-09-11T21:42:16.000Z",
+    "geo": {
+      "lat": 31.9686,
+      "lon": -99.9018
+    },
+    "topics": [
+      "education-policy",
+      "curriculum",
+      "texas",
+      "discrimination",
+      "united-states"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2098527571210035423"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021165152829440",
+    "title": "Houthis Prepare Strategic Position for Strait Closure Operations",
+    "summary": "The Houthi movement reportedly prepares for operations targeting the Strait of Bab el-Mandeb with improved strategic positioning compared to previous efforts. The group signals capability to restrict maritime commerce in this critical waterway.",
+    "date_event": "2026-09-11T21:10:52Z",
+    "date_published": "2026-09-11T21:10:52Z",
+    "geo": {
+      "lat": 12.5,
+      "lon": 43.5,
+      "country": "Yemen",
+      "region": "Red Sea",
+      "city": "Bab el-Mandeb"
+    },
+    "topics": [
+      "yemen",
+      "houthis",
+      "strait",
+      "red-sea",
+      "maritime",
+      "middle-east"
+    ],
+    "confidence": 0.82,
+    "source_name": "ELINT News",
+    "links": [
+      {
+        "url": "https://x.com/ELINTNews/status/2098519671385272427",
+        "label": "ELINT News Tweet"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_92021164871811072",
+    "title": "M23 Consolidates Territorial Control in Southern Masisi District, Congo",
+    "summary": "M23 continues to consolidate territorial control in the southern Masisi district of the Democratic Republic of Congo. The ongoing security situation reflects continued military operations in the region.",
+    "date_event": "2026-09-11T21:15:53Z",
+    "date_published": "2026-09-11T21:15:53Z",
+    "geo": {
+      "lat": -1.8733,
+      "lon": 28.8393,
+      "country": "Democratic Republic of Congo",
+      "region": "North Kivu",
+      "city": "Masisi"
+    },
+    "topics": [
+      "congo",
+      "m23",
+      "conflict",
+      "east-africa",
+      "armed-group",
+      "military"
+    ],
+    "confidence": 0.8,
+    "source_name": "Critical Threats Project",
+    "links": [
+      {
+        "url": "https://x.com/criticalthreats/status/2098520930150494535",
+        "label": "Critical Threats Project Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HR9xNdTbcAAB5Y9.jpg"
+  },
+  {
+    "id": "evt_92021165018611712",
+    "title": "Saudi Arabia Oil Pipeline System Shuts Down After Multiple Attacks",
+    "summary": "Saudi officials reported that a critical East-West oil pipeline system has been shut down following multiple attacks. The pipeline represents vital infrastructure for the kingdom's energy infrastructure.",
+    "date_event": "2026-09-11T20:26:40Z",
+    "date_published": "2026-09-11T20:26:40Z",
+    "geo": {
+      "lat": 24.7136,
+      "lon": 46.6753,
+      "country": "Saudi Arabia",
+      "region": "Eastern Province",
+      "city": "Dhahran"
+    },
+    "topics": [
+      "saudi-arabia",
+      "oil-pipeline",
+      "attack",
+      "infrastructure",
+      "middle-east"
+    ],
+    "confidence": 0.85,
+    "source_name": "CNN International",
+    "links": [
+      {
+        "url": "https://x.com/cnni/status/2098508547948421535",
+        "label": "CNN International Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2098448897597112329/vESBwt1g?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_92021173558218752",
+    "title": "NYC Firefighter Confronts Pro-Palestinian Agitators at 9/11 Memorial on 25th Anniversary",
+    "summary": "A New York City firefighter confronted pro-Palestinian protesters gathered near the 9/11 Memorial during commemorations marking the 25th anniversary of the September 11, 2001 terrorist attacks that killed nearly 3,000 people.",
+    "date_event": null,
+    "date_published": "2026-09-11T22:02:04Z",
+    "geo": {
+      "lat": 40.7127281,
+      "lon": -74.0060152,
+      "display_name": "New York, United States"
+    },
+    "topics": [
+      "protest",
+      "memorial",
+      "new-york",
+      "september-11",
+      "firefighter",
+      "civil-unrest"
+    ],
+    "confidence": 0.85,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "title": "Fox News Tweet",
+        "url": "https://x.com/FoxNews/status/2098532553095282800",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021214616260608",
+    "title": "New York Times Faces Backlash Over 9/11 Anniversary Coverage Focusing on Islamophobia",
+    "summary": "The New York Times faced criticism for its 25th anniversary 9/11 coverage, with multiple stories focusing on Islamophobia and the treatment of Muslim Americans in the post-9/11 era, prompting backlash from readers and commentators.",
+    "date_event": null,
+    "date_published": "2026-09-11T21:45:59Z",
+    "geo": {
+      "lat": 39.7837304,
+      "lon": -100.445882,
+      "display_name": "United States"
+    },
+    "topics": [
+      "media",
+      "september-11",
+      "journalism",
+      "islamophobia",
+      "new-york-times",
+      "anniversary"
+    ],
+    "confidence": 0.75,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "title": "Fox News Tweet",
+        "url": "https://x.com/FoxNews/status/2098528507340939308",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021231129129984",
+    "title": "Houthis Positioned to Close Strait with Improved Strategic Position",
+    "summary": "Maritime intelligence analysis indicates Houthi forces are preparing to close a strait, suggesting they have achieved a superior strategic position compared to their previous capabilities for controlling maritime passages.",
+    "date_event": null,
+    "date_published": "2026-09-11T20:48:40Z",
+    "geo": {
+      "lat": 27.2232061,
+      "lon": 54.3584156,
+      "display_name": "Strait of Hormuz, United Arab Emirates"
+    },
+    "topics": [
+      "maritime-security",
+      "houthis",
+      "strait",
+      "military",
+      "yemen",
+      "shipping",
+      "geopolitics"
+    ],
+    "confidence": 0.78,
+    "source_name": "Ianellisjones (@Ianellisjones)",
+    "links": [
+      {
+        "title": "Maritime Intelligence Tweet",
+        "url": "https://x.com/Ianellisjones/status/2098514083733536969",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021269544509440",
+    "title": "North Korea Launches Missile in New Test",
+    "summary": "North Korea conducted a missile launch test, marking another development in the country's ongoing weapons program and military testing activities.",
+    "date_event": null,
+    "date_published": "2026-09-11T21:04:34Z",
+    "geo": {
+      "lat": 39.0392272,
+      "lon": 125.7625241,
+      "display_name": "North Korea"
+    },
+    "topics": [
+      "north-korea",
+      "missile",
+      "military",
+      "weapons-test",
+      "nuclear",
+      "security"
+    ],
+    "confidence": 0.82,
+    "source_name": "inside_nk (@inside_nk)",
+    "links": [
+      {
+        "title": "Inside NK Tweet",
+        "url": "https://x.com/inside_nk/status/2098518083639853208",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021172429971456",
+    "title": "USS Massachusetts Attack Submarine Departs Faslane Naval Base",
+    "summary": "USS Massachusetts (SSN 798), a Virginia-class Block IV attack submarine, departed Faslane Naval Base in Scotland on September 11, 2026. The departure was captured by naval photography specialists and confirmed through FB-Argyll Sea Glass source.",
+    "date_event": "2026-09-11T20:35:16Z",
+    "date_published": "2026-09-11T20:35:16Z",
+    "geo": {
+      "lat": 56.0612199,
+      "lon": -4.8208838,
+      "country": "United Kingdom",
+      "region": "Scotland",
+      "city": "Faslane"
+    },
+    "topics": [
+      "submarine",
+      "naval-deployment",
+      "uss-massachusetts",
+      "united-states-navy",
+      "faslane",
+      "scotland",
+      "military",
+      "warship"
+    ],
+    "confidence": 0.85,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2098510711928377696",
+        "label": "Warshipcam Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HR9oXXoWwAg9auJ.jpg"
+  },
+  {
+    "id": "evt_92021279636381696",
+    "title": "Putin Warns of War with Russia Over European Troop Deployment to Ukraine",
+    "summary": "Russian President Vladimir Putin issued a warning that European troop deployments into Ukraine would constitute an act of war against Russia. Putin characterized European pressure on its countries as deliberately pushing them toward military conflict with Russia, representing a significant escalation in rhetoric regarding NATO involvement in the Ukraine conflict.",
+    "date_event": "2026-09-11T20:49:22Z",
+    "date_published": "2026-09-11T20:49:22Z",
+    "geo": {
+      "lat": 55.625578,
+      "lon": 37.6063916,
+      "country": "Russia",
+      "region": "Moscow",
+      "city": "Moscow"
+    },
+    "topics": [
+      "russia",
+      "ukraine",
+      "putin",
+      "nato",
+      "military-conflict",
+      "european-troops",
+      "military-intervention",
+      "geopolitics"
+    ],
+    "confidence": 0.8,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2098514257625108810",
+        "label": "War Translated Tweet"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_92021247818342400",
+    "title": "Ansar Allah Forces Clash with Emergency Forces in Marib, Yemen",
+    "summary": "Ongoing clashes between Ansar Allah (Houthi) forces and the First Division Emergency Forces have intensified on the northern outskirts of Marib, with reports of strategic evacuations underway.",
+    "date_event": null,
+    "date_published": "2026-09-11T20:18:32Z",
+    "geo": {
+      "lat": 15.3868,
+      "lon": 48.9733
+    },
+    "topics": [
+      "yemen",
+      "conflict",
+      "military",
+      "ansar-allah",
+      "middle-east",
+      "houthi"
+    ],
+    "confidence": 0.8,
+    "source_name": "Intel Slava Z",
+    "links": [
+      {
+        "title": "Clashes in Marib, Yemen - Ansar Allah advances",
+        "url": "https://t.me/intelslava/94411",
+        "domain": "t.me"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021247889645568",
+    "title": "Russian Forces Advance on Velykyi Burluk, Closing Encirclement in Kharkiv",
+    "summary": "Russian military operations in the Kharkiv direction continue with reports of forces closing an encirclement north of Velykyi Burluk, intensifying pressure on Ukrainian positions.",
+    "date_event": null,
+    "date_published": "2026-09-11T21:15:02Z",
+    "geo": {
+      "lat": 50.2213,
+      "lon": 36.231
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "conflict",
+      "military",
+      "kharkiv",
+      "war"
+    ],
+    "confidence": 0.75,
+    "source_name": "Intel Slava Z",
+    "links": [
+      {
+        "title": "Russian forces advance in Kharkiv direction",
+        "url": "https://t.me/intelslava/94413",
+        "domain": "t.me"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021247642181632",
+    "title": "Putin Threatens 'War Against Russia' if Europe Deploys Troops to Ukraine",
+    "summary": "Vladimir Putin declared that European military deployment to Ukraine would constitute a direct war against Russia, escalating rhetorical tensions in the Ukraine conflict.",
+    "date_event": null,
+    "date_published": "2026-09-11T20:21:32Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234
+    },
+    "topics": [
+      "ukraine",
+      "conflict",
+      "russia",
+      "military",
+      "nato",
+      "diplomacy",
+      "sanctions"
+    ],
+    "confidence": 0.88,
+    "source_name": "Insider Paper",
+    "links": [
+      {
+        "title": "Putin says European troop deployment in Ukraine would be 'war against Russia'",
+        "url": "https://t.me/insiderpaper/44530",
+        "domain": "t.me"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021247734456320",
+    "title": "6.6 Magnitude Earthquake Strikes Java, Indonesia",
+    "summary": "A significant 6.6 magnitude earthquake struck the island of Java in Indonesia, with potential for aftershocks and humanitarian impact across the densely populated region.",
+    "date_event": null,
+    "date_published": "2026-09-11T21:54:58Z",
+    "geo": {
+      "lat": -7.0828,
+      "lon": 110.4181
+    },
+    "topics": [
+      "disaster",
+      "earthquake",
+      "indonesia",
+      "natural-disaster",
+      "asia"
+    ],
+    "confidence": 0.88,
+    "source_name": "Insider Paper",
+    "links": [
+      {
+        "title": "6.6 magnitude earthquake hits Java, Indonesia",
+        "url": "https://t.me/insiderpaper/44531",
+        "domain": "t.me"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021527364505600",
+    "title": "Trump comments on Tucker Carlson show regarding geopolitical matters",
+    "summary": "Former President Trump appeared on Tucker Carlson's program to discuss geopolitical and conflict-related matters.",
+    "date_event": null,
+    "date_published": "2026-09-11T20:18:03Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369
+    },
+    "topics": [
+      "geopolitics",
+      "united-states",
+      "political-commentary",
+      "international-relations"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/96123",
+        "title": "Telegram post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021527469363200",
+    "title": "Trump discusses geopolitical strategy on Tucker Carlson program",
+    "summary": "Trump provides commentary on international strategy and conflict management during Tucker Carlson interview.",
+    "date_event": null,
+    "date_published": "2026-09-11T20:20:11Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369
+    },
+    "topics": [
+      "geopolitics",
+      "united-states",
+      "foreign-policy",
+      "political-commentary",
+      "international-strategy"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/96124",
+        "title": "Telegram post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021527557443584",
+    "title": "Trump remarks on U.S.-Canada relations and geopolitical matters",
+    "summary": "Trump discusses U.S. policy toward Canada and broader North American geopolitical strategy.",
+    "date_event": null,
+    "date_published": "2026-09-11T20:22:07Z",
+    "geo": {
+      "lat": 56.1304,
+      "lon": -106.3468
+    },
+    "topics": [
+      "united-states",
+      "canada",
+      "geopolitics",
+      "bilateral-relations",
+      "north-america"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/96125",
+        "title": "Telegram post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021634784825344",
+    "title": "Mohammad Ali al-Houthi appears in Mukha following city liberation",
+    "summary": "Yemen's Houthi leader Mohammad Ali al-Houthi was observed in Mukha shortly after the city's liberation from Saudi-led coalition control.",
+    "date_event": null,
+    "date_published": "2026-09-11T21:02:10Z",
+    "geo": {
+      "lat": 13.3936,
+      "lon": 43.2881
+    },
+    "topics": [
+      "yemen",
+      "houthis",
+      "mukha",
+      "liberation",
+      "conflict",
+      "saudi-led-coalition",
+      "territorial-control"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/193327",
+        "title": "Telegram post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021634864517120",
+    "title": "Chilean historical and political statement regarding national agency",
+    "summary": "A Chilean political or historical statement emphasizing the role of people in shaping national history and direction.",
+    "date_event": null,
+    "date_published": "2026-09-11T21:31:21Z",
+    "geo": {
+      "lat": -35.6751,
+      "lon": -71.543
+    },
+    "topics": [
+      "chile",
+      "geopolitics",
+      "sovereignty",
+      "latin-america",
+      "political-commentary",
+      "national-identity"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/193328",
+        "title": "Telegram post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021634948403200",
+    "title": "Yemeni forces conduct operations against Khamis Mushait in Saudi Arabia",
+    "summary": "Yemeni forces launched military operations targeting Khamis Mushait in southern Saudi Arabia, representing cross-border military activity.",
+    "date_event": null,
+    "date_published": "2026-09-11T21:44:44Z",
+    "geo": {
+      "lat": 18.3043,
+      "lon": 42.7456
+    },
+    "topics": [
+      "yemen",
+      "saudi-arabia",
+      "military-operation",
+      "cross-border-attack",
+      "khamis-mushait",
+      "conflict"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/193329",
+        "title": "Telegram post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021176129294336",
+    "title": "Houthis loot former National Resistance Forces positions in Mocha",
+    "summary": "Houthi militants looted former National Resistance Forces (Saleh loyalists) positions and Saudi-led coalition facilities in Mocha, Yemen.",
+    "date_event": null,
+    "date_published": "2026-09-11T21:09:17Z",
+    "geo": {
+      "lat": 13.3936,
+      "lon": 43.2881
+    },
+    "topics": [
+      "yemen",
+      "military",
+      "conflict",
+      "looting",
+      "saudi-led-coalition",
+      "houthis"
+    ],
+    "confidence": null,
+    "source_name": "Bellum Acta (@BellumActaNews)",
+    "links": [
+      {
+        "url": "https://t.me/BellumActaNews/176981",
+        "title": "Telegram post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021176217374720",
+    "title": "Early warning alert issued in Khamis Mushait Governorate, Saudi Arabia",
+    "summary": "The National Early Warning Platform of Saudi Arabia issued a hazard warning for the Khamis Mushait Governorate in the Asir Region alerting to potential danger.",
+    "date_event": null,
+    "date_published": "2026-09-11T21:24:20Z",
+    "geo": {
+      "lat": 18.3043,
+      "lon": 42.7456
+    },
+    "topics": [
+      "saudi-arabia",
+      "alert",
+      "warning",
+      "emergency",
+      "khamis-mushait",
+      "civil-protection"
+    ],
+    "confidence": null,
+    "source_name": "Bellum Acta (@BellumActaNews)",
+    "links": [
+      {
+        "url": "https://t.me/BellumActaNews/176982",
+        "title": "Telegram post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92021176292872192",
+    "title": "Magnitude 6.2 earthquake recorded",
+    "summary": "A seismic event with a magnitude of 6.2 occurred in the Arabian Peninsula region.",
+    "date_event": null,
+    "date_published": "2026-09-11T21:30:39Z",
+    "geo": {
+      "lat": 20.0,
+      "lon": 45.0
+    },
+    "topics": [
+      "earthquake",
+      "seismic-activity",
+      "natural-disaster",
+      "arabian-peninsula",
+      "magnitude-6.2"
+    ],
+    "confidence": null,
+    "source_name": "Bellum Acta (@BellumActaNews)",
+    "links": [
+      {
+        "url": "https://t.me/BellumActaNews/176983",
+        "title": "Telegram post"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
