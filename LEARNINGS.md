@@ -45,3 +45,6 @@ During 2026-09-05 batch 1, all three telegram-clashreport candidates were US dom
 
 Batch 1/9 (2026-09-10) confirms ClashReport content misalignment. All three candidates (95899–95901) are George W. Bush 9/11 anniversary quotes unrelated to documented source scope (breaking conflict, military, strikes, etc.). Combined with 2026-09-05 findings (Pentagon/DOJ posts), this indicates either systematic channel pivot or persistent data error. Recommend maintainer review manifest status; source may need marking as `inactive` or scope redefinition.
 
+- **telegram-geopolitics-prime**: Post 74388 rejected (Italian channel promo, off-topic for geopolitics; source context shows bias:anti-Western-establishment but promotions don't constitute events).
+- **telegram-insiderpaper**: Posts 44509, 44510 rejected (domestic US political comments without geopolitical substance or actionable event data; insufficient scope for world event entity).
+
