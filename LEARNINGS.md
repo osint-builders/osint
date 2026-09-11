@@ -48,3 +48,8 @@ Batch 1/9 (2026-09-10) confirms ClashReport content misalignment. All three cand
 - **telegram-geopolitics-prime**: Post 74388 rejected (Italian channel promo, off-topic for geopolitics; source context shows bias:anti-Western-establishment but promotions don't constitute events).
 - **telegram-insiderpaper**: Posts 44509, 44510 rejected (domestic US political comments without geopolitical substance or actionable event data; insufficient scope for world event entity).
 
+
+## 2026-09-11 19:00Z — Geopolitics Prime predominantly conspiracy theory content
+
+Batch 1/12 (2026-09-11) confirms telegram-geopolitics-prime source publishes significant conspiracy content alongside geopolitical news. All three candidates (74427, 74431, 74432) contained well-debunked 9/11 "controlled demolition" narratives. While the source does publish occasional legitimate geopolitical topics (BRICS, Israel-Palestine), the primary editorial stance centers conspiracy theories and anti-mainstream media narratives. Content does not meet publication standards for World Event Entities. Recommend maintainer review manifest status and consider reclassification or deactivation.
+
