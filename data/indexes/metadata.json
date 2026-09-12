@@ -55654,5 +55654,923 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_92352885613948928",
+    "title": "CBS Mornings Host Reacts to Jury Deliberations in Lindsay Clancy Murder Case",
+    "summary": "CBS Mornings co-host Gayle King expressed visible surprise upon learning that a Black juror voted to convict Lindsay Clancy of murder, with the jury ultimately split 11-1 in favor of conviction.",
+    "date_event": null,
+    "date_published": "2026-09-12T18:52:14Z",
+    "geo": {
+      "lat": 40.7128,
+      "lon": -74.006,
+      "country": "United States",
+      "region": "New York",
+      "city": "New York"
+    },
+    "topics": [
+      "criminal-justice",
+      "trial",
+      "jury",
+      "verdict"
+    ],
+    "confidence": 0.7,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2098847168408834445",
+        "label": "Twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92352838163787776",
+    "title": "Defense Secretary Pete Hegseth Pushed for F-15 Airmen Interview on 60 Minutes",
+    "summary": "Defense Secretary Pete Hegseth and political appointees encouraged two F-15 airmen, whose plane was shot down over Iran in April, to participate in a 60 Minutes interview, according to multiple sources.",
+    "date_event": null,
+    "date_published": "2026-09-12T19:00:23Z",
+    "geo": {
+      "lat": 38.9072,
+      "lon": -77.0369,
+      "country": "United States",
+      "region": "Washington, D.C.",
+      "city": "Washington"
+    },
+    "topics": [
+      "defense",
+      "military",
+      "iran",
+      "media",
+      "interview"
+    ],
+    "confidence": 0.75,
+    "source_name": "CNN (@CNN)",
+    "links": [
+      {
+        "url": "https://x.com/CNN/status/2098849222338486382",
+        "label": "Twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92352885525868544",
+    "title": "Defense Secretary Pete Hegseth Pushed for F-15 Airmen Interview on 60 Minutes",
+    "summary": "Defense Secretary Pete Hegseth and political appointees encouraged two F-15 airmen, whose plane was shot down over Iran in April, to participate in a 60 Minutes interview, according to multiple sources.",
+    "date_event": null,
+    "date_published": "2026-09-12T19:01:03Z",
+    "geo": {
+      "lat": 38.9072,
+      "lon": -77.0369,
+      "country": "United States",
+      "region": "Washington, D.C.",
+      "city": "Washington"
+    },
+    "topics": [
+      "defense",
+      "military",
+      "iran",
+      "media",
+      "interview"
+    ],
+    "confidence": 0.75,
+    "source_name": "cnnbrk (@cnnbrk)",
+    "links": [
+      {
+        "url": "https://x.com/cnnbrk/status/2098849386776146218",
+        "label": "Twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92352871529480192",
+    "title": "Political Risk Briefing in Banff with Canadian Cabinet",
+    "summary": "Ian Bremmer, President of Eurasia Group, announced holding a press conference to brief PM Carney and the Canadian Cabinet in Banff this week regarding geopolitical and political risk analysis.",
+    "date_event": null,
+    "date_published": "2026-09-12T18:19:12Z",
+    "geo": {
+      "lat": 51.175076,
+      "lon": -115.5720773,
+      "display_name": "Banff, Alberta, Canada"
+    },
+    "topics": [
+      "geopolitics",
+      "canada",
+      "political-risk",
+      "diplomacy",
+      "international-relations"
+    ],
+    "confidence": null,
+    "source_name": "ianbremmer (@ianbremmer)",
+    "links": [
+      {
+        "url": "https://x.com/ianbremmer/status/2098838854509731856",
+        "title": "Ian Bremmer on X",
+        "type": "social"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2098838824474288137/qlQQ__Ft?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_92352954664779776",
+    "title": "Houthi Projectile Wounds Two People in Saudi Border Region",
+    "summary": "Saudi authorities reported that a Houthi projectile struck an area along the country's southern border with Yemen, wounding two people, following government alerts warning of possible attacks.",
+    "date_event": null,
+    "date_published": "2026-09-12T20:01:13Z",
+    "geo": {
+      "lat": 25.6242618,
+      "lon": 42.3528328,
+      "display_name": "Saudi Arabia"
+    },
+    "topics": [
+      "yemen",
+      "saudi-arabia",
+      "houthi",
+      "attack",
+      "military-conflict",
+      "middle-east"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2098864528398106942",
+        "title": "Middle East Eye Report",
+        "type": "social"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2098526105430855680/SJ3M4VCm?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_92353031034667008",
+    "title": "Explosions Reported Off Qeshm Island in Strait of Hormuz",
+    "summary": "Iranian state media reported explosions heard off the coast of Qeshm Island in the Strait of Hormuz on Saturday, with sources describing sounds of detonations coming from the direction of the sea.",
+    "date_event": null,
+    "date_published": "2026-09-12T18:55:40Z",
+    "geo": {
+      "lat": 26.7687296,
+      "lon": 55.8476653,
+      "display_name": "Qeshm Island, Iran"
+    },
+    "topics": [
+      "iran",
+      "strait-of-hormuz",
+      "military-incident",
+      "explosions",
+      "middle-east",
+      "maritime-security"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2098848032934560249",
+        "title": "Middle East Eye Report",
+        "type": "social"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2098526105430855680/SJ3M4VCm?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_92353104661479424",
+    "title": "Ukrainian HIMARS Strikes Russian Buk SAM System, Causes Missile Cookoff",
+    "summary": "Footage documented a Ukrainian HIMARS missile system firing a GMLRS-AW rocket at a Russian 9A316 TEL (Transporter-Erector-Launcher) component of a Buk surface-to-air missile system, resulting in immediate secondary explosions as munitions cooked off.",
+    "date_event": null,
+    "date_published": "2026-09-12T18:51:04Z",
+    "geo": {
+      "lat": 48.5727918,
+      "lon": 39.3145456,
+      "display_name": "Ukraine-Russia Theater"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military-conflict",
+      "air-defense",
+      "weapons-system",
+      "himars",
+      "verified-strike"
+    ],
+    "confidence": null,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2098846877227602369",
+        "title": "OSINT Technical Report",
+        "type": "social"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2098846847930675200/img/-JadKR3OsDJfz5-4.jpg"
+  },
+  {
+    "id": "evt_92353173376761856",
+    "title": "Russian 9A317 TELAR System Hit - Verified Strike",
+    "summary": "Open-source intelligence documentation recorded another verified strike against Russian air defense infrastructure, specifically a 9A317 TELAR (Transporter-Erector-Launcher and Radar) unit belonging to a Buk air defense system.",
+    "date_event": null,
+    "date_published": "2026-09-12T18:51:10Z",
+    "geo": {
+      "lat": 48.5727918,
+      "lon": 39.3145456,
+      "display_name": "Ukraine-Russia Theater"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military-conflict",
+      "air-defense",
+      "weapons-system",
+      "buk",
+      "verified-strike"
+    ],
+    "confidence": null,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2098846902133395965",
+        "title": "OSINT Technical Report",
+        "type": "social"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2098846880906264577/img/s5L0xHZ3OpCVhJmS.jpg"
+  },
+  {
+    "id": "evt_92353081173368832",
+    "title": "Trump Expressed Interest in Ending Divided Ireland",
+    "summary": "President Trump sparked reaction from Northern Ireland leaders when he stated interest in seeing the end of a divided Ireland shortly after arriving in Dublin on Saturday.",
+    "date_event": null,
+    "date_published": "2026-09-12T19:39:52Z",
+    "geo": {
+      "lat": 53.3498,
+      "lon": -6.2603,
+      "location": "Dublin, Ireland"
+    },
+    "topics": [
+      "politics",
+      "international-relations",
+      "ireland",
+      "northern-ireland"
+    ],
+    "confidence": 0.75,
+    "source_name": "ABC News",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2098859158258790770",
+        "title": "ABC News tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353081257254912",
+    "title": "Fire at Nursing Home in Chile Kills 16 Residents",
+    "summary": "A fire at a nursing home in Chile resulted in the deaths of 16 residents.",
+    "date_event": null,
+    "date_published": "2026-09-12T19:41:09Z",
+    "geo": {
+      "lat": -33.8688,
+      "lon": -51.6293,
+      "location": "Chile"
+    },
+    "topics": [
+      "disaster",
+      "fire",
+      "chile",
+      "public-safety"
+    ],
+    "confidence": 0.85,
+    "source_name": "BBC World News",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2098859479156601069",
+        "title": "BBC World News tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353081345335296",
+    "title": "Yemen Houthis Release Over 200 Detained Members",
+    "summary": "Yemen's Houthi movement released more than 200 members who had detention by Saudi-backed forces in areas recently captured by the Houthis.",
+    "date_event": null,
+    "date_published": "2026-09-12T19:20:07Z",
+    "geo": {
+      "lat": 14.3549,
+      "lon": 48.5164,
+      "location": "Yemen"
+    },
+    "topics": [
+      "conflict",
+      "yemen",
+      "military",
+      "prisoners"
+    ],
+    "confidence": 0.8,
+    "source_name": "Clash Report",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2098854188361109674",
+        "title": "Clash Report tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92352909294981120",
+    "title": "Wagner Memorial Post for Maykop Brigade",
+    "summary": "Memorial dedication from Wagner Z Group honoring the Maykop Brigade with the message 'A good song to sleep on' and the motto 'To honor a warrior means to grant eternal remembrance.'",
+    "date_event": null,
+    "date_published": "2026-09-12T19:15:22Z",
+    "geo": {
+      "lat": 44.6039,
+      "lon": 40.1055,
+      "place": "Maykop, Russia"
+    },
+    "topics": [
+      "russia",
+      "wagner",
+      "ukraine",
+      "military",
+      "casualties",
+      "maykop-brigade",
+      "memorial"
+    ],
+    "confidence": 0.85,
+    "source_name": "Wagner Z Group (@wagner_group_pmcr)",
+    "links": [
+      {
+        "url": "https://t.me/wagner_group_pmcr/99726",
+        "title": "Wagner Z Group Post",
+        "type": "telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92352902038835200",
+    "title": "Ukrainian Foreign Minister Calls for Strengthened Air Defense Following Russian Strike on Odesa",
+    "summary": "Ukrainian Foreign Minister Andrii Sybiha demands strengthened air defense and sanctions on Russia's military-industrial complex following a Russian strike on Odesa involving ballistic and cruise missiles and attack drones.",
+    "date_event": null,
+    "date_published": "2026-09-12T19:16:01Z",
+    "geo": {
+      "lat": 46.4856,
+      "lon": 30.7326,
+      "place": "Odesa, Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military-aid",
+      "odesa",
+      "air-defense",
+      "missiles",
+      "sanctions"
+    ],
+    "confidence": 0.95,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46031",
+        "title": "UNITED24 Media Post",
+        "type": "telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353170608504832",
+    "title": "Quds News Network",
+    "summary": "Israeli occupation aircraft bombard the town of Al-Mansouri, southern Lebanon.",
+    "date_event": null,
+    "date_published": "2026-09-12T18:36:24Z",
+    "geo": {
+      "lat": 33.8750629,
+      "lon": 35.843409,
+      "display_name": "لبنان"
+    },
+    "topics": [
+      "military-airstrikes",
+      "israel-hezbollah-conflict"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/238656",
+        "title": "Quds News Network"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353176505696256",
+    "title": "Quds News Network",
+    "summary": "Breaking | Israeli aircraft bombard the town of Nabatieh Al-Fawqa, southern Lebanon.",
+    "date_event": null,
+    "date_published": "2026-09-12T19:01:40Z",
+    "geo": {
+      "lat": 33.8750629,
+      "lon": 35.843409,
+      "display_name": "لبنان"
+    },
+    "topics": [
+      "military-airstrikes",
+      "israel-hezbollah-conflict"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/238657",
+        "title": "Quds News Network"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353176602165248",
+    "title": "Quds News Network",
+    "summary": "Israeli occupation forces storm Silwan, occupied Jerusalem.",
+    "date_event": null,
+    "date_published": "2026-09-12T19:13:10Z",
+    "geo": {
+      "lat": 30.8124247,
+      "lon": 34.8594762,
+      "display_name": "ישראל"
+    },
+    "topics": [
+      "israel-hezbollah-conflict"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/238658",
+        "title": "Quds News Network"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353153277640704",
+    "title": "Intel Slava",
+    "summary": "🇺🇦🇷🇺⚡️ — Ukrainian kamikaze drones, specifically the FP-2 model, attacked the Russian oil tanker ARMADA LEADER in the Black Sea.\n\nThe footage shows th",
+    "date_event": null,
+    "date_published": "2026-09-12T18:35:05Z",
+    "geo": {
+      "lat": 43.872824,
+      "lon": 33.9938077,
+      "display_name": "Чорне море - Marea Neagră - Черно море – Karadeniz - შავი ზღვა - Чёрное море"
+    },
+    "topics": [
+      "ukraine-russia-war",
+      "military-operations"
+    ],
+    "confidence": null,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94464",
+        "title": "Intel Slava"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353158885425152",
+    "title": "Intel Slava",
+    "summary": "BREAKING: 🇮🇷 Iran prepares to withdraw from the Nuclear Non-Proliferation Treaty and conduct a nuclear weapons test as soon as possible.\n\n@BreakingGlo",
+    "date_event": null,
+    "date_published": "2026-09-12T18:49:52Z",
+    "geo": {
+      "lat": 32.6475314,
+      "lon": 54.5643516,
+      "display_name": "ایران"
+    },
+    "topics": [
+      "iran-nuclear-program"
+    ],
+    "confidence": null,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94466",
+        "title": "Intel Slava"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353164648398848",
+    "title": "Intel Slava",
+    "summary": "Gas stations in Ukraine will get access to real-time data on the movement of Russian UAVs in order to warn employees about approaching threats\n\n— Prim",
+    "date_event": null,
+    "date_published": "2026-09-12T18:57:32Z",
+    "geo": {
+      "lat": 49.4871968,
+      "lon": 31.2718321,
+      "display_name": "Україна"
+    },
+    "topics": [
+      "ukraine-russia-war"
+    ],
+    "confidence": null,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94468",
+        "title": "Intel Slava"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353162991640576",
+    "title": "Yemen Houthis Release Combat Footage from New Military Operation",
+    "summary": "Yemen's Houthi forces released extensive combat video footage documenting their new military operation named 'And Allah Remains Mightier and More Punishing', featuring video evidence from their recent western coast offensive.",
+    "date_event": null,
+    "date_published": "2026-09-12T18:21:23Z",
+    "geo": {
+      "lat": 15.3694,
+      "lon": 44.2017
+    },
+    "topics": [
+      "yemen",
+      "houthis",
+      "military-operation",
+      "western-coast",
+      "combat-footage"
+    ],
+    "confidence": 0.75,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "title": "Clash Report Post",
+        "url": "https://t.me/ClashReport/96249"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353163075526656",
+    "title": "Saudi Aramco Abha Plant Reported Destroyed",
+    "summary": "DD Geopolitics reported the destruction of an Aramco petroleum bulk plant located in Abha, Saudi Arabia, during ongoing regional tensions between Saudi Arabia and Yemen.",
+    "date_event": null,
+    "date_published": "2026-09-12T16:03:16Z",
+    "geo": {
+      "lat": 18.2273,
+      "lon": 42.5069
+    },
+    "topics": [
+      "saudi-arabia",
+      "yemen",
+      "aramco",
+      "infrastructure-attack",
+      "energy-security"
+    ],
+    "confidence": 0.65,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "title": "DD Geopolitics Post",
+        "url": "https://t.me/DDGeopolitics/193367"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353358613983232",
+    "title": "Ukrainian Armed Forces report 206 combat engagements during Russian offensive operations",
+    "summary": "Official Ukrainian General Staff operational report for September 12, 2026, reporting 206 combat engagements across multiple fronts against Russian forces, including drone attacks, artillery strikes, and ground operations with reported casualty and equipment loss figures.",
+    "date_event": null,
+    "date_published": "2026-09-12T19:01:03+00:00",
+    "geo": {
+      "lat": 48.4,
+      "lon": 35.0
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military-conflict",
+      "war",
+      "combat-operations",
+      "eastern-europe"
+    ],
+    "confidence": null,
+    "source_name": "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)",
+    "links": [
+      {
+        "url": "https://t.me/GeneralStaffZSU/42212",
+        "title": "Operational Information - General Staff ZSU",
+        "source": "telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353358622371840",
+    "title": "BRICS New Delhi Declaration contains major policy shifts against Western hegemony",
+    "summary": "Analysis of the 2026 BRICS Summit New Delhi Declaration highlighting significant policy positions including explicit condemnation of Israel, demands for smooth global trade and energy flows, calls to end the Cuba blockade, and creation of new institutions bypassing Western-dominated bodies.",
+    "date_event": null,
+    "date_published": "2026-09-12T19:06:01+00:00",
+    "geo": {
+      "lat": 28.5244,
+      "lon": 77.1855
+    },
+    "topics": [
+      "brics",
+      "geopolitics",
+      "international-relations",
+      "trade",
+      "de-dollarization",
+      "middle-east",
+      "western-policy",
+      "israel"
+    ],
+    "confidence": null,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74502",
+        "title": "BRICS New Delhi Declaration - Geopolitics Prime",
+        "source": "telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353358622371841",
+    "title": "Pipeline attack investigations ongoing as Trump seeks to involve Saudi Arabia in Iran conflict",
+    "summary": "Analysis of the East-West Saudi Arabian crude oil pipeline attack, examination of competing claims regarding responsibility, and assessment of Trump administration attempts to leverage the incident for geopolitical advantage against Iran.",
+    "date_event": null,
+    "date_published": "2026-09-12T19:52:01+00:00",
+    "geo": {
+      "lat": 25.2048,
+      "lon": 55.2708
+    },
+    "topics": [
+      "middle-east",
+      "saudi-arabia",
+      "yemen",
+      "houthi",
+      "iran",
+      "oil-infrastructure",
+      "geopolitics",
+      "united-states-foreign-policy"
+    ],
+    "confidence": null,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74503",
+        "title": "Pipeline Attack Analysis - Geopolitics Prime",
+        "source": "telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353358622371842",
+    "title": "Breaking news aggregation from Insider Paper global news channel",
+    "summary": "Global breaking news update from Insider Paper, a high-velocity news aggregation channel covering world events, conflicts, politics, and viral stories across multiple geographic regions.",
+    "date_event": null,
+    "date_published": "2026-09-12T18:37:58+00:00",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194
+    },
+    "topics": [
+      "breaking-news",
+      "global-events",
+      "politics"
+    ],
+    "confidence": null,
+    "source_name": "Insider Paper (@insiderpaper)",
+    "links": [
+      {
+        "url": "https://t.me/insiderpaper/44534",
+        "title": "Breaking News - Insider Paper",
+        "source": "telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353757911715840",
+    "title": "🇷🇺 Moscow police arrested a Nazi black man (not Kanye West) who became making Nazi salutes and",
+    "summary": "🇷🇺 Moscow police arrested a Nazi black man (not Kanye West) who became making Nazi salutes and shouting racist slogans. ",
+    "date_event": null,
+    "date_published": "2026-09-12T16:02:14Z",
+    "geo": {
+      "lat": 55.625578,
+      "lon": 37.6063916
+    },
+    "topics": [
+      "conflict",
+      "news",
+      "telegram"
+    ],
+    "confidence": 0.75,
+    "source_name": "Bellum Acta (@BellumActaNews)",
+    "links": [
+      {
+        "url": "https://t.me/BellumActaNews/177013"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353764119285760",
+    "title": "🇺🇸🇺🇸❌🇮🇷 — United States Central Command (CENTCOM) announces it redirected 100 ",
+    "summary": "🇺🇸🇺🇸❌🇮🇷 — United States Central Command (CENTCOM) announces it redirected 100 commercial ships over the past 60 days as part of the blockade on Iranian ports",
+    "date_event": null,
+    "date_published": "2026-09-12T16:21:23Z",
+    "geo": {
+      "lat": 32.6475314,
+      "lon": 54.5643516
+    },
+    "topics": [
+      "conflict",
+      "news",
+      "telegram"
+    ],
+    "confidence": 0.75,
+    "source_name": "Bellum Acta (@BellumActaNews)",
+    "links": [
+      {
+        "url": "https://t.me/BellumActaNews/177014"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353774542131200",
+    "title": "🇺🇸🇮🇪🛬 — Video shows USAF Air Force One landing at Dublin Airport, touching down on ",
+    "summary": "🇺🇸🇮🇪🛬 — Video shows USAF Air Force One landing at Dublin Airport, touching down on South Runway shortly after 8.20am. ",
+    "date_event": null,
+    "date_published": "2026-09-12T20:14:59Z",
+    "geo": {
+      "lat": 39.7837304,
+      "lon": -100.445882
+    },
+    "topics": [
+      "conflict",
+      "news",
+      "telegram"
+    ],
+    "confidence": 0.75,
+    "source_name": "Bellum Acta (@BellumActaNews)",
+    "links": [
+      {
+        "url": "https://t.me/BellumActaNews/177017"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353802237157376",
+    "title": "Portuguese Navy Viana do Castelo-class patrol vessel NRP Setúbal enters Lisbon",
+    "summary": "Portuguese Navy patrol vessel NRP Setúbal (P363) enters Lisbon harbor on September 12, 2026.",
+    "date_event": null,
+    "date_published": "2026-09-12T19:29:15Z",
+    "geo": {
+      "lat": 38.7223,
+      "lon": -9.1393
+    },
+    "topics": [
+      "portuguese-navy",
+      "patrol-vessel",
+      "viana-do-castelo-class",
+      "naval-operations",
+      "lisbon",
+      "atlantic"
+    ],
+    "confidence": null,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2098856484385747384",
+        "title": "Warshipcam tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353802304266240",
+    "title": "USS Manchester Independence-variant littoral combat ship departs San Diego",
+    "summary": "USS Manchester (LCS 14) Independence-variant littoral combat ship departed San Diego on September 12, 2026.",
+    "date_event": null,
+    "date_published": "2026-09-12T19:17:26Z",
+    "geo": {
+      "lat": 32.7157,
+      "lon": -117.1611
+    },
+    "topics": [
+      "us-navy",
+      "littoral-combat-ship",
+      "independence-variant",
+      "lcs-14",
+      "san-diego",
+      "naval-operations"
+    ],
+    "confidence": null,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2098853510703939700",
+        "title": "Warshipcam tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353802526564352",
+    "title": "Chinese President Xi Jinping addresses BRICS Summit in New Delhi",
+    "summary": "Chinese President Xi Jinping addressed the 18th BRICS Summit in New Delhi, urging member nations to adopt a historical perspective and serve as pioneers of contemporary development.",
+    "date_event": null,
+    "date_published": "2026-09-12T18:47:16Z",
+    "geo": {
+      "lat": 28.6139,
+      "lon": 77.209
+    },
+    "topics": [
+      "brics",
+      "china",
+      "xi-jinping",
+      "international-relations",
+      "multilateral",
+      "india",
+      "summit",
+      "diplomacy"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2098845920481726745",
+        "title": "Xinhua News tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353802379763712",
+    "title": "Trump envoy Kushner reports successful Moscow and Kyiv visits regarding Ukraine peace",
+    "summary": "U.S. envoy Jared Kushner claims successful diplomatic visits to Moscow and Kyiv, stating the U.S. has identified potential paths to end the Ukraine conflict and achieve lasting peace.",
+    "date_event": null,
+    "date_published": "2026-09-12T20:15:52Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234
+    },
+    "topics": [
+      "ukraine-conflict",
+      "diplomacy",
+      "peace-negotiations",
+      "trump-administration",
+      "kushner",
+      "moscow",
+      "kyiv",
+      "united-states"
+    ],
+    "confidence": null,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2098868214792958310",
+        "title": "War Translated tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92353802451066880",
+    "title": "Russian refineries deploy makeshift blast walls and anti-drone defenses",
+    "summary": "Russian petroleum refineries implement improvised defensive structures including shipping container blast walls and anti-drone nets to protect fuel storage infrastructure against aerial attacks.",
+    "date_event": null,
+    "date_published": "2026-09-12T18:18:33Z",
+    "geo": {
+      "lat": 51.1964,
+      "lon": 71.4703
+    },
+    "topics": [
+      "russia",
+      "military-logistics",
+      "fuel-infrastructure",
+      "drone-defense",
+      "refineries",
+      "ukraine-conflict",
+      "air-defense"
+    ],
+    "confidence": null,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2098838692567617900",
+        "title": "War Translated tweet"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
