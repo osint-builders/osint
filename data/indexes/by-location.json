@@ -1,11 +1,11 @@
 [
   {
     "country": "Ukraine",
-    "count": 127
+    "count": 132
   },
   {
     "country": "United States",
-    "count": 92
+    "count": 97
   },
   {
     "country": "Iran",
@@ -13,19 +13,19 @@
   },
   {
     "country": "Russia",
-    "count": 52
+    "count": 55
   },
   {
     "country": "Palestine",
-    "count": 48
+    "count": 49
   },
   {
     "country": "Yemen",
-    "count": 42
+    "count": 48
   },
   {
     "country": "China",
-    "count": 32
+    "count": 33
   },
   {
     "country": "Germany",
@@ -33,22 +33,26 @@
   },
   {
     "country": "Lebanon",
-    "count": 24
+    "count": 25
   },
   {
     "country": "Global",
     "count": 24
   },
   {
+    "country": "Saudi Arabia",
+    "count": 22
+  },
+  {
     "country": "United Kingdom",
     "count": 19
   },
   {
-    "country": "Saudi Arabia",
-    "count": 17
+    "country": "Syria",
+    "count": 12
   },
   {
-    "country": "Syria",
+    "country": "Taiwan",
     "count": 12
   },
   {
@@ -60,8 +64,8 @@
     "count": 11
   },
   {
-    "country": "Taiwan",
-    "count": 11
+    "country": "Jordan",
+    "count": 8
   },
   {
     "country": "Nepal",
@@ -72,16 +76,12 @@
     "count": 8
   },
   {
-    "country": "Jordan",
+    "country": "Iraq",
     "count": 7
   },
   {
     "country": "France",
     "count": 7
-  },
-  {
-    "country": "Iraq",
-    "count": 6
   },
   {
     "country": "North Korea",
@@ -116,6 +116,10 @@
     "count": 4
   },
   {
+    "country": "Norway",
+    "count": 4
+  },
+  {
     "country": "Sudan",
     "count": 3
   },
@@ -141,6 +145,10 @@
   },
   {
     "country": "Turkey",
+    "count": 3
+  },
+  {
+    "country": "Ireland",
     "count": 3
   },
   {
@@ -185,14 +193,6 @@
   },
   {
     "country": "Switzerland",
-    "count": 2
-  },
-  {
-    "country": "Norway",
-    "count": 2
-  },
-  {
-    "country": "Ireland",
     "count": 2
   },
   {
@@ -373,6 +373,14 @@
   },
   {
     "country": "Democratic Republic of Congo",
+    "count": 1
+  },
+  {
+    "country": "Panama",
+    "count": 1
+  },
+  {
+    "country": "Southeast Asia",
     "count": 1
   }
 ]
