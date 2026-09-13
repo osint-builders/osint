@@ -57090,5 +57090,329 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_92463831531397120",
+    "title": "Trespasser Apprehended at Malibu Property of Former Vice President Kamala Harris",
+    "summary": "Private security personnel stopped an alleged trespasser at a Malibu property belonging to former Vice President Kamala Harris on Friday night. Local authorities and a Harris spokesperson confirmed the incident, which resulted in no reported injuries.",
+    "date_event": null,
+    "date_published": "2026-09-13T03:32:07.000Z",
+    "geo": {
+      "lat": 34.0216,
+      "lon": -118.783
+    },
+    "topics": [
+      "security-incident",
+      "trespassing",
+      "political-figure",
+      "united-states"
+    ],
+    "confidence": 0.72,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2098978000981180685",
+        "title": "ABC News - Malibu Trespasser Incident"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92463839802564608",
+    "title": "Museum Heist in Eastern France: Thieves Steal 2,500-Year-Old Gold Necklace",
+    "summary": "Two men disguised with wigs executed a rapid heist at a museum in eastern France, using hammers to smash a display case and stealing a 2,500-year-old gold necklace. The entire operation took less than four minutes.",
+    "date_event": null,
+    "date_published": "2026-09-13T03:01:48.000Z",
+    "geo": {
+      "lat": 48.5734,
+      "lon": 7.7521
+    },
+    "topics": [
+      "theft",
+      "museum",
+      "cultural-heritage",
+      "crime",
+      "france"
+    ],
+    "confidence": 0.75,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2098970373907722283",
+        "title": "ABC News - Museum Heist in Eastern France"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92463742654107648",
+    "title": "Lai honors late Powerchip founder Frank Huang",
+    "summary": "Taiwan's president honors the passing of Frank Huang, founder of Powerchip Semiconductor, recognizing his pioneering contributions to Taiwan's semiconductor industry development.",
+    "date_event": null,
+    "date_published": "2026-09-13T03:24:06Z",
+    "geo": {
+      "lat": 25.0375198,
+      "lon": 121.5636796
+    },
+    "topics": [
+      "taiwan",
+      "semiconductors",
+      "powerchip",
+      "technology",
+      "industry"
+    ],
+    "confidence": null,
+    "source_name": "Taiwan News (@TaiwanNewsEN)",
+    "links": [
+      {
+        "url": "https://x.com/TaiwanNewsEN/status/2098975986041930046",
+        "title": "Taiwan News announcement"
+      },
+      {
+        "url": "https://www.taiwannews.com.tw/en/news/6438789",
+        "title": "Full article"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2098975914206052352/ViR-yVMD?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_92463913123205120",
+    "title": "Iran and Oman agree on new Strait of Hormuz transit routes",
+    "summary": "Iran and Oman reached agreement on revised entry and exit routes for maritime transit through the Strait of Hormuz, with plans to brief other Gulf states at a regional meeting in Muscat.",
+    "date_event": null,
+    "date_published": "2026-09-13T02:31:28Z",
+    "geo": {
+      "lat": 23.6123628,
+      "lon": 58.5938134
+    },
+    "topics": [
+      "iran",
+      "oman",
+      "strait-of-hormuz",
+      "maritime-security",
+      "gulf-region",
+      "diplomacy"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2098962738014015903",
+        "title": "Xinhua News announcement"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/ext_tw_video_thumb/2098962600994430976/pu/img/ub0w1yQxeej8F5SP.jpg"
+  },
+  {
+    "id": "evt_1789270600621961338",
+    "title": "Iranian Forces Strike Ship in Strait of Hormuz",
+    "summary": "Iranian military forces attacked a commercial vessel transiting the US-secured shipping lane in the Strait of Hormuz on September 13, 2026. Local observers reported multiple explosions from the incident, confirmed by UKMTO maritime monitoring.",
+    "date_event": null,
+    "date_published": "2026-09-13T01:43:22.000Z",
+    "geo": {
+      "lat": 26.1247,
+      "lon": 55.8673,
+      "country": "Iran",
+      "region": "Hormuzgan",
+      "city": "Strait of Hormuz"
+    },
+    "topics": [
+      "iran",
+      "maritime",
+      "military",
+      "strait-of-hormuz",
+      "naval-incident"
+    ],
+    "confidence": 0.85,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2098950633470513288",
+        "label": "OSINT Technical tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_1789270600687747389",
+    "title": "Chinese Social Media Influencer Caught in Charity Fraud Scheme",
+    "summary": "A Chinese social media influencer faced exposure for falsely claiming to donate $150,000 to flood relief efforts. Red Cross China's investigation revealed only 15 cents were actually contributed, triggering public outcry and regulatory scrutiny.",
+    "date_event": null,
+    "date_published": "2026-09-13T01:37:41.000Z",
+    "geo": {
+      "lat": 39.9042,
+      "lon": 116.4074,
+      "country": "China",
+      "region": "Beijing",
+      "city": "Beijing"
+    },
+    "topics": [
+      "china",
+      "fraud",
+      "charity",
+      "influencer",
+      "social-media"
+    ],
+    "confidence": 0.75,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2098949205351866629",
+        "label": "SCMP News tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_1789270600125341051",
+    "title": "Italian Activists Stage Gaza Solidarity Demonstration at Venice Film Festival",
+    "summary": "Pro-Palestinian activists gathered outside the Venice Film Festival in Italy on September 13, 2026, to display solidarity with Gaza through a symbolic kite-flying demonstration. The Global Sumud Flotilla and local organizations called for Palestinian flag recognition at the festival.",
+    "date_event": null,
+    "date_published": "2026-09-13T01:47:47.000Z",
+    "geo": {
+      "lat": 45.4312,
+      "lon": 12.3155,
+      "country": "Italy",
+      "region": "Veneto",
+      "city": "Venice"
+    },
+    "topics": [
+      "palestine",
+      "gaza",
+      "solidarity",
+      "protest",
+      "cultural-action"
+    ],
+    "confidence": 0.8,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2098951745947021548",
+        "label": "Middle East Eye tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92463855338262528",
+    "title": "Trump's Historical Connection to 9/11 Debate and Controversial Public Remarks",
+    "summary": "A post discusses Trump's involvement in past debates and controversial statements related to the September 11 attacks, noting that other public figures have made similar controversial remarks. The post suggests there are lesser-known aspects of this historical connection.",
+    "date_event": "2026-09-13T02:12:00Z",
+    "date_published": "2026-09-13T02:12:00Z",
+    "geo": {
+      "lat": 40.7128,
+      "lon": -74.006,
+      "city": "New York",
+      "region": "New York",
+      "country": "United States"
+    },
+    "topics": [
+      "politics",
+      "trump",
+      "united-states",
+      "history",
+      "controversy"
+    ],
+    "confidence": 0.45,
+    "source_name": "Geopolitics Prime",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74513",
+        "label": "Geopolitics Prime"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92463855422148608",
+    "title": "France Pursues Investigation into Epstein Network While Trump DOJ Faces Criticism for Lack of Prosecutions",
+    "summary": "A post contrasts France's investigation into the Epstein network with the Trump Department of Justice's apparent inaction on charges related to the same network. The post suggests disparities in prosecutorial approaches between the two jurisdictions regarding the Epstein case.",
+    "date_event": "2026-09-13T03:02:04Z",
+    "date_published": "2026-09-13T03:02:04Z",
+    "geo": {
+      "lat": 48.8566,
+      "lon": 2.3522,
+      "city": "Paris",
+      "region": "Île-de-France",
+      "country": "France"
+    },
+    "topics": [
+      "france",
+      "epstein",
+      "investigation",
+      "united-states",
+      "legal",
+      "accountability"
+    ],
+    "confidence": 0.5,
+    "source_name": "Geopolitics Prime",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74514",
+        "label": "Geopolitics Prime"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92463855149518848",
+    "title": "Ukrainian Citizens Fighting for Russia Could Lead Ukraine in Future, Russian Official Claims",
+    "summary": "A member of Russia's State Duma Committee on Defense claims that Ukrainian citizens currently fighting for Russia might become future leaders of Ukraine. The statement reflects Russian political discourse surrounding the Ukraine conflict and potential post-war governance.",
+    "date_event": "2026-09-13T03:20:03Z",
+    "date_published": "2026-09-13T03:20:03Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "city": "Moscow",
+      "region": "Moscow",
+      "country": "Russia"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "politics",
+      "military",
+      "governance"
+    ],
+    "confidence": 0.75,
+    "source_name": "DD Geopolitics",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/193375",
+        "label": "DD Geopolitics"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_92463855245987840",
+    "title": "Ukrainian General Staff Reports Total Enemy Combat Losses Since February 24, 2022",
+    "summary": "The Ukrainian Armed Forces General Staff releases updated figures on total combat losses of Russian forces from the beginning of the invasion through September 13, 2026. This daily situation report provides official Ukrainian military assessments of enemy personnel and equipment losses.",
+    "date_event": "2026-09-13T03:29:15Z",
+    "date_published": "2026-09-13T03:29:15Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "city": "Kyiv",
+      "region": "Kyiv",
+      "country": "Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military",
+      "conflict",
+      "casualties",
+      "warfare"
+    ],
+    "confidence": 0.85,
+    "source_name": "General Staff of the Armed Forces of Ukraine",
+    "links": [
+      {
+        "url": "https://t.me/GeneralStaffZSU/42213",
+        "label": "General Staff of the Armed Forces of Ukraine"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
