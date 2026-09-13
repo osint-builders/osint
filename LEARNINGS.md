@@ -53,3 +53,7 @@ Batch 1/9 (2026-09-10) confirms ClashReport content misalignment. All three cand
 
 Batch 1/12 (2026-09-11) confirms telegram-geopolitics-prime source publishes significant conspiracy content alongside geopolitical news. All three candidates (74427, 74431, 74432) contained well-debunked 9/11 "controlled demolition" narratives. While the source does publish occasional legitimate geopolitical topics (BRICS, Israel-Palestine), the primary editorial stance centers conspiracy theories and anti-mainstream media narratives. Content does not meet publication standards for World Event Entities. Recommend maintainer review manifest status and consider reclassification or deactivation.
 
+
+## 2026-09-13 22:10Z — telegram-serhii-flash publishes off-topic EV content
+
+Batch 4/11 (2026-09-13) identified one off-topic candidate from telegram-serhii-flash/7750: electric vehicle to-home charging technology post. The source is documented as military SIGINT/EW (radio-electronic reconnaissance, electronic warfare, military communications), but this post concerns civilian vehicle technology with no military relevance. While one post may represent a channel glitch or repost, maintainer should monitor future content to confirm scope or consider marking as `testing` with a scope-drift note if the pattern repeats across runs.
