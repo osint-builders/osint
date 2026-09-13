@@ -2,9 +2,9 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 1591,
+    "count": 1614,
     "earliest_date": "2026-08-25T19:59:00Z",
-    "latest_date": "2026-09-13T18:23:19.000Z"
+    "latest_date": "2026-09-13T22:07:13Z"
   },
   {
     "source_id": "telegram-qudsnen",
@@ -44,9 +44,9 @@
   {
     "source_id": "twitter-clash-report",
     "source_name": "Clash Report (@ClashReport)",
-    "count": 23,
+    "count": 24,
     "earliest_date": "2026-08-26T20:36:37Z",
-    "latest_date": "2026-09-12T03:24:20.000Z"
+    "latest_date": "2026-09-13T20:36:26Z"
   },
   {
     "source_id": "twitter-cnn",
@@ -79,9 +79,9 @@
   {
     "source_id": "twitter-abc",
     "source_name": "ABC News (@ABC)",
-    "count": 31,
+    "count": 32,
     "earliest_date": "2026-08-27T13:56:20.000Z",
-    "latest_date": "2026-09-13T03:32:07.000Z"
+    "latest_date": "2026-09-13T21:56:35Z"
   },
   {
     "source_id": "telegram-insiderpaper",
@@ -128,9 +128,9 @@
   {
     "source_id": "twitter-middle-east-eye",
     "source_name": "Middle East Eye (@MiddleEastEye)",
-    "count": 36,
+    "count": 38,
     "earliest_date": "2026-08-28T22:44:18Z",
-    "latest_date": "2026-09-13T18:00:04.000Z"
+    "latest_date": "2026-09-13T21:19:00Z"
   },
   {
     "source_id": "twitter-nasa",
@@ -261,9 +261,9 @@
   {
     "source_id": "telegram-warmonitors",
     "source_name": "War Monitor (@warmonitors)",
-    "count": 4,
+    "count": 5,
     "earliest_date": "2026-09-05T11:59:25Z",
-    "latest_date": "2026-09-08T13:29:28Z"
+    "latest_date": "2026-09-13T22:09:26Z"
   },
   {
     "source_id": "twitter-cnnbrk",
@@ -310,9 +310,9 @@
   {
     "source_id": "twitter-osinttechnical",
     "source_name": "OSINT Technical",
-    "count": 3,
+    "count": 4,
     "earliest_date": "2026-09-06T21:45:50Z",
-    "latest_date": "2026-09-12T18:51:10Z"
+    "latest_date": "2026-09-13T20:29:14Z"
   },
   {
     "source_id": "telegram-ourwarstoday",
@@ -425,5 +425,12 @@
     "count": 1,
     "earliest_date": "2026-09-12T15:56:51Z",
     "latest_date": "2026-09-12T15:56:51Z"
+  },
+  {
+    "source_id": "twitter-militarylandnet",
+    "source_name": "Militarylandnet (@Militarylandnet)",
+    "count": 1,
+    "earliest_date": "2026-09-13T20:24:13Z",
+    "latest_date": "2026-09-13T20:24:13Z"
   }
 ]
