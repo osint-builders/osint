@@ -2,9 +2,9 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 1614,
+    "count": 1622,
     "earliest_date": "2026-08-25T19:59:00Z",
-    "latest_date": "2026-09-13T22:07:13Z"
+    "latest_date": "2026-09-14T03:39:08+00:00"
   },
   {
     "source_id": "telegram-qudsnen",
@@ -128,9 +128,9 @@
   {
     "source_id": "twitter-middle-east-eye",
     "source_name": "Middle East Eye (@MiddleEastEye)",
-    "count": 38,
+    "count": 40,
     "earliest_date": "2026-08-28T22:44:18Z",
-    "latest_date": "2026-09-13T21:19:00Z"
+    "latest_date": "2026-09-14T03:45:00Z"
   },
   {
     "source_id": "twitter-nasa",
@@ -149,9 +149,9 @@
   {
     "source_id": "twitter-foxnews",
     "source_name": "Fox News (@FoxNews)",
-    "count": 10,
+    "count": 11,
     "earliest_date": "2026-08-29T16:17:28Z",
-    "latest_date": "2026-09-12T02:04:18.000Z"
+    "latest_date": "2026-09-14T02:07:58Z"
   },
   {
     "source_id": "twitter-inside-nk",
@@ -163,9 +163,9 @@
   {
     "source_id": "telegram-united24media",
     "source_name": "UNITED24 Media (@United24media)",
-    "count": 30,
+    "count": 31,
     "earliest_date": "2026-08-29T16:19:01Z",
-    "latest_date": "2026-09-13T17:37:01Z"
+    "latest_date": "2026-09-14T03:39:01Z"
   },
   {
     "source_id": "twitter-xinhua-news",
@@ -233,9 +233,9 @@
   {
     "source_id": "twitter-taiwan-news-en",
     "source_name": "Taiwan News (@TaiwanNewsEN)",
-    "count": 7,
+    "count": 10,
     "earliest_date": "2026-09-04T07:42:24.000Z",
-    "latest_date": "2026-09-08T03:20:11Z"
+    "latest_date": "2026-09-14T03:44:18Z"
   },
   {
     "source_id": "twitter-bbgoriginals",
@@ -303,9 +303,9 @@
   {
     "source_id": "twitter-scmpnews",
     "source_name": "South China Morning Post",
-    "count": 5,
+    "count": 8,
     "earliest_date": "2026-09-06T21:52:20Z",
-    "latest_date": "2026-09-13T07:09:08.000Z"
+    "latest_date": "2026-09-14T03:33:30Z"
   },
   {
     "source_id": "twitter-osinttechnical",
@@ -324,9 +324,9 @@
   {
     "source_id": "twitter-thestudyofwar",
     "source_name": "Institute for the Study of War",
-    "count": 8,
+    "count": 10,
     "earliest_date": "2026-09-07T02:30:15Z",
-    "latest_date": "2026-09-12T15:48:10Z"
+    "latest_date": "2026-09-14T02:08:18Z"
   },
   {
     "source_id": "twitter-ian-bremmer",
@@ -432,5 +432,12 @@
     "count": 1,
     "earliest_date": "2026-09-13T20:24:13Z",
     "latest_date": "2026-09-13T20:24:13Z"
+  },
+  {
+    "source_id": "twitter-scs-pi",
+    "source_name": "SCS Probing Initiative",
+    "count": 1,
+    "earliest_date": "2026-09-14T03:20:35Z",
+    "latest_date": "2026-09-14T03:20:35Z"
   }
 ]
