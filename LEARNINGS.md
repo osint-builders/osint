@@ -57,3 +57,13 @@ Batch 1/12 (2026-09-11) confirms telegram-geopolitics-prime source publishes sig
 ## 2026-09-13 22:10Z — telegram-serhii-flash publishes off-topic EV content
 
 Batch 4/11 (2026-09-13) identified one off-topic candidate from telegram-serhii-flash/7750: electric vehicle to-home charging technology post. The source is documented as military SIGINT/EW (radio-electronic reconnaissance, electronic warfare, military communications), but this post concerns civilian vehicle technology with no military relevance. While one post may represent a channel glitch or repost, maintainer should monitor future content to confirm scope or consider marking as `testing` with a scope-drift note if the pattern repeats across runs.
+## 2026-09-14 21:37Z — All telegram-* sources in batch 1/12 inaccessible via t.me web interface
+
+Batch 1/12 (2026-09-14) attempted to process 5 candidates across 3 sources (telegram-clashreport 96522–96524, telegram-ddgeopolitics 193455, telegram-geopolitics-prime 74591). All candidates proved completely inaccessible: t.me web interface exposes only widget metadata and truncated og:description (first sentence max) in static HTML. curl, curl+User-Agent, and agent-browser all failed to yield full post content needed for E-PRIME validation and entity extraction. 
+
+**Root cause:** Telegram's t.me public web view (https://t.me/ChannelName/PostID) is designed for UI embedding/sharing, not programmatic scraping. Full post text loads dynamically via JavaScript and is not available in the initial HTML response.
+
+**Mitigation:** Telegram sources in the queue require either (1) deprecated TDLib API access (requires auth + complex setup), (2) authenticated Telegram client session (not available in this environment), or (3) manual human review. For now, skip Telegram candidates in the queue and propose that telegram-* sources move to `inactive` status in manifest with a note: "t.me web interface does not support programmatic content extraction."
+
+**Affected sources:** telegram-clashreport, telegram-ddgeopolitics, telegram-geopolitics-prime (and likely all others marked type:telegram).
+
