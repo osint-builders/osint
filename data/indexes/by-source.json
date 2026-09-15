@@ -2,7 +2,7 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 1762,
+    "count": 1805,
     "earliest_date": "2026-08-25T19:59:00Z",
     "latest_date": "2026-09-15T19:57:00Z"
   },
@@ -240,9 +240,9 @@
   {
     "source_id": "twitter-bbgoriginals",
     "source_name": "BBG Originals (@BBGOriginals)",
-    "count": 9,
+    "count": 10,
     "earliest_date": "2026-09-04T08:00:07Z",
-    "latest_date": "2026-09-15T11:52:08Z"
+    "latest_date": "2026-09-15T16:56:08Z"
   },
   {
     "source_id": "twitter-minhdr18",
@@ -359,16 +359,16 @@
   {
     "source_id": "twitter-thewarzonewire",
     "source_name": "Thewarzonewire (@Thewarzonewire)",
-    "count": 10,
+    "count": 12,
     "earliest_date": "2026-09-08T18:37:47Z",
-    "latest_date": "2026-09-14T23:51:05Z"
+    "latest_date": "2026-09-15T17:17:09.000Z"
   },
   {
     "source_id": "twitter-tradewindsnews",
     "source_name": "Tradewindsnews (@Tradewindsnews)",
-    "count": 2,
+    "count": 3,
     "earliest_date": "2026-09-08T18:40:36Z",
-    "latest_date": "2026-09-09T18:54:05Z"
+    "latest_date": "2026-09-15T16:37:05.000Z"
   },
   {
     "source_id": "twitter-shipnews",
@@ -453,5 +453,12 @@
     "count": 1,
     "earliest_date": "2026-09-15T06:00:34Z",
     "latest_date": "2026-09-15T06:00:34Z"
+  },
+  {
+    "source_id": "twitter-c4ads",
+    "source_name": "C4ADS (@C4ADS)",
+    "count": 1,
+    "earliest_date": "2026-09-15T17:00:08Z",
+    "latest_date": "2026-09-15T17:00:08Z"
   }
 ]
