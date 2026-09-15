@@ -31,6 +31,10 @@ Cap: max 10 KB and 100 entries; orchestrator auto-prunes expired entries. Each e
 
 <!-- entries below this line; newest first -->
 
+## 2026-09-15 17:58Z — twitter-bbc-world batch 7 candidate off-topic domestic crime
+
+Batch 7/15 (2026-09-15) identified one candidate from twitter-bbc-world: BBC article "Nick Reiner will not face death penalty if convicted of killing parents" about Hollywood director's son accused of murdering parents. This is US domestic criminal justice story unrelated to BBC World News documented scope (international news: Europe, Africa, Asia, Middle East; keywords: conflict, military, violence, protest, crisis, disaster). Source remains active but produced zero events this run; monitor future candidates for scope alignment.
+
 ## 2026-09-05 08:09Z — ClashReport editorial focus shift to US domestic news
 
 During 2026-09-05 batch 1, all three telegram-clashreport candidates were US domestic defense policy posts (Pentagon leak investigation, Deputy Defense Secretary replacement, DOJ-Canada trade cooperation). These do not align with the documented source profile ("breaking conflict zones worldwide" — Ukraine, Middle East, Africa). This indicates either a recent channel pivot or a data error. Recommend maintainer review ClashReport's recent posts to confirm scope change and update manifest accordingly.
