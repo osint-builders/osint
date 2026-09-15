@@ -2,9 +2,9 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 1720,
+    "count": 1736,
     "earliest_date": "2026-08-25T19:59:00Z",
-    "latest_date": "2026-09-15T00:08:11.000Z"
+    "latest_date": "2026-09-15T07:06:59Z"
   },
   {
     "source_id": "telegram-qudsnen",
@@ -44,9 +44,9 @@
   {
     "source_id": "twitter-clash-report",
     "source_name": "Clash Report (@ClashReport)",
-    "count": 26,
+    "count": 27,
     "earliest_date": "2026-08-26T20:36:37Z",
-    "latest_date": "2026-09-14T21:16:50.000Z"
+    "latest_date": "2026-09-15T07:06:45.000Z"
   },
   {
     "source_id": "twitter-cnn",
@@ -443,8 +443,15 @@
   {
     "source_id": "twitter-coastguard-ph",
     "source_name": "Philippine Coast Guard",
-    "count": 2,
+    "count": 3,
     "earliest_date": "2026-09-14T15:43:34Z",
-    "latest_date": "2026-09-14T15:50:56Z"
+    "latest_date": "2026-09-15T05:39:22Z"
+  },
+  {
+    "source_id": "twitter-hawkeye360",
+    "source_name": "HawkEye 360 (@HawkEye360)",
+    "count": 1,
+    "earliest_date": "2026-09-15T06:00:34Z",
+    "latest_date": "2026-09-15T06:00:34Z"
   }
 ]
