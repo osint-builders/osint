@@ -67,3 +67,9 @@ Batch 1/12 (2026-09-14) attempted to process 5 candidates across 3 sources (tele
 
 **Affected sources:** telegram-clashreport, telegram-ddgeopolitics, telegram-geopolitics-prime (and likely all others marked type:telegram).
 
+
+## 2026-09-15 13:17Z — Telegram web sources not scrapable
+**Trigger:** Batch 4 attempted to process 9 candidates from 3 Telegram sources (telegram-intelslava, telegram-middle-east-spectator, telegram-qudsnen) — all failed to fetch.
+**Finding:** Telegram's web interface (t.me/...) loads message content in iframes not accessible to agent-browser's parent window eval. Tips identified no snippet capture, preventing alternate extraction. The identify stage should note that Telegram sources need either (a) Bot API access, (b) authenticated client library, or (c) removal from collection.
+**Action for next run:** Mark telegram-intelslava, telegram-middle-east-spectator, telegram-qudsnen with status: deprecated or archived in source/manifest.json with note: "Web scraping not feasible; requires Telegram Bot API or authenticated client." Alternative: implement Telegram Bot API support if credentials available.
+**Expires:** 2026-12-31
