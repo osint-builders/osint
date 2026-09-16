@@ -2,9 +2,9 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 1868,
+    "count": 1898,
     "earliest_date": "2026-08-25T19:59:00Z",
-    "latest_date": "2026-09-16T04:39:26Z"
+    "latest_date": "2026-09-16T10:57:07Z"
   },
   {
     "source_id": "telegram-qudsnen",
@@ -44,9 +44,9 @@
   {
     "source_id": "twitter-clash-report",
     "source_name": "Clash Report (@ClashReport)",
-    "count": 30,
+    "count": 31,
     "earliest_date": "2026-08-26T20:36:37Z",
-    "latest_date": "2026-09-15T13:09:25Z"
+    "latest_date": "2026-09-16T10:53:49Z"
   },
   {
     "source_id": "twitter-cnn",
@@ -142,23 +142,23 @@
   {
     "source_id": "twitter-bbc-world",
     "source_name": "BBC World News (@BBCWorld)",
-    "count": 25,
+    "count": 28,
     "earliest_date": "2026-08-29T16:17:07Z",
-    "latest_date": "2026-09-15T13:08:29.000Z"
+    "latest_date": "2026-09-16T10:52:29Z"
   },
   {
     "source_id": "twitter-foxnews",
     "source_name": "Fox News (@FoxNews)",
-    "count": 12,
+    "count": 13,
     "earliest_date": "2026-08-29T16:17:28Z",
-    "latest_date": "2026-09-16T04:37:27Z"
+    "latest_date": "2026-09-16T10:52:05Z"
   },
   {
     "source_id": "twitter-inside-nk",
     "source_name": "inside_nk (@inside_nk)",
-    "count": 7,
+    "count": 8,
     "earliest_date": "2026-08-29T16:16:28Z",
-    "latest_date": "2026-09-15T12:46:02Z"
+    "latest_date": "2026-09-16T10:30:00.000Z"
   },
   {
     "source_id": "telegram-united24media",
@@ -170,16 +170,16 @@
   {
     "source_id": "twitter-xinhua-news",
     "source_name": "Xinhua News (@XHNews)",
-    "count": 22,
+    "count": 23,
     "earliest_date": "2026-08-30T16:41:07Z",
-    "latest_date": "2026-09-15T22:05:23Z"
+    "latest_date": "2026-09-16T10:31:15.000Z"
   },
   {
     "source_id": "twitter-wartranslated",
     "source_name": "War Translated (@wartranslated)",
-    "count": 25,
+    "count": 26,
     "earliest_date": "2026-08-31T13:00:41.000Z",
-    "latest_date": "2026-09-12T20:15:52Z"
+    "latest_date": "2026-09-16T10:07:13.000Z"
   },
   {
     "source_id": "webpage-isw-ukraine-interactive-map",
@@ -205,9 +205,9 @@
   {
     "source_id": "twitter-cnni",
     "source_name": "CNN International",
-    "count": 9,
+    "count": 10,
     "earliest_date": "2026-09-01T16:03:27Z",
-    "latest_date": "2026-09-14T15:50:16Z"
+    "latest_date": "2026-09-16T09:30:09Z"
   },
   {
     "source_id": "twitter-bbc-breaking",
@@ -394,9 +394,9 @@
   {
     "source_id": "twitter-japan-joint-staff",
     "source_name": "Japan Joint Staff (@JapanJointStaff)",
-    "count": 1,
+    "count": 2,
     "earliest_date": "2026-09-10T08:19:12Z",
-    "latest_date": "2026-09-10T08:19:12Z"
+    "latest_date": "2026-09-16T09:36:00.000Z"
   },
   {
     "source_id": "twitter-mt-anderson",
@@ -450,9 +450,9 @@
   {
     "source_id": "twitter-hawkeye360",
     "source_name": "HawkEye 360 (@HawkEye360)",
-    "count": 1,
+    "count": 2,
     "earliest_date": "2026-09-15T06:00:34Z",
-    "latest_date": "2026-09-15T06:00:34Z"
+    "latest_date": "2026-09-16T10:30:20Z"
   },
   {
     "source_id": "twitter-c4ads",
@@ -460,5 +460,19 @@
     "count": 1,
     "earliest_date": "2026-09-15T17:00:08Z",
     "latest_date": "2026-09-15T17:00:08Z"
+  },
+  {
+    "source_id": "twitter-imo-hq",
+    "source_name": "IMO HQ (@IMOHQ)",
+    "count": 1,
+    "earliest_date": "2026-09-16T09:00:39.000Z",
+    "latest_date": "2026-09-16T09:00:39.000Z"
+  },
+  {
+    "source_id": "twitter-defence-aust",
+    "source_name": "Australian Defence (@DefenceAust)",
+    "count": 1,
+    "earliest_date": "2026-09-16T09:00:00Z",
+    "latest_date": "2026-09-16T09:00:00Z"
   }
 ]
