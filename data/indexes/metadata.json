@@ -76092,5 +76092,893 @@
       }
     ],
     "link_preview_image": "https://pbs.twimg.com/card_img/2100306439244021760/tKpxnmmm?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_93968422467031040",
+    "title": "Ukrainian forces conduct overnight strikes on Rostov airfield and Yaroslavl refinery",
+    "summary": "Ukrainian drone attacks targeted a military airfield in Rostov Oblast and the Yaroslavl oil refinery, Russia's largest petroleum production facility, causing explosions and fires.",
+    "date_event": null,
+    "date_published": "2026-09-17T05:50:49.000Z",
+    "geo": {
+      "lat": 47.2314,
+      "lon": 39.7313,
+      "city": "Rostov-on-Don",
+      "country": "Russia"
+    },
+    "topics": [
+      "ukraine",
+      "military-operation",
+      "strike",
+      "russia",
+      "airfield",
+      "drone-attack"
+    ],
+    "confidence": 0.88,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2100462459412729930"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2100461340582158336/img/BdpVEzrpd3LGyfhs.jpg"
+  },
+  {
+    "id": "evt_93968422563500032",
+    "title": "Russian airstrikes injure 18 people across Kyiv, Odesa, and Zaporizhzhia",
+    "summary": "Russian airstrikes across multiple Ukrainian cities injured at least 18 people overnight, including children, with significant damage to residential buildings reported in Kyiv and Odesa.",
+    "date_event": null,
+    "date_published": "2026-09-17T05:33:26.000Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "city": "Kyiv",
+      "country": "Ukraine"
+    },
+    "topics": [
+      "russia",
+      "ukraine",
+      "airstrike",
+      "civilian-casualties",
+      "military-conflict"
+    ],
+    "confidence": 0.89,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2100458082249613489"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2100461340582158336/img/BdpVEzrpd3LGyfhs.jpg"
+  },
+  {
+    "id": "evt_93968422655774720",
+    "title": "London university reverses suspension of Egyptian student following pro-Palestinian protests",
+    "summary": "A prestigious London university reversed its disciplinary suspension of an Egyptian student after senior leadership intervened, preventing his potential deportation from the UK following his participation in pro-Palestinian protests.",
+    "date_event": null,
+    "date_published": "2026-09-17T06:00:11.000Z",
+    "geo": {
+      "lat": 51.5074,
+      "lon": -0.1278,
+      "city": "London",
+      "country": "United Kingdom"
+    },
+    "topics": [
+      "student-activism",
+      "protest",
+      "university-discipline",
+      "palestine",
+      "uk-immigration"
+    ],
+    "confidence": 0.85,
+    "source_name": "cnni (@cnni)",
+    "links": [
+      {
+        "url": "https://x.com/cnni/status/2100464815927947437"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSZZmjTXgAAvB6E.jpg"
+  },
+  {
+    "id": "evt_93968422748049408",
+    "title": "Philippine Coast Guard safely evacuates passengers and crew from grounded Roro vessel in Occidental Mindoro",
+    "summary": "The Philippine Coast Guard successfully conducted a maritime rescue operation, evacuating all passengers and crew from a grounded Roro passenger-cargo vessel in Occidental Mindoro waters.",
+    "date_event": null,
+    "date_published": "2026-09-17T05:29:02.000Z",
+    "geo": {
+      "lat": 12.2381,
+      "lon": 120.5597,
+      "city": "Occidental Mindoro",
+      "country": "Philippines"
+    },
+    "topics": [
+      "philippines",
+      "coast-guard",
+      "maritime-rescue",
+      "maritime-incident",
+      "passenger-safety"
+    ],
+    "confidence": 0.87,
+    "source_name": "Philippine Coast Guard (@CoastGuardPH)",
+    "links": [
+      {
+        "url": "https://x.com/CoastGuardPH/status/2100456975435972904"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2100456922919186432/img/LbALWNymOV9i2WC_.jpg"
+  },
+  {
+    "id": "evt_93968560166035456",
+    "title": "North Korea Declares Continued Nuclear Expansion at Xiangshan Forum",
+    "summary": "North Koreas Vice Defence Minister Kim Kang Il publicly declared that Pyongyang will continue expanding its nuclear forces during remarks at the Xiangshan security forum in Beijing.",
+    "date_event": null,
+    "date_published": "2026-09-17T06:02:36Z",
+    "geo": {
+      "lat": 40.3736611,
+      "lon": 127.0870417,
+      "country": "North Korea"
+    },
+    "topics": [
+      "north-korea",
+      "nuclear",
+      "weapons",
+      "defense-minister"
+    ],
+    "confidence": 0.85,
+    "source_name": "inside_nk (@inside_nk)",
+    "links": [
+      {
+        "url": "https://x.com/inside_nk/status/2100465424596873543",
+        "label": "inside_nk (@inside_nk) Tweet"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_93968560262504448",
+    "title": "JASDF Fighter Scramble over Sea of Japan and East China Sea",
+    "summary": "Japan Air Self-Defense Force fighters scrambled to respond to a suspected intrusion into Japanese airspace over the Sea of Japan and the East China Sea.",
+    "date_event": null,
+    "date_published": "2026-09-17T06:33:54Z",
+    "geo": {
+      "lat": 43.0600172,
+      "lon": 137.3353041,
+      "country": "Japan",
+      "region": "Sea of Japan"
+    },
+    "topics": [
+      "japan",
+      "fighter-scramble",
+      "air-defense",
+      "airspace"
+    ],
+    "confidence": 0.9,
+    "source_name": "Japan Joint Staff (@JapanJointStaff)",
+    "links": [
+      {
+        "url": "https://x.com/JapanJointStaff/status/2100473301722337441",
+        "label": "Japan Joint Staff (@JapanJointStaff) Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSZhS--bcAA34-C.jpg"
+  },
+  {
+    "id": "evt_93968560065372160",
+    "title": "ADF Training in Ukraine: Trenches and Field Skills",
+    "summary": "Australian Defence Force personnel conducted basic recruit training with Ukrainian Armed Forces, focusing on essential field and survival skills including trench construction and pit digging.",
+    "date_event": null,
+    "date_published": "2026-09-17T05:56:57Z",
+    "geo": {
+      "lat": 49.4871968,
+      "lon": 31.2718321,
+      "country": "Ukraine"
+    },
+    "topics": [
+      "australia",
+      "ukraine",
+      "military-training",
+      "defense"
+    ],
+    "confidence": 0.9,
+    "source_name": "Australian Defence (@DefenceAust)",
+    "links": [
+      {
+        "url": "https://x.com/DefenceAust/status/2100464000618143839",
+        "label": "Australian Defence (@DefenceAust) Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSZY19uW8AA9ieT.jpg"
+  },
+  {
+    "id": "evt_93968391987040256",
+    "title": "China Unveils BeiDou Navigation Satellite System Advancements at International Summit",
+    "summary": "China announced new products, technologies, and applications for its BeiDou Navigation Satellite System (BDS) at the 5th International Summit on BDS Applications in central China. The initiative seeks to position the system as a shared global technology.",
+    "date_event": "2026-09-17T06:00:16Z",
+    "date_published": "2026-09-17T06:00:16Z",
+    "geo": {
+      "lat": 30.5728,
+      "lon": 114.3055,
+      "city": "Wuhan",
+      "region": "Hubei",
+      "country": "China"
+    },
+    "topics": [
+      "satellite-navigation",
+      "beidu",
+      "china",
+      "technology",
+      "infrastructure"
+    ],
+    "confidence": 0.72,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2100464835091911040",
+        "title": "Xinhua News Tweet",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSZZn7XaQAA1IB_.jpg"
+  },
+  {
+    "id": "evt_93968611571433472",
+    "title": "EU Calls for Closer Taiwan Partnership on Security",
+    "summary": "European Union signals increased engagement on security cooperation with Taiwan, indicating broadening of transatlantic-Indo-Pacific security coordination.",
+    "date_event": null,
+    "date_published": "2026-09-17T06:57:20Z",
+    "geo": {
+      "lat": 23.9739374,
+      "lon": 120.9820179
+    },
+    "topics": [
+      "taiwan",
+      "eu-security",
+      "diplomatic-relations",
+      "indo-pacific",
+      "security-partnership"
+    ],
+    "confidence": null,
+    "source_name": "Taiwan News",
+    "links": [
+      {
+        "url": "https://x.com/TaiwanNewsEN/status/2100479197319979137",
+        "title": "EU Taiwan Security Partnership"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSZmsaNbwAANbuG.jpg"
+  },
+  {
+    "id": "evt_93968611634348032",
+    "title": "KMT Changhua County Speaker Arrested on Bribery Allegations",
+    "summary": "Hsieh Tien-lin, speaker of Changhua County Council and KMT member, arrested and faces bribery charges in ongoing anti-corruption investigation.",
+    "date_event": null,
+    "date_published": "2026-09-17T06:46:35Z",
+    "geo": {
+      "lat": 23.9739374,
+      "lon": 120.9820179
+    },
+    "topics": [
+      "taiwan",
+      "political-corruption",
+      "kmt-party",
+      "bribery-charges",
+      "changhua-county",
+      "anti-corruption"
+    ],
+    "confidence": null,
+    "source_name": "Taiwan News",
+    "links": [
+      {
+        "url": "https://x.com/TaiwanNewsEN/status/2100476493424169185",
+        "title": "KMT Official Bribery Arrest"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2099201940169314304/gv_f7x1s?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_93968518499827712",
+    "title": "Syria Military Leadership Updates Uyghur Fighter Command Procedures",
+    "summary": "Analysis of command structure and moral guidance procedures for Uyghur fighters in Syria, including coordination meetings between internal security and military leadership in Aleppo and Kobané regions.",
+    "date_event": null,
+    "date_published": "2026-09-17T06:42:35Z",
+    "geo": {
+      "lat": 34.6401861,
+      "lon": 39.0494106
+    },
+    "topics": [
+      "syria",
+      "military-command",
+      "uyghur-fighters",
+      "command-structure",
+      "security-operations",
+      "aleppo"
+    ],
+    "confidence": null,
+    "source_name": "Sim Nasr",
+    "links": [
+      {
+        "url": "https://x.com/SimNasr/status/2100475486778388855",
+        "title": "Sim Nasr Syria Analysis"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2100079799351844864/BGQpODjH?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_93968364778586112",
+    "title": "Sea-Watch 5 Court Victory Suspends 45-Day Detention Order",
+    "summary": "Italian court in Naples suspends detention order against Sea-Watch 5 humanitarian rescue vessel after 33 days, allowing resumed operations in Mediterranean.",
+    "date_event": null,
+    "date_published": "2026-09-17T05:30:03Z",
+    "geo": {
+      "lat": 40.8358846,
+      "lon": 14.2487679
+    },
+    "topics": [
+      "maritime-rescue",
+      "humanitarian-operations",
+      "mediterranean-sea",
+      "legal-ruling",
+      "migrants",
+      "sea-watch"
+    ],
+    "confidence": null,
+    "source_name": "seawatch_intl",
+    "links": [
+      {
+        "url": "https://x.com/seawatch_intl/status/2100457233645506781",
+        "title": "Sea-Watch 5 Court Victory"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSZSuLyWEAAUFFX.jpg"
+  },
+  {
+    "id": "evt_93968463516680192",
+    "title": "South African Journalist Found Dead with Gunshot Wounds",
+    "summary": "An abducted South African journalist remains dead following gunshot wounds, marking a tragic incident in a region facing ongoing security concerns.",
+    "date_event": null,
+    "date_published": "2026-09-17T06:50:27.000Z",
+    "geo": {
+      "lat": -25.7461,
+      "lon": 28.2293
+    },
+    "topics": [
+      "journalist-death",
+      "south-africa",
+      "press-freedom",
+      "security-threat",
+      "crime",
+      "human-rights"
+    ],
+    "confidence": null,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2100477465751671235",
+        "title": "BBC World News (@BBCWorld)",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_93968512770392064",
+    "title": "India and Pakistan Summon Diplomats After Ships Collide in International Waters",
+    "summary": "India and Pakistan have summoned diplomatic representatives following a collision between vessels in international waters, escalating tensions between the neighboring nations.",
+    "date_event": null,
+    "date_published": "2026-09-17T06:30:08.000Z",
+    "geo": {
+      "lat": 20.5937,
+      "lon": 78.9629
+    },
+    "topics": [
+      "india-pakistan-relations",
+      "maritime-incident",
+      "international-waters",
+      "diplomacy",
+      "naval-tension",
+      "territorial-dispute"
+    ],
+    "confidence": null,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2100472354501529808",
+        "title": "BBC World News (@BBCWorld)",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_93968563827654656",
+    "title": "India Faces 100% Tariff Threat Following US House Vote on Russian Oil",
+    "summary": "India confronts potential 100% tariffs following a US House vote targeting nations that import Russian oil, creating significant trade tensions and pressure on Indian energy imports.",
+    "date_event": null,
+    "date_published": "2026-09-17T05:36:09.000Z",
+    "geo": {
+      "lat": 20.5937,
+      "lon": 78.9629
+    },
+    "topics": [
+      "india-trade",
+      "us-sanctions",
+      "russian-oil",
+      "tariffs",
+      "energy-politics",
+      "international-trade"
+    ],
+    "confidence": null,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2100458768811049350",
+        "title": "BBC World News (@BBCWorld)",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2100460607556534272/FqwPdA6C?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_93968328409759744",
+    "title": "Argentine Judge Orders Stop to British-Israeli Oilfield Development off Falkland Islands",
+    "summary": "An Argentine federal judge has ordered British and Israeli companies to halt development of an oilfield off the Falkland Islands, intensifying the decades-long sovereignty dispute between Argentina and Britain.",
+    "date_event": null,
+    "date_published": "2026-09-17T06:57:18.000Z",
+    "geo": {
+      "lat": -51.7934,
+      "lon": -59.5432
+    },
+    "topics": [
+      "territorial-dispute",
+      "argentina-britain-relations",
+      "falkland-islands",
+      "oil-energy",
+      "legal-action",
+      "sovereignty"
+    ],
+    "confidence": null,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2100479189056938044",
+        "title": "ABC News (@ABC)",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2100470225145589761/CZT1hp9Z?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_93968392070905856",
+    "title": "Russia Holds Parliamentary Election with Limited Opposition as War Continues",
+    "summary": "Russia conducted parliamentary elections featuring the Kremlin's dominant party, United Russia, and nine other parties that support President Putin's policies, while the only opposition party to the Ukraine war has been barred from the ballot.",
+    "date_event": null,
+    "date_published": "2026-09-17T06:37:12.000Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173
+    },
+    "topics": [
+      "russia-elections",
+      "ukraine-war",
+      "political-opposition",
+      "kremlin-control",
+      "putin-government",
+      "voting"
+    ],
+    "confidence": null,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2100474130390724644",
+        "title": "ABC News (@ABC)",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_93968629971828736",
+    "title": "Europe Faces Record Temperatures and Adaptation Challenges Amid Economic Scarcity",
+    "summary": "Record temperatures sweep across Europe as governments grapple with difficult trade-offs between climate adaptation and economic constraints, requiring strategic policy decisions amid political turmoil.",
+    "date_event": null,
+    "date_published": "2026-09-17T06:37:08.000Z",
+    "geo": {
+      "lat": 54.5973,
+      "lon": 25.2797
+    },
+    "topics": [
+      "climate-change",
+      "extreme-weather",
+      "europe",
+      "heat-wave",
+      "environmental-crisis",
+      "economic-policy",
+      "government-adaptation"
+    ],
+    "confidence": null,
+    "source_name": "BBG Originals (@BBGOriginals)",
+    "links": [
+      {
+        "url": "https://x.com/BBGOriginals/status/2100474113336701303",
+        "title": "BBG Originals (@BBGOriginals)",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2100428866669903872/img/vZ4jszEwEEi7xdEs.jpg"
+  },
+  {
+    "id": "evt_93968745822711808",
+    "title": "'African Biden': Somaliland president slammed for disastrous US interview",
+    "summary": "The president of Somaliland, a breakaway state of Somalia recognised only by Israel, has come under fire for botching an interview at a US think tank widely viewed as sympathetic to Somaliland's quest for US recognition.",
+    "date_event": null,
+    "date_published": "2026-09-16T17:28:42Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849
+    },
+    "topics": [],
+    "confidence": null,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://www.middleeasteye.net/news/african-biden-somaliland-president-slammed-disastrous-us-interview",
+        "title": "'African Biden': Somaliland president slammed for disastrous US interview"
+      }
+    ],
+    "link_preview_image": "https://www.middleeasteye.net/sites/default/files/images-story/Somaliland-AFP-2026.jpg"
+  },
+  {
+    "id": "evt_93968998164623360",
+    "title": "Russia employs North Koreans to build drones for Ukraine war: report",
+    "summary": "The move shows how military ties have expanded beyond weapons and troops into labour and industrial production, the report says.",
+    "date_event": null,
+    "date_published": "2026-09-17T06:45:59Z",
+    "geo": {
+      "lat": 64.6863136,
+      "lon": 97.7453061
+    },
+    "topics": [],
+    "confidence": null,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://www.scmp.com/news/asia/east-asia/article/3367833/russia-employs-north-koreans-build-drones-ukraine-war-report",
+        "title": "Russia employs North Koreans to build drones for Ukraine war: report"
+      }
+    ],
+    "link_preview_image": "https://cdn.i-scmp.com/sites/default/files/styles/og_image_scmp_generic/public/d8/images/canvas/2026/09/17/b58ea072-76b5-4e7c-82cb-9a6869a4af20_91df2183.jpg?itok=pwt0bbp9&v=1789627055"
+  },
+  {
+    "id": "evt_93968600850771968",
+    "title": "Two Russian Oil Refineries Halt Operations After Drone Attacks",
+    "summary": "Two Russian oil refineries halted processing operations following retaliatory drone attacks, according to Reuters.",
+    "date_event": null,
+    "date_published": "2026-09-17T05:18:01Z",
+    "geo": {
+      "lat": 64.6863136,
+      "lon": 97.7453061
+    },
+    "topics": [
+      "military-operation",
+      "energy-infrastructure",
+      "russia",
+      "drone-strike"
+    ],
+    "confidence": null,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46134",
+        "title": "UNITED24 Media Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_93968600905297920",
+    "title": "Russia Launches Major Missile and Drone Attack on Ukraine",
+    "summary": "Russia attacked Ukraine using ballistic missiles, cruise missiles, guided aerial bombs, and drone strikes overnight.",
+    "date_event": null,
+    "date_published": "2026-09-17T05:42:33Z",
+    "geo": {
+      "lat": 49.4871968,
+      "lon": 31.2718321
+    },
+    "topics": [
+      "military-operation",
+      "missile-strike",
+      "ukraine",
+      "russia",
+      "war"
+    ],
+    "confidence": null,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46135",
+        "title": "UNITED24 Media Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_93968600959823872",
+    "title": "Russia Strikes Shopping Center in Kharkiv",
+    "summary": "Russia struck a shopping center in Kharkiv, according to local media reports.",
+    "date_event": null,
+    "date_published": "2026-09-17T07:04:17Z",
+    "geo": {
+      "lat": 49.9923181,
+      "lon": 36.2310146
+    },
+    "topics": [
+      "military-operation",
+      "civilian-strike",
+      "kharkiv",
+      "ukraine",
+      "war"
+    ],
+    "confidence": null,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46140",
+        "title": "UNITED24 Media Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_93968600498450432",
+    "title": "US Administration Holds Talks with Houthi Representatives in Oman",
+    "summary": "Reuters reports that representatives of the American administration met with senior Houthi representatives in Oman, following Houthi control over Yemen Red Sea coast and Perim Island.",
+    "date_event": null,
+    "date_published": "2026-09-17T05:28:15Z",
+    "geo": {
+      "lat": 21.0000287,
+      "lon": 57.0036901
+    },
+    "topics": [
+      "diplomacy",
+      "yemen",
+      "houthis",
+      "middle-east",
+      "ceasefire"
+    ],
+    "confidence": null,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94757",
+        "title": "Intel Slava Z Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_93968600565559296",
+    "title": "Severe Flooding Affects Valencia and Barcelona Regions",
+    "summary": "Fresh footage shows serious flooding affecting Valencia region and southern Barcelona areas.",
+    "date_event": null,
+    "date_published": "2026-09-17T05:31:09Z",
+    "geo": {
+      "lat": 39.4697065,
+      "lon": -0.3763353
+    },
+    "topics": [
+      "natural-disaster",
+      "flooding",
+      "spain",
+      "weather"
+    ],
+    "confidence": null,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94768",
+        "title": "Intel Slava Z Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_93968600624279552",
+    "title": "Turkey Files ICC Complaint Over Ukrainian Attack on Turkish Vessel",
+    "summary": "Turkey has filed a complaint with the International Criminal Court regarding a Ukrainian attack on the Turkish vessel Reyhan Sarı, resulting in one sailor death.",
+    "date_event": null,
+    "date_published": "2026-09-17T05:51:28Z",
+    "geo": {
+      "lat": 39.294076,
+      "lon": 35.2316631
+    },
+    "topics": [
+      "international-law",
+      "maritime-incident",
+      "ukraine",
+      "turkey",
+      "conflict"
+    ],
+    "confidence": null,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/94778",
+        "title": "Intel Slava Z Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_93968600678805504",
+    "title": "Palestinian Journalist Alaa Al-Rimawi Detained by Israeli Forces",
+    "summary": "Israeli occupation forces detained Palestinian journalist Alaa Al-Rimawi following a raid on his home in Al-Masayef neighborhood in Al-Bireh, West Bank.",
+    "date_event": null,
+    "date_published": "2026-09-17T05:19:01Z",
+    "geo": {
+      "lat": 31.9119639,
+      "lon": 35.2063474
+    },
+    "topics": [
+      "human-rights",
+      "press-freedom",
+      "west-bank",
+      "palestine",
+      "detention"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/239154",
+        "title": "Quds News Network Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_93968600737525760",
+    "title": "Israeli Settlers Set Fire to Agricultural Structures in Hebron",
+    "summary": "Israeli settlers set fire to an agricultural room and spray hostile slogans in Aghziwya area, east of Yatta, south of Hebron, West Bank.",
+    "date_event": null,
+    "date_published": "2026-09-17T05:29:01Z",
+    "geo": {
+      "lat": 31.5336282,
+      "lon": 35.0979762
+    },
+    "topics": [
+      "violence",
+      "settlers",
+      "west-bank",
+      "palestine",
+      "agriculture"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/239155",
+        "title": "Quds News Network Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_93968600792051712",
+    "title": "Israeli Forces Demolish Displaced Lebanese Homes in Southern Lebanon",
+    "summary": "Israeli occupation forces detonated displaced Lebanese homes in the town of Mansouri, southern Lebanon.",
+    "date_event": null,
+    "date_published": "2026-09-17T05:38:01Z",
+    "geo": {
+      "lat": 33.1736531,
+      "lon": 35.2110878
+    },
+    "topics": [
+      "military-operation",
+      "displacement",
+      "lebanon",
+      "humanitarian-crisis"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/239157",
+        "title": "Quds News Network Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_93968639438635045",
+    "title": "Houthis Down US-Made F-15 Fighter Jet Over Marib with Locally Manufactured Missile",
+    "summary": "Houthi military spokesman Yahya Saree announced the successful downing of a Saudi-operated F-15 fighter jet over Marib using a locally manufactured surface-to-air missile system.",
+    "date_event": null,
+    "date_published": "2026-09-17T06:52:01Z",
+    "geo": {
+      "lat": 15.3833,
+      "lon": 48.9167
+    },
+    "topics": [
+      "military-operation",
+      "houthi",
+      "yemen",
+      "f-15-fighter",
+      "air-defense",
+      "missile",
+      "saudi-arabia",
+      "regional-conflict",
+      "weapons-system"
+    ],
+    "confidence": 0.78,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74704",
+        "title": "Geopolitics Prime Report"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/jAcTK4KqBLXlITvT6mnBhfnHr1j-Q3I2kzCMsrYTgrnKgeQL2um156xl0lisrTBuzjuqLCSO7FoJtOib29d64QvW1mi0WILpl4GmNBpaJzyc2BuXwNtLiodbFQHOIxod9FIc7U_eDSxAIR7FFlCf9H4F8uD9dcuDEyIoUxRdOr8zrv43R-oUGJhmN3llgZ3clzfUvq9b7TrsQEOETe8MEqAC9Sis7b9laiH86PiEqII8cGdYFSBVpWDh61mi-PVUIdG7RDtwNZd4QaTb1E1wuHqql7u4ckeX33icSolpditYOzxcTpsDisbG3jSJs1gCH_RJGbTipm7zezQtmwJBXg"
+  },
+  {
+    "id": "evt_93968638241634304",
+    "title": "Ukraine Air Defense Destroys/Suppresses 131 Russian Targets in Major Attack",
+    "summary": "Ukrainian General Staff reports successful defense against large-scale Russian drone and missile attack on September 17, with 131 enemy targets destroyed or suppressed, including 124 Shahed-type drones.",
+    "date_event": null,
+    "date_published": "2026-09-17T05:59:04Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234
+    },
+    "topics": [
+      "military-attack",
+      "air-defense",
+      "drone-strike",
+      "ukraine",
+      "russia",
+      "missile",
+      "shahed-drone",
+      "kyiv",
+      "odesa",
+      "zaporizhzhia",
+      "military-operations"
+    ],
+    "confidence": 0.95,
+    "source_name": "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)",
+    "links": [
+      {
+        "url": "https://t.me/GeneralStaffZSU/42266",
+        "title": "Official Report - General Staff of Ukraine"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/H2V2N06KQwWjgTfJ9LlVBdpFAefk4fZFBgPbRmz_44XYyXBSWg7URymof3BGf3RORmAoDZyBymSBsdoPhBb3VWAafk-xlpj9Ki6nyknc6Dm9DjxeSdLQx8cO-Nw7Gbxf0zl15V6mbpsbxZ38I_7jMKJ1v5MX_JYcCE6Uu6g3U_G8W67fkZl3Sff61AQpTe2eeVO_e29jrUlnVCODJWY1A1pVciQIzPmMDIDovZ8uRWEDI9dpqQc999x1TPrq1GGZ7Z7IPA2tCXzV2Bjcb95Cr5GDX_K2Ro8MWqWa0WV7ZTa_lwJPJtUYu7gJ0Be7LR6yO3UintEHEiupmYMKdzMNlw.jpg"
+  },
+  {
+    "id": "evt_93968637836140544",
+    "title": "GUR Publishes Data on Foreign Equipment for Geran Drone Production",
+    "summary": "Main Intelligence Directorate of Ukraine released intelligence information about foreign-sourced equipment utilized in the manufacturing of Geran unmanned aerial vehicles in Alabuga, Russia.",
+    "date_event": null,
+    "date_published": "2026-09-17T07:00:01Z",
+    "geo": {
+      "lat": 55.7577131,
+      "lon": 52.0539938
+    },
+    "topics": [
+      "intelligence",
+      "military-intelligence",
+      "geran-drone",
+      "russia",
+      "ukraine",
+      "weapons-production",
+      "foreign-equipment",
+      "alabuga"
+    ],
+    "confidence": 0.92,
+    "source_name": "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)",
+    "links": [
+      {
+        "url": "https://t.me/DIUkraine/9490",
+        "title": "Original Telegram Message"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/Olc1fgLOP8-_Pkr-65yzNpwASBYgN4FikHlQ0AywmQPWiApbXtMWUZiq16nUJWCS0BpZZoFmQ4vuFqIYLVHUkpyxsNs04zO_NdaZ9uCSyRV2-tcAq2jLATv0VMGloYFQMFKcLMdob7022mNiHHFyNR_azuWt7-evh95HObNyECTE7mOoqTmbI619NZ0FO18iFWMYog3C3uuCkKKodvd_q_1yHgL8R27xOXR6nGee9bAcXsZwMmYh1iIX_tvhMZ5RZa9XhJws2s2sOk-_oUnA2Dpa8Q9RyOmNHUJQbkGZOYfBElgMGulmi5rYN57eXrUu2TtGFFic0Cmn5zkcI1nuKA.jpg"
   }
 ]
