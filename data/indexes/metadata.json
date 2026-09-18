@@ -77423,8 +77423,8 @@
     "date_event": null,
     "date_published": "2026-09-17T11:28:01Z",
     "geo": {
-      "lat": 0.0,
-      "lon": -90.0,
+      "lat": 0,
+      "lon": -90,
       "country": "Global",
       "region": "Pacific Ocean"
     },
@@ -77898,8 +77898,8 @@
     "date_event": null,
     "date_published": "2026-09-17T13:03:36Z",
     "geo": {
-      "lat": 37.0,
-      "lon": -95.0
+      "lat": 37,
+      "lon": -95
     },
     "topics": [
       "iran-war",
@@ -78064,8 +78064,8 @@
     "date_event": null,
     "date_published": "2026-09-17T12:48:43Z",
     "geo": {
-      "lat": 37.0,
-      "lon": -95.0
+      "lat": 37,
+      "lon": -95
     },
     "topics": [
       "migration",
@@ -81362,6 +81362,1348 @@
       {
         "url": "https://t.me/intelslava/94815",
         "title": "The US Department of Justice has charged five alleged members of a network linked to Russian intelligence services, whic"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220195060568064",
+    "title": "UN Warns of Humanitarian Crisis in Yemen as Hostilities Spread",
+    "summary": "Ongoing hostilities across Yemen continue to cause significant harm to families, with UN agencies escalating relief efforts. Relief organizations expand aid operations in Djibouti to support refugees fleeing the conflict.",
+    "date_event": null,
+    "date_published": "2026-09-17T22:59:01Z",
+    "geo": {
+      "lat": 12.5626,
+      "lon": 48.5164,
+      "country": "Yemen",
+      "region": "Aden",
+      "city": "Aden"
+    },
+    "topics": [
+      "yemen",
+      "humanitarian-crisis",
+      "refugees",
+      "united-nations",
+      "aid",
+      "djibouti"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2100721215669186957",
+        "label": "Xinhua News Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSdC0CXXsAAuTja.jpg"
+  },
+  {
+    "id": "evt_94220195115094016",
+    "title": "China Announces Comprehensive Grain Production Enhancement Strategy Through 2030",
+    "summary": "China's Ministry of Agriculture and Rural Affairs has released an ambitious national crop farming development plan targeting the 2026-2030 period. The strategy prioritizes steadily enhancing comprehensive grain production capacity to ensure food security.",
+    "date_event": null,
+    "date_published": "2026-09-17T22:46:50Z",
+    "geo": {
+      "lat": 39.9042,
+      "lon": 116.4074,
+      "country": "China",
+      "region": "Beijing",
+      "city": "Beijing"
+    },
+    "topics": [
+      "china",
+      "agriculture",
+      "grain-production",
+      "food-security",
+      "policy",
+      "five-year-plan"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2100718146671747408",
+        "label": "Xinhua News Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSdABRyXEAAuWhf.jpg"
+  },
+  {
+    "id": "evt_94220165129994240",
+    "title": "Australian Navy 725 Squadron Conducts Over-Water Winch Training",
+    "summary": "The Australian Navy's 725 Squadron conducted over-water winch training with a MH-60R Seahawk helicopter in Jervis Bay, NSW, as part of routine aircrew proficiency exercises.",
+    "date_event": null,
+    "date_published": "2026-09-17T23:00:00Z",
+    "geo": {
+      "lat": -35.1494368,
+      "lon": 150.7085321
+    },
+    "topics": [
+      "military-training",
+      "naval-exercise",
+      "australia",
+      "defence",
+      "maritime"
+    ],
+    "confidence": null,
+    "source_name": "Australian Defence (@DefenceAust)",
+    "links": [
+      {
+        "url": "https://x.com/DefenceAust/status/2100721459622490183",
+        "title": "Australian Navy Training Exercise"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220322668052480",
+    "title": "Iran Rapidly Advancing Nuclear Facility Reconstruction After Israeli Bombing",
+    "summary": "Iran demonstrates rapid progress in reconstructing a nuclear facility previously bombed by Israel, according to recent satellite imagery analysis.",
+    "date_event": null,
+    "date_published": "2026-09-17T21:57:16Z",
+    "geo": {
+      "lat": 32.6475314,
+      "lon": 54.5643516
+    },
+    "topics": [
+      "nuclear-program",
+      "iran",
+      "israel",
+      "military-conflict",
+      "satellite-imagery",
+      "weapons-development"
+    ],
+    "confidence": null,
+    "source_name": "ELINT News (@ELINTNews)",
+    "links": [
+      {
+        "url": "https://x.com/ELINTNews/status/2100705671826001989",
+        "title": "Iran Nuclear Facility Reconstruction"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220268046155776",
+    "title": "Future USS Ted Stevens (DDG 128) Arleigh Burke-Class Destroyer Arrives in San Diego",
+    "summary": "The future USS Ted Stevens (DDG 128), an Arleigh Burke-class Flight III guided missile destroyer, arrived in San Diego on September 17, 2026. The vessel will undergo commissioning on October 3, 2026, in Whittier, Alaska.",
+    "date_event": null,
+    "date_published": "2026-09-17T22:51:23Z",
+    "geo": {
+      "lat": 32.7157,
+      "lon": -117.1611,
+      "country": "United States",
+      "region": "California",
+      "city": "San Diego"
+    },
+    "topics": [
+      "warship",
+      "destroyer",
+      "us-navy",
+      "ddg-128",
+      "commissioning"
+    ],
+    "confidence": 0.9,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2100719290798244348",
+        "label": "Warshipcam Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2100461340582158336/img/BdpVEzrpd3LGyfhs.jpg"
+  },
+  {
+    "id": "evt_94220318414996480",
+    "title": "USS Oakland (LCS 24) Littoral Combat Ship Undergoing Maintenance in San Diego",
+    "summary": "The USS Oakland (LCS 24), an Independence-variant littoral combat ship, underwent maintenance in the Austal floating dry dock in San Diego as of September 11, 2026. The vessel supports US Navy operations across coastal regions.",
+    "date_event": null,
+    "date_published": "2026-09-17T22:31:16Z",
+    "geo": {
+      "lat": 32.7157,
+      "lon": -117.1611,
+      "country": "United States",
+      "region": "California",
+      "city": "San Diego"
+    },
+    "topics": [
+      "warship",
+      "littoral-combat-ship",
+      "us-navy",
+      "lcs-24",
+      "maintenance"
+    ],
+    "confidence": 0.85,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2100714231716893178",
+        "label": "Warshipcam Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2100461340582158336/img/BdpVEzrpd3LGyfhs.jpg"
+  },
+  {
+    "id": "evt_94220217613336576",
+    "title": "USS San Diego Transits Apra Harbor During Routine Operations",
+    "summary": "USS San Diego conducted a transit through Apra Harbor in Guam on September 17, 2026, as part of routine operations within the US 7th Fleet area of responsibility. The transit demonstrates continued forward naval presence in the Western Pacific.",
+    "date_event": null,
+    "date_published": "2026-09-17T23:41:21Z",
+    "geo": {
+      "lat": 13.5779,
+      "lon": 144.6588,
+      "country": "Guam",
+      "region": "Guam",
+      "city": "Apra Harbor"
+    },
+    "topics": [
+      "naval-operations",
+      "us-military",
+      "pacific-fleet",
+      "warship",
+      "guam"
+    ],
+    "confidence": 0.85,
+    "source_name": "US Pacific Fleet (@USPacificFleet)",
+    "links": [
+      {
+        "url": "https://x.com/USPacificFleet/status/2100731865283920105",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2100461340582158336/img/BdpVEzrpd3LGyfhs.jpg"
+  },
+  {
+    "id": "evt_94220232661646336",
+    "title": "Archived combat footage from Serebryansky Forest featuring British volunteer perspective",
+    "summary": "Archive episodes of combat in the Serebryansky Forest region have emerged, captured from the perspective of a British volunteer fighting for Ukraine. The footage dates from 2024 and provides first-hand documentation of frontline combat operations.",
+    "date_event": "2026-09-17T20:16:53Z",
+    "date_published": "2026-09-17T20:16:53Z",
+    "geo": {
+      "lat": 51.5,
+      "lon": 33.5,
+      "country": "Ukraine",
+      "city": "Serebryansky Forest"
+    },
+    "topics": [
+      "ukraine",
+      "combat",
+      "frontline",
+      "serebryansky-forest",
+      "volunteer"
+    ],
+    "confidence": 0.75,
+    "source_name": "WarLife 18+ (@Voyna18)",
+    "links": [
+      {
+        "url": "https://t.me/Voyna18/8737",
+        "label": "WarLife 18+"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/I2SXEDxidu1nQpU8FkRkTM_k0WW_gZjFnX-8Gmcr7hz_HEaHu482az-FYajoRGY3XRQXuxCuri9PLIcr0IJUmSkH2wx2SsKTZ-wK3R2lDq1il3NpslEMxFuiq_R4VJI7eLlqAykYhI2V2O9UcJq4L7C-Td5drwRyA6fjpmxPlAxRVRb3x-ny7V2eyyFbELsOJ9e7ua4FHS7DKTVsLvn1URsTwvyJTD_UljjL_h87furhZTFevdtSxn42G6pbipWTf7-g2spW7ODrhX5xhvJhmZ5oj6fOnmsTPeH2Bj5xsWD3yNmJRNaTPChXH0EJwb2h8VSJFEHMg-yz4DXVYVyvJQ"
+  },
+  {
+    "id": "evt_94220232415002624",
+    "title": "China and Russia criticize US bill targeting Russian oil buyers with sanctions",
+    "summary": "China and Russia have responded critically to a US bill imposing sanctions on buyers of Russian oil, with the Kremlin calling it an unfriendly move and China opposing the extraterritorial application of such laws.",
+    "date_event": "2026-09-17T19:39:02Z",
+    "date_published": "2026-09-17T19:39:02Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "country": "Russia",
+      "city": "Moscow"
+    },
+    "topics": [
+      "sanctions",
+      "russia",
+      "us",
+      "energy",
+      "diplomacy",
+      "ukraine"
+    ],
+    "confidence": 0.85,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46157",
+        "label": "UNITED24 Media"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/ieISkXU4ivevtQqdb__EGfywzzi5pljaUPQIy-TbA7k8rV7YiNOkU8kVg0brJv1wm3IDMifJvz-1ftLYjifm1c68UAqs4yWRn1TvMOnagSpA5nfVWocrFFh91zaBzRJGhIA9MKAvH5FAWNe1juiS37ofZ63KDhbUIV15BmO2K9IlhnMgRXMJaQCYsxtZZkMt2wU2kW3KhP-nYp8EP5tullxXzQmZMcb9xpg_V5otCJykIxvlvBq01oj1Bw7jAh2f89PtwxEE-LLmwrwDL8XesQk36DZh-uBj_WnUWRdRaJZXS4WK7-XD4PcAmzTLApHM4gs-wVQR-SpPBi0sZ-8mMw.jpg"
+  },
+  {
+    "id": "evt_94220232477917184",
+    "title": "Russia falsely claims control of 5,000 square kilometers of Ukrainian territory",
+    "summary": "According to French OSINT analyst Clément Molin, Russia claims to control approximately 5,000 square kilometers of Ukrainian territory that its forces do not actually hold, highlighting the gap between claimed and actual territorial control.",
+    "date_event": "2026-09-17T20:11:01Z",
+    "date_published": "2026-09-17T20:11:01Z",
+    "geo": {
+      "lat": 48.3794,
+      "lon": 31.1656,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "territorial-control",
+      "military",
+      "osint"
+    ],
+    "confidence": 0.8,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46158",
+        "label": "UNITED24 Media"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/ieISkXU4ivevtQqdb__EGfywzzi5pljaUPQIy-TbA7k8rV7YiNOkU8kVg0brJv1wm3IDMifJvz-1ftLYjifm1c68UAqs4yWRn1TvMOnagSpA5nfVWocrFFh91zaBzRJGhIA9MKAvH5FAWNe1juiS37ofZ63KDhbUIV15BmO2K9IlhnMgRXMJaQCYsxtZZkMt2wU2kW3KhP-nYp8EP5tullxXzQmZMcb9xpg_V5otCJykIxvlvBq01oj1Bw7jAh2f89PtwxEE-LLmwrwDL8XesQk36DZh-uBj_WnUWRdRaJZXS4WK7-XD4PcAmzTLApHM4gs-wVQR-SpPBi0sZ-8mMw.jpg"
+  },
+  {
+    "id": "evt_94220232545026048",
+    "title": "Russia employs North Korean workers disguised as students in drone production",
+    "summary": "According to Bloomberg, Russia conceals North Korean workers as students to employ them in drone production facilities while evading international sanctions on both nations.",
+    "date_event": "2026-09-17T20:59:01Z",
+    "date_published": "2026-09-17T20:59:01Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "country": "Russia",
+      "city": "Moscow"
+    },
+    "topics": [
+      "north-korea",
+      "russia",
+      "sanctions",
+      "drones",
+      "military",
+      "ukraine"
+    ],
+    "confidence": 0.82,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46159",
+        "label": "UNITED24 Media"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/ieISkXU4ivevtQqdb__EGfywzzi5pljaUPQIy-TbA7k8rV7YiNOkU8kVg0brJv1wm3IDMifJvz-1ftLYjifm1c68UAqs4yWRn1TvMOnagSpA5nfVWocrFFh91zaBzRJGhIA9MKAvH5FAWNe1juiS37ofZ63KDhbUIV15BmO2K9IlhnMgRXMJaQCYsxtZZkMt2wU2kW3KhP-nYp8EP5tullxXzQmZMcb9xpg_V5otCJykIxvlvBq01oj1Bw7jAh2f89PtwxEE-LLmwrwDL8XesQk36DZh-uBj_WnUWRdRaJZXS4WK7-XD4PcAmzTLApHM4gs-wVQR-SpPBi0sZ-8mMw.jpg"
+  },
+  {
+    "id": "evt_94220232603746304",
+    "title": "Polish PM Tusk warns of Russian hybrid warfare and pledges NATO response to direct attack",
+    "summary": "Polish Prime Minister Donald Tusk declared that Russia conducts ongoing hybrid warfare against Poland and cautioned that any direct military attack would trigger a response from Poland and NATO allies.",
+    "date_event": "2026-09-17T22:59:01Z",
+    "date_published": "2026-09-17T22:59:01Z",
+    "geo": {
+      "lat": 52.2297,
+      "lon": 21.0122,
+      "country": "Poland",
+      "city": "Warsaw"
+    },
+    "topics": [
+      "poland",
+      "russia",
+      "nato",
+      "hybrid-warfare",
+      "security"
+    ],
+    "confidence": 0.83,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46161",
+        "label": "UNITED24 Media"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/ieISkXU4ivevtQqdb__EGfywzzi5pljaUPQIy-TbA7k8rV7YiNOkU8kVg0brJv1wm3IDMifJvz-1ftLYjifm1c68UAqs4yWRn1TvMOnagSpA5nfVWocrFFh91zaBzRJGhIA9MKAvH5FAWNe1juiS37ofZ63KDhbUIV15BmO2K9IlhnMgRXMJaQCYsxtZZkMt2wU2kW3KhP-nYp8EP5tullxXzQmZMcb9xpg_V5otCJykIxvlvBq01oj1Bw7jAh2f89PtwxEE-LLmwrwDL8XesQk36DZh-uBj_WnUWRdRaJZXS4WK7-XD4PcAmzTLApHM4gs-wVQR-SpPBi0sZ-8mMw.jpg"
+  },
+  {
+    "id": "evt_94220360177721344",
+    "title": "Federal Reserve Rate Hike Creates Economic Pressure on South Korea Through Higher US Interest Rates",
+    "summary": "The Federal Reserve's latest interest rate increase signals continued elevated US rates, placing downward pressure on the Korean won, increasing Korean borrowing costs, and constraining Seoul's policy flexibility amid expensive energy costs.",
+    "date_event": null,
+    "date_published": "2026-09-17T23:03:09Z",
+    "geo": {
+      "lat": 37.5665,
+      "lon": 126.978
+    },
+    "topics": [
+      "monetary-policy",
+      "federal-reserve",
+      "south-korea",
+      "currency-exchange",
+      "economic-policy",
+      "interest-rates"
+    ],
+    "confidence": null,
+    "source_name": "Southkoreapro (@Southkoreapro)",
+    "links": [
+      {
+        "url": "https://x.com/Southkoreapro/status/2100722252438216850",
+        "title": "South Korea Pro on X",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220360123195392",
+    "title": "Hong Kong Emergency Services to Enable Real-Time Audio and Video Data in 999 System from 2028",
+    "summary": "Hong Kong announced plans to upgrade its 999 emergency call system to allow callers to transmit real-time audio and video data starting in 2028, according to Hong Kong Security Secretary Chris Tang.",
+    "date_event": null,
+    "date_published": "2026-09-17T23:21:59Z",
+    "geo": {
+      "lat": 22.3193,
+      "lon": 114.1694
+    },
+    "topics": [
+      "emergency-services",
+      "hong-kong",
+      "infrastructure",
+      "public-safety",
+      "technology-upgrade",
+      "government-policy"
+    ],
+    "confidence": null,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2100726992786116974",
+        "title": "SCMP News on X",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220360064475136",
+    "title": "General Motors Begins Production of PATRIOT Missile Components for Lockheed Martin",
+    "summary": "General Motors officially commenced manufacturing PAC-3 MSE interceptor housing components for Lockheed Martin, delivering the first production batch within 22 days of signing the initial contract.",
+    "date_event": null,
+    "date_published": "2026-09-17T22:54:37Z",
+    "geo": {
+      "lat": 42.3316,
+      "lon": -83.0458
+    },
+    "topics": [
+      "defense-manufacturing",
+      "patriot-missiles",
+      "weapons-production",
+      "us-military",
+      "lockheed-martin",
+      "general-motors"
+    ],
+    "confidence": null,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2100720103268503683",
+        "title": "OSINT Technical on X",
+        "type": "twitter"
+      },
+      {
+        "url": "https://investors.lockheedmartin.com/news-releases/news-release-details/lockheed-martin-fast-tracks-pac-3r-mse-components-less-one-month/",
+        "title": "Lockheed Martin Press Release",
+        "type": "news"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220623810703360",
+    "title": "USS Benfold and HMAS Supply Conduct Joint Operations in Indo-Pacific",
+    "summary": "The USS Benfold destroyer and the HMAS Supply replenishment ship of the Royal Australian Navy conducted coordinated operations demonstrating allied partnership in the Indo-Pacific region.",
+    "date_event": null,
+    "date_published": "2026-09-17T20:50:36.000Z",
+    "geo": {
+      "lat": 15,
+      "lon": 130
+    },
+    "topics": [],
+    "confidence": null,
+    "source_name": "US Pacific Fleet (@USPacificFleet)",
+    "links": [
+      {
+        "url": "https://x.com/USPacificFleet/status/2100688895209808055",
+        "title": "USS Benfold and HMAS Supply Conduct Joint Operations in Indo-Pacific"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220623605182464",
+    "title": "F-16 Fighter Jet Crashes in Michigan",
+    "summary": "A U.S. Air Force F-16 Fighting Falcon fighter jet crashed in Michigan with dramatic air traffic control audio from the incident emerging.",
+    "date_event": null,
+    "date_published": "2026-09-17T20:36:16.000Z",
+    "geo": {
+      "lat": 43.3266,
+      "lon": -84.5467
+    },
+    "topics": [],
+    "confidence": null,
+    "source_name": "Thewarzonewire (@Thewarzonewire)",
+    "links": [
+      {
+        "url": "https://x.com/Thewarzonewire/status/2100685289148530949",
+        "title": "F-16 Fighter Jet Crashes in Michigan"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220623672291328",
+    "title": "U.S. State Department Approves F-35 Fighter Sale to Saudi Arabia",
+    "summary": "The State Department granted approval for a proposed 24 billion dollar sale of F-35 stealth fighter jets to Saudi Arabia, carrying significant implications across the Middle Eastern region.",
+    "date_event": null,
+    "date_published": "2026-09-17T19:17:09.000Z",
+    "geo": {
+      "lat": 24.7136,
+      "lon": 46.6753
+    },
+    "topics": [],
+    "confidence": null,
+    "source_name": "Thewarzonewire (@Thewarzonewire)",
+    "links": [
+      {
+        "url": "https://x.com/Thewarzonewire/status/2100665378816868707",
+        "title": "U.S. State Department Approves F-35 Fighter Sale to Saudi Arabia"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220623743594496",
+    "title": "Anduril Fury Collaborative Combat Aircraft Mock-up Displayed at AFA Conference",
+    "summary": "A full-scale mockup of Anduril Fury Collaborative Combat Aircraft (CCA) was displayed at the Air Force Association conference equipped with four inert AIM-120 AMRAAM missiles.",
+    "date_event": null,
+    "date_published": "2026-09-17T23:25:40.000Z",
+    "geo": {
+      "lat": 36.4064,
+      "lon": -116.8694
+    },
+    "topics": [],
+    "confidence": null,
+    "source_name": "Thewarzonewire (@Thewarzonewire)",
+    "links": [
+      {
+        "url": "https://x.com/Thewarzonewire/status/2100727920406720871",
+        "title": "Anduril Fury Collaborative Combat Aircraft Mock-up Displayed at AFA Conference"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220355777884160",
+    "title": "Afghan Medical Students Face Expulsion from Pakistan",
+    "summary": "Pakistan's Medical and Dental Council issued an order requiring Afghan students to return home, threatening medical careers for women who cannot study in Taliban-controlled Afghanistan. A court stay has temporarily halted deportations pending Friday's hearing.",
+    "date_event": null,
+    "date_published": "2026-09-17T23:31:43Z",
+    "geo": {
+      "lat": 33.7298,
+      "lon": 74.1786,
+      "city": "Islamabad",
+      "country": "Pakistan"
+    },
+    "topics": [
+      "education",
+      "refugee",
+      "afghanistan",
+      "pakistan",
+      "women"
+    ],
+    "confidence": 0.85,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2100729955302637773",
+        "label": "Twitter Post"
+      },
+      {
+        "url": "https://www.bbc.com/news/articles/cmy0z3kez6xno",
+        "label": "BBC Article"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220355844993024",
+    "title": "Nigerians Celebrate Oil Wealth Through Public Share-Buying Frenzy",
+    "summary": "Nigerian citizens have purchased substantial stakes in the national oil company through a government share offering, marking a shift in public ownership and national pride in oil resources.",
+    "date_event": null,
+    "date_published": "2026-09-17T23:27:04Z",
+    "geo": {
+      "lat": 9.0765,
+      "lon": 7.3986,
+      "city": "Abuja",
+      "country": "Nigeria"
+    },
+    "topics": [
+      "economy",
+      "oil",
+      "investment",
+      "nigeria"
+    ],
+    "confidence": 0.72,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2100728270589182144",
+        "label": "Twitter Post"
+      },
+      {
+        "url": "https://bbc.in/4rlSUHB",
+        "label": "BBC Article"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220355907907584",
+    "title": "Global Concerns Rise Over Psychological Readiness for Potential Conflict",
+    "summary": "Experts and analysts raise questions about whether populations worldwide are psychologically prepared for potential military conflict, examining societal resilience and mental health dimensions.",
+    "date_event": null,
+    "date_published": "2026-09-17T23:24:47Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194
+    },
+    "topics": [
+      "psychology",
+      "conflict",
+      "preparation",
+      "resilience"
+    ],
+    "confidence": 0.65,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2100727696678326305",
+        "label": "Twitter Post"
+      },
+      {
+        "url": "https://bbc.in/4xxdFBy",
+        "label": "BBC Article"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220356037931008",
+    "title": "New Wild Cat Species Discovered in Bolivia Cloud Forest",
+    "summary": "A previously unknown small wild cat species inhabiting Bolivia's cloud forest has been formally identified and described, marking the first new living cat species to be formally named in over a century.",
+    "date_event": null,
+    "date_published": "2026-09-17T23:45:08Z",
+    "geo": {
+      "lat": -16.2902,
+      "lon": -63.5887,
+      "city": "La Paz",
+      "country": "Bolivia"
+    },
+    "topics": [
+      "science",
+      "biology",
+      "discovery",
+      "animal",
+      "conservation"
+    ],
+    "confidence": 0.8,
+    "source_name": "CNN (@CNN)",
+    "links": [
+      {
+        "url": "https://x.com/CNN/status/2100732817634177405",
+        "label": "CNN Twitter Post"
+      },
+      {
+        "url": "https://www.cnn.com",
+        "label": "CNN"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220278502035456",
+    "title": "Putin Approval Rating Released Ahead of Russian Parliamentary Elections",
+    "summary": "Ian Bremmer, President of Eurasia Group, comments on Putins reported 76% approval rating announcement preceding the weekends parliamentary elections in Russia. Bremmer tone suggests skepticism about the legitimacy of both the approval figure and the electoral process.",
+    "date_event": "2026-09-17T23:21:06Z",
+    "date_published": "2026-09-17T23:21:06Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "country": "Russia",
+      "city": "Moscow"
+    },
+    "topics": [
+      "russia",
+      "politics",
+      "election",
+      "kremlin",
+      "approval-rating"
+    ],
+    "confidence": 0.85,
+    "source_name": "ianbremmer (@ianbremmer)",
+    "links": [
+      {
+        "url": "https://x.com/ianbremmer/status/2100726769175171294",
+        "label": "Ian Bremmer Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220278594310144",
+    "title": "Geopolitical Analysis: Iran War, Pipeline Infrastructure, and Regional Leverage",
+    "summary": "Ian Bremmer discusses recent developments in the Iran-related conflict, covering pipeline strike patterns, regional strategic vulnerability, and shifts in negotiating leverage among affected parties.",
+    "date_event": "2026-09-17T22:47:00Z",
+    "date_published": "2026-09-17T22:47:00Z",
+    "geo": {
+      "lat": 32.4279,
+      "lon": 53.688,
+      "country": "Iran",
+      "city": "Tehran"
+    },
+    "topics": [
+      "iran",
+      "war",
+      "pipeline",
+      "energy-security",
+      "middle-east",
+      "conflict"
+    ],
+    "confidence": 0.8,
+    "source_name": "ianbremmer (@ianbremmer)",
+    "links": [
+      {
+        "url": "https://x.com/ianbremmer/status/2100718188396781711",
+        "label": "Ian Bremmer Analysis Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220452540485632",
+    "title": "UN States Reasonable Grounds for US War Crime Allegations in US-Israeli War",
+    "summary": "The United Nations has determined reasonable grounds exist to believe the United States committed war crimes through strikes on the Minab elementary school and a sports facility during the opening phase of the US-Israeli conflict.",
+    "date_event": "2026-09-17T23:29:31Z",
+    "date_published": "2026-09-17T23:29:31Z",
+    "geo": {
+      "lat": 27.3103,
+      "lon": 56.8673,
+      "country": "Iran",
+      "city": "Minab"
+    },
+    "topics": [
+      "war-crimes",
+      "united-nations",
+      "international-law",
+      "humanitarian-law",
+      "civilian-casualties"
+    ],
+    "confidence": 0.88,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2100728887286079500",
+        "label": "Middle East Eye Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220452624371712",
+    "title": "Israeli Political Discourse Analysis: Territorial Judaization Strategy",
+    "summary": "Opinion piece by Abed Abou Shhadeh examines the recurring theme of Judaization in Israeli political discourse, tracing how this concept has become embedded in governance approaches toward the Galilee, Negev, and occupied West Bank territories.",
+    "date_event": "2026-09-17T22:59:50Z",
+    "date_published": "2026-09-17T22:59:50Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.2338,
+      "country": "Palestine",
+      "region": "West Bank"
+    },
+    "topics": [
+      "israel",
+      "palestinians",
+      "politics",
+      "territorial-policy",
+      "demographic-policy"
+    ],
+    "confidence": 0.82,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2100721420514853141",
+        "label": "Middle East Eye Opinion"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220452695674880",
+    "title": "British Parliament Hosts Address Against Islamic Influence in UK Society",
+    "summary": "Writer Tim Dieppe delivered remarks in the British Parliament arguing that Islams influence on British society must face resistance. The presentation occurred during a parliamentary discussion session.",
+    "date_event": "2026-09-17T22:29:31Z",
+    "date_published": "2026-09-17T22:29:31Z",
+    "geo": {
+      "lat": 51.5074,
+      "lon": -0.1278,
+      "country": "United Kingdom",
+      "city": "London"
+    },
+    "topics": [
+      "united-kingdom",
+      "islam",
+      "politics",
+      "parliament",
+      "religion"
+    ],
+    "confidence": 0.75,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2100713788294980017",
+        "label": "Middle East Eye Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220278694973440",
+    "title": "Anduril Fury Collaborative Combat Aircraft Full-Scale Model Displayed with Advanced Weaponry",
+    "summary": "Ian Ellis-Jones shares maritime and defense intelligence reporting on Andurils Fury Collaborative Combat Aircraft (CCA) full-scale model display, featuring advanced air-to-air missile capabilities (four AMRAAMs). The YFQ-44A Fury represents developments in autonomous/collaborative military aircraft technology.",
+    "date_event": "2026-09-17T23:29:04Z",
+    "date_published": "2026-09-17T23:29:04Z",
+    "geo": {
+      "lat": 38.2975,
+      "lon": -122.2869,
+      "country": "United States",
+      "region": "California",
+      "city": "San Francisco"
+    },
+    "topics": [
+      "defense-technology",
+      "aircraft",
+      "autonomous-systems",
+      "military",
+      "innovation"
+    ],
+    "confidence": 0.8,
+    "source_name": "Ianellisjones (@Ianellisjones)",
+    "links": [
+      {
+        "url": "https://x.com/Ianellisjones/status/2100728775918911896",
+        "label": "Ian Ellis-Jones Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220775791288320",
+    "title": "Texas Air National Guard F-16 Crashed During Training Mission in Michigan",
+    "summary": "A Texas Air National Guard F-16 fighter jet crashed in Michigan on Thursday afternoon during a training mission. The Texas Military Department confirmed the incident.",
+    "date_event": "2026-09-18T17:00:00Z",
+    "date_published": "2026-09-17T23:30:25Z",
+    "geo": {
+      "lat": 42.7335,
+      "lon": -84.5555,
+      "country": "United States",
+      "city": "Michigan"
+    },
+    "topics": [
+      "military",
+      "accident",
+      "training-incident",
+      "united-states"
+    ],
+    "confidence": 0.75,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2100729114269475094",
+        "label": "ABC News"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/ext_tw_video_thumb/2100729065196109824/pu/img/5IaDM2QPYZlbP6qP.jpg"
+  },
+  {
+    "id": "evt_94220775842619392",
+    "title": "Postal Service Halts Work on Computer System for Mail Voting Restrictions",
+    "summary": "The US Postal Service chief announced that work has stopped on a computer system designed to support President Trump's effort to limit mail voting. The system represented a key component of the administration's electoral procedure modification initiative.",
+    "date_event": "2026-09-17T23:26:52Z",
+    "date_published": "2026-09-17T23:26:52Z",
+    "geo": {
+      "lat": 38.9072,
+      "lon": -77.0369,
+      "country": "United States",
+      "city": "Washington DC"
+    },
+    "topics": [
+      "politics",
+      "election-administration",
+      "mail-voting",
+      "united-states",
+      "government"
+    ],
+    "confidence": 0.8,
+    "source_name": "AP News (@AP)",
+    "links": [
+      {
+        "url": "https://x.com/AP/status/2100728224200245706",
+        "label": "AP News"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2100726510596337664/XA-FkSlq?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_94220775900340224",
+    "title": "AP Analysis Reveals Nationwide US Migration Pattern Distribution",
+    "summary": "The Associated Press conducted an analysis of federal records to map the geographic distribution of migrants released in the United States after crossing the Mexican border. The study revealed how widely migration reached across the country based on declared destination ZIP codes.",
+    "date_event": "2026-09-17T23:05:01Z",
+    "date_published": "2026-09-17T23:05:01Z",
+    "geo": {
+      "lat": 39.8283,
+      "lon": -98.5795,
+      "country": "United States",
+      "city": "United States (National)"
+    },
+    "topics": [
+      "migration",
+      "border-policy",
+      "demographics",
+      "united-states"
+    ],
+    "confidence": 0.7,
+    "source_name": "AP News (@AP)",
+    "links": [
+      {
+        "url": "https://x.com/AP/status/2100722722036703254",
+        "label": "AP News"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2100726510596337664/XA-FkSlq?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_94220356746752000",
+    "title": "Palestinian resident Alaa Mahamid killed by Israeli occupation police in Umm al-Fahm",
+    "summary": "Israeli occupation police killed Palestinian resident Alaa Mahamid in Umm al-Fahm, a Palestinian town, reportedly in a cold-blooded killing in daylight.",
+    "date_event": null,
+    "date_published": "2026-09-17T22:15:16Z",
+    "geo": {
+      "lat": 32.4558,
+      "lon": 35.0622
+    },
+    "topics": [
+      "israel-palestine-conflict",
+      "police-violence",
+      "palestinian-casualties",
+      "extrajudicial-killing"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/239252",
+        "title": "Quds News Network post",
+        "source": "telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220356818055168",
+    "title": "Security alerts reported in Abha and Khamis Mushait, southern Saudi Arabia",
+    "summary": "Security alerts received notification in the cities of Abha and Khamis Mushait in southern Saudi Arabia.",
+    "date_event": null,
+    "date_published": "2026-09-17T19:18:24Z",
+    "geo": {
+      "lat": 18.2164,
+      "lon": 42.5053
+    },
+    "topics": [
+      "saudi-arabia",
+      "security-alert",
+      "middle-east"
+    ],
+    "confidence": null,
+    "source_name": "Rerum Novarum Intel",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66637",
+        "title": "Rerum Novarum Intel post",
+        "source": "telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220356889358336",
+    "title": "Iranian projectiles reported to have struck vessel in Strait of Hormuz",
+    "summary": "According to Rerum Novarum Intel, Iranian projectiles struck another vessel in the Strait of Hormuz.",
+    "date_event": null,
+    "date_published": "2026-09-17T20:04:44Z",
+    "geo": {
+      "lat": 26.1207,
+      "lon": 56.6793
+    },
+    "topics": [
+      "iran",
+      "strait-of-hormuz",
+      "maritime-incident",
+      "military-conflict"
+    ],
+    "confidence": null,
+    "source_name": "Rerum Novarum Intel",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66638",
+        "title": "Rerum Novarum Intel post",
+        "source": "telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220356952272896",
+    "title": "Kuwait reportedly held secret talks with Israel following Iranian attacks",
+    "summary": "Israeli media reported that Kuwait conducted secret diplomatic talks with Israel in the aftermath of Iran's attacks on the Arab nation.",
+    "date_event": null,
+    "date_published": "2026-09-17T20:07:21Z",
+    "geo": {
+      "lat": 29.2921,
+      "lon": 47.6821
+    },
+    "topics": [
+      "israel-diplomacy",
+      "kuwait",
+      "iran-attacks",
+      "abraham-accords",
+      "middle-east"
+    ],
+    "confidence": null,
+    "source_name": "Rerum Novarum Intel",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66639",
+        "title": "Rerum Novarum Intel post",
+        "source": "telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220357019381760",
+    "title": "US Supreme Court to rule on religious zoning protections for Orthodox communities",
+    "summary": "The US Supreme Court will decide a case in the coming year regarding the rights of Orthodox and Hasidic Jews to use homes as places of worship.",
+    "date_event": null,
+    "date_published": "2026-09-17T22:29:44Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369
+    },
+    "topics": [
+      "united-states",
+      "supreme-court",
+      "zoning-law",
+      "religious-freedom",
+      "judaism"
+    ],
+    "confidence": null,
+    "source_name": "Rerum Novarum Intel",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66643",
+        "title": "Rerum Novarum Intel post",
+        "source": "telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220357090684928",
+    "title": "US military begins large-scale withdrawal from Iraq's Kurdistan region",
+    "summary": "The US military commenced its planned major withdrawal of forces from the Kurdistan region of Iraq, with convoys relocating to Jordan.",
+    "date_event": null,
+    "date_published": "2026-09-17T22:40:19Z",
+    "geo": {
+      "lat": 35.9375,
+      "lon": 44.361
+    },
+    "topics": [
+      "united-states-military",
+      "iraq-withdrawal",
+      "iraq",
+      "jordan",
+      "military-deployment"
+    ],
+    "confidence": null,
+    "source_name": "Rerum Novarum Intel",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66644",
+        "title": "Rerum Novarum Intel post",
+        "source": "telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220357166182400",
+    "title": "US negotiating military presence in Penrhyn, Cook Islands for Third Island Chain",
+    "summary": "The United States engaged in negotiations for establishing a military presence at Penrhyn in the Cook Islands as part of strategic positioning in the Third Island Chain.",
+    "date_event": null,
+    "date_published": "2026-09-17T22:50:05Z",
+    "geo": {
+      "lat": -9.0047,
+      "lon": -159.3536
+    },
+    "topics": [
+      "united-states-military",
+      "cook-islands",
+      "pacific",
+      "new-zealand",
+      "military-strategy"
+    ],
+    "confidence": null,
+    "source_name": "Rerum Novarum Intel",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66645",
+        "title": "Rerum Novarum Intel post",
+        "source": "telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220275305947136",
+    "title": "Israeli Settlers Attack Al-Tira Village, Attempt Ramallah Park Incursion",
+    "summary": "Israeli settlers reached Al-Tira village and attempted to breach Ramallah Park, terrorizing Palestinian families.",
+    "date_event": null,
+    "date_published": "2026-09-17T19:18:13Z",
+    "geo": {
+      "lat": 32.2591449,
+      "lon": 35.3015948
+    },
+    "topics": [
+      "israel",
+      "palestine",
+      "west-bank",
+      "settlers",
+      "occupation",
+      "conflict"
+    ],
+    "confidence": 0.88,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/239242",
+        "title": "Quds News Network - Al-Tira Settlers"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220275373056000",
+    "title": "Israeli Settler Gangs Block Route 17 in West Bank, Pelt Vehicles",
+    "summary": "Israeli settler gangs have blocked Route 17 between Nablus and Asira al-Shamaliya, attacking passing vehicles with stones.",
+    "date_event": null,
+    "date_published": "2026-09-17T19:32:07Z",
+    "geo": {
+      "lat": 32.2591449,
+      "lon": 35.3015948
+    },
+    "topics": [
+      "israel",
+      "palestine",
+      "west-bank",
+      "settlers",
+      "violence",
+      "nablus",
+      "occupation"
+    ],
+    "confidence": 0.87,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/239243",
+        "title": "Quds News Network - Route 17 Blockade"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220275159146496",
+    "title": "United States Withdraws from UN Human Rights Council",
+    "summary": "The United States has officially withdrawn from the United Nations Human Rights Council.",
+    "date_event": null,
+    "date_published": "2026-09-17T22:40:12Z",
+    "geo": {
+      "lat": 40.7127281,
+      "lon": -74.0060152
+    },
+    "topics": [
+      "united-states",
+      "united-nations",
+      "human-rights",
+      "diplomacy",
+      "international-relations"
+    ],
+    "confidence": 0.9,
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36859",
+        "title": "Middle East Spectator - US UN Withdrawal"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94220275234643968",
+    "title": "United States Grants Visas to Iranian Officials for UN General Assembly",
+    "summary": "The United States has granted visas to Iranian President Masoud Pezeshkian, Foreign Minister Abbas Araqchi, and other Iranian officials to attend the UN General Assembly in New York.",
+    "date_event": null,
+    "date_published": "2026-09-17T23:35:09Z",
+    "geo": {
+      "lat": 40.7127281,
+      "lon": -74.0060152
+    },
+    "topics": [
+      "iran",
+      "united-states",
+      "diplomacy",
+      "united-nations",
+      "general-assembly"
+    ],
+    "confidence": 0.9,
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36860",
+        "title": "Middle East Spectator - Iran UN Visas"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94221037050286080",
+    "title": "Wagner Group Operational Activity Update - Eastern Ukraine Theater",
+    "summary": "Wagner group posts operational readiness messaging from an airstrip location in eastern Ukraine, signaling active combat preparations. The post includes aerial imagery of military infrastructure and motivational content directed at deployed personnel.",
+    "date_event": null,
+    "date_published": "2026-09-17T20:15:02Z",
+    "geo": {
+      "lat": 47.9212914,
+      "lon": 37.7809825,
+      "country": "Ukraine",
+      "region": "Donetsk Oblast",
+      "city": "Donetsk"
+    },
+    "topics": [
+      "ukraine-war",
+      "wagner-group",
+      "military-operations",
+      "morale",
+      "combat-readiness"
+    ],
+    "confidence": 0.65,
+    "source_name": "Wagner Z Group (@wagner_group_pmcr)",
+    "links": [
+      {
+        "url": "https://t.me/wagner_group_pmcr/99905",
+        "label": "Wagner Z Group Post #99905"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94221037150949376",
+    "title": "Israeli Artillery Barrage on Nabatieh al-Fawqa, South Lebanon",
+    "summary": "Israeli artillery forces conduct sustained artillery bombardment of the town of Nabatieh al-Fawqa in southern Lebanon. Al-Mayadeen correspondent reports continuous shelling targeting the civilian population center.",
+    "date_event": null,
+    "date_published": "2026-09-17T20:44:26Z",
+    "geo": {
+      "lat": 33.3618797,
+      "lon": 35.4986586,
+      "country": "Lebanon",
+      "region": "Nabatieh Governorate",
+      "city": "Nabatieh al-Fawqa"
+    },
+    "topics": [
+      "israel-lebanon",
+      "artillery",
+      "military-strike",
+      "southern-lebanon",
+      "border-conflict"
+    ],
+    "confidence": 0.78,
+    "source_name": "War Monitor (@warmonitors)",
+    "links": [
+      {
+        "url": "https://t.me/warmonitors/45617",
+        "label": "War Monitor Post #45617"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94221037251612672",
+    "title": "Israeli Military Strikes on Nabatieh, South Lebanon",
+    "summary": "Israeli military conducts air or artillery strikes targeting Nabatieh municipality in southern Lebanon. Combat operations produce visible smoke plumes and flash events captured in real-time imagery. Incident reflects ongoing escalation along Israel-Lebanon border.",
+    "date_event": null,
+    "date_published": "2026-09-17T20:59:27Z",
+    "geo": {
+      "lat": 33.3079104,
+      "lon": 35.5059689,
+      "country": "Lebanon",
+      "region": "Nabatieh Governorate",
+      "city": "Nabatieh"
+    },
+    "topics": [
+      "israel-lebanon",
+      "military-strike",
+      "southern-lebanon",
+      "air-strike",
+      "border-conflict"
+    ],
+    "confidence": 0.81,
+    "source_name": "War Monitor (@warmonitors)",
+    "links": [
+      {
+        "url": "https://t.me/warmonitors/45618",
+        "label": "War Monitor Post #45618"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_94221037364858880",
+    "title": "Explosion Reported in Erbil Outskirts, Iraqi Kurdistan",
+    "summary": "Al-Mayadeen correspondent in Baghdad reports an explosion in the outskirts of Erbil, the capital of the Kurdistan Region of Iraq. The blast occurrence in early evening local time (22:04 UTC) generates immediate alert from Iraqi security observers. Cause remains under investigation.",
+    "date_event": null,
+    "date_published": "2026-09-17T22:04:28Z",
+    "geo": {
+      "lat": 36.1911744,
+      "lon": 44.0094145,
+      "country": "Iraq",
+      "region": "Kurdistan Region",
+      "city": "Erbil"
+    },
+    "topics": [
+      "iraq",
+      "explosion",
+      "erbil",
+      "kurdistan",
+      "security-incident"
+    ],
+    "confidence": 0.72,
+    "source_name": "War Monitor (@warmonitors)",
+    "links": [
+      {
+        "url": "https://t.me/warmonitors/45620",
+        "label": "War Monitor Post #45620"
       }
     ],
     "link_preview_image": null
