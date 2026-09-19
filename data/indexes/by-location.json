@@ -1,7 +1,7 @@
 [
   {
     "country": "Ukraine",
-    "count": 231
+    "count": 233
   },
   {
     "country": "United States",
@@ -9,15 +9,15 @@
   },
   {
     "country": "Iran",
-    "count": 96
+    "count": 98
   },
   {
     "country": "Yemen",
-    "count": 88
+    "count": 89
   },
   {
     "country": "Palestine",
-    "count": 83
+    "count": 86
   },
   {
     "country": "Russia",
@@ -29,7 +29,7 @@
   },
   {
     "country": "Saudi Arabia",
-    "count": 46
+    "count": 50
   },
   {
     "country": "Germany",
@@ -48,11 +48,11 @@
     "count": 29
   },
   {
-    "country": "Syria",
-    "count": 26
+    "country": "Israel",
+    "count": 27
   },
   {
-    "country": "Israel",
+    "country": "Syria",
     "count": 26
   },
   {
@@ -96,8 +96,16 @@
     "count": 9
   },
   {
+    "country": "USA",
+    "count": 8
+  },
+  {
     "country": "Nepal",
     "count": 8
+  },
+  {
+    "country": "North Korea",
+    "count": 7
   },
   {
     "country": "Spain",
@@ -109,10 +117,6 @@
   },
   {
     "country": "Oman",
-    "count": 6
-  },
-  {
-    "country": "North Korea",
     "count": 6
   },
   {
@@ -128,7 +132,15 @@
     "count": 6
   },
   {
+    "country": "Egypt",
+    "count": 6
+  },
+  {
     "country": "Thailand",
+    "count": 6
+  },
+  {
+    "country": "Greenland",
     "count": 6
   },
   {
@@ -148,20 +160,12 @@
     "count": 5
   },
   {
-    "country": "Egypt",
-    "count": 5
-  },
-  {
     "country": "Turkey",
     "count": 5
   },
   {
     "country": "Ireland",
     "count": 5
-  },
-  {
-    "country": "USA",
-    "count": 4
   },
   {
     "country": "Indonesia",
@@ -212,10 +216,6 @@
     "count": 3
   },
   {
-    "country": "Greenland",
-    "count": 3
-  },
-  {
     "country": "Multiple",
     "count": 3
   },
@@ -241,6 +241,10 @@
   },
   {
     "country": "Netherlands",
+    "count": 2
+  },
+  {
+    "country": "Austria",
     "count": 2
   },
   {
@@ -337,10 +341,6 @@
   },
   {
     "country": "Cameroon",
-    "count": 1
-  },
-  {
-    "country": "Austria",
     "count": 1
   },
   {
@@ -489,6 +489,10 @@
   },
   {
     "country": "Zimbabwe",
+    "count": 1
+  },
+  {
+    "country": "Denmark",
     "count": 1
   }
 ]

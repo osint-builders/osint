@@ -1,63 +1,63 @@
 [
   {
     "topic": "military",
-    "count": 726
+    "count": 742
   },
   {
     "topic": "ukraine",
-    "count": 479
+    "count": 484
   },
   {
     "topic": "conflict",
-    "count": 452
+    "count": 458
   },
   {
     "topic": "geopolitic",
-    "count": 409
+    "count": 419
   },
   {
     "topic": "russia",
-    "count": 409
+    "count": 412
   },
   {
     "topic": "diplomacy",
-    "count": 303
+    "count": 305
   },
   {
     "topic": "iran",
-    "count": 287
+    "count": 289
   },
   {
     "topic": "united-state",
-    "count": 276
+    "count": 277
   },
   {
     "topic": "israel",
-    "count": 249
+    "count": 252
   },
   {
     "topic": "middle-east",
-    "count": 224
+    "count": 225
   },
   {
     "topic": "yemen",
-    "count": 190
+    "count": 191
   },
   {
     "topic": "china",
-    "count": 161
+    "count": 165
   },
   {
     "topic": "palestine",
-    "count": 150
+    "count": 154
   },
   {
     "topic": "saudi-arabia",
-    "count": 134
+    "count": 136
   },
   {
     "topic": "military-operation",
-    "count": 131
+    "count": 132
   },
   {
     "topic": "sanction",
@@ -68,12 +68,12 @@
     "count": 123
   },
   {
-    "topic": "politic",
+    "topic": "gaza",
     "count": 109
   },
   {
-    "topic": "gaza",
-    "count": 107
+    "topic": "politic",
+    "count": 109
   },
   {
     "topic": "international-relation",
@@ -85,19 +85,19 @@
   },
   {
     "topic": "infrastructure",
-    "count": 94
+    "count": 95
+  },
+  {
+    "topic": "drone",
+    "count": 93
   },
   {
     "topic": "war",
     "count": 89
   },
   {
-    "topic": "drone",
-    "count": 89
-  },
-  {
     "topic": "security",
-    "count": 86
+    "count": 88
   },
   {
     "topic": "military-conflict",
@@ -105,7 +105,7 @@
   },
   {
     "topic": "maritime",
-    "count": 76
+    "count": 77
   },
   {
     "topic": "technology",
@@ -128,12 +128,12 @@
     "count": 70
   },
   {
-    "topic": "military-strike",
-    "count": 69
+    "topic": "usa",
+    "count": 70
   },
   {
-    "topic": "usa",
-    "count": 68
+    "topic": "military-strike",
+    "count": 69
   },
   {
     "topic": "air-defense",
@@ -180,39 +180,43 @@
     "count": 49
   },
   {
+    "topic": "attack",
+    "count": 48
+  },
+  {
+    "topic": "election",
+    "count": 48
+  },
+  {
     "topic": "syria",
     "count": 47
   },
   {
-    "topic": "attack",
-    "count": 47
-  },
-  {
-    "topic": "election",
-    "count": 47
-  },
-  {
     "topic": "disaster",
-    "count": 46
+    "count": 47
+  },
+  {
+    "topic": "humanitarian",
+    "count": 45
   },
   {
     "topic": "drone-strike",
     "count": 44
   },
   {
-    "topic": "humanitarian",
-    "count": 43
-  },
-  {
     "topic": "government",
     "count": 41
+  },
+  {
+    "topic": "aviation",
+    "count": 40
   },
   {
     "topic": "artificial-intelligence",
     "count": 40
   },
   {
-    "topic": "aviation",
+    "topic": "humanitarian-crisi",
     "count": 39
   },
   {
@@ -220,12 +224,8 @@
     "count": 39
   },
   {
-    "topic": "humanitarian-crisi",
-    "count": 38
-  },
-  {
     "topic": "taiwan",
-    "count": 38
+    "count": 39
   },
   {
     "topic": "naval-operation",
@@ -244,12 +244,12 @@
     "count": 35
   },
   {
-    "topic": "strike",
+    "topic": "north-korea",
     "count": 34
   },
   {
-    "topic": "north-korea",
-    "count": 33
+    "topic": "strike",
+    "count": 34
   },
   {
     "topic": "naval",
@@ -265,6 +265,10 @@
   },
   {
     "topic": "red-sea",
+    "count": 31
+  },
+  {
+    "topic": "economic",
     "count": 31
   },
   {
@@ -296,6 +300,10 @@
     "count": 28
   },
   {
+    "topic": "nepal",
+    "count": 27
+  },
+  {
     "topic": "negotiation",
     "count": 27
   },
@@ -304,7 +312,7 @@
     "count": 27
   },
   {
-    "topic": "economic",
+    "topic": "japan",
     "count": 27
   },
   {
@@ -328,15 +336,7 @@
     "count": 26
   },
   {
-    "topic": "nepal",
-    "count": 26
-  },
-  {
     "topic": "warship",
-    "count": 26
-  },
-  {
-    "topic": "japan",
     "count": 26
   },
   {
@@ -348,19 +348,23 @@
     "count": 25
   },
   {
+    "topic": "settlement",
+    "count": 25
+  },
+  {
+    "topic": "explosion",
+    "count": 25
+  },
+  {
+    "topic": "military-technology",
+    "count": 25
+  },
+  {
     "topic": "canada",
     "count": 25
   },
   {
-    "topic": "settlement",
-    "count": 24
-  },
-  {
-    "topic": "explosion",
-    "count": 24
-  },
-  {
-    "topic": "military-technology",
+    "topic": "education",
     "count": 23
   },
   {
@@ -400,6 +404,10 @@
     "count": 22
   },
   {
+    "topic": "trump",
+    "count": 22
+  },
+  {
     "topic": "law-enforcement",
     "count": 21
   },
@@ -412,23 +420,23 @@
     "count": 21
   },
   {
-    "topic": "trump",
+    "topic": "energy-infrastructure",
     "count": 21
   },
   {
-    "topic": "energy-infrastructure",
-    "count": 21
+    "topic": "policy",
+    "count": 20
   },
   {
     "topic": "aircraft",
     "count": 20
   },
   {
-    "topic": "regional-security",
+    "topic": "economic-policy",
     "count": 20
   },
   {
-    "topic": "education",
+    "topic": "regional-security",
     "count": 20
   },
   {
@@ -440,7 +448,11 @@
     "count": 20
   },
   {
-    "topic": "policy",
+    "topic": "accident",
+    "count": 20
+  },
+  {
+    "topic": "governance",
     "count": 19
   },
   {
@@ -448,7 +460,11 @@
     "count": 19
   },
   {
-    "topic": "economic-policy",
+    "topic": "supply-chain",
+    "count": 19
+  },
+  {
+    "topic": "agriculture",
     "count": 19
   },
   {
@@ -472,7 +488,7 @@
     "count": 19
   },
   {
-    "topic": "accident",
+    "topic": "arctic",
     "count": 19
   },
   {
@@ -488,19 +504,7 @@
     "count": 18
   },
   {
-    "topic": "governance",
-    "count": 18
-  },
-  {
     "topic": "jordan",
-    "count": 18
-  },
-  {
-    "topic": "supply-chain",
-    "count": 18
-  },
-  {
-    "topic": "agriculture",
     "count": 18
   },
   {
@@ -513,6 +517,10 @@
   },
   {
     "topic": "settler",
+    "count": 17
+  },
+  {
+    "topic": "immigration",
     "count": 17
   },
   {
@@ -536,19 +544,15 @@
     "count": 17
   },
   {
-    "topic": "arctic",
-    "count": 17
-  },
-  {
     "topic": "ansarallah",
     "count": 17
   },
   {
-    "topic": "immigration",
+    "topic": "tanker",
     "count": 16
   },
   {
-    "topic": "tanker",
+    "topic": "electronic-warfare",
     "count": 16
   },
   {
@@ -588,7 +592,7 @@
     "count": 15
   },
   {
-    "topic": "electronic-warfare",
+    "topic": "activism",
     "count": 15
   },
   {
@@ -597,6 +601,10 @@
   },
   {
     "topic": "incident",
+    "count": 15
+  },
+  {
+    "topic": "russia-ukraine-conflict",
     "count": 15
   },
   {
@@ -632,7 +640,7 @@
     "count": 14
   },
   {
-    "topic": "russia-ukraine-conflict",
+    "topic": "far-right",
     "count": 14
   },
   {
@@ -648,7 +656,7 @@
     "count": 13
   },
   {
-    "topic": "activism",
+    "topic": "media",
     "count": 13
   },
   {
@@ -677,10 +685,6 @@
   },
   {
     "topic": "australia",
-    "count": 13
-  },
-  {
-    "topic": "far-right",
     "count": 13
   },
   {
@@ -720,10 +724,6 @@
     "count": 12
   },
   {
-    "topic": "media",
-    "count": 12
-  },
-  {
     "topic": "weather",
     "count": 12
   },
@@ -741,6 +741,10 @@
   },
   {
     "topic": "geospatial-intelligence",
+    "count": 12
+  },
+  {
+    "topic": "us-china-relation",
     "count": 12
   },
   {
@@ -792,11 +796,15 @@
     "count": 11
   },
   {
-    "topic": "us-china-relation",
+    "topic": "legal",
     "count": 11
   },
   {
     "topic": "los-angele",
+    "count": 11
+  },
+  {
+    "topic": "greenland",
     "count": 11
   },
   {
@@ -840,11 +848,11 @@
     "count": 10
   },
   {
-    "topic": "legal",
+    "topic": "criminal-justice",
     "count": 10
   },
   {
-    "topic": "criminal-justice",
+    "topic": "hong-kong",
     "count": 10
   },
   {
@@ -852,7 +860,7 @@
     "count": 10
   },
   {
-    "topic": "greenland",
+    "topic": "denmark",
     "count": 10
   },
   {
@@ -880,6 +888,10 @@
     "count": 9
   },
   {
+    "topic": "accountability",
+    "count": 9
+  },
+  {
     "topic": "memorial",
     "count": 9
   },
@@ -892,11 +904,19 @@
     "count": 9
   },
   {
+    "topic": "children",
+    "count": 9
+  },
+  {
     "topic": "irgc",
     "count": 9
   },
   {
     "topic": "sabotage",
+    "count": 9
+  },
+  {
+    "topic": "military-intelligence",
     "count": 9
   },
   {
@@ -944,19 +964,15 @@
     "count": 9
   },
   {
-    "topic": "hong-kong",
-    "count": 9
-  },
-  {
     "topic": "military-exercise",
     "count": 9
   },
   {
-    "topic": "aviation-accident",
+    "topic": "new-york",
     "count": 9
   },
   {
-    "topic": "denmark",
+    "topic": "aviation-accident",
     "count": 9
   },
   {
@@ -980,11 +996,11 @@
     "count": 9
   },
   {
-    "topic": "justice",
+    "topic": "entertainment",
     "count": 8
   },
   {
-    "topic": "accountability",
+    "topic": "justice",
     "count": 8
   },
   {
@@ -1024,10 +1040,6 @@
     "count": 8
   },
   {
-    "topic": "children",
-    "count": 8
-  },
-  {
     "topic": "emergency",
     "count": 8
   },
@@ -1049,10 +1061,6 @@
   },
   {
     "topic": "crisi",
-    "count": 8
-  },
-  {
-    "topic": "military-intelligence",
     "count": 8
   },
   {
@@ -1088,10 +1096,6 @@
     "count": 8
   },
   {
-    "topic": "new-york",
-    "count": 8
-  },
-  {
     "topic": "frigate",
     "count": 8
   },
@@ -1112,15 +1116,15 @@
     "count": 8
   },
   {
+    "topic": "drone-technology",
+    "count": 8
+  },
+  {
     "topic": "ireland",
     "count": 8
   },
   {
     "topic": "gulf",
-    "count": 7
-  },
-  {
-    "topic": "entertainment",
     "count": 7
   },
   {
@@ -1180,6 +1184,10 @@
     "count": 7
   },
   {
+    "topic": "history",
+    "count": 7
+  },
+  {
     "topic": "military-infrastructure",
     "count": 7
   },
@@ -1196,6 +1204,14 @@
     "count": 7
   },
   {
+    "topic": "mali",
+    "count": 7
+  },
+  {
+    "topic": "sahel",
+    "count": 7
+  },
+  {
     "topic": "summit",
     "count": 7
   },
@@ -1205,6 +1221,10 @@
   },
   {
     "topic": "korea",
+    "count": 7
+  },
+  {
+    "topic": "espionage",
     "count": 7
   },
   {
@@ -1288,10 +1308,6 @@
     "count": 7
   },
   {
-    "topic": "drone-technology",
-    "count": 7
-  },
-  {
     "topic": "military-incident",
     "count": 7
   },
@@ -1368,18 +1384,6 @@
     "count": 6
   },
   {
-    "topic": "history",
-    "count": 6
-  },
-  {
-    "topic": "mali",
-    "count": 6
-  },
-  {
-    "topic": "sahel",
-    "count": 6
-  },
-  {
     "topic": "west-africa",
     "count": 6
   },
@@ -1389,10 +1393,6 @@
   },
   {
     "topic": "crude-oil",
-    "count": 6
-  },
-  {
-    "topic": "espionage",
     "count": 6
   },
   {
@@ -1460,7 +1460,15 @@
     "count": 6
   },
   {
+    "topic": "helicopter",
+    "count": 6
+  },
+  {
     "topic": "peace-talk",
+    "count": 6
+  },
+  {
+    "topic": "jnim",
     "count": 6
   },
   {
@@ -1525,6 +1533,10 @@
   },
   {
     "topic": "sovereignty",
+    "count": 5
+  },
+  {
+    "topic": "moscow",
     "count": 5
   },
   {
@@ -1696,10 +1708,6 @@
     "count": 5
   },
   {
-    "topic": "helicopter",
-    "count": 5
-  },
-  {
     "topic": "loss",
     "count": 5
   },
@@ -1720,11 +1728,11 @@
     "count": 5
   },
   {
-    "topic": "maritime-trade",
+    "topic": "sigint",
     "count": 5
   },
   {
-    "topic": "jnim",
+    "topic": "maritime-trade",
     "count": 5
   },
   {
@@ -1733,6 +1741,10 @@
   },
   {
     "topic": "brazil",
+    "count": 5
+  },
+  {
+    "topic": "uav",
     "count": 5
   },
   {
@@ -1748,11 +1760,19 @@
     "count": 5
   },
   {
+    "topic": "port",
+    "count": 5
+  },
+  {
     "topic": "energy-market",
     "count": 5
   },
   {
     "topic": "oil-price",
+    "count": 5
+  },
+  {
+    "topic": "hostage",
     "count": 5
   },
   {
@@ -1808,6 +1828,10 @@
     "count": 5
   },
   {
+    "topic": "arms-sale",
+    "count": 5
+  },
+  {
     "topic": "european-security",
     "count": 5
   },
@@ -1833,10 +1857,6 @@
   },
   {
     "topic": "norfolk",
-    "count": 4
-  },
-  {
-    "topic": "moscow",
     "count": 4
   },
   {
@@ -1889,6 +1909,10 @@
   },
   {
     "topic": "robotic",
+    "count": 4
+  },
+  {
+    "topic": "enforcement",
     "count": 4
   },
   {
@@ -1973,6 +1997,10 @@
   },
   {
     "topic": "airport",
+    "count": 4
+  },
+  {
+    "topic": "crimea",
     "count": 4
   },
   {
@@ -2096,6 +2124,10 @@
     "count": 4
   },
   {
+    "topic": "fatality",
+    "count": 4
+  },
+  {
     "topic": "damage",
     "count": 4
   },
@@ -2109,10 +2141,6 @@
   },
   {
     "topic": "airport-incident",
-    "count": 4
-  },
-  {
-    "topic": "sigint",
     "count": 4
   },
   {
@@ -2133,10 +2161,6 @@
   },
   {
     "topic": "piracy",
-    "count": 4
-  },
-  {
-    "topic": "uav",
     "count": 4
   },
   {
@@ -2168,15 +2192,7 @@
     "count": 4
   },
   {
-    "topic": "port",
-    "count": 4
-  },
-  {
     "topic": "commodity-market",
-    "count": 4
-  },
-  {
-    "topic": "hostage",
     "count": 4
   },
   {
@@ -2197,6 +2213,10 @@
   },
   {
     "topic": "five-year-plan",
+    "count": 4
+  },
+  {
+    "topic": "production",
     "count": 4
   },
   {
@@ -2237,10 +2257,6 @@
   },
   {
     "topic": "asean",
-    "count": 4
-  },
-  {
-    "topic": "arms-sale",
     "count": 4
   },
   {
@@ -2312,11 +2328,11 @@
     "count": 3
   },
   {
-    "topic": "regional-cooperation",
+    "topic": "austria",
     "count": 3
   },
   {
-    "topic": "enforcement",
+    "topic": "regional-cooperation",
     "count": 3
   },
   {
@@ -2473,10 +2489,6 @@
   },
   {
     "topic": "hydropower",
-    "count": 3
-  },
-  {
-    "topic": "crimea",
     "count": 3
   },
   {
@@ -2640,10 +2652,6 @@
     "count": 3
   },
   {
-    "topic": "fatality",
-    "count": 3
-  },
-  {
     "topic": "cyber-security",
     "count": 3
   },
@@ -2693,6 +2701,10 @@
   },
   {
     "topic": "diplomatic-relation",
+    "count": 3
+  },
+  {
+    "topic": "voting",
     "count": 3
   },
   {
@@ -2760,6 +2772,10 @@
     "count": 3
   },
   {
+    "topic": "security-alert",
+    "count": 3
+  },
+  {
     "topic": "fiscal-policy",
     "count": 3
   },
@@ -2801,10 +2817,6 @@
   },
   {
     "topic": "gulf-region",
-    "count": 3
-  },
-  {
-    "topic": "production",
     "count": 3
   },
   {
@@ -3060,6 +3072,10 @@
     "count": 2
   },
   {
+    "topic": "home",
+    "count": 2
+  },
+  {
     "topic": "joseph-tomb",
     "count": 2
   },
@@ -3113,10 +3129,6 @@
   },
   {
     "topic": "art-heist",
-    "count": 2
-  },
-  {
-    "topic": "austria",
     "count": 2
   },
   {
@@ -3276,6 +3288,10 @@
     "count": 2
   },
   {
+    "topic": "world-war-ii",
+    "count": 2
+  },
+  {
     "topic": "southwest",
     "count": 2
   },
@@ -3405,6 +3421,10 @@
   },
   {
     "topic": "shelling",
+    "count": 2
+  },
+  {
+    "topic": "disability",
     "count": 2
   },
   {
@@ -3704,10 +3724,6 @@
     "count": 2
   },
   {
-    "topic": "voting",
-    "count": 2
-  },
-  {
     "topic": "political-analysi",
     "count": 2
   },
@@ -3865,10 +3881,6 @@
   },
   {
     "topic": "warship-tracking",
-    "count": 2
-  },
-  {
-    "topic": "security-alert",
     "count": 2
   },
   {
@@ -4056,6 +4068,10 @@
     "count": 2
   },
   {
+    "topic": "dagestan",
+    "count": 2
+  },
+  {
     "topic": "port-attack",
     "count": 2
   },
@@ -4168,6 +4184,10 @@
     "count": 2
   },
   {
+    "topic": "execution",
+    "count": 2
+  },
+  {
     "topic": "women",
     "count": 2
   },
@@ -4241,6 +4261,10 @@
   },
   {
     "topic": "9-11-anniversary",
+    "count": 2
+  },
+  {
+    "topic": "smuggling",
     "count": 2
   },
   {
@@ -4421,6 +4445,10 @@
   },
   {
     "topic": "arm",
+    "count": 2
+  },
+  {
+    "topic": "security-agreement",
     "count": 2
   },
   {
@@ -4640,6 +4668,10 @@
     "count": 2
   },
   {
+    "topic": "oil-energy",
+    "count": 2
+  },
+  {
     "topic": "central-bank",
     "count": 2
   },
@@ -4821,10 +4853,6 @@
   },
   {
     "topic": "custody",
-    "count": 1
-  },
-  {
-    "topic": "home",
     "count": 1
   },
   {
@@ -5472,10 +5500,6 @@
     "count": 1
   },
   {
-    "topic": "world-war-ii",
-    "count": 1
-  },
-  {
     "topic": "chinese-history",
     "count": 1
   },
@@ -5865,10 +5889,6 @@
   },
   {
     "topic": "historic-preservation",
-    "count": 1
-  },
-  {
-    "topic": "disability",
     "count": 1
   },
   {
@@ -7888,10 +7908,6 @@
     "count": 1
   },
   {
-    "topic": "dagestan",
-    "count": 1
-  },
-  {
     "topic": "economic-summit",
     "count": 1
   },
@@ -8304,10 +8320,6 @@
     "count": 1
   },
   {
-    "topic": "execution",
-    "count": 1
-  },
-  {
     "topic": "cair",
     "count": 1
   },
@@ -8609,10 +8621,6 @@
   },
   {
     "topic": "nationalism",
-    "count": 1
-  },
-  {
-    "topic": "smuggling",
     "count": 1
   },
   {
@@ -9357,10 +9365,6 @@
   },
   {
     "topic": "religious-site",
-    "count": 1
-  },
-  {
-    "topic": "security-agreement",
     "count": 1
   },
   {
@@ -10772,10 +10776,6 @@
     "count": 1
   },
   {
-    "topic": "oil-energy",
-    "count": 1
-  },
-  {
     "topic": "russia-election",
     "count": 1
   },
@@ -11817,6 +11817,86 @@
   },
   {
     "topic": "mortality",
+    "count": 1
+  },
+  {
+    "topic": "fundraiser",
+    "count": 1
+  },
+  {
+    "topic": "sustainable-material",
+    "count": 1
+  },
+  {
+    "topic": "environmental-innovation",
+    "count": 1
+  },
+  {
+    "topic": "green-economy",
+    "count": 1
+  },
+  {
+    "topic": "reconciliation",
+    "count": 1
+  },
+  {
+    "topic": "development-plan",
+    "count": 1
+  },
+  {
+    "topic": "kaspiysk",
+    "count": 1
+  },
+  {
+    "topic": "ally",
+    "count": 1
+  },
+  {
+    "topic": "ai-intelligence",
+    "count": 1
+  },
+  {
+    "topic": "near-conflict",
+    "count": 1
+  },
+  {
+    "topic": "israel-russia",
+    "count": 1
+  },
+  {
+    "topic": "jihadist",
+    "count": 1
+  },
+  {
+    "topic": "interdiction",
+    "count": 1
+  },
+  {
+    "topic": "force-majeure",
+    "count": 1
+  },
+  {
+    "topic": "diaspora",
+    "count": 1
+  },
+  {
+    "topic": "political-party",
+    "count": 1
+  },
+  {
+    "topic": "toss-bombing",
+    "count": 1
+  },
+  {
+    "topic": "unmanned-weapon",
+    "count": 1
+  },
+  {
+    "topic": "mossad",
+    "count": 1
+  },
+  {
+    "topic": "news-aggregation",
     "count": 1
   }
 ]
