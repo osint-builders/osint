@@ -1,27 +1,27 @@
 [
   {
     "country": "Ukraine",
-    "count": 233
+    "count": 236
   },
   {
     "country": "United States",
-    "count": 211
+    "count": 219
   },
   {
     "country": "Iran",
     "count": 98
   },
   {
+    "country": "Palestine",
+    "count": 89
+  },
+  {
     "country": "Yemen",
     "count": 89
   },
   {
-    "country": "Palestine",
-    "count": 86
-  },
-  {
     "country": "Russia",
-    "count": 82
+    "count": 85
   },
   {
     "country": "China",
@@ -29,7 +29,7 @@
   },
   {
     "country": "Saudi Arabia",
-    "count": 50
+    "count": 56
   },
   {
     "country": "Germany",
@@ -48,12 +48,12 @@
     "count": 29
   },
   {
-    "country": "Israel",
+    "country": "Syria",
     "count": 27
   },
   {
-    "country": "Syria",
-    "count": 26
+    "country": "Israel",
+    "count": 27
   },
   {
     "country": "Taiwan",
@@ -76,6 +76,10 @@
     "count": 11
   },
   {
+    "country": "Canada",
+    "count": 10
+  },
+  {
     "country": "Japan",
     "count": 10
   },
@@ -88,10 +92,6 @@
     "count": 9
   },
   {
-    "country": "Canada",
-    "count": 9
-  },
-  {
     "country": "India",
     "count": 9
   },
@@ -100,15 +100,23 @@
     "count": 8
   },
   {
+    "country": "North Korea",
+    "count": 8
+  },
+  {
     "country": "Nepal",
     "count": 8
   },
   {
-    "country": "North Korea",
+    "country": "Spain",
     "count": 7
   },
   {
-    "country": "Spain",
+    "country": "Philippines",
+    "count": 7
+  },
+  {
+    "country": "Greenland",
     "count": 7
   },
   {
@@ -128,19 +136,11 @@
     "count": 6
   },
   {
-    "country": "Philippines",
-    "count": 6
-  },
-  {
     "country": "Egypt",
     "count": 6
   },
   {
     "country": "Thailand",
-    "count": 6
-  },
-  {
-    "country": "Greenland",
     "count": 6
   },
   {
@@ -168,6 +168,10 @@
     "count": 5
   },
   {
+    "country": "Sweden",
+    "count": 5
+  },
+  {
     "country": "Indonesia",
     "count": 4
   },
@@ -185,10 +189,6 @@
   },
   {
     "country": "Italy",
-    "count": 4
-  },
-  {
-    "country": "Sweden",
     "count": 4
   },
   {
@@ -305,6 +305,10 @@
   },
   {
     "country": "JP",
+    "count": 2
+  },
+  {
+    "country": "Belarus",
     "count": 2
   },
   {
@@ -456,10 +460,6 @@
     "count": 1
   },
   {
-    "country": "Belarus",
-    "count": 1
-  },
-  {
     "country": "Pacific Ocean Region",
     "count": 1
   },
@@ -493,6 +493,10 @@
   },
   {
     "country": "Denmark",
+    "count": 1
+  },
+  {
+    "country": "Africa (Regional)",
     "count": 1
   }
 ]
