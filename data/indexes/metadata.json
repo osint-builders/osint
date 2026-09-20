@@ -95743,5 +95743,799 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_95225549038845952",
+    "title": "Zelensky to Meet Trump in New York",
+    "summary": "Ukrainian President Volodymyr Zelensky announced plans to meet with U.S. President Donald Trump in New York this week. The meeting represents a significant diplomatic engagement between the two leaders during a critical period for Ukrainian interests.",
+    "date_event": "2026-09-20T18:18:13.000Z",
+    "date_published": "2026-09-20T18:18:13.000Z",
+    "geo": {
+      "lat": 40.7127281,
+      "lon": -74.0060152,
+      "country": "United States",
+      "region": "New York",
+      "city": "New York"
+    },
+    "topics": [
+      "diplomacy",
+      "ukraine",
+      "united-states",
+      "political-meeting",
+      "international-relations"
+    ],
+    "confidence": 0.85,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2101737712898236749",
+        "label": "OSINT Technical - Twitter"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_95225670392643584",
+    "title": "JNIM Claims Mortar and Rocket Attack on Sévaré Military Base in Mali",
+    "summary": "The Jamaat Nusrat al-Islam wal-Muslimin (JNIM) claimed responsibility for a combined mortar and SPG-9 rocket attack on the Sévaré military base in Mali. The group reported destroying Turkish-made drones, helicopters, and radar/control facilities, with approximately 33 casualties among Mali's Armed Forces and Africa Corps personnel.",
+    "date_event": "2026-09-20T17:48:20.000Z",
+    "date_published": "2026-09-20T17:48:20.000Z",
+    "geo": {
+      "lat": 14.5224127,
+      "lon": -4.0921345,
+      "country": "Mali",
+      "region": "Mopti",
+      "city": "Sévaré"
+    },
+    "topics": [
+      "conflict",
+      "mali",
+      "military",
+      "attack",
+      "jnim",
+      "sahel",
+      "armed-forces"
+    ],
+    "confidence": 0.75,
+    "source_name": "Sim Nasr (@SimNasr)",
+    "links": [
+      {
+        "url": "https://x.com/SimNasr/status/2101730192326869477",
+        "label": "Sim Nasr - Twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSrYeGyXwAALr19.jpg"
+  },
+  {
+    "id": "evt_95225720367759360",
+    "title": "Burnham Hails Greenland Deal Ahead of Trump Meeting in New York",
+    "summary": "Burnham expressed support for a Greenland deal in advance of his first meeting with President Trump in New York.",
+    "date_event": null,
+    "date_published": "2026-09-20T17:27:50.000Z",
+    "geo": {
+      "lat": 40.7127281,
+      "lon": -74.0060152
+    },
+    "topics": [
+      "diplomacy",
+      "international-relations",
+      "politics",
+      "greenland"
+    ],
+    "confidence": 0.7,
+    "source_name": "BBC World News",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2101725032598708299",
+        "title": "BBC World News tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2101725033945018368/8fmQ2LhL?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_95225659424522240",
+    "title": "German Chancellor Merz Calls State Election Result a Disaster",
+    "summary": "German Chancellor Friedrich Merz characterized recent state election results as a disaster for his party while vowing to remain in his position.",
+    "date_event": null,
+    "date_published": "2026-09-20T17:12:18.000Z",
+    "geo": {
+      "lat": 51.1638175,
+      "lon": 10.4478313
+    },
+    "topics": [
+      "politics",
+      "election",
+      "germany",
+      "government"
+    ],
+    "confidence": 0.8,
+    "source_name": "BBC Breaking News",
+    "links": [
+      {
+        "url": "https://x.com/BBCBreaking/status/2101721123184411019",
+        "title": "BBC Breaking News tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2101717897093537792/XpURJ1T5?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_95225514976886784",
+    "title": "School Bus Crashes Into Parked Vehicles in Texas",
+    "summary": "A school bus carrying 14 students collided with multiple parked vehicles in Texas when the driver lost control of the vehicle's speed.",
+    "date_event": null,
+    "date_published": "2026-09-20T18:27:25.000Z",
+    "geo": {
+      "lat": 31.2638905,
+      "lon": -98.5456116
+    },
+    "topics": [
+      "traffic-accident",
+      "public-transportation",
+      "texas",
+      "injury"
+    ],
+    "confidence": 0.85,
+    "source_name": "ABC News",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2101740025842950480",
+        "title": "ABC News tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/ext_tw_video_thumb/2101739965910536192/pu/img/Y-i4Z2GHtwrfiBWR.jpg"
+  },
+  {
+    "id": "evt_95225603342483456",
+    "title": "NYC Mayor Zohran Mamdani to Meet President Trump",
+    "summary": "New York City Mayor Zohran Mamdani will meet with President Trump at Gracie Mansion in New York on Monday, the mayor's office announced.",
+    "date_event": null,
+    "date_published": "2026-09-20T18:07:01.000Z",
+    "geo": {
+      "lat": 40.7127281,
+      "lon": -74.0060152
+    },
+    "topics": [
+      "politics",
+      "diplomacy",
+      "new-york",
+      "government-meeting"
+    ],
+    "confidence": 0.75,
+    "source_name": "ABC News",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2101734892170059867",
+        "title": "ABC News tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSrcvdyWAAAVrYj.jpg"
+  },
+  {
+    "id": "evt_95225805239513088",
+    "title": "Israeli President Herzog Pardons Former Soldier Elor Azaria Convicted of Manslaughter",
+    "summary": "Israeli President Isaac Herzog pardoned Elor Azaria, a former Israeli soldier convicted of manslaughter for fatally shooting a wounded Palestinian in Hebron in 2016. The pardon erases his criminal record, reigniting controversy over accountability for the shooting.",
+    "date_event": null,
+    "date_published": "2026-09-20T17:59:49Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.1975,
+      "country": "Palestinian Territories",
+      "region": "West Bank",
+      "city": "Hebron"
+    },
+    "topics": [
+      "military-justice",
+      "pardon",
+      "palestinian-conflict",
+      "israel",
+      "hebron"
+    ],
+    "confidence": 0.82,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2101733080717299757",
+        "label": "Middle East Eye Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95225805298233344",
+    "title": "Jewish Worshippers Storm Al-Aqsa Mosque Compound in Jerusalem on Yom Kippur Eve",
+    "summary": "Large crowds of Jewish worshippers entered the Al-Aqsa Mosque compound in Jerusalem on Sunday ahead of Yom Kippur, performing religious rituals at the contested holy site. The incident reflects ongoing tensions over access to the religiously significant compound.",
+    "date_event": null,
+    "date_published": "2026-09-20T17:30:12Z",
+    "geo": {
+      "lat": 31.7767,
+      "lon": 35.2345,
+      "country": "Palestine",
+      "region": "Jerusalem",
+      "city": "Jerusalem"
+    },
+    "topics": [
+      "religious-tensions",
+      "al-aqsa",
+      "jerusalem",
+      "israel-palestine",
+      "yom-kippur"
+    ],
+    "confidence": 0.78,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2101725627384558040",
+        "label": "Middle East Eye Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95225869890514944",
+    "title": "Trump Announces Plans for 250-Foot Triumphal Arch with Military Capabilities Near Arlington",
+    "summary": "President Trump revealed plans for a 250-foot tall triumphal arch near Arlington Memorial Bridge that would serve dual purposes as a military complex. The structure would enable rapid drone deployment, sniper positioning, and ammunition storage capabilities.",
+    "date_event": null,
+    "date_published": "2026-09-20T17:32:23Z",
+    "geo": {
+      "lat": 38.8816,
+      "lon": -77.0369,
+      "country": "United States",
+      "region": "Washington, D.C.",
+      "city": "Washington"
+    },
+    "topics": [
+      "military",
+      "monument",
+      "architecture",
+      "united-states",
+      "trump"
+    ],
+    "confidence": 0.75,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2101726179266802027",
+        "label": "Fox News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95225805352759296",
+    "title": "German CDU Party Faces Historic Electoral Crisis in Mecklenburg-Vorpommern State Elections",
+    "summary": "Chancellor Merz's CDU party faces potential elimination from parliament in the Mecklenburg-Vorpommern (MV) state elections, hovering at the critical 5% threshold required for parliamentary representation. Failure to meet this threshold would mark a historic defeat for the governing party.",
+    "date_event": null,
+    "date_published": "2026-09-20T18:03:25Z",
+    "geo": {
+      "lat": 53.6155,
+      "lon": 12.0093,
+      "country": "Germany",
+      "region": "Mecklenburg-Vorpommern",
+      "city": "Schwerin"
+    },
+    "topics": [
+      "german-politics",
+      "election",
+      "cdu",
+      "merz",
+      "parliament"
+    ],
+    "confidence": 0.72,
+    "source_name": "My Lord Bebo (@MyLordBebo)",
+    "links": [
+      {
+        "url": "https://x.com/MyLordBebo/status/2101733985168818468",
+        "label": "My Lord Bebo Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95225805411479552",
+    "title": "Chancellor Merz Acknowledges CDU Electoral Disaster, Refuses to Resign or Change Policies",
+    "summary": "German Chancellor Friedrich Merz admitted the CDU party's election results constitute a disaster while simultaneously refusing to resign or modify any party policies. The contradictory stance raises questions about his continued leadership credibility.",
+    "date_event": null,
+    "date_published": "2026-09-20T17:54:56Z",
+    "geo": {
+      "lat": 52.52,
+      "lon": 13.405,
+      "country": "Germany",
+      "region": "Berlin",
+      "city": "Berlin"
+    },
+    "topics": [
+      "german-politics",
+      "leadership-crisis",
+      "cdu",
+      "merz",
+      "election"
+    ],
+    "confidence": 0.7,
+    "source_name": "My Lord Bebo (@MyLordBebo)",
+    "links": [
+      {
+        "url": "https://x.com/MyLordBebo/status/2101731852155252793",
+        "label": "My Lord Bebo Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95225873430503424",
+    "title": "Russia Holds Parliamentary Elections with Putin Set to Cement Political Dominance",
+    "summary": "Polls have closed in Russia's tightly controlled parliamentary elections with President Vladimir Putin once again set to cement his dominance over domestic politics.",
+    "date_event": null,
+    "date_published": "2026-09-20T18:30:03.000Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173
+    },
+    "topics": [
+      "politics",
+      "elections",
+      "russia",
+      "government",
+      "international-relations"
+    ],
+    "confidence": null,
+    "source_name": "cnni (@cnni)",
+    "links": [
+      {
+        "url": "https://x.com/cnni/status/2101740687867670707"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95225873321451520",
+    "title": "NYC Mayor Mamdani to Meet Trump Ahead of UN General Assembly",
+    "summary": "New York City Mayor Zohran Mamdani will meet with President Donald Trump on Monday ahead of the United Nations General Assembly.",
+    "date_event": null,
+    "date_published": "2026-09-20T18:30:56.000Z",
+    "geo": {
+      "lat": 40.7128,
+      "lon": -74.006
+    },
+    "topics": [
+      "diplomacy",
+      "politics",
+      "united-states",
+      "international-relations"
+    ],
+    "confidence": null,
+    "source_name": "cnnbrk (@cnnbrk)",
+    "links": [
+      {
+        "url": "https://x.com/cnnbrk/status/2101740913215049913"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95225873375977472",
+    "title": "German Chancellor Merz's Party Faces Electoral Setback as Far-Right Surges in State Elections",
+    "summary": "German Chancellor Friedrich Merz's party is set for a difficult night in state elections, according to exit polls, as the far-right party gains significant ground.",
+    "date_event": null,
+    "date_published": "2026-09-20T16:40:54.000Z",
+    "geo": {
+      "lat": 51.1657,
+      "lon": 10.4515
+    },
+    "topics": [
+      "politics",
+      "elections",
+      "germany",
+      "far-right",
+      "leadership"
+    ],
+    "confidence": null,
+    "source_name": "cnnbrk (@cnnbrk)",
+    "links": [
+      {
+        "url": "https://x.com/cnnbrk/status/2101713222390669327"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95225873480835072",
+    "title": "Multiple Indications Suggest Imminent Expansion of US-Iran and Partner Conflict",
+    "summary": "Multiple indications suggest that fighting between the United States, Iran, and its partners may expand imminently, according to reports citing national security analysis.",
+    "date_event": null,
+    "date_published": "2026-09-20T17:56:00.000Z",
+    "geo": {
+      "lat": 15.5007,
+      "lon": 48.5164
+    },
+    "topics": [
+      "military",
+      "conflict",
+      "iran",
+      "yemen",
+      "houthis",
+      "united-states",
+      "middle-east",
+      "escalation"
+    ],
+    "confidence": null,
+    "source_name": "Critical Threats Project (@criticalthreats)",
+    "links": [
+      {
+        "url": "https://x.com/criticalthreats/status/2101732122406834412"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95225636838199296",
+    "title": "Zelensky and Trump Schedule New York Meeting Following Diplomatic Conversation",
+    "summary": "Ukrainian President Zelensky announced a phone conversation with President Trump where both leaders agreed to meet in New York. The planned meeting could result in significant diplomatic developments regarding Ukraine's geopolitical situation.",
+    "date_event": "2026-09-20T18:15:46Z",
+    "date_published": "2026-09-20T18:15:46Z",
+    "geo": {
+      "lat": 40.7127281,
+      "lon": -74.0060152,
+      "city": "New York",
+      "region": "New York",
+      "country": "United States"
+    },
+    "topics": [
+      "ukraine",
+      "usa",
+      "diplomacy",
+      "geopolitics",
+      "zelensky",
+      "trump"
+    ],
+    "confidence": 0.85,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2101737095781892567",
+        "label": "Zelensky Statement on Clash Report"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_95225810994089984",
+    "title": "NYC Mayor Zohran Mamdani to Meet President Trump Ahead of UN General Assembly",
+    "summary": "New York City Mayor Zohran Mamdani scheduled a meeting with President Donald Trump on Monday preceding the United Nations General Assembly. The meeting announcement came from Mamdani's office on Sunday and reflects heightened diplomatic activity.",
+    "date_event": "2026-09-21T00:00:00Z",
+    "date_published": "2026-09-20T18:31:02Z",
+    "geo": {
+      "lat": 40.7127281,
+      "lon": -74.0060152,
+      "city": "New York",
+      "region": "New York",
+      "country": "United States"
+    },
+    "topics": [
+      "usa",
+      "diplomacy",
+      "municipal-government",
+      "un-general-assembly",
+      "new-york"
+    ],
+    "confidence": 0.8,
+    "source_name": "CNN (@CNN)",
+    "links": [
+      {
+        "url": "https://x.com/CNN/status/2101740937831383522",
+        "label": "CNN Breaking News"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSriOn1WoAA2gJK.jpg"
+  },
+  {
+    "id": "evt_95225644065001472",
+    "title": "ISW Assessment: Multiple Indications Point to Potential US-Iran Military Escalation",
+    "summary": "Institute for the Study of War reports multiple indications that armed conflict between the United States and Iran and its affiliated partners could expand imminently, with analysis of potential Trump administration strike deliberations against Houthi forces.",
+    "date_event": null,
+    "date_published": "2026-09-20T17:13:46.000Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194
+    },
+    "topics": [
+      "us-iran-relations",
+      "middle-east-conflict",
+      "houthi-forces",
+      "military-escalation",
+      "trump-administration",
+      "defense-analysis",
+      "strategic-assessment"
+    ],
+    "confidence": null,
+    "source_name": "Institute for the Study of War (@TheStudyofWar)",
+    "links": [
+      {
+        "text": "ISW Analysis",
+        "url": "https://x.com/TheStudyofWar/status/2101721490429202745"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95225644132110336",
+    "title": "Zelenskyy Agrees to Meet Trump in New York Following Strategic Consultations",
+    "summary": "Ukrainian President Zelenskyy confirmed agreement to meet with President Trump in New York, following diplomatic visits by Trump advisors Witkoff and Kushner to Kyiv. Zelenskyy indicated peace negotiations constitute the primary priority.",
+    "date_event": null,
+    "date_published": "2026-09-20T18:25:52.000Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234
+    },
+    "topics": [
+      "ukraine-peace-negotiations",
+      "zelenskyy-trump-meeting",
+      "us-ukraine-relations",
+      "russia-ukraine-war",
+      "diplomatic-talks",
+      "de-escalation",
+      "energy-security"
+    ],
+    "confidence": null,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "text": "War Translated",
+        "url": "https://x.com/wartranslated/status/2101739638213787894"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95225644190830592",
+    "title": "Ukrainian Forces Destroy Russian Buk SAM System in Defensive Operations",
+    "summary": "Ukraine's State Border Guard Service reports successful destruction of Russian Buk surface-to-air missile system through coordinated drone strikes near Kostiantynivka.",
+    "date_event": null,
+    "date_published": "2026-09-20T17:36:05.000Z",
+    "geo": {
+      "lat": 48.3848,
+      "lon": 37.0945
+    },
+    "topics": [
+      "ukraine-military-operations",
+      "russian-equipment-losses",
+      "buk-missile-system",
+      "drone-strikes",
+      "combat-operations",
+      "air-defense"
+    ],
+    "confidence": null,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "text": "War Translated",
+        "url": "https://x.com/wartranslated/status/2101727108904972647"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95225644253745152",
+    "title": "Russian Mariupol-Dzhankoy Logistics Route Experiences Significant Disruption",
+    "summary": "Updates on the status and condition of the critical Russian logistics corridor connecting Mariupol to Dzhankoy, indicating ongoing disruption of supply lines supporting Russian occupation forces.",
+    "date_event": null,
+    "date_published": "2026-09-20T17:27:29.000Z",
+    "geo": {
+      "lat": 47.6169,
+      "lon": 37.5386
+    },
+    "topics": [
+      "russia-ukraine-war",
+      "logistics-disruption",
+      "supply-lines",
+      "russian-occupation",
+      "ukrainian-operations"
+    ],
+    "confidence": null,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "text": "War Translated",
+        "url": "https://x.com/wartranslated/status/2101724942924382533"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95226029408268288",
+    "title": "Flamingo Missiles Launched Toward Moscow Region",
+    "summary": "Flamingo missiles launched toward the Moscow region during recent overnight operations, indicating continued Ukrainian military activity.",
+    "date_event": null,
+    "date_published": "2026-09-20T17:26:01Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "location": "Moscow, Russia"
+    },
+    "topics": [
+      "ukraine",
+      "missile-strike",
+      "russia",
+      "military-operation",
+      "moscow"
+    ],
+    "confidence": null,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46226",
+        "title": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95226141861752832",
+    "title": "Russia Recruits Ukrainian Teenagers for Terrorist Attacks",
+    "summary": "Russia recruits impoverished Ukrainian teenagers via Telegram, offering money for acts of sabotage and terrorism. A 16-year-old intercepted before delivering an explosive device.",
+    "date_event": null,
+    "date_published": "2026-09-20T18:24:01Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "location": "Kyiv, Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "terrorism",
+      "child-exploitation",
+      "russia",
+      "sabotage"
+    ],
+    "confidence": null,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46227",
+        "title": "Telegram Post"
+      },
+      {
+        "url": "https://www.washingtonpost.com",
+        "title": "Washington Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95226029345353728",
+    "title": "New Leadership Appointments in Ukrainian Military Communications",
+    "summary": "Chief of Communications Yuriy Hai and newly appointed Commander of Military Communications Oleksiy Kovalenko represent a strong leadership team for Ukraine's military communications direction.",
+    "date_event": null,
+    "date_published": "2026-09-20T16:56:37Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "location": "Kyiv, Ukraine"
+    },
+    "topics": [
+      "military-communications",
+      "leadership",
+      "ukraine",
+      "armed-forces"
+    ],
+    "confidence": null,
+    "source_name": "Serhii FLASH — Technologies (@serhii_flash)",
+    "links": [
+      {
+        "url": "https://t.me/serhii_flash/7764",
+        "title": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95226242298548224",
+    "title": "Russia Announces Border Curfew and Restrictions with NATO Member Estonia",
+    "summary": "Russia's internal security service announced curfew and restrictions along its border with NATO member Estonia, banning civilians from leaving villages after dark, boating on the Narva River, and hunting within 5km of the border.",
+    "date_event": null,
+    "date_published": "2026-09-20T17:39:13Z",
+    "geo": {
+      "lat": 59.437,
+      "lon": 26.7071
+    },
+    "topics": [
+      "russia",
+      "nato",
+      "estonia",
+      "border-security",
+      "military"
+    ],
+    "confidence": null,
+    "source_name": "Bellum Acta (@BellumActaNews)",
+    "links": [
+      {
+        "url": "https://t.me/BellumActaNews/177131",
+        "title": "Original Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95226242436960256",
+    "title": "Russian Military Strikes Port of Odessa and Ammunition Depot",
+    "summary": "The Russian Ministry of Defense reported that the Russian Armed Forces struck a ship carrying military cargo in the port of Odessa and an ammunition depot in Petrovka, Odessa region.",
+    "date_event": null,
+    "date_published": "2026-09-20T17:23:45Z",
+    "geo": {
+      "lat": 46.4851,
+      "lon": 30.7326
+    },
+    "topics": [
+      "russia",
+      "ukraine",
+      "military",
+      "strike",
+      "conflict",
+      "war"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/193680",
+        "title": "Original Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95226242504069120",
+    "title": "Russia Announces Intensification of Strikes on Kyiv",
+    "summary": "The Russian Ministry of Defense announced that strikes on targets in Kyiv will be intensified.",
+    "date_event": null,
+    "date_published": "2026-09-20T17:30:04Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234
+    },
+    "topics": [
+      "russia",
+      "ukraine",
+      "kyiv",
+      "military",
+      "strike",
+      "conflict",
+      "war"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/193681",
+        "title": "Original Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95226242369851392",
+    "title": "Seven Ethiopian Armed Groups Form Alliance to Overthrow Prime Minister Abiy Ahmed",
+    "summary": "Seven Ethiopian armed groups, including former enemies TPLF, Amhara Fano, and OLA, formally announced an alliance to overthrow PM Abiy Ahmed and form a transitional government.",
+    "date_event": null,
+    "date_published": "2026-09-20T16:37:36Z",
+    "geo": {
+      "lat": 9.145,
+      "lon": 40.4897
+    },
+    "topics": [
+      "ethiopia",
+      "military",
+      "coup",
+      "conflict",
+      "government"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/97366",
+        "title": "Original Telegram Post"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
