@@ -95101,5 +95101,647 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_95181272271327232",
+    "title": "CENTCOM Redirects 109 Commercial Vessels for Security Operations",
+    "summary": "CENTCOM forces have redirected 109 commercial vessels as of September 20, 2026, reflecting ongoing regional security operations. The USS John Paul Jones (DDG 53) maintains watch during these operations in contested waters.",
+    "date_event": "2026-09-20T15:02:38Z",
+    "date_published": "2026-09-20T15:02:38Z",
+    "geo": {
+      "lat": 26.1207,
+      "lon": 55.1694,
+      "country": "United Arab Emirates",
+      "region": "Persian Gulf",
+      "city": "Strait of Hormuz"
+    },
+    "topics": [
+      "military",
+      "maritime",
+      "shipping",
+      "united-states",
+      "security",
+      "centcom"
+    ],
+    "confidence": 0.75,
+    "source_name": "US Navy (@USNavy)",
+    "links": [
+      {
+        "url": "https://x.com/USNavy/status/2101688490303828392",
+        "label": "US Navy Official Post"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSqvwFYWAAAcYOL.jpg"
+  },
+  {
+    "id": "evt_95181272334241792",
+    "title": "US Treasury Secretary Bessent Meets Vice Premier He Lifeng for US-China Economic Talks",
+    "summary": "U.S. Treasury Secretary Scott Bessent held discussions with Chinese Vice Premier He Lifeng in New York City regarding US-China economic and trade relations. The talks represent a significant diplomatic engagement on bilateral economic issues during a period of strategic competition.",
+    "date_event": "2026-09-20T15:15:32Z",
+    "date_published": "2026-09-20T15:15:32Z",
+    "geo": {
+      "lat": 40.7128,
+      "lon": -74.006,
+      "country": "United States",
+      "region": "New York",
+      "city": "New York"
+    },
+    "topics": [
+      "economics",
+      "trade",
+      "united-states",
+      "china",
+      "diplomacy",
+      "finance"
+    ],
+    "confidence": 0.8,
+    "source_name": "US Treasury (@USTreasury)",
+    "links": [
+      {
+        "url": "https://x.com/USTreasury/status/2101691738058310121",
+        "label": "US Treasury Official Post"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSq0GsxXAAAIJ6k.jpg"
+  },
+  {
+    "id": "evt_95181255208886272",
+    "title": "Italy to Ban Face Coverings in Schools and Cap Foreign Student Enrollment",
+    "summary": "Prime Minister Giorgia Meloni announced plans to ban face coverings in schools and limit foreign student enrollment per classroom. The proposals reflect the right-wing government's policy priorities announced at a youth party event.",
+    "date_event": null,
+    "date_published": "2026-09-20T14:00:20Z",
+    "geo": {
+      "lat": 41.8719,
+      "lon": 12.5674,
+      "country": "Italy",
+      "region": "Lazio",
+      "city": "Rome"
+    },
+    "topics": [
+      "policy-change",
+      "education",
+      "italy",
+      "governance",
+      "migration"
+    ],
+    "confidence": 0.78,
+    "source_name": "CNN (@CNN)",
+    "links": [
+      {
+        "url": "https://x.com/CNN/status/2101672813950070877",
+        "label": "CNN Report"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSqkRTlWsAAcJnx.jpg"
+  },
+  {
+    "id": "evt_95181255145971712",
+    "title": "Luxembourg Deploys Drone-Detection Assets Following Airport Suspension",
+    "summary": "Luxembourg deployed drone-detection systems with international partner support after the airport temporarily suspended operations due to sightings of unauthorized drones. The incident prompted a rapid security response involving foreign assistance and specialized detection equipment.",
+    "date_event": null,
+    "date_published": "2026-09-20T13:58:21Z",
+    "geo": {
+      "lat": 49.6116,
+      "lon": 6.1319,
+      "country": "Luxembourg",
+      "region": "Luxembourg",
+      "city": "Luxembourg City"
+    },
+    "topics": [
+      "security-incident",
+      "drone",
+      "luxembourg",
+      "airport",
+      "infrastructure"
+    ],
+    "confidence": 0.85,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2101672313313718316",
+        "label": "Twitter Report"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_95181238704316416",
+    "title": "Ukrainian Defense Forces Strike Moscow Refinery",
+    "summary": "A Ukrainian Defense Forces strike unmanned aerial vehicle penetrated dense Moscow air defense systems and successfully hit an oil refinery facility in the Moscow region.",
+    "date_event": null,
+    "date_published": "2026-09-20T14:00:13Z",
+    "geo": {
+      "lat": 55.625578,
+      "lon": 37.6063916,
+      "display_name": "Moscow, Russia"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military-strike",
+      "infrastructure",
+      "energy",
+      "moscow"
+    ],
+    "confidence": 0.85,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2101672782811590883",
+        "title": "War Translated tweet",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2101672739924787200/img/Me3D7v5GWvJZ8Z5g.jpg"
+  },
+  {
+    "id": "evt_95181295058984960",
+    "title": "Poland to Install Over 1,000 Automated Air Raid Sirens",
+    "summary": "Poland announced plans to install more than 1,000 automated sirens following Russian drone and missile strikes near its border, with border crossings and infrastructure increasingly targeted.",
+    "date_event": null,
+    "date_published": "2026-09-20T13:45:53Z",
+    "geo": {
+      "lat": 52.215933,
+      "lon": 19.134422,
+      "display_name": "Poland"
+    },
+    "topics": [
+      "poland",
+      "russia",
+      "ukraine",
+      "air-defense",
+      "civil-defense",
+      "border-security",
+      "military"
+    ],
+    "confidence": 0.82,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2101669176746131763",
+        "title": "War Translated tweet",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSqg-EyWoAEGUFs.png"
+  },
+  {
+    "id": "evt_95181339002695680",
+    "title": "Trump Outlines Three Options for Iran Conflict",
+    "summary": "President Trump presented three strategic approaches regarding ongoing Iran tensions. He expressed openness to diplomatic meetings with Iran's leadership following the submission of a list of demands to the White House.",
+    "date_event": null,
+    "date_published": "2026-09-20T15:05:58.000Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369,
+      "country": "United States",
+      "region": "Washington D.C.",
+      "city": "Washington"
+    },
+    "topics": [
+      "iran",
+      "diplomacy",
+      "united-states",
+      "military-conflict",
+      "middle-east"
+    ],
+    "confidence": 0.85,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2101689328329990592",
+        "label": "Fox News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95181339057221632",
+    "title": "Ukraine Launches Largest Drone Barrage Against Moscow During Russian Elections",
+    "summary": "Ukraine conducted its largest coordinated drone attack, deploying over 1,000 drones against Moscow during Russia's parliamentary election final day. The operation struck critical infrastructure including a major oil refinery.",
+    "date_event": null,
+    "date_published": "2026-09-20T14:30:42.000Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "country": "Russia",
+      "region": "Moscow",
+      "city": "Moscow"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "drone-warfare",
+      "military-conflict",
+      "infrastructure"
+    ],
+    "confidence": 0.88,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2101680455133114658",
+        "label": "Fox News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95181339103358976",
+    "title": "Israel Military Elevated to High Alert Status",
+    "summary": "Israel's military forces reached heightened alert status across operational sectors. The elevation reflected responses to developing regional security circumstances.",
+    "date_event": null,
+    "date_published": "2026-09-20T15:11:30.000Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.2338,
+      "country": "Israel",
+      "region": "Central Israel",
+      "city": "Tel Aviv"
+    },
+    "topics": [
+      "israel",
+      "military",
+      "security-alert",
+      "middle-east",
+      "defense"
+    ],
+    "confidence": 0.72,
+    "source_name": "inside_nk (@inside_nk)",
+    "links": [
+      {
+        "url": "https://x.com/inside_nk/status/2101690722550268280",
+        "label": "inside_nk Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95181339145302016",
+    "title": "Large Gathering at Western Wall for Yom Kippur Observance",
+    "summary": "Thousands of Israelis gathered at the Western Wall in Jerusalem for Yom Kippur prayers. Prime Minister Netanyahu participated in Selichot prayers alongside government officials.",
+    "date_event": null,
+    "date_published": "2026-09-20T15:00:17.000Z",
+    "geo": {
+      "lat": 31.7767,
+      "lon": 35.2345,
+      "country": "Israel",
+      "region": "Jerusalem",
+      "city": "Jerusalem"
+    },
+    "topics": [
+      "israel",
+      "jerusalem",
+      "yom-kippur",
+      "religion",
+      "culture"
+    ],
+    "confidence": 0.82,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2101687898063991234",
+        "label": "Middle East Eye Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95181339187245056",
+    "title": "Israeli President Pardons Soldier Convicted of Killing Wounded Palestinian",
+    "summary": "Israel's president granted a pardon to a soldier previously convicted of manslaughter. The soldier had shot Abdel Fattah al-Sharif while he lay wounded on a Hebron street in 2016.",
+    "date_event": null,
+    "date_published": "2026-09-20T14:58:42.000Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.1852,
+      "country": "Palestine/Israel",
+      "region": "West Bank",
+      "city": "Hebron"
+    },
+    "topics": [
+      "israel",
+      "palestine",
+      "military",
+      "justice",
+      "controversy"
+    ],
+    "confidence": 0.8,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2101687500892741807",
+        "label": "Middle East Eye Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95181464504664064",
+    "title": "Commentary on Ukrainian Survival Prospects",
+    "summary": "Political analyst comments on Ukraine's limited survival options, framing the situation as different paths rather than a viable way forward. Analysis focuses on the constraints facing Ukraine in current geopolitical circumstances.",
+    "date_event": null,
+    "date_published": "2026-09-20T14:03:22Z",
+    "geo": {
+      "lat": 48.3794,
+      "lon": 31.1656,
+      "country": "Ukraine",
+      "region": "Central",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "ukraine",
+      "geopolitics",
+      "security",
+      "analysis"
+    ],
+    "confidence": 0.75,
+    "source_name": "My Lord Bebo (@MyLordBebo)",
+    "links": [
+      {
+        "url": "https://x.com/MyLordBebo/status/2101673578391343489",
+        "label": "Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95181543651180544",
+    "title": "US and China Negotiate Xi-Trump Summit Deliverables",
+    "summary": "US and Chinese officials conduct talks in New York to discuss potential deliverables for a planned summit between Presidents Xi Jinping and Trump. The negotiations indicate renewed diplomatic engagement on key bilateral issues.",
+    "date_event": null,
+    "date_published": "2026-09-20T14:43:50Z",
+    "geo": {
+      "lat": 40.7128,
+      "lon": -74.006,
+      "country": "United States",
+      "region": "New York",
+      "city": "New York"
+    },
+    "topics": [
+      "us-china",
+      "diplomacy",
+      "xi-jinping",
+      "trump",
+      "summit",
+      "negotiations"
+    ],
+    "confidence": 0.85,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2101683761570087222",
+        "label": "SCMP News"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95181543735066624",
+    "title": "Hong Kong's Former Chief Executive Tung Chee-hwa Honored at State Funeral",
+    "summary": "Tung Chee-hwa, the first Chief Executive of Hong Kong after the territory's handover from British to Chinese sovereignty, received a state funeral on September 20, 2026. Officials and dignitaries recognized his profound love for Hong Kong and his contributions to its governance.",
+    "date_event": null,
+    "date_published": "2026-09-20T14:33:39Z",
+    "geo": {
+      "lat": 22.3193,
+      "lon": 114.1694,
+      "country": "Hong Kong",
+      "region": "Central",
+      "city": "Hong Kong"
+    },
+    "topics": [
+      "hong-kong",
+      "tung-chee-hwa",
+      "politics",
+      "history",
+      "governance"
+    ],
+    "confidence": 0.8,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2101681199148097625",
+        "label": "SCMP News"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95181543802175488",
+    "title": "Study Links Rare Earth Exposure to Threefold Increase in Health Risks for Chinese Newborns",
+    "summary": "A new study documented that exposure to rare earth elements causes a three-fold increase in health risks for newborns in China. The research highlights the environmental and public health consequences of rare earth mining and processing operations.",
+    "date_event": null,
+    "date_published": "2026-09-20T14:04:55Z",
+    "geo": {
+      "lat": 25.033,
+      "lon": 121.5654,
+      "country": "China",
+      "region": "Southern",
+      "city": "Zhangzhou"
+    },
+    "topics": [
+      "china",
+      "environment",
+      "health",
+      "rare-earth",
+      "public-health",
+      "mining"
+    ],
+    "confidence": 0.8,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2101673965206831207",
+        "label": "SCMP News"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95181587305496576",
+    "title": "Middle East Analyst Details Foreknowledge of Syria Aleppo Conflict",
+    "summary": "Sim Nasr, a Middle East geopolitics expert, shared insights from a December 2025 visit to Syria predicting upcoming Aleppo clashes. The analysis reflects on the warning signs present before major regional conflict escalation.",
+    "date_event": null,
+    "date_published": "2026-09-20T15:14:46Z",
+    "geo": {
+      "lat": 34.7256,
+      "lon": 37.1528,
+      "country": "Syria",
+      "region": "Northern",
+      "city": "Aleppo"
+    },
+    "topics": [
+      "syria",
+      "aleppo",
+      "conflict",
+      "middle-east",
+      "geopolitics",
+      "analysis"
+    ],
+    "confidence": 0.75,
+    "source_name": "Sim Nasr (@SimNasr)",
+    "links": [
+      {
+        "url": "https://x.com/SimNasr/status/2101691546819080644",
+        "label": "Sim Nasr Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95181904466161664",
+    "title": "Technical Analysis: Shahid-Seeker Drone Guidance Range and Automatic Attack Capabilities",
+    "summary": "A technical analysis post discusses the operational range of the Shahid-Seeker drone system and its automatic guidance capabilities for target acquisition and attack. The analysis addresses common questions about the drone's effective engagement distance.",
+    "date_event": "2026-09-20T14:13:37Z",
+    "date_published": "2026-09-20T14:13:37Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "region": "Kyiv",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "drone",
+      "technology",
+      "guidance-system",
+      "automatic-targeting",
+      "military-technology",
+      "ew",
+      "sigint"
+    ],
+    "confidence": 0.7,
+    "source_name": "Serhii FLASH — Technologies (@serhii_flash)",
+    "links": [
+      {
+        "url": "https://t.me/serhii_flash/7763",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95181904340332544",
+    "title": "Leaked Russian Government Roadmap Details Iran Cooperation Plans 2024-2026",
+    "summary": "A 44-page Russian government roadmap obtained by Fox News reveals plans for deepening cooperation between Russia and Iran across multiple sectors including finance, nuclear energy, oil and gas, aviation, transport, technology, and media over the 2024-2026 period.",
+    "date_event": "2026-09-20T13:47:52Z",
+    "date_published": "2026-09-20T13:47:52Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "country": "Russia",
+      "region": "Moscow",
+      "city": "Moscow"
+    },
+    "topics": [
+      "russia",
+      "iran",
+      "cooperation",
+      "energy",
+      "sanctions",
+      "geopolitics",
+      "nuclear"
+    ],
+    "confidence": 0.75,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66763",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95181904403247104",
+    "title": "Russian Election Commission Claims Over 1000 DDoS Attacks from Ukraine During Legislative Elections",
+    "summary": "The President of Russia's Electoral Commission claims that over 1000 DDoS attacks originating from Ukraine interfered with the ongoing Russian legislative election, attributing election interference to Ukrainian cyber operations.",
+    "date_event": "2026-09-20T14:21:20Z",
+    "date_published": "2026-09-20T14:21:20Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "country": "Russia",
+      "region": "Moscow",
+      "city": "Moscow"
+    },
+    "topics": [
+      "russia",
+      "ukraine",
+      "election",
+      "cyberattack",
+      "ddos",
+      "interference"
+    ],
+    "confidence": 0.65,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66764",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95181904524881920",
+    "title": "Ukraine Prioritizes Oleshky Humanitarian Crisis in UN General Assembly Diplomatic Efforts",
+    "summary": "The Ukrainian Foreign Ministry has designated the humanitarian catastrophe in Oleshky, Kherson region as a key priority for Ukraine's diplomatic engagement during the UN General Assembly, highlighting the severe humanitarian impact of the ongoing conflict.",
+    "date_event": "2026-09-20T14:20:53Z",
+    "date_published": "2026-09-20T14:20:53Z",
+    "geo": {
+      "lat": 46.6196,
+      "lon": 35.3501,
+      "country": "Ukraine",
+      "region": "Kherson",
+      "city": "Oleshky"
+    },
+    "topics": [
+      "ukraine",
+      "humanitarian-crisis",
+      "kherson",
+      "war",
+      "diplomacy",
+      "united-nations"
+    ],
+    "confidence": 0.85,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46224",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95181904579407872",
+    "title": "NATO Military Committee Chief Reveals 4,000-Page Contingency Plans for Potential Russian Attack on Eastern Flank",
+    "summary": "Admiral Giuseppe Cavo Dragone, Chair of the NATO Military Committee, disclosed that NATO maintains comprehensive 4,000-page contingency plans addressing potential Russian military actions against NATO's eastern members, ranging from limited crisis scenarios to full-scale attacks triggering Article 5.",
+    "date_event": "2026-09-20T15:23:01Z",
+    "date_published": "2026-09-20T15:23:01Z",
+    "geo": {
+      "lat": 52.52,
+      "lon": 13.405,
+      "country": "Germany",
+      "region": "Berlin",
+      "city": "Berlin"
+    },
+    "topics": [
+      "nato",
+      "russia",
+      "military-planning",
+      "eastern-flank",
+      "article-5",
+      "contingency"
+    ],
+    "confidence": 0.9,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46225",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
