@@ -1,14 +1,14 @@
 {
-  "last_updated": "2026-09-20T02:57:25Z",
+  "last_updated": "2026-09-20T04:11:27.598Z",
   "data_range": {
     "oldest_date": "2026-08-25",
-    "newest_date": "2026-09-19"
+    "newest_date": "2026-09-20"
   },
   "statistics": {
-    "total_events": 3319,
+    "total_events": 3334,
     "events_by_month": {
       "2026-08": 257,
-      "2026-09": 3062
+      "2026-09": 3077
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 110,
@@ -21,7 +21,7 @@
       "Insider Paper (@insiderpaper)": 70,
       "Clash Report (@ClashReport)": 224,
       "DD Geopolitics (@DDGeopolitics)": 115,
-      "OSINT Technical (@Osinttechnical)": 43,
+      "OSINT Technical (@Osinttechnical)": 44,
       "NSA (@NSAGov)": 3,
       "Sim Nasr (@SimNasr)": 47,
       "TankerTrackers (@TankerTrackers)": 10,
@@ -40,21 +40,21 @@
       "BBC World News (@BBCWorld)": 83,
       "ABC News (@ABC)": 83,
       "US Navy (@USNavy)": 12,
-      "CNN (@CNN)": 36,
-      "Warshipcam (@Warshipcam)": 73,
-      "Xinhua News (@XHNews)": 129,
+      "CNN (@CNN)": 37,
+      "Warshipcam (@Warshipcam)": 75,
+      "Xinhua News (@XHNews)": 130,
       "cnnbrk (@cnnbrk)": 17,
-      "Fox News (@FoxNews)": 50,
+      "Fox News (@FoxNews)": 52,
       "Quds News Network": 79,
       "cepa (@cepa)": 13,
       "ELINT News (@ELINTNews)": 16,
       "CSIS Korea Chair (@CSISKoreaChair)": 17,
       "Critical Threats Project (@criticalthreats)": 20,
-      "Institute for the Study of War (@TheStudyofWar)": 57,
+      "Institute for the Study of War (@TheStudyofWar)": 59,
       "Bellum Acta (@BellumActaNews)": 45,
       "Serhii FLASH — Technologies (@serhii_flash)": 6,
-      "UNITED24 Media (@United24media)": 106,
-      "Wagner Z Group (@wagner_group_pmcr)": 23,
+      "UNITED24 Media (@United24media)": 109,
+      "Wagner Z Group (@wagner_group_pmcr)": 24,
       "WarLife 18+ (@Voyna18)": 12,
       "Gcaptain (@Gcaptain)": 24,
       "cnni": 1,
@@ -92,7 +92,7 @@
       "Thewarzonewire": 7,
       "Southkoreapro": 1,
       "Insider Paper": 22,
-      "Taiwan News (@TaiwanNewsEN)": 33,
+      "Taiwan News (@TaiwanNewsEN)": 34,
       "ChineseEmbInUs": 3,
       "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)": 17,
       "ChineseEmbInUs (@ChineseEmbInUs)": 5,
@@ -138,7 +138,7 @@
       "Lebanese News and Updates (@LebUpdate)": 3,
       "Scmpnews": 3,
       "SCS Probing Initiative (@SCS_PI)": 5,
-      "Mondefense (@Mondefense)": 1,
+      "Mondefense (@Mondefense)": 2,
       "ELINT News": 4,
       "The War Zone (@Thewarzonewire)": 2,
       "AFU Strategic Communications": 1,
@@ -157,7 +157,7 @@
       "DDGeopolitics": 1
     },
     "media_files": {
-      "images": 687,
+      "images": 692,
       "videos": 0
     }
   },
@@ -187,8 +187,8 @@
     "2026-09-16": 220,
     "2026-09-17": 235,
     "2026-09-18": 198,
-    "2026-09-19": 189,
-    "2026-09-20": 1
+    "2026-09-19": 191,
+    "2026-09-20": 14
   },
   "average_confidence": 0.8027476635514025
 }

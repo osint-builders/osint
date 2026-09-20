@@ -2,9 +2,9 @@
   {
     "source_id": "unknown",
     "source_name": "War Translated (@wartranslated)",
-    "count": 2527,
+    "count": 2531,
     "earliest_date": "2026-08-25T19:59:00Z",
-    "latest_date": "2026-09-19T23:39:01Z"
+    "latest_date": "2026-09-20T02:58:01Z"
   },
   {
     "source_id": "telegram-qudsnen",
@@ -51,9 +51,9 @@
   {
     "source_id": "twitter-cnn",
     "source_name": "CNN (@CNN)",
-    "count": 10,
+    "count": 11,
     "earliest_date": "2026-08-26T20:30:01Z",
-    "latest_date": "2026-09-15T22:01:06Z"
+    "latest_date": "2026-09-20T03:30:07Z"
   },
   {
     "source_id": "twitter-cepa",
@@ -149,9 +149,9 @@
   {
     "source_id": "twitter-foxnews",
     "source_name": "Fox News (@FoxNews)",
-    "count": 15,
+    "count": 17,
     "earliest_date": "2026-08-29T16:17:28Z",
-    "latest_date": "2026-09-18T18:09:46Z"
+    "latest_date": "2026-09-20T04:00:11Z"
   },
   {
     "source_id": "twitter-inside-nk",
@@ -170,9 +170,9 @@
   {
     "source_id": "twitter-xinhua-news",
     "source_name": "Xinhua News (@XHNews)",
-    "count": 31,
+    "count": 32,
     "earliest_date": "2026-08-30T16:41:07Z",
-    "latest_date": "2026-09-19T22:15:04Z"
+    "latest_date": "2026-09-20T03:36:07Z"
   },
   {
     "source_id": "twitter-wartranslated",
@@ -219,9 +219,9 @@
   {
     "source_id": "twitter-warshipcam",
     "source_name": "Warshipcam (@Warshipcam)",
-    "count": 18,
+    "count": 20,
     "earliest_date": "2026-08-31T00:00:00Z",
-    "latest_date": "2026-09-18T18:04:32.000Z"
+    "latest_date": "2026-09-20T02:21:13Z"
   },
   {
     "source_id": "twitter-southkoreapro",
@@ -233,9 +233,9 @@
   {
     "source_id": "twitter-taiwan-news-en",
     "source_name": "Taiwan News (@TaiwanNewsEN)",
-    "count": 11,
+    "count": 12,
     "earliest_date": "2026-09-04T07:42:24.000Z",
-    "latest_date": "2026-09-19T06:38:18Z"
+    "latest_date": "2026-09-20T03:55:18Z"
   },
   {
     "source_id": "twitter-bbgoriginals",
@@ -310,9 +310,9 @@
   {
     "source_id": "twitter-osinttechnical",
     "source_name": "OSINT Technical",
-    "count": 11,
+    "count": 12,
     "earliest_date": "2026-09-06T21:45:50Z",
-    "latest_date": "2026-09-19T02:12:32.000Z"
+    "latest_date": "2026-09-20T03:16:14Z"
   },
   {
     "source_id": "telegram-ourwarstoday",
@@ -324,9 +324,9 @@
   {
     "source_id": "twitter-thestudyofwar",
     "source_name": "Institute for the Study of War",
-    "count": 12,
+    "count": 14,
     "earliest_date": "2026-09-07T02:30:15Z",
-    "latest_date": "2026-09-19T23:23:36Z"
+    "latest_date": "2026-09-20T02:35:41Z"
   },
   {
     "source_id": "twitter-ian-bremmer",
@@ -481,5 +481,12 @@
     "count": 1,
     "earliest_date": "2026-09-18T16:55:01Z",
     "latest_date": "2026-09-18T16:55:01Z"
+  },
+  {
+    "source_id": "twitter-mondefense",
+    "source_name": "Mondefense (@Mondefense)",
+    "count": 1,
+    "earliest_date": "2026-09-20T04:01:00Z",
+    "latest_date": "2026-09-20T04:01:00Z"
   }
 ]
