@@ -97222,5 +97222,560 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_95364687322955776",
+    "title": "Powerful Typhoon Approaches Japan's East Coast as Nation Prepares for Record Rainfall",
+    "summary": "A powerful typhoon approaches Japan's east coast as meteorological agencies forecast record rainfall levels. The nation mobilizes emergency preparedness measures across the region as the system nears landfall.",
+    "date_event": "2026-09-20T18:00:00Z",
+    "date_published": "2026-09-21T03:30:52Z",
+    "geo": {
+      "lat": 37.6762,
+      "lon": 139.7674,
+      "country": "Japan",
+      "region": "Eastern Honshu",
+      "city": "East Coast"
+    },
+    "topics": [
+      "typhoon",
+      "weather",
+      "japan",
+      "natural-disaster"
+    ],
+    "confidence": 0.88,
+    "source_name": "BBC World News",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2101876790859878566",
+        "label": "BBC World News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95364687255846912",
+    "title": "Tropical Storm Polo Forms Off Southwestern Mexico, Forecast to Strengthen Rapidly",
+    "summary": "Tropical Storm Polo formed late Sunday off the southwestern coast of Mexico with maximum sustained winds near 40 mph. The U.S. National Hurricane Center in Miami forecasts the storm to strengthen rapidly over the coming days.",
+    "date_event": "2026-09-20T22:00:00Z",
+    "date_published": "2026-09-21T03:32:50Z",
+    "geo": {
+      "lat": 16.5,
+      "lon": -104.5,
+      "country": "Mexico",
+      "region": "Pacific Coast",
+      "city": "Off Southwestern Coast"
+    },
+    "topics": [
+      "tropical-storm",
+      "weather",
+      "mexico",
+      "hurricane-season"
+    ],
+    "confidence": 0.9,
+    "source_name": "AP News",
+    "links": [
+      {
+        "url": "https://x.com/AP/status/2101877284495896875",
+        "label": "AP News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95364687188738048",
+    "title": "Police Officer Shot Outside Synagogue in Ontario, Canada During Yom Kippur",
+    "summary": "A police officer sustained gunshot wounds outside a synagogue in Ontario, Canada on Sunday night while Jewish community members gathered to observe Yom Kippur. Ontario Premier Doug Ford confirmed the incident occurred during the sacred religious observance.",
+    "date_event": "2026-09-20T23:00:00Z",
+    "date_published": "2026-09-21T03:13:22Z",
+    "geo": {
+      "lat": 50.000678,
+      "lon": -86.000977,
+      "country": "Canada",
+      "region": "Ontario",
+      "city": "Ontario"
+    },
+    "topics": [
+      "violence",
+      "shooting",
+      "canada",
+      "religious-security"
+    ],
+    "confidence": 0.85,
+    "source_name": "ABC News",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2101872386031108357",
+        "label": "ABC News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95364691508879361",
+    "title": "South Korean Foreign Minister Meets CSIS Officials on Korea-US Relations",
+    "summary": "South Korean Foreign Minister Cho Hyun held discussions in Washington D.C. on September 18 with John Hamre, CSIS Honorary President, and Victor Cha, CSIS Korea Chair, regarding Korea-US relations and Korean Peninsula issues.",
+    "date_event": null,
+    "date_published": "2026-09-21T02:15:59.000Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369,
+      "country": "United States",
+      "region": "District of Columbia",
+      "city": "Washington"
+    },
+    "topics": [
+      "diplomacy",
+      "korea-us-relations",
+      "korea-peninsula",
+      "north-korea",
+      "security",
+      "alliance"
+    ],
+    "confidence": null,
+    "source_name": "CSIS Korea Chair (@CSISKoreaChair)",
+    "links": [
+      {
+        "url": "https://x.com/CSISKoreaChair/status/2101857944044273762",
+        "label": "CSIS Korea Chair Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HSsRQDRagAA-SL5.jpg"
+  },
+  {
+    "id": "evt_95364691508879360",
+    "title": "Trump White House Removes CNN from Press Pool Assignment",
+    "summary": "The Trump White House has removed CNN from its Monday assignment as the TV pool representative for the entire White House press corps. This action deepens the ongoing dispute that began when the president said he was banning CNN, MS NOW, and Politico.",
+    "date_event": null,
+    "date_published": "2026-09-21T03:23:41.000Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369,
+      "country": "United States",
+      "region": "District of Columbia",
+      "city": "Washington"
+    },
+    "topics": [
+      "media",
+      "press-freedom",
+      "government",
+      "censorship",
+      "white-house",
+      "united-states"
+    ],
+    "confidence": null,
+    "source_name": "cnnbrk (@cnnbrk)",
+    "links": [
+      {
+        "url": "https://x.com/cnnbrk/status/2101874983760806296",
+        "label": "CNN Breaking News Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HStcJH5XoAA9X_3.jpg"
+  },
+  {
+    "id": "evt_95364711293415424",
+    "title": "Trump Declines to Join Saudi Arabian Military Campaign Against Houthis",
+    "summary": "President Trump withdrew from participating in Saudi Arabia's military operations against Houthi forces after deliberating over potential air strikes. His advisors reportedly expressed strong skepticism regarding U.S. involvement in the conflict.",
+    "date_event": "2026-09-20T00:00:00Z",
+    "date_published": "2026-09-21T01:49:52Z",
+    "geo": {
+      "lat": 15.3694,
+      "lon": 44.2994,
+      "country": "Yemen",
+      "region": "Red Sea",
+      "city": "Red Sea Region"
+    },
+    "topics": [
+      "houthi",
+      "red-sea",
+      "saudi-arabia",
+      "military",
+      "yemen",
+      "united-states"
+    ],
+    "confidence": 0.85,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2101851372727464093",
+        "label": "OSINT Technical Tweet"
+      },
+      {
+        "url": "https://www.nytimes.com",
+        "label": "New York Times"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95364852280750080",
+    "title": "Philippine Indigenous Tribe Opposes US-Led Pax Silica Initiative",
+    "summary": "A Philippine indigenous tribe publicly declared its determination to resist the US-led Pax Silica geopolitical framework, calling for international attention to their position. The tribe vowed to maintain ground against the initiative perceived as conflicting with their interests.",
+    "date_event": "2026-09-21T02:00:00Z",
+    "date_published": "2026-09-21T02:23:42Z",
+    "geo": {
+      "lat": 12.8797,
+      "lon": 121.774,
+      "country": "Philippines",
+      "region": "Luzon",
+      "city": "Philippines"
+    },
+    "topics": [
+      "indigenous-rights",
+      "philippines",
+      "pax-silica",
+      "us-policy",
+      "indo-pacific",
+      "geopolitics"
+    ],
+    "confidence": 0.72,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2101859888422932874",
+        "label": "SCMP News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95364724706803712",
+    "title": "Philippines Pledges Continued Cooperation with Taiwan",
+    "summary": "Philippine government reaffirms commitment to sustained diplomatic and cooperative relations with Taiwan, signaling continued support during regional geopolitical uncertainty.",
+    "date_event": null,
+    "date_published": "2026-09-21T03:38:39Z",
+    "geo": {
+      "lat": 12.8797,
+      "lon": 121.774,
+      "country": "Philippines",
+      "city": "Manila"
+    },
+    "topics": [
+      "philippines",
+      "taiwan",
+      "diplomatic-relations",
+      "cooperation"
+    ],
+    "confidence": null,
+    "source_name": "Taiwan News (@TaiwanNewsEN)",
+    "links": [
+      {
+        "url": "https://x.com/TaiwanNewsEN/status/2101878748253749616"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HStflBAbsAAeuj1.png"
+  },
+  {
+    "id": "evt_95364796223881216",
+    "title": "Ukraine Launches Largest Missile and Drone Strike Against Moscow Oblast Targets",
+    "summary": "Ukrainian forces conducted their largest combined missile and drone strike against strategic targets in Moscow Oblast on the night of September 19-20, 2026, ahead of the final day of voting in the Russian State Duma.",
+    "date_event": null,
+    "date_published": "2026-09-21T02:12:32Z",
+    "geo": {
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "country": "Russia",
+      "region": "Moscow Oblast",
+      "city": "Moscow"
+    },
+    "topics": [
+      "russia",
+      "ukraine",
+      "military-operations",
+      "offensive",
+      "strategic-strikes"
+    ],
+    "confidence": null,
+    "source_name": "Institute for the Study of War (@TheStudyofWar)",
+    "links": [
+      {
+        "url": "https://x.com/TheStudyofWar/status/2101857078801293435"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HStL3xvXkAAy742.jpg"
+  },
+  {
+    "id": "evt_95364862737154048",
+    "title": "Fire Breaks Out at Textile Factory in Foshan, Guangdong Province, China",
+    "summary": "At least eight people were killed and one injured after a fire broke out at approximately 3 p.m. on Sunday at a textile factory in the city of Foshan in south China's Guangdong Province. Rescue efforts continued following the incident.",
+    "date_event": null,
+    "date_published": "2026-09-21T03:34:32Z",
+    "geo": {
+      "lat": 22.8305,
+      "lon": 111.6535,
+      "country": "China",
+      "region": "Guangdong Province",
+      "city": "Foshan"
+    },
+    "topics": [
+      "china",
+      "industrial-accident",
+      "fire",
+      "guangdong",
+      "casualty"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2101877712860377457"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HStepFWbsAAzp5L.jpg"
+  },
+  {
+    "id": "evt_95364950473584640",
+    "title": "Turkey Presents Black Sea De-escalation Plan to Ukraine and Russia",
+    "summary": "Turkey proposed a de-escalation plan for the Black Sea region, presented to both Ukraine and Russia as part of diplomatic efforts to reduce regional tensions.",
+    "date_event": null,
+    "date_published": "2026-09-21T02:11:01Z",
+    "geo": {
+      "lat": 43.872824,
+      "lon": 33.9938077,
+      "country": "Turkey"
+    },
+    "topics": [
+      "turkey",
+      "diplomacy",
+      "black-sea",
+      "de-escalation",
+      "ukraine",
+      "russia"
+    ],
+    "confidence": 0.7,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46234",
+        "label": "UNITED24 Media"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95364956014260224",
+    "title": "Wagner Combat Operations Update",
+    "summary": "Wagner unit communication posting morale and combat operational messaging related to ongoing military activities.",
+    "date_event": null,
+    "date_published": "2026-09-21T02:59:01Z",
+    "geo": {
+      "lat": 47.9212914,
+      "lon": 37.7809825,
+      "country": "Ukraine",
+      "region": "Donetsk"
+    },
+    "topics": [
+      "wagner",
+      "combat",
+      "ukraine",
+      "military",
+      "frontline"
+    ],
+    "confidence": 0.5,
+    "source_name": "Wagner Z Group (@wagner_group_pmcr)",
+    "links": [
+      {
+        "url": "https://t.me/wagner_group_pmcr/100018",
+        "label": "Wagner Z Group"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95364961701736448",
+    "title": "Wagner Operations in Syria",
+    "summary": "Wagner forces operational messaging regarding military activities in the Tadmor region of Syria.",
+    "date_event": null,
+    "date_published": "2026-09-21T03:15:15Z",
+    "geo": {
+      "lat": 34.5526608,
+      "lon": 38.259261,
+      "country": "Syria",
+      "city": "Tadmor"
+    },
+    "topics": [
+      "wagner",
+      "syria",
+      "tadmor",
+      "military",
+      "operations"
+    ],
+    "confidence": 0.5,
+    "source_name": "Wagner Z Group (@wagner_group_pmcr)",
+    "links": [
+      {
+        "url": "https://t.me/wagner_group_pmcr/100019",
+        "label": "Wagner Z Group"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95364945402671104",
+    "title": "Architectural Monument Converted to Fortress Bunker",
+    "summary": "A planned architectural monument in Ukraine converted to serve defensive military purposes, fortified as a bunker structure.",
+    "date_event": null,
+    "date_published": "2026-09-21T02:59:44Z",
+    "geo": {
+      "lat": 49.4871968,
+      "lon": 31.2718321,
+      "country": "Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "fortification",
+      "military",
+      "defensive",
+      "architecture"
+    ],
+    "confidence": 0.65,
+    "source_name": "Our Wars, Today (@ourwarstoday)",
+    "links": [
+      {
+        "url": "https://t.me/ourwarstoday/45555",
+        "label": "Our Wars, Today"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95365013400723456",
+    "title": "Trump cancels planned U.S. airstrikes against Yemen",
+    "summary": "President Trump has decided to cancel planned U.S. airstrikes against Yemen after initial approval, citing concerns about overextension and energy security.",
+    "date_event": null,
+    "date_published": "2026-09-21T02:21:46Z",
+    "geo": {
+      "lat": 15.3694,
+      "lon": 48.2673,
+      "city": "Sana'a",
+      "country": "Yemen"
+    },
+    "topics": [
+      "yemen",
+      "houthi",
+      "usa",
+      "military",
+      "foreign-policy"
+    ],
+    "confidence": 0.85,
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36937"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95365013442666496",
+    "title": "U.S. military strike against Houthis postponed at last moment",
+    "summary": "Reports indicate that planned U.S. airstrikes against Houthi forces were approved and bombs were loaded onto warplanes before President Trump reversed the decision.",
+    "date_event": null,
+    "date_published": "2026-09-21T02:28:55Z",
+    "geo": {
+      "lat": 15.3694,
+      "lon": 48.2673,
+      "city": "Sana'a",
+      "country": "Yemen"
+    },
+    "topics": [
+      "yemen",
+      "houthi",
+      "usa",
+      "military",
+      "middle-east"
+    ],
+    "confidence": 0.85,
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36938"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95365013484609536",
+    "title": "Ansarallah forces capture strategic Rasin Mountain in Yemen",
+    "summary": "Ansarallah (Houthi movement) have captured Jabal Rasin (Rasin Mountain), a strategic position just 15 kilometers west of Al-Turbah in Yemen.",
+    "date_event": null,
+    "date_published": "2026-09-21T02:58:53Z",
+    "geo": {
+      "lat": 15.3694,
+      "lon": 48.2673,
+      "city": "Taizz",
+      "country": "Yemen"
+    },
+    "topics": [
+      "yemen",
+      "ansarallah",
+      "houthi",
+      "military",
+      "territorial-control"
+    ],
+    "confidence": 0.85,
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/36939"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95365013308448768",
+    "title": "General Staff of the Armed Forces of Ukraine",
+    "summary": "Official daily situation report on cumulative combat losses of the opposing Russian forces from February 24, 2022 to September 21, 2026.",
+    "date_event": null,
+    "date_published": "2026-09-21T03:20:42Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "city": "Kyiv",
+      "country": "Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military",
+      "losses",
+      "armed-forces"
+    ],
+    "confidence": 0.85,
+    "source_name": "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)",
+    "links": [
+      {
+        "url": "https://t.me/GeneralStaffZSU/42308"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_95365013354586112",
+    "title": "Iraqi PMF foils ISIS infiltration attempt near Lake Tharthar",
+    "summary": "The Popular Mobilization Forces have thwarted an infiltration attempt by ISIS elements in the Lake Tharthar area east of Anbar province, Iraq.",
+    "date_event": null,
+    "date_published": "2026-09-21T02:25:11Z",
+    "geo": {
+      "lat": 33.8333,
+      "lon": 43.7667,
+      "city": "Lake Tharthar",
+      "country": "Iraq"
+    },
+    "topics": [
+      "iraq",
+      "isis",
+      "military",
+      "security",
+      "pmf"
+    ],
+    "confidence": 0.85,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/74871"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
