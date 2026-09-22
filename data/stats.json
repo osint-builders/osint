@@ -1,14 +1,14 @@
 {
-  "last_updated": "2026-09-22T00:45:41.442Z",
+  "last_updated": "2026-09-22T07:32:31.118Z",
   "data_range": {
     "oldest_date": "2026-08-25",
     "newest_date": "2026-09-22"
   },
   "statistics": {
-    "total_events": 3609,
+    "total_events": 3639,
     "events_by_month": {
       "2026-08": 257,
-      "2026-09": 3352
+      "2026-09": 3382
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 121,
@@ -19,14 +19,14 @@
       "Wagner Z Group": 4,
       "ABC News": 40,
       "Insider Paper (@insiderpaper)": 76,
-      "Clash Report (@ClashReport)": 237,
+      "Clash Report (@ClashReport)": 240,
       "DD Geopolitics (@DDGeopolitics)": 120,
-      "OSINT Technical (@Osinttechnical)": 47,
+      "OSINT Technical (@Osinttechnical)": 48,
       "NSA (@NSAGov)": 3,
-      "Sim Nasr (@SimNasr)": 55,
+      "Sim Nasr (@SimNasr)": 56,
       "TankerTrackers (@TankerTrackers)": 10,
       "US Pacific Fleet (@USPacificFleet)": 12,
-      "Middle East Eye (@MiddleEastEye)": 164,
+      "Middle East Eye (@MiddleEastEye)": 165,
       "MT Anderson (@MT_Anderson)": 4,
       "inside_nk (@inside_nk)": 24,
       "Ship News (@ShipNews)": 14,
@@ -42,10 +42,10 @@
       "US Navy (@USNavy)": 13,
       "CNN (@CNN)": 43,
       "Warshipcam (@Warshipcam)": 78,
-      "Xinhua News (@XHNews)": 138,
+      "Xinhua News (@XHNews)": 140,
       "cnnbrk (@cnnbrk)": 21,
       "Fox News (@FoxNews)": 56,
-      "Quds News Network": 88,
+      "Quds News Network": 91,
       "cepa (@cepa)": 14,
       "ELINT News (@ELINTNews)": 18,
       "CSIS Korea Chair (@CSISKoreaChair)": 18,
@@ -53,7 +53,7 @@
       "Institute for the Study of War (@TheStudyofWar)": 63,
       "Bellum Acta (@BellumActaNews)": 53,
       "Serhii FLASH — Technologies (@serhii_flash)": 11,
-      "UNITED24 Media (@United24media)": 122,
+      "UNITED24 Media (@United24media)": 124,
       "Wagner Z Group (@wagner_group_pmcr)": 27,
       "WarLife 18+ (@Voyna18)": 14,
       "Gcaptain (@Gcaptain)": 26,
@@ -65,8 +65,8 @@
       "BBC Breaking News": 5,
       "UANI (@UANI)": 4,
       "Nasa (@Nasa)": 9,
-      "Intel Slava Z": 33,
-      "Geopolitics Prime": 38,
+      "Intel Slava Z": 35,
+      "Geopolitics Prime": 41,
       "Ianellisjones": 1,
       "inside_nk": 3,
       "ISW Ukraine Interactive Territorial Control Map": 10,
@@ -74,13 +74,13 @@
       "My Lord Bebo (@MyLordBebo)": 30,
       "cnni (@cnni)": 21,
       "Philippine Coast Guard (@CoastGuardPH)": 8,
-      "Clash Report": 31,
-      "DD Geopolitics": 43,
+      "Clash Report": 34,
+      "DD Geopolitics": 46,
       "Esri (@Esri)": 3,
       "Scmpnews (@Scmpnews)": 69,
       "CNN International": 9,
       "BBC Breaking News (@BBCBreaking)": 12,
-      "AP News": 11,
+      "AP News": 12,
       "War Monitor (@warmonitors)": 27,
       "Rerum Novarum Intel": 39,
       "cepa": 4,
@@ -92,7 +92,7 @@
       "Thewarzonewire": 7,
       "Southkoreapro": 1,
       "Insider Paper": 25,
-      "Taiwan News (@TaiwanNewsEN)": 36,
+      "Taiwan News (@TaiwanNewsEN)": 39,
       "ChineseEmbInUs": 3,
       "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)": 17,
       "ChineseEmbInUs (@ChineseEmbInUs)": 6,
@@ -104,12 +104,12 @@
       "Middle East Eye": 27,
       "AFU Strategic Communications (@AFUStratCom)": 5,
       "Defence Intelligence of Ukraine – GUR MO": 8,
-      "Southkoreapro (@Southkoreapro)": 21,
+      "Southkoreapro (@Southkoreapro)": 22,
       "Minhdr18 OSINT (@Minhdr18)": 13,
       "Africafactszone (@Africafactszone)": 7,
       "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)": 23,
       "Fox News": 3,
-      "General Staff of the Armed Forces of Ukraine": 7,
+      "General Staff of the Armed Forces of Ukraine": 8,
       "My Lord Bebo": 6,
       "OSINT Technical": 7,
       "Australian Defence (@DefenceAust)": 12,
@@ -161,7 +161,7 @@
       "US Forces Japan (@USForcesJapan)": 1
     },
     "media_files": {
-      "images": 739,
+      "images": 748,
       "videos": 0
     }
   },
@@ -194,7 +194,7 @@
     "2026-09-19": 192,
     "2026-09-20": 123,
     "2026-09-21": 157,
-    "2026-09-22": 8
+    "2026-09-22": 38
   },
   "average_confidence": 0.8042652329749111
 }
