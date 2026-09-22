@@ -1,27 +1,27 @@
 [
   {
     "country": "Ukraine",
-    "count": 265
+    "count": 266
   },
   {
     "country": "United States",
-    "count": 256
-  },
-  {
-    "country": "Palestine",
-    "count": 107
+    "count": 263
   },
   {
     "country": "Iran",
-    "count": 105
+    "count": 111
+  },
+  {
+    "country": "Palestine",
+    "count": 108
   },
   {
     "country": "Russia",
-    "count": 103
+    "count": 106
   },
   {
     "country": "Yemen",
-    "count": 99
+    "count": 101
   },
   {
     "country": "China",
@@ -33,11 +33,11 @@
   },
   {
     "country": "Germany",
-    "count": 52
+    "count": 53
   },
   {
     "country": "Global",
-    "count": 39
+    "count": 42
   },
   {
     "country": "Lebanon",
@@ -45,11 +45,11 @@
   },
   {
     "country": "Syria",
-    "count": 32
+    "count": 33
   },
   {
     "country": "United Kingdom",
-    "count": 30
+    "count": 31
   },
   {
     "country": "Israel",
@@ -61,7 +61,7 @@
   },
   {
     "country": "United Arab Emirates",
-    "count": 19
+    "count": 20
   },
   {
     "country": "France",
@@ -77,7 +77,7 @@
   },
   {
     "country": "Japan",
-    "count": 12
+    "count": 13
   },
   {
     "country": "India",
@@ -156,6 +156,10 @@
     "count": 6
   },
   {
+    "country": "Italy",
+    "count": 6
+  },
+  {
     "country": "Pakistan",
     "count": 5
   },
@@ -177,10 +181,6 @@
   },
   {
     "country": "Hong Kong",
-    "count": 5
-  },
-  {
-    "country": "Italy",
     "count": 5
   },
   {
@@ -260,6 +260,10 @@
     "count": 3
   },
   {
+    "country": "Australia",
+    "count": 3
+  },
+  {
     "country": "World",
     "count": 3
   },
@@ -320,10 +324,6 @@
     "count": 2
   },
   {
-    "country": "Australia",
-    "count": 2
-  },
-  {
     "country": "JP",
     "count": 2
   },
@@ -341,6 +341,10 @@
   },
   {
     "country": "Mexico",
+    "count": 2
+  },
+  {
+    "country": "Libya",
     "count": 2
   },
   {
@@ -532,10 +536,6 @@
     "count": 1
   },
   {
-    "country": "Libya",
-    "count": 1
-  },
-  {
     "country": "Latvia",
     "count": 1
   },
@@ -545,6 +545,10 @@
   },
   {
     "country": "Donetsk People Republic",
+    "count": 1
+  },
+  {
+    "country": "Estonia",
     "count": 1
   }
 ]
