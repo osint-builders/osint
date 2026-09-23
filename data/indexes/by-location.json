@@ -1,7 +1,7 @@
 [
   {
     "country": "United States",
-    "count": 283
+    "count": 288
   },
   {
     "country": "Ukraine",
@@ -9,7 +9,7 @@
   },
   {
     "country": "Iran",
-    "count": 112
+    "count": 113
   },
   {
     "country": "Palestine",
@@ -25,7 +25,7 @@
   },
   {
     "country": "China",
-    "count": 69
+    "count": 70
   },
   {
     "country": "Saudi Arabia",
@@ -37,14 +37,14 @@
   },
   {
     "country": "Global",
-    "count": 44
-  },
-  {
-    "country": "Syria",
-    "count": 35
+    "count": 51
   },
   {
     "country": "Lebanon",
+    "count": 36
+  },
+  {
+    "country": "Syria",
     "count": 35
   },
   {
@@ -57,7 +57,7 @@
   },
   {
     "country": "Taiwan",
-    "count": 22
+    "count": 23
   },
   {
     "country": "United Arab Emirates",
@@ -84,6 +84,10 @@
     "count": 13
   },
   {
+    "country": "Iraq",
+    "count": 12
+  },
+  {
     "country": "USA",
     "count": 11
   },
@@ -92,7 +96,7 @@
     "count": 11
   },
   {
-    "country": "Iraq",
+    "country": "Philippines",
     "count": 11
   },
   {
@@ -100,15 +104,15 @@
     "count": 11
   },
   {
-    "country": "Philippines",
-    "count": 10
-  },
-  {
     "country": "North Korea",
     "count": 9
   },
   {
     "country": "Nepal",
+    "count": 8
+  },
+  {
+    "country": "Spain",
     "count": 8
   },
   {
@@ -121,10 +125,6 @@
   },
   {
     "country": "Palestinian Territories",
-    "count": 7
-  },
-  {
-    "country": "Spain",
     "count": 7
   },
   {
@@ -208,6 +208,10 @@
     "count": 4
   },
   {
+    "country": "Moldova",
+    "count": 4
+  },
+  {
     "country": "Nigeria",
     "count": 4
   },
@@ -225,6 +229,10 @@
   },
   {
     "country": "Sudan",
+    "count": 3
+  },
+  {
+    "country": "Ethiopia",
     "count": 3
   },
   {
@@ -248,15 +256,15 @@
     "count": 3
   },
   {
-    "country": "Moldova",
-    "count": 3
-  },
-  {
     "country": "Multiple",
     "count": 3
   },
   {
     "country": "Tanzania",
+    "count": 3
+  },
+  {
+    "country": "Somalia",
     "count": 3
   },
   {
@@ -269,10 +277,6 @@
   },
   {
     "country": "Serbia",
-    "count": 2
-  },
-  {
-    "country": "Ethiopia",
     "count": 2
   },
   {
@@ -309,10 +313,6 @@
   },
   {
     "country": "Regional",
-    "count": 2
-  },
-  {
-    "country": "Somalia",
     "count": 2
   },
   {
@@ -553,6 +553,10 @@
   },
   {
     "country": "Indian Ocean",
+    "count": 1
+  },
+  {
+    "country": "Palau",
     "count": 1
   }
 ]
