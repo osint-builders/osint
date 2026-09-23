@@ -77,3 +77,6 @@ Batch 1/12 (2026-09-14) attempted to process 5 candidates across 3 sources (tele
 **Finding:** Telegram's web interface (t.me/...) loads message content in iframes not accessible to agent-browser's parent window eval. Tips identified no snippet capture, preventing alternate extraction. The identify stage should note that Telegram sources need either (a) Bot API access, (b) authenticated client library, or (c) removal from collection.
 **Action for next run:** Mark telegram-intelslava, telegram-middle-east-spectator, telegram-qudsnen with status: deprecated or archived in source/manifest.json with note: "Web scraping not feasible; requires Telegram Bot API or authenticated client." Alternative: implement Telegram Bot API support if credentials available.
 **Expires:** 2026-12-31
+
+- **2026-09-23 Batch 2**: All Telegram sources (telegram-generalstaffzsu, telegram-geopolitics-prime, telegram-insiderpaper) failed due to missing infrastructure — Telegram's public web interface requires JavaScript rendering, and `agent-browser` installation failed in this environment (npm permissions). Requires either Telegram Bot API integration or properly configured headless browser in the Warp environment image. No events produced.
+
