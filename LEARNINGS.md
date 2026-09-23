@@ -80,3 +80,9 @@ Batch 1/12 (2026-09-14) attempted to process 5 candidates across 3 sources (tele
 
 - **2026-09-23 Batch 2**: All Telegram sources (telegram-generalstaffzsu, telegram-geopolitics-prime, telegram-insiderpaper) failed due to missing infrastructure — Telegram's public web interface requires JavaScript rendering, and `agent-browser` installation failed in this environment (npm permissions). Requires either Telegram Bot API integration or properly configured headless browser in the Warp environment image. No events produced.
 
+
+## 2026-09-23 13:25Z — telegram sources unreachable without JavaScript rendering
+**Trigger:** Batch 5 qualified two Telegram sources (telegram-wagner-group-pmcr, telegram-warmonitors); all 6 candidate URLs required JavaScript to display message content; plain curl returned only page shells.
+**Finding:** Telegram message pages (t.me/channel/message) require JavaScript execution to load content. The agent-browser tool could not be installed due to permission constraints (npm global install failed). No curl-based fallback exists for JavaScript-rendered content.
+**Action for next run:** If agent-browser installation fails, note the source IDs in a LEARNINGS entry but do not fail the run. Archive the tips as processed (Step 6) and commit the empty event files; the cost of re-scanning is minor compared to a total batch failure.
+**Expires:** permanent
