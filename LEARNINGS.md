@@ -31,6 +31,12 @@ Cap: max 10 KB and 100 entries; orchestrator auto-prunes expired entries. Each e
 
 <!-- entries below this line; newest first -->
 
+## 2026-09-24 14:42Z — telegram-warmonitors post fetch failed; agent-browser timeout
+**Trigger:** Batch 5/13 (2026-09-24) identified one candidate from telegram-warmonitors/45697 with no snippet capture at identify stage.
+**Finding:** Attempt to fetch content via curl returned only Telegram widget shell (no post text); agent-browser open timed out waiting for page load. The post may not exist (15+ posts newer than 45697 in channel history), or Telegram's web rendering requires extended JavaScript execution not available in this environment.
+**Action for next run:** Mark telegram-warmonitors with `testing` status note: "Posts not reliably fetchable via public web interface; requires authenticated Telegram client or Bot API." Skip future Telegram candidates if snippet capture fails at identify stage and agent-browser cannot succeed within 5s timeout.
+**Expires:** 2026-12-31
+
 ## 2026-09-15 17:58Z — twitter-bbc-world batch 7 candidate off-topic domestic crime
 
 Batch 7/15 (2026-09-15) identified one candidate from twitter-bbc-world: BBC article "Nick Reiner will not face death penalty if convicted of killing parents" about Hollywood director's son accused of murdering parents. This is US domestic criminal justice story unrelated to BBC World News documented scope (international news: Europe, Africa, Asia, Middle East; keywords: conflict, military, violence, protest, crisis, disaster). Source remains active but produced zero events this run; monitor future candidates for scope alignment.
