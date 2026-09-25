@@ -92,3 +92,9 @@ Batch 1/12 (2026-09-14) attempted to process 5 candidates across 3 sources (tele
 **Finding:** Telegram message pages (t.me/channel/message) require JavaScript execution to load content. The agent-browser tool could not be installed due to permission constraints (npm global install failed). No curl-based fallback exists for JavaScript-rendered content.
 **Action for next run:** If agent-browser installation fails, note the source IDs in a LEARNINGS entry but do not fail the run. Archive the tips as processed (Step 6) and commit the empty event files; the cost of re-scanning is minor compared to a total batch failure.
 **Expires:** permanent
+
+## 2026-09-25 03:49Z — Batch 3/9: All Telegram sources (telegram-intelslava, telegram-ourwarstoday, telegram-qudsnen) unreachable
+**Trigger:** Batch 3/9 (2026-09-25) qualified 3 tips from 3 Telegram sources with 5 total candidates.
+**Finding:** All candidates inaccessible via curl or agent-browser; Telegram's t.me web interface requires authenticated session or Bot API. Consistent with 2026-09-15 findings.
+**Action:** Archived all 3 tips to processed/ without producing events. Recommend maintainers mark all telegram-* sources as deprecated in manifest with note: "Web interface not scrapable; requires Telegram Bot API or authenticated client."
+**Expires:** 2026-12-31
