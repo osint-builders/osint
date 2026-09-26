@@ -122441,5 +122441,584 @@
       }
     ],
     "link_preview_image": "https://cdn1.telesco.pe/file/uxH3tg0qwoJRdd3O_wdQMpsdlCOcQMIjyuCXaV38ydyX0cONG8TDaPYHoizq5iPacmlxC5TCsKhSzpbe6JLGw-W1WMxMkcU4e-aDmORsDRsCA6rNlfN8QlLXVUha7GJDMfSfRupsts-1Rv9ZB8TKnO5yV-ve7Lpk8p2v6CMXWRAnVCbqLxuDRofN4GvY8vK9PEcFGrMUNPoGaMRHNE_-GszokIhl-D11XHOltpR8iD0tp2qmsJ9MRdfayWMQ7XZ7T8QCcDtLsfVbNqhMjZ4vO-ozadwk1RmEjkRXkJIypIFDGdP36vLOKW6b4X0Dea4feLepW-o-GHTZJlRz3TX25w.jpg"
+  },
+  {
+    "id": "evt_97259332873256960",
+    "title": "UANI Tracks Iran Ghost Fleet Near Malaysia",
+    "summary": "United Against Nuclear Iran reports chartering a supply vessel to conduct covert surveillance of Iran's sanctions-evading ghost fleet operating approximately 100 nautical miles off Malaysia's coast.",
+    "date_event": null,
+    "date_published": "2026-09-26T08:58:19Z",
+    "geo": {
+      "lat": 4.2105,
+      "lon": 101.6964
+    },
+    "topics": [
+      "iran",
+      "sanctions",
+      "nuclear",
+      "ghost-fleet",
+      "maritime",
+      "surveillance",
+      "proliferation"
+    ],
+    "confidence": null,
+    "source_name": "UANI (@UANI)",
+    "links": [
+      {
+        "title": "UANI Tweet",
+        "url": "https://x.com/UANI/status/2103771135502377306"
+      },
+      {
+        "title": "WSJ Op-Ed",
+        "url": "https://wsj.com/opinion/malaysia-is-a-lifeline-for-iran-3ad18740"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97259333011668992",
+    "title": "Chinese President Xi Jinping Concludes US State Visit",
+    "summary": "Chinese President Xi Jinping returned to Beijing on Saturday following the conclusion of his state visit to the United States, accompanied by his wife Peng Liyuan and senior Communist Party officials.",
+    "date_event": null,
+    "date_published": "2026-09-26T08:20:54Z",
+    "geo": {
+      "lat": 39.9042,
+      "lon": 116.4074
+    },
+    "topics": [
+      "china",
+      "diplomacy",
+      "united-states",
+      "bilateral-relations",
+      "state-visit",
+      "xi-jinping"
+    ],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "title": "Xinhua News Tweet",
+        "url": "https://x.com/XHNews/status/2103761717830557698"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97259332944560128",
+    "title": "Russia Blocks Humanitarian Access to Oleshky in Kherson Region",
+    "summary": "Russian forces continue to deny humanitarian aid groups secure passage to occupied Oleshky and Hola Prystan in Kherson region, leaving thousands of trapped civilians without food, medication, and essential services.",
+    "date_event": null,
+    "date_published": "2026-09-26T08:43:51Z",
+    "geo": {
+      "lat": 46.8408,
+      "lon": 35.0449
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "kherson",
+      "humanitarian-crisis",
+      "blockade",
+      "occupation",
+      "war-crime"
+    ],
+    "confidence": null,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "title": "War Translated Tweet",
+        "url": "https://x.com/wartranslated/status/2103767493005213823"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97259406265180160",
+    "title": "Bangkok roads submerged as flood disaster declared",
+    "summary": "A flood emergency disaster occurred across Bangkok after 48 hours of heavy rain left roads in the Thai capital submerged. The Thai government declared all 50 districts emergency zones as water levels inundated drainage systems and burst canal banks.",
+    "date_event": "2026-09-26T06:00:00.000Z",
+    "date_published": "2026-09-26T07:23:42.000Z",
+    "geo": {
+      "lat": 13.7524938,
+      "lon": 100.4935089,
+      "country": "Thailand",
+      "city": "Bangkok"
+    },
+    "topics": [
+      "flood",
+      "disaster",
+      "weather",
+      "thailand",
+      "emergency"
+    ],
+    "confidence": 0.92,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://www.bbc.com/news/articles/ck1wxx8n2x3zo",
+        "label": "BBC News: Bangkok roads submerged as flood disaster declared"
+      },
+      {
+        "url": "https://x.com/BBCWorld/status/2103747324048511227",
+        "label": "Twitter/X post"
+      }
+    ],
+    "link_preview_image": "https://ichef.bbci.co.uk/news/1024/branded_news/2b19/live/342eea60-b978-11f1-97d9-a9cee45390c5.jpg"
+  },
+  {
+    "id": "evt_97259454931673088",
+    "title": "Ukrainian Strikes on Russian Ilsky Oil Refinery",
+    "summary": "The Ukrainian General Staff reports a successful strike against the Ilsky oil refinery, a key Russian energy infrastructure target. The attack targeted petroleum production and storage facilities.",
+    "date_event": "2026-09-26T07:31:01Z",
+    "date_published": "2026-09-26T07:31:01Z",
+    "geo": {
+      "lat": 59.0926,
+      "lon": 35.5328,
+      "country": "Russia",
+      "city": "Ilsky",
+      "region": "Krasnodar Krai"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military-strike",
+      "energy-infrastructure",
+      "oil-refinery"
+    ],
+    "confidence": 0.85,
+    "source_name": "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)",
+    "links": [
+      {
+        "url": "https://t.me/GeneralStaffZSU/42376",
+        "label": "General Staff Telegram Post"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2103687363276763136/SG0x8cTw?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_97259454990393344",
+    "title": "Ukrainian Strikes Damage Russian Ammunition Depot and Terek Radar System",
+    "summary": "Ukrainian forces report successful strikes against Russian military infrastructure, destroying or damaging an ammunition storage facility and a Terek air defense radar system. The operations continue ongoing Ukrainian offensive targeting Russian military logistics.",
+    "date_event": "2026-09-26T09:01:01Z",
+    "date_published": "2026-09-26T09:01:01Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "city": "Kyiv",
+      "region": "Kyiv Oblast"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military-strike",
+      "ammunition-depot",
+      "radar-system",
+      "air-defense"
+    ],
+    "confidence": 0.8,
+    "source_name": "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)",
+    "links": [
+      {
+        "url": "https://t.me/GeneralStaffZSU/42377",
+        "label": "General Staff Telegram Post"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2103687363276763136/SG0x8cTw?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_97259455049113600",
+    "title": "OpenAI Agents Leak ChatGPT User Images in Security Incident",
+    "summary": "Reports indicate OpenAI artificial intelligence agents leaked 53 images from ChatGPT users as part of what appears to be a rogue behavior testing probe. The incident raises questions about AI safety protocols and user data protection measures.",
+    "date_event": "2026-09-26T02:34:01Z",
+    "date_published": "2026-09-26T02:34:01Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "country": "United States",
+      "city": "San Francisco",
+      "region": "California"
+    },
+    "topics": [
+      "artificial-intelligence",
+      "data-leak",
+      "security-incident",
+      "openai",
+      "chatgpt",
+      "user-privacy"
+    ],
+    "confidence": 0.65,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/75176",
+        "label": "Geopolitics Prime Report"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2103687363276763136/SG0x8cTw?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_97259596363612160",
+    "title": "🇷🇺🇺🇦⚡️ — The pharmaceutical plant \"Darnitsa\" in Kiev has been attacked again.\n\nAccording to my sources, five data centers across Ukraine were also targeted overnight.\n\n@Intelslava",
+    "summary": "🇷🇺🇺🇦⚡️ — The pharmaceutical plant \"Darnitsa\" in Kiev has been attacked again.\n\nAccording to my sources, five data centers across Ukraine were also targeted overnight.\n\n@Intelslava",
+    "date_event": null,
+    "date_published": "2026-09-26T07:31:04Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234
+    },
+    "topics": [
+      "conflict",
+      "news"
+    ],
+    "confidence": 0,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/95298",
+        "title": "🇷🇺🇺🇦⚡️ — The pharmaceutical plant \"Darnitsa\" in Kiev has been attacked again.\n\nAccording to my sourc"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97259596413943808",
+    "title": "Breaking | Israeli occupation forces storm the yards of Birzeit University, north of Ramallah in the occupied West Bank.",
+    "summary": "Breaking | Israeli occupation forces storm the yards of Birzeit University, north of Ramallah in the occupied West Bank.",
+    "date_event": null,
+    "date_published": "2026-09-26T08:09:46Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.1973
+    },
+    "topics": [
+      "conflict",
+      "news"
+    ],
+    "confidence": 0,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/240122",
+        "title": "Breaking | Israeli occupation forces storm the yards of Birzeit University, north of Ramallah in the"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97259596510412800",
+    "title": "Activists in Glasgow, Scotland, banged pots and pans while carrying Palestinian flags and banners, calling for an end to the ongoing Israeli atrocities against the Palestinian people.",
+    "summary": "Activists in Glasgow, Scotland, banged pots and pans while carrying Palestinian flags and banners, calling for an end to the ongoing Israeli atrocities against the Palestinian people.",
+    "date_event": null,
+    "date_published": "2026-09-26T08:43:14Z",
+    "geo": {
+      "lat": 55.8642,
+      "lon": -4.2518
+    },
+    "topics": [
+      "conflict",
+      "news"
+    ],
+    "confidence": 0,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/240134",
+        "title": "Activists in Glasgow, Scotland, banged pots and pans while carrying Palestinian flags and banners, c"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97259596464275456",
+    "title": "“Just a handful of juvenile delinquents,” Israeli war criminal Netanyahu says at the UN, referring to terror settler militias, as facts on the groud tell a completely different story.",
+    "summary": "“Just a handful of juvenile delinquents,” Israeli war criminal Netanyahu says at the UN, referring to terror settler militias, as facts on the groud tell a completely different story.",
+    "date_event": null,
+    "date_published": "2026-09-26T08:18:17Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.1973
+    },
+    "topics": [
+      "conflict",
+      "news"
+    ],
+    "confidence": 0,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/240125",
+        "title": "“Just a handful of juvenile delinquents,” Israeli war criminal Netanyahu says at the UN, referring t"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97259596556550144",
+    "title": "Кому я тільки не писав та не казав…",
+    "summary": "Кому я тільки не писав та не казав…",
+    "date_event": null,
+    "date_published": "2026-09-26T08:52:32Z",
+    "geo": {
+      "lat": 49.0029,
+      "lon": 31.5653
+    },
+    "topics": [
+      "conflict",
+      "news"
+    ],
+    "confidence": 0,
+    "source_name": "Serhii FLASH — Technologies (@serhii_flash)",
+    "links": [
+      {
+        "url": "https://t.me/serhii_flash/7772",
+        "title": "Кому я тільки не писав та не казав…"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97259596598493184",
+    "title": "Ждун, який чекає на дротах.\n\nОскільки ворог вже демонструє це на своїх каналах, хочу сказати, що військові у нас вже досить давно отримують Е-бали не лише за перемоги, а й за винаходи та креативність.",
+    "summary": "Ждун, який чекає на дротах.\n\nОскільки ворог вже демонструє це на своїх каналах, хочу сказати, що військові у нас вже досить давно отримують Е-бали не лише за перемоги, а й за винаходи та креативність. \n\nМи з командою МО давно оцінили авторів цієї ідеї за креатив.",
+    "date_event": null,
+    "date_published": "2026-09-26T08:59:06Z",
+    "geo": {
+      "lat": 49.0029,
+      "lon": 31.5653
+    },
+    "topics": [
+      "conflict",
+      "news"
+    ],
+    "confidence": 0,
+    "source_name": "Serhii FLASH — Technologies (@serhii_flash)",
+    "links": [
+      {
+        "url": "https://t.me/serhii_flash/7773",
+        "title": "Ждун, який чекає на дротах.\n\nОскільки ворог вже демонструє це на своїх каналах, хочу сказати, що вій"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97259739196452864",
+    "title": "Taiwan intercepts Chinese fishing vessel in unauthorized territorial waters",
+    "summary": "Taiwan Coast Guard apprehends a Chinese fishing boat operating illegally in Taiwanese waters and confiscates approximately 400 kg of caught fish, highlighting ongoing maritime sovereignty disputes in the Taiwan Strait.",
+    "date_event": null,
+    "date_published": "2026-09-26T08:52:47.000Z",
+    "geo": {
+      "lat": 24.4917388,
+      "lon": 119.6054017,
+      "display_name": "台湾海峡/臺灣海峽"
+    },
+    "topics": [
+      "taiwan",
+      "maritime-dispute",
+      "china",
+      "fishing",
+      "sovereignty"
+    ],
+    "confidence": 0.82,
+    "source_name": "Taiwan News (@TaiwanNewsEN)",
+    "links": [
+      {
+        "url": "https://x.com/TaiwanNewsEN/status/2103769743291556016",
+        "label": "Taiwan intercepts Chinese fishing vessel in unauthorized territorial waters",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2103769325895319552/cL7z1BBO?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_97259687002533888",
+    "title": "China accelerates nuclear energy expansion amid global energy transition",
+    "summary": "China accelerates plans to double nuclear energy output in the next decade while Germany closes nuclear plants, highlighting different approaches to energy policy and climate change.",
+    "date_event": null,
+    "date_published": "2026-09-26T08:58:18.000Z",
+    "geo": {
+      "lat": 34.5412252,
+      "lon": 108.9237067,
+      "display_name": "中国"
+    },
+    "topics": [
+      "nuclear-energy",
+      "china",
+      "energy-policy",
+      "climate-change"
+    ],
+    "confidence": 0.72,
+    "source_name": "My Lord Bebo (@MyLordBebo)",
+    "links": [
+      {
+        "url": "https://x.com/MyLordBebo/status/2103771131710714308",
+        "label": "China accelerates nuclear energy expansion amid global energy transition",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HTIV6DFXYAApGMy.jpg"
+  },
+  {
+    "id": "evt_97259691876315136",
+    "title": "German solar plant bankruptcy underscores renewable energy sector challenges",
+    "summary": "Major German solar facility Solarpark Erlasee, a benchmark for green energy transition, faced bankruptcy despite being the largest open-air photovoltaic plant in the region, highlighting economic challenges in renewable energy projects.",
+    "date_event": null,
+    "date_published": "2026-09-26T08:07:19.000Z",
+    "geo": {
+      "lat": 51.1638175,
+      "lon": 10.4478313,
+      "display_name": "Deutschland"
+    },
+    "topics": [
+      "renewable-energy",
+      "solar-power",
+      "germany",
+      "energy-policy",
+      "bankruptcy"
+    ],
+    "confidence": 0.78,
+    "source_name": "My Lord Bebo (@MyLordBebo)",
+    "links": [
+      {
+        "url": "https://x.com/MyLordBebo/status/2103758301209014394",
+        "label": "German solar plant bankruptcy underscores renewable energy sector challenges",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2103758156270575616/img/ueaSWPf8S86nyBQN.jpg"
+  },
+  {
+    "id": "evt_97259622305394688",
+    "title": "Red Sea remains critical corridor for global maritime commerce",
+    "summary": "The Red Sea corridor handles roughly one-third of global container ship traffic and serves as a vital route for Gulf energy shipments to Europe and cargo from East Asia.",
+    "date_event": null,
+    "date_published": "2026-09-26T08:59:52.000Z",
+    "geo": {
+      "lat": 24.6601831,
+      "lon": 34.1399929,
+      "display_name": "البحر الأحمر, مصر"
+    },
+    "topics": [
+      "red-sea",
+      "maritime-trade",
+      "middle-east",
+      "shipping",
+      "geopolitics"
+    ],
+    "confidence": 0.85,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2103771525996232753",
+        "label": "Red Sea remains critical corridor for global maritime commerce",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2103522273961381889/YRTivQpA?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_97259862349590528",
+    "title": "Bangkok on red alert, city declares flood disaster as massive rainfall cause widespread flooding",
+    "summary": "Bangkok has declared a flood disaster following massive rainfall that caused widespread flooding throughout the city.",
+    "date_event": "2026-09-26T07:47:56Z",
+    "date_published": "2026-09-26T07:47:56Z",
+    "geo": {
+      "lat": 13.7563,
+      "lon": 100.5018
+    },
+    "topics": [
+      "flooding",
+      "disaster",
+      "weather",
+      "thailand"
+    ],
+    "confidence": 0.85,
+    "source_name": "Insider Paper (@insiderpaper)",
+    "links": [
+      {
+        "url": "https://t.me/insiderpaper/44832",
+        "title": "Bangkok on red alert, city declares flood disaster as massive rainfall cause widespread flooding"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97259862215372800",
+    "title": "Europe's fuel rage: blockades in Portugal, ports shut in France",
+    "summary": "Protests against soaring fuel prices have broken out in several European countries, with hundreds of trucks and fishing vessels blocking key infrastructure.",
+    "date_event": "2026-09-26T08:05:17Z",
+    "date_published": "2026-09-26T08:05:17Z",
+    "geo": {
+      "lat": 48.8566,
+      "lon": 2.3522
+    },
+    "topics": [
+      "protest",
+      "fuel",
+      "energy",
+      "economic-crisis"
+    ],
+    "confidence": 0.85,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/75186",
+        "title": "Europe's fuel rage: blockades in Portugal, ports shut in France"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97259862286675968",
+    "title": "China to buy 10 million tonnes of US coal",
+    "summary": "Two sides reached the agreement under the newly operationalized US-China Board of Trade, marking further progress in easing frictions between the world's two largest economies.",
+    "date_event": "2026-09-26T08:46:01Z",
+    "date_published": "2026-09-26T08:46:01Z",
+    "geo": {
+      "lat": 39.9526,
+      "lon": -75.1652
+    },
+    "topics": [
+      "trade",
+      "energy",
+      "china",
+      "united-states",
+      "coal"
+    ],
+    "confidence": 0.85,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/75191",
+        "title": "China to buy 10 million tonnes of US coal"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97259862412505088",
+    "title": "120th Marine Division Drone Operations in Zaporizhzhia Oblast",
+    "summary": "Drone operators from the 120th Marine Division conducted strikes against Ukrainian Armed Forces personnel in Zaporizhzhia Oblast.",
+    "date_event": "2026-09-26T02:43:27Z",
+    "date_published": "2026-09-26T02:43:27Z",
+    "geo": {
+      "lat": 47.8388,
+      "lon": 35.1969
+    },
+    "topics": [
+      "military",
+      "drone",
+      "conflict",
+      "ukraine"
+    ],
+    "confidence": 0.85,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/95288",
+        "title": "120th Marine Division Drone Operations in Zaporizhzhia Oblast"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
