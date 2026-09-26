@@ -1,19 +1,19 @@
 [
   {
     "country": "United States",
-    "count": 358
+    "count": 363
   },
   {
     "country": "Ukraine",
-    "count": 301
+    "count": 306
   },
   {
     "country": "Iran",
-    "count": 130
+    "count": 137
   },
   {
     "country": "Palestine",
-    "count": 130
+    "count": 131
   },
   {
     "country": "Russia",
@@ -29,7 +29,7 @@
   },
   {
     "country": "Saudi Arabia",
-    "count": 68
+    "count": 69
   },
   {
     "country": "Global",
@@ -37,7 +37,7 @@
   },
   {
     "country": "Germany",
-    "count": 54
+    "count": 55
   },
   {
     "country": "Lebanon",
@@ -49,11 +49,11 @@
   },
   {
     "country": "United Kingdom",
-    "count": 34
+    "count": 35
   },
   {
     "country": "Israel",
-    "count": 31
+    "count": 32
   },
   {
     "country": "Taiwan",
@@ -73,7 +73,7 @@
   },
   {
     "country": "Iraq",
-    "count": 16
+    "count": 17
   },
   {
     "country": "South Korea",
@@ -85,7 +85,7 @@
   },
   {
     "country": "India",
-    "count": 13
+    "count": 14
   },
   {
     "country": "USA",
@@ -112,6 +112,10 @@
     "count": 9
   },
   {
+    "country": "Italy",
+    "count": 9
+  },
+  {
     "country": "Nepal",
     "count": 8
   },
@@ -124,11 +128,15 @@
     "count": 8
   },
   {
-    "country": "Greenland",
+    "country": "Greece",
     "count": 8
   },
   {
-    "country": "Italy",
+    "country": "Turkey",
+    "count": 8
+  },
+  {
+    "country": "Greenland",
     "count": 8
   },
   {
@@ -141,14 +149,6 @@
   },
   {
     "country": "Ethiopia",
-    "count": 7
-  },
-  {
-    "country": "Greece",
-    "count": 7
-  },
-  {
-    "country": "Turkey",
     "count": 7
   },
   {
@@ -192,6 +192,10 @@
     "count": 5
   },
   {
+    "country": "Qatar",
+    "count": 5
+  },
+  {
     "country": "Moldova",
     "count": 5
   },
@@ -209,6 +213,10 @@
   },
   {
     "country": "International Waters",
+    "count": 4
+  },
+  {
+    "country": "Sudan",
     "count": 4
   },
   {
@@ -232,10 +240,6 @@
     "count": 4
   },
   {
-    "country": "Qatar",
-    "count": 4
-  },
-  {
     "country": "Malaysia",
     "count": 4
   },
@@ -253,10 +257,6 @@
   },
   {
     "country": "Iran/Oman",
-    "count": 3
-  },
-  {
-    "country": "Sudan",
     "count": 3
   },
   {
@@ -285,6 +285,10 @@
   },
   {
     "country": "Somalia",
+    "count": 3
+  },
+  {
+    "country": "Czech Republic",
     "count": 3
   },
   {
@@ -357,10 +361,6 @@
   },
   {
     "country": "Belarus",
-    "count": 2
-  },
-  {
-    "country": "Czech Republic",
     "count": 2
   },
   {
@@ -593,6 +593,14 @@
   },
   {
     "country": "Finland",
+    "count": 1
+  },
+  {
+    "country": "North Atlantic Treaty Organization",
+    "count": 1
+  },
+  {
+    "country": "Iceland",
     "count": 1
   }
 ]
