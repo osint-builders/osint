@@ -124708,5 +124708,655 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_97458760926121984",
+    "title": "Powerful nor'easter brings widespread flooding and water rescues to East Coast",
+    "summary": "A powerful nor'easter batters parts of the East Coast with widespread flooding, dangerous surf conditions, and water rescues as residents prepare for additional rainfall.",
+    "date_event": null,
+    "date_published": "2026-09-26T21:17:25Z",
+    "geo": {
+      "lat": 41.3806114,
+      "lon": -74.3126651
+    },
+    "topics": [
+      "weather",
+      "natural-disaster",
+      "flooding",
+      "rescue-operations",
+      "east-coast"
+    ],
+    "confidence": null,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2103957136002982199",
+        "title": "Fox News - Nor'easter Flooding East Coast"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HTLA_gGXsAAXsbW.jpg"
+  },
+  {
+    "id": "evt_97458899153604608",
+    "title": "Oman calls for restraint in Middle East war, offers mediation assistance",
+    "summary": "The Omani foreign minister called on countries involved in the Middle East conflict to demonstrate restraint, while announcing Oman's readiness to provide mediation and diplomatic assistance.",
+    "date_event": null,
+    "date_published": "2026-09-26T21:04:58Z",
+    "geo": {
+      "lat": 21.0000287,
+      "lon": 57.0036901
+    },
+    "topics": [
+      "middle-east",
+      "diplomacy",
+      "mediation",
+      "conflict-resolution",
+      "regional-security"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2103954002626936911",
+        "title": "Middle East Eye - Oman calls for restraint"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2103572455751131136/vKqp3clT?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_97458864487690240",
+    "title": "Yemeni Forces Strike Houthi Positions in Taiz",
+    "summary": "Yemeni government forces conducted airstrikes against Houthi supply lines, reinforcements, and weapons depots in Taiz province on September 25-26, 2026, resulting in dozens of casualties and intensifying ongoing conflict in the region.",
+    "date_event": "2026-09-25T12:00:00Z",
+    "date_published": "2026-09-26T21:27:56Z",
+    "geo": {
+      "lat": 13.9626,
+      "lon": 45.3569,
+      "country": "Yemen",
+      "region": "Taiz",
+      "city": "Taiz"
+    },
+    "topics": [
+      "yemen-conflict",
+      "military-operations",
+      "houthi",
+      "airstrikes",
+      "armed-conflict"
+    ],
+    "confidence": 0.88,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2103959783665709313",
+        "label": "Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97458771189592064",
+    "title": "USS Paul Ignatius Departs Faslane Naval Base",
+    "summary": "USS Paul Ignatius (DDG 117), an Arleigh Burke-class guided missile destroyer, departed Faslane naval base in Scotland on September 26, 2026. The vessel represents ongoing U.S. naval operations and presence in European waters.",
+    "date_event": null,
+    "date_published": "2026-09-26T21:03:34Z",
+    "geo": {
+      "lat": 56.0447,
+      "lon": -4.6037,
+      "country": "United Kingdom",
+      "region": "Argyll and Bute",
+      "city": "Helensburgh"
+    },
+    "topics": [
+      "naval-vessel",
+      "destroyer",
+      "united-states-navy",
+      "united-kingdom",
+      "military-maritime"
+    ],
+    "confidence": 0.92,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2103953650561556800",
+        "label": "Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97458771260895232",
+    "title": "USS San Antonio Arrives in Ponce, Puerto Rico",
+    "summary": "USS San Antonio (LPD 17), a San Antonio-class amphibious transport dock, arrived in Ponce, Puerto Rico on September 26, 2026, following transit through the Panama Canal on September 23, 2026. The vessel demonstrates U.S. amphibious force projection capabilities.",
+    "date_event": null,
+    "date_published": "2026-09-26T21:02:42Z",
+    "geo": {
+      "lat": 17.9927,
+      "lon": -66.6144,
+      "country": "Puerto Rico",
+      "region": "Puerto Rico",
+      "city": "Ponce"
+    },
+    "topics": [
+      "amphibious-vessel",
+      "transport-dock",
+      "united-states-navy",
+      "puerto-rico",
+      "panama-canal"
+    ],
+    "confidence": 0.93,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2103953431375348146",
+        "label": "Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97458934037622784",
+    "title": "Pope Leo Conducts Historic Papal Visit Across France",
+    "summary": "Pope Leo undertakes a significant papal visit throughout France, during which French Catholic social media influencers engage with ABC News to discuss their roles as digital missionaries and the concurrent rise in baptism rates in France.",
+    "date_event": null,
+    "date_published": "2026-09-26T22:01:06Z",
+    "geo": {
+      "lat": 48.8566,
+      "lon": 2.3522,
+      "country": "France",
+      "city": "Paris"
+    },
+    "topics": [
+      "papal-visit",
+      "catholic",
+      "france",
+      "religion",
+      "digital-mission"
+    ],
+    "confidence": 0.75,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2103968127382102452",
+        "label": "ABC News Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/ext_tw_video_thumb/2103968098751844352/pu/img/llluYm4wDX1IMn0I.jpg"
+  },
+  {
+    "id": "evt_97458992527192064",
+    "title": "U.S. Supreme Court Ends Legal Battle Over Missouri Congressional Redistricting",
+    "summary": "The U.S. Supreme Court resolved a contentious legal dispute over Republican efforts to redraw Missouri congressional districts ahead of the November election, effectively closing a chapter of litigation that threatened to affect the electoral landscape.",
+    "date_event": null,
+    "date_published": "2026-09-26T21:56:38Z",
+    "geo": {
+      "lat": 38.2526,
+      "lon": -92.2688,
+      "country": "United States",
+      "region": "Missouri"
+    },
+    "topics": [
+      "redistricting",
+      "election",
+      "missouri",
+      "supreme-court",
+      "politics"
+    ],
+    "confidence": 0.8,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2103967006307299773",
+        "label": "ABC News Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/ext_tw_video_thumb/2103968098751844352/pu/img/llluYm4wDX1IMn0I.jpg"
+  },
+  {
+    "id": "evt_97459144830763008",
+    "title": "Xi Jinping Concludes State Visit to United States; China-US Bilateral Achievements Announced",
+    "summary": "President Xi Jinping concluded his state visit to the United States on Friday, with senior US government officials attending his departure from Washington. China and the United States announced eight major deliverables and understandings covering strategic stability, trade mechanisms, counter-narcotics cooperation, AI dialogue, military communication protocols, and reconstruction efforts.",
+    "date_event": null,
+    "date_published": "2026-09-26T20:34:43.000Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "display_name": "Washington, District of Columbia, United States"
+    },
+    "topics": [
+      "diplomacy",
+      "china-us-relations",
+      "state-visit",
+      "bilateral-agreement",
+      "trade",
+      "military-cooperation",
+      "ai-dialogue",
+      "counter-narcotics"
+    ],
+    "confidence": null,
+    "source_name": "ChineseEmbInUs (@ChineseEmbInUs)",
+    "links": [
+      {
+        "url": "https://x.com/ChineseEmbInUs/status/2103946388430262521",
+        "title": "Xi Jinping State Visit Conclusion"
+      },
+      {
+        "url": "https://x.com/ChineseEmbInUs/status/2103945484087722249",
+        "title": "Military Cooperation Agreements"
+      },
+      {
+        "url": "https://x.com/ChineseEmbInUs/status/2103945110149054627",
+        "title": "Eight Deliverables and Understandings"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2103574724463022080/img/R-ov8S_MtHtVQs6N.jpg"
+  },
+  {
+    "id": "evt_97458886683934720",
+    "title": "Police Reveal Tasia Fortune's Death Staged After Hanging From Tree in Mississippi",
+    "summary": "Authorities in Jackson, Mississippi revealed that Tasia Fortune, a 29-year-old mother of four, died before her body received placement in a tree at an abandoned home. The discovery initially sparked fears of a potential lynching in the majority-Black city with a deep history of racial violence.",
+    "date_event": null,
+    "date_published": "2026-09-26T21:15:06.000Z",
+    "geo": {
+      "lat": 32.2998686,
+      "lon": -90.1830408,
+      "display_name": "Jackson, Hinds County, Mississippi, United States"
+    },
+    "topics": [
+      "crime-investigation",
+      "death",
+      "police-investigation",
+      "racial-violence",
+      "us-news",
+      "mississippi"
+    ],
+    "confidence": null,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2103956554898694184",
+        "title": "BBC World News Tweet"
+      },
+      {
+        "url": "https://www.bbc.com/news",
+        "title": "BBC News - Full Article"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2102800446683267072/AkaQMtyr?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_7333731316809535",
+    "title": "Hezbollah secretary general shown in exclusive footage two years after assassination",
+    "summary": "Al-Manar publishes exclusive footage on the 2-year anniversary of Sayyed Hassan Nasrallah's death.",
+    "date_event": null,
+    "date_published": "2026-09-26T22:07:31Z",
+    "geo": {
+      "lat": 33.8119,
+      "lon": 35.4783,
+      "country": "Lebanon",
+      "city": "Beirut"
+    },
+    "topics": [
+      "military",
+      "geopolitics",
+      "conflict"
+    ],
+    "confidence": 0.6,
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/37090",
+        "label": "Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7333731316809206",
+    "title": "IRGC Navy escalates targeting of vessels in Strait of Hormuz",
+    "summary": "Iran's Islamic Revolutionary Guard Corps Navy substantially escalates operations against shipping.",
+    "date_event": null,
+    "date_published": "2026-09-26T22:13:59Z",
+    "geo": {
+      "lat": 26.5,
+      "lon": 55,
+      "country": "Iran",
+      "region": "Strait of Hormuz"
+    },
+    "topics": [
+      "military",
+      "geopolitics",
+      "conflict"
+    ],
+    "confidence": 0.6,
+    "source_name": "Middle East Spectator (@Middle_East_Spectator)",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/37091",
+        "label": "Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7333731316809250",
+    "title": "Chinese-made armored 'ghost limo' turns heads at Xi's Washington summit",
+    "summary": "Alternative geopolitics news channel reports on China's armored limousine at Xi Jinping's Washington summit.",
+    "date_event": null,
+    "date_published": "2026-09-26T20:40:24Z",
+    "geo": {
+      "lat": 38.9072,
+      "lon": -77.0369,
+      "country": "United States",
+      "city": "Washington DC"
+    },
+    "topics": [
+      "military",
+      "geopolitics",
+      "conflict"
+    ],
+    "confidence": 0.6,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/75216",
+        "label": "Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7333731316809513",
+    "title": "Iran holds the world's most experienced position in in asymmetric warfare — General",
+    "summary": "Iran military general states that Iran leads globally in asymmetric warfare capabilities.",
+    "date_event": null,
+    "date_published": "2026-09-26T21:27:14Z",
+    "geo": {
+      "lat": 32.4279,
+      "lon": 53.688,
+      "country": "Iran",
+      "city": "Tehran"
+    },
+    "topics": [
+      "military",
+      "geopolitics",
+      "conflict"
+    ],
+    "confidence": 0.6,
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/75219",
+        "label": "Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7333731316809625",
+    "title": "Multiple explosions reported near Qeshm Island in Strait of Hormuz",
+    "summary": "Russian-perspective sources report IRGC Navy anti-ship missile launches near Qeshm Island.",
+    "date_event": null,
+    "date_published": "2026-09-26T21:20:12Z",
+    "geo": {
+      "lat": 26.9704,
+      "lon": 54.1568,
+      "country": "Iran",
+      "city": "Qeshm"
+    },
+    "topics": [
+      "military",
+      "geopolitics",
+      "conflict"
+    ],
+    "confidence": 0.6,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/95322",
+        "label": "Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_7333731316807394",
+    "title": "More explosions reported in Strait of Hormuz",
+    "summary": "Continued reports of explosions in the Strait of Hormuz from Russian sources.",
+    "date_event": null,
+    "date_published": "2026-09-26T22:11:47Z",
+    "geo": {
+      "lat": 26.5,
+      "lon": 55,
+      "country": "Iran",
+      "region": "Strait of Hormuz"
+    },
+    "topics": [
+      "military",
+      "geopolitics",
+      "conflict"
+    ],
+    "confidence": 0.6,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/95323",
+        "label": "Telegram"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97459846177103872",
+    "title": "Barclays Boycott Protest in Scotland",
+    "summary": "Pro-Palestinian protesters demonstrated outside Barclays in Scotland, calling for Scottish Government divestment from the bank.",
+    "date_event": null,
+    "date_published": "2026-09-26T20:40:21Z",
+    "geo": {
+      "lat": 55.9533,
+      "lon": -3.1883,
+      "country": "United Kingdom",
+      "region": "Scotland",
+      "city": "Edinburgh"
+    },
+    "topics": [
+      "palestine",
+      "boycott",
+      "scotland"
+    ],
+    "confidence": 0.85,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/240219"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97459846227435520",
+    "title": "Israeli Airstrikes Target Gaza City",
+    "summary": "Israeli aircraft launched airstrikes on northern Gaza City.",
+    "date_event": null,
+    "date_published": "2026-09-26T21:07:04Z",
+    "geo": {
+      "lat": 31.9286,
+      "lon": 35.1971,
+      "country": "Palestine",
+      "region": "Gaza",
+      "city": "Gaza City"
+    },
+    "topics": [
+      "gaza",
+      "airstrike",
+      "military"
+    ],
+    "confidence": 0.8,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/240220"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97459846277767168",
+    "title": "Israeli Forces Raid Beit Furik in West Bank",
+    "summary": "Israeli occupation forces conducted military operation in Beit Furik, located east of Nablus.",
+    "date_event": null,
+    "date_published": "2026-09-26T21:21:01Z",
+    "geo": {
+      "lat": 32.2,
+      "lon": 35.4625,
+      "country": "Palestine",
+      "region": "West Bank",
+      "city": "Beit Furik"
+    },
+    "topics": [
+      "west-bank",
+      "israel",
+      "raid"
+    ],
+    "confidence": 0.8,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/240221"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97459846495870976",
+    "title": "Zelenskyy Warns of Russian War Expansion",
+    "summary": "President Zelenskyy warns intelligence indicates Russia intends expanding military operations to other states.",
+    "date_event": null,
+    "date_published": "2026-09-26T21:21:01Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "region": "Kyiv",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "war"
+    ],
+    "confidence": 0.85,
+    "source_name": "UNITED24Media",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46435"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97459846542008320",
+    "title": "Russia Strikes Sumy with Guided Bombs",
+    "summary": "Russian military aircraft conducted guided bombing strikes on Sumy resulting in two deaths and 23 injuries.",
+    "date_event": null,
+    "date_published": "2026-09-26T22:23:01Z",
+    "geo": {
+      "lat": 50.9216,
+      "lon": 34.7977,
+      "country": "Ukraine",
+      "region": "Sumy",
+      "city": "Sumy"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "bombing"
+    ],
+    "confidence": 0.85,
+    "source_name": "UNITED24Media",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46436"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97459846349070336",
+    "title": "Iran Escalates Naval Attacks in Strait of Hormuz",
+    "summary": "Iran's IRGC Navy conducted multiple attacks on vessels in Strait of Hormuz targeting several ships.",
+    "date_event": null,
+    "date_published": "2026-09-26T21:08:35Z",
+    "geo": {
+      "lat": 26.1551,
+      "lon": 56.4662,
+      "country": "Iran",
+      "region": "Hormozgan"
+    },
+    "topics": [
+      "iran",
+      "naval",
+      "maritime"
+    ],
+    "confidence": 0.75,
+    "source_name": "Rerum Novarum // Intel, Breaking News, and Alerts",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66925"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97459846399401984",
+    "title": "Charterers Navigate Unauthorized Routes in Hormuz",
+    "summary": "Maritime charterers navigate unauthorized routes in Strait due to security threats and Iranian operations.",
+    "date_event": null,
+    "date_published": "2026-09-26T21:12:09Z",
+    "geo": {
+      "lat": 26.1551,
+      "lon": 56.4662,
+      "country": "Iran",
+      "region": "Hormozgan"
+    },
+    "topics": [
+      "shipping",
+      "maritime",
+      "iran"
+    ],
+    "confidence": 0.7,
+    "source_name": "Rerum Novarum // Intel, Breaking News, and Alerts",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66926"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97459846449733632",
+    "title": "Unprecedented Military Activity in Hormozgan",
+    "summary": "Iranian military activity along Hormozgan coasts reaches unprecedented levels with intense explosions.",
+    "date_event": null,
+    "date_published": "2026-09-26T21:16:29Z",
+    "geo": {
+      "lat": 26.7153,
+      "lon": 56.393,
+      "country": "Iran",
+      "region": "Hormozgan",
+      "city": "Bandar Abbas"
+    },
+    "topics": [
+      "iran",
+      "military",
+      "naval"
+    ],
+    "confidence": 0.75,
+    "source_name": "Rerum Novarum // Intel, Breaking News, and Alerts",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66927"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
