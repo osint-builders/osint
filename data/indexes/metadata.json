@@ -123020,5 +123020,622 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_97334528850288640",
+    "title": "Trump calls on Zelenskyy to negotiate settlement with Russia amid staggering casualty counts",
+    "summary": "President Donald Trump called on Ukrainian President Volodymyr Zelenskyy to pursue negotiations toward a settlement with Russia on September 26, 2026. Trump highlighted the massive monthly casualty figures in the ongoing conflict, reportedly totaling tens of thousands of deaths.",
+    "date_event": "2026-09-26T14:00:00Z",
+    "date_published": "2026-09-26T14:05:42Z",
+    "geo": {
+      "lat": 49.4871968,
+      "lon": 31.2718321,
+      "country": "Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "diplomacy",
+      "war",
+      "casualties",
+      "negotiation"
+    ],
+    "confidence": 0.8,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2103848491877310787",
+        "label": "Fox News (@FoxNews)"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HTJfDdgXYAAPy3b.jpg"
+  },
+  {
+    "id": "evt_97334627311575040",
+    "title": "Israeli forces kill Palestinian man in Jabalia refugee camp, northern Gaza",
+    "summary": "Israeli forces shot and killed a Palestinian man in the Jabalia refugee camp in northern Gaza on September 26, 2026, according to the Wafa news agency citing sources at Gaza City's al-Shifa Hospital. The incident represents ongoing military operations in the Gaza Strip.",
+    "date_event": "2026-09-26T13:45:00Z",
+    "date_published": "2026-09-26T14:05:40Z",
+    "geo": {
+      "lat": 31.5282137,
+      "lon": 34.4831674,
+      "country": "Palestinian Territories",
+      "city": "Jabalia"
+    },
+    "topics": [
+      "gaza",
+      "israel",
+      "palestine",
+      "conflict",
+      "casualty",
+      "jabalia"
+    ],
+    "confidence": 0.75,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2103848480938815596",
+        "label": "Middle East Eye (@MiddleEastEye)"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2103572455751131136/vKqp3clT?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_97334389888802816",
+    "title": "Protests erupt in Basra against Iraq's compliance with US aviation sanctions on Iran",
+    "summary": "Demonstrations occurred in Basra, Iraq on September 26, 2026, opposing the government's adherence to US aviation sanctions targeting Iran. Protesters gathered at Basra airport near a grounded Iranian aircraft, voicing opposition to Prime Minister Zaidi's administration for complying with what Iran-aligned groups characterize as a US blockade.",
+    "date_event": "2026-09-26T13:30:00Z",
+    "date_published": "2026-09-26T14:09:56Z",
+    "geo": {
+      "lat": 30.4952371,
+      "lon": 47.8090981,
+      "country": "Iraq",
+      "city": "Basra"
+    },
+    "topics": [
+      "protest",
+      "iraq",
+      "iran",
+      "sanctions",
+      "basra",
+      "geopolitics"
+    ],
+    "confidence": 0.75,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2103849555829616855",
+        "label": "Clash Report (@ClashReport)"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2103849440448528384/img/gBFurRp4pglxgYXx.jpg"
+  },
+  {
+    "id": "evt_97334566137659392",
+    "title": "Indra Jatra Festival Celebration Begins in Kathmandu Valley",
+    "summary": "Nepal's Kathmandu Valley commemorates the eight-day Indra Jatra festival, a major cultural and religious celebration of the Newar community, featuring chariot processions, masked dances, and religious enactments marking the start of a month-long festival season.",
+    "date_event": null,
+    "date_published": "2026-09-26T14:01:13Z",
+    "geo": {
+      "lat": 27.7172,
+      "lon": 85.324,
+      "location": "Kathmandu, Nepal"
+    },
+    "topics": [
+      "culture",
+      "nepal",
+      "festival",
+      "tradition",
+      "kathmandu-valley",
+      "religious-observance"
+    ],
+    "confidence": 0.8,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "title": "Tweet",
+        "url": "https://x.com/XHNews/status/2103847361927905588",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97334566204768256",
+    "title": "Iranian Foreign Minister Reports Civilian Casualties from US and Israeli Operations",
+    "summary": "Iranian Foreign Minister Seyed Abbas Araghchi claimed that more than 5,000 people, including hundreds of women and children, lost their lives during US and Israeli military operations against Iran, according to Iranian media reports.",
+    "date_event": null,
+    "date_published": "2026-09-26T13:33:56Z",
+    "geo": {
+      "lat": 35.6892,
+      "lon": 51.389,
+      "location": "Tehran, Iran"
+    },
+    "topics": [
+      "military",
+      "iran",
+      "united-states",
+      "israel",
+      "conflict",
+      "casualties"
+    ],
+    "confidence": 0.82,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "title": "Tweet",
+        "url": "https://x.com/XHNews/status/2103840496313569636",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97334519610245120",
+    "title": "HUR Releases Combat Footage from Zaporizhzhia Direction Operations",
+    "summary": "Ukraine's Main Intelligence Directorate (HUR) released combat footage documenting ongoing military operations in the Zaporizhzhia direction, showing attacks against Russian occupying forces, military equipment, vehicles, and unmanned aerial systems.",
+    "date_event": null,
+    "date_published": "2026-09-26T12:14:07Z",
+    "geo": {
+      "lat": 47.8377,
+      "lon": 35.1495,
+      "location": "Zaporizhzhia, Ukraine"
+    },
+    "topics": [
+      "conflict",
+      "ukraine",
+      "russia",
+      "military",
+      "combat-footage",
+      "zaporizhzhia"
+    ],
+    "confidence": 0.87,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "title": "Tweet",
+        "url": "https://x.com/wartranslated/status/2103820410621977061",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97334419362185216",
+    "title": "Republic of Korea Navy Hansando-class Training Ship ROKS Hansando Arrives at Pearl Harbor",
+    "summary": "The ROKS Hansando (ATH-81), a South Korean Navy helicopter training ship of the Hansando-class, entered Pearl Harbor on September 24, 2026, captured via webcam feed.",
+    "date_event": null,
+    "date_published": "2026-09-26T13:18:28Z",
+    "geo": {
+      "lat": 21.3587,
+      "lon": -157.9497,
+      "location": "Pearl Harbor, Hawaii, USA"
+    },
+    "topics": [
+      "military",
+      "naval",
+      "south-korea",
+      "training",
+      "port-call",
+      "pacific"
+    ],
+    "confidence": 0.85,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "title": "Tweet",
+        "url": "https://x.com/Warshipcam/status/2103836604896829448",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97334463838584832",
+    "title": "USS Lake Erie (CG 70) Ticonderoga-class Guided Missile Cruiser Decommissioned in San Diego",
+    "summary": "The USS Lake Erie (CG 70), a Ticonderoga-class guided missile cruiser, concluded 33 years of active naval service and entered decommissioning proceedings in San Diego on September 25, 2026, following a 10-month deployment.",
+    "date_event": null,
+    "date_published": "2026-09-26T12:43:52Z",
+    "geo": {
+      "lat": 32.7157,
+      "lon": -117.1611,
+      "location": "San Diego, California, USA"
+    },
+    "topics": [
+      "military",
+      "naval",
+      "united-states",
+      "decommissioning",
+      "cruiser",
+      "ship-retirement"
+    ],
+    "confidence": 0.88,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "title": "Tweet",
+        "url": "https://x.com/Warshipcam/status/2103827898788421926",
+        "source": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97335234567890125",
+    "title": "Zelensky Reports Trump's Final Decision on Ukraine Policy",
+    "summary": "Ukrainian President Volodymyr Zelensky stated that US President Donald Trump made a significant policy decision regarding Ukraine.",
+    "date_event": null,
+    "date_published": "2026-09-26T13:14:53Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "diplomacy",
+      "ukraine",
+      "usa",
+      "policy"
+    ],
+    "confidence": 0.8,
+    "source_name": "Institute for the Study of War (@TheStudyofWar)",
+    "links": [
+      {
+        "url": "https://x.com/TheStudyofWar/status/2103835700680692187",
+        "label": "ISW Report"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97335234567890126",
+    "title": "Saudi Grand Mufti Calls for Yemeni Government Action on Regional Issues",
+    "summary": "Saudi Grand Mufti Saleh al Fawzan issued a statement urging the Yemeni government to take action on regional matters.",
+    "date_event": null,
+    "date_published": "2026-09-26T12:14:14Z",
+    "geo": {
+      "lat": 15.3694,
+      "lon": 44.2044,
+      "country": "Yemen",
+      "city": "Sana'a"
+    },
+    "topics": [
+      "saudi",
+      "yemen",
+      "diplomacy",
+      "regional"
+    ],
+    "confidence": 0.78,
+    "source_name": "Institute for the Study of War (@TheStudyofWar)",
+    "links": [
+      {
+        "url": "https://x.com/TheStudyofWar/status/2103820438409298398",
+        "label": "ISW Iran Update"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97335234567890123",
+    "title": "Ukraine National Guard's 17th Brigade Receives Leopard Tanks",
+    "summary": "The Ukraine National Guard's 17th Brigade received Leopard tanks, strengthening Ukrainian military capabilities.",
+    "date_event": null,
+    "date_published": "2026-09-26T12:27:04Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "military",
+      "ukraine",
+      "equipment",
+      "defense"
+    ],
+    "confidence": 0.85,
+    "source_name": "Militarylandnet (@Militarylandnet)",
+    "links": [
+      {
+        "url": "https://x.com/Militarylandnet/status/2103823669239722455",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97335234567890124",
+    "title": "Taiwan Develops New Missiles with Anti-Jamming Technology",
+    "summary": "Taiwan's National Chung-Shan Institute of Science and Technology (NCSIST) developed new missiles equipped with the latest anti-jamming equipment.",
+    "date_event": null,
+    "date_published": "2026-09-26T12:46:43Z",
+    "geo": {
+      "lat": 25.033,
+      "lon": 121.5654,
+      "country": "Taiwan",
+      "city": "Taipei"
+    },
+    "topics": [
+      "defense",
+      "missiles",
+      "taiwan",
+      "technology"
+    ],
+    "confidence": 0.82,
+    "source_name": "Taiwan News (@TaiwanNewsEN)",
+    "links": [
+      {
+        "url": "https://x.com/TaiwanNewsEN/status/2103828612906676287",
+        "label": "Original Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97334547967913984",
+    "title": "Iranian Singer Sentenced for Public Performance Without Hijab",
+    "summary": "Iranian singer Parastoo Ahmadi received a 74-lash sentence, 2-year travel ban, and 2-year audiovisual activity ban for performing in public without mandatory hijab coverage. Eight others involved in organizing the event received identical sentences from the Judiciary.",
+    "date_event": null,
+    "date_published": "2026-09-26T12:40:10Z",
+    "geo": {
+      "lat": 32.6546,
+      "lon": 51.668
+    },
+    "topics": [
+      "iran",
+      "women-rights",
+      "cultural-law",
+      "judiciary",
+      "middle-east",
+      "governance"
+    ],
+    "confidence": 0.8,
+    "source_name": "Middle East Spectator",
+    "links": [
+      {
+        "url": "https://t.me/Middle_East_Spectator/37078",
+        "label": "Middle East Spectator post 37078"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97334547867250688",
+    "title": "Iraq Oil Tanker Convoy Response to Hormuz Crisis",
+    "summary": "Amateur video footage captures dozens of oil-laden tanker trucks racing across desert roads in Iraq and Syria. The convoy represents Iraq's makeshift solution to the Hormuz crisis, with approximately 10,000 to 15,000 trucks tasked with transport duties.",
+    "date_event": null,
+    "date_published": "2026-09-26T12:12:01Z",
+    "geo": {
+      "lat": 32.5,
+      "lon": 43.5
+    },
+    "topics": [
+      "energy-crisis",
+      "supply-chain",
+      "iraq",
+      "middle-east",
+      "oil",
+      "transport"
+    ],
+    "confidence": 0.7,
+    "source_name": "Geopolitics Prime",
+    "links": [
+      {
+        "url": "https://t.me/geopolitics_prime/75196",
+        "label": "Geopolitics Prime post 75196"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97334547913388032",
+    "title": "Irish Football Players Consider Boycott of Israel Match",
+    "summary": "Republic of Ireland football players consider boycotting a UEFA Nations League match against Israel in response to Gaza operations. Goalkeeper Gavin Bazunu declared he did not want to play in protest of Israel's actions in Gaza.",
+    "date_event": null,
+    "date_published": "2026-09-26T12:13:52Z",
+    "geo": {
+      "lat": 53.3498,
+      "lon": -6.2603
+    },
+    "topics": [
+      "protest",
+      "israel",
+      "ireland",
+      "sports",
+      "gaza",
+      "politics"
+    ],
+    "confidence": 0.75,
+    "source_name": "Intel Slava Z",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/95305",
+        "label": "Intel Slava Z post 95305"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97335685127618560",
+    "title": "Ukraine Proposes Immediate Ceasefire While Russia Maintains Resistance",
+    "summary": "Ukraine has proposed an immediate ceasefire, but Russia shows no readiness to agree.",
+    "date_event": null,
+    "date_published": "2026-09-26T13:58:15Z",
+    "geo": {
+      "lat": 49.4871968,
+      "lon": 31.2718321,
+      "country": "Ukraine",
+      "region": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "war",
+      "ceasefire",
+      "military"
+    ],
+    "confidence": null,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46430",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97335684959846400",
+    "title": "Ethiopian State Denies Sekota Fall as Clashes Continue with Tigray Democratic Front",
+    "summary": "Ethiopian state media denies TDF capture of Sekota amid ongoing clashes north of the city in the Tigray conflict.",
+    "date_event": null,
+    "date_published": "2026-09-26T12:59:30Z",
+    "geo": {
+      "lat": 12.6254708,
+      "lon": 39.0348591,
+      "country": "Ethiopia",
+      "region": "Amhara",
+      "city": "Sekota"
+    },
+    "topics": [
+      "ethiopia",
+      "tigray",
+      "military",
+      "conflict",
+      "tdf"
+    ],
+    "confidence": null,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66916",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97335685043732480",
+    "title": "Ethiopian Armed Forces Launch Large-Scale Counteroffensive Against Tigray Forces",
+    "summary": "ENDF launches major counteroffensive from southern Tigray against TDF separatist forces.",
+    "date_event": null,
+    "date_published": "2026-09-26T14:02:17Z",
+    "geo": {
+      "lat": 13.881273,
+      "lon": 39.127495,
+      "country": "Ethiopia",
+      "region": "Tigray",
+      "city": "Tigray"
+    },
+    "topics": [
+      "ethiopia",
+      "tigray",
+      "military",
+      "conflict",
+      "endf"
+    ],
+    "confidence": null,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66917",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97335684699799552",
+    "title": "Israeli Forces Bulldoze Palestinian Farmland in Jenin",
+    "summary": "Israeli occupation forces bulldozed Palestinian farmland in Jenin, occupied West Bank.",
+    "date_event": null,
+    "date_published": "2026-09-26T12:21:10Z",
+    "geo": {
+      "lat": 32.4618837,
+      "lon": 35.297566,
+      "country": "Palestine",
+      "region": "West Bank",
+      "city": "Jenin"
+    },
+    "topics": [
+      "palestine",
+      "west-bank",
+      "israel",
+      "farmland",
+      "military"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/240170",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97335684787879936",
+    "title": "International Walkout During Netanyahu UN Address Over Gaza Genocide Allegations",
+    "summary": "Representatives from nearly 70 countries walked out during Netanyahu's address as ICC-wanted Prime Minister defends Gaza operations.",
+    "date_event": null,
+    "date_published": "2026-09-26T12:35:28Z",
+    "geo": {
+      "lat": 40.7127281,
+      "lon": -74.0060152,
+      "country": "United States",
+      "region": "New York",
+      "city": "New York"
+    },
+    "topics": [
+      "israel",
+      "gaza",
+      "united-nations",
+      "genocide",
+      "diplomacy",
+      "icc"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/240171",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97335684875960320",
+    "title": "Irish National Team Delays Press Conference Over Gaza Genocide Concerns",
+    "summary": "Irish football players delayed their pre-match press conference before facing Israel in UEFA Nations League.",
+    "date_event": null,
+    "date_published": "2026-09-26T12:52:01Z",
+    "geo": {
+      "lat": 52.865196,
+      "lon": -7.9794599,
+      "country": "Ireland",
+      "region": "Ireland",
+      "city": "Dublin"
+    },
+    "topics": [
+      "ireland",
+      "sports",
+      "boycott",
+      "israel",
+      "gaza",
+      "genocide"
+    ],
+    "confidence": null,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/240178",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
