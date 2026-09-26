@@ -121872,5 +121872,574 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_97179505487011840",
+    "title": "Australia's Unemployment Rate Rises to 5-Year High",
+    "summary": "Australia's unemployment rate reached its highest level in nearly 5 years in August 2026, according to official government data.",
+    "date_event": null,
+    "date_published": "2026-09-26T02:22:52Z",
+    "geo": {
+      "location": "Australia",
+      "lat": -25.2744,
+      "lon": 133.7751
+    },
+    "topics": [
+      "economics",
+      "employment",
+      "australia",
+      "labor-market"
+    ],
+    "confidence": 0.78,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "title": "Tweet",
+        "url": "https://x.com/XHNews/status/2103671615188025823"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179437040164864",
+    "title": "USS Germantown (LSD 42) Decommissioned in San Diego",
+    "summary": "USS Germantown (LSD 42), a Whidbey Island-class dock landing ship, completed decommissioning in San Diego on September 24, 2026, ending nearly 40 years of naval service.",
+    "date_event": null,
+    "date_published": "2026-09-26T02:58:10Z",
+    "geo": {
+      "location": "San Diego, United States",
+      "lat": 32.7157,
+      "lon": -117.1611
+    },
+    "topics": [
+      "naval-operations",
+      "united-states-military",
+      "ship-decommissioning",
+      "dock-landing-ship"
+    ],
+    "confidence": 0.85,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "title": "Tweet",
+        "url": "https://x.com/Warshipcam/status/2103680499478585730"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179437098885120",
+    "title": "USNS Waters (T-AGS-45) Arrives in San Diego",
+    "summary": "USNS Waters (T-AGS-45), a submarine navigation-system and ballistic missile flight test support vessel, arrived in San Diego on September 25, 2026.",
+    "date_event": null,
+    "date_published": "2026-09-26T02:33:25Z",
+    "geo": {
+      "location": "San Diego, United States",
+      "lat": 32.7157,
+      "lon": -117.1611
+    },
+    "topics": [
+      "naval-operations",
+      "united-states-military",
+      "submarine-support",
+      "weapons-testing"
+    ],
+    "confidence": 0.82,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "title": "Tweet",
+        "url": "https://x.com/Warshipcam/status/2103674272627503149"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179437149216768",
+    "title": "USS Greeneville (SSN 772) Transits San Diego",
+    "summary": "USS Greeneville (SSN 772), a Los Angeles-class Flight III 688i improved attack submarine, made a brief transit through San Diego on September 25, 2026.",
+    "date_event": null,
+    "date_published": "2026-09-26T02:31:54Z",
+    "geo": {
+      "location": "San Diego, United States",
+      "lat": 32.7157,
+      "lon": -117.1611
+    },
+    "topics": [
+      "naval-operations",
+      "united-states-military",
+      "attack-submarine",
+      "los-angeles-class"
+    ],
+    "confidence": 0.83,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "title": "Tweet",
+        "url": "https://x.com/Warshipcam/status/2103673889729442085"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179502278365184",
+    "title": "China Sends Aircraft and Naval Vessels, Deploys Missile Systems Near Taiwan",
+    "summary": "Taiwan News reports that China sent aircraft and naval vessels and deployed missile systems in response to recent developments. The action represents continued military pressure on Taiwan.",
+    "date_event": null,
+    "date_published": "2026-09-26T03:29:43Z",
+    "geo": {
+      "lat": 25.0443,
+      "lon": 121.5328,
+      "country": "Taiwan",
+      "region": "Taiwan Strait"
+    },
+    "topics": [
+      "taiwan",
+      "military",
+      "china",
+      "strait",
+      "pla",
+      "defense"
+    ],
+    "confidence": null,
+    "source_name": "Taiwan News (@TaiwanNewsEN)",
+    "links": [
+      {
+        "url": "https://x.com/TaiwanNewsEN/status/2103688441695531029",
+        "label": "Taiwan News"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179502219644928",
+    "title": "Philippines Resupply Mission Dispute with China Over Gentlemen Agreement",
+    "summary": "SCS Probing Initiative reports that the Philippines violated a gentlemen agreement regarding resupply missions to Second Thomas Shoal by carrying building materials without informing China.",
+    "date_event": null,
+    "date_published": "2026-09-26T02:13:40Z",
+    "geo": {
+      "lat": 8.7539,
+      "lon": 114.391,
+      "region": "South China Sea"
+    },
+    "topics": [
+      "south-china-sea",
+      "territorial-dispute",
+      "resupply-mission",
+      "second-thomas-shoal"
+    ],
+    "confidence": null,
+    "source_name": "SCS Probing Initiative (@SCS_PI)",
+    "links": [
+      {
+        "url": "https://x.com/SCS_PI/status/2103669303321165936",
+        "label": "Twitter/X"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179502345474048",
+    "title": "Zelensky States Trump Made Final Decision on Ukraine Support",
+    "summary": "ISW reports that Ukrainian President Zelensky stated on September 25 that US President Trump made a final decision regarding US support for Ukraine.",
+    "date_event": null,
+    "date_published": "2026-09-26T03:02:58Z",
+    "geo": {
+      "lat": 48.3794,
+      "lon": 31.1656,
+      "country": "Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "russia-ukraine-war",
+      "us-support",
+      "zelensky",
+      "trump"
+    ],
+    "confidence": null,
+    "source_name": "Institute for the Study of War (@TheStudyofWar)",
+    "links": [
+      {
+        "url": "https://x.com/TheStudyofWar/status/2103681707497177329",
+        "label": "ISW Analysis"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179626849185792",
+    "title": "Brazil's President Lula Bans Online Gambling Ahead of Presidential Election",
+    "summary": "Brazilian President Lula announced a ban on online gambling in advance of the country's upcoming presidential election. The policy decision reflects government efforts to address gambling expansion and regulate digital commerce ahead of electoral proceedings.",
+    "date_event": null,
+    "date_published": "2026-09-26T03:25:25Z",
+    "geo": {
+      "lat": -10.3333333,
+      "lon": -53.2,
+      "country": "Brazil"
+    },
+    "topics": [
+      "policy",
+      "gambling",
+      "election",
+      "brazil",
+      "regulation"
+    ],
+    "confidence": 0.82,
+    "source_name": "BBC World News",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2103687360244338916",
+        "label": "BBC World News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179614165610496",
+    "title": "Trump and Xi Jinping Hold High-Stakes Diplomatic Meeting",
+    "summary": "U.S. President Trump and Chinese President Xi Jinping held a significant diplomatic meeting. Despite the strategic importance of the engagement, concrete outcomes and tangible results remain unclear as both nations continue managing economic and security competition.",
+    "date_event": null,
+    "date_published": "2026-09-26T03:20:59Z",
+    "geo": {
+      "lat": 38.8950982,
+      "lon": -77.0363849,
+      "country": "United States",
+      "city": "Washington"
+    },
+    "topics": [
+      "diplomacy",
+      "geopolitics",
+      "usa",
+      "china",
+      "trade"
+    ],
+    "confidence": 0.85,
+    "source_name": "ABC News",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2103686241011052698",
+        "label": "ABC News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179620951994368",
+    "title": "FDA and CDC Investigate Multistate E. coli Outbreak Linked to Raw Milk Cheese",
+    "summary": "Federal health agencies initiated an investigation into a multistate outbreak of E. coli infections potentially connected to Sierra Nevada Graziers raw milk cheese. Authorities collected samples and coordinated with state health departments to determine outbreak scope.",
+    "date_event": null,
+    "date_published": "2026-09-26T02:36:32Z",
+    "geo": {
+      "lat": 39.7837304,
+      "lon": -100.445882,
+      "country": "United States"
+    },
+    "topics": [
+      "health",
+      "outbreak",
+      "foodborne-illness",
+      "public-health",
+      "usa"
+    ],
+    "confidence": 0.88,
+    "source_name": "ABC News",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2103675058023477728",
+        "label": "ABC News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179454082915328",
+    "title": "Trump and Xi Emphasize Close Relationship at Summit Despite Limited Concrete Deliverables",
+    "summary": "During a bilateral summit, US President Donald Trump and Chinese President Xi Jinping worked to underscore their increasingly close relationship, though the meeting produced few concrete deliverables. The summit highlights ongoing diplomatic engagement between the world's two largest economies despite underlying tensions.",
+    "date_event": "2026-09-26T02:32:53Z",
+    "date_published": "2026-09-26T02:32:53Z",
+    "geo": {
+      "lat": 39.9042,
+      "lon": 116.4074,
+      "country": "China",
+      "city": "Beijing"
+    },
+    "topics": [
+      "united-states",
+      "china",
+      "diplomacy",
+      "summit",
+      "us-china-relations"
+    ],
+    "confidence": null,
+    "source_name": "Scmpnews",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2103674139806413109",
+        "label": "SCMP Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179454129806336",
+    "title": "Body Language Experts Analyze Contrasting Presidential Couple Dynamics at Diplomatic Summit",
+    "summary": "Body language experts observed stark contrasts in the dynamics between presidential couples during the US-China summit. The couples' interactions and non-verbal communication conveyed different relational patterns that diplomats and analysts scrutinized closely.",
+    "date_event": "2026-09-26T02:02:39Z",
+    "date_published": "2026-09-26T02:02:39Z",
+    "geo": {
+      "lat": 39.9042,
+      "lon": 116.4074,
+      "country": "China",
+      "city": "Beijing"
+    },
+    "topics": [
+      "united-states",
+      "china",
+      "diplomacy",
+      "summit",
+      "international-relations"
+    ],
+    "confidence": null,
+    "source_name": "Scmpnews",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2103666531326378336",
+        "label": "SCMP Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179453943201792",
+    "title": "UK Political Candidate Addresses Jewish-Israeli Distinction in Holborn By-election Hustings",
+    "summary": "During hustings for the Holborn and St Pancras by-election, a political candidate clarifies that Jewish people should not be held responsible for Israeli government policies, addressing complex questions about identity politics and Palestinian advocacy in British elections.",
+    "date_event": "2026-09-26T03:00:00Z",
+    "date_published": "2026-09-26T03:00:00Z",
+    "geo": {
+      "lat": 51.5118,
+      "lon": -0.1248,
+      "country": "United Kingdom",
+      "city": "London"
+    },
+    "topics": [
+      "united-kingdom",
+      "election",
+      "palestine-advocacy",
+      "identity-politics"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2103680962349400393",
+        "label": "Middle East Eye Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179453990123008",
+    "title": "Houthis Clarify Red Sea Blockade Targets Saudi Arabia and Internationally Recognized Yemeni Government",
+    "summary": "Houthi forces declare that their blockade operations in the Red Sea specifically target Saudi Arabia and Yemen's internationally recognized government, not all shipping. The statement clarifies the scope and intentions of their naval operations in one of the world's most critical shipping corridors.",
+    "date_event": "2026-09-26T02:59:31Z",
+    "date_published": "2026-09-26T02:59:31Z",
+    "geo": {
+      "lat": 15.5527,
+      "lon": 48.5164,
+      "country": "Yemen",
+      "region": "Red Sea"
+    },
+    "topics": [
+      "yemen",
+      "houthis",
+      "maritime-blockade",
+      "red-sea",
+      "regional-conflict"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2103680838827135151",
+        "label": "Middle East Eye Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179454036024320",
+    "title": "US Representative Calls for Release of Palestinian Leader Marwan Barghouti",
+    "summary": "Democratic US Representative Ro Khanna publicly called for the release of imprisoned Palestinian leader Marwan Barghouti, stating that Palestinians must have the right to determine their own political future to achieve a durable two-state resolution to the Israeli-Palestinian conflict.",
+    "date_event": "2026-09-26T02:47:49Z",
+    "date_published": "2026-09-26T02:47:49Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.2338,
+      "country": "Palestine",
+      "region": "West Bank"
+    },
+    "topics": [
+      "palestine",
+      "israel",
+      "political-prisoner",
+      "two-state-solution",
+      "us-foreign-policy"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2103677896644563434",
+        "label": "Middle East Eye Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179453838344192",
+    "title": "Brazil's Debt Crisis Threatens Election Stability",
+    "summary": "As Brazil approaches an election, the nation's mounting debt problems threaten economic stability. Consumers and businesses face sky-high borrowing costs while investors grow increasingly alarmed by the country's deteriorating fiscal outlook.",
+    "date_event": "2026-09-26T03:44:23Z",
+    "date_published": "2026-09-26T03:44:23Z",
+    "geo": {
+      "lat": -15.7942,
+      "lon": -47.8822,
+      "country": "Brazil",
+      "city": "Brasília"
+    },
+    "topics": [
+      "brazil",
+      "debt-crisis",
+      "economic-instability",
+      "election"
+    ],
+    "confidence": null,
+    "source_name": "BBG Originals",
+    "links": [
+      {
+        "url": "https://x.com/BBGOriginals/status/2103692132447862963",
+        "label": "BBG Originals Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179453892870144",
+    "title": "Alaska's Ambler Road Mining Project Divides Wall Street and Environmental Advocates",
+    "summary": "A 211-mile road project backed by the Trump administration to access mineral resources creates sharp divisions between Wall Street investors and Alaska residents concerned about environmental damage. The controversial Ambler Road project reflects broader tensions over resource extraction and conservation.",
+    "date_event": "2026-09-26T02:20:05Z",
+    "date_published": "2026-09-26T02:20:05Z",
+    "geo": {
+      "lat": 66.9219,
+      "lon": -150.7279,
+      "country": "United States",
+      "region": "Alaska"
+    },
+    "topics": [
+      "alaska",
+      "mining",
+      "environmental-conflict",
+      "infrastructure",
+      "economic-development"
+    ],
+    "confidence": null,
+    "source_name": "BBG Originals",
+    "links": [
+      {
+        "url": "https://x.com/BBGOriginals/status/2103670914759971210",
+        "label": "BBG Originals Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97179563318059008",
+    "title": "Hryffon UAV Unit Targets Enemy Shelter in Donetsk",
+    "summary": "The Hryffon UAV unit conducted precision strikes against enemy positions in the Donetsk sector, successfully destroying a fortified shelter where opposing forces had concentrated.",
+    "date_event": null,
+    "date_published": "2026-09-26T02:11:00Z",
+    "geo": {
+      "lat": 47.9212914,
+      "lon": 37.7809825,
+      "city": "Donetsk",
+      "region": "Donetsk Oblast",
+      "country": "Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "war",
+      "drone",
+      "military",
+      "donetsk",
+      "uav"
+    ],
+    "confidence": 0.8,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46417",
+        "label": "UNITED24 Media"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/r_XTffYhRmj9V9X41zNq2_x93RzGyHIcgxg3JCrLbFYHSIoILmcYuOrkK8cj6xNQsnX3HaqdVIdn-Aup1KrYHGMGHxVPffQBkkGgFwAU1DVZc7-mVGXtDnhQcoC3CWwL6oLJthcCNUJ4TqLZEOSr6A61hfVRVjoWDhR6ozPuzGKXF3a7DrIbKwwvslKSTUyyFB4svPL-HY2lXRzss5aAQK0hMCyuuzU3TbI6LOU_cJtKJzZuMuv_A_1yTTuBKWuLxV1_02kI8TmZauXw3ZycJck_qDH4R6bfYbzUyEgxuiRpTIXjZOA5t3q4iW7e2Gim0S_k42XkFCDWnQnpGyfttA"
+  },
+  {
+    "id": "evt_97179563364196352",
+    "title": "Wagner Morale Message Broadcast in Multiple Languages",
+    "summary": "The Wagner Z Group released a multilingual morale and motivation message emphasizing unit cohesion and combat spirit, distributed across Russian, English, German, French, Portuguese, Italian, and Spanish language variations.",
+    "date_event": null,
+    "date_published": "2026-09-26T02:59:01Z",
+    "geo": {
+      "lat": 64.6863136,
+      "lon": 97.7453061,
+      "country": "Russia"
+    },
+    "topics": [
+      "wagner",
+      "morale",
+      "russia",
+      "military",
+      "recruitment"
+    ],
+    "confidence": 0.5,
+    "source_name": "Wagner Z Group (@wagner_group_pmcr)",
+    "links": [
+      {
+        "url": "https://t.me/wagner_group_pmcr/100192",
+        "label": "Wagner Z Group"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/GJfYosqNd38o9sStLXiY8hfiWVNfqWQJAdTHhMu32c7-upU37q2y-VAEspSNNAr9MtbPXWVac3mKe_ZtfaDkledkobXTW-n3aYuSwESTFuqihn8NIN2mhzGyuJUQam8G9nnkQhnhZUn2O-iAj8re-aRsQK7gxWJAgMJKeEfT9QUHYSCaWY1OHbyjr9QfKG-f5U2CAM-hFmLolYGds_oietX6KMwz-F-_8Qo29U1oucC0iBQx_EN2Yc0Q6fBhlYfZjo_oXdqVPNRT6OXjHUEIegkSHPlZosbwpwZ3GrMG-xOPRbD_0PWV-VUJgBhV9w8WXQNu8xD0yePe0oH-rn0Wkg.jpg"
+  },
+  {
+    "id": "evt_97179563271921664",
+    "title": "DHS Suspends ICE Worksite Raids in Kansas",
+    "summary": "The U.S. Department of Homeland Security announced a halt to ICE worksite enforcement operations in Kansas and potentially other states following pressure from business leaders and Republican politicians opposing immigration enforcement targeting employers.",
+    "date_event": null,
+    "date_published": "2026-09-26T03:28:20Z",
+    "geo": {
+      "lat": 39.049011,
+      "lon": -95.677556,
+      "city": "Topeka",
+      "region": "Kansas",
+      "country": "United States"
+    },
+    "topics": [
+      "immigration",
+      "enforcement",
+      "dhs",
+      "ice",
+      "policy",
+      "kansas"
+    ],
+    "confidence": 0.75,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/66911",
+        "label": "Rerum Novarum Intel"
+      }
+    ],
+    "link_preview_image": "https://cdn1.telesco.pe/file/uxH3tg0qwoJRdd3O_wdQMpsdlCOcQMIjyuCXaV38ydyX0cONG8TDaPYHoizq5iPacmlxC5TCsKhSzpbe6JLGw-W1WMxMkcU4e-aDmORsDRsCA6rNlfN8QlLXVUha7GJDMfSfRupsts-1Rv9ZB8TKnO5yV-ve7Lpk8p2v6CMXWRAnVCbqLxuDRofN4GvY8vK9PEcFGrMUNPoGaMRHNE_-GszokIhl-D11XHOltpR8iD0tp2qmsJ9MRdfayWMQ7XZ7T8QCcDtLsfVbNqhMjZ4vO-ozadwk1RmEjkRXkJIypIFDGdP36vLOKW6b4X0Dea4feLepW-o-GHTZJlRz3TX25w.jpg"
   }
 ]
