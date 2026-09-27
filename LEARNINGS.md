@@ -30,6 +30,15 @@ Link to manifest or SCHEMA.md when direct evidence lives there.
 Cap: max 10 KB and 100 entries; orchestrator auto-prunes expired entries. Each entry carries an implicit expiry; when superseded by a manifest edit or your own rerun finding a different root cause, remove the old entry to keep the file fresh.
 
 <!-- entries below this line; newest first -->
+## 2026-09-27 11:33Z — Batch 1/11: All Telegram sources inaccessible; zero events produced
+
+**Trigger:** Batch 1/11 (2026-09-27) qualified 3 tips across 3 Telegram sources: telegram-clashreport (3 candidates), telegram-ddgeopolitics (3 candidates), telegram-geopolitics-prime (3 candidates).
+
+**Finding:** Consistent with prior batches (documented in LEARNINGS 2026-09-14, 2026-09-15, 2026-09-25): Telegram's t.me web interface exposes only truncated og:description metadata in static HTML. Full post content requires JavaScript rendering not available via curl or reliably accessible via agent-browser (installation succeeded; open timed out). Extracted descriptions fall below 100-word minimum for valid event contents: ClashReport 55w/18w/23w, DDGeopolitics 47w/98w/58w, GeopoliticsPrime 98w/98w/146w. Only 1 of 9 candidates (geopolitics-prime/75247, 146w) met word threshold; however, source is documented as publishing conspiracy content (LEARNINGS 2026-09-11) with recommendation for deactivation.
+
+**Action:** All 9 candidates archived to data/queue/processed/ without producing events. Maintainers should mark all telegram-* sources as `archived` status in source/manifest.json with note: "t.me web interface not scrapable; requires Telegram Bot API or authenticated client."
+
+**Expires:** 2026-12-31
 
 ## 2026-09-24 14:42Z — telegram-warmonitors post fetch failed; agent-browser timeout
 **Trigger:** Batch 5/13 (2026-09-24) identified one candidate from telegram-warmonitors/45697 with no snippet capture at identify stage.
