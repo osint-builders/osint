@@ -126637,5 +126637,751 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_97732444416942080",
+    "title": "Jordan and China Strengthen Energy Sector Cooperation",
+    "summary": "Jordanian Minister of Energy and Mineral Resources emphasizes China partnership in modernizing the energy sector through renewable energy, storage, and smart grid technologies.",
+    "date_event": null,
+    "date_published": "2026-09-27T16:32:20.000Z",
+    "geo": {
+      "lat": 31.9515694,
+      "lon": 35.9239625
+    },
+    "topics": [],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2104247779245916431",
+        "title": "Xinhua News Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HTPKM6OakAA8x_N.jpg"
+  },
+  {
+    "id": "evt_97732444484050944",
+    "title": "Zimbabwe Celebrates Musical Heritage with Mbira Festival in Harare",
+    "summary": "A festival in Harare showcases Zimbabwe's traditional musical heritage, featuring performances of the mbira, a traditional instrument passed down through generations.",
+    "date_event": null,
+    "date_published": "2026-09-27T14:59:09.000Z",
+    "geo": {
+      "lat": -17.8567035,
+      "lon": 31.0601584
+    },
+    "topics": [],
+    "confidence": null,
+    "source_name": "Xinhua News (@XHNews)",
+    "links": [
+      {
+        "url": "https://x.com/XHNews/status/2104224329697280007",
+        "title": "Xinhua News Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HTO04DFXEAA3hJL.jpg"
+  },
+  {
+    "id": "evt_97732501287501824",
+    "title": "British Police Arrest Men Driving Toward U.S. Bomber Base With Suspected Explosives",
+    "summary": "UK law enforcement arrested individuals who were driving toward RAF Fairford, a major U.S. military installation in the United Kingdom, with suspected explosives in their vehicle. RAF Fairford functions as a critical hub for U.S. bomber operations and served as a primary launch point for aerial strikes on Iran in 2026.",
+    "date_event": "2026-09-27T14:52:55Z",
+    "date_published": "2026-09-27T14:52:55Z",
+    "geo": {
+      "lat": 51.7967,
+      "lon": -1.8217,
+      "country": "United Kingdom",
+      "region": "Gloucestershire",
+      "city": "Fairford"
+    },
+    "topics": [
+      "security",
+      "military",
+      "arrest",
+      "united-kingdom",
+      "united-states"
+    ],
+    "confidence": 0.85,
+    "source_name": "Thewarzonewire (@Thewarzonewire)",
+    "links": [
+      {
+        "url": "https://x.com/Thewarzonewire/status/2104222763171086679",
+        "label": "Twitter Post"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2104222528046837760/qw626zUg?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_97732436074455040",
+    "title": "Israeli drone strike kills Palestinian in Gaza City",
+    "summary": "An Israeli drone strike on a civilian vehicle in Gaza City resulted in one Palestinian death and several injuries on Sunday, according to the Palestinian news agency Wafa.",
+    "date_event": null,
+    "date_published": "2026-09-27T16:25:02Z",
+    "geo": {
+      "lat": 31.9454,
+      "lon": 35.1856,
+      "location": "Gaza City, Gaza"
+    },
+    "topics": [
+      "gaza",
+      "israel",
+      "drone-strike",
+      "palestinian-casualties",
+      "military-operations"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2104245942551449607",
+        "title": "Middle East Eye - Gaza drone strike report",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732436145758208",
+    "title": "UK protests against Israeli military operations and government arms support",
+    "summary": "Protesters gathered in Liverpool on Saturday to demonstrate against Israel's military operations in Gaza and the UK government's continued provision of military arms and equipment to Israeli forces.",
+    "date_event": null,
+    "date_published": "2026-09-27T15:56:17Z",
+    "geo": {
+      "lat": 53.4084,
+      "lon": -2.9916,
+      "location": "Liverpool, United Kingdom"
+    },
+    "topics": [
+      "protest",
+      "gaza",
+      "palestine",
+      "israel",
+      "uk-arms-sales",
+      "activism"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2104238707607736474",
+        "title": "Middle East Eye - UK Palestine protest report",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732436212867072",
+    "title": "Hezbollah chief claims group withstood Israeli pressure in Gaza conflict",
+    "summary": "Hezbollah leader Naim Qassem announced at a ceremony commemorating Hassan Nasrallah that the organization had resisted Israeli military operations, marking two years since Nasrallah's death.",
+    "date_event": null,
+    "date_published": "2026-09-27T15:54:50Z",
+    "geo": {
+      "lat": 33.8547,
+      "lon": 35.5031,
+      "location": "Lebanon"
+    },
+    "topics": [
+      "hezbollah",
+      "israel",
+      "lebanon",
+      "military-operations",
+      "nasrallah",
+      "resistance"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2104238344821772349",
+        "title": "Middle East Eye - Hezbollah chief statement",
+        "type": "twitter"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732491393134592",
+    "title": "Frontex drone coordinates Mediterranean interceptions with Libyan militias",
+    "summary": "Sea Watch documents Frontex-operated drone directing maritime interceptions in cooperation with Libyan militias. The drone, untrackable and operated since March, coordinates with Libya authorities. Investigation reveals military-industrial complex involvement through Leonardo arms company technology.",
+    "date_event": null,
+    "date_published": "2026-09-27T15:58:05.000Z",
+    "geo": {
+      "lat": 36.5,
+      "lon": 15.5,
+      "country": "Mediterranean Sea",
+      "region": "Central Mediterranean",
+      "city": "Central Mediterranean"
+    },
+    "topics": [
+      "mediterranean",
+      "maritime",
+      "frontex",
+      "libya",
+      "migration",
+      "border-enforcement"
+    ],
+    "confidence": 0.82,
+    "source_name": "seawatch_intl (@seawatch_intl)",
+    "links": [
+      {
+        "url": "https://x.com/seawatch_intl/status/2104239161477628246",
+        "label": "Sea Watch Tweet - Drone Operations"
+      },
+      {
+        "url": "https://x.com/seawatch_intl/status/2104239162899451923",
+        "label": "Sea Watch Tweet - Italy Militia Funding"
+      },
+      {
+        "url": "https://x.com/seawatch_intl/status/2104239164371718167",
+        "label": "Sea Watch Tweet - Military-Industrial Complex"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732491326025728",
+    "title": "Afghanistan reports 28 dead fighters from Pakistan amid denial",
+    "summary": "Afghanistan claims 28 fighters killed in recent operations originated from Pakistan. Islamabad denies any military involvement or connection to the deceased fighters. The dispute highlights ongoing tensions regarding cross-border militant activities in the region.",
+    "date_event": null,
+    "date_published": "2026-09-27T14:39:41.000Z",
+    "geo": {
+      "lat": 35.0,
+      "lon": 65.0,
+      "country": "Afghanistan"
+    },
+    "topics": [
+      "afghanistan",
+      "pakistan",
+      "military",
+      "militants",
+      "casualties"
+    ],
+    "confidence": 0.75,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2104219432495288470",
+        "label": "SCMP News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732491258916864",
+    "title": "UK counterterrorism police investigate Iran link to RAF Fairford plot",
+    "summary": "UK counterterrorism authorities investigate whether Iran had involvement in a foiled terror plot targeting RAF Fairford airbase. Five men arrested under terror laws following suspicious vehicle activity near the facility. Investigation focuses on potential external state involvement.",
+    "date_event": null,
+    "date_published": "2026-09-27T16:01:28.000Z",
+    "geo": {
+      "lat": 51.7833,
+      "lon": -1.8167,
+      "country": "United Kingdom",
+      "region": "Gloucestershire",
+      "city": "Fairford"
+    },
+    "topics": [
+      "terrorism",
+      "uk",
+      "iran",
+      "military",
+      "counterterrorism",
+      "aviation",
+      "security"
+    ],
+    "confidence": 0.87,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2104240012610916533",
+        "label": "OSINT Technical Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732599383867392",
+    "title": "Deadly Nor'easter Brings Coastal Flooding and Severe Weather to US East Coast",
+    "summary": "A nor'easter storm brings coastal flooding, damaging winds, power outages, and dangerous conditions across the US East Coast. Emergency response underway.",
+    "date_event": null,
+    "date_published": "2026-09-27T16:11:32Z",
+    "geo": {
+      "lat": 40.2708,
+      "lon": -74.006,
+      "country": "United States",
+      "region": "East Coast",
+      "city": "New York"
+    },
+    "topics": [
+      "weather",
+      "disaster",
+      "flooding",
+      "storm",
+      "nor-easter"
+    ],
+    "confidence": 0.85,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2104242544192405714",
+        "label": "ABC News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732620078563328",
+    "title": "Trump Expects More US-Iran Negotiations This Week",
+    "summary": "Trump told Axios he anticipates continued US negotiations with Iran during the current week, signaling ongoing diplomatic engagement between the two nations.",
+    "date_event": null,
+    "date_published": "2026-09-27T15:06:08Z",
+    "geo": {
+      "lat": 38.9072,
+      "lon": -77.0369,
+      "country": "United States",
+      "region": "Washington D.C.",
+      "city": "Washington"
+    },
+    "topics": [
+      "geopolitics",
+      "diplomacy",
+      "iran",
+      "usa",
+      "negotiations"
+    ],
+    "confidence": 0.8,
+    "source_name": "War Monitor (@warmonitors)",
+    "links": [
+      {
+        "url": "https://t.me/warmonitors/45740",
+        "label": "War Monitor Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732787963990016",
+    "title": "Royal Netherlands Navy Transport Dock HNLMS Johan De Witt Departs Belfast",
+    "summary": "The Dutch Navy Rotterdam-class amphibious transport dock HNLMS Johan De Witt departed Belfast, Northern Ireland on September 27, 2026. The vessel departure marks continued naval operations in Northern European waters.",
+    "date_event": null,
+    "date_published": "2026-09-27T16:30:11Z",
+    "geo": {
+      "lat": 54.5973,
+      "lon": -5.9301,
+      "country": "United Kingdom",
+      "city": "Belfast",
+      "region": "Northern Ireland"
+    },
+    "topics": [
+      "naval",
+      "netherlands",
+      "vessel-movement"
+    ],
+    "confidence": 0.85,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2104247238629204438",
+        "label": "Warshipcam tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732788039487488",
+    "title": "Spanish Navy Frigate ESPS Cristobal Colon Departs Rota Naval Station",
+    "summary": "The Spanish Navy Alvaro de Bazan-class air defence frigate ESPS Cristobal Colon (F105) departed Rota, Spain on September 27, 2026. The frigate represents a key component of Spanish and NATO naval capabilities in the Atlantic.",
+    "date_event": null,
+    "date_published": "2026-09-27T16:27:06Z",
+    "geo": {
+      "lat": 36.6383,
+      "lon": -6.2417,
+      "country": "Spain",
+      "city": "Rota",
+      "region": "Cadiz"
+    },
+    "topics": [
+      "naval",
+      "spain",
+      "vessel-movement"
+    ],
+    "confidence": 0.85,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2104246462733303954",
+        "label": "Warshipcam tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732788106596352",
+    "title": "German Navy Elbe-Class Tenders FGS Mosel and FGS Rhein Conduct Operations in Rota",
+    "summary": "The German Navy Elbe-class logistics support tenders FGS Mosel (A512) and FGS Rhein (A513) conducted joint operations at Rota, Spain on September 27, 2026. The vessels support German Navy logistics and supply operations across European waters.",
+    "date_event": null,
+    "date_published": "2026-09-27T16:24:53Z",
+    "geo": {
+      "lat": 36.6383,
+      "lon": -6.2417,
+      "country": "Spain",
+      "city": "Rota",
+      "region": "Cadiz"
+    },
+    "topics": [
+      "naval",
+      "germany",
+      "vessel-movement"
+    ],
+    "confidence": 0.85,
+    "source_name": "Warshipcam (@Warshipcam)",
+    "links": [
+      {
+        "url": "https://x.com/Warshipcam/status/2104245907424514328",
+        "label": "Warshipcam tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732788177899520",
+    "title": "Russian Armed Drone Strikes Kindergarten in Kyiv",
+    "summary": "A Russian jet-powered drone struck a kindergarten facility in Kyiv, Ukraine on September 27, 2026, marking a civilian infrastructure attack during ongoing military operations. The strike targeted a civilian educational facility in the Ukrainian capital.",
+    "date_event": null,
+    "date_published": "2026-09-27T16:10:56Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "armed-conflict",
+      "ukraine",
+      "civilian-harm"
+    ],
+    "confidence": 0.85,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2104242395290513830",
+        "label": "War Translated tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732788245008384",
+    "title": "Belarus Foreign Minister Affirms Readiness to Host Ukraine Negotiations",
+    "summary": "Belarus Foreign Minister Maksim Ryzhenkov announced on September 27, 2026 that Minsk maintains readiness to host negotiations related to the Ukraine conflict. The statement reaffirms Belarus's position as a potential diplomatic venue for peace talks.",
+    "date_event": null,
+    "date_published": "2026-09-27T14:39:01Z",
+    "geo": {
+      "lat": 53.9045,
+      "lon": 27.5615,
+      "country": "Belarus",
+      "city": "Minsk"
+    },
+    "topics": [
+      "diplomatic",
+      "belarus",
+      "ukraine-conflict"
+    ],
+    "confidence": 0.8,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2104219264815415685",
+        "label": "War Translated tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732526192266240",
+    "title": "China Promotes Digital Trade Cooperation and Economic Globalization Through Premier Li Qiang",
+    "summary": "Chinese Premier Li Qiang advocates for enhanced North-South cooperation in digital trade and emphasizes China's commitment to economic globalization. The statements reflect China's strategic positioning on international economic frameworks and investment policies.",
+    "date_event": null,
+    "date_published": "2026-09-27T15:00:17Z",
+    "geo": {
+      "lat": 39.9042,
+      "lon": 116.4074,
+      "country": "China",
+      "city": "Beijing"
+    },
+    "topics": [
+      "china",
+      "digital-trade",
+      "economic-policy",
+      "diplomacy",
+      "north-south-cooperation"
+    ],
+    "confidence": 0.8,
+    "source_name": "ChineseEmbInUs (@ChineseEmbInUs)",
+    "links": [
+      {
+        "url": "https://x.com/ChineseEmbInUs/status/2104224613446062449",
+        "label": "Embassy of China in US - Digital Trade Statement 1"
+      },
+      {
+        "url": "https://x.com/ChineseEmbInUs/status/2104224599885984007",
+        "label": "Embassy of China in US - Digital Trade Statement 2"
+      },
+      {
+        "url": "https://x.com/ChineseEmbInUs/status/2104224586417992176",
+        "label": "Embassy of China in US - Digital Trade Statement 3"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732526059048960",
+    "title": "Switzerland Rejects Stricter Interpretation of Its Neutrality",
+    "summary": "Switzerland has rejected proposals for a stricter interpretation of its long-standing neutrality status. The decision reflects ongoing debates about the country's foreign policy stance amid evolving geopolitical tensions in Europe.",
+    "date_event": null,
+    "date_published": "2026-09-27T16:06:57Z",
+    "geo": {
+      "lat": 46.8182,
+      "lon": 8.2275,
+      "country": "Switzerland",
+      "city": "Bern"
+    },
+    "topics": [
+      "switzerland",
+      "neutrality",
+      "foreign-policy",
+      "diplomacy",
+      "europe"
+    ],
+    "confidence": 0.85,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2104241392331411915",
+        "label": "BBC World News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732526126157824",
+    "title": "Venezuela Releases Dozens of Political Prisoners Amid Election Pressures",
+    "summary": "Venezuela has released dozens of political prisoners as public calls for presidential elections continue to mount. The releases represent a significant policy shift amid ongoing political tensions and international scrutiny of the country's governance.",
+    "date_event": null,
+    "date_published": "2026-09-27T16:00:20Z",
+    "geo": {
+      "lat": 6.4238,
+      "lon": -66.5897,
+      "country": "Venezuela",
+      "city": "Caracas"
+    },
+    "topics": [
+      "venezuela",
+      "political-prisoners",
+      "election",
+      "human-rights",
+      "diplomacy"
+    ],
+    "confidence": 0.85,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2104239725791805641",
+        "label": "BBC World News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_97732708842606592",
+    "title": "Russian Military Releases Footage of Strike on Kyiv Air Defense Systems",
+    "summary": "Russian military forces released video documentation of a September 25 strike targeting Kyiv's incoming air defense facilities. The release reflects ongoing military operations in the Ukraine conflict.",
+    "date_event": null,
+    "date_published": "2026-09-27T14:41:36Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "military-conflict",
+      "air-defense"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/194110",
+        "label": "DD Geopolitics Post"
+      }
+    ],
+    "link_preview_image": "https://cdn1.telesco.pe/file/fajaRKDGec9IjVkMleemAK_2kx3zuE_iYgQdKOVJPMttP06mLJBOXxv-RwSpzhNypDjvARColkeB6QxDVOoZ_Ldr1X0Kgtx8BRuZLxbyU0WifddxEiDb6AU-XRgcU5w0_X1Y0ykg3xWf3ufyoEk1TgikGc2T2JSA5JA3gV75unXZ-ufsizlZlm4VBXOk8oAfBL6dH59C-GsoQH3r0QajUBrUizlh5mykqdiyDKNilaLKsGk9GgvJejS2fsc6wYV0-XJK52cOpc5u4WHxMetwFzgEfBaZJm0yvkij2Ewiw8dH370woiIFA7k1hJ0CaqDu-AJ5Y3kTUfg3lGLvszNIsA"
+  },
+  {
+    "id": "evt_97732708888743936",
+    "title": "Geopolitics Livestream Scheduled with International Analysts",
+    "summary": "A scheduled livestream broadcast featuring geopolitics analysis with Professor Meyssan and other analysts on September 27. The broadcast focused on current developments in international relations.",
+    "date_event": null,
+    "date_published": "2026-09-27T15:07:34Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "country": "United States",
+      "region": "Global"
+    },
+    "topics": [
+      "geopolitics",
+      "analysis",
+      "international-relations"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/194111",
+        "label": "DD Geopolitics Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/Uoi8xvUDuhBT6PHObs1cNNvMQBozNVte6cElpxcdlh1Ti5kJ7_GZmGXlW4yeoCNHzZxYiFQ6C_JY1SAeVzhXpWoPv11VaGJ7UgY44JmckqsafWuofRG5L0LCRPGu62XD72rF8U9SvfrInmJ_5eHaAgSeQ-ttP9BWvyebDnTnNN6LPKt5LnlfllxpZmJE48DdF6UvoV1fOCmKCvKkXtPNtHHtCc0xEvi0Ixr9rbYTxnfjAeAgCV5W_HXQ4o3OH1YKpoIDD9R-oO9HuyXdAWpbJdItcmPfXSMn-4Ho3BbrTrlcXT_dFUBl0q4yw61Fu__CHtFm_dBHJ0CPhA8CQfSv_A.jpg"
+  },
+  {
+    "id": "evt_97732708930686976",
+    "title": "Strategic Commentary on Escalation Dynamics in Regional Conflicts",
+    "summary": "DD Geopolitics shared strategic analysis on escalation patterns, suggesting rapid escalation may worsen positions. The commentary addressed tactical and strategic decision-making in conflict situations.",
+    "date_event": null,
+    "date_published": "2026-09-27T16:13:49Z",
+    "geo": {
+      "lat": 49.4432,
+      "lon": 26.9725,
+      "country": "Ukraine"
+    },
+    "topics": [
+      "military-strategy",
+      "escalation",
+      "conflict-dynamics"
+    ],
+    "confidence": null,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/194112",
+        "label": "DD Geopolitics Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/qsw3M3msOJlZSQOBojJbSTAdPnoq5jANBKv3YqIUOPTVuUiAYLX950yn2Xj0LoxPfXQ735UHoHm_VbMAvivaviMmhLYroqQOc05dq3-fP5U1L_xM7rTZnzppbtCzzbHxfCri-aLSseNQSNaBNo_YfLW6Ht_PfxDscEMcSXgcTIPnKK_VHluzB5qYgzmbjIQZEv-VJlhMee2UJOm2SNn1xi3pIAH1lDKfhan3BLOytmsL1kTflYNWb8A-52xBFY8jrNsakMv-Kdn7mpntRFus_IWATOTKhwWaT-NChZDdH7tIo9EV2cM6fF4dkRUmy9FmMEiSD41F7drlgcVxi0ndKw.jpg"
+  },
+  {
+    "id": "evt_97732708695805952",
+    "title": "US Treasury Secretary Bessent Highlights China's Reduced Support for Iran",
+    "summary": "US Treasury Secretary Bessent reports that China has substantially reduced its assistance to Iran, signaling a shift in geopolitical dynamics between China and Iran. The statement reflects ongoing sanctions pressure and changing international support patterns.",
+    "date_event": null,
+    "date_published": "2026-09-27T15:21:07Z",
+    "geo": {
+      "lat": 32.4279,
+      "lon": 53.688,
+      "country": "Iran",
+      "city": "Tehran"
+    },
+    "topics": [
+      "iran",
+      "sanctions",
+      "geopolitics",
+      "united-states",
+      "china"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/98663",
+        "label": "Clash Report Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/d2_yMTKzy2gSjJBMXzsd0_IhWKW8Jvlwrxg784kmqR0J9IRhfGZ5YLldS4gQpBqBsOY7kFnkjos2QZW2Rp2kf1g44imit-J-Yp9avmonThK85UAwsA13NMYubvJ7QInjjFcF8p13PGo0SHzRNsiaEJvkgrqGiirQ7G8oEiyvYBiBfYFbR0bBaAUq9vnOt_7gG_KUqmlTaY-U9VZTxy4Qc-P-w69JWbtMhRg6NOAjjzLQ9r8XWNUB55YjjPrDkNLqHKzezIRgwNWqxfiOJTu4iaXVaDS5OgNHTh5NSJvYtdqEC44Bf_03ryYXW3Q2bHyWhVOXws9x6FFe2d_opG7rqw"
+  },
+  {
+    "id": "evt_97732708746137600",
+    "title": "US Treasury Official Reports Limited Iranian Oil Exports Amid Sanctions",
+    "summary": "Treasury Secretary Bessent indicates that Iranian oil supplies globally amount to only 15 million more barrels currently on water transport, suggesting constrained export capacity under international sanctions pressure.",
+    "date_event": null,
+    "date_published": "2026-09-27T15:23:27Z",
+    "geo": {
+      "lat": 32.4279,
+      "lon": 53.688,
+      "country": "Iran",
+      "city": "Tehran"
+    },
+    "topics": [
+      "iran",
+      "oil-exports",
+      "sanctions",
+      "energy-security"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/98664",
+        "label": "Clash Report Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/ce2o9nGBQB3xqRd1-c5hFYx9KtO1pzyD90qNxb9P6SVQbe0ML8Ucc51IKqZhi3uqceYg2vhmgGdpJbZDLfYpPz49oegOsVzA8_b219367YR0you6dh6mtWQj0p1N6Z8bQmWgvHyQXv6ZRBdrL2qGuvUqVzCYfMaOAjMfUL-0QQvOFlKN7QsiyMuTSu9SjnPgyf4U6I_6aWIRoyrmsDfLSarvkXjB94SlAtTzk4Za8zI8UA4Nxl0PTzojINAyXjsCl2gHFJsMMrclUNsMLemPTbwn_ZujitMmeTP620Y63zI74LLF9IvuYFkSyyLmoiTWAk3g022nQoJLYtV1XaASbg"
+  },
+  {
+    "id": "evt_97732708792274944",
+    "title": "UN Envoy Mike Waltz Criticizes Russian Veto Pattern at Security Council",
+    "summary": "US Envoy to the United Nations Mike Waltz denounced Russia's use of Security Council vetoes, noting seven instances of Russian veto action blocking international measures. The statement highlights diplomatic tensions over Council procedures.",
+    "date_event": null,
+    "date_published": "2026-09-27T15:24:50Z",
+    "geo": {
+      "lat": 40.749,
+      "lon": -73.968,
+      "country": "United States",
+      "city": "New York"
+    },
+    "topics": [
+      "united-nations",
+      "diplomacy",
+      "russia",
+      "international-relations"
+    ],
+    "confidence": null,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://t.me/ClashReport/98665",
+        "label": "Clash Report Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/rTWbGNqUSz5E_fAAmbobsEDGT7gq1VrmV6547Hsvwfv9JXwk0ai4-EEBd5cF8DcV3-hsjSnbsw-ptGF9oyONL0qnZAJmNLwdqn33R6l3OG74z0zbV3JdBxhrINwMtoF_yWVOcqPnlYvkJlLYqnIAUEQF2xvoX3ZUg8iZjiC_EG2_aFbVdW_QlSN5ztlQg27MCXnvbycqXZc7swHpxnLyT9eeWjXgURu1BKyjgOYuhpJRpRHVsB66bZkGzKDTrGqBwk8-SrXZ9fwujb5SyzKFU2vYMABqvaXVxUxKByE6swRFp1f8aV04YhlNDilRkmiOuWSd3W6RuZ5BKg9jXOGYTQ"
+  },
+  {
+    "id": "evt_97732708972630016",
+    "title": "Ukraine International Legion Continues Military Recruitment Operations",
+    "summary": "The International Legion of the Territorial Defense Forces of Ukraine announced ongoing recruitment for military operations against Russian Federation forces. The recruitment campaign sought additional soldiers for the specialized unit.",
+    "date_event": null,
+    "date_published": "2026-09-27T14:34:47Z",
+    "geo": {
+      "lat": 49.4432,
+      "lon": 26.9725,
+      "country": "Ukraine"
+    },
+    "topics": [
+      "ukraine",
+      "military",
+      "recruitment",
+      "international-legion"
+    ],
+    "confidence": null,
+    "source_name": "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)",
+    "links": [
+      {
+        "url": "https://t.me/DIUkraine/9585",
+        "label": "Defence Intelligence of Ukraine Post"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/RzsP2VUMWfUlxPU6pgFbcajnB_raU4Im0tX9rpbXh0qbZF3A-8hNx70O8751sLy647TFtgolpo7S-ljszL5JQP0YKVOHQJYDFKraR6szXAVTTqKWfiFfOlCqnn2VSzs07vpsWFcoo9kqINuBruR809mTEDZikbtP7a2FNZT6vjfP89o2Ob8r_h3D-zo55X1FaTcA1eY6H8CmChfamO7zcod3ZDMAyttSrMTYxqRM-PFWnqDo4biP_yO4ECGyn4qcCoXBnKudwuLc-j2gFgFLZU2djmpnqOvzfvXS2wVBOmK7voe1puPmaKknJ1gqZtCBdsyW2s8KgPiVIyINK3Ykfw"
   }
 ]
