@@ -131369,5 +131369,907 @@
       }
     ],
     "link_preview_image": null
+  },
+  {
+    "id": "evt_98195144603381760",
+    "title": "Interactive Map: Russia's Invasion of Ukraine",
+    "summary": "An interactive ArcGIS StoryMap providing real-time visualization of territorial control and frontline dynamics in the Ukraine-Russia conflict, updated 2026-09-28.",
+    "date_event": null,
+    "date_published": "2026-09-28T21:19:28Z",
+    "geo": {
+      "lat": 48.3794,
+      "lon": 31.1656
+    },
+    "topics": [
+      "ukraine-russia-conflict",
+      "territorial-control",
+      "military-operations",
+      "geospatial-intelligence",
+      "frontline-dynamics"
+    ],
+    "confidence": null,
+    "source_name": "ISW Ukraine Interactive Territorial Control Map",
+    "links": [
+      {
+        "url": "https://storymaps.arcgis.com/stories/36a7f6a6f5a9448496de641cf64bd375",
+        "title": "Interactive Map: Russia's Invasion of Ukraine"
+      }
+    ],
+    "link_preview_image": "https://www.arcgis.com/sharing/rest/content/items/36a7f6a6f5a9448496de641cf64bd375/resources/airL4YNhyTQQNLL2XfarW.png?w=400"
+  },
+  {
+    "id": "evt_98195127972941824",
+    "title": "Brazil's Debt Crisis Deepens Ahead of Election as Fiscal Outlook Alarms Investors",
+    "summary": "As Brazil approaches its election, the country faces mounting debt problems with consumers and businesses struggling against sky-high borrowing costs. The deteriorating fiscal outlook has alarmed investors and raised concerns about economic stability during the political transition.",
+    "date_event": "2026-09-28T21:56:27Z",
+    "date_published": "2026-09-28T21:56:27Z",
+    "geo": {
+      "lat": -15.7942,
+      "lon": -47.8822,
+      "country": "Brazil",
+      "city": "Brasília"
+    },
+    "topics": [
+      "economic-crisis",
+      "debt",
+      "brazil",
+      "election",
+      "fiscal-policy"
+    ],
+    "confidence": 0.85,
+    "source_name": "BBG Originals (@BBGOriginals)",
+    "links": [
+      {
+        "url": "https://x.com/BBGOriginals/status/2104691734483534011",
+        "label": "BBG Originals Tweet"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HTVd-pIW0AE1VI3.jpg"
+  },
+  {
+    "id": "evt_98195212186177536",
+    "title": "Trump Administration Signals Willingness to Grant Iran Sanctions Relief for Nuclear Deal Progress",
+    "summary": "The Trump administration has indicated willingness to offer Iran sanctions relief and release of frozen funds in exchange for concrete progress on nuclear negotiations. This signal comes as mediators attempt to bring the United States and Iran back to the negotiating table on the nuclear issue.",
+    "date_event": "2026-09-28T21:44:05Z",
+    "date_published": "2026-09-28T21:44:05Z",
+    "geo": {
+      "lat": 35.6762,
+      "lon": 51.4243,
+      "country": "Iran",
+      "city": "Tehran"
+    },
+    "topics": [
+      "diplomacy",
+      "nuclear-negotiations",
+      "iran",
+      "sanctions",
+      "geopolitics"
+    ],
+    "confidence": 0.9,
+    "source_name": "CNN (@CNN)",
+    "links": [
+      {
+        "url": "https://x.com/CNN/status/2104688623085928828",
+        "label": "CNN Coverage"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2104608981574381568/FSI1JqTC?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_98195275117527040",
+    "title": "Jamie Dimon on Economic Solutions to US-China Tensions",
+    "summary": "JPMorgan Chase CEO Jamie Dimon discusses perspectives on how economic growth may help resolve ongoing US-China tensions and other global challenges.",
+    "date_event": null,
+    "date_published": "2026-09-28T22:54:19.000Z",
+    "geo": {
+      "lat": 22.3193,
+      "lon": 114.1694,
+      "country": "Hong Kong"
+    },
+    "topics": [
+      "us-china-relations",
+      "geopolitics",
+      "economics",
+      "corporate-leadership"
+    ],
+    "confidence": null,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2104706298985988416",
+        "label": "SCMP Article"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98195322399916032",
+    "title": "SpaceX Starship Achieves Orbital Flight Milestone",
+    "summary": "SpaceX's Starship rocket successfully reached orbit for the first time, marking a major milestone in the development of the heavy-lift launch vehicle.",
+    "date_event": null,
+    "date_published": "2026-09-28T22:53:08.000Z",
+    "geo": {
+      "lat": 25.9968,
+      "lon": -97.1466,
+      "country": "United States",
+      "city": "Brownsville"
+    },
+    "topics": [
+      "space-exploration",
+      "spacex",
+      "starship",
+      "launch-vehicle"
+    ],
+    "confidence": null,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2104705997650514262",
+        "label": "SCMP Article"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98195368172355584",
+    "title": "Hurricane Polo Threatens Life-Threatening Floods in Mexico",
+    "summary": "Hurricane Polo poses a significant threat of life-threatening flooding to Mexico, prompting emergency preparedness and response coordination.",
+    "date_event": null,
+    "date_published": "2026-09-28T21:52:10.000Z",
+    "geo": {
+      "lat": 23.6345,
+      "lon": -102.5528,
+      "country": "Mexico"
+    },
+    "topics": [
+      "hurricane",
+      "flooding",
+      "disaster",
+      "mexico",
+      "weather"
+    ],
+    "confidence": null,
+    "source_name": "Scmpnews (@Scmpnews)",
+    "links": [
+      {
+        "url": "https://x.com/Scmpnews/status/2104690655997886946",
+        "label": "SCMP Article"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98195078509527040",
+    "title": "Trump Denies Iran Sanctions Relief Proposal",
+    "summary": "President Trump publicly denied offering Iran sanctions relief or unfreezing of funds, stating he offered 'nothing' to Iran in negotiations.",
+    "date_event": null,
+    "date_published": "2026-09-28T22:10:15.000Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369,
+      "country": "United States",
+      "city": "Washington"
+    },
+    "topics": [
+      "diplomacy",
+      "iran",
+      "sanctions",
+      "us-policy"
+    ],
+    "confidence": null,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2104695205618409764",
+        "label": "OSINT Technical Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98195199737495552",
+    "title": "Australian M1A1 AIM Abrams Tank Deployed in Ukraine",
+    "summary": "Documentation of an Australian-supplied M1A1 AIM Abrams main battle tank in active Ukrainian military service, featuring extensive up-armor modification packages.",
+    "date_event": null,
+    "date_published": "2026-09-28T22:02:06.000Z",
+    "geo": {
+      "lat": 48.3794,
+      "lon": 31.1656,
+      "country": "Ukraine"
+    },
+    "topics": [
+      "military-equipment",
+      "ukraine",
+      "main-battle-tank",
+      "armor",
+      "australia"
+    ],
+    "confidence": null,
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "links": [
+      {
+        "url": "https://x.com/Osinttechnical/status/2104693155685601608",
+        "label": "OSINT Technical Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98195078442418176",
+    "title": "NASA and Boeing Starliner Certification Update",
+    "summary": "NASA and Boeing Space announced an update to the Starliner spacecraft program, including plans to add additional crew missions and certify a new rocket for crew transportation to low Earth orbit.",
+    "date_event": null,
+    "date_published": "2026-09-28T22:12:05.000Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": -122.4194,
+      "country": "United States"
+    },
+    "topics": [
+      "space-exploration",
+      "spacecraft",
+      "nasa",
+      "crew-transportation"
+    ],
+    "confidence": null,
+    "source_name": "Nasa (@Nasa)",
+    "links": [
+      {
+        "url": "https://x.com/Nasa/status/2104695667180380260",
+        "label": "NASA Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98195365718695936",
+    "title": "Kpler Data Shows Significant Crude Oil Traffic Rebound Through Red Sea Waterway",
+    "summary": "Kpler shipping intelligence reports a significant rebound in crude oil traffic through the Red Sea/Suez Canal corridor, indicating recovery from recent disruptions.",
+    "date_event": null,
+    "date_published": "2026-09-28T22:52:16Z",
+    "geo": {
+      "lat": 27.5898,
+      "lon": 34.5653
+    },
+    "topics": [
+      "maritime-trade",
+      "crude-oil",
+      "red-sea",
+      "suez-canal",
+      "shipping",
+      "energy-security"
+    ],
+    "confidence": null,
+    "source_name": "Tradewindsnews",
+    "links": [
+      {
+        "url": "https://x.com/Tradewindsnews/status/2104705779760828724",
+        "title": "Kpler crude traffic data"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98195365550923776",
+    "title": "USS Scranton Fast-Attack Submarine Deploys to Yokosuka",
+    "summary": "Los Angeles-class fast-attack submarine USS Scranton arrived at Commander Fleet Activities Yokosuka, Japan during routine operations in the US 7th Fleet area of operations.",
+    "date_event": null,
+    "date_published": "2026-09-28T22:22:46Z",
+    "geo": {
+      "lat": 35.2822,
+      "lon": 139.6615
+    },
+    "topics": [
+      "us-military",
+      "submarine",
+      "japan",
+      "deployment",
+      "pacific-fleet",
+      "naval-operations"
+    ],
+    "confidence": null,
+    "source_name": "US Pacific Fleet",
+    "links": [
+      {
+        "url": "https://x.com/USPacificFleet/status/2104698359495655817",
+        "title": "USS Scranton deployment announcement"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98195365630615552",
+    "title": "US Pacific Fleet Conducts Cooperation Exercise with Philippine Navy",
+    "summary": "The US Pacific Fleet conducted maritime cooperation operations with the Philippine Navy and other regional partners, reinforcing commitment to a Free and Open Indo-Pacific.",
+    "date_event": null,
+    "date_published": "2026-09-28T21:59:51Z",
+    "geo": {
+      "lat": 10.3157,
+      "lon": 123.8854
+    },
+    "topics": [
+      "us-military",
+      "philippine-navy",
+      "naval-exercise",
+      "foip",
+      "pacific-fleet",
+      "regional-partnership"
+    ],
+    "confidence": null,
+    "source_name": "US Pacific Fleet",
+    "links": [
+      {
+        "url": "https://x.com/USPacificFleet/status/2104692590847443408",
+        "title": "US-Philippine Navy partnership announcement"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98195416000000000",
+    "title": "Trump administration cancels $810 million in refugee and immigrant funding",
+    "summary": "The Trump administration announced plans to rescind $810 million in appropriated congressional funding for refugee and immigrant services across multiple federal agencies. The action has drawn criticism from lawmakers from both parties who argue it violates the constitutional separation of powers.",
+    "date_event": null,
+    "date_published": "2026-09-28T21:23:26Z",
+    "geo": {
+      "lat": 38.8951,
+      "lon": -77.0369,
+      "city": "Washington",
+      "region": "District of Columbia",
+      "country": "United States"
+    },
+    "topics": [
+      "immigration",
+      "refugee-funding",
+      "executive-order",
+      "trump-administration",
+      "united-states"
+    ],
+    "confidence": null,
+    "source_name": "Middle East Eye",
+    "links": [
+      {
+        "url": "https://www.middleeasteye.net/news/trump-cancels-millions-dollars-funding-refugees-immigrants",
+        "label": "Middle East Eye"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98195340267634688",
+    "title": "Tennessee Governor Rejects Clemency for Christa Pike, Execution Proceeds",
+    "summary": "Tennessee's governor rejected a clemency petition for Christa Pike as her scheduled execution approached. The decision meant Pike would move forward with her death sentence for a murder conviction.",
+    "date_event": "2026-09-28T22:20:00Z",
+    "date_published": "2026-09-28T22:29:46Z",
+    "geo": {
+      "lat": 36.1622767,
+      "lon": -86.7742984,
+      "city": "Nashville",
+      "region": "Tennessee",
+      "country": "United States"
+    },
+    "topics": [
+      "death-penalty",
+      "execution",
+      "clemency",
+      "criminal-justice"
+    ],
+    "confidence": 0.88,
+    "source_name": "BBC World News",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2104700120524603891",
+        "label": "BBC World News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98195340313772032",
+    "title": "French Prime Minister Warns Against School Protest Escalation, 164 Arrested",
+    "summary": "France's Prime Minister cautioned against further escalation of school-related protests as authorities arrested 164 people. The warning came amid mounting tensions surrounding education-related demonstrations across the country.",
+    "date_event": "2026-09-28T21:30:00Z",
+    "date_published": "2026-09-28T21:49:13Z",
+    "geo": {
+      "lat": 48.8534951,
+      "lon": 2.3483915,
+      "city": "Paris",
+      "region": "Île-de-France",
+      "country": "France"
+    },
+    "topics": [
+      "protest",
+      "civil-unrest",
+      "france",
+      "education",
+      "law-enforcement"
+    ],
+    "confidence": 0.82,
+    "source_name": "BBC World News",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2104689915095065023",
+        "label": "BBC World News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98195247426715648",
+    "title": "Immigration Enforcement Agents Conduct High-Profile Detention in Chicago Suburb",
+    "summary": "A witness documented immigration enforcement agents conducting a detention in a Chicago suburb, capturing video of the incident. The footage raised concerns about enforcement methods and agent conduct during the operation.",
+    "date_event": "2026-09-28T23:00:00Z",
+    "date_published": "2026-09-28T23:06:36Z",
+    "geo": {
+      "lat": 41.8755616,
+      "lon": -87.6244212,
+      "city": "Chicago",
+      "region": "Illinois",
+      "country": "United States"
+    },
+    "topics": [
+      "immigration-enforcement",
+      "law-enforcement",
+      "civil-rights",
+      "detained-person"
+    ],
+    "confidence": 0.78,
+    "source_name": "AP News",
+    "links": [
+      {
+        "url": "https://x.com/AP/status/2104709388954947664",
+        "label": "AP News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98195101280387072",
+    "title": "New York Prosecutors Reopen Cornell University Gang Rape Investigation",
+    "summary": "Prosecutors in New York announced they reopened an investigation into an alleged gang rape incident at a Cornell University fraternity in 2024. The renewed investigation followed a civil lawsuit filed earlier in September that sparked public outrage.",
+    "date_event": "2024-01-01T00:00:00Z",
+    "date_published": "2026-09-28T23:01:10Z",
+    "geo": {
+      "lat": 42.4374175,
+      "lon": -76.5483724,
+      "city": "Ithaca",
+      "region": "New York",
+      "country": "United States"
+    },
+    "topics": [
+      "sexual-assault",
+      "investigation",
+      "legal-proceeding",
+      "crime"
+    ],
+    "confidence": 0.85,
+    "source_name": "ABC News",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2104708022287122604",
+        "label": "ABC News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98195101330718720",
+    "title": "SpaceX Launches World's Largest Rocket, Achieves Successful Orbital Flight",
+    "summary": "SpaceX successfully launched its Starship rocket, the world's largest and most powerful rocket, on Monday. The spacecraft reached orbit for the first time, with satellite footage capturing the achievement.",
+    "date_event": "2026-09-28T22:00:00Z",
+    "date_published": "2026-09-28T22:15:46Z",
+    "geo": {
+      "lat": 32.2178521,
+      "lon": -96.0370219,
+      "city": "Boca Chica",
+      "region": "Texas",
+      "country": "United States"
+    },
+    "topics": [
+      "space-launch",
+      "spacex",
+      "starship",
+      "technology",
+      "achievement"
+    ],
+    "confidence": 0.92,
+    "source_name": "ABC News",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2104696597032689994",
+        "label": "ABC News Tweet"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98195034247041025",
+    "title": "South Korea Faces Agricultural Challenges Following CPTPP Accession",
+    "summary": "South Korea's entry into the Comprehensive and Progressive Agreement for Trans-Pacific Partnership (CPTPP) brings economic opportunities but creates political costs through agricultural and fisheries sector losses.",
+    "date_event": null,
+    "date_published": "2026-09-28T23:03:32Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": 127.0671
+    },
+    "topics": [
+      "trade-agreement",
+      "south-korea",
+      "cptpp",
+      "economics",
+      "agriculture"
+    ],
+    "confidence": null,
+    "source_name": "Southkoreapro (@Southkoreapro)",
+    "links": [
+      {
+        "url": "https://x.com/Southkoreapro/status/2104708618226475123",
+        "title": "Southkoreapro Tweet",
+        "source": "twitter-southkoreapro"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2104708630289276928/l662OtYW?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_98195034247041026",
+    "title": "South Korean Battery Makers Find Growth Opportunity in AI Data Center Storage Boom",
+    "summary": "The rapid expansion of AI data center infrastructure creates new demand for battery storage systems, offering South Korean battery manufacturers a pathway to absorb excess electric vehicle production capacity.",
+    "date_event": null,
+    "date_published": "2026-09-28T22:11:30Z",
+    "geo": {
+      "lat": 37.7749,
+      "lon": 127.0671
+    },
+    "topics": [
+      "technology",
+      "battery",
+      "ai-infrastructure",
+      "south-korea",
+      "energy-storage"
+    ],
+    "confidence": null,
+    "source_name": "Southkoreapro (@Southkoreapro)",
+    "links": [
+      {
+        "url": "https://x.com/Southkoreapro/status/2104695523928330399",
+        "title": "Southkoreapro Tweet",
+        "source": "twitter-southkoreapro"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2104482843036413952/HJpCgqvy?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_98195034247041024",
+    "title": "USCG Rescues 40, Recovers 2 Dead off Mona Island",
+    "summary": "U.S. Coast Guard rescued 40 people and recovered 2 deceased following a boat capsizing incident off Mona Island after a reported altercation.",
+    "date_event": null,
+    "date_published": "2026-09-28T21:37:27Z",
+    "geo": {
+      "lat": 18.0874714,
+      "lon": -67.8923552
+    },
+    "topics": [
+      "maritime-rescue",
+      "coast-guard",
+      "caribbean",
+      "incident"
+    ],
+    "confidence": null,
+    "source_name": "Ship News (@ShipNews)",
+    "links": [
+      {
+        "url": "https://x.com/ShipNews/status/2104686954667221452",
+        "title": "Ship News Tweet",
+        "source": "twitter-shipnews"
+      }
+    ],
+    "link_preview_image": "https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png"
+  },
+  {
+    "id": "evt_98195034247041027",
+    "title": "USS Connecticut Submarine Delayed: Service Return Pushed to 2027",
+    "summary": "The heavily damaged attack submarine USS Connecticut faces extended repair timeline, with the Navy now planning for return to service in 2027 instead of previously announced 2025 and 2026 target dates.",
+    "date_event": null,
+    "date_published": "2026-09-28T22:46:09Z",
+    "geo": {
+      "lat": 37.6879,
+      "lon": -122.4702
+    },
+    "topics": [
+      "military",
+      "submarine",
+      "us-navy",
+      "defense",
+      "maintenance"
+    ],
+    "confidence": null,
+    "source_name": "Thewarzonewire (@Thewarzonewire)",
+    "links": [
+      {
+        "url": "https://x.com/Thewarzonewire/status/2104704243269869888",
+        "title": "Thewarzonewire Tweet",
+        "source": "twitter-thewarzonewire"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2104703986213523456/dUd-Yg6I?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_98195034247041028",
+    "title": "U.S. Marines Injured in Reported Attack on Vessel in Strait of Hormuz",
+    "summary": "Reports emerge of U.S. Marines sustaining injuries aboard a vessel attacked in the Strait of Hormuz, with the vessel's identity and mission remaining unclear amid conflicting claims regarding the incident.",
+    "date_event": null,
+    "date_published": "2026-09-28T21:29:23Z",
+    "geo": {
+      "lat": 27.0,
+      "lon": 56.5
+    },
+    "topics": [
+      "military",
+      "middle-east",
+      "strait-of-hormuz",
+      "maritime-incident",
+      "us-military"
+    ],
+    "confidence": null,
+    "source_name": "Thewarzonewire (@Thewarzonewire)",
+    "links": [
+      {
+        "url": "https://x.com/Thewarzonewire/status/2104684924380827804",
+        "title": "Thewarzonewire Tweet",
+        "source": "twitter-thewarzonewire"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2104684725822496768/AfVwrQkO?format=jpg&name=800x419"
+  },
+  {
+    "id": "evt_179063739016630001",
+    "title": "Trump Denies Iran Sanctions Relief Offer",
+    "summary": "President Trump disputes Axios report claiming he offered sanctions relief and frozen fund access to Iran.",
+    "date_event": null,
+    "date_published": "2026-09-28T21:50:28Z",
+    "geo": {
+      "lat": 32.4279,
+      "lon": 53.688,
+      "country": "Iran"
+    },
+    "topics": [
+      "iran",
+      "us-diplomacy",
+      "sanctions"
+    ],
+    "confidence": 0.8,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/67008",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_179063739016630002",
+    "title": "Russian Attacks on Ukraine Council of Europe Comments",
+    "summary": "Council of Europe Secretary General reacted to Russian strikes on Kyiv.",
+    "date_event": null,
+    "date_published": "2026-09-28T22:02:01Z",
+    "geo": {
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "russia-ukraine",
+      "military-attack",
+      "kyiv"
+    ],
+    "confidence": 0.85,
+    "source_name": "UNITED24 Media (@United24media)",
+    "links": [
+      {
+        "url": "https://t.me/United24media/46484",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_179063739016630003",
+    "title": "US Secretary of State Marco Rubio Meets Lebanese PM",
+    "summary": "US Secretary of State Marco Rubio held diplomatic meetings with Lebanon Prime Minister.",
+    "date_event": null,
+    "date_published": "2026-09-28T21:26:09Z",
+    "geo": {
+      "lat": 33.8547,
+      "lon": 35.8623,
+      "country": "Lebanon"
+    },
+    "topics": [
+      "us-diplomacy",
+      "lebanon",
+      "middle-east"
+    ],
+    "confidence": 0.75,
+    "source_name": "War Monitor (@warmonitors)",
+    "links": [
+      {
+        "url": "https://t.me/warmonitors/45780",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_179063739016630004",
+    "title": "Syria Reports Gas Pipeline Fire from Sabotage",
+    "summary": "Syria state news agency reported a gas pipeline fire, attributing incident to sabotage.",
+    "date_event": null,
+    "date_published": "2026-09-28T21:51:09Z",
+    "geo": {
+      "lat": 35.3433,
+      "lon": 40.1436,
+      "country": "Syria",
+      "city": "Deir al-Zour"
+    },
+    "topics": [
+      "syria",
+      "sabotage",
+      "infrastructure",
+      "energy"
+    ],
+    "confidence": 0.8,
+    "source_name": "War Monitor (@warmonitors)",
+    "links": [
+      {
+        "url": "https://t.me/warmonitors/45781",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_179063739016630005",
+    "title": "Iran Foreign Minister Discusses Mediation with Qatar",
+    "summary": "Iran foreign minister stated Tehran discussed mediation proposals with Qatari intermediaries.",
+    "date_event": null,
+    "date_published": "2026-09-28T22:06:09Z",
+    "geo": {
+      "lat": 32.4279,
+      "lon": 53.688,
+      "country": "Iran"
+    },
+    "topics": [
+      "iran",
+      "us-diplomacy",
+      "qatar-mediation",
+      "nuclear"
+    ],
+    "confidence": 0.75,
+    "source_name": "War Monitor (@warmonitors)",
+    "links": [
+      {
+        "url": "https://t.me/warmonitors/45782",
+        "label": "Telegram Post"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98196282257989632",
+    "title": "Trump Signals Willingness for Iran Nuclear Deal Negotiations",
+    "summary": "US President Donald Trump expressed willingness to provide Iran with sanctions relief and release frozen funds in exchange for concrete progress on a nuclear agreement. Mediators are working to restart negotiations between both nations.",
+    "date_event": null,
+    "date_published": "2026-09-28T21:51:02.000Z",
+    "geo": {
+      "lat": 34.5553,
+      "lon": 69.2075,
+      "country": "Afghanistan",
+      "city": "Kabul"
+    },
+    "topics": [
+      "iran",
+      "nuclear-deal",
+      "sanctions",
+      "diplomacy",
+      "united-states"
+    ],
+    "confidence": 0.85,
+    "source_name": "cnni (@cnni)",
+    "links": [
+      {
+        "url": "https://x.com/cnni/status/2104690372446241266",
+        "label": "CNN International"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98196282341875712",
+    "title": "NASA Formally Condemns Boeing Starliner Test Flight as Space Program Disaster",
+    "summary": "NASA leadership issued strong criticism of Boeing Starliner capsule following a 2024 test mission that left two astronauts stranded in space longer than planned. The space agency compared the incident to historic disasters including Columbia and Challenger shuttle failures.",
+    "date_event": null,
+    "date_published": "2026-09-28T21:27:04.000Z",
+    "geo": {
+      "lat": 38.7642,
+      "lon": -121.2723,
+      "country": "United States",
+      "city": "Houston"
+    },
+    "topics": [
+      "space-program",
+      "boeing",
+      "nasa",
+      "astronaut-safety",
+      "spaceflight"
+    ],
+    "confidence": 0.88,
+    "source_name": "cnni (@cnni)",
+    "links": [
+      {
+        "url": "https://x.com/cnni/status/2104684341821378969",
+        "label": "CNN International"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98196282425761792",
+    "title": "Australian and Philippine Air Forces Conduct Joint P-8A Poseidon Maritime Patrol Mission",
+    "summary": "Philippine Air Force personnel participated in a collaborative maritime patrol mission with Australian Air Force aviators aboard a P-8A Poseidon aircraft from Clark Air Base, Philippines. The exercise highlights regional military partnership and cooperation in the Indo-Pacific.",
+    "date_event": null,
+    "date_published": "2026-09-28T23:00:00.000Z",
+    "geo": {
+      "lat": 15.2364,
+      "lon": 120.8274,
+      "country": "Philippines",
+      "city": "Angeles"
+    },
+    "topics": [
+      "philippines",
+      "australia",
+      "military-exercise",
+      "indo-pacific",
+      "aukus",
+      "maritime-patrol"
+    ],
+    "confidence": 0.87,
+    "source_name": "Australian Defence (@DefenceAust)",
+    "links": [
+      {
+        "url": "https://x.com/DefenceAust/status/2104707729231102086",
+        "label": "Australian Defence"
+      }
+    ],
+    "link_preview_image": null
+  },
+  {
+    "id": "evt_98196282497064960",
+    "title": "US and China Plan Tariff Reduction Agreement on Billions in Trade",
+    "summary": "The United States and China announced plans to lower tariffs on billions of dollars worth of products including timber, medical equipment, toys, and holiday decorations. The tariff reduction aims to boost bilateral trade between the two nations.",
+    "date_event": null,
+    "date_published": "2026-09-28T22:57:40.000Z",
+    "geo": {
+      "lat": 39.9526,
+      "lon": -75.1652,
+      "country": "United States",
+      "city": "Washington"
+    },
+    "topics": [
+      "trade",
+      "tariffs",
+      "us-china-relations",
+      "commerce",
+      "economic-policy"
+    ],
+    "confidence": 0.82,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2104707139684225398",
+        "label": "Fox News"
+      }
+    ],
+    "link_preview_image": null
   }
 ]
