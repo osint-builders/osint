@@ -107,3 +107,6 @@ Batch 1/12 (2026-09-14) attempted to process 5 candidates across 3 sources (tele
 **Finding:** All candidates inaccessible via curl or agent-browser; Telegram's t.me web interface requires authenticated session or Bot API. Consistent with 2026-09-15 findings.
 **Action:** Archived all 3 tips to processed/ without producing events. Recommend maintainers mark all telegram-* sources as deprecated in manifest with note: "Web interface not scrapable; requires Telegram Bot API or authenticated client."
 **Expires:** 2026-12-31
+
+<!-- entries below this line; newest first -->
+- **telegram-warmonitors (2026-09-28)**: Tip 45748 contained insufficient content ("makes my brain melt" snippet); Telegram web scraping via curl does not retrieve full message bodies. Recommend: Agent-browser integration for Telegram sources or manual review of message lengths before queueing.
