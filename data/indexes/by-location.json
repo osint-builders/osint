@@ -1,19 +1,19 @@
 [
   {
     "country": "United States",
-    "count": 396
+    "count": 406
   },
   {
     "country": "Ukraine",
-    "count": 327
+    "count": 328
   },
   {
     "country": "Iran",
-    "count": 165
+    "count": 167
   },
   {
     "country": "Palestine",
-    "count": 147
+    "count": 150
   },
   {
     "country": "Russia",
@@ -21,11 +21,11 @@
   },
   {
     "country": "Yemen",
-    "count": 112
+    "count": 114
   },
   {
     "country": "China",
-    "count": 91
+    "count": 92
   },
   {
     "country": "Saudi Arabia",
@@ -41,7 +41,7 @@
   },
   {
     "country": "United Kingdom",
-    "count": 50
+    "count": 51
   },
   {
     "country": "Lebanon",
@@ -69,7 +69,11 @@
   },
   {
     "country": "Iraq",
-    "count": 23
+    "count": 24
+  },
+  {
+    "country": "South Korea",
+    "count": 20
   },
   {
     "country": "Poland",
@@ -80,19 +84,15 @@
     "count": 19
   },
   {
-    "country": "South Korea",
-    "count": 19
-  },
-  {
     "country": "Japan",
     "count": 17
   },
   {
-    "country": "Philippines",
-    "count": 15
+    "country": "India",
+    "count": 16
   },
   {
-    "country": "India",
+    "country": "Philippines",
     "count": 15
   },
   {
@@ -112,6 +112,10 @@
     "count": 11
   },
   {
+    "country": "Hong Kong",
+    "count": 10
+  },
+  {
     "country": "Nepal",
     "count": 9
   },
@@ -121,10 +125,6 @@
   },
   {
     "country": "Ireland",
-    "count": 9
-  },
-  {
-    "country": "Hong Kong",
     "count": 9
   },
   {
@@ -196,15 +196,19 @@
     "count": 6
   },
   {
+    "country": "Qatar",
+    "count": 6
+  },
+  {
     "country": "Nigeria",
     "count": 6
   },
   {
-    "country": "Lithuania",
-    "count": 5
+    "country": "South Africa",
+    "count": 6
   },
   {
-    "country": "Qatar",
+    "country": "Lithuania",
     "count": 5
   },
   {
@@ -213,10 +217,6 @@
   },
   {
     "country": "Middle East",
-    "count": 5
-  },
-  {
-    "country": "South Africa",
     "count": 5
   },
   {
@@ -320,11 +320,19 @@
     "count": 3
   },
   {
+    "country": "Bolivia",
+    "count": 3
+  },
+  {
     "country": "Belarus",
     "count": 3
   },
   {
     "country": "Czech Republic",
+    "count": 3
+  },
+  {
+    "country": "Morocco",
     "count": 3
   },
   {
@@ -368,15 +376,7 @@
     "count": 2
   },
   {
-    "country": "Bolivia",
-    "count": 2
-  },
-  {
     "country": "JP",
-    "count": 2
-  },
-  {
-    "country": "Morocco",
     "count": 2
   },
   {
@@ -617,6 +617,10 @@
   },
   {
     "country": "Palestine/Gaza",
+    "count": 1
+  },
+  {
+    "country": "Northern Mariana Islands",
     "count": 1
   }
 ]
