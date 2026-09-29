@@ -109,4 +109,14 @@ Batch 1/12 (2026-09-14) attempted to process 5 candidates across 3 sources (tele
 **Expires:** 2026-12-31
 
 <!-- entries below this line; newest first -->
+## 2026-09-29 12:25Z — Batch 3/13: Telegram sources remain inaccessible; one valid event produced
+
+**Trigger:** Batch 3/13 (2026-09-29) processed 3 tips across 3 Telegram sources (geopolitics-prime, insiderpaper, intelslava) with 8 total candidates.
+
+**Finding:** Consistent with 2026-09-15, 2026-09-23, 2026-09-25 learnings: 7 of 8 candidates returned insufficient content (<100 words) due to Telegram's t.me web interface requiring JavaScript rendering. Only 1 candidate (geopolitics-prime/75350, 157 words) yielded valid content. No events produced from insiderpaper or intelslava sources.
+
+**Action:** Recommend maintainers move all telegram-* sources to `archived` status in source/manifest.json with note: "t.me web interface requires JavaScript rendering; not accessible via curl or agent-browser without authenticated session. Requires Telegram Bot API integration."
+
+**Expires:** 2026-12-31
+
 - **telegram-warmonitors (2026-09-28)**: Tip 45748 contained insufficient content ("makes my brain melt" snippet); Telegram web scraping via curl does not retrieve full message bodies. Recommend: Agent-browser integration for Telegram sources or manual review of message lengths before queueing.
