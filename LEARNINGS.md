@@ -30,6 +30,10 @@ Link to manifest or SCHEMA.md when direct evidence lives there.
 Cap: max 10 KB and 100 entries; orchestrator auto-prunes expired entries. Each entry carries an implicit expiry; when superseded by a manifest edit or your own rerun finding a different root cause, remove the old entry to keep the file fresh.
 
 <!-- entries below this line; newest first -->
+## 2026-10-01 04:36Z — Batch 2/11: Telegram sources remain inaccessible
+
+Batch 2/11 processed six candidates across telegram-generalstaffzsu, telegram-geopolitics-prime, and telegram-intelslava. curl returned Telegram page shells without post text, agent-browser installation failed with npm EACCES, and no authenticated Telegram API credentials existed; all three tips archived to processed/ with zero events. Consistent with 2026-09-15 through 2026-09-29 findings. Maintainers should mark all telegram-* sources as `archived` in manifest until authenticated Telegram client available.
+
 ## 2026-09-27 11:33Z — Batch 1/11: All Telegram sources inaccessible; zero events produced
 
 **Trigger:** Batch 1/11 (2026-09-27) qualified 3 tips across 3 Telegram sources: telegram-clashreport (3 candidates), telegram-ddgeopolitics (3 candidates), telegram-geopolitics-prime (3 candidates).
