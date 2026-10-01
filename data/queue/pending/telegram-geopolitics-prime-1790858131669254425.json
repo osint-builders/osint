@@ -1,1 +1,18 @@
-{"source_id":"telegram-geopolitics-prime","source_name":"Geopolitics Prime (@geopolitics_prime)","type":"telegram","window_start":"2026-10-01T10:35:30Z","window_end":"2026-10-01T12:35:30Z","identified_at":"2026-10-01T12:35:31Z","candidates":[{"url":"https://t.me/geopolitics_prime/75441","snippet":"","published_at":"2026-10-01T11:11:02+00:00"},{"url":"https://t.me/geopolitics_prime/75445","snippet":"","published_at":"2026-10-01T11:52:01+00:00"},{"url":"https://t.me/geopolitics_prime/75446","snippet":"","published_at":"2026-10-01T12:33:03+00:00"}]}
+{
+  "source_id": "telegram-geopolitics-prime",
+  "type": "telegram",
+  "urls": [
+    {
+      "url": "https://t.me/geopolitics_prime/75441",
+      "published": "2026-10-01T11:11:02+00:00"
+    },
+    {
+      "url": "https://t.me/geopolitics_prime/75445",
+      "published": "2026-10-01T11:52:01+00:00"
+    },
+    {
+      "url": "https://t.me/geopolitics_prime/75446",
+      "published": "2026-10-01T12:33:03+00:00"
+    }
+  ]
+}
