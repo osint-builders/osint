@@ -75,6 +75,9 @@ func (f *MarkdownFormatter) WriteEvent(w io.Writer, event *data.FullEvent) error
 		for _, l := range event.Links {
 			label := l.Label
 			if label == "" {
+				label = l.Text
+			}
+			if label == "" {
 				label = l.URL
 			}
 			fmt.Fprintf(w, "- [%s](%s)\n", label, l.URL)
@@ -85,7 +88,8 @@ func (f *MarkdownFormatter) WriteEvent(w io.Writer, event *data.FullEvent) error
 }
 
 func (f *MarkdownFormatter) WriteStats(w io.Writer, schema *data.Schema, eventCount int, dateRange [2]string) error {
-	fmt.Fprintln(w, "# OSINT CLI Index Statistics\n")
+	fmt.Fprintln(w, "# OSINT CLI Index Statistics")
+	fmt.Fprintln(w)
 	fmt.Fprintf(w, "- **Events:** %d\n", eventCount)
 	fmt.Fprintf(w, "- **Date range:** %s to %s\n", dateRange[0], dateRange[1])
 	fmt.Fprintf(w, "- **Model:** %s\n", schema.EmbeddingModel)

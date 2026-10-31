@@ -66,6 +66,9 @@ func (f *TableFormatter) WriteEvent(w io.Writer, event *data.FullEvent) error {
 		for _, l := range event.Links {
 			label := l.Label
 			if label == "" {
+				label = l.Text
+			}
+			if label == "" {
 				label = l.URL
 			}
 			fmt.Fprintf(w, "  - [%s] %s\n", label, l.URL)

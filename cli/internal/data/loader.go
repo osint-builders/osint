@@ -9,24 +9,32 @@ import (
 	"fmt"
 	"io"
 	"math"
-	"strings"
 
 	embedded "github.com/osint/cli/embed"
 )
 
 // Geo holds geographic information for an event.
 type Geo struct {
-	Lat     *float64 `json:"lat,omitempty"`
-	Lon     *float64 `json:"lon,omitempty"`
-	Country string   `json:"country,omitempty"`
-	Region  string   `json:"region,omitempty"`
-	City    string   `json:"city,omitempty"`
+	Lat          *float64 `json:"lat,omitempty"`
+	Lon          *float64 `json:"lon,omitempty"`
+	LocationName string   `json:"location_name,omitempty"`
+	Precision    string   `json:"precision,omitempty"`
+	Country      string   `json:"country,omitempty"`
+	Region       string   `json:"region,omitempty"`
+	City         string   `json:"city,omitempty"`
 }
 
 // Link holds a source URL.
 type Link struct {
 	URL   string `json:"url"`
 	Label string `json:"label,omitempty"`
+	Text  string `json:"text,omitempty"`
+}
+
+// SourceWindow records the original Identify scan window for a qualified event.
+type SourceWindow struct {
+	Start string `json:"start"`
+	End   string `json:"end"`
 }
 
 // EventMeta is the searchable metadata for an event (from metadata.json).
@@ -69,20 +77,27 @@ type LinkPreview struct {
 
 // FullEvent is the complete event record from the JSONL files.
 type FullEvent struct {
-	ID            string       `json:"id"`
-	Source        Source       `json:"source"`
-	Title         string       `json:"title"`
-	Summary       string       `json:"summary"`
-	Contents      string       `json:"contents"`
-	DatePublished string       `json:"date_published"`
-	DateEvent     *string      `json:"date_event,omitempty"`
-	Links         []Link       `json:"links"`
-	ImageURLs     []string     `json:"image_urls"`
-	Geo           *Geo         `json:"geo,omitempty"`
-	Topics        []string     `json:"topics,omitempty"`
-	Confidence    *float64     `json:"confidence,omitempty"`
-	IngestedAt    string       `json:"ingested_at,omitempty"`
-	LinkPreview   *LinkPreview `json:"link_preview,omitempty"`
+	ID              string          `json:"id"`
+	Source          Source          `json:"source"`
+	Title           string          `json:"title"`
+	Summary         string          `json:"summary"`
+	Contents        string          `json:"contents"`
+	DatePublished   string          `json:"date_published"`
+	SourceWindow    *SourceWindow   `json:"source_window,omitempty"`
+	DateEvent       *string         `json:"date_event,omitempty"`
+	Links           []Link          `json:"links"`
+	ImageURLs       []string        `json:"image_urls"`
+	ImageOrigin     string          `json:"image_origin,omitempty"`
+	Language        string          `json:"language,omitempty"`
+	Category        string          `json:"category,omitempty"`
+	Audience        string          `json:"audience,omitempty"`
+	AlliedRelevance string          `json:"allied_relevance,omitempty"`
+	Geo             *Geo            `json:"geo,omitempty"`
+	Topics          []string        `json:"topics,omitempty"`
+	Confidence      *float64        `json:"confidence,omitempty"`
+	IngestedAt      string          `json:"ingested_at,omitempty"`
+	LinkPreview     *LinkPreview    `json:"link_preview,omitempty"`
+	RawJSON         json.RawMessage `json:"-"` // Complete original record for JSON output.
 }
 
 // Schema holds index metadata.
@@ -98,8 +113,8 @@ type Schema struct {
 // Store holds all loaded data in memory.
 type Store struct {
 	Metadata   []EventMeta
-	Events     map[string]*FullEvent // keyed by event ID
-	Embeddings []float32             // flat array, N*384
+	events     map[string]json.RawMessage // complete JSONL rows, keyed by event ID
+	Embeddings []float32                  // flat array, N*384
 	Schema     Schema
 	ByTopic    map[string][]string // topic -> event IDs
 	ByLocation map[string][]string // location -> event IDs
@@ -121,7 +136,7 @@ func decompress(data []byte) ([]byte, error) {
 // Load decompresses all embedded data and builds the in-memory store.
 func Load() (*Store, error) {
 	s := &Store{
-		Events: make(map[string]*FullEvent),
+		events: make(map[string]json.RawMessage),
 		Dims:   384,
 	}
 
@@ -166,16 +181,20 @@ func Load() (*Store, error) {
 	if err != nil {
 		return nil, fmt.Errorf("decompress events: %w", err)
 	}
-	for _, line := range strings.Split(string(eventsBytes), "\n") {
-		line = strings.TrimSpace(line)
-		if line == "" {
+	for _, line := range bytes.Split(eventsBytes, []byte{'\n'}) {
+		line = bytes.TrimSpace(line)
+		if len(line) == 0 {
 			continue
 		}
-		var evt FullEvent
-		if err := json.Unmarshal([]byte(line), &evt); err != nil {
+		var evt struct {
+			ID string `json:"id"`
+		}
+		if err := json.Unmarshal(line, &evt); err != nil || evt.ID == "" {
 			continue // skip malformed lines
 		}
-		s.Events[evt.ID] = &evt
+		// Each slice references the one decompressed events buffer. Decode only
+		// the requested event later, retaining unknown historical/future fields.
+		s.events[evt.ID] = line
 	}
 
 	// Load index files
@@ -184,6 +203,21 @@ func Load() (*Store, error) {
 	s.BySource, _ = loadIndex(embedded.BySource)
 
 	return s, nil
+}
+
+// GetEvent decodes one full event on demand and retains its original JSON.
+// A nil event with no error means the ID was not found.
+func (s *Store) GetEvent(id string) (*FullEvent, error) {
+	raw, ok := s.events[id]
+	if !ok {
+		return nil, nil
+	}
+	var event FullEvent
+	if err := json.Unmarshal(raw, &event); err != nil {
+		return nil, fmt.Errorf("decode event %s: %w", id, err)
+	}
+	event.RawJSON = raw
+	return &event, nil
 }
 
 func loadIndex(compressed []byte) (map[string][]string, error) {

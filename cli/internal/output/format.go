@@ -50,6 +50,9 @@ func formatGeo(g *data.Geo) string {
 	if g == nil {
 		return "-"
 	}
+	if g.LocationName != "" {
+		return g.LocationName
+	}
 	parts := []string{}
 	if g.City != "" {
 		parts = append(parts, g.City)

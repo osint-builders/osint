@@ -13,8 +13,11 @@ var getCmd = &cobra.Command{
 	Long:  `Displays the complete event record including contents markdown, links, and all metadata.`,
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
-		evt, ok := store.Events[args[0]]
-		if !ok {
+		evt, err := store.GetEvent(args[0])
+		if err != nil {
+			return err
+		}
+		if evt == nil {
 			return fmt.Errorf("event %q not found", args[0])
 		}
 		return formatter.WriteEvent(os.Stdout, evt)

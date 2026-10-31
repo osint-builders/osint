@@ -1,6 +1,7 @@
 package output
 
 import (
+	"bytes"
 	"encoding/json"
 	"io"
 
@@ -53,6 +54,15 @@ func (f *JSONFormatter) WriteResults(w io.Writer, results []search.ScoredResult)
 }
 
 func (f *JSONFormatter) WriteEvent(w io.Writer, event *data.FullEvent) error {
+	if len(event.RawJSON) > 0 {
+		var formatted bytes.Buffer
+		if err := json.Indent(&formatted, event.RawJSON, "", "  "); err != nil {
+			return err
+		}
+		formatted.WriteByte('\n')
+		_, err := w.Write(formatted.Bytes())
+		return err
+	}
 	enc := json.NewEncoder(w)
 	enc.SetIndent("", "  ")
 	enc.SetEscapeHTML(false)
