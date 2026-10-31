@@ -18,6 +18,11 @@ See the top-level [README.md](../../README.md) for architecture and secrets setu
 - Shares spawn/poll/cancel infrastructure with `collect` via `builder/lib/agent-runner.ts`, including the 10-minute per-run deadline and BLOCKED-state cancellation. Qualify, legacy collection, embeddings, and the data release share the `osint-data-writers` concurrency group so event and index writes serialize.
 - Job `alert-on-failure` opens or updates a **"Qualify workflow failing"** issue on failure.
 
+## browse-ai-probe.yml — "Check Browse AI Connection"
+
+- Manual, read-only API check using the `BROWSE_AI_API_KEY` Actions secret. It calls the documented robot-list endpoint and logs only total robot count and how many names contain "Reddit"; it never runs a robot or activates Reddit sources.
+- The [October 31 probe](https://github.com/osint-builders/osint/actions/runs/41227212654) authenticated successfully and found zero robots for that key. See [`source/REVIEW.md`](../../source/REVIEW.md) before considering a Reddit adapter.
+
 ## collection.yml — "OSINT Snapshot Collection" (legacy, paused)
 
 - Trigger: `workflow_dispatch` only — `schedule` and `push` triggers are commented out while the Tip & Queue pipeline (`identify.yml` + `qualify.yml`) is validated. Re-enable them (or retire this workflow) once you're confident in the replacement.

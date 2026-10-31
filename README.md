@@ -134,6 +134,7 @@ Set these in **Settings → Secrets and variables → Actions**:
 | `WARP_ENVIRONMENT_ID` | secret | UID of the pre-built Warp Cloud Agent environment image (see below). |
 | `OSINT_GH_TOKEN` *or* `GH_TOKEN` | secret | Fine-grained PAT with `Contents: write` on this repo. The **Warp environment** (not GitHub Actions) needs this — `builder/runtime/init.sh` checks authentication and read access before qualification; the push confirms write access. `identify.yml` uses the ephemeral `github.token` instead. |
 | `TWITTER_BEARER_TOKEN` | secret | Optional but recommended. Used by both `identify.yml` (tip scan) and the qualify agent; Twitter sources produce no tips without it. |
+| `BROWSE_AI_API_KEY` | secret | Used only by the manual `browse-ai-probe.yml` connection check. It does not enable Reddit collection. |
 | `PARALLEL_AGENT_COUNT` | variable | Optional. Legacy `collection.yml` bucket-count override; unset → auto-sized at ~12 sources/agent. |
 | `QUALIFY_BATCH_SIZE` | variable | Optional. Tips per qualify agent; unset → defaults to 3 (`builder/qualify.ts`). |
 | `QUALIFY_MAX_BATCHES` | variable | Optional. Maximum qualify agents per workflow run; unset → defaults to 10. The newest tips run first. |
