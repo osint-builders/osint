@@ -74,11 +74,11 @@ export const EventDetail: React.FC<EventDetailProps> = ({
   const conf = event.confidence;
   const confPct = conf !== null ? Math.round(conf * 100) : null;
   const geo = event.geo;
-  const geoStr = [geo?.city, geo?.region, geo?.country].filter(Boolean).join(', ');
+  const geoStr = geo?.location_name || [geo?.city, geo?.region, geo?.country].filter(Boolean).join(', ');
   const links = detail?.links ?? metadata?.links ?? [];
   const contents = detail?.contents;
 
-  const previewImage = detail?.link_preview?.image ?? metadata?.link_preview_image ?? null;
+  const previewImage = detail?.image_urls?.[0] || detail?.link_preview?.image || metadata?.link_preview_image || null;
 
   return (
     <div className="flex-1 flex flex-col min-h-0 border-l border-term-border bg-term-surface animate-slide-in">
@@ -136,6 +136,11 @@ export const EventDetail: React.FC<EventDetailProps> = ({
               className="absolute inset-x-0 bottom-0 h-16"
               style={{ background: 'linear-gradient(to bottom, transparent, #0d0d0d)' }}
             />
+            {event.image_origin && event.image_origin !== 'article' && (
+              <span className="absolute bottom-2 right-2 text-[7px] tracking-widest text-term-secondary bg-term-surface/90 px-1.5 py-0.5 border border-term-border">
+                {event.image_origin === 'source' ? 'SOURCE IMAGE' : 'DEFAULT IMAGE'}
+              </span>
+            )}
           </div>
         )}
         {/* Title */}

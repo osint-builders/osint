@@ -23,7 +23,7 @@ function tip(name, end) {
     source_id: name,
     source_name: name,
     type: "webpage",
-    window_start: end,
+    window_start: new Date(Date.parse(end) - 60 * 60_000).toISOString(),
     window_end: end,
     identified_at: end,
     candidates: [{ url: `https://example.com/${name}`, snippet: "", published_at: end }],

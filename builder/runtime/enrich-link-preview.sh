@@ -15,6 +15,7 @@ TWITTER_BANNER_CACHE="${TWITTER_BANNER_CACHE:-/tmp/twitter-banner-cache.json}"
 [ -f "$TWITTER_BANNER_CACHE" ] || echo '{}' > "$TWITTER_BANNER_CACHE"
 
 event_json=$(jq -c '.')   # read stdin, normalize to compact
+TWITTER_BANNER_USED=0
 
 # --- LinkPreview API on links[0] ---
 if [ -n "${LINKPREVIEW_API_KEY:-}" ]; then
@@ -55,9 +56,30 @@ if [ -n "${TWITTER_BEARER_TOKEN:-}" ]; then
           'if .link_preview then .link_preview.image = $img
            else . + {link_preview: {image: $img, title: (.title // ""), description: (.summary // ""), url: (.links[0].url // "")}}
            end')
+        TWITTER_BANNER_USED=1
       fi
     fi
   fi
 fi
+
+# The qualified-event contract requires a visible image. Prefer a fetched
+# article/post image, then a clearly marked source banner, then the public
+# site icon. A source/default image never claims to depict the event.
+event_json=$(printf '%s' "$event_json" | jq -c \
+  --arg fallback 'https://osint.builders/favicon.svg' \
+  --arg banner "$TWITTER_BANNER_USED" '
+    def usable: if type == "string" then test("^https?://[^[:space:]]+$") else false end;
+    .image_urls = ((.image_urls // []) | if type == "array" then map(select(usable)) else [] end) |
+    if (.image_urls | length) > 0 then
+      .image_origin = (if .image_urls[0] == $fallback then "default" else (.image_origin // "article") end)
+    elif ((.link_preview.image // "") | usable) then
+      .image_urls = [.link_preview.image] |
+      .image_origin = (if .link_preview.image == $fallback then "default"
+                       elif $banner == "1" then "source" else "article" end)
+    else
+      .image_urls = [$fallback] |
+      .image_origin = "default"
+    end
+  ')
 
 printf '%s\n' "$event_json"

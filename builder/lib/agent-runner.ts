@@ -1,177 +1,261 @@
-/**
- * agent-runner — shared Oz cloud agent orchestration helpers.
- *
- * Extracted from builder/index.ts so both the legacy per-source collector
- * (index.ts) and the Tip & Queue qualify orchestrator (qualify.ts) share one
- * implementation of spawn tracking, graceful shutdown, template rendering,
- * and — critically — the poll loop's per-run deadline / BLOCKED handling.
- * Fixing a bug here (e.g. a stuck-run heuristic) fixes it for both callers.
- */
-
 import OzAPI from "oz-agent-sdk";
 
-export const POLL_BASE_MS = 15_000;         // base poll interval
-export const POLL_JITTER_MS = 5_000;         // ±jitter added to every poll sleep
-export const POLL_MAX_BACKOFF_MS = 120_000;  // max backoff on 429: 2 minutes
-export const SPAWN_STAGGER_MS = 500;         // delay between consecutive agent spawns
-export const POLL_MAX_TRANSIENT_RETRIES = 5; // retry non-429 transient errors before giving up
-export const TERMINAL_STATES = new Set(["SUCCEEDED", "FAILED", "CANCELLED"]);
-
-// A run that reaches BLOCKED is waiting on human approval/input — input that
-// will never arrive in unattended CI. Cancel it immediately instead of
-// polling a run that can never self-resolve.
-export const STUCK_STATES = new Set(["BLOCKED"]);
-
-// Hard per-run deadline so one hung/stuck run can never hold a whole job
-// hostage until the outer GitHub Actions job timeout kills everything
-// (including healthy runs). Set with headroom under each job's 15-minute
-// timeout-minutes ceiling.
-export const MAX_RUN_DURATION_MS = 10 * 60_000; // 10 minutes
-
-// Warp's hard prompt size limit (1 MB).
+const POLL_BASE_MS = 15_000;
+const POLL_JITTER_MS = 5_000;
+const POLL_MAX_BACKOFF_MS = 120_000;
+const SPAWN_STAGGER_MS = 500;
+const POLL_MAX_TRANSIENT_RETRIES = 5;
+const MAX_RUN_DURATION_MS = 10 * 60_000;
 export const MAX_PROMPT_SIZE_BYTES = 1_048_576;
-
-// Pinned model for every agent run. Overridable via WARP_MODEL_ID so we
-// never silently fall back to whatever default model the Warp account or
-// environment resolves to (which could be a non-Warp-native model).
 export const DEFAULT_MODEL_ID = "claude-4-5-haiku";
 
-// Track spawned run IDs so the SIGTERM handler can cancel them before the
-// process exits. This prevents the Warp platform from leaving runs orphaned
-// and auto-cancelling them as "Cancelled by user".
-export const activeRunIds = new Set<string>();
-let ozClient: OzAPI | null = null;
+const TERMINAL_STATES = new Set(["SUCCEEDED", "FAILED", "CANCELLED"]);
 
-export function setOzClient(client: OzAPI | null): void {
-  ozClient = client;
+// Only the three Oz operations the coordinator needs cross this seam.
+export interface AgentClient {
+  run(params: OzAPI.AgentRunParams): Promise<{ run_id: string }>;
+  retrieve(runId: string): Promise<{ state: string }>;
+  cancel(runId: string): Promise<unknown>;
 }
 
-export async function cancelActiveRuns(): Promise<void> {
-  if (!ozClient || activeRunIds.size === 0) return;
-  console.log(`\nCancelling ${activeRunIds.size} in-progress run(s) before exit...`);
-  await Promise.allSettled(
-    [...activeRunIds].map(id =>
-      ozClient!.agent.runs.cancel(id)
-        .then(() => console.log(`  ✓ Cancelled ${id}`))
-        .catch(err => console.warn(`  ⚠ Could not cancel ${id}: ${err?.message ?? err}`))
-    )
-  );
+export function ozClientAdapter(api: OzAPI): AgentClient {
+  return {
+    run: (params) => api.agent.run(params),
+    retrieve: (runId) => api.agent.runs.retrieve(runId),
+    cancel: (runId) => api.agent.runs.cancel(runId),
+  };
 }
 
-let shutdownHandlersRegistered = false;
-export function registerShutdownHandlers(): void {
-  if (shutdownHandlersRegistered) return;
-  shutdownHandlersRegistered = true;
-
-  process.on("SIGTERM", async () => {
-    console.log("\nSIGTERM received — cancelling outstanding runs...");
-    await cancelActiveRuns();
-    process.exit(0);
-  });
-
-  process.on("SIGINT", async () => {
-    console.log("\nSIGINT received — cancelling outstanding runs...");
-    await cancelActiveRuns();
-    process.exit(0);
-  });
+export interface AgentJob {
+  label: string;
+  prompt: string;
+  itemCount: number;
 }
 
-export function sleep(ms: number): Promise<void> {
-  return new Promise((r) => setTimeout(r, ms));
+export interface AgentResult {
+  label: string;
+  runId: string;
+  state: string;
+  itemCount: number;
+}
+
+interface RunnerConfig {
+  modelId: string;
+  environmentId?: string;
+}
+
+// Internal timing seam: production uses wall time; tests use a fast clock.
+export interface RunnerRuntime {
+  now(): number;
+  sleep(ms: number): Promise<void>;
+  random(): number;
+  log(message: string): void;
+  write(message: string): void;
+}
+
+const defaultRuntime: RunnerRuntime = {
+  now: Date.now,
+  sleep: (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
+  random: Math.random,
+  log: console.log,
+  write: (message) => process.stdout.write(message),
+};
+
+export function assertPromptSize(prompt: string, label: string): number {
+  const bytes = Buffer.byteLength(prompt, "utf8");
+  if (bytes > MAX_PROMPT_SIZE_BYTES) {
+    throw new Error(`${label} prompt exceeds 1 MB limit (${bytes} bytes)`);
+  }
+  return bytes;
 }
 
 /**
- * Substitutes `${KEY}` placeholders in the template with values from `vars`.
- * Throws on unknown placeholder OR unfilled placeholder, so drift between
- * the template and the orchestrator surfaces immediately.
+ * Owns the life cycle of one set of cloud runs. Callers provide fully rendered
+ * jobs; the coordinator validates all of them before spawning anything.
  */
-export function renderTemplate(template: string, vars: Record<string, string | number>): string {
-  const placeholderRe = /\$\{([a-zA-Z_][a-zA-Z0-9_]*)\}/g;
-  const seen = new Set<string>();
-  const result = template.replace(placeholderRe, (_match, key: string) => {
-    seen.add(key);
-    if (!(key in vars)) {
-      throw new Error(`Prompt template references unknown placeholder \${${key}}`);
-    }
-    return String(vars[key]);
-  });
-  for (const k of Object.keys(vars)) {
-    if (!seen.has(k)) {
-      throw new Error(`Prompt template never used variable ${k}; check for drift`);
+export class AgentRunCoordinator {
+  private readonly activeRunIds = new Set<string>();
+  private cancellation: Promise<void> | null = null;
+  private pendingSpawns: Promise<unknown> | null = null;
+  private shuttingDown = false;
+
+  constructor(
+    private readonly client: AgentClient,
+    private readonly config: RunnerConfig,
+    private readonly runtime: RunnerRuntime = defaultRuntime
+  ) {}
+
+  async execute(jobs: readonly AgentJob[]): Promise<AgentResult[]> {
+    for (const job of jobs) assertPromptSize(job.prompt, job.label);
+    const detachSignals = this.attachShutdownHandlers();
+    try {
+      // Await every spawn, even if one fails. A rejected Promise.all would let
+      // staggered spawns continue after the caller exited, orphaning runs.
+      const spawnResults = Promise.allSettled(
+        jobs.map((job, index) => this.spawn(job, index))
+      );
+      this.pendingSpawns = spawnResults;
+      const settledSpawns = await spawnResults;
+      this.pendingSpawns = null;
+      if (this.shuttingDown) {
+        await this.cancelActiveRuns();
+        throw new Error("Agent dispatch interrupted by shutdown");
+      }
+      const spawnFailure = settledSpawns.find(
+        (result): result is PromiseRejectedResult => result.status === "rejected"
+      );
+      if (spawnFailure) {
+        await this.cancelActiveRuns();
+        throw new Error("One or more agents failed to spawn", { cause: spawnFailure.reason });
+      }
+      const spawned = settledSpawns.map(
+        (result) => (result as PromiseFulfilledResult<{ job: AgentJob; runId: string }>).value
+      );
+      this.runtime.log(`\nPolling ${spawned.length} agents for completion...`);
+
+      const settledPolls = await Promise.allSettled(spawned.map(async ({ job, runId }) => {
+        try {
+          return {
+            label: job.label,
+            runId,
+            state: await this.pollUntilComplete(runId),
+            itemCount: job.itemCount,
+          };
+        } catch (error) {
+          // Cancel siblings immediately; allSettled then waits for them to
+          // observe their terminal state before we return to the caller.
+          await this.cancelActiveRuns();
+          throw error;
+        } finally {
+          this.activeRunIds.delete(runId);
+        }
+      }));
+      const pollFailure = settledPolls.find(
+        (result): result is PromiseRejectedResult => result.status === "rejected"
+      );
+      if (pollFailure) {
+        throw new Error("One or more agents failed while polling", { cause: pollFailure.reason });
+      }
+      return settledPolls.map(
+        (result) => (result as PromiseFulfilledResult<AgentResult>).value
+      );
+    } finally {
+      detachSignals();
     }
   }
-  return result;
-}
 
-/**
- * Polls a run until it reaches a terminal state, a stuck state (BLOCKED), or
- * its own deadline — whichever comes first. A stuck or overdue run gets
- * cancelled immediately rather than polled indefinitely.
- *
- * Uses an initial random jitter delay to spread concurrent pollers apart so
- * they don't all fire at the same instant and trigger API rate limits. On a
- * 429 response the backoff doubles (capped at POLL_MAX_BACKOFF_MS) instead
- * of crashing the whole run.
- */
-export async function pollUntilComplete(
-  client: OzAPI,
-  runId: string
-): Promise<string> {
-  process.stdout.write(`Polling run ${runId}`);
-
-  // Stagger concurrent pollers: random initial offset in [0, POLL_BASE_MS).
-  await sleep(Math.random() * POLL_BASE_MS);
-
-  const deadline = Date.now() + MAX_RUN_DURATION_MS;
-  let backoffMs = POLL_BASE_MS;
-  let transientRetries = 0;
-
-  while (true) {
+  private async spawn(job: AgentJob, index: number): Promise<{ job: AgentJob; runId: string }> {
+    await this.runtime.sleep(index * SPAWN_STAGGER_MS);
+    if (this.shuttingDown) throw new Error("Agent dispatch interrupted by shutdown");
     try {
-      const run = await client.agent.runs.retrieve(runId);
-      process.stdout.write(` [${run.state}]`);
-      transientRetries = 0; // reset on successful poll
-
-      if (TERMINAL_STATES.has(run.state)) {
-        process.stdout.write("\n");
-        return run.state;
-      }
-      if (STUCK_STATES.has(run.state)) {
-        process.stdout.write(
-          `\n  ⚠ Run ${runId} entered ${run.state} (waiting on human input that will never arrive here) — cancelling.\n`
-        );
-        await client.agent.runs.cancel(runId).catch(() => {});
-        return "CANCELLED";
-      }
-      if (Date.now() > deadline) {
-        process.stdout.write(
-          `\n  ⚠ Run ${runId} exceeded its ${MAX_RUN_DURATION_MS / 60_000}-minute deadline while still ${run.state} — cancelling instead of waiting indefinitely.\n`
-        );
-        await client.agent.runs.cancel(runId).catch(() => {});
-        return "CANCELLED";
-      }
-
-      backoffMs = POLL_BASE_MS;
-      await sleep(POLL_BASE_MS + Math.random() * POLL_JITTER_MS);
-    } catch (err: unknown) {
-      const status = (err as { status?: number }).status;
-      if (status === 429) {
-        process.stdout.write(` [429, retrying in ${(backoffMs / 1000).toFixed(0)}s]`);
-        await sleep(backoffMs);
-        backoffMs = Math.min(backoffMs * 2, POLL_MAX_BACKOFF_MS);
+      const response = await this.client.run({
+        prompt: job.prompt,
+        config: {
+          name: `${job.label}-${new Date(this.runtime.now()).toISOString()}`,
+          model_id: this.config.modelId,
+          ...(this.config.environmentId ? { environment_id: this.config.environmentId } : {}),
+        },
+      });
+      this.activeRunIds.add(response.run_id);
+      this.runtime.log(`  ✓ ${job.label}: spawned (run ID: ${response.run_id})`);
+      return { job, runId: response.run_id };
+    } catch (error) {
+      const status = (error as { status?: number }).status;
+      if (status === 401 || status === 402 || status === 403) {
+        this.runtime.log(`  ✗ ${job.label}: spawn rejected (HTTP ${status}); check WARP_API_KEY and credits.`);
       } else {
-        // Retry transient errors (5xx, network blips) up to the limit before
-        // giving up. Re-throwing immediately was crashing Promise.all and
-        // leaving other in-progress runs orphaned.
-        transientRetries++;
-        if (transientRetries > POLL_MAX_TRANSIENT_RETRIES) {
-          process.stdout.write(` [fatal poll error after ${transientRetries} retries]\n`);
-          throw err;
+        this.runtime.log(`  ✗ ${job.label}: failed to spawn - ${error}`);
+      }
+      throw error;
+    }
+  }
+
+  private async pollUntilComplete(runId: string): Promise<string> {
+    this.runtime.write(`Polling run ${runId}`);
+    const deadline = this.runtime.now() + MAX_RUN_DURATION_MS;
+    await this.runtime.sleep(this.runtime.random() * POLL_BASE_MS);
+    let backoffMs = POLL_BASE_MS;
+    let transientRetries = 0;
+
+    while (true) {
+      if (this.runtime.now() > deadline) {
+        this.runtime.write(`\n  ⚠ Run ${runId} exceeded its 10-minute deadline — cancelling.\n`);
+        await this.cancelOne(runId);
+        return "CANCELLED";
+      }
+      try {
+        const run = await this.client.retrieve(runId);
+        this.runtime.write(` [${run.state}]`);
+        transientRetries = 0;
+        if (TERMINAL_STATES.has(run.state)) {
+          this.runtime.write("\n");
+          return run.state;
         }
-        const delay = Math.min(backoffMs * transientRetries, POLL_MAX_BACKOFF_MS);
-        process.stdout.write(` [transient error ${transientRetries}/${POLL_MAX_TRANSIENT_RETRIES}, retry in ${(delay / 1000).toFixed(0)}s]`);
-        await sleep(delay);
+        if (run.state === "BLOCKED") {
+          this.runtime.write(`\n  ⚠ Run ${runId} entered BLOCKED — cancelling.\n`);
+          await this.cancelOne(runId);
+          return "CANCELLED";
+        }
+        backoffMs = POLL_BASE_MS;
+        await this.runtime.sleep(POLL_BASE_MS + this.runtime.random() * POLL_JITTER_MS);
+      } catch (error) {
+        const status = (error as { status?: number }).status;
+        if (status === 429) {
+          this.runtime.write(` [429, retrying in ${(backoffMs / 1000).toFixed(0)}s]`);
+          await this.runtime.sleep(backoffMs);
+          backoffMs = Math.min(backoffMs * 2, POLL_MAX_BACKOFF_MS);
+        } else {
+          transientRetries++;
+          if (transientRetries > POLL_MAX_TRANSIENT_RETRIES) {
+            this.runtime.write(` [fatal poll error after ${transientRetries} retries]\n`);
+            throw error;
+          }
+          const delay = Math.min(backoffMs * transientRetries, POLL_MAX_BACKOFF_MS);
+          this.runtime.write(` [transient error ${transientRetries}/${POLL_MAX_TRANSIENT_RETRIES}, retry in ${(delay / 1000).toFixed(0)}s]`);
+          await this.runtime.sleep(delay);
+        }
       }
     }
+  }
+
+  private async cancelOne(runId: string): Promise<void> {
+    try {
+      await this.client.cancel(runId);
+    } catch (error) {
+      this.runtime.log(`  ⚠ Could not cancel ${runId}: ${error}`);
+    }
+  }
+
+  private async cancelActiveRuns(): Promise<void> {
+    if (this.cancellation) return this.cancellation;
+    const runIds = [...this.activeRunIds];
+    if (runIds.length === 0) return;
+    this.runtime.log(`\nCancelling ${runIds.length} in-progress run(s) before exit...`);
+    this.cancellation = Promise.allSettled(runIds.map((runId) => this.cancelOne(runId))).then(() => {});
+    try {
+      await this.cancellation;
+    } finally {
+      this.cancellation = null;
+    }
+  }
+
+  private attachShutdownHandlers(): () => void {
+    const shutdown = async (code: number) => {
+      if (this.shuttingDown) return;
+      this.shuttingDown = true;
+      // A spawn request may already be in flight. Wait for its run ID before
+      // cancelling, so shutdown cannot leave that newly created run behind.
+      await this.pendingSpawns;
+      await this.cancelActiveRuns();
+      process.exit(code);
+    };
+    const onTerm = () => { void shutdown(143); };
+    const onInt = () => { void shutdown(130); };
+    process.on("SIGTERM", onTerm);
+    process.on("SIGINT", onInt);
+    return () => {
+      process.off("SIGTERM", onTerm);
+      process.off("SIGINT", onInt);
+    };
   }
 }

@@ -57,6 +57,7 @@ jobs:
 
       - name: Commit new tips
         run: |
+          set -euo pipefail
           git add data/queue/pending/
           if git diff --cached --quiet; then
             echo "identify: no new tips this run."
@@ -67,4 +68,4 @@ jobs:
           git commit -m "Identify $COUNT tip(s) for ${{ steps.window.outputs.start }} -> ${{ steps.window.outputs.end }}
 
           [skip ci]"
-          git push
+          bash builder/runtime/push-with-retry.sh

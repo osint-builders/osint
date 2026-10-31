@@ -11,17 +11,21 @@ name: Qualify OSINT Tips
 
 on:
   workflow_dispatch:
+    inputs:
+      max_batches:
+        description: Maximum agent batches for this manual run (blank uses the configured default)
+        required: false
+        type: string
   workflow_run:
     workflows: ["Identify OSINT Tips"]
     types: [completed]
     branches: [main]
 
-# Prevent overlapping qualify runs racing on the same queue files. Queue if
-# a new run triggers while one remains in progress — the SIGTERM handler in
-# builder/qualify.ts cancels outstanding agents before exit.
+# Serialize all event and index writers. Identify can still add queue tips.
 concurrency:
-  group: osint-qualify
+  group: osint-data-writers
   cancel-in-progress: false
+  queue: max
 
 permissions:
   contents: write
@@ -32,7 +36,7 @@ env:
   WARP_ENVIRONMENT_ID: ${{ secrets.WARP_ENVIRONMENT_ID }}
   # Unset → qualify.ts defaults to 3 tips per agent.
   QUALIFY_BATCH_SIZE: ${{ vars.QUALIFY_BATCH_SIZE || '' }}
-  QUALIFY_MAX_BATCHES: ${{ vars.QUALIFY_MAX_BATCHES || '' }}
+  QUALIFY_MAX_BATCHES: ${{ inputs.max_batches || vars.QUALIFY_MAX_BATCHES || '' }}
   WARP_MODEL_ID: ${{ vars.WARP_MODEL_ID || '' }}
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -59,6 +63,11 @@ jobs:
           cache: 'npm'
           cache-dependency-path: builder/package-lock.json
 
+      - name: Load latest queued tips
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
       - name: Archive expired and already processed tips
         run: |
           set -euo pipefail
@@ -70,16 +79,7 @@ jobs:
           fi
           bash builder/runtime/git-identity.sh
           git commit -m "Archive expired OSINT tips [skip ci]"
-          for attempt in 1 2 3 4 5; do
-            git pull --rebase origin main
-            if git push origin HEAD:main; then
-              exit 0
-            fi
-            echo "Queue archive push attempt $attempt/5 failed."
-            sleep "$((attempt * 2))"
-          done
-          echo "Queue archive push failed after 5 attempts." >&2
-          exit 1
+          bash builder/runtime/push-with-retry.sh
 
       - name: Install builder dependencies
         run: npm ci

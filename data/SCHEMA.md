@@ -10,13 +10,30 @@
 | `source` | object | required: `name` | Origin of event; optional: `provider`, `email` |
 | `title` | string | minLength: 3 | Event headline |
 | `summary` | string | minLength: 10 | 2–4 sentence narrative summary |
-| `contents` | string | ≥100 words, **E-PRIME** | Comprehensive Markdown event description; no forms of "to be" |
+| `contents` | string | ≥100 prose words, **E-PRIME** for new events | Evidence-grounded Markdown event description |
 | `date_published` | ISO 8601 | `YYYY-MM-DDTHH:mm:ssZ` | When the source published the event |
 | `links` | array | `[{url, label?}]` | Source URLs |
-| `image_urls` | array | `string[]` | **Remote** image URLs (og:image, article hero, Telegram photo). Twitter/X sources use `[]`. Events collected before 2026-06 may carry legacy relative `./media/...` paths. |
+| `image_urls` | array | `string[]` | Remote image URLs. New qualified events require at least one; historical events may have `[]` or legacy relative paths. |
 | `geo` | object | `lat` (number), `lon` (number) required | Geographic context; also `country`, `region`, `city` |
 
-> **Validator**: `data/scripts/validate-events.js --strict`. The collection prompt invokes it at Step 5. Keep in lockstep.
+> **Validator**: `data/scripts/validate-events.js --qualified` for newly published events. Baseline and `--strict` remain available for historical records. Both runtime prompts invoke `--qualified` before committing.
+
+## New qualified-event fields
+
+New output adds these typed fields to the base entity. Historical JSONL does not need migration.
+
+| Field | Type | Requirement |
+|-------|------|-------------|
+| `source_window` | object | `{start, end}` UTC timestamps from the candidate's original scan window; `date_published` must fall inside. |
+| `language` | literal `"en"` | Title, summary, and contents translated fully into English. |
+| `category` | enum | `armed-conflict`, `geopolitics`, `defense`, `electronic-warfare`, `major-disaster`, `civil-unrest`, `maritime-security`. |
+| `audience` | enum | `united-states` or `allied-forces`. |
+| `allied_relevance` | string | Concrete situational-awareness value for that audience. |
+| `image_origin` | enum | Describes `image_urls[0]`: `article` for event/article imagery, `source` for a source banner/logo, `default` for the public site icon. These labels prevent a fallback image from posing as event evidence. |
+| `geo.location_name` | string | Named location represented by the point. |
+| `geo.precision` | enum | `exact`, `city`, `region`, `country`, or `sea-area`. A broad report uses an honestly labeled centroid; unlocatable reports get rejected. |
+
+Qualified `contents` uses five nonempty H2 sections in this order: `Event`, `Location and Time`, `Evidence`, `Allied Relevance`, `Confidence and Gaps`. It contains at least 100 evidence-grounded prose words, with no E-PRIME contractions, HTML, or HTML entities. An accepted event needs at least one remote HTTP(S) source URL and one remote HTTP(S) image URL. Enrichment may choose `https://osint.builders/favicon.svg` only as a clearly marked `default` image. Coordinates `(0, 0)` and the former San Francisco global fallback cannot represent an unknown location. Candidate acceptance also requires concrete topical and allied relevance; `--qualified` checks typed declarations and mechanical constraints, while the agent must judge the underlying evidence.
 
 ## Optional Fields
 
@@ -35,24 +52,25 @@ Temporal order: `date_event ≤ date_published ≤ ingested_at`
 ```json
 {
   "id": "evt_52117619469189120",
-  "source": {"name": "Reuters", "provider": "news-outlet"},
-  "title": "7.8 Magnitude Earthquake Strikes Turkey and Syria",
-  "summary": "A major earthquake causes widespread damage and thousands of casualties across Turkey and Syria. Emergency response efforts are underway.",
-  "contents": "## Earthquake Event\n\n### Overview\nA powerful 7.8 magnitude earthquake struck the border region at 04:17 UTC.\n\n### Impacts\n- Thousands of casualties\n- Widespread infrastructure damage\n- International aid response initiated\n\n### Response\nEmergency declarations from both governments.",
+  "source": {"name": "Example Maritime Authority", "provider": "official"},
+  "title": "Illustrative Port Closure During Regional Storm",
+  "summary": "An illustrative maritime authority closes a major port after a regional storm disrupts vessel traffic. This fictional record demonstrates the qualified-event format.",
+  "contents": "## Event\n\nAn illustrative maritime authority closed a major port after a regional storm disrupted vessel movements and damaged several berths. Officials paused arrivals while inspection crews assessed navigation channels and terminal equipment. This fictional example demonstrates the event format rather than reporting a real incident.\n\n## Location and Time\n\nThe example places the disruption near Miami, Florida, on April 29. The city point represents the broader port area, not an exact vessel position or damaged berth.\n\n## Evidence\n\nThe example authority notice serves as the primary source. A real record would cite its notice, distinguish confirmed closure orders from preliminary damage reports, and preserve the publication timestamp. No independent report supports this fictional example.\n\n## Allied Relevance\n\nUnited States and allied maritime planners could use a verified port closure to adjust routing, logistics timing, and disaster response coordination. Such awareness supports planning without treating the city point as a tactical location.\n\n## Confidence and Gaps\n\nThis example carries moderate confidence for demonstration only. Real qualification would record unresolved berth damage, the expected reopening time, and any disagreement between official notices and vessel movement data.",
   "date_published": "2026-04-29T10:30:00Z",
+  "source_window": {"start": "2026-04-29T10:00:00Z", "end": "2026-04-29T11:00:00Z"},
   "date_event": "2026-04-29T10:15:00Z",
-  "geo": {"lat": 37.27, "lon": 37.02, "country": "Turkey", "region": "Gaziantep", "city": "Gaziantep"},
-  "links": [{"url": "https://www.reuters.com/...", "label": "Reuters Coverage"}],
-  "image_urls": ["https://www.reuters.com/resizer/og-earthquake-hero.jpg"],
-  "topics": ["earthquake", "disaster", "turkey", "syria"],
-  "confidence": 0.95,
+  "geo": {"lat": 25.7617, "lon": -80.1918, "location_name": "Miami, Florida", "precision": "city", "country": "United States", "region": "Florida", "city": "Miami"},
+  "links": [{"url": "https://example.org/port-notice", "label": "Illustrative notice"}],
+  "image_urls": ["https://osint.builders/favicon.svg"],
+  "image_origin": "default",
+  "language": "en",
+  "category": "maritime-security",
+  "audience": "united-states",
+  "allied_relevance": "A verified closure would inform United States and allied maritime routing and logistics planning.",
+  "topics": ["storm", "port", "maritime-security"],
+  "confidence": 0.7,
   "ingested_at": "2026-04-29T10:35:00Z",
-  "link_preview": {
-    "title": "7.8 Magnitude Earthquake Strikes Turkey and Syria",
-    "description": "A powerful earthquake causes widespread casualties and infrastructure damage.",
-    "image": "https://example.com/og-earthquake.jpg",
-    "url": "https://www.reuters.com/..."
-  }
+  "link_preview": null
 }
 ```
 
@@ -65,10 +83,11 @@ Temporal order: `date_event ≤ date_published ≤ ingested_at`
 - `contents`: ≥100 words, valid Markdown, fully E-PRIME (no `is/are/was/were/be/been/being` or contractions)
 - `date_published`: valid ISO 8601 UTC
 - `links`: array; items have required `url`
-- `image_urls`: array; items are URIs or relative paths
+- `image_urls`: array; qualified output requires a remote image and `image_origin`
 - `geo.lat`: −90 to 90 or null; `geo.lon`: −180 to 180 or null
 - `confidence`: 0.0–1.0 if present
 - No HTML in text fields (Markdown code blocks excepted)
+- `--qualified`: adds the typed fields and structure above; preserves baseline validation for historical records
 
 ## Storage Format
 

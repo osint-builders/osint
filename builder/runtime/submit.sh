@@ -22,7 +22,7 @@ LABEL="${5:-bucket}"
 ADDED=$(cat "$WORK_DIR/.added-count" 2>/dev/null || echo 0)
 
 bash builder/runtime/git-identity.sh
-git add "data/events/$YEAR_MONTH/$DATE.jsonl" "LEARNINGS.md" 2>/dev/null || true
+git add "data/events/$YEAR_MONTH/$DATE.jsonl" "LEARNINGS.md"
 
 if [ "$LABEL" = "batch" ]; then
   # A prior agent committed rewritten copies of already-processed tips back
@@ -62,13 +62,25 @@ REDACT='s|https://[^@]+@|https://<redacted>@|g'
 
 PUSHED=0
 for ATTEMPT in 1 2 3 4 5; do
-  git pull --rebase "$PUSH_URL" main 2>&1 | sed -E "$REDACT"
-  git push "$PUSH_URL" main 2>&1 | sed -E "$REDACT"
-  PUSH_RC=${PIPESTATUS[0]}
-  if [ "$PUSH_RC" -eq 0 ]; then PUSHED=1; break; fi
+  if ! git pull --rebase "$PUSH_URL" main 2>&1 | sed -E "$REDACT"; then
+    # A failed rebase may leave conflict state behind. Reset this disposable
+    # agent clone before another attempt; persistent conflicts still fail 5x.
+    git rebase --abort >/dev/null 2>&1 || true
+    echo "Pull attempt $ATTEMPT/5 failed."
+    if [ "$ATTEMPT" -eq 5 ]; then break; fi
+    JITTER=$(( RANDOM % 9 + 2 ))
+    sleep "$JITTER"
+    continue
+  fi
+  # The push pipeline belongs in an `if`: with errexit + pipefail, a plain
+  # failed pipeline exits before the retry loop can inspect its status.
+  if git push "$PUSH_URL" main 2>&1 | sed -E "$REDACT"; then
+    PUSHED=1
+    break
+  fi
   JITTER=$(( RANDOM % 9 + 2 ))
   echo "Push attempt $ATTEMPT/5 failed; retrying in $JITTER seconds..."
-  sleep "$JITTER"
+  if [ "$ATTEMPT" -lt 5 ]; then sleep "$JITTER"; fi
 done
 
 if [ "$PUSHED" -eq 0 ]; then

@@ -25,10 +25,11 @@ Procedural references for the cloud agent. Each skill lives at `skills/<name>/SK
 HEADER
 
 for skill_md in skills/*/SKILL.md; do
-  name=$(awk '/^name:/ { print $2; exit }' "$skill_md")
+  name=$(awk '/^name:/ { gsub(/\r/, ""); print $2; exit }' "$skill_md")
   desc=$(awk '
     /^description:/ {
       sub(/^description: */, "")
+      gsub(/\r/, "")
       # Trim leading/trailing quotes if present
       gsub(/^["'\'']|["'\'']$/, "")
       # Truncate to ~120 chars for table readability
@@ -37,7 +38,7 @@ for skill_md in skills/*/SKILL.md; do
       exit
     }
   ' "$skill_md")
-  audience=$(awk '/^[[:space:]]*audience:/ { print $2; exit }' "$skill_md")
+  audience=$(awk '/^[[:space:]]*audience:/ { gsub(/\r/, ""); print $2; exit }' "$skill_md")
   lines=$(wc -l < "$skill_md" | tr -d ' ')
   marker=""
   if [ "$audience" = "authoring" ]; then
@@ -55,7 +56,7 @@ cat >> "$TMP" <<'FOOTER'
 
 1. Create `skills/<name>/SKILL.md` with YAML frontmatter (`name`, `description`, `license`, `metadata.author`, `metadata.version`, `compatibility`).
 2. Keep `SKILL.md` ≤ ~150 lines: Overview / When to use / Entry-point commands / Pitfalls / See also. Push deep content into `references/`.
-3. If the skill needs a CLI tool that isn't already in the Warp env image, update the `## Configuration → Warp Cloud Agent environment image` section in [`../README.md`](../README.md) in the same PR and rebuild the image before merge.
+3. If the skill needs a CLI tool that isn't already in the Warp env image, update the `## Configuration → Warp Cloud Agent environment image` section in [`../README.md`](../README.md) in the same change and rebuild the image before use.
 4. Run `./skills/scripts/regenerate-skills-readme.sh` and commit the regenerated `README.md`.
 FOOTER
 

@@ -12,8 +12,8 @@ See the top-level [README.md](../../README.md) for architecture and secrets setu
 
 - Triggers: `workflow_dispatch`, plus `workflow_run` after identify.yml completes. Intentionally has **no** `schedule:` of its own — the daily cadence lives on identify.yml and reaches this stage through the chain.
 - Before dispatch, the job moves tips older than 24 hours to `data/queue/expired/` and removes pending copies already in `processed/`. The archived JSON remains available for deliberate backfill.
-- Job `qualify` runs `builder/qualify.ts`, which takes the newest pending tips in batches of 3 (`QUALIFY_BATCH_SIZE` override), capped at 10 agents per run (`QUALIFY_MAX_BATCHES` override). Each Warp Cloud Agent translates/extracts/geocodes/enriches its batch, then archives consumed tips to `data/queue/processed/`.
-- Shares spawn/poll/cancel infrastructure with `collect` via `builder/lib/agent-runner.ts`, including the 10-minute per-run deadline and BLOCKED-state cancellation.
+- Job `qualify` runs `builder/qualify.ts`, which takes the newest pending tips in batches of 3 (`QUALIFY_BATCH_SIZE` override), capped at 10 agents per run (`QUALIFY_MAX_BATCHES` override). Each Warp Cloud Agent qualifies, translates, geocodes, attaches an image, and validates new events against `builder/prompts/qualified-event-contract.md`, then archives consumed tips to `data/queue/processed/`.
+- Shares spawn/poll/cancel infrastructure with `collect` via `builder/lib/agent-runner.ts`, including the 10-minute per-run deadline and BLOCKED-state cancellation. Qualify, legacy collection, embeddings, and the data release share the `osint-data-writers` concurrency group so event and index writes serialize.
 - Job `alert-on-failure` opens or updates a **"Qualify workflow failing"** issue on failure.
 
 ## collection.yml — "OSINT Snapshot Collection" (legacy, paused)
@@ -43,27 +43,27 @@ See the top-level [README.md](../../README.md) for architecture and secrets setu
 
 ## verify.yml — "Verify"
 
-Drift detection on every PR + push to main. Four checks:
+Drift detection on pushes to main, with a protective PR trigger. Checks include:
 
 1. Prompt snapshot (`builder/prompts/collection-prompt.md` matches the pinned fixture)
-2. `data/scripts/validate-events.js --all` (baseline schema validation)
-3. `skills/README.md` regeneration stays clean
-4. `builder/runtime/*.sh` and `.github/scripts/*.sh` pass `bash -n` (+ shellcheck when available)
+2. Builder TypeScript typecheck, agent lifecycle tests, and queue recovery
+3. Recent committed-event baseline validation and new-event contract tests (pre-October 2026 records retain 16 malformed legacy IDs)
+4. Source-index, image-enrichment, push-retry, retention, and release-consistency regressions
+5. `skills/README.md` regeneration and shell syntax/lint checks
 
 ## audit-bot-commits.yml — "Audit Bot Commits"
 
 - Trigger: `workflow_run` after each collection/identify/qualify run + a daily sweep.
-- Prompt-injection tripwire for agents holding a push-capable PAT. Asserts that commits reaching `main` **outside a pull request** touch only `data/events/**`, `data/indexes/**`, `data/queue/**`, `data/stats.json`, `LEARNINGS.md`; opens or comments on a **"Bot commit audit violation"** issue.
-- Detection lives in `.github/scripts/audit-commits.sh`; run it locally with `AUDIT_REF=main AUDIT_SINCE='7 days ago' bash .github/scripts/audit-commits.sh`.
-- Scope is `git log --first-parent --no-merges`, not an author-email allow-list. Reviewed work arrives on merged side branches and never appears there, while every pipeline push does — so an agent committing under an unexpected identity still gets audited. Maintainer emails are the only exclusion; the pipeline identity `admin@osint.builders` is deliberately in scope.
+- Prompt-injection tripwire for agents holding a push-capable PAT. Limits non-maintainer commits on `main` to `data/events/**`, `data/indexes/**`, `data/queue/**`, `data/stats.json`, and `LEARNINGS.md`; opens or comments on a **"Bot commit audit violation"** issue for other paths.
+- Detection lives in `.github/scripts/audit-commits.sh`; run it locally with `AUDIT_REF=main AUDIT_SINCE='7 days ago' bash .github/scripts/audit-commits.sh`. Maintainer emails are excluded; the pipeline identity `admin@osint.builders` is audited.
 - `AUDIT_FLOOR_SHA` in the script pins the oldest auditable commit. Move it forward only deliberately.
 
 ## create-release.yml — "Create Weekly Data Release"
 
-Weekly on Sunday at midnight UTC. Runs the 90-day retention sweep (`data/scripts/cleanup-old-data.sh`), then archives `data/events` + `data/indexes` to a release tarball.
+Weekly on Sunday at midnight UTC. Applies the exact 90-day file cutoff (`data/scripts/cleanup-old-data.sh`), rebuilds and verifies semantic indexes and stats against the retained events, commits one consistent snapshot, then archives `data/events`, `data/indexes`, and `data/stats.json` to a release tarball. On a competing push, it rebuilds from the latest `main` before retrying. The release tag points to the verified snapshot commit.
 
 ## Troubleshooting
 
-- Run failures → check the **Actions** tab and any open **"Collection workflow failing"** issue.
+- Run failures → check the **Actions** tab and any open **"Qualify workflow failing"** or **"Collection workflow failing"** issue.
 - Per-source telemetry stays inside each agent's ephemeral work directory; durable findings land in `LEARNINGS.md` and `source/manifest.json` notes.
 - Stale `LEARNINGS.md` entries expire automatically via the orchestrator.

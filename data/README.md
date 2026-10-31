@@ -30,7 +30,7 @@ See [`SCHEMA.md`](SCHEMA.md). The validator at `scripts/validate-events.js` enfo
 
 | Script | Purpose |
 |---|---|
-| `validate-events.js` | Schema validator (`--all` baseline in CI; `--strict --time-window` at runtime). |
+| `validate-events.js` | Schema validator (`--from 2026-10-01` baseline in CI; `--qualified` for new runtime output). A full `--all` audit still reports 16 older malformed IDs. |
 | `dedupe-events.js` | Cross-batch dedupe of recent day files (runs in embeddings.yml after each collection/qualify run). |
 | `rebuild-indexes.js` | Rebuild all indexes + `data/stats.json` from JSONL. |
 | `snowflake.js` | Event ID generator (`evt_<snowflake>`, worker = bucket number). |

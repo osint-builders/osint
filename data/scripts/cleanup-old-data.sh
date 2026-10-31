@@ -1,146 +1,70 @@
-#!/bin/bash
-
-# cleanup-old-data.sh
-# Remove world event data older than the retention period (90 days)
-
+#!/usr/bin/env bash
+# Remove daily event files older than the 90-day UTC date cutoff.
 set -euo pipefail
 
-# Configuration
 RETENTION_DAYS=90
-DRY_RUN=false
 DATA_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 EVENTS_DIR="$DATA_DIR/events"
-MANIFEST_FILE="$DATA_DIR/stats.json"
+DRY_RUN=false
 
-# Parse arguments
-while [[ $# -gt 0 ]]; do
-  case $1 in
-    --dry-run)
-      DRY_RUN=true
-      shift
-      ;;
-    --help|-h)
-      echo "Usage: $0 [--dry-run]"
-      echo ""
-      echo "Remove event data older than $RETENTION_DAYS days"
-      echo ""
-      echo "Options:"
-      echo "  --dry-run    Show what would be deleted without actually deleting"
-      echo "  --help, -h   Show this help message"
-      exit 0
-      ;;
-    *)
-      echo "Unknown option: $1"
-      echo "Use --help for usage information"
-      exit 1
-      ;;
-  esac
-done
-
-# Calculate cutoff date (90 days ago)
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  # macOS
-  CUTOFF_DATE=$(date -v-${RETENTION_DAYS}d +%Y-%m-%d)
-  CUTOFF_MONTH=$(date -v-${RETENTION_DAYS}d +%Y-%m)
-else
-  # Linux
-  CUTOFF_DATE=$(date -d "$RETENTION_DAYS days ago" +%Y-%m-%d)
-  CUTOFF_MONTH=$(date -d "$RETENTION_DAYS days ago" +%Y-%m)
+case "${1:-}" in
+  "") ;;
+  --dry-run) DRY_RUN=true ;;
+  --help|-h)
+    echo "Usage: $0 [--dry-run]"
+    exit 0
+    ;;
+  *)
+    echo "Usage: $0 [--dry-run]" >&2
+    exit 2
+    ;;
+esac
+if [ "$#" -gt 1 ]; then
+  echo "Usage: $0 [--dry-run]" >&2
+  exit 2
 fi
 
-echo "=== Data Cleanup ==="
-echo "Retention period: $RETENTION_DAYS days"
-echo "Cutoff date: $CUTOFF_DATE"
-echo "Cutoff month: $CUTOFF_MONTH"
-echo "Dry run: $DRY_RUN"
-echo ""
+# Daily files use YYYY-MM-DD names. RETENTION_TODAY keeps the boundary
+# deterministic in tests; production always uses the current UTC date.
+today="${RETENTION_TODAY:-$(date -u +%Y-%m-%d)}"
+if [[ ! "$today" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+  echo "RETENTION_TODAY must use YYYY-MM-DD" >&2
+  exit 2
+fi
+if [[ "$OSTYPE" == darwin* ]]; then
+  cutoff=$(date -u -j -f '%Y-%m-%d' "$today" -v-"${RETENTION_DAYS}"d +%Y-%m-%d)
+else
+  cutoff=$(date -u -d "$today $RETENTION_DAYS days ago" +%Y-%m-%d)
+fi
 
-# Function to remove old month folders
-remove_old_months() {
-  local base_dir=$1
-  local type=$2
+echo "Retention cutoff: $cutoff (keeping files dated on or after this day)"
+if [ ! -d "$EVENTS_DIR" ]; then
+  echo "No event directory found."
+  exit 0
+fi
 
-  if [ ! -d "$base_dir" ]; then
-    echo "Directory not found: $base_dir"
-    return
-  fi
-
-  echo "Scanning $type..."
-
-  # Find all month folders (YYYY-MM format)
-  find "$base_dir" -mindepth 1 -maxdepth 1 -type d -name "????-??" | while read -r month_dir; do
-    month=$(basename "$month_dir")
-
-    # Compare month to cutoff
-    if [[ "$month" < "$CUTOFF_MONTH" ]]; then
+removed=0
+for month_dir in "$EVENTS_DIR"/????-??; do
+  [ -d "$month_dir" ] || continue
+  for event_file in "$month_dir"/????-??-??.jsonl; do
+    [ -f "$event_file" ] || continue
+    event_date="$(basename "$event_file" .jsonl)"
+    [[ "$event_date" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || continue
+    if [[ "$event_date" < "$cutoff" ]]; then
       if [ "$DRY_RUN" = true ]; then
-        echo "[DRY RUN] Would remove: $month_dir"
-
-        # Count files for reporting
-        if [ "$type" = "events" ]; then
-          file_count=$(find "$month_dir" -name "*.jsonl" | wc -l | tr -d ' ')
-          echo "           Contains: $file_count JSONL files"
-        else
-          file_count=$(find "$month_dir" -type f | wc -l | tr -d ' ')
-          dir_size=$(du -sh "$month_dir" | cut -f1)
-          echo "           Contains: $file_count files ($dir_size)"
-        fi
+        echo "[DRY RUN] Would remove: $event_file"
       else
-        echo "Removing: $month_dir"
-        rm -rf "$month_dir"
-        echo "✓ Removed successfully"
+        echo "Removing: $event_file"
+        rm -- "$event_file"
       fi
-    else
-      echo "Keeping: $month_dir (within retention period)"
+      removed=$((removed + 1))
     fi
   done
-}
-
-# Remove old events
-echo ""
-echo "--- Events ---"
-remove_old_months "$EVENTS_DIR" "events"
-
-# Update manifest if not dry run
-if [ "$DRY_RUN" = false ]; then
-  echo ""
-  echo "--- Updating Manifest ---"
-
-  if command -v jq &> /dev/null; then
-    # Get current oldest and newest dates from remaining data
-    OLDEST_DATE=$(find "$EVENTS_DIR" -name "*.jsonl" -type f | sort | head -1 | xargs basename | sed 's/\.jsonl$//')
-    NEWEST_DATE=$(find "$EVENTS_DIR" -name "*.jsonl" -type f | sort | tail -1 | xargs basename | sed 's/\.jsonl$//')
-
-    if [ -n "$OLDEST_DATE" ] && [ -n "$NEWEST_DATE" ]; then
-      # Update stats.json using jq. The schema (PR-F) is:
-      #   { last_updated, data_range:{oldest_date,newest_date}, statistics }
-      TMP_FILE=$(mktemp)
-      jq --arg oldest "$OLDEST_DATE" \
-         --arg newest "$NEWEST_DATE" \
-         --arg now "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-         '.data_range.oldest_date = $oldest |
-          .data_range.newest_date = $newest |
-          .last_updated = $now' \
-         "$MANIFEST_FILE" > "$TMP_FILE"
-
-      mv "$TMP_FILE" "$MANIFEST_FILE"
-      echo "✓ stats.json updated"
-      echo "  Oldest date: $OLDEST_DATE"
-      echo "  Newest date: $NEWEST_DATE"
-    else
-      echo "No data files found, stats.json not updated"
-    fi
-  else
-    echo "⚠ jq not installed, stats.json not updated"
-    echo "  Install jq to enable automatic stats updates"
+  if [ "$DRY_RUN" = false ]; then
+    # Only an empty month directory can be removed; no recursive delete.
+    rmdir -- "$month_dir" 2>/dev/null || true
   fi
-fi
+done
 
-echo ""
-echo "=== Cleanup Complete ==="
-
-if [ "$DRY_RUN" = true ]; then
-  echo ""
-  echo "This was a dry run. No files were actually deleted."
-  echo "Run without --dry-run to perform actual cleanup."
-fi
+echo "Expired daily files: $removed"
+echo "Rebuild indexes and data/stats.json from the retained event files next."

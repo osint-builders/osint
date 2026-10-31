@@ -31,8 +31,9 @@ on:
 # remains in progress, queue it rather than running concurrently — the
 # SIGTERM handler in builder/index.ts cancels outstanding agents before exit.
 concurrency:
-  group: osint-collection
+  group: osint-data-writers
   cancel-in-progress: false
+  queue: max
 
 permissions:
   contents: read

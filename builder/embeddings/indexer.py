@@ -2,7 +2,7 @@
 Metadata management for the embedding pipeline
 """
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import List, Dict, Any
 
@@ -15,6 +15,8 @@ def extract_metadata(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     metadata = []
 
     for event in events:
+        image_urls = event.get('image_urls') or []
+        preview_image = (event.get('link_preview') or {}).get('image')
         item = {
             'id': event['id'],
             'title': event['title'],
@@ -26,34 +28,12 @@ def extract_metadata(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             'confidence': event.get('confidence'),
             'source_name': event['source']['name'],
             'links': event.get('links', []),
-            'link_preview_image': (event.get('link_preview') or {}).get('image'),
+            'link_preview_image': (image_urls[0] if image_urls else preview_image),
+            'image_origin': event.get('image_origin'),
         }
         metadata.append(item)
 
     return metadata
-
-
-def write_event_detail_files(
-    events: List[Dict[str, Any]],
-    output_dir: Path
-) -> int:
-    """
-    Write one JSON file per event under output_dir/events/{id}.json.
-    These are lazy-loaded by the frontend for the detail panel.
-    Returns the count of files written.
-    """
-    events_dir = output_dir / 'events'
-    events_dir.mkdir(parents=True, exist_ok=True)
-
-    written = 0
-    for event in events:
-        event_id = event['id']
-        dest = events_dir / f'{event_id}.json'
-        with open(dest, 'w', encoding='utf-8') as f:
-            json.dump(event, f, ensure_ascii=False, separators=(',', ':'))
-        written += 1
-
-    return written
 
 
 def save_metadata(metadata: List[Dict[str, Any]], metadata_path: Path):
@@ -77,7 +57,7 @@ def save_schema(
         'embedding_dims': embedding_dims,
         'embedding_file': embedding_file,
         'event_count': event_count,
-        'last_updated': datetime.utcnow().isoformat() + 'Z'
+        'last_updated': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
     }
 
     schema_path.parent.mkdir(parents=True, exist_ok=True)

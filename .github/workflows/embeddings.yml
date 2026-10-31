@@ -20,11 +20,11 @@ permissions:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
-# Single in-flight run at a time; overlapping runs would race pushing to
-# main (each commits data/indexes/ + data/stats.json).
+# Serialize with Qualify, legacy collection, and retention release writes.
 concurrency:
-  group: embeddings
+  group: osint-data-writers
   cancel-in-progress: false
+  queue: max
 
 jobs:
   build-embeddings:
@@ -35,7 +35,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
+
+      - name: Load latest published events
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -75,5 +80,4 @@ jobs:
           Deduped + reindexed events at $(date -u +%Y-%m-%dT%H:%M:%SZ)
 
           [skip ci]"
-          git pull --rebase origin main
-          git push
+          bash builder/runtime/push-with-retry.sh --require-events-stable

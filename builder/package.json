@@ -11,13 +11,14 @@
     "qualify-dry-run": "tsx qualify.ts --dry-run",
     "verify-queue-recovery": "node scripts/verify-queue-recovery.cjs",
     "verify-prompt": "tsx scripts/verify-prompt-extraction.ts",
-    "update-prompt-snapshot": "UPDATE_SNAPSHOT=1 tsx scripts/verify-prompt-extraction.ts"
+    "update-prompt-snapshot": "tsx scripts/verify-prompt-extraction.ts --update"
   },
   "dependencies": {
     "luxon": "^3.7.2",
     "oz-agent-sdk": "^1.3.0"
   },
   "devDependencies": {
+    "@types/luxon": "^3.7.6",
     "@types/node": "^20.0.0",
     "tsx": "^4.19.0",
     "typescript": "^5.8.0"

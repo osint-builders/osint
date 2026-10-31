@@ -17,6 +17,9 @@
  *                           the geo gate was tightened are tolerated.
  *   --strict                runtime mode: ALSO requires geo.lat/geo.lon
  *                           and rejects E-PRIME violations in `contents`.
+ *   --qualified             strict mode plus the published-event contract:
+ *                           topical/English declarations, source window,
+ *                           meaningful location, image, and fixed body.
  *   --time-window START END both ISO-8601; rejects events whose
  *                           `date_published` falls outside [START, END].
  *
@@ -33,6 +36,7 @@
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
+const { validateQualifiedEvent } = require('./lib/qualified-event');
 
 // ---------------------------------------------------------------------------
 // Schema
@@ -88,6 +92,7 @@ let fromDate = null;
 let toDate = null;
 let validateAll = false;
 let strict = false;
+let qualified = false;
 let timeWindowStart = null;
 let timeWindowEnd = null;
 
@@ -101,6 +106,7 @@ Options:
   --to YYYY-MM-DD                 (with --from) up to and including this date
   --all                           validate every events/**.jsonl
   --strict                        require geo.lat/geo.lon and reject E-PRIME violations
+  --qualified                     strict mode plus the new published-event quality contract
   --time-window START END         both ISO-8601; reject events whose date_published
                                   falls outside [START, END] (used by the runtime)
   --help, -h                      show this help
@@ -122,6 +128,9 @@ for (let i = 0; i < args.length; i++) {
   } else if (a === '--all') {
     validateAll = true;
   } else if (a === '--strict') {
+    strict = true;
+  } else if (a === '--qualified') {
+    qualified = true;
     strict = true;
   } else if (a === '--time-window' && args[i + 1] && args[i + 2]) {
     timeWindowStart = args[++i];
@@ -153,8 +162,19 @@ function isValidISO8601(s) {
   return !isNaN(new Date(s).getTime());
 }
 
+if (timeWindowStart !== null &&
+    (!isValidISO8601(timeWindowStart) || !isValidISO8601(timeWindowEnd) ||
+     Date.parse(timeWindowStart) > Date.parse(timeWindowEnd))) {
+  console.error('--time-window requires ordered ISO-8601 start and end timestamps');
+  process.exit(2);
+}
+
 function validateEvent(event, filename, lineNumber) {
   const issues = [];
+  if (!event || typeof event !== 'object' || Array.isArray(event)) {
+    errors.push({ file: filename, line: lineNumber, id: 'unknown', issues: ['Event must be a JSON object'] });
+    return false;
+  }
   const required = strict ? REQUIRED_STRICT : REQUIRED_BASE;
 
   // Required fields
@@ -222,7 +242,11 @@ function validateEvent(event, filename, lineNumber) {
 
   // Time-window enforcement (runtime mode)
   if (timeWindowStart && timeWindowEnd && event.date_published) {
-    if (event.date_published < timeWindowStart || event.date_published > timeWindowEnd) {
+    const publishedMs = new Date(event.date_published).getTime();
+    const startMs = new Date(timeWindowStart).getTime();
+    const endMs = new Date(timeWindowEnd).getTime();
+    if (!isNaN(publishedMs) && !isNaN(startMs) && !isNaN(endMs) &&
+        (publishedMs < startMs || publishedMs > endMs)) {
       issues.push(
         `Field 'date_published' (${event.date_published}) outside time window ` +
         `[${timeWindowStart}, ${timeWindowEnd}]`
@@ -291,6 +315,8 @@ function validateEvent(event, filename, lineNumber) {
       );
     }
   }
+
+  if (qualified) issues.push(...validateQualifiedEvent(event));
 
   if (issues.length > 0) {
     errors.push({ file: filename, line: lineNumber, id: event.id || 'unknown', issues });
@@ -387,7 +413,7 @@ async function main() {
   }
 
   console.log('=== Event Validation ===');
-  console.log(`Mode:    ${strict ? 'strict (geo + E-PRIME enforced)' : 'baseline'}`);
+  console.log(`Mode:    ${qualified ? 'qualified published event' : strict ? 'strict (geo + E-PRIME enforced)' : 'baseline'}`);
   if (timeWindowStart) {
     console.log(`Window:  [${timeWindowStart}, ${timeWindowEnd}]`);
   }

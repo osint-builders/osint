@@ -53,6 +53,8 @@ frontend/dist/
 !frontend/src/lib/
 # Exception: builder's shared TS helpers dir is not a Python lib dir either
 !builder/lib/
+# Exception: event validation helpers are source code, not Python artifacts
+!data/scripts/lib/
 
 # Built frontend artifacts. .github/workflows/deploy-pages.yml builds these
 # on demand and uploads them as a Pages artifact — no need to commit. Local

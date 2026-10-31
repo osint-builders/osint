@@ -59,7 +59,7 @@ export const MapView: React.FC<MapViewProps> = ({
   React.useEffect(() => {
     if (!selectedId) return;
     const ev = results.find(r => r.id === selectedId);
-    if (!ev?.geo?.lat || !ev?.geo?.lon) return;
+    if (ev?.geo?.lat == null || ev?.geo?.lon == null) return;
     mapRef.current?.flyTo({
       center: [ev.geo.lon, ev.geo.lat],
       zoom: Math.max(mapRef.current.getZoom(), 5),

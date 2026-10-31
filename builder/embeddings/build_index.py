@@ -23,14 +23,15 @@ import numpy as np
 # Add current directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
 
-from embedder import Embedder, prepare_embedding_text
-from indexer import extract_metadata, save_metadata, save_schema, write_event_detail_files
+from indexer import extract_metadata, save_metadata, save_schema
 from utils import (
     compute_fingerprint,
-    load_fingerprints,
     save_fingerprints,
     save_embeddings_binary,
 )
+
+EMBEDDING_DIMS = 384
+EMBEDDING_MODEL = 'all-MiniLM-L6-v2'
 
 
 def load_all_events(data_dir: Path) -> List[Dict[str, Any]]:
@@ -49,31 +50,55 @@ def load_all_events(data_dir: Path) -> List[Dict[str, Any]]:
                         event = json.loads(line)
                         events.append(event)
                     except json.JSONDecodeError as e:
-                        print(f"Warning: Failed to parse line in {jsonl_file}: {e}")
+                        raise ValueError(f"Invalid JSON in {jsonl_file}: {e}") from e
 
     print(f"Loaded {len(events)} total events")
     return events
 
 
-def detect_changed_events(
-    events: List[Dict[str, Any]],
-    existing_fingerprints: Dict[str, str]
-) -> List[Dict[str, Any]]:
-    """Detect events that have changed since last run"""
-    changed_events = []
-
-    for event in events:
-        event_id = event['id']
-        fingerprint = compute_fingerprint(
-            event['title'],
-            event['summary'],
-            event['contents']
+def event_fingerprints(events: List[Dict[str, Any]]) -> Dict[str, str]:
+    """Keep the existing ID-keyed fingerprint format for compatibility."""
+    return {
+        event['id']: compute_fingerprint(
+            event['title'], event['summary'], event['contents']
         )
+        for event in events
+    }
 
-        if existing_fingerprints.get(event_id) != fingerprint:
-            changed_events.append(event)
 
-    return changed_events
+def index_artifacts_match(events: List[Dict[str, Any]], output_dir: Path) -> bool:
+    """Only skip the model when every stored row still matches the event corpus."""
+    fingerprints_path = output_dir / 'fingerprints.json'
+    metadata_path = output_dir / 'metadata.json'
+    schema_path = output_dir / 'schema.json'
+    embeddings_path = output_dir / 'embeddings.bin'
+    if not all(path.is_file() for path in (
+        fingerprints_path, metadata_path, schema_path, embeddings_path
+    )):
+        return False
+    if embeddings_path.stat().st_size != len(events) * EMBEDDING_DIMS * 4:
+        return False
+
+    try:
+        with fingerprints_path.open(encoding='utf-8') as file:
+            fingerprints = json.load(file)
+        with metadata_path.open(encoding='utf-8') as file:
+            metadata = json.load(file)
+        with schema_path.open(encoding='utf-8') as file:
+            schema = json.load(file)
+    except (OSError, ValueError):
+        return False
+    if not isinstance(schema, dict):
+        return False
+
+    return (
+        fingerprints == event_fingerprints(events)
+        and metadata == extract_metadata(events)
+        and schema.get('event_count') == len(events)
+        and schema.get('embedding_dims') == EMBEDDING_DIMS
+        and schema.get('embedding_model') == EMBEDDING_MODEL
+        and schema.get('embedding_file') == 'embeddings.bin'
+    )
 
 
 def main():
@@ -81,12 +106,6 @@ def main():
     repo_root = Path(os.environ.get('REPO_ROOT', os.getcwd()))
     data_dir = repo_root / 'data' / 'events'
     output_dir = repo_root / 'data' / 'indexes'
-
-    # Paths for artifacts
-    fingerprints_path = output_dir / 'fingerprints.json'
-    embeddings_path = output_dir / 'embeddings.bin'
-    metadata_path = output_dir / 'metadata.json'
-    schema_path = output_dir / 'schema.json'
 
     print("=" * 60)
     print("OSINT Semantic Search Index Builder")
@@ -96,84 +115,47 @@ def main():
     print("\n[1/5] Loading events...")
     all_events = load_all_events(data_dir)
 
-    if not all_events:
-        print("No events found. Exiting.")
-        sys.exit(0)
+    # Step 2: Verify the complete ordered artifact set. Fingerprint IDs alone
+    # cannot detect a removed row when historical events share an ID.
+    print("\n[2/5] Checking current index...")
+    if index_artifacts_match(all_events, output_dir):
+        print("All index artifacts match the event corpus. Exiting.")
+        return
 
-    # Step 2: Detect changed events
-    print("\n[2/5] Detecting changed events...")
-    existing_fingerprints = load_fingerprints(fingerprints_path)
-
-    if existing_fingerprints:
-        changed_events = detect_changed_events(all_events, existing_fingerprints)
-        print(f"Found {len(changed_events)} changed/new events out of {len(all_events)} total")
-
-        if not changed_events and embeddings_path.exists():
-            print("No changes detected and embeddings exist. Exiting.")
-            sys.exit(0)
-    else:
-        print("No existing fingerprints. Processing all events.")
-        changed_events = all_events
-
-    # Step 3: Generate embeddings (384-dim, all-MiniLM-L6-v2)
+    # Step 3: Generate embeddings. Avoid loading the model for an empty corpus.
     print("\n[3/5] Generating embeddings...")
-    embedder = Embedder()
+    if all_events:
+        from embedder import Embedder, prepare_embedding_text
 
-    texts_to_embed = [
-        prepare_embedding_text(event['title'], event['summary'])
-        for event in all_events
-    ]
+        texts_to_embed = [
+            prepare_embedding_text(event['title'], event['summary'])
+            for event in all_events
+        ]
+        embeddings = Embedder().embed_texts(texts_to_embed)
+        if embeddings.shape != (len(all_events), EMBEDDING_DIMS):
+            raise ValueError(f"Unexpected embedding shape: {embeddings.shape}")
+        norms = np.linalg.norm(embeddings, axis=1, keepdims=True)
+        normalized = (embeddings / (norms + 1e-8)).astype(np.float32)
+    else:
+        normalized = np.empty((0, EMBEDDING_DIMS), dtype=np.float32)
 
-    embeddings = embedder.embed_texts(texts_to_embed)
-    print(f"Generated embeddings shape: {embeddings.shape}")
-
-    # Step 4: L2-normalize and save embeddings.bin
-    print("\n[4/5] Normalizing and saving embeddings...")
-    norms = np.linalg.norm(embeddings, axis=1, keepdims=True)
-    normalized = (embeddings / (norms + 1e-8)).astype(np.float32)
-    save_embeddings_binary(normalized, embeddings_path)
-
-    # Step 5: Save metadata and schema
-    print("\n[5/5] Saving metadata and schema...")
-
-    # Extract and save metadata
-    metadata = extract_metadata(all_events)
-    save_metadata(metadata, metadata_path)
-
-    # Write per-event detail files for lazy loading in the frontend
-    n_detail = write_event_detail_files(all_events, output_dir)
-    print(f"Written {n_detail} event detail files to {output_dir / 'events'}")
-
-    # Save schema
-    save_schema(
-        schema_path,
-        event_count=len(all_events),
-        embedding_dims=384,
-    )
-
-    # Update fingerprints
-    new_fingerprints = {}
-    for event in all_events:
-        fingerprint = compute_fingerprint(
-            event['title'],
-            event['summary'],
-            event['contents']
-        )
-        new_fingerprints[event['id']] = fingerprint
-
-    save_fingerprints(new_fingerprints, fingerprints_path)
+    # Steps 4-5: Save all four artifacts for the same ordered event corpus.
+    print("\n[4/5] Saving embeddings...")
+    save_embeddings_binary(normalized, output_dir / 'embeddings.bin')
+    print("\n[5/5] Saving metadata, schema, and fingerprints...")
+    save_metadata(extract_metadata(all_events), output_dir / 'metadata.json')
+    save_schema(output_dir / 'schema.json', len(all_events), EMBEDDING_DIMS)
+    save_fingerprints(event_fingerprints(all_events), output_dir / 'fingerprints.json')
 
     # Summary
     print("\n" + "=" * 60)
     print("Index build complete!")
     print("=" * 60)
     print(f"Events indexed: {len(all_events)}")
-    print(f"Embedding dimensions: 384 (all-MiniLM-L6-v2, native)")
+    print(f"Embedding dimensions: {EMBEDDING_DIMS} ({EMBEDDING_MODEL}, native)")
     print(f"\nOutput files:")
-    print(f"  - {embeddings_path.relative_to(repo_root)}")
-    print(f"  - {metadata_path.relative_to(repo_root)}")
-    print(f"  - {schema_path.relative_to(repo_root)}")
-    print(f"  - {fingerprints_path.relative_to(repo_root)}")
+    for name in ('embeddings.bin', 'metadata.json', 'schema.json', 'fingerprints.json'):
+        print(f"  - {(output_dir / name).relative_to(repo_root)}")
 
 
 if __name__ == '__main__':

@@ -56,6 +56,5 @@ Key commands:
 ## See also
 
 - `references/REFERENCE.md` — complete command reference
-- `skills/image-extraction/SKILL.md` — screenshot capture + normalization
 - `skills/data-to-markdown/SKILL.md` — scraped content to Markdown
 - Upstream docs: https://agent-browser.dev

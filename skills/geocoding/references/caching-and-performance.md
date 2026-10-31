@@ -1,68 +1,12 @@
-# Caching and Performance
+# Geocoding Cache
 
-## Caching Strategy
-
-Geocoding cache reduces API calls significantly:
+`builder/runtime/geocode.sh` owns the cache. By default it uses `/tmp/geocoding-cache.json`; set `GEOCODING_CACHE` before calling it only when a run needs its own cache path. The helper initializes a small set of known locations, reuses valid numeric coordinate results, and writes new lookup results. Do not overwrite the file with a prompt-defined cache or a manually copied coordinate table.
 
 ```bash
-# Initialize cache (once per collection run)
-GEOCODING_CACHE="/tmp/geocoding-cache-${bucketNum}.json"
-echo '{}' > "$GEOCODING_CACHE"
-
-# Cache structure:
-# {
-#   "Paris, France": {"lat": "48.8566", "lon": "2.3522", "display_name": "Paris, Île-de-France, France"},
-#   "Tokyo, Japan": {"lat": "35.6762", "lon": "139.6503", "display_name": "Tokyo, Japan"},
-#   ...
-# }
-
-# Cache hit: instant return
-# Cache miss: 1 second delay + API call + cache update
+export GEOCODING_CACHE="$WORK_DIR/geocoding-cache.json"
+GEO=$(bash builder/runtime/geocode.sh "Gaziantep, Turkey")
 ```
 
-**Cache Benefits:**
-- Reduces API load for repeated locations (e.g., "Ukraine" appears in many events)
-- Speeds up processing (no API delay for cached locations)
-- Respects rate limits (fewer actual API calls)
-- Persistence per collection bucket
+Network lookups wait one second and use bounded curl timeouts. Repeated valid queries can reuse cached coordinates; unresolved or malformed cached entries do not count as valid points. Concurrent agents should use separate cache files if they share a filesystem.
 
-**Cache Lifespan:**
-- Created at start of Step 3
-- Used throughout source processing
-- Deleted at Step 9 cleanup
-- Fresh cache per hourly collection run
-
-## Common Locations Cache
-
-Pre-populate cache with frequently mentioned locations:
-
-```bash
-# Common hotspots (can be embedded in prompt)
-cat > "$GEOCODING_CACHE" << 'EOF'
-{
-  "Ukraine": {"lat": "48.3794", "lon": "31.1656", "display_name": "Ukraine"},
-  "Russia": {"lat": "61.5240", "lon": "105.3188", "display_name": "Russia"},
-  "Taiwan": {"lat": "23.6978", "lon": "120.9605", "display_name": "Taiwan"},
-  "China": {"lat": "35.8617", "lon": "104.1954", "display_name": "China"},
-  "Israel": {"lat": "31.0461", "lon": "34.8516", "display_name": "Israel"},
-  "Gaza": {"lat": "31.3547", "lon": "34.3088", "display_name": "Gaza Strip"},
-  "Iran": {"lat": "32.4279", "lon": "53.6880", "display_name": "Iran"},
-  "Turkey": {"lat": "38.9637", "lon": "35.2433", "display_name": "Turkey"},
-  "Syria": {"lat": "34.8021", "lon": "38.9968", "display_name": "Syria"},
-  "North Korea": {"lat": "40.3399", "lon": "127.5101", "display_name": "North Korea"},
-  "South Korea": {"lat": "35.9078", "lon": "127.7669", "display_name": "South Korea"},
-  "Japan": {"lat": "36.2048", "lon": "138.2529", "display_name": "Japan"},
-  "Philippines": {"lat": "12.8797", "lon": "121.7740", "display_name": "Philippines"},
-  "Goma, Democratic Republic of Congo": {"lat": "-1.6777", "lon": "29.2285", "display_name": "Goma, North Kivu, DRC"},
-  "Spratly Islands, South China Sea": {"lat": "10.68", "lon": "117.83", "display_name": "Spratly Islands"},
-  "Uvira, Democratic Republic of Congo": {"lat": "-3.4", "lon": "29.14", "display_name": "Uvira, South Kivu, DRC"}
-}
-EOF
-```
-
-## Performance Considerations
-
-- **Caching**: Reduces API calls by 70-90% for typical collection runs
-- **Rate limiting**: 1 req/sec = max 3600 locations/hour (sufficient for hourly collection)
-- **Batch processing**: Process all events first, then geocode unique locations
-- **Parallel buckets**: Each bucket has its own cache (no conflicts)
+The cache improves lookup performance; it does not establish that a cached place matches the event. Choose the location from source evidence before querying, then inspect the result's `display_name` when ambiguity matters.

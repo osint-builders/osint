@@ -11,10 +11,15 @@ permissions:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
+concurrency:
+  group: osint-data-writers
+  cancel-in-progress: false
+  queue: max
+
 jobs:
   release:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
 
     steps:
       - name: Checkout repository
@@ -24,29 +29,74 @@ jobs:
 
       - name: Get current date
         id: date
-        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+        run: echo "date=$(date -u +'%Y-%m-%d')" >> "$GITHUB_OUTPUT"
 
-      - name: Apply 90-day retention sweep
-        # Removes data/events/YYYY-MM/ older than 90 days, then updates
-        # data/stats.json's data_range. Committed back to main with
-        # [skip ci] so the collection workflow doesn't re-trigger.
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: builder/embeddings/requirements.txt
+
+      - name: Install embedding dependencies
+        run: pip install -r builder/embeddings/requirements.txt
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Retain, rebuild, and publish one consistent data snapshot
+        id: snapshot
         run: |
-          set -e
-          bash data/scripts/cleanup-old-data.sh
+          set -euo pipefail
+          bash builder/runtime/git-identity.sh
+          published=false
+          for attempt in 1 2 3; do
+            echo "Building release snapshot (attempt $attempt/3)..."
+            git fetch origin main
+            git reset --hard origin/main
+            base_head=$(git rev-parse HEAD)
 
-          if ! git diff --quiet; then
-            bash builder/runtime/git-identity.sh
-            git add data/events data/stats.json
-            git commit -m "Apply 90-day retention sweep on ${{ steps.date.outputs.date }}
+            RETENTION_TODAY="${{ steps.date.outputs.date }}" bash data/scripts/cleanup-old-data.sh
+            REPO_ROOT="$GITHUB_WORKSPACE" python builder/embeddings/build_index.py
+            node data/scripts/rebuild-indexes.js
+            REPO_ROOT="$GITHUB_WORKSPACE" python builder/embeddings/verify_index.py
+
+            git add -A data/events data/indexes/fingerprints.json \
+              data/indexes/metadata.json data/indexes/schema.json \
+              data/indexes/embeddings.bin data/indexes/by-source.json \
+              data/indexes/by-topic.json data/indexes/by-location.json \
+              data/stats.json
+            if git diff --cached --quiet; then
+              git fetch origin main
+              if [ "$(git rev-parse origin/main)" = "$base_head" ]; then
+                published=true
+                break
+              fi
+              echo "main advanced during the build; rebuilding from its new tip."
+              continue
+            fi
+
+            git commit -m "Apply 90-day retention and rebuild indexes on ${{ steps.date.outputs.date }}
 
             [skip ci]"
-            git push origin main
-          else
-            echo "Retention sweep deleted no files; nothing to commit."
+            if bash builder/runtime/push-with-retry.sh --require-events-stable; then
+              published=true
+              break
+            fi
+            echo "main changed during publish; rebuilding from its new tip."
+          done
+          if [ "$published" != true ]; then
+            echo "Could not publish a consistent release snapshot." >&2
+            exit 1
           fi
+          REPO_ROOT="$GITHUB_WORKSPACE" python builder/embeddings/verify_index.py
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Create archive of data folder
         run: |
+          set -euo pipefail
           echo "Creating data archive..."
 
           # Check if data directories exist
@@ -59,9 +109,10 @@ jobs:
           tar -czf osint-data-${{ steps.date.outputs.date }}.tar.gz \
             data/events/ \
             data/indexes/ \
+            data/stats.json \
             data/SCHEMA.md \
-            data/README.md \
-            2>/dev/null || true
+            data/README.md
+          tar -tzf osint-data-${{ steps.date.outputs.date }}.tar.gz >/dev/null
 
           # Check if archive was created
           if [ -f "osint-data-${{ steps.date.outputs.date }}.tar.gz" ]; then
@@ -75,10 +126,11 @@ jobs:
       - name: Count events and generate statistics
         id: stats
         run: |
+          set -euo pipefail
           # Count total events across all JSONL files
           total_events=0
           if [ -d "data/events" ]; then
-            total_events=$(find data/events -name "*.jsonl" -type f -exec wc -l {} + | tail -1 | awk '{print $1}')
+            total_events=$(find data/events -name "*.jsonl" -type f -exec cat {} + | wc -l)
           fi
 
           echo "total_events=${total_events}" >> $GITHUB_OUTPUT
@@ -90,6 +142,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: data-${{ steps.date.outputs.date }}
+          target_commitish: ${{ steps.snapshot.outputs.commit }}
           name: OSINT Data Collection - ${{ steps.date.outputs.date }}
           body: |
             ## Automated Weekly Data Release
@@ -109,6 +162,7 @@ jobs:
             data/
             ├── events/YYYY-MM/YYYY-MM-DD.jsonl  # Daily event files
             ├── indexes/*.json                    # Generated indexes
+            ├── stats.json                         # Unified statistics
             ├── SCHEMA.md                         # Entity schema
             └── README.md                         # Documentation
             ```
@@ -121,7 +175,7 @@ jobs:
 
             Events follow the **World Event Entity** schema. See `data/SCHEMA.md` in the archive for complete field specifications. Events reference imagery via remote URLs (`image_urls`, `link_preview.image`) rather than bundled media files.
 
-            **Required fields**: `id`, `source`, `title`, `summary`, `contents` (Markdown with E-PRIME), `date_published`, `links`, `image_urls`, `geo`
+            **Base fields**: `id`, `source`, `title`, `summary`, `contents`, `date_published`, `links`, `image_urls`. Newly qualified events also require a named `geo` point, `source_window`, English text, OSINT category, allied relevance, a structured body, and an image with `image_origin`. Historical records predate this contract.
 
             **Optional fields**: `date_event`, `topics`, `confidence`, `ingested_at`, `link_preview`
 
@@ -143,7 +197,7 @@ jobs:
 
             ### E-PRIME Compliance
 
-            All `contents` fields use **E-PRIME** (English without "to be" verbs: is, are, was, were, be, been, being) for precise, objective language.
+            Newly qualified `contents` fields use **E-PRIME** (English without "to be" verbs: is, are, was, were, be, been, being) for precise, objective language.
 
             ---
 

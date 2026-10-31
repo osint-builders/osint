@@ -8,7 +8,7 @@ Automated collection of world-event intelligence from OSINT sources (Twitter/X, 
 
 > **Cadence right now**: `identify.yml` runs daily at **09:00 America/New_York** (plus manual dispatch) and `qualify.yml` chains off it automatically, so that one trigger drives a full collection. Each run uses a 1-hour lookback, so a daily cadence samples one hour per day rather than covering it. The legacy `collection.yml` single-phase flow still exists but runs on demand only. See [`.github/workflows/README.md`](.github/workflows/README.md) for details.
 
-> **For agents/contributors editing this repo:** see [`AGENTS.md`](AGENTS.md). The runtime prompt and conventions live there. This README serves humans getting their bearings.
+> **For agents/contributors editing this repo:** see [`AGENTS.md`](AGENTS.md) for conventions and `builder/prompts/` for runtime prompts. This README serves humans getting their bearings.
 
 ---
 
@@ -31,8 +31,8 @@ qualify.yml
     ▼
 Warp Cloud Agent (per batch)
   • clones this repo, then drives builder/runtime/*.sh:
-    init (token check) → [fetch → translate → E-PRIME → geocode → enrich
-    → validate-confidence] per tip → validate → merge-events (dedup)
+    init (token check) → [fetch → qualify → translate → structure → geocode
+    → attach image → enrich] per tip → validate → merge-events (dedup)
     → archive tip to data/queue/processed/ → submit (commit + push)
     │
     ▼
@@ -43,7 +43,7 @@ deploy-pages.yml                       # UI deploy
 release-cli.yml                        # CLI cross-compile + cli-latest release
 ```
 
-A legacy single-phase flow (`collection.yml` → `builder/index.ts`) still exists, paused: one Warp agent processes a whole bucket of ~12 sources sequentially instead of small per-tip batches. `builder/qualify.ts::buildQualifyPrompt()` renders the prompt from `builder/prompts/qualify-prompt.md` — that template, plus the scripts in `builder/runtime/` and the shared spawn/poll logic in `builder/lib/agent-runner.ts`, form the source of truth. Not this README.
+A legacy single-phase flow (`collection.yml` → `builder/index.ts`) still exists, paused: one Warp agent processes a whole bucket of ~12 sources sequentially instead of small per-tip batches. The active template lives in `builder/prompts/qualify-prompt.md`; the shared publication rules live in `builder/prompts/qualified-event-contract.md`. The versioned scripts in `builder/runtime/` handle mechanical steps.
 
 ---
 
@@ -65,7 +65,7 @@ A legacy single-phase flow (`collection.yml` → `builder/index.ts`) still exist
 | `data/queue/README.md` | Tip record schema + pending/processed queue lifecycle. |
 | `data/events/YYYY-MM/YYYY-MM-DD.jsonl` | Output: one JSON event per line. |
 | `LEARNINGS.md` | Cross-run learnings injected into the next run's prompts. |
-| `.github/workflows/identify.yml`, `.github/workflows/qualify.yml` | Tip & Queue entry points (on demand for now). |
+| `.github/workflows/identify.yml`, `.github/workflows/qualify.yml` | Daily and on-demand Tip & Queue entry points. |
 
 ---
 
@@ -81,7 +81,7 @@ export WARP_ENVIRONMENT_ID="your-warp-environment-uid"
 
 cd builder
 REPO_ROOT=.. TIME_WINDOW_START=$(date -u -d '1 hour ago' +%Y-%m-%dT%H:%M:%SZ) TIME_WINDOW_END=$(date -u +%Y-%m-%dT%H:%M:%SZ) \
-  bash ../builder/runtime/identify.sh $(jq -r '.sources[].id' ../source/manifest.json)  # writes data/queue/pending/*.json, no agents
+  bash ../builder/runtime/identify.sh $(jq -r '.sources[] | select((.status // "") | ascii_downcase | IN("inactive","archived","deprecated") | not) | .id' ../source/manifest.json)  # writes data/queue/pending/*.json, no agents
 npm run qualify-dry-run            # renders qualify prompts without dispatching agents
 # or: npm run dry-run              # legacy single-phase flow (builder/index.ts)
 
@@ -93,23 +93,31 @@ cat ../data/events/$(date +%Y-%m)/$(date +%Y-%m-%d).jsonl | jq .
 
 ## World Event Entity (at a glance)
 
+Newly qualified events use a typed publication contract. This abbreviated shape shows the fields added for future events; the archive also contains historical records that predate the contract.
+
 ```json
 {
   "id": "evt_52117619469189120",
   "source": {"name": "Reuters", "provider": "news"},
   "title": "...",
   "summary": "...",
-  "contents": "## ...\n\n... (markdown, 100+ words, E-PRIME)",
+  "contents": "## Event\n\n...\n\n## Location and Time\n\n...\n\n## Evidence\n\n...\n\n## Allied Relevance\n\n...\n\n## Confidence and Gaps\n\n...",
   "date_published": "2026-04-29T10:30:00Z",
+  "source_window": {"start": "2026-04-29T10:00:00Z", "end": "2026-04-29T11:00:00Z"},
   "links": [{"url": "..."}],
   "image_urls": ["https://example.com/og-image.jpg"],
-  "geo": {"lat": 37.27, "lon": 37.02, "country": "Turkey"},
+  "image_origin": "article",
+  "geo": {"lat": 37.27, "lon": 37.02, "location_name": "Gaziantep, Turkey", "precision": "city"},
+  "language": "en",
+  "category": "major-disaster",
+  "audience": "allied-forces",
+  "allied_relevance": "The report gives allied disaster-response planners a location for resource coordination.",
   "topics": ["earthquake"],
   "confidence": 0.95
 }
 ```
 
-Full schema: [`data/SCHEMA.md`](data/SCHEMA.md). `image_urls` holds **remote** URLs — the pipeline never downloads or re-hosts media.
+Full schema and a valid complete example: [`data/SCHEMA.md`](data/SCHEMA.md). `image_urls` holds **remote** URLs — the pipeline never downloads or re-hosts media. If no article image exists, the qualifier marks a source or default image in `image_origin`.
 
 **E-PRIME**: `contents` strings must avoid forms of *to be* (is, are, was, were, be, been, being). Use specific active verbs.
 
@@ -152,7 +160,7 @@ Bake these env vars into the environment as Warp Team-scope secrets:
 |---|---|---|
 | `ANTHROPIC_API_KEY` | ✅ | Claude API used by the agent. |
 | `OSINT_GH_TOKEN` *or* `GH_TOKEN` | ✅ | Push token. `init.sh` checks it fast at the start of every run — rotate with `oz secret update OSINT_GH_TOKEN --team --value`. |
-| `PERPLEXITY_API_KEY` | optional | Confidence validation (model `sonar`, priority-high events only); degrades gracefully when absent. |
+| `PERPLEXITY_API_KEY` | optional | On-demand source corroboration and location research; degrades gracefully when absent. |
 | `LINKPREVIEW_API_KEY` | optional | `link_preview` enrichment; non-blocking when absent. |
 | `TWITTER_BEARER_TOKEN` | optional | Twitter API path used by both `identify.sh` and the qualify agent; also used as a banner-image fallback. |
 

@@ -1,21 +1,6 @@
 name: Verify
 
-# Cheap, fast checks that run on every PR (and on push to main as a safety
-# net). They catch the categories of drift that have bitten this repo
-# before:
-#
-#   1. Runtime prompt drifts from its committed snapshot.
-#      => npm run verify-prompt against builder/scripts/__fixtures__/.
-#
-#   2. Source-of-truth validator (data/scripts/validate-events.js) drifts
-#      from the data already in git.
-#      => node data/scripts/validate-events.js --all (baseline mode).
-#
-#   3. skills/README.md drifts from the SKILL.md frontmatter it autogenerates.
-#      => regenerate and `git diff --exit-code`.
-#
-# Each check exits non-zero on failure, so a single red 'verify' job
-# prevents merges that introduce silent drift.
+# Keep orchestration, validation, and generated documentation in sync.
 
 on:
   pull_request:
@@ -37,7 +22,7 @@ env:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
@@ -51,16 +36,38 @@ jobs:
         run: npm ci
         working-directory: builder
 
+      - name: Typecheck builder
+        run: npx tsc --noEmit
+        working-directory: builder
+
+      - name: Test agent lifecycle and queue recovery
+        run: |
+          npx tsx --test lib/*.test.ts
+          npm run verify-queue-recovery
+        working-directory: builder
+
       - name: Verify prompt template matches snapshot
         run: npm run verify-prompt
         working-directory: builder
 
-      - name: Validate all committed events (baseline mode)
-        # Baseline (no --strict) so legacy events without geo don't fail.
-        # Strict-mode validation runs at collection time inside the cloud
-        # agent (Step 4 of collection-prompt.md), so any drift between the
-        # validator and the runtime gets caught at write time, not here.
-        run: node data/scripts/validate-events.js --all
+      - name: Validate recent committed events (baseline mode)
+        # Sixteen pre-October records have malformed legacy IDs; the user
+        # requested future-only enforcement, so keep those records untouched.
+        run: node data/scripts/validate-events.js --from 2026-10-01
+
+      - name: Test event data scripts
+        run: |
+          node --test data/tests/*.test.cjs
+          node --test data/scripts/tests/qualified-event.test.js
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Test retention and release artifact consistency
+        run: |
+          python -m pip install 'numpy>=1.24,<3'
+          python -m unittest discover -s builder/embeddings/tests -p test_release_consistency.py -v
 
       - name: Confirm skills/README.md is up to date
         run: |
@@ -79,3 +86,8 @@ jobs:
           if command -v shellcheck >/dev/null 2>&1; then
             shellcheck -S warning builder/runtime/*.sh .github/scripts/*.sh
           fi
+
+      - name: Test runtime helpers
+        run: |
+          bash builder/runtime/tests/verify-image-enrichment.sh
+          bash builder/runtime/tests/verify-submit-retry.sh

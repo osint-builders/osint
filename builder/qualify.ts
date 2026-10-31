@@ -27,20 +27,13 @@
 import OzAPI from "oz-agent-sdk";
 import * as fs from "fs";
 import * as path from "path";
-import { DateTime } from "luxon";
+import { prepareQualifyBatches } from "./lib/qualify-batches";
 import {
-  MAX_PROMPT_SIZE_BYTES,
   DEFAULT_MODEL_ID,
-  SPAWN_STAGGER_MS,
-  activeRunIds,
-  setOzClient,
-  registerShutdownHandlers,
-  cancelActiveRuns,
-  sleep,
-  renderTemplate,
-  pollUntilComplete,
+  AgentResult,
+  AgentRunCoordinator,
+  ozClientAdapter,
 } from "./lib/agent-runner";
-import { loadProcessableSources, readSourceFile, getOriginUrl, Source } from "./index";
 
 // Tips per qualify agent. Small on purpose — the whole point of Tip & Queue
 // is many short, cheap, bounded runs instead of few long ones.
@@ -58,124 +51,8 @@ const QUALIFY_BATCH_SIZE = positiveInteger("QUALIFY_BATCH_SIZE", 3);
 // launching one agent per backlog batch would exceed the job deadline.
 const QUALIFY_MAX_BATCHES = positiveInteger("QUALIFY_MAX_BATCHES", 10);
 
-interface TipCandidate {
-  url: string;
-  snippet: string;
-  published_at: string;
-}
-
-interface Tip {
-  source_id: string;
-  source_name: string;
-  type: string;
-  window_start: string;
-  window_end: string;
-  identified_at: string;
-  candidates: TipCandidate[];
-}
-
-interface LoadedTip {
-  tip: Tip;
-  relPath: string; // repo-relative path, e.g. data/queue/pending/<id>-<epoch>.json
-}
-
-/** Loads pending tips, with the newest scan first and deterministic ties. */
-function loadPendingTips(repoRoot: string): LoadedTip[] {
-  const pendingDir = path.join(repoRoot, "data", "queue", "pending");
-  const processedDir = path.join(repoRoot, "data", "queue", "processed");
-  if (!fs.existsSync(pendingDir)) return [];
-  const files = fs
-    .readdirSync(pendingDir)
-    .filter((f) => f.endsWith(".json"))
-    .sort();
-  const tips: LoadedTip[] = [];
-  for (const f of files) {
-    if (fs.existsSync(path.join(processedDir, f))) {
-      console.warn(`Skipping duplicate pending tip already in processed/: ${f}`);
-      continue;
-    }
-    const filePath = path.join(pendingDir, f);
-    const tip: Tip = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    if (!Array.isArray(tip.candidates)) {
-      throw new Error(`Invalid pending tip ${f}: candidates must be an array`);
-    }
-    tips.push({ tip, relPath: path.join("data", "queue", "pending", f) });
-  }
-  return tips.sort((a, b) => {
-    const aTime = Date.parse(a.tip.window_end || a.tip.identified_at || "") || 0;
-    const bTime = Date.parse(b.tip.window_end || b.tip.identified_at || "") || 0;
-    return bTime - aTime || a.relPath.localeCompare(b.relPath);
-  });
-}
-
-function partitionTips(tips: LoadedTip[], batchSize: number): LoadedTip[][] {
-  const batches: LoadedTip[][] = [];
-  for (let i = 0; i < tips.length; i += batchSize) {
-    batches.push(tips.slice(i, i + batchSize));
-  }
-  return batches;
-}
-
-let cachedTemplate: string | null = null;
-function loadQualifyTemplate(): string {
-  if (cachedTemplate === null) {
-    const templatePath = path.join(__dirname, "prompts", "qualify-prompt.md");
-    cachedTemplate = fs.readFileSync(templatePath, "utf-8");
-  }
-  return cachedTemplate;
-}
-
-function buildQualifyPrompt(
-  repoRoot: string,
-  batch: LoadedTip[],
-  sourcesById: Map<string, Source>,
-  originUrl: string,
-  batchNum: number,
-  totalBatches: number
-): string {
-  const executionTime = DateTime.now().setZone("UTC");
-  const extractionTime = executionTime.setZone("America/New_York");
-  const extractionDate = extractionTime.toISODate(); // YYYY-MM-DD
-  const yearMonth = extractionDate.slice(0, 7);
-
-  const tipBlocks = batch
-    .map(({ tip, relPath }) => {
-      const source = sourcesById.get(tip.source_id);
-      const sourceContext = source
-        ? readSourceFile(repoRoot, source)
-        : `(source ${tip.source_id} no longer in manifest — use tip metadata only)`;
-      const candidateLines = tip.candidates
-        .map(
-          (c) =>
-            `  - URL: ${c.url}\n    Published: ${c.published_at}\n    Snippet: ${c.snippet || "(none captured — fetch the URL for full content)"}`
-        )
-        .join("\n");
-      return `### Tip: ${tip.source_id} (queue file: ${relPath})\n\n**Source context** (id: ${tip.source_id}, type: ${tip.type}):\n\n${sourceContext}\n\n**Candidates** (window ${tip.window_start} → ${tip.window_end}):\n${candidateLines}`;
-    })
-    .join("\n\n---\n\n");
-
-  const queueFiles = batch.map((b) => b.relPath);
-  const queueFilesBash = queueFiles.map((f) => `"${f}"`).join(" ");
-  const queueFilesList = queueFiles.map((f) => `- ${f}`).join("\n");
-
-  return renderTemplate(loadQualifyTemplate(), {
-    batchNum,
-    totalBatches,
-    tipCount: batch.length,
-    executionTimestamp: executionTime.toISO(),
-    extractionDate,
-    yearMonth,
-    originUrl,
-    tipBlocks,
-    queueFilesBash,
-    queueFilesList,
-  });
-}
-
-registerShutdownHandlers();
-
 async function main(): Promise<void> {
-  const repoRoot = process.env["REPO_ROOT"] ?? process.cwd();
+  const repoRoot = process.env["REPO_ROOT"] ?? path.resolve(__dirname, "..");
   const dryRun = process.argv.includes("--dry-run");
   const warpApiKey = process.env["WARP_API_KEY"];
   const environmentId = process.env["WARP_ENVIRONMENT_ID"];
@@ -186,139 +63,76 @@ async function main(): Promise<void> {
     console.error("Hint: pass --dry-run to build the prompts without dispatching agents.");
     process.exit(1);
   }
+  if (!environmentId && !dryRun) {
+    throw new Error("WARP_ENVIRONMENT_ID is required for the cloud agent runtime");
+  }
 
-  const client = dryRun ? null : new OzAPI({ apiKey: warpApiKey! });
-  setOzClient(client);
-
-  const pendingTips = loadPendingTips(repoRoot);
-  if (pendingTips.length === 0) {
+  const plan = prepareQualifyBatches(repoRoot, QUALIFY_BATCH_SIZE, QUALIFY_MAX_BATCHES);
+  const { pendingTipCount, selectedTipCount, originUrl, jobs } = plan;
+  if (jobs.length === 0) {
     console.log("No pending tips found in data/queue/pending/. Exiting.");
-    process.exit(0);
+    return;
   }
-  const selectedTips = pendingTips.slice(0, QUALIFY_BATCH_SIZE * QUALIFY_MAX_BATCHES);
-  console.log(`Found ${pendingTips.length} pending tip(s); selecting ${selectedTips.length} newest tip(s)`);
-  if (selectedTips.length < pendingTips.length) {
-    console.log(`Deferred ${pendingTips.length - selectedTips.length} older tip(s) to a later run`);
+  console.log(`Found ${pendingTipCount} pending tip(s); selecting ${selectedTipCount} newest tip(s)`);
+  if (selectedTipCount < pendingTipCount) {
+    console.log(`Deferred ${pendingTipCount - selectedTipCount} older tip(s) to a later run`);
   }
-
-  const sourcesById = new Map(
-    loadProcessableSources(repoRoot).map((s) => [s.id, s])
-  );
-
-  const originUrl = getOriginUrl(repoRoot);
   console.log(`Repository: ${originUrl}`);
   console.log(`Model: ${modelId}`);
-
-  const batches = partitionTips(selectedTips, QUALIFY_BATCH_SIZE);
   console.log(
-    `\nPartitioning ${selectedTips.length} tip(s) into ${batches.length} batch(es) of up to ${QUALIFY_BATCH_SIZE}`
+    `\nPartitioning ${selectedTipCount} tip(s) into ${jobs.length} batch(es) of up to ${QUALIFY_BATCH_SIZE}`
   );
-
   console.log(
-    dryRun ? `[dry-run] Building ${batches.length} prompts...` : `Spawning ${batches.length} Warp cloud agents...`
+    dryRun ? `[dry-run] Built ${jobs.length} prompts...` : `Preparing ${jobs.length} Warp cloud agents...`
   );
-  const runPromises = batches.map(async (batch, batchIndex) => {
-    const batchNum = batchIndex + 1;
-    const prompt = buildQualifyPrompt(repoRoot, batch, sourcesById, originUrl, batchNum, batches.length);
+  jobs.forEach((job, index) => {
+    const size = Buffer.byteLength(job.prompt, "utf8");
+    console.log(`  Batch ${index + 1}: ${job.itemCount} tip(s), prompt size: ${(size / 1024).toFixed(1)} KB`);
+  });
 
-    const promptSizeBytes = Buffer.byteLength(prompt, "utf8");
-    console.log(`  Batch ${batchNum}: ${batch.length} tip(s), prompt size: ${(promptSizeBytes / 1024).toFixed(1)} KB`);
-
-    if (promptSizeBytes > MAX_PROMPT_SIZE_BYTES) {
-      const errorMsg = `Batch ${batchNum} prompt exceeds 1 MB limit. Lower QUALIFY_BATCH_SIZE.`;
-      console.error(`  ❌ ${errorMsg}`);
-      throw new Error(errorMsg);
-    }
-
-    if (dryRun) {
+  if (dryRun) {
+    jobs.forEach((job, index) => {
+      const batchNum = index + 1;
       const outDir = path.join(repoRoot, ".dry-run-prompts");
       fs.mkdirSync(outDir, { recursive: true });
       const outPath = path.join(outDir, `qualify-batch-${batchNum}.md`);
-      fs.writeFileSync(outPath, prompt);
+      fs.writeFileSync(outPath, job.prompt);
       console.log(`  ✓ Batch ${batchNum}: wrote ${outPath}`);
-      return { batchNum, runId: "dry-run", batch };
-    }
-
-    const runParams: OzAPI.AgentRunParams = {
-      prompt,
-      config: {
-        name: `osint-qualify-batch${batchNum}-${new Date().toISOString()}`,
-        model_id: modelId,
-        ...(environmentId ? { environment_id: environmentId } : {}),
-      },
-    };
-
-    // Stagger spawns to avoid hitting the API with many simultaneous requests.
-    await sleep(batchIndex * SPAWN_STAGGER_MS);
-
-    try {
-      const runResponse = await client!.agent.run(runParams);
-      activeRunIds.add(runResponse.run_id);
-      console.log(`  ✓ Batch ${batchNum}: spawned (run ID: ${runResponse.run_id})`);
-      return { batchNum, runId: runResponse.run_id, batch };
-    } catch (err) {
-      const status = (err as { status?: number }).status;
-      if (status === 401 || status === 402 || status === 403) {
-        console.error(
-          `  ✗ Batch ${batchNum}: spawn rejected (HTTP ${status}). ` +
-          `WARP_API_KEY looks invalid, expired, or out of credits.`
-        );
-      } else {
-        console.error(`  ✗ Batch ${batchNum}: failed to spawn - ${err}`);
-      }
-      throw err;
-    }
-  });
-
-  let runs: { batchNum: number; runId: string; batch: LoadedTip[] }[];
-  try {
-    runs = await Promise.all(runPromises);
-  } catch (err) {
-    console.error(`Error spawning agents: ${err}`);
-    process.exit(1);
+    });
+    console.log(`\n[dry-run] Built ${jobs.length} prompts. No agents dispatched.`);
+    return;
   }
 
-  if (dryRun) {
-    console.log(`\n[dry-run] Built ${runs.length} prompts. No agents dispatched.`);
-    process.exit(0);
-  }
-
-  console.log(`\nPolling ${runs.length} agents for completion...`);
-  const pollPromises = runs.map(async ({ batchNum, runId, batch }) => {
-    const finalState = await pollUntilComplete(client!, runId);
-    activeRunIds.delete(runId);
-    return { batchNum, finalState, tipCount: batch.length };
-  });
-
-  let results: { batchNum: number; finalState: string; tipCount: number }[];
+  const coordinator = new AgentRunCoordinator(
+    ozClientAdapter(new OzAPI({ apiKey: warpApiKey! })),
+    { modelId, environmentId }
+  );
+  let results: AgentResult[];
   try {
-    results = await Promise.all(pollPromises);
+    results = await coordinator.execute(jobs);
   } catch (err) {
-    console.error(`\nFatal polling error: ${err}`);
-    console.error(`Cancelling remaining in-progress runs before exit...`);
-    await cancelActiveRuns();
-    process.exit(1);
+    console.error(`Qualify failed: ${err}`);
+    process.exitCode = 1;
+    return;
   }
 
   console.log(`\n=== Qualify Results ===`);
-  let allSucceeded = true;
-  results.forEach(({ batchNum, finalState, tipCount }) => {
-    const status = finalState === "SUCCEEDED" ? "✓" : "✗";
-    console.log(`  ${status} Batch ${batchNum}: ${finalState} (${tipCount} tips)`);
-    if (finalState !== "SUCCEEDED") {
-      allSucceeded = false;
-    }
+  results.forEach(({ state, itemCount }, index) => {
+    const status = state === "SUCCEEDED" ? "✓" : "✗";
+    console.log(`  ${status} Batch ${index + 1}: ${state} (${itemCount} tips)`);
   });
 
-  if (allSucceeded) {
+  if (results.every(({ state }) => state === "SUCCEEDED")) {
     console.log("\n✓ All qualify batches succeeded.");
-    process.exit(0);
   } else {
     console.error("\n✗ One or more qualify batches failed.");
-    process.exit(1);
+    process.exitCode = 1;
   }
 }
 
 if (require.main === module) {
-  main();
+  main().catch((error) => {
+    console.error(`Qualify failed: ${error}`);
+    process.exitCode = 1;
+  });
 }

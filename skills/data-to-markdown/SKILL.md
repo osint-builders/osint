@@ -21,10 +21,10 @@ Use for any `contents` field write — HTML, JSON, PDF, freeform notes. Output: 
 
 ## Entry-point: the rule
 
-`contents` MUST satisfy three constraints:
+New qualified `contents` MUST satisfy these constraints:
 
-1. **Markdown** — well-formed, no raw HTML or scraper artifacts.
-2. **≥100 words** — standalone event context.
+1. **Markdown** — the fixed H2 sections in `builder/prompts/qualified-event-contract.md`, in order, with no raw HTML, entities, or scraper artifacts.
+2. **≥100 evidence-grounded prose words** — reject a candidate whose available facts cannot support that length; never pad or invent.
 3. **E-PRIME** — zero forms of *to be*: `is`, `are`, `was`, `were`, `be`, `been`, `being`, plus contractions (`it's`, `they're`, `aren't`, etc.).
 
 E-PRIME = active verbs. Rewrite passive → action.
@@ -36,13 +36,13 @@ Full rules: `references/eprime-guide.md`.
 
 ## Markdown conventions
 
-Headings `##`+ (entity title supplies `#`); no level-skipping. One blank line between paragraphs. Fenced code blocks with lang tags. `[label](url)` — no bare URLs. Bullet lists for facts, tables for comparisons. Sparing `**bold**`/`*italic*`. Strip: nav chrome, cookie banners, tracking params.
+Use the contract's five H2 headings exactly. One blank line between paragraphs. Fenced code blocks with lang tags. `[label](url)` — no bare URLs. Bullet lists for facts, tables for comparisons. Sparing `**bold**`/`*italic*`. Strip nav chrome, cookie banners, and tracking params.
 
 ## Pitfalls
 
-- **Hidden violations**: contractions (`it's`, `there's`), participials (`being held`). Quoted speech exempt if in blockquote/quote marks.
+- **Hidden violations**: contractions (`it's`, `there's`), participials (`being held`). The validator checks quoted text too; paraphrase source quotations when needed.
 - **Excessive emphasis**: limit bold to true keywords.
-- **Vague headings**: `## Overview` adds nothing. Use `## Seismic Activity`.
+- **Extra headings**: new qualified events use only the contract's five H2 sections.
 - **HTML leakage**: `<div>`, `&nbsp;`, `<br/>` from scrapers — strip before formatting.
 - **Word-count gaming**: add real context (location, timing, scale) not filler.
 

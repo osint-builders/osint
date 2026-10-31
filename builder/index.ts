@@ -25,7 +25,7 @@
  *   PARALLEL_AGENT_COUNT  — Bucket-count override; otherwise auto-sized
  *                           from SOURCES_PER_AGENT
  *   WARP_MODEL_ID         — Oz model_id pinned on every agent run. Defaults
- *                           to DEFAULT_MODEL_ID below. Pinning avoids the
+ *                           to DEFAULT_MODEL_ID in agent-runner. Pinning avoids the
  *                           account/environment default resolving to a
  *                           non-Warp-native model (e.g. Mistral).
  */
@@ -33,19 +33,15 @@
 import OzAPI from "oz-agent-sdk";
 import * as fs from "fs";
 import * as path from "path";
-import { execSync } from "child_process";
-import { DateTime } from "luxon";
+import { loadProcessableSources, getOriginUrl, Source } from "./lib/source-catalog";
+import { buildCollectionPrompt } from "./lib/collection-prompt";
 import {
-  MAX_PROMPT_SIZE_BYTES,
   DEFAULT_MODEL_ID,
-  SPAWN_STAGGER_MS,
-  activeRunIds,
-  setOzClient,
-  registerShutdownHandlers,
-  cancelActiveRuns,
-  sleep,
-  renderTemplate,
-  pollUntilComplete,
+  AgentJob,
+  AgentResult,
+  AgentRunCoordinator,
+  assertPromptSize,
+  ozClientAdapter,
 } from "./lib/agent-runner";
 
 // Bucket count derives from wall-clock parallelism, not prompt size: each
@@ -54,7 +50,11 @@ import {
 const SOURCES_PER_AGENT = 12;
 
 function calculateBucketCount(sourceCount: number): number {
-  const configuredCount = parseInt(process.env.PARALLEL_AGENT_COUNT || "0");
+  const raw = process.env.PARALLEL_AGENT_COUNT;
+  const configuredCount = raw ? Number(raw) : 0;
+  if (raw && (!Number.isSafeInteger(configuredCount) || configuredCount < 1)) {
+    throw new Error(`PARALLEL_AGENT_COUNT must be a positive integer (got ${raw})`);
+  }
   const autoCount = Math.ceil(sourceCount / SOURCES_PER_AGENT);
   const count = configuredCount > 0 ? configuredCount : autoCount;
 
@@ -65,57 +65,6 @@ function calculateBucketCount(sourceCount: number): number {
   console.log(`  Using: ${count} buckets\n`);
 
   return count;
-}
-
-// Statuses that should be EXCLUDED from a collection run.
-// Anything else (active, testing, unverified, etc.) is processed so that
-// new sources are never silently dropped from the prompt.
-const EXCLUDED_STATUSES = new Set(["inactive", "archived", "deprecated"]);
-
-export interface Source {
-  id: string;
-  name: string;
-  file: string;
-  status: string;
-  type?: string;
-  priority?: string;
-}
-
-export interface Manifest {
-  sources: Source[];
-}
-
-/**
- * Returns every source from source/manifest.json whose status is NOT in
- * EXCLUDED_STATUSES. We explicitly opt out of an allow-list (e.g. status ===
- * "active") so a freshly-added source with status "testing" cannot silently
- * disappear from the collection run. To skip a source, set its status to one
- * of the EXCLUDED_STATUSES values.
- */
-export function loadProcessableSources(repoRoot: string): Source[] {
-  const manifestPath = path.join(repoRoot, "source", "manifest.json");
-  const manifest: Manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
-  return manifest.sources.filter(
-    (s) => !EXCLUDED_STATUSES.has((s.status ?? "").toLowerCase())
-  );
-}
-
-export function readSourceFile(repoRoot: string, source: Source): string {
-  const sourcePath = path.join(repoRoot, "source", source.file);
-  if (!fs.existsSync(sourcePath)) {
-    return `(source file not found: source/${source.file})`;
-  }
-  return fs.readFileSync(sourcePath, "utf-8");
-}
-
-export function getOriginUrl(repoRoot: string): string {
-  try {
-    return execSync("git remote get-url origin", { cwd: repoRoot })
-      .toString()
-      .trim();
-  } catch {
-    return "git@github.com:osint-builders/osint.git";
-  }
 }
 
 /**
@@ -141,178 +90,8 @@ function partitionSources(sources: Source[], bucketCount: number): Source[][] {
   return buckets.filter(bucket => bucket.length > 0);
 }
 
-/**
- * Loads the prompt template once. Path is relative to this file so it works
- * regardless of cwd.
- */
-let cachedTemplate: string | null = null;
-function loadPromptTemplate(): string {
-  if (cachedTemplate === null) {
-    const templatePath = path.join(__dirname, "prompts", "collection-prompt.md");
-    cachedTemplate = fs.readFileSync(templatePath, "utf-8");
-  }
-  return cachedTemplate;
-}
-
-// LEARNINGS.md injection cap: 100 entries OR 10 KB, whichever first. The
-// injected block repeats in EVERY bucket prompt, so the byte cap directly
-// multiplies into per-run token cost. Per-source liveness facts belong in
-// source/manifest.json notes, not here.
-const LEARNINGS_MAX_ENTRIES = 100;
-const LEARNINGS_MAX_BYTES = 10 * 1024;
-
-interface LearningEntry {
-  raw: string;        // full markdown of the entry, including its `## ...` header
-  date: string | null; // YYYY-MM-DD parsed from the header, for ordering
-  expires: string | null; // YYYY-MM-DD or "permanent"
-}
-
-/**
- * Parses LEARNINGS.md into individual entries, drops expired ones, and caps
- * the result at LEARNINGS_MAX_ENTRIES / LEARNINGS_MAX_BYTES (oldest
- * non-permanent entries fall off first).
- *
- * Returns the markdown to inject into the prompt as `${learnings}`. If the
- * file is missing or has no entries, returns a sentinel string so the agent
- * can recognize an empty knowledge base.
- */
-function loadLearnings(repoRoot: string): string {
-  const learningsPath = path.join(repoRoot, "LEARNINGS.md");
-  if (!fs.existsSync(learningsPath)) {
-    return "_No prior learnings recorded yet._";
-  }
-  const text = fs.readFileSync(learningsPath, "utf-8");
-
-  // Split on `## ` headers that look like dated entries. The file's own
-  // doc headers (`## Rules…`, `## Required entry format`, `## Maintenance`)
-  // are above the `<!-- entries below this line; newest first -->` marker.
-  const marker = "<!-- entries below this line; newest first -->";
-  const idx = text.indexOf(marker);
-  const body = idx >= 0 ? text.slice(idx + marker.length) : text;
-
-  const entryRe = /^## (\d{4}-\d{2}-\d{2})[^\n]*$/gm;
-  const matches: { headerStart: number }[] = [];
-  let m: RegExpExecArray | null;
-  while ((m = entryRe.exec(body)) !== null) {
-    matches.push({ headerStart: m.index });
-  }
-  const entries: LearningEntry[] = [];
-  for (let i = 0; i < matches.length; i++) {
-    const start = matches[i].headerStart;
-    const end = i + 1 < matches.length ? matches[i + 1].headerStart : body.length;
-    const raw = body.slice(start, end).trim();
-    const dateMatch = raw.match(/^## (\d{4}-\d{2}-\d{2})/);
-    const expiresMatch = raw.match(/\*\*Expires:\*\*\s*([^\n]+)/i);
-    const expiresRaw = expiresMatch ? expiresMatch[1].trim() : null;
-    entries.push({
-      raw,
-      date: dateMatch ? dateMatch[1] : null,
-      expires: expiresRaw,
-    });
-  }
-
-  if (entries.length === 0) {
-    return "_No prior learnings recorded yet._";
-  }
-
-  // Drop expired entries.
-  const todayIso = new Date().toISOString().slice(0, 10);
-  const live = entries.filter((e) => {
-    if (!e.expires) return true; // missing expiry → keep, treated as permanent
-    if (/^permanent$/i.test(e.expires)) return true;
-    // Anything other than YYYY-MM-DD → keep (don't silently drop weird input).
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(e.expires)) return true;
-    return e.expires >= todayIso;
-  });
-
-  // Sort newest-first by date for the agent's reading order. Permanent /
-  // undated entries sort to the end.
-  live.sort((a, b) => {
-    if (a.date && b.date) return b.date.localeCompare(a.date);
-    if (a.date) return -1;
-    if (b.date) return 1;
-    return 0;
-  });
-
-  // Cap: keep all permanent entries, then fill remaining quota with newest
-  // non-permanent until we hit either limit.
-  const isPermanent = (e: LearningEntry) =>
-    !e.expires || /^permanent$/i.test(e.expires);
-  const permanent = live.filter(isPermanent);
-  const dated = live.filter((e) => !isPermanent(e));
-
-  const kept: LearningEntry[] = [...permanent];
-  let bytes = kept.reduce((n, e) => n + e.raw.length + 2, 0);
-  for (const e of dated) {
-    if (kept.length >= LEARNINGS_MAX_ENTRIES) break;
-    if (bytes + e.raw.length + 2 > LEARNINGS_MAX_BYTES) break;
-    kept.push(e);
-    bytes += e.raw.length + 2;
-  }
-
-  // Re-sort kept entries newest-first for output, with permanent at top.
-  const out = [...permanent, ...dated.filter((e) => kept.includes(e))]
-    .map((e) => e.raw)
-    .join("\n\n");
-  return out || "_No prior learnings recorded yet._";
-}
-
-function buildCollectionPrompt(
-  repoRoot: string,
-  sources: Source[],
-  originUrl: string,
-  bucketNum: number,
-  totalBuckets: number
-): string {
-  const executionTime = DateTime.now().setZone("UTC");
-  const extractionTime = executionTime.minus({ hours: 1 }).setZone("America/New_York");
-  const executionTimestamp = executionTime.toISO();
-  const extractionTimestamp = extractionTime.toISO();
-  const extractionDate = extractionTime.toISODate(); // YYYY-MM-DD
-  const yearMonth = extractionDate.slice(0, 7);
-
-  // Time window for 1-hour lookback (UTC)
-  const oneHourAgo = executionTime.minus({ hours: 1 });
-  const timeWindowStart = oneHourAgo.toISO();
-  const timeWindowEnd = executionTime.toISO();
-
-  const sourceBlocks = sources
-    .map((s) => {
-      const content = readSourceFile(repoRoot, s);
-      return `### Source: ${s.name} (id: ${s.id}, file: source/${s.file})\n\n${content}`;
-    })
-    .join("\n\n---\n\n");
-
-  // Sentinel list of expected source IDs. The agent MUST cross-check this
-  // against source/manifest.json at runtime and abort if they disagree, so
-  // a newly-added source can never be silently dropped from a collection run.
-  const expectedIds = sources.map((s) => s.id);
-  const expectedIdsBash = expectedIds.map((id) => `"${id}"`).join(" ");
-  const expectedIdsList = expectedIds.map((id) => `- ${id}`).join("\n");
-
-  return renderTemplate(loadPromptTemplate(), {
-    bucketNum,
-    totalBuckets,
-    bucketSourceCount: sources.length,
-    executionTimestamp,
-    extractionTimestamp,
-    extractionDate,
-    yearMonth,
-    timeWindowStart,
-    timeWindowEnd,
-    originUrl,
-    extractionTimeHHMM: extractionTime.toFormat("HH:mm"),
-    expectedIdsList,
-    expectedIdsBash,
-    sourceBlocks,
-    learnings: loadLearnings(repoRoot),
-  });
-}
-
-registerShutdownHandlers();
-
 async function main(): Promise<void> {
-  const repoRoot = process.env["REPO_ROOT"] ?? process.cwd();
+  const repoRoot = process.env["REPO_ROOT"] ?? path.resolve(__dirname, "..");
   const dryRun = process.argv.includes("--dry-run");
   const warpApiKey = process.env["WARP_API_KEY"];
   const environmentId = process.env["WARP_ENVIRONMENT_ID"];
@@ -323,9 +102,9 @@ async function main(): Promise<void> {
     console.error("Hint: pass --dry-run to build the prompts without dispatching agents.");
     process.exit(1);
   }
-
-  const client = dryRun ? null : new OzAPI({ apiKey: warpApiKey! });
-  setOzClient(client); // expose to SIGTERM handler
+  if (!environmentId && !dryRun) {
+    throw new Error("WARP_ENVIRONMENT_ID is required for the cloud agent runtime");
+  }
 
   // Load every processable source
   let processableSources: Source[];
@@ -392,115 +171,55 @@ async function main(): Promise<void> {
     console.log(`  Bucket ${i + 1}: ${bucket.length} sources (${sourceIds.slice(0, 60)}...)`);
   });
 
-  // Spawn all agents in parallel
-  console.log(dryRun ? `[dry-run] Building ${buckets.length} prompts...` : `Spawning ${buckets.length} Warp cloud agents...`);
-  const runPromises = buckets.map(async (bucket, bucketIndex) => {
+  // Build and validate every prompt before the first cloud agent starts.
+  console.log(dryRun ? `[dry-run] Building ${buckets.length} prompts...` : `Preparing ${buckets.length} Warp cloud agents...`);
+  const jobs: AgentJob[] = buckets.map((bucket, bucketIndex) => {
     const bucketNum = bucketIndex + 1;
     const prompt = buildCollectionPrompt(repoRoot, bucket, originUrl, bucketNum, buckets.length);
-
-    // Validate prompt size before sending
-    const promptSizeBytes = Buffer.byteLength(prompt, 'utf8');
+    const promptSizeBytes = assertPromptSize(prompt, `Bucket ${bucketNum}`);
     const promptSizeKB = (promptSizeBytes / 1024).toFixed(1);
     const promptSizeMB = (promptSizeBytes / 1024 / 1024).toFixed(2);
-
     console.log(`  Bucket ${bucketNum}: ${bucket.length} sources, prompt size: ${promptSizeKB} KB (${promptSizeMB} MB)`);
+    return { label: `osint-collection-bucket${bucketNum}`, prompt, itemCount: bucket.length };
+  });
 
-    if (promptSizeBytes > MAX_PROMPT_SIZE_BYTES) {
-      const errorMsg = `Bucket ${bucketNum} prompt exceeds 1 MB limit: ${promptSizeMB} MB (${promptSizeBytes} bytes). Raise PARALLEL_AGENT_COUNT or slim the sources.`;
-      console.error(`  ❌ ${errorMsg}`);
-      throw new Error(errorMsg);
-    }
-
-    if (dryRun) {
+  if (dryRun) {
+    jobs.forEach((job, index) => {
+      const bucketNum = index + 1;
       // Write the constructed prompt to disk for inspection rather than spawning.
       const outDir = path.join(repoRoot, ".dry-run-prompts");
       fs.mkdirSync(outDir, { recursive: true });
       const outPath = path.join(outDir, `bucket-${bucketNum}.md`);
-      fs.writeFileSync(outPath, prompt);
+      fs.writeFileSync(outPath, job.prompt);
       console.log(`  ✓ Bucket ${bucketNum}: wrote ${outPath}`);
-      return { bucketNum, runId: "dry-run", bucket };
-    }
+    });
+    console.log(`\n[dry-run] Built ${jobs.length} prompts. No agents dispatched.`);
+    return;
+  }
 
-    const runParams: OzAPI.AgentRunParams = {
-      prompt,
-      config: {
-        name: `osint-collection-bucket${bucketNum}-${new Date().toISOString()}`,
-        model_id: modelId,
-        ...(environmentId ? { environment_id: environmentId } : {}),
-      },
-    };
-
-    // Stagger spawns to avoid hitting the API with 15 simultaneous requests.
-    await sleep(bucketIndex * SPAWN_STAGGER_MS);
-
-    try {
-      const runResponse = await client!.agent.run(runParams);
-      activeRunIds.add(runResponse.run_id); // track for SIGTERM cleanup
-      console.log(`  ✓ Bucket ${bucketNum}: spawned (run ID: ${runResponse.run_id})`);
-      return { bucketNum, runId: runResponse.run_id, bucket };
-    } catch (err) {
-      const status = (err as { status?: number }).status;
-      if (status === 401 || status === 402 || status === 403) {
-        console.error(
-          `  ✗ Bucket ${bucketNum}: spawn rejected (HTTP ${status}). ` +
-          `WARP_API_KEY looks invalid, expired, or out of credits — ` +
-          `rotate the key / top up credits (see README §Configuration).`
-        );
-      } else {
-        console.error(`  ✗ Bucket ${bucketNum}: failed to spawn - ${err}`);
-      }
-      throw err;
-    }
-  });
-
-  let runs: { bucketNum: number; runId: string; bucket: Source[] }[];
+  const coordinator = new AgentRunCoordinator(
+    ozClientAdapter(new OzAPI({ apiKey: warpApiKey! })),
+    { modelId, environmentId }
+  );
+  let results: AgentResult[];
   try {
-    runs = await Promise.all(runPromises);
+    results = await coordinator.execute(jobs);
   } catch (err) {
-    console.error(`Error spawning agents: ${err}`);
-    process.exit(1);
+    console.error(`Collection failed: ${err}`);
+    process.exitCode = 1;
+    return;
   }
 
-  if (dryRun) {
-    console.log(`\n[dry-run] Built ${runs.length} prompts. No agents dispatched.`);
-    process.exit(0);
-  }
-
-  // Poll all agents concurrently
-  console.log(`\nPolling ${runs.length} agents for completion...`);
-  const pollPromises = runs.map(async ({ bucketNum, runId, bucket }) => {
-    const finalState = await pollUntilComplete(client!, runId);
-    activeRunIds.delete(runId); // no longer needs SIGTERM cleanup
-    return { bucketNum, finalState, sourceCount: bucket.length };
-  });
-
-  let results: { bucketNum: number; finalState: string; sourceCount: number }[];
-  try {
-    results = await Promise.all(pollPromises);
-  } catch (err) {
-    console.error(`\nFatal polling error: ${err}`);
-    console.error(`Cancelling remaining in-progress runs before exit...`);
-    await cancelActiveRuns();
-    process.exit(1);
-  }
-
-  // Report results
   console.log(`\n=== Collection Results ===`);
-  let allSucceeded = true;
-  results.forEach(({ bucketNum, finalState, sourceCount }) => {
-    const status = finalState === "SUCCEEDED" ? "✓" : "✗";
-    console.log(`  ${status} Bucket ${bucketNum}: ${finalState} (${sourceCount} sources)`);
-    if (finalState !== "SUCCEEDED") {
-      allSucceeded = false;
-    }
+  results.forEach(({ state, itemCount }, index) => {
+    const status = state === "SUCCEEDED" ? "✓" : "✗";
+    console.log(`  ${status} Bucket ${index + 1}: ${state} (${itemCount} sources)`);
   });
-
-  if (allSucceeded) {
+  if (results.every(({ state }) => state === "SUCCEEDED")) {
     console.log("\n✓ All collection buckets succeeded.");
-    process.exit(0);
   } else {
     console.error("\n✗ One or more collection buckets failed.");
-    process.exit(1);
+    process.exitCode = 1;
   }
 }
 
@@ -509,5 +228,8 @@ async function main(): Promise<void> {
 export { buildCollectionPrompt };
 
 if (require.main === module) {
-  main();
+  main().catch((error) => {
+    console.error(`Collection failed: ${error}`);
+    process.exitCode = 1;
+  });
 }

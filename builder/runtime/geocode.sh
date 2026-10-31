@@ -14,15 +14,21 @@ GEOCODING_CACHE="${GEOCODING_CACHE:-/tmp/geocoding-cache.json}"
 if [ ! -f "$GEOCODING_CACHE" ]; then
   cat > "$GEOCODING_CACHE" <<'SEED'
 {
-  "Goma, Democratic Republic of Congo": {"lat": "-1.6777", "lon": "29.2285", "display_name": "Goma, DRC (seeded)"},
-  "Uvira, Democratic Republic of Congo": {"lat": "-3.4", "lon": "29.14", "display_name": "Uvira, DRC (seeded)"},
-  "Bunia, Democratic Republic of Congo": {"lat": "1.5667", "lon": "30.25", "display_name": "Bunia, DRC (seeded)"},
-  "Spratly Islands, South China Sea": {"lat": "10.68", "lon": "117.83", "display_name": "Spratly Islands (seeded)"}
+  "Goma, Democratic Republic of Congo": {"lat": -1.6777, "lon": 29.2285, "display_name": "Goma, DRC (seeded)"},
+  "Uvira, Democratic Republic of Congo": {"lat": -3.4, "lon": 29.14, "display_name": "Uvira, DRC (seeded)"},
+  "Bunia, Democratic Republic of Congo": {"lat": 1.5667, "lon": 30.25, "display_name": "Bunia, DRC (seeded)"},
+  "Spratly Islands, South China Sea": {"lat": 10.68, "lon": 117.83, "display_name": "Spratly Islands (seeded)"}
 }
 SEED
 fi
 
-cached=$(jq -c --arg loc "$LOCATION" '.[$loc] // empty' "$GEOCODING_CACHE" 2>/dev/null)
+cached=$(jq -c --arg loc "$LOCATION" '
+  .[$loc] // empty |
+  .lat |= (try tonumber catch null) |
+  .lon |= (try tonumber catch null) |
+  select(.lat != null and .lon != null and
+         .lat >= -90 and .lat <= 90 and .lon >= -180 and .lon <= 180)
+' "$GEOCODING_CACHE" 2>/dev/null || true)
 if [ -n "$cached" ]; then
   printf '%s\n' "$cached"
   exit 0
@@ -30,10 +36,24 @@ fi
 
 encoded=$(printf '%s' "$LOCATION" | jq -sRr @uri)
 sleep 1
-result=$(curl -s -A "osint-collector/1.0 (github.com/osint-builders/osint)" \
-  "https://nominatim.openstreetmap.org/search?q=$encoded&format=json&limit=1" \
-  | jq -c 'if length > 0 then {lat: .[0].lat, lon: .[0].lon, display_name: .[0].display_name} else {lat: null, lon: null, display_name: null} end')
+if ! response=$(curl -fsS --connect-timeout 5 --max-time 12 \
+  -A "osint-collector/1.0 (github.com/osint-builders/osint)" \
+  "https://nominatim.openstreetmap.org/search?q=$encoded&format=json&limit=1" 2>/dev/null); then
+  printf '%s\n' '{"lat":null,"lon":null,"display_name":null}'
+  exit 0
+fi
+result=$(printf '%s' "$response" | jq -c '
+  if type == "array" and length > 0 then
+    {lat: (.[0].lat | tonumber), lon: (.[0].lon | tonumber), display_name: .[0].display_name}
+  else {lat: null, lon: null, display_name: null} end
+' 2>/dev/null) || result=''
+if [ -z "$result" ]; then
+  printf '%s\n' '{"lat":null,"lon":null,"display_name":null}'
+  exit 0
+fi
 
-tmp_cache=$(jq --arg loc "$LOCATION" --argjson res "$result" '. + {($loc): $res}' "$GEOCODING_CACHE")
-printf '%s\n' "$tmp_cache" > "$GEOCODING_CACHE"
+if tmp_cache=$(jq --arg loc "$LOCATION" --argjson res "$result" \
+  '. + {($loc): $res}' "$GEOCODING_CACHE" 2>/dev/null); then
+  printf '%s\n' "$tmp_cache" > "$GEOCODING_CACHE"
+fi
 printf '%s\n' "$result"

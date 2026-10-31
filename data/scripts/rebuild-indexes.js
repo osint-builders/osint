@@ -67,14 +67,29 @@ async function readAllEvents() {
   return events;
 }
 
-function buildBySourceIndex(events) {
-  const bySource = {};
+function loadSourceIdsByName() {
+  const manifestPath = path.join(__dirname, '..', '..', 'source', 'manifest.json');
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+  const idsByName = new Map();
+  for (const source of manifest.sources) {
+    // A Telegram and X source can share a display name. Do not guess which
+    // one produced a historical event whose source.id is missing.
+    idsByName.set(source.name, idsByName.has(source.name) ? null : source.id);
+  }
+  return idsByName;
+}
+
+function buildBySourceIndex(events, sourceIdsByName) {
+  const bySource = Object.create(null);
   events.forEach(evt => {
-    const sourceId = evt.source?.id || 'unknown';
+    const sourceName = evt.source?.name || 'Unknown';
+    // Older events carry the source name but not its manifest ID. Keep those
+    // sources distinct instead of merging them all into one "unknown" row.
+    const sourceId = evt.source?.id || sourceIdsByName.get(sourceName) || `name:${sourceName}`;
     if (!bySource[sourceId]) {
       bySource[sourceId] = {
         source_id: sourceId,
-        source_name: evt.source?.name || 'Unknown',
+        source_name: sourceName,
         count: 0,
         earliest_date: null,
         latest_date: null
@@ -93,7 +108,7 @@ function buildBySourceIndex(events) {
 }
 
 function buildByTopicIndex(events) {
-  const byTopic = {};
+  const byTopic = Object.create(null);
   events.forEach(evt => {
     // Normalize topics inline so indexes always reflect clean data
     normalizeTopics(evt.topics || []).forEach(topic => {
@@ -105,7 +120,7 @@ function buildByTopicIndex(events) {
 }
 
 function buildByLocationIndex(events) {
-  const byLocation = {};
+  const byLocation = Object.create(null);
   events.forEach(evt => {
     const country = evt.geo?.country;
     if (country) {
@@ -119,8 +134,8 @@ function buildByLocationIndex(events) {
 }
 
 function buildStatsIndex(events) {
-  const byDate = {};
-  const byMonth = {};
+  const byDate = Object.create(null);
+  const byMonth = Object.create(null);
   let totalConfidence = 0;
   let confidenceCount = 0;
 
@@ -135,8 +150,8 @@ function buildStatsIndex(events) {
       byMonth[month] = (byMonth[month] || 0) + 1;
     }
 
-    if (evt.confidence_score != null) {
-      totalConfidence += evt.confidence_score;
+    if (typeof evt.confidence === 'number' && Number.isFinite(evt.confidence)) {
+      totalConfidence += evt.confidence;
       confidenceCount++;
     }
   });
@@ -160,7 +175,7 @@ async function main() {
   if (!fs.existsSync(INDEXES_DIR)) fs.mkdirSync(INDEXES_DIR, { recursive: true });
 
   console.log('Building by-source index...');
-  const bySource = buildBySourceIndex(events);
+  const bySource = buildBySourceIndex(events, loadSourceIdsByName());
   fs.writeFileSync(path.join(INDEXES_DIR, 'by-source.json'), JSON.stringify(bySource, null, 2));
 
   console.log('Building by-topic index...');
@@ -177,7 +192,7 @@ async function main() {
   const baseStats = buildStatsIndex(events);
 
   const dates = events.map(e => e.date_published).filter(Boolean).sort();
-  const bySourceMap = {};
+  const bySourceMap = Object.create(null);
   events.forEach(e => {
     const n = e.source?.name || e.source_name || 'Unknown';
     bySourceMap[n] = (bySourceMap[n] || 0) + 1;
@@ -205,12 +220,16 @@ async function main() {
 
   console.log('\nIndexes rebuilt successfully:');
   console.log(`  by-source.json (${bySource.length} sources)`);
-  console.log(`  by-topic.json  (${byTopic.length} unique topics — was 1684)`);
+  console.log(`  by-topic.json  (${byTopic.length} unique topics)`);
   console.log(`  by-location.json (${byLocation.length} countries)`);
   console.log(`  data/stats.json (unified — ${events.length} events)`);
 }
 
-main().catch(err => {
-  console.error('Error rebuilding indexes:', err);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch(err => {
+    console.error('Error rebuilding indexes:', err);
+    process.exit(1);
+  });
+}
+
+module.exports = { buildBySourceIndex };

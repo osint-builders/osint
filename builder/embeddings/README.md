@@ -4,7 +4,7 @@ Generates the semantic search index from collected events.
 
 Pipeline: `data/events/**/*.jsonl` → Hugging Face `all-MiniLM-L6-v2` (384-dim, runs locally — no API key) → L2-normalize → flat float32 `embeddings.bin`
 
-Outputs to `data/indexes/`: `embeddings.bin`, `metadata.json`, `schema.json`, `fingerprints.json`, plus per-event detail files under `data/indexes/events/` (gitignored; regenerated at Pages deploy).
+Outputs to `data/indexes/`: `embeddings.bin`, `metadata.json`, `schema.json`, `fingerprints.json`. The Pages deploy generates per-event detail files under `data/indexes/events/`.
 
 See the docstring at the top of `build_index.py` for the canonical pipeline description.
 
@@ -29,6 +29,7 @@ The model runs locally in CI — zero per-event API cost. Fingerprinting in `uti
 |---|---|
 | `build_index.py` | Entry point: load → fingerprint-diff → embed → save. |
 | `embedder.py` | MiniLM wrapper + embedding-text preparation. |
-| `indexer.py` | Metadata/schema extraction + per-event detail files. |
+| `indexer.py` | Metadata and schema extraction. |
 | `utils.py` | Fingerprints + binary serialization. |
 | `backfill_event_details.py` | Regenerates per-event detail JSON at Pages deploy time. |
+| `verify_index.py` | Checks that a release's event rows, semantic index, derived indexes, and stats agree. |

@@ -22,12 +22,15 @@ export interface EventMetadata {
     country?: string;
     region?: string;
     city?: string;
+    location_name?: string;
+    precision?: 'exact' | 'city' | 'region' | 'country' | 'sea-area';
   } | null;
   topics: string[];
   confidence: number | null;
   source_name: string;
   links?: EventLink[];
   link_preview_image?: string | null;
+  image_origin?: 'article' | 'source' | 'default';
 }
 
 export interface SearchFilters {
@@ -54,6 +57,12 @@ export interface IndexSchema {
 export interface EventDetail extends EventMetadata {
   contents: string;
   image_urls: string[];
+  language?: 'en';
+  category?: 'armed-conflict' | 'geopolitics' | 'defense' | 'electronic-warfare' |
+    'major-disaster' | 'civil-unrest' | 'maritime-security';
+  audience?: 'united-states' | 'allied-forces';
+  allied_relevance?: string;
+  source_window?: { start: string; end: string };
   source: {
     name: string;
     provider?: string;
