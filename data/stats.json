@@ -1,14 +1,14 @@
 {
-  "last_updated": "2026-10-31T20:13:02.516Z",
+  "last_updated": "2026-10-31T20:20:31.327Z",
   "data_range": {
     "oldest_date": "2026-08-25",
     "newest_date": "2026-10-31"
   },
   "statistics": {
-    "total_events": 5116,
+    "total_events": 5106,
     "events_by_month": {
       "2026-08": 257,
-      "2026-09": 4738,
+      "2026-09": 4728,
       "2026-10": 121
     },
     "events_by_source": {
@@ -16,11 +16,11 @@
       "Quds News Network (@QudsNen)": 225,
       "Rerum Novarum Intel (@rnintel)": 128,
       "Intel Slava Z (@intelslava)": 180,
-      "UNITED24 Media": 42,
+      "UNITED24 Media": 38,
       "Wagner Z Group": 4,
       "ABC News": 57,
       "Insider Paper (@insiderpaper)": 99,
-      "Clash Report (@ClashReport)": 324,
+      "Clash Report (@ClashReport)": 323,
       "DD Geopolitics (@DDGeopolitics)": 161,
       "OSINT Technical (@Osinttechnical)": 64,
       "NSA (@NSAGov)": 3,
@@ -50,7 +50,7 @@
       "cepa (@cepa)": 20,
       "ELINT News (@ELINTNews)": 22,
       "CSIS Korea Chair (@CSISKoreaChair)": 22,
-      "Critical Threats Project (@criticalthreats)": 30,
+      "Critical Threats Project (@criticalthreats)": 29,
       "Institute for the Study of War (@TheStudyofWar)": 90,
       "Bellum Acta (@BellumActaNews)": 90,
       "Serhii FLASH — Technologies (@serhii_flash)": 15,
@@ -83,11 +83,11 @@
       "BBC Breaking News (@BBCBreaking)": 16,
       "AP News": 20,
       "War Monitor (@warmonitors)": 45,
-      "Rerum Novarum Intel": 55,
+      "Rerum Novarum Intel": 52,
       "cepa": 5,
       "Sim Nasr": 3,
       "Ship News": 1,
-      "BBG Originals (@BBGOriginals)": 43,
+      "BBG Originals (@BBGOriginals)": 42,
       "Critical Threats Project": 14,
       "CNN": 6,
       "Thewarzonewire": 11,
@@ -183,7 +183,7 @@
       "Ministry of National Defense Taiwan": 1
     },
     "media_files": {
-      "images": 993,
+      "images": 986,
       "videos": 0
     }
   },
@@ -199,14 +199,14 @@
     "2026-09-02": 24,
     "2026-09-03": 75,
     "2026-09-04": 123,
-    "2026-09-05": 182,
-    "2026-09-06": 190,
+    "2026-09-05": 180,
+    "2026-09-06": 189,
     "2026-09-07": 137,
     "2026-09-08": 194,
     "2026-09-09": 210,
     "2026-09-10": 215,
-    "2026-09-11": 195,
-    "2026-09-12": 178,
+    "2026-09-11": 190,
+    "2026-09-12": 176,
     "2026-09-13": 134,
     "2026-09-14": 160,
     "2026-09-15": 157,
@@ -229,5 +229,5 @@
     "2026-10-30": 30,
     "2026-10-31": 24
   },
-  "average_confidence": 0.7859133126934937
+  "average_confidence": 0.7859337245426254
 }
