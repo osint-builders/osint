@@ -6,9 +6,8 @@ name: Qualify OSINT Tips
 # (translate, extract, E-PRIME, geocode, enrich, confidence) and commit the
 # resulting World Event Entities.
 #
-# Cadence: on demand only for now (workflow_dispatch), plus automatically
-# after identify.yml completes so a manual identify run drains itself. Add a
-# `schedule:` trigger once the new pipeline is validated end-to-end.
+# Cadence: on demand, plus automatically after identify.yml completes.
+# identify.yml owns the only collection schedule.
 
 on:
   workflow_dispatch:
@@ -16,9 +15,6 @@ on:
     workflows: ["Identify OSINT Tips"]
     types: [completed]
     branches: [main]
-  # schedule:
-  #   - cron: '15 9,13,17 * * *'
-  #     timezone: America/New_York
 
 # Prevent overlapping qualify runs racing on the same queue files. Queue if
 # a new run triggers while one remains in progress — the SIGTERM handler in
@@ -28,7 +24,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: read
+  contents: write
   actions: read
 
 env:
@@ -36,6 +32,7 @@ env:
   WARP_ENVIRONMENT_ID: ${{ secrets.WARP_ENVIRONMENT_ID }}
   # Unset → qualify.ts defaults to 3 tips per agent.
   QUALIFY_BATCH_SIZE: ${{ vars.QUALIFY_BATCH_SIZE || '' }}
+  QUALIFY_MAX_BATCHES: ${{ vars.QUALIFY_MAX_BATCHES || '' }}
   WARP_MODEL_ID: ${{ vars.WARP_MODEL_ID || '' }}
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -52,6 +49,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -59,6 +58,28 @@ jobs:
           node-version: '24'
           cache: 'npm'
           cache-dependency-path: builder/package-lock.json
+
+      - name: Archive expired and already processed tips
+        run: |
+          set -euo pipefail
+          node builder/runtime/expire-tips.cjs --max-age-hours 24
+          git add -A data/queue
+          if git diff --cached --quiet; then
+            echo "No queue cleanup needed."
+            exit 0
+          fi
+          bash builder/runtime/git-identity.sh
+          git commit -m "Archive expired OSINT tips [skip ci]"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Queue archive push attempt $attempt/5 failed."
+            sleep "$((attempt * 2))"
+          done
+          echo "Queue archive push failed after 5 attempts." >&2
+          exit 1
 
       - name: Install builder dependencies
         run: npm ci

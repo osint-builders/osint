@@ -7,20 +7,19 @@ name: Identify OSINT Tips
 # ephemeral github.token instead). Sources with a hit get a lightweight tip
 # record committed to data/queue/pending/ for qualify.yml to process.
 #
-# Cadence: every 2 hours (UTC-based cron), plus manual dispatch.
+# Cadence: daily at 09:00 America/New_York, plus manual dispatch.
 # qualify.yml chains off this run via `workflow_run`, so this single trigger
 # drives the whole Tip & Queue pipeline — do not also schedule qualify.yml or
 # each tip gets picked up twice.
 #
-# NOTE: identify.sh scans a lookback window matching the cadence below (2
-# hours), so back-to-back runs cover the full day with no gaps. If you change
-# the cadence, update the lookback window in the "Compute lookback window"
-# step to match.
+# This is deliberate sampling, not continuous coverage. A longer window or
+# more frequent cadence increases the downstream LLM workload.
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 9 * * *'
+      timezone: America/New_York
 
 concurrency:
   group: osint-identify
@@ -43,7 +42,7 @@ jobs:
       - name: Compute lookback window
         id: window
         run: |
-          echo "start=$(date -u -d '2 hours ago' +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
+          echo "start=$(date -u -d '1 hour ago' +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
           echo "end=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
 
       - name: Identify tips across processable sources

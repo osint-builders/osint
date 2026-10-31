@@ -6,7 +6,8 @@ following the same bot-commit convention as the rest of `data/`.
 ```
 data/queue/
 ├── pending/     # tips identify.yml has written, not yet qualified
-└── processed/   # tips qualify.yml has consumed (kept for audit/debugging)
+├── processed/   # tips qualify.yml has consumed (kept for audit/debugging)
+└── expired/     # tips that waited more than 24 hours (retained for backfill)
 ```
 
 ## Tip record shape
@@ -36,7 +37,11 @@ URLs + best-effort snippets, not yet translated, extracted, or geocoded.
 
 1. `identify.yml` (stage 1, no LLM) scans every processable source and
    writes tips here for anything published in the last hour.
-2. `qualify.yml` (stage 2) reads `pending/`, groups tips into small batches,
-   and spawns one short-lived Warp cloud agent per batch to do the LLM work
-   (translate, extract, E-PRIME, geocode, enrich, confidence) and commit the
-   resulting World Event Entities to `data/events/`.
+2. Before qualification, `qualify.yml` moves tips older than 24 hours to
+   `expired/`. It also removes a redundant pending copy when the same filename
+   already exists in `processed/`. The archived JSON remains available for a
+   deliberate backfill; the live workflow does not spend LLM credits on it.
+3. `qualify.yml` (stage 2) takes the newest pending tips, at most 10 batches
+   of 3 by default, and spawns one short-lived Warp cloud agent per batch to
+   do the LLM work (translate, extract, E-PRIME, geocode, enrich, confidence)
+   and commit the resulting World Event Entities to `data/events/`.

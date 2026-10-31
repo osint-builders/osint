@@ -9,6 +9,7 @@
     "dry-run": "tsx index.ts --dry-run",
     "qualify": "tsx qualify.ts",
     "qualify-dry-run": "tsx qualify.ts --dry-run",
+    "verify-queue-recovery": "node scripts/verify-queue-recovery.cjs",
     "verify-prompt": "tsx scripts/verify-prompt-extraction.ts",
     "update-prompt-snapshot": "UPDATE_SNAPSHOT=1 tsx scripts/verify-prompt-extraction.ts"
   },

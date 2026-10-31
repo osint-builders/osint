@@ -129,6 +129,7 @@ Set these in **Settings → Secrets and variables → Actions**:
 | `TWITTER_BEARER_TOKEN` | secret | Optional but recommended. Used by both `identify.yml` (tip scan) and the qualify agent; Twitter sources produce no tips without it. |
 | `PARALLEL_AGENT_COUNT` | variable | Optional. Legacy `collection.yml` bucket-count override; unset → auto-sized at ~12 sources/agent. |
 | `QUALIFY_BATCH_SIZE` | variable | Optional. Tips per qualify agent; unset → defaults to 3 (`builder/qualify.ts`). |
+| `QUALIFY_MAX_BATCHES` | variable | Optional. Maximum qualify agents per workflow run; unset → defaults to 10. The newest tips run first. |
 | `WARP_MODEL_ID` | variable | Optional. Overrides the pinned Oz `model_id` (default: `claude-4-5-haiku`). Keeps every agent run on a Warp/Anthropic model instead of the account/environment default. |
 
 ### Key rotation / credit exhaustion

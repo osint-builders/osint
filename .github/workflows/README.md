@@ -11,7 +11,8 @@ See the top-level [README.md](../../README.md) for architecture and secrets setu
 ## qualify.yml — "Qualify OSINT Tips" (Tip & Queue, stage 2)
 
 - Triggers: `workflow_dispatch`, plus `workflow_run` after identify.yml completes. Intentionally has **no** `schedule:` of its own — the daily cadence lives on identify.yml and reaches this stage through the chain.
-- Job `qualify` runs `builder/qualify.ts`, which partitions `data/queue/pending/*.json` into small batches (default 3 tips, `QUALIFY_BATCH_SIZE` override) and spawns one short-lived Warp Cloud Agent per batch to translate/extract/geocode/enrich each tip, then archives consumed tips to `data/queue/processed/`.
+- Before dispatch, the job moves tips older than 24 hours to `data/queue/expired/` and removes pending copies already in `processed/`. The archived JSON remains available for deliberate backfill.
+- Job `qualify` runs `builder/qualify.ts`, which takes the newest pending tips in batches of 3 (`QUALIFY_BATCH_SIZE` override), capped at 10 agents per run (`QUALIFY_MAX_BATCHES` override). Each Warp Cloud Agent translates/extracts/geocodes/enriches its batch, then archives consumed tips to `data/queue/processed/`.
 - Shares spawn/poll/cancel infrastructure with `collect` via `builder/lib/agent-runner.ts`, including the 10-minute per-run deadline and BLOCKED-state cancellation.
 - Job `alert-on-failure` opens or updates a **"Qualify workflow failing"** issue on failure.
 

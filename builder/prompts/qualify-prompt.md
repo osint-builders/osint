@@ -83,13 +83,10 @@ Criteria + format: `skills/remember-as-you-go/SKILL.md`. Per-source liveness fin
 
 ## Step 6 — Archive consumed tips
 
-Move every tip file this batch processed from the pending queue into the processed archive, whether or not it produced an event (a duplicate/dead/off-topic candidate still counts as processed — never leave it in `pending/` to be rescanned forever):
+Move every tip file this batch processed from the pending queue into the processed archive, whether or not it produced an event (a duplicate/dead/off-topic candidate still counts as processed — never leave it in `pending/` to be rescanned forever). The helper validates and stages the moves:
 
 ```bash
-mkdir -p data/queue/processed
-for f in ${queueFilesBash}; do
-  [ -f "$f" ] && git mv "$f" "data/queue/processed/$(basename "$f")"
-done
+bash builder/runtime/archive-tips.sh ${queueFilesBash}
 ```
 
 Expected queue files for this batch:
@@ -100,6 +97,7 @@ ${queueFilesList}
 **Never open a pull request. Never use `gh pr create` or any equivalent. If pushing fails after retries, exit 1.**
 
 `submit.sh` owns the commit message, the git identity, and the push. Run it — never `git commit`, `git config user.*`, or `git push` by hand. A commit made outside it lands on `main` under the wrong identity and defeats `.github/workflows/audit-bot-commits.yml`.
+Do not recreate or stage files under `data/queue/pending/` after archiving; `submit.sh` rejects that state.
 
 ```bash
 bash builder/runtime/submit.sh ${yearMonth} ${extractionDate} ${batchNum} ${totalBatches} batch

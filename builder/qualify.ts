@@ -2,9 +2,9 @@
 /**
  * OSINT Qualifier — Tip & Queue stage 2 orchestrator.
  *
- * Reads every tip record from data/queue/pending/ (written by
- * builder/runtime/identify.sh, no LLM involved), groups them into small
- * fixed-size batches, renders builder/prompts/qualify-prompt.md per batch,
+ * Reads tip records from data/queue/pending/ (written by
+ * builder/runtime/identify.sh, no LLM involved), selects the newest bounded
+ * slice, groups it into small fixed-size batches, renders the prompt per batch,
  * and spawns one short-lived Warp cloud agent per batch via oz-agent-sdk.
  * Each agent does the LLM-heavy work (translate, extract, E-PRIME, geocode,
  * enrich, confidence) for just its batch of tips, then commits results and
@@ -20,6 +20,7 @@
  * Optional:
  *   REPO_ROOT             — Repository root (defaults to cwd)
  *   QUALIFY_BATCH_SIZE    — Tips per agent (default 3)
+ *   QUALIFY_MAX_BATCHES   — Maximum agents per run (default 10)
  *   WARP_MODEL_ID         — Oz model_id pinned on every agent run
  */
 
@@ -43,7 +44,19 @@ import { loadProcessableSources, readSourceFile, getOriginUrl, Source } from "./
 
 // Tips per qualify agent. Small on purpose — the whole point of Tip & Queue
 // is many short, cheap, bounded runs instead of few long ones.
-const QUALIFY_BATCH_SIZE = parseInt(process.env["QUALIFY_BATCH_SIZE"] || "3");
+function positiveInteger(name: string, fallback: number): number {
+  const raw = process.env[name];
+  const value = raw ? Number(raw) : fallback;
+  if (!Number.isSafeInteger(value) || value < 1) {
+    throw new Error(`${name} must be a positive integer (got ${raw})`);
+  }
+  return value;
+}
+
+const QUALIFY_BATCH_SIZE = positiveInteger("QUALIFY_BATCH_SIZE", 3);
+// Bound every workflow run. The queue can grow while qualification is down;
+// launching one agent per backlog batch would exceed the job deadline.
+const QUALIFY_MAX_BATCHES = positiveInteger("QUALIFY_MAX_BATCHES", 10);
 
 interface TipCandidate {
   url: string;
@@ -66,18 +79,32 @@ interface LoadedTip {
   relPath: string; // repo-relative path, e.g. data/queue/pending/<id>-<epoch>.json
 }
 
-/** Loads every *.json tip file from data/queue/pending/, sorted for determinism. */
+/** Loads pending tips, with the newest scan first and deterministic ties. */
 function loadPendingTips(repoRoot: string): LoadedTip[] {
   const pendingDir = path.join(repoRoot, "data", "queue", "pending");
+  const processedDir = path.join(repoRoot, "data", "queue", "processed");
   if (!fs.existsSync(pendingDir)) return [];
   const files = fs
     .readdirSync(pendingDir)
     .filter((f) => f.endsWith(".json"))
     .sort();
-  return files.map((f) => {
+  const tips: LoadedTip[] = [];
+  for (const f of files) {
+    if (fs.existsSync(path.join(processedDir, f))) {
+      console.warn(`Skipping duplicate pending tip already in processed/: ${f}`);
+      continue;
+    }
     const filePath = path.join(pendingDir, f);
     const tip: Tip = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    return { tip, relPath: path.join("data", "queue", "pending", f) };
+    if (!Array.isArray(tip.candidates)) {
+      throw new Error(`Invalid pending tip ${f}: candidates must be an array`);
+    }
+    tips.push({ tip, relPath: path.join("data", "queue", "pending", f) });
+  }
+  return tips.sort((a, b) => {
+    const aTime = Date.parse(a.tip.window_end || a.tip.identified_at || "") || 0;
+    const bTime = Date.parse(b.tip.window_end || b.tip.identified_at || "") || 0;
+    return bTime - aTime || a.relPath.localeCompare(b.relPath);
   });
 }
 
@@ -168,7 +195,11 @@ async function main(): Promise<void> {
     console.log("No pending tips found in data/queue/pending/. Exiting.");
     process.exit(0);
   }
-  console.log(`Found ${pendingTips.length} pending tip(s)`);
+  const selectedTips = pendingTips.slice(0, QUALIFY_BATCH_SIZE * QUALIFY_MAX_BATCHES);
+  console.log(`Found ${pendingTips.length} pending tip(s); selecting ${selectedTips.length} newest tip(s)`);
+  if (selectedTips.length < pendingTips.length) {
+    console.log(`Deferred ${pendingTips.length - selectedTips.length} older tip(s) to a later run`);
+  }
 
   const sourcesById = new Map(
     loadProcessableSources(repoRoot).map((s) => [s.id, s])
@@ -178,9 +209,9 @@ async function main(): Promise<void> {
   console.log(`Repository: ${originUrl}`);
   console.log(`Model: ${modelId}`);
 
-  const batches = partitionTips(pendingTips, QUALIFY_BATCH_SIZE);
+  const batches = partitionTips(selectedTips, QUALIFY_BATCH_SIZE);
   console.log(
-    `\nPartitioning ${pendingTips.length} tip(s) into ${batches.length} batch(es) of up to ${QUALIFY_BATCH_SIZE}`
+    `\nPartitioning ${selectedTips.length} tip(s) into ${batches.length} batch(es) of up to ${QUALIFY_BATCH_SIZE}`
   );
 
   console.log(
