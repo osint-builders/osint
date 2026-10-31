@@ -84,6 +84,9 @@ jobs:
           python -m pip install 'numpy>=1.24,<3'
           python -m unittest discover -s builder/embeddings/tests -p test_release_consistency.py -v
 
+      - name: Test data release tag selection
+        run: bash .github/scripts/test-next-data-release-tag.sh
+
       - name: Confirm skills/README.md is up to date
         run: |
           ./skills/scripts/regenerate-skills-readme.sh

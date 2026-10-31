@@ -94,34 +94,45 @@ jobs:
           REPO_ROOT="$GITHUB_WORKSPACE" python builder/embeddings/verify_index.py
           echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
+      - name: Test release tag selection
+        run: bash .github/scripts/test-next-data-release-tag.sh
+
+      - name: Select a new release revision
+        id: release
+        run: |
+          set -euo pipefail
+          tag=$(bash .github/scripts/next-data-release-tag.sh "${{ steps.date.outputs.date }}")
+          archive="osint-${tag}.tar.gz"
+          title="OSINT Data Collection - ${{ steps.date.outputs.date }}"
+          if [[ "$tag" =~ -r([0-9]+)$ ]]; then
+            title="$title (revision ${BASH_REMATCH[1]})"
+          fi
+          {
+            echo "tag=$tag"
+            echo "archive=$archive"
+            echo "name=$title"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Create archive of data folder
         run: |
           set -euo pipefail
           echo "Creating data archive..."
 
-          # Check if data directories exist
           if [ ! -d "data/events" ]; then
-            echo "No data to archive"
-            exit 0
+            echo "No event data to archive." >&2
+            exit 1
           fi
 
-          # Create tar.gz archive
-          tar -czf osint-data-${{ steps.date.outputs.date }}.tar.gz \
+          archive="${{ steps.release.outputs.archive }}"
+          tar -czf "$archive" \
             data/events/ \
             data/indexes/ \
             data/stats.json \
             data/SCHEMA.md \
             data/README.md
-          tar -tzf osint-data-${{ steps.date.outputs.date }}.tar.gz >/dev/null
-
-          # Check if archive was created
-          if [ -f "osint-data-${{ steps.date.outputs.date }}.tar.gz" ]; then
-            size=$(du -h "osint-data-${{ steps.date.outputs.date }}.tar.gz" | cut -f1)
-            echo "✓ Archive created: ${size}"
-          else
-            echo "No archive created (no data present)"
-            exit 0
-          fi
+          tar -tzf "$archive" >/dev/null
+          size=$(du -h "$archive" | cut -f1)
+          echo "Archive created: $archive ($size)"
 
       - name: Count events and generate statistics
         id: stats
@@ -138,16 +149,16 @@ jobs:
           echo "Statistics: ${total_events} events"
 
       - name: Create Release
-        if: hashFiles('osint-data-*.tar.gz') != ''
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: data-${{ steps.date.outputs.date }}
+          tag_name: ${{ steps.release.outputs.tag }}
           target_commitish: ${{ steps.snapshot.outputs.commit }}
-          name: OSINT Data Collection - ${{ steps.date.outputs.date }}
+          name: ${{ steps.release.outputs.name }}
           body: |
             ## Automated Weekly Data Release
 
             **Collection Date**: ${{ steps.date.outputs.date }}
+            **Snapshot Commit**: `${{ steps.snapshot.outputs.commit }}`
             **Total Events**: ${{ steps.stats.outputs.total_events }}
 
             ### Contents
@@ -183,7 +194,7 @@ jobs:
 
             ```bash
             # Extract archive
-            tar -xzf osint-data-${{ steps.date.outputs.date }}.tar.gz
+            tar -xzf ${{ steps.release.outputs.archive }}
 
             # Query events with jq
             cat data/events/*/2026-04-29.jsonl | jq '.'
@@ -202,7 +213,21 @@ jobs:
             ---
 
             🤖 Generated automatically via GitHub Actions
-          files: osint-data-${{ steps.date.outputs.date }}.tar.gz
+          files: ${{ steps.release.outputs.archive }}
           draft: false
           prerelease: false
-          fail_on_unmatched_files: false
+          fail_on_unmatched_files: true
+
+      - name: Verify release tag points to the snapshot
+        env:
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+          SNAPSHOT_COMMIT: ${{ steps.snapshot.outputs.commit }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin "refs/tags/$RELEASE_TAG"
+          actual_commit=$(git rev-parse "FETCH_HEAD^{commit}")
+          if [ "$actual_commit" != "$SNAPSHOT_COMMIT" ]; then
+            echo "Release tag $RELEASE_TAG points to $actual_commit, expected $SNAPSHOT_COMMIT." >&2
+            exit 1
+          fi
+          echo "Release tag $RELEASE_TAG points to the verified snapshot."

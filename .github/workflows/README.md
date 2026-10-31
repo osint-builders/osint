@@ -62,7 +62,7 @@ Drift detection on pushes to main. The workflow also declares a `pull_request` t
 
 ## create-release.yml — "Create Weekly Data Release"
 
-Weekly on Sunday at midnight UTC. Applies the exact 90-day file cutoff (`data/scripts/cleanup-old-data.sh`), rebuilds and verifies semantic indexes and stats against the retained events, commits one consistent snapshot, then archives `data/events`, `data/indexes`, and `data/stats.json` to a release tarball. On a competing push, it rebuilds from the latest `main` before retrying. The release tag points to the verified snapshot commit.
+Weekly on Sunday at midnight UTC and available on demand. Applies the exact 90-day file cutoff (`data/scripts/cleanup-old-data.sh`), rebuilds and verifies semantic indexes and stats against the retained events, commits one consistent snapshot, then archives `data/events`, `data/indexes`, and `data/stats.json` to a release tarball. On a competing push, it rebuilds from the latest `main` before retrying. A repeat release on the same UTC date gets the next `data-YYYY-MM-DD-rN` tag and a matching `osint-data-YYYY-MM-DD-rN.tar.gz` archive instead of replacing an earlier release. The workflow checks that the new tag points to its verified snapshot commit.
 
 ## Troubleshooting
 
