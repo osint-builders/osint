@@ -63,6 +63,23 @@ test('qualified contract rejects missing imagery and a disguised default', () =>
   assert.match(validateQualifiedEvent(disguised).join(' '), /default image/);
 });
 
+test('qualified contract rejects local or credentialed image URLs', () => {
+  for (const url of [
+    'http://localhost/image.jpg',
+    'http://127.0.0.1/image.jpg',
+    'http://169.254.169.254/latest/meta-data',
+    'http://[::1]/image.jpg',
+    'http://intranet/image.jpg',
+    'https://user:pass@example.org/photo.jpg',
+    'https://example.org/photo.jpg\nX-Injected: yes',
+  ]) {
+    const invalid = event();
+    invalid.image_urls = [url];
+    invalid.image_origin = 'article';
+    assert.match(validateQualifiedEvent(invalid).join(' '), /image_urls/, url);
+  }
+});
+
 test('qualified contract requires Snowflake IDs while historical mode keeps legacy IDs', () => {
   const invalid = event();
   invalid.id = 'evt_20261030_001';

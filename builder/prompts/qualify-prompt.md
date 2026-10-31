@@ -37,7 +37,7 @@ export WORK_DIR
 For each tip above (create `mkdir -p "$WORK_DIR/$source_id"` first, using that tip's `source_id`):
 
 1. **Fetch full content** for each candidate URL. The queued snippet may be truncated or empty. Use `curl` first; use `agent-browser` only when needed (`skills/agent-browser/SKILL.md`). If neither yields enough evidence, reject and log the candidate.
-2. **Apply the topical gate and translate** per `builder/prompts/qualified-event-contract.md`. Reject ordinary politics, crime, commentary, unverifiable claims, and unlocatable reports. Translate title, summary, and body fully into English before writing JSON.
+2. **Apply the event and topical gates, then translate** per `builder/prompts/qualified-event-contract.md`. Require a concrete new reported action or development; reject analysis/opinion that only discusses an ongoing situation, plus ordinary politics, crime, unverifiable claims, and unlocatable reports. Translate title, summary, and body fully into English before writing JSON.
 3. **Write one JSON World Event Entity per accepted candidate** using `data/SCHEMA.md` and the typed qualified-event contract:
    - `id`: `EVENT_ID=$(node data/scripts/snowflake.js --worker ${batchNum})` — globally unique across parallel batches.
    - `source.name`: exact `#` header text from the source context. No variants.
@@ -51,12 +51,15 @@ For each tip above (create `mkdir -p "$WORK_DIR/$source_id"` first, using that t
    ```bash
    GEO=$(bash builder/runtime/geocode.sh "<City, Country>")
    ```
-   Use a defensible city, region, country, or sea-area centroid with honest precision. Never use `(0, 0)` or the former global fallback. Reject when no meaningful location exists.
-6. **Images**: use remote article/post images when available; mark `image_origin: "article"`. Mark source banners/logos as `"source"`. The enrichment helper supplies a clearly marked default image if neither exists; never imply that it depicts the event.
+   Use a defensible city, region, country, or sea-area centroid with honest precision. Locate the reported action, never the publisher or organization's headquarters by inference. Never use `(0, 0)` or the former global fallback. Reject when no meaningful location exists.
+6. **Images**: use remote article/post images when available; mark `image_origin: "article"`. Mark source banners/logos as `"source"`. The enrichment helper verifies the image content and promotes a working preview or marked default when needed; never imply fallback art depicts the event.
 7. **Enrich and save** (the helper reads/writes compact JSON on stdin/stdout):
    ```bash
-   event_json=$(printf '%s' "$event_json" | bash builder/runtime/enrich-link-preview.sh)
-   printf '%s\n' "$event_json" >> "$WORK_DIR/$source_id/events.jsonl"
+   if event_json=$(printf '%s' "$event_json" | bash builder/runtime/enrich-link-preview.sh); then
+     printf '%s\n' "$event_json" >> "$WORK_DIR/$source_id/events.jsonl"
+   else
+     printf '[REJECT] no verified image\n' >> "$WORK_DIR/$source_id/notes.md"
+   fi
    ```
 8. **Log** errors, rejects, and rate limits to `$WORK_DIR/$source_id/notes.md` (stays local). A duplicate, off-topic, weakly evidenced, unlocatable, or unreachable candidate is a normal rejection; continue to the next candidate/tip.
 

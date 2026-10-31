@@ -1,4 +1,5 @@
 /** Additional contract for newly qualified events. Historical JSONL uses the baseline validator. */
+const { isIP } = require('node:net');
 const CATEGORIES = new Set([
   'armed-conflict',
   'geopolitics',
@@ -21,10 +22,16 @@ const CONTENT_HEADINGS = [
 ];
 
 function isRemoteUrl(value) {
-  if (typeof value !== 'string') return false;
+  if (typeof value !== 'string' || /\s/.test(value)) return false;
   try {
     const url = new URL(value);
-    return ['http:', 'https:'].includes(url.protocol) && !!url.hostname && !url.username && !url.password;
+    const host = url.hostname.toLowerCase().replace(/\.$/, '');
+    const literalHost = host.replace(/^\[/, '').replace(/\]$/, '');
+    return ['http:', 'https:'].includes(url.protocol) &&
+      !!host && host.includes('.') &&
+      host !== 'localhost' && !host.endsWith('.localhost') &&
+      !host.endsWith('.local') && !host.endsWith('.internal') &&
+      !isIP(literalHost) && !url.username && !url.password;
   } catch {
     return false;
   }
@@ -137,4 +144,4 @@ function validateQualifiedEvent(event) {
   return issues;
 }
 
-module.exports = { validateQualifiedEvent, CONTENT_HEADINGS, CATEGORIES, DEFAULT_IMAGE_URL };
+module.exports = { validateQualifiedEvent, isRemoteUrl, CONTENT_HEADINGS, CATEGORIES, DEFAULT_IMAGE_URL };

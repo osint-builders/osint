@@ -117,7 +117,7 @@ Newly qualified events use a typed publication contract. This abbreviated shape 
 }
 ```
 
-Full schema and a valid complete example: [`data/SCHEMA.md`](data/SCHEMA.md). `image_urls` holds **remote** URLs — the pipeline never downloads or re-hosts media. If no article image exists, the qualifier marks a source or default image in `image_origin`.
+Full schema and a valid complete example: [`data/SCHEMA.md`](data/SCHEMA.md). `image_urls` holds **remote** URLs — the pipeline verifies image responses but never stores or re-hosts media. If no working article image exists, the qualifier marks a source or default image in `image_origin`.
 
 **E-PRIME**: `contents` strings must avoid forms of *to be* (is, are, was, were, be, been, being). Use specific active verbs.
 
