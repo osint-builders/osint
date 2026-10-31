@@ -1,45 +1,206 @@
 [
   {
-    "source_id": "unknown",
+    "source_id": "twitter-wartranslated",
     "source_name": "War Translated (@wartranslated)",
-    "count": 3880,
-    "earliest_date": "2026-08-25T19:59:00Z",
-    "latest_date": "2026-10-31T01:33:51Z"
+    "count": 157,
+    "earliest_date": "2026-08-25T20:50:59Z",
+    "latest_date": "2026-10-01T12:30:00Z"
   },
   {
     "source_id": "telegram-qudsnen",
     "source_name": "Quds News Network (@QudsNen)",
-    "count": 79,
+    "count": 243,
     "earliest_date": "2026-08-25T20:06:14+00:00",
     "latest_date": "2026-10-30T22:25:44Z"
   },
   {
     "source_id": "telegram-rnintel",
     "source_name": "Rerum Novarum Intel (@rnintel)",
-    "count": 47,
+    "count": 145,
     "earliest_date": "2026-08-25T20:28:02+00:00",
-    "latest_date": "2026-10-30T21:50:02Z"
+    "latest_date": "2026-10-31T00:48:27Z"
   },
   {
     "source_id": "telegram-intelslava",
     "source_name": "Intel Slava Z (@intelslava)",
-    "count": 46,
+    "count": 189,
     "earliest_date": "2026-08-25T20:38:50+00:00",
     "latest_date": "2026-10-30T23:20:44Z"
   },
   {
+    "source_id": "name:UNITED24 Media",
+    "source_name": "UNITED24 Media",
+    "count": 34,
+    "earliest_date": "2026-08-25T20:18:01Z",
+    "latest_date": "2026-09-25T19:29:00Z"
+  },
+  {
+    "source_id": "name:Wagner Z Group",
+    "source_name": "Wagner Z Group",
+    "count": 4,
+    "earliest_date": "2026-08-25T19:59:00Z",
+    "latest_date": "2026-08-26T20:34:11Z"
+  },
+  {
+    "source_id": "name:ABC News",
+    "source_name": "ABC News",
+    "count": 45,
+    "earliest_date": "2026-08-25T20:17:04Z",
+    "latest_date": "2026-09-28T23:01:10Z"
+  },
+  {
+    "source_id": "telegram-insiderpaper",
+    "source_name": "Insider Paper (@insiderpaper)",
+    "count": 106,
+    "earliest_date": "2026-08-25T20:47:36Z",
+    "latest_date": "2026-10-30T23:07:04Z"
+  },
+  {
+    "source_id": "name:Clash Report (@ClashReport)",
+    "source_name": "Clash Report (@ClashReport)",
+    "count": 261,
+    "earliest_date": "2026-08-25T20:10:30Z",
+    "latest_date": "2026-10-01T04:21:22Z"
+  },
+  {
+    "source_id": "telegram-ddgeopolitics",
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "count": 168,
+    "earliest_date": "2026-08-25T20:47:25Z",
+    "latest_date": "2026-10-31T00:52:00Z"
+  },
+  {
+    "source_id": "twitter-osinttechnical",
+    "source_name": "OSINT Technical (@Osinttechnical)",
+    "count": 67,
+    "earliest_date": "2026-08-25T20:50:28Z",
+    "latest_date": "2026-10-01T12:14:27.000Z"
+  },
+  {
+    "source_id": "twitter-nsa-gov",
+    "source_name": "NSA (@NSAGov)",
+    "count": 3,
+    "earliest_date": "2026-08-25T20:09:41Z",
+    "latest_date": "2026-09-12T13:15:20Z"
+  },
+  {
     "source_id": "twitter-sim-nasr",
     "source_name": "Sim Nasr (@SimNasr)",
-    "count": 9,
-    "earliest_date": "2026-08-26T20:02:30.000Z",
-    "latest_date": "2026-09-27T20:22:36Z"
+    "count": 78,
+    "earliest_date": "2026-08-25T20:51:56Z",
+    "latest_date": "2026-10-01T11:28:00Z"
+  },
+  {
+    "source_id": "twitter-tanker-trackers",
+    "source_name": "TankerTrackers (@TankerTrackers)",
+    "count": 22,
+    "earliest_date": "2026-08-25T20:52:59Z",
+    "latest_date": "2026-09-29T17:55:25Z"
+  },
+  {
+    "source_id": "twitter-us-pacific-fleet",
+    "source_name": "US Pacific Fleet (@USPacificFleet)",
+    "count": 16,
+    "earliest_date": "2026-08-25T20:40:26Z",
+    "latest_date": "2026-09-30T23:05:19Z"
+  },
+  {
+    "source_id": "twitter-middle-east-eye",
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "count": 233,
+    "earliest_date": "2026-08-25T20:39:00Z",
+    "latest_date": "2026-10-31T01:30:01Z"
+  },
+  {
+    "source_id": "twitter-mt-anderson",
+    "source_name": "MT Anderson (@MT_Anderson)",
+    "count": 4,
+    "earliest_date": "2026-08-25T20:30:03.000Z",
+    "latest_date": "2026-09-11T21:42:14.000Z"
+  },
+  {
+    "source_id": "twitter-inside-nk",
+    "source_name": "inside_nk (@inside_nk)",
+    "count": 31,
+    "earliest_date": "2026-08-25T20:21:00Z",
+    "latest_date": "2026-09-30T10:55:37Z"
+  },
+  {
+    "source_id": "twitter-shipnews",
+    "source_name": "Ship News (@ShipNews)",
+    "count": 22,
+    "earliest_date": "2026-08-25T20:37:17Z",
+    "latest_date": "2026-10-01T11:37:41Z"
+  },
+  {
+    "source_id": "twitter-ianellisjones",
+    "source_name": "Ianellisjones (@Ianellisjones)",
+    "count": 20,
+    "earliest_date": "2026-08-25T21:13:25Z",
+    "latest_date": "2026-09-30T22:22:16Z"
+  },
+  {
+    "source_id": "name:War Translated",
+    "source_name": "War Translated",
+    "count": 8,
+    "earliest_date": "2026-08-25T21:10:47Z",
+    "latest_date": "2026-09-26T17:20:45Z"
+  },
+  {
+    "source_id": "name:Middle East Spectator",
+    "source_name": "Middle East Spectator",
+    "count": 41,
+    "earliest_date": "2026-08-25T21:13:16Z",
+    "latest_date": "2026-09-29T12:13:29Z"
+  },
+  {
+    "source_id": "telegram-geopolitics-prime",
+    "source_name": "Geopolitics Prime (@geopolitics_prime)",
+    "count": 166,
+    "earliest_date": "2026-08-25T21:06:01Z",
+    "latest_date": "2026-10-31T01:33:51Z"
+  },
+  {
+    "source_id": "twitter-ap",
+    "source_name": "AP News (@AP)",
+    "count": 43,
+    "earliest_date": "2026-08-25T20:57:07Z",
+    "latest_date": "2026-10-31T01:20:04Z"
+  },
+  {
+    "source_id": "name:CSIS Korea Chair",
+    "source_name": "CSIS Korea Chair",
+    "count": 7,
+    "earliest_date": "2026-08-25T21:16:43Z",
+    "latest_date": "2026-09-15T20:38:17Z"
+  },
+  {
+    "source_id": "telegram-ourwarstoday",
+    "source_name": "Our Wars, Today (@ourwarstoday)",
+    "count": 21,
+    "earliest_date": "2026-08-25T21:00:16Z",
+    "latest_date": "2026-09-24T14:27:21Z"
+  },
+  {
+    "source_id": "twitter-bbc-world",
+    "source_name": "BBC World News (@BBCWorld)",
+    "count": 133,
+    "earliest_date": "2026-08-26T20:02:14Z",
+    "latest_date": "2026-10-01T12:28:03Z"
+  },
+  {
+    "source_id": "twitter-abc",
+    "source_name": "ABC News (@ABC)",
+    "count": 133,
+    "earliest_date": "2026-08-26T20:48:43Z",
+    "latest_date": "2026-10-31T01:18:56Z"
   },
   {
     "source_id": "twitter-us-navy",
     "source_name": "US Navy (@USNavy)",
-    "count": 5,
+    "count": 26,
     "earliest_date": "2026-08-26T20:07:24.000Z",
-    "latest_date": "2026-09-29T12:00:25Z"
+    "latest_date": "2026-09-30T21:34:51Z"
   },
   {
     "source_id": "twitter-clash-report",
@@ -51,49 +212,147 @@
   {
     "source_id": "twitter-cnn",
     "source_name": "CNN (@CNN)",
-    "count": 17,
+    "count": 61,
     "earliest_date": "2026-08-26T20:30:01Z",
     "latest_date": "2026-10-31T01:30:01Z"
   },
   {
+    "source_id": "twitter-warshipcam",
+    "source_name": "Warshipcam (@Warshipcam)",
+    "count": 118,
+    "earliest_date": "2026-08-26T20:31:34Z",
+    "latest_date": "2026-10-31T00:42:50Z"
+  },
+  {
+    "source_id": "twitter-xinhua-news",
+    "source_name": "Xinhua News (@XHNews)",
+    "count": 199,
+    "earliest_date": "2026-08-26T20:19:06Z",
+    "latest_date": "2026-10-01T11:27:48Z"
+  },
+  {
+    "source_id": "twitter-cnnbrk",
+    "source_name": "cnnbrk (@cnnbrk)",
+    "count": 23,
+    "earliest_date": "2026-08-26T20:29:34Z",
+    "latest_date": "2026-10-31T01:30:17Z"
+  },
+  {
+    "source_id": "twitter-foxnews",
+    "source_name": "Fox News (@FoxNews)",
+    "count": 80,
+    "earliest_date": "2026-08-26T20:39:31Z",
+    "latest_date": "2026-10-01T03:00:47Z"
+  },
+  {
+    "source_id": "name:Quds News Network",
+    "source_name": "Quds News Network",
+    "count": 102,
+    "earliest_date": "2026-08-26T20:07:14Z",
+    "latest_date": "2026-09-29T10:44:26Z"
+  },
+  {
     "source_id": "twitter-cepa",
     "source_name": "cepa (@cepa)",
-    "count": 7,
+    "count": 21,
     "earliest_date": "2026-08-27T14:38:10Z",
-    "latest_date": "2026-09-29T18:30:03.000Z"
+    "latest_date": "2026-09-30T18:30:07Z"
+  },
+  {
+    "source_id": "twitter-elint-news",
+    "source_name": "ELINT News (@ELINTNews)",
+    "count": 22,
+    "earliest_date": "2026-08-27T14:17:30Z",
+    "latest_date": "2026-09-30T10:05:54Z"
   },
   {
     "source_id": "twitter-csis-korea-chair",
     "source_name": "CSIS Korea Chair (@CSISKoreaChair)",
-    "count": 6,
+    "count": 24,
     "earliest_date": "2026-08-27T14:01:38Z",
-    "latest_date": "2026-09-18T18:48:47Z"
+    "latest_date": "2026-09-30T17:50:30.000Z"
   },
   {
     "source_id": "twitter-criticalthreats",
     "source_name": "Critical Threats Project (@criticalthreats)",
-    "count": 16,
+    "count": 38,
     "earliest_date": "2026-08-27T13:39:04Z",
     "latest_date": "2026-09-30T22:43:22Z"
   },
   {
-    "source_id": "twitter-abc",
-    "source_name": "ABC News (@ABC)",
-    "count": 57,
-    "earliest_date": "2026-08-27T13:56:20.000Z",
-    "latest_date": "2026-09-30T23:15:34Z"
+    "source_id": "twitter-thestudyofwar",
+    "source_name": "Institute for the Study of War (@TheStudyofWar)",
+    "count": 97,
+    "earliest_date": "2026-08-27T14:00:02Z",
+    "latest_date": "2026-10-01T02:39:08Z"
   },
   {
-    "source_id": "telegram-insiderpaper",
-    "source_name": "Insider Paper (@insiderpaper)",
-    "count": 28,
-    "earliest_date": "2026-08-28T17:10:19Z",
-    "latest_date": "2026-10-30T23:07:04Z"
+    "source_id": "telegram-bellumacanews",
+    "source_name": "Bellum Acta (@BellumActaNews)",
+    "count": 90,
+    "earliest_date": "2026-08-27T13:43:15Z",
+    "latest_date": "2026-10-31T00:47:47Z"
+  },
+  {
+    "source_id": "telegram-serhii-flash",
+    "source_name": "Serhii FLASH — Technologies (@serhii_flash)",
+    "count": 15,
+    "earliest_date": "2026-08-27T14:03:29Z",
+    "latest_date": "2026-10-01T10:54:11Z"
+  },
+  {
+    "source_id": "telegram-united24media",
+    "source_name": "UNITED24 Media (@United24media)",
+    "count": 172,
+    "earliest_date": "2026-08-27T14:03:01Z",
+    "latest_date": "2026-10-01T11:51:00Z"
+  },
+  {
+    "source_id": "telegram-wagner-group-pmcr",
+    "source_name": "Wagner Z Group (@wagner_group_pmcr)",
+    "count": 37,
+    "earliest_date": "2026-08-27T13:55:02Z",
+    "latest_date": "2026-10-01T10:55:02Z"
+  },
+  {
+    "source_id": "telegram-voyna18",
+    "source_name": "WarLife 18+ (@Voyna18)",
+    "count": 19,
+    "earliest_date": "2026-08-27T14:05:08Z",
+    "latest_date": "2026-09-30T18:07:39Z"
+  },
+  {
+    "source_id": "twitter-gcaptain",
+    "source_name": "Gcaptain (@Gcaptain)",
+    "count": 29,
+    "earliest_date": "2026-08-28T17:27:55.000Z",
+    "latest_date": "2026-10-01T10:36:31.000Z"
+  },
+  {
+    "source_id": "name:cnni",
+    "source_name": "cnni",
+    "count": 3,
+    "earliest_date": "2026-08-28T17:30:06Z",
+    "latest_date": "2026-09-23T17:30:29.000Z"
+  },
+  {
+    "source_id": "name:twitter-criticalthreats",
+    "source_name": "twitter-criticalthreats",
+    "count": 1,
+    "earliest_date": "2026-08-28T17:11:59Z",
+    "latest_date": "2026-08-28T17:11:59Z"
+  },
+  {
+    "source_id": "twitter-thewarzonewire",
+    "source_name": "Thewarzonewire (@Thewarzonewire)",
+    "count": 84,
+    "earliest_date": "2026-08-28T17:16:36.000Z",
+    "latest_date": "2026-09-30T23:12:06Z"
   },
   {
     "source_id": "telegram-middle-east-spectator",
     "source_name": "Middle East Spectator (@Middle_East_Spectator)",
-    "count": 38,
+    "count": 119,
     "earliest_date": "2026-08-28T17:07:22Z",
     "latest_date": "2026-10-01T03:01:56Z"
   },
@@ -105,347 +364,543 @@
     "latest_date": "2026-09-29T17:13:48+00:00"
   },
   {
-    "source_id": "telegram-geopolitics-prime",
-    "source_name": "Geopolitics Prime (@geopolitics_prime)",
-    "count": 30,
-    "earliest_date": "2026-08-28T17:03:52+00:00",
-    "latest_date": "2026-10-30T22:58:58Z"
+    "source_id": "name:BBC World News",
+    "source_name": "BBC World News",
+    "count": 37,
+    "earliest_date": "2026-08-27T14:17:50.000Z",
+    "latest_date": "2026-10-30T23:18:22Z"
   },
   {
-    "source_id": "telegram-ddgeopolitics",
-    "source_name": "DD Geopolitics (@DDGeopolitics)",
-    "count": 31,
-    "earliest_date": "2026-08-28T17:23:02+00:00",
-    "latest_date": "2026-10-30T21:54:09Z"
+    "source_id": "name:BBC Breaking News",
+    "source_name": "BBC Breaking News",
+    "count": 3,
+    "earliest_date": "2026-08-27T13:53:31.000Z",
+    "latest_date": "2026-09-20T17:12:18.000Z"
   },
   {
     "source_id": "twitter-uani",
     "source_name": "UANI (@UANI)",
-    "count": 4,
+    "count": 15,
     "earliest_date": "2026-08-28T22:31:18Z",
-    "latest_date": "2026-09-28T16:05:18Z"
-  },
-  {
-    "source_id": "twitter-middle-east-eye",
-    "source_name": "Middle East Eye (@MiddleEastEye)",
-    "count": 82,
-    "earliest_date": "2026-08-28T22:44:18Z",
-    "latest_date": "2026-10-31T01:30:01Z"
+    "latest_date": "2026-09-29T19:06:16.000Z"
   },
   {
     "source_id": "twitter-nasa",
     "source_name": "Nasa (@Nasa)",
-    "count": 2,
+    "count": 14,
     "earliest_date": "2026-08-28T22:03:45Z",
-    "latest_date": "2026-09-22T22:07:24.000Z"
+    "latest_date": "2026-09-30T22:00:25Z"
   },
   {
-    "source_id": "twitter-bbc-world",
-    "source_name": "BBC World News (@BBCWorld)",
-    "count": 54,
-    "earliest_date": "2026-08-29T16:17:07Z",
-    "latest_date": "2026-10-01T12:28:03Z"
+    "source_id": "name:Intel Slava Z",
+    "source_name": "Intel Slava Z",
+    "count": 42,
+    "earliest_date": "2026-08-28T21:52:00Z",
+    "latest_date": "2026-09-29T03:03:40Z"
   },
   {
-    "source_id": "twitter-foxnews",
-    "source_name": "Fox News (@FoxNews)",
-    "count": 21,
-    "earliest_date": "2026-08-29T16:17:28Z",
-    "latest_date": "2026-09-26T21:17:25Z"
+    "source_id": "name:Geopolitics Prime",
+    "source_name": "Geopolitics Prime",
+    "count": 53,
+    "earliest_date": "2026-08-28T22:12:01Z",
+    "latest_date": "2026-10-01T12:33:03Z"
   },
   {
-    "source_id": "twitter-inside-nk",
-    "source_name": "inside_nk (@inside_nk)",
-    "count": 11,
-    "earliest_date": "2026-08-29T16:16:28Z",
-    "latest_date": "2026-09-28T07:53:40Z"
+    "source_id": "name:Ianellisjones",
+    "source_name": "Ianellisjones",
+    "count": 3,
+    "earliest_date": "2026-08-28T22:16:25Z",
+    "latest_date": "2026-09-23T22:26:27.000Z"
   },
   {
-    "source_id": "telegram-united24media",
-    "source_name": "UNITED24 Media (@United24media)",
-    "count": 60,
-    "earliest_date": "2026-08-29T16:19:01Z",
-    "latest_date": "2026-10-01T03:46:01Z"
-  },
-  {
-    "source_id": "twitter-xinhua-news",
-    "source_name": "Xinhua News (@XHNews)",
-    "count": 49,
-    "earliest_date": "2026-08-30T16:41:07Z",
-    "latest_date": "2026-09-30T11:50:39Z"
-  },
-  {
-    "source_id": "twitter-wartranslated",
-    "source_name": "War Translated (@wartranslated)",
-    "count": 46,
-    "earliest_date": "2026-08-31T13:00:41.000Z",
-    "latest_date": "2026-09-30T11:15:11Z"
+    "source_id": "name:inside_nk",
+    "source_name": "inside_nk",
+    "count": 5,
+    "earliest_date": "2026-08-31T13:23:31Z",
+    "latest_date": "2026-09-24T13:36:03Z"
   },
   {
     "source_id": "webpage-isw-ukraine-interactive-map",
     "source_name": "ISW Ukraine Interactive Territorial Control Map",
-    "count": 7,
+    "count": 14,
     "earliest_date": "2026-08-31T13:13:20.000Z",
     "latest_date": "2026-09-28T21:19:28Z"
   },
   {
-    "source_id": "telegram-voyna18",
-    "source_name": "WarLife 18+ (@Voyna18)",
-    "count": 7,
-    "earliest_date": "2026-08-31T13:48:56Z",
-    "latest_date": "2026-09-30T18:07:39Z"
-  },
-  {
-    "source_id": "twitter-esri",
-    "source_name": "Esri (@Esri)",
-    "count": 2,
-    "earliest_date": "2026-08-31T18:31:16Z",
-    "latest_date": "2026-09-24T12:52:26.000Z"
-  },
-  {
-    "source_id": "twitter-cnni",
-    "source_name": "CNN International",
-    "count": 11,
-    "earliest_date": "2026-09-01T16:03:27Z",
-    "latest_date": "2026-09-18T17:27:03Z"
-  },
-  {
-    "source_id": "twitter-bbc-breaking",
-    "source_name": "BBC Breaking News (@BBCBreaking)",
-    "count": 13,
-    "earliest_date": "2026-09-01T16:42:59.984Z",
-    "latest_date": "2026-09-30T10:29:43Z"
-  },
-  {
-    "source_id": "twitter-warshipcam",
-    "source_name": "Warshipcam (@Warshipcam)",
-    "count": 38,
-    "earliest_date": "2026-08-31T00:00:00Z",
-    "latest_date": "2026-10-31T00:42:50Z"
-  },
-  {
-    "source_id": "twitter-southkoreapro",
-    "source_name": "Southkoreapro",
-    "count": 12,
-    "earliest_date": "2026-09-04T07:33:08Z",
-    "latest_date": "2026-09-28T23:03:32Z"
-  },
-  {
-    "source_id": "twitter-taiwan-news-en",
-    "source_name": "Taiwan News (@TaiwanNewsEN)",
-    "count": 18,
-    "earliest_date": "2026-09-04T07:42:24.000Z",
-    "latest_date": "2026-09-26T08:52:47.000Z"
-  },
-  {
-    "source_id": "twitter-bbgoriginals",
-    "source_name": "BBG Originals (@BBGOriginals)",
-    "count": 18,
-    "earliest_date": "2026-09-04T08:00:07Z",
-    "latest_date": "2026-09-30T21:32:00Z"
-  },
-  {
-    "source_id": "twitter-minhdr18",
-    "source_name": "Minhdr18 OSINT (@Minhdr18)",
-    "count": 6,
-    "earliest_date": "2026-09-05T12:41:37Z",
-    "latest_date": "2026-09-27T11:19:50Z"
-  },
-  {
-    "source_id": "twitter-ianellisjones",
-    "source_name": "Ianellisjones (@Ianellisjones)",
-    "count": 8,
-    "earliest_date": "2026-09-05T11:22:27Z",
-    "latest_date": "2026-09-24T18:33:07Z"
-  },
-  {
-    "source_id": "telegram-warmonitors",
-    "source_name": "War Monitor (@warmonitors)",
-    "count": 10,
-    "earliest_date": "2026-09-05T11:59:25Z",
-    "latest_date": "2026-09-30T10:21:09Z"
-  },
-  {
-    "source_id": "twitter-cnnbrk",
-    "source_name": "cnnbrk (@cnnbrk)",
-    "count": 8,
-    "earliest_date": "2026-09-05T14:37:30.000Z",
-    "latest_date": "2026-10-31T01:30:17Z"
-  },
-  {
-    "source_id": "twitter-tanker-trackers",
-    "source_name": "TankerTrackers (@TankerTrackers)",
-    "count": 10,
-    "earliest_date": "2026-09-05T16:31:46.000Z",
-    "latest_date": "2026-09-28T17:40:10Z"
-  },
-  {
-    "source_id": "telegram-generalstaffzsu",
-    "source_name": "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)",
-    "count": 13,
-    "earliest_date": "2026-09-05T19:02:20Z",
-    "latest_date": "2026-09-30T11:40:01+00:00"
+    "source_id": "twitter-the-lookout-north",
+    "source_name": "The Lookout North (@The_Lookout_N)",
+    "count": 4,
+    "earliest_date": "2026-08-31T13:49:58Z",
+    "latest_date": "2026-09-25T14:00:49Z"
   },
   {
     "source_id": "twitter-mylordbebo",
     "source_name": "My Lord Bebo (@MyLordBebo)",
-    "count": 6,
-    "earliest_date": "2026-09-06T16:17:56Z",
-    "latest_date": "2026-09-26T08:58:18.000Z"
+    "count": 35,
+    "earliest_date": "2026-08-31T13:15:13.000Z",
+    "latest_date": "2026-09-27T03:05:18Z"
   },
   {
-    "source_id": "twitter-ap",
-    "source_name": "AP News (@AP)",
-    "count": 14,
-    "earliest_date": "2026-09-06T19:27:40.000Z",
-    "latest_date": "2026-10-31T01:20:04Z"
+    "source_id": "twitter-cnni",
+    "source_name": "cnni (@cnni)",
+    "count": 36,
+    "earliest_date": "2026-08-31T12:59:06Z",
+    "latest_date": "2026-09-30T17:00:57.000Z"
+  },
+  {
+    "source_id": "twitter-coastguard-ph",
+    "source_name": "Philippine Coast Guard (@CoastGuardPH)",
+    "count": 11,
+    "earliest_date": "2026-08-31T13:31:25Z",
+    "latest_date": "2026-09-30T04:21:20Z"
+  },
+  {
+    "source_id": "twitter-esri",
+    "source_name": "Esri (@Esri)",
+    "count": 4,
+    "earliest_date": "2026-08-31T18:31:16Z",
+    "latest_date": "2026-09-24T12:52:26.000Z"
   },
   {
     "source_id": "twitter-scmpnews",
-    "source_name": "South China Morning Post",
-    "count": 23,
-    "earliest_date": "2026-09-06T21:52:20Z",
+    "source_name": "Scmpnews (@Scmpnews)",
+    "count": 111,
+    "earliest_date": "2026-08-31T18:23:15Z",
     "latest_date": "2026-10-31T01:04:00Z"
   },
   {
-    "source_id": "twitter-osinttechnical",
-    "source_name": "OSINT Technical",
-    "count": 18,
-    "earliest_date": "2026-09-06T21:45:50Z",
-    "latest_date": "2026-10-01T12:14:27.000Z"
+    "source_id": "twitter-bbc-breaking",
+    "source_name": "BBC Breaking News (@BBCBreaking)",
+    "count": 24,
+    "earliest_date": "2026-09-01T16:42:59.984Z",
+    "latest_date": "2026-10-01T11:17:00Z"
   },
   {
-    "source_id": "telegram-ourwarstoday",
-    "source_name": "Our Wars, Today",
+    "source_id": "name:AP News",
+    "source_name": "AP News",
+    "count": 16,
+    "earliest_date": "2026-09-01T16:49:34Z",
+    "latest_date": "2026-09-30T23:02:31Z"
+  },
+  {
+    "source_id": "telegram-warmonitors",
+    "source_name": "War Monitor (@warmonitors)",
+    "count": 45,
+    "earliest_date": "2026-09-01T16:44:25Z",
+    "latest_date": "2026-10-30T22:16:56Z"
+  },
+  {
+    "source_id": "name:Rerum Novarum Intel",
+    "source_name": "Rerum Novarum Intel",
+    "count": 41,
+    "earliest_date": "2026-09-01T16:06:08Z",
+    "latest_date": "2026-09-29T11:02:36Z"
+  },
+  {
+    "source_id": "name:Clash Report",
+    "source_name": "Clash Report",
+    "count": 34,
+    "earliest_date": "2026-09-02T16:27:39.000Z",
+    "latest_date": "2026-09-26T18:25:48Z"
+  },
+  {
+    "source_id": "name:cepa",
+    "source_name": "cepa",
     "count": 5,
-    "earliest_date": "2026-09-07T02:42:17Z",
-    "latest_date": "2026-09-17T16:27:02Z"
+    "earliest_date": "2026-09-02T16:23:00.000Z",
+    "latest_date": "2026-10-30T22:30:00Z"
   },
   {
-    "source_id": "twitter-thestudyofwar",
-    "source_name": "Institute for the Study of War",
-    "count": 23,
-    "earliest_date": "2026-09-07T02:30:15Z",
-    "latest_date": "2026-10-01T02:39:08Z"
+    "source_id": "name:Sim Nasr",
+    "source_name": "Sim Nasr",
+    "count": 3,
+    "earliest_date": "2026-09-02T16:07:44Z",
+    "latest_date": "2026-09-19T16:46:22.000Z"
   },
   {
-    "source_id": "twitter-ian-bremmer",
-    "source_name": "ianbremmer (@ianbremmer)",
+    "source_id": "name:Ship News",
+    "source_name": "Ship News",
+    "count": 1,
+    "earliest_date": "2026-09-02T16:42:30Z",
+    "latest_date": "2026-09-02T16:42:30Z"
+  },
+  {
+    "source_id": "twitter-bbgoriginals",
+    "source_name": "BBG Originals (@BBGOriginals)",
+    "count": 45,
+    "earliest_date": "2026-09-02T16:22:07Z",
+    "latest_date": "2026-09-30T21:32:00Z"
+  },
+  {
+    "source_id": "name:DD Geopolitics",
+    "source_name": "DD Geopolitics",
+    "count": 46,
+    "earliest_date": "2026-09-03T13:39:45Z",
+    "latest_date": "2026-09-27T22:42:12Z"
+  },
+  {
+    "source_id": "name:Thewarzonewire",
+    "source_name": "Thewarzonewire",
     "count": 7,
-    "earliest_date": "2026-09-07T14:23:56Z",
-    "latest_date": "2026-09-24T18:51:10Z"
+    "earliest_date": "2026-09-03T16:34:03Z",
+    "latest_date": "2026-09-26T18:51:24Z"
+  },
+  {
+    "source_id": "twitter-southkoreapro",
+    "source_name": "Southkoreapro",
+    "count": 33,
+    "earliest_date": "2026-09-04T07:33:08Z",
+    "latest_date": "2026-10-01T03:08:14.000Z"
+  },
+  {
+    "source_id": "name:Insider Paper",
+    "source_name": "Insider Paper",
+    "count": 30,
+    "earliest_date": "2026-09-04T08:23:44Z",
+    "latest_date": "2026-09-24T14:11:52Z"
+  },
+  {
+    "source_id": "twitter-taiwan-news-en",
+    "source_name": "Taiwan News (@TaiwanNewsEN)",
+    "count": 72,
+    "earliest_date": "2026-09-04T07:42:24.000Z",
+    "latest_date": "2026-10-01T04:30:51.000Z"
+  },
+  {
+    "source_id": "name:ChineseEmbInUs",
+    "source_name": "ChineseEmbInUs",
+    "count": 3,
+    "earliest_date": "2026-09-04T13:58:52.000Z",
+    "latest_date": "2026-09-14T14:26:34Z"
   },
   {
     "source_id": "telegram-diukraine",
-    "source_name": "Defence Intelligence of Ukraine – GUR MO",
-    "count": 6,
-    "earliest_date": "2026-09-07T18:22:01+00:00",
-    "latest_date": "2026-09-23T06:20:09+00:00"
-  },
-  {
-    "source_id": "telegram-wagner-group-pmcr",
-    "source_name": "Wagner Z Group (@wagner_group_pmcr)",
-    "count": 8,
-    "earliest_date": "2026-09-08T07:15:03Z",
-    "latest_date": "2026-10-01T02:59:01Z"
+    "source_name": "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)",
+    "count": 22,
+    "earliest_date": "2026-09-04T14:12:02+00:00",
+    "latest_date": "2026-09-27T14:34:47Z"
   },
   {
     "source_id": "twitter-chinese-emb-in-us",
     "source_name": "ChineseEmbInUs (@ChineseEmbInUs)",
-    "count": 7,
-    "earliest_date": "2026-09-08T13:33:37.000Z",
-    "latest_date": "2026-09-26T20:34:43.000Z"
-  },
-  {
-    "source_id": "twitter-thewarzonewire",
-    "source_name": "Thewarzonewire (@Thewarzonewire)",
-    "count": 24,
-    "earliest_date": "2026-09-08T18:37:47Z",
-    "latest_date": "2026-09-30T17:14:27Z"
-  },
-  {
-    "source_id": "twitter-tradewindsnews",
-    "source_name": "Tradewindsnews (@Tradewindsnews)",
-    "count": 5,
-    "earliest_date": "2026-09-08T18:40:36Z",
-    "latest_date": "2026-09-30T17:40:18Z"
-  },
-  {
-    "source_id": "twitter-shipnews",
-    "source_name": "Ship News (@ShipNews)",
-    "count": 3,
-    "earliest_date": "2026-09-09T08:42:15.000Z",
-    "latest_date": "2026-09-28T21:37:27Z"
-  },
-  {
-    "source_id": "twitter-us-pacific-fleet",
-    "source_name": "US Pacific Fleet (@USPacificFleet)",
-    "count": 5,
-    "earliest_date": "2026-09-09T21:43:32.000Z",
-    "latest_date": "2026-09-21T23:20:29.000Z"
+    "count": 13,
+    "earliest_date": "2026-09-04T14:37:51Z",
+    "latest_date": "2026-09-27T15:00:17Z"
   },
   {
     "source_id": "twitter-us-treasury",
     "source_name": "US Treasury (@USTreasury)",
+    "count": 12,
+    "earliest_date": "2026-09-04T14:57:14.000Z",
+    "latest_date": "2026-09-30T22:46:29.000Z"
+  },
+  {
+    "source_id": "name:Serhii FLASH — Technologies",
+    "source_name": "Serhii FLASH — Technologies",
     "count": 5,
-    "earliest_date": "2026-09-09T21:49:02.000Z",
-    "latest_date": "2026-09-28T17:49:26Z"
+    "earliest_date": "2026-09-04T15:07:29Z",
+    "latest_date": "2026-09-25T19:31:22Z"
+  },
+  {
+    "source_id": "name:Middle East Eye",
+    "source_name": "Middle East Eye",
+    "count": 36,
+    "earliest_date": "2026-09-04T20:06:51Z",
+    "latest_date": "2026-09-29T03:05:14Z"
+  },
+  {
+    "source_id": "telegram-afustratcom",
+    "source_name": "AFU Strategic Communications (@AFUStratCom)",
+    "count": 6,
+    "earliest_date": "2026-09-04T19:43:44Z",
+    "latest_date": "2026-09-23T12:05:00+00:00"
+  },
+  {
+    "source_id": "name:Defence Intelligence of Ukraine – GUR MO",
+    "source_name": "Defence Intelligence of Ukraine – GUR MO",
+    "count": 7,
+    "earliest_date": "2026-09-04T15:56:14Z",
+    "latest_date": "2026-10-01T10:42:31Z"
+  },
+  {
+    "source_id": "twitter-minhdr18",
+    "source_name": "Minhdr18 OSINT (@Minhdr18)",
+    "count": 22,
+    "earliest_date": "2026-09-05T12:41:37Z",
+    "latest_date": "2026-09-30T11:14:47Z"
+  },
+  {
+    "source_id": "twitter-africafactszone",
+    "source_name": "Africafactszone (@Africafactszone)",
+    "count": 11,
+    "earliest_date": "2026-09-05T12:51:44.000Z",
+    "latest_date": "2026-09-25T14:08:39Z"
+  },
+  {
+    "source_id": "telegram-generalstaffzsu",
+    "source_name": "General Staff of the Armed Forces of Ukraine (@GeneralStaffZSU)",
+    "count": 40,
+    "earliest_date": "2026-09-05T06:17:54+00:00",
+    "latest_date": "2026-09-30T11:40:01+00:00"
+  },
+  {
+    "source_id": "name:Fox News",
+    "source_name": "Fox News",
+    "count": 4,
+    "earliest_date": "2026-09-05T22:42:29Z",
+    "latest_date": "2026-09-22T17:53:37Z"
+  },
+  {
+    "source_id": "name:CNN International",
+    "source_name": "CNN International",
+    "count": 6,
+    "earliest_date": "2026-09-06T07:15:06Z",
+    "latest_date": "2026-09-20T20:58:05Z"
+  },
+  {
+    "source_id": "name:General Staff of the Armed Forces of Ukraine",
+    "source_name": "General Staff of the Armed Forces of Ukraine",
+    "count": 6,
+    "earliest_date": "2026-09-06T19:04:53Z",
+    "latest_date": "2026-10-01T10:55:01Z"
+  },
+  {
+    "source_id": "name:My Lord Bebo",
+    "source_name": "My Lord Bebo",
+    "count": 6,
+    "earliest_date": "2026-09-06T19:58:38Z",
+    "latest_date": "2026-09-20T21:50:46Z"
+  },
+  {
+    "source_id": "name:OSINT Technical",
+    "source_name": "OSINT Technical",
+    "count": 9,
+    "earliest_date": "2026-09-06T19:04:43Z",
+    "latest_date": "2026-09-30T18:48:21.000Z"
+  },
+  {
+    "source_id": "twitter-defence-aust",
+    "source_name": "Australian Defence (@DefenceAust)",
+    "count": 20,
+    "earliest_date": "2026-09-06T23:00:01.000Z",
+    "latest_date": "2026-09-30T23:00:00Z"
+  },
+  {
+    "source_id": "twitter-riskstaff",
+    "source_name": "Riskstaff (@Riskstaff)",
+    "count": 2,
+    "earliest_date": "2026-09-03T15:23:38+0200",
+    "latest_date": "2026-09-25T09:24:41Z"
   },
   {
     "source_id": "twitter-japan-joint-staff",
     "source_name": "Japan Joint Staff (@JapanJointStaff)",
-    "count": 4,
-    "earliest_date": "2026-09-10T08:19:12Z",
-    "latest_date": "2026-09-28T08:02:23Z"
+    "count": 16,
+    "earliest_date": "2026-09-07T08:02:21.000Z",
+    "latest_date": "2026-09-29T12:14:29Z"
   },
   {
-    "source_id": "twitter-mt-anderson",
-    "source_name": "MT Anderson (@MT_Anderson)",
+    "source_id": "twitter-nato-marcom",
+    "source_name": "NATO Maritime Command (@NATO_MARCOM)",
+    "count": 7,
+    "earliest_date": "2026-09-07T15:03:32Z",
+    "latest_date": "2026-09-29T18:00:00.000Z"
+  },
+  {
+    "source_id": "twitter-ian-bremmer",
+    "source_name": "ianbremmer (@ianbremmer)",
+    "count": 21,
+    "earliest_date": "2026-09-07T14:23:56Z",
+    "latest_date": "2026-09-30T18:46:03Z"
+  },
+  {
+    "source_id": "twitter-natalierevolts",
+    "source_name": "Natalierevolts (@Natalierevolts)",
     "count": 2,
-    "earliest_date": "2026-09-10T17:40:53Z",
-    "latest_date": "2026-09-11T21:42:14.000Z"
+    "earliest_date": "2026-09-07T18:11:47Z",
+    "latest_date": "2026-09-07T18:12:30Z"
+  },
+  {
+    "source_id": "name:Warshipcam",
+    "source_name": "Warshipcam",
+    "count": 8,
+    "earliest_date": "2026-09-07T20:36:18.000Z",
+    "latest_date": "2026-09-22T23:12:03Z"
+  },
+  {
+    "source_id": "twitter-nsa-cyber",
+    "source_name": "NSA Cybersecurity (@NSACyber)",
+    "count": 2,
+    "earliest_date": "2026-09-08T17:20:09Z",
+    "latest_date": "2026-09-10T13:33:11Z"
+  },
+  {
+    "source_id": "twitter-tradewindsnews",
+    "source_name": "Tradewindsnews (@Tradewindsnews)",
+    "count": 11,
+    "earliest_date": "2026-09-08T18:40:36Z",
+    "latest_date": "2026-09-30T17:40:18Z"
+  },
+  {
+    "source_id": "name:CEPA (@cepa)",
+    "source_name": "CEPA (@cepa)",
+    "count": 1,
+    "earliest_date": "2026-09-08T18:30:02Z",
+    "latest_date": "2026-09-08T18:30:02Z"
+  },
+  {
+    "source_id": "name:CNN",
+    "source_name": "CNN",
+    "count": 4,
+    "earliest_date": "2026-09-08T20:55:02Z",
+    "latest_date": "2026-09-15T17:11:39Z"
+  },
+  {
+    "source_id": "name:Japan Joint Staff",
+    "source_name": "Japan Joint Staff",
+    "count": 2,
+    "earliest_date": "2026-09-09T03:00:00Z",
+    "latest_date": "2026-09-15T05:37:46Z"
+  },
+  {
+    "source_id": "name:BBG Originals",
+    "source_name": "BBG Originals",
+    "count": 5,
+    "earliest_date": "2026-09-09T02:51:03Z",
+    "latest_date": "2026-09-26T03:44:23Z"
+  },
+  {
+    "source_id": "name:Critical Threats Project",
+    "source_name": "Critical Threats Project",
+    "count": 6,
+    "earliest_date": "2026-09-09T03:01:22Z",
+    "latest_date": "2026-09-23T17:18:54.000Z"
+  },
+  {
+    "source_id": "name:vantortech",
+    "source_name": "vantortech",
+    "count": 1,
+    "earliest_date": "2026-09-09T13:04:27Z",
+    "latest_date": "2026-09-09T13:04:27Z"
+  },
+  {
+    "source_id": "name:Institute for the Study of War",
+    "source_name": "Institute for the Study of War",
+    "count": 5,
+    "earliest_date": "2026-09-09T13:44:13Z",
+    "latest_date": "2026-09-26T19:00:01Z"
+  },
+  {
+    "source_id": "twitter-c4ads",
+    "source_name": "C4ADS (@C4ADS)",
+    "count": 13,
+    "earliest_date": "2026-09-09T19:00:33Z",
+    "latest_date": "2026-09-30T18:16:20Z"
+  },
+  {
+    "source_id": "name:Rerum Novarum // Intel, Breaking News, and Alerts 🇺🇸",
+    "source_name": "Rerum Novarum // Intel, Breaking News, and Alerts 🇺🇸",
+    "count": 6,
+    "earliest_date": "2026-09-10T01:38:57Z",
+    "latest_date": "2026-09-10T07:38:13Z"
+  },
+  {
+    "source_id": "twitter-seawatch-intl",
+    "source_name": "seawatch_intl (@seawatch_intl)",
+    "count": 5,
+    "earliest_date": "2026-09-10T12:38:05.000Z",
+    "latest_date": "2026-09-30T10:43:26.000Z"
   },
   {
     "source_id": "twitter-us-fleet-forces",
     "source_name": "US Fleet Forces (@USFleetForces)",
+    "count": 8,
+    "earliest_date": "2026-09-10T17:28:29Z",
+    "latest_date": "2026-09-29T17:13:32.000Z"
+  },
+  {
+    "source_id": "telegram-lebupdate",
+    "source_name": "Lebanese News and Updates (@LebUpdate)",
     "count": 3,
-    "earliest_date": "2026-09-10T22:00:39.000Z",
-    "latest_date": "2026-09-29T03:06:46.000Z"
+    "earliest_date": "2026-09-10T18:37:40Z",
+    "latest_date": "2026-09-10T18:43:11Z"
   },
   {
-    "source_id": "twitter-gcaptain",
-    "source_name": "Gcaptain (@Gcaptain)",
-    "count": 11,
-    "earliest_date": "2026-09-11T17:10:13Z",
-    "latest_date": "2026-10-01T10:36:31.000Z"
+    "source_id": "name:Scmpnews",
+    "source_name": "Scmpnews",
+    "count": 9,
+    "earliest_date": "2026-09-10T21:46:38Z",
+    "latest_date": "2026-09-27T20:57:30Z"
   },
   {
-    "source_id": "telegram-serhii-flash",
-    "source_name": "Serhii FLASH — Technologies (@serhii_flash)",
-    "count": 7,
-    "earliest_date": "2026-09-12T15:56:51Z",
-    "latest_date": "2026-09-26T08:59:06Z"
+    "source_id": "twitter-scs-pi",
+    "source_name": "SCS Probing Initiative (@SCS_PI)",
+    "count": 12,
+    "earliest_date": "2026-09-11T08:35:49Z",
+    "latest_date": "2026-10-01T11:40:20.000Z"
+  },
+  {
+    "source_id": "twitter-mondefense",
+    "source_name": "Mondefense (@Mondefense)",
+    "count": 4,
+    "earliest_date": "2026-09-11T07:13:36Z",
+    "latest_date": "2026-10-31T01:00:00Z"
+  },
+  {
+    "source_id": "name:ELINT News",
+    "source_name": "ELINT News",
+    "count": 4,
+    "earliest_date": "2026-09-11T21:10:52Z",
+    "latest_date": "2026-09-19T22:06:12.000Z"
+  },
+  {
+    "source_id": "name:The War Zone (@Thewarzonewire)",
+    "source_name": "The War Zone (@Thewarzonewire)",
+    "count": 2,
+    "earliest_date": "2026-09-12T02:26:57Z",
+    "latest_date": "2026-09-12T03:11:17Z"
+  },
+  {
+    "source_id": "name:Our Wars, Today",
+    "source_name": "Our Wars, Today",
+    "count": 1,
+    "earliest_date": "2026-09-11T20:58:46Z",
+    "latest_date": "2026-09-11T20:58:46Z"
+  },
+  {
+    "source_id": "name:AFU Strategic Communications",
+    "source_name": "AFU Strategic Communications",
+    "count": 1,
+    "earliest_date": "2026-09-12T07:03:43Z",
+    "latest_date": "2026-09-12T07:03:43Z"
+  },
+  {
+    "source_id": "name:Minhdr18 OSINT",
+    "source_name": "Minhdr18 OSINT",
+    "count": 2,
+    "earliest_date": "2026-09-13T12:10:12Z",
+    "latest_date": "2026-09-13T12:50:32Z"
   },
   {
     "source_id": "twitter-militarylandnet",
     "source_name": "Militarylandnet (@Militarylandnet)",
-    "count": 1,
+    "count": 5,
     "earliest_date": "2026-09-13T20:24:13Z",
-    "latest_date": "2026-09-13T20:24:13Z"
+    "latest_date": "2026-09-29T17:35:38.000Z"
   },
   {
-    "source_id": "twitter-scs-pi",
-    "source_name": "SCS Probing Initiative",
-    "count": 6,
-    "earliest_date": "2026-09-14T03:20:35Z",
-    "latest_date": "2026-10-01T11:40:20.000Z"
-  },
-  {
-    "source_id": "twitter-coastguard-ph",
-    "source_name": "Philippine Coast Guard",
+    "source_id": "name:South China Morning Post (@Scmpnews)",
+    "source_name": "South China Morning Post (@Scmpnews)",
     "count": 3,
-    "earliest_date": "2026-09-14T15:43:34Z",
-    "latest_date": "2026-09-15T05:39:22Z"
+    "earliest_date": "2026-09-14T20:24:05Z",
+    "latest_date": "2026-09-27T23:05:02.000Z"
+  },
+  {
+    "source_id": "name:Australian Defence",
+    "source_name": "Australian Defence",
+    "count": 1,
+    "earliest_date": "2026-09-14T23:00:00Z",
+    "latest_date": "2026-09-14T23:00:00Z"
   },
   {
     "source_id": "twitter-hawkeye360",
@@ -455,94 +910,206 @@
     "latest_date": "2026-09-16T10:30:20Z"
   },
   {
-    "source_id": "twitter-c4ads",
-    "source_name": "C4ADS (@C4ADS)",
-    "count": 2,
-    "earliest_date": "2026-09-15T17:00:08Z",
-    "latest_date": "2026-09-17T17:01:12Z"
+    "source_id": "name:Xinhua News",
+    "source_name": "Xinhua News",
+    "count": 3,
+    "earliest_date": "2026-09-15T12:53:17Z",
+    "latest_date": "2026-09-22T22:08:55Z"
   },
   {
     "source_id": "twitter-imo-hq",
     "source_name": "IMO HQ (@IMOHQ)",
-    "count": 2,
+    "count": 3,
     "earliest_date": "2026-09-16T09:00:39.000Z",
     "latest_date": "2026-09-29T17:18:19Z"
   },
   {
-    "source_id": "twitter-defence-aust",
-    "source_name": "Australian Defence (@DefenceAust)",
-    "count": 5,
-    "earliest_date": "2026-09-16T09:00:00Z",
-    "latest_date": "2026-09-30T23:00:00Z"
-  },
-  {
-    "source_id": "twitter-elint-news",
-    "source_name": "ELINT News (@ELINTNews)",
-    "count": 1,
-    "earliest_date": "2026-09-18T16:55:01Z",
-    "latest_date": "2026-09-18T16:55:01Z"
-  },
-  {
-    "source_id": "twitter-mondefense",
-    "source_name": "Mondefense (@Mondefense)",
-    "count": 3,
-    "earliest_date": "2026-09-20T04:01:00Z",
-    "latest_date": "2026-10-31T01:00:00Z"
-  },
-  {
-    "source_id": "telegram-bellumacanews",
-    "source_name": "Bellum Acta (@BellumActaNews)",
-    "count": 3,
-    "earliest_date": "2026-09-20T17:39:13Z",
-    "latest_date": "2026-09-29T18:59:40+00:00"
-  },
-  {
-    "source_id": "twitter-africafactszone",
-    "source_name": "Africafactszone",
-    "count": 1,
-    "earliest_date": "2026-09-21T16:00:01.000Z",
-    "latest_date": "2026-09-21T16:00:01.000Z"
-  },
-  {
-    "source_id": "twitter-the-lookout-north",
-    "source_name": "The Lookout North (@The_Lookout_N)",
-    "count": 1,
-    "earliest_date": "2026-09-23T07:23:23.000Z",
-    "latest_date": "2026-09-23T07:23:23.000Z"
-  },
-  {
-    "source_id": "twitter-riskstaff",
-    "source_name": "Riskstaff (@Riskstaff)",
-    "count": 1,
-    "earliest_date": "2026-09-25T09:24:41Z",
-    "latest_date": "2026-09-25T09:24:41Z"
-  },
-  {
-    "source_id": "twitter-us-7th-fleet",
-    "source_name": "US 7th Fleet (@US7thFleet)",
-    "count": 1,
-    "earliest_date": "2026-09-27T11:00:21.000Z",
-    "latest_date": "2026-09-27T11:00:21.000Z"
-  },
-  {
     "source_id": "twitter-vantortech",
     "source_name": "vantortech (@vantortech)",
-    "count": 1,
-    "earliest_date": "2026-09-28T17:40:59Z",
+    "count": 3,
+    "earliest_date": "2026-09-16T14:33:15Z",
     "latest_date": "2026-09-28T17:40:59Z"
+  },
+  {
+    "source_id": "name:Taiwan News",
+    "source_name": "Taiwan News",
+    "count": 2,
+    "earliest_date": "2026-09-17T06:46:35Z",
+    "latest_date": "2026-09-17T06:57:20Z"
+  },
+  {
+    "source_id": "name:seawatch_intl",
+    "source_name": "seawatch_intl",
+    "count": 1,
+    "earliest_date": "2026-09-17T05:30:03Z",
+    "latest_date": "2026-09-17T05:30:03Z"
+  },
+  {
+    "source_id": "name:BellumActaNews",
+    "source_name": "BellumActaNews",
+    "count": 1,
+    "earliest_date": "2026-09-18T17:15:09Z",
+    "latest_date": "2026-09-18T17:15:09Z"
+  },
+  {
+    "source_id": "name:ClashReport",
+    "source_name": "ClashReport",
+    "count": 1,
+    "earliest_date": "2026-09-18T17:11:03Z",
+    "latest_date": "2026-09-18T17:11:03Z"
+  },
+  {
+    "source_id": "name:DDGeopolitics",
+    "source_name": "DDGeopolitics",
+    "count": 1,
+    "earliest_date": "2026-09-18T16:58:37Z",
+    "latest_date": "2026-09-18T16:58:37Z"
+  },
+  {
+    "source_id": "name:CNN Breaking News",
+    "source_name": "CNN Breaking News",
+    "count": 2,
+    "earliest_date": "2026-09-20T20:44:45Z",
+    "latest_date": "2026-09-20T21:26:02Z"
+  },
+  {
+    "source_id": "name:NASA (@Nasa)",
+    "source_name": "NASA (@Nasa)",
+    "count": 1,
+    "earliest_date": "2026-09-21T15:12:27.000Z",
+    "latest_date": "2026-09-21T15:12:27.000Z"
   },
   {
     "source_id": "twitter-us-forces-japan",
     "source_name": "US Forces Japan (@USForcesJapan)",
-    "count": 1,
-    "earliest_date": "2026-09-29T04:29:26.000Z",
+    "count": 2,
+    "earliest_date": "2026-09-22T00:06:48.000Z",
     "latest_date": "2026-09-29T04:29:26.000Z"
+  },
+  {
+    "source_id": "name:Bellum Acta",
+    "source_name": "Bellum Acta",
+    "count": 5,
+    "earliest_date": "2026-09-22T13:02:50Z",
+    "latest_date": "2026-09-26T18:40:39Z"
+  },
+  {
+    "source_id": "name:US Pacific Fleet",
+    "source_name": "US Pacific Fleet",
+    "count": 3,
+    "earliest_date": "2026-09-22T23:56:58Z",
+    "latest_date": "2026-09-28T22:22:46Z"
+  },
+  {
+    "source_id": "name:WarLife 18+",
+    "source_name": "WarLife 18+",
+    "count": 2,
+    "earliest_date": "2026-09-23T13:24:32Z",
+    "latest_date": "2026-09-23T13:24:32Z"
+  },
+  {
+    "source_id": "name:cnnbrk",
+    "source_name": "cnnbrk",
+    "count": 2,
+    "earliest_date": "2026-09-23T16:22:52.000Z",
+    "latest_date": "2026-09-23T17:30:14.000Z"
+  },
+  {
+    "source_id": "name:Korea Economic Institute",
+    "source_name": "Korea Economic Institute",
+    "count": 1,
+    "earliest_date": "2026-09-23T20:59:29.000Z",
+    "latest_date": "2026-09-23T20:59:29.000Z"
+  },
+  {
+    "source_id": "name:Generalstaffzsu",
+    "source_name": "Generalstaffzsu",
+    "count": 1,
+    "earliest_date": "2026-09-24T08:23:01+00:00",
+    "latest_date": "2026-09-24T08:23:01+00:00"
+  },
+  {
+    "source_id": "name:Insiderpaper",
+    "source_name": "Insiderpaper",
+    "count": 3,
+    "earliest_date": "2026-09-24T07:44:43+00:00",
+    "latest_date": "2026-09-24T08:25:24+00:00"
+  },
+  {
+    "source_id": "name:Africafactszone",
+    "source_name": "Africafactszone",
+    "count": 1,
+    "earliest_date": "2026-09-24T12:41:49Z",
+    "latest_date": "2026-09-24T12:41:49Z"
+  },
+  {
+    "source_id": "name:C4ADS",
+    "source_name": "C4ADS",
+    "count": 1,
+    "earliest_date": "2026-09-24T18:00:22Z",
+    "latest_date": "2026-09-24T18:00:22Z"
+  },
+  {
+    "source_id": "name:Nasa",
+    "source_name": "Nasa",
+    "count": 2,
+    "earliest_date": "2026-09-24T21:43:03Z",
+    "latest_date": "2026-09-24T22:00:55Z"
+  },
+  {
+    "source_id": "name:UNITED24Media",
+    "source_name": "UNITED24Media",
+    "count": 2,
+    "earliest_date": "2026-09-26T21:21:01Z",
+    "latest_date": "2026-09-26T22:23:01Z"
+  },
+  {
+    "source_id": "name:Rerum Novarum // Intel, Breaking News, and Alerts",
+    "source_name": "Rerum Novarum // Intel, Breaking News, and Alerts",
+    "count": 3,
+    "earliest_date": "2026-09-26T21:08:35Z",
+    "latest_date": "2026-09-26T21:16:29Z"
+  },
+  {
+    "source_id": "name:War Monitor",
+    "source_name": "War Monitor",
+    "count": 3,
+    "earliest_date": "2026-09-27T10:16:09Z",
+    "latest_date": "2026-09-27T10:16:11Z"
+  },
+  {
+    "source_id": "twitter-us-7th-fleet",
+    "source_name": "US 7th Fleet (@US7thFleet)",
+    "count": 4,
+    "earliest_date": "2026-09-27T11:00:21.000Z",
+    "latest_date": "2026-10-01T11:00:33Z"
+  },
+  {
+    "source_id": "name:Tradewindsnews",
+    "source_name": "Tradewindsnews",
+    "count": 1,
+    "earliest_date": "2026-09-28T22:52:16Z",
+    "latest_date": "2026-09-28T22:52:16Z"
   },
   {
     "source_id": "twitter-korea-econ-inst",
     "source_name": "Korea Economic Institute (@KoreaEconInst)",
-    "count": 1,
+    "count": 2,
     "earliest_date": "2026-09-29T18:38:47Z",
-    "latest_date": "2026-09-29T18:38:47Z"
+    "latest_date": "2026-09-30T17:25:32Z"
+  },
+  {
+    "source_id": "name:twitter-foxnews",
+    "source_name": "twitter-foxnews",
+    "count": 1,
+    "earliest_date": "2026-10-01T12:29:00Z",
+    "latest_date": "2026-10-01T12:29:00Z"
+  },
+  {
+    "source_id": "name:twitter-cnn",
+    "source_name": "twitter-cnn",
+    "count": 1,
+    "earliest_date": "2026-10-01T11:31:06Z",
+    "latest_date": "2026-10-01T11:31:06Z"
   }
 ]

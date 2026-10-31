@@ -1,15 +1,15 @@
 {
-  "last_updated": "2026-10-31T01:45:48Z",
+  "last_updated": "2026-10-31T02:15:20.771Z",
   "data_range": {
     "oldest_date": "2026-08-25",
     "newest_date": "2026-10-31"
   },
   "statistics": {
-    "total_events": 5098,
+    "total_events": 5100,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4738,
-      "2026-10": 103
+      "2026-10": 105
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 157,
@@ -62,7 +62,7 @@
       "twitter-criticalthreats": 1,
       "Thewarzonewire (@Thewarzonewire)": 82,
       "Middle East Spectator (@Middle_East_Spectator)": 109,
-      "BBC World News": 44,
+      "BBC World News": 45,
       "BBC Breaking News": 11,
       "UANI (@UANI)": 15,
       "Nasa (@Nasa)": 14,
@@ -84,7 +84,7 @@
       "AP News": 20,
       "War Monitor (@warmonitors)": 45,
       "Rerum Novarum Intel": 55,
-      "cepa": 5,
+      "cepa": 6,
       "Sim Nasr": 3,
       "Ship News": 1,
       "BBG Originals (@BBGOriginals)": 43,
@@ -182,7 +182,7 @@
       "Ministry of National Defense Taiwan": 1
     },
     "media_files": {
-      "images": 975,
+      "images": 977,
       "videos": 0
     }
   },
@@ -225,8 +225,8 @@
     "2026-09-29": 147,
     "2026-09-30": 155,
     "2026-10-01": 67,
-    "2026-10-30": 16,
+    "2026-10-30": 18,
     "2026-10-31": 20
   },
-  "average_confidence": 0.8058346094946413
+  "average_confidence": 0.786288481494288
 }
