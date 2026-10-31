@@ -1842,7 +1842,7 @@
     {
       "id": "webpage-breaking-defense-global",
       "name": "Breaking Defense (breakingdefense.com)",
-      "type": "webpage",
+      "type": "rss",
       "status": "testing",
       "reliability": "medium",
       "priority": "medium",
@@ -1929,10 +1929,10 @@
     "inactive_sources": 43,
     "by_type": {
       "twitter": 145,
-      "webpage": 8,
+      "webpage": 7,
       "api": 13,
       "email": 0,
-      "rss": 0,
+      "rss": 1,
       "webhook": 0,
       "websocket": 0,
       "file": 0,

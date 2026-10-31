@@ -20,7 +20,7 @@ Two stages, kicked off once daily or on demand (see the cadence note above):
 identify.yml (GitHub Actions runner — no Warp agent, no LLM)
   • reads source/manifest.json          # deny-list: skip status ∈ {inactive,archived,deprecated}
   • builder/runtime/identify.sh scans every processable source in parallel
-    (curl/jq for Twitter API, Reddit JSON API, webpages; python3 for Telegram HTML)
+    (curl/jq for Twitter API, Reddit JSON API, webpages; python3 for Telegram HTML and RSS)
   • writes one tip per hit to data/queue/pending/*.json, commits with github.token
     │
     ▼  (workflow_run)

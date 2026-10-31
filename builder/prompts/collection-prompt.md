@@ -36,7 +36,7 @@ ${sourceBlocks}
 ## Step 1 — Init
 
 ```bash
-WORK_DIR=$(bash builder/runtime/init.sh ${bucketNum})
+WORK_DIR=$(bash builder/runtime/init.sh ${bucketNum} ${extractionDate})
 export WORK_DIR
 export TIME_WINDOW_START="${timeWindowStart}"
 export TIME_WINDOW_END="${timeWindowEnd}"

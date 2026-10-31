@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # init.sh — prerequisite checks + work directory for one collection bucket.
-# Usage (from repo root): WORK_DIR=$(bash builder/runtime/init.sh <bucket-num>)
+# Usage (from repo root): WORK_DIR=$(bash builder/runtime/init.sh <bucket-num> <YYYY-MM-DD>)
 # Secret-free environment check: bash builder/runtime/init.sh --check-runtime
 # Prints the work directory path on stdout; all diagnostics go to stderr.
 set -euo pipefail
@@ -25,6 +25,12 @@ if [ "$BUCKET" = "--check-runtime" ]; then
   echo "Warp runtime prerequisites available."
   exit 0
 fi
+EXTRACTION_DATE="${2:?usage: init.sh <bucket-num> <YYYY-MM-DD>}"
+if [[ ! "$EXTRACTION_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] ||
+   [ "$(date -d "$EXTRACTION_DATE" +%F 2>/dev/null)" != "$EXTRACTION_DATE" ]; then
+  echo "ERROR: invalid extraction date: $EXTRACTION_DATE" >&2
+  exit 1
+fi
 for p in source/sources source/manifest.json data/events data/SCHEMA.md skills builder/runtime; do
   [ -e "$p" ] || { echo "ERROR: missing repo path: $p (run from repo root)" >&2; exit 1; }
 done
@@ -43,5 +49,6 @@ fi
 
 WORK_DIR="/tmp/osint-collection-$(date +%Y%m%d-%H%M%S)-bucket${BUCKET}"
 mkdir -p "$WORK_DIR"
+printf '%s\n' "$EXTRACTION_DATE" > "$WORK_DIR/.extraction-date"
 echo "init: bucket ${BUCKET} work dir ${WORK_DIR}" >&2
 printf '%s\n' "$WORK_DIR"

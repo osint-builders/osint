@@ -19,6 +19,18 @@ BUCKET="${3:?unit number required}"
 TOTAL="${4:?total unit count required}"
 LABEL="${5:-bucket}"
 
+# init.sh records the dispatch date once. An agent may otherwise infer a
+# different date from a tip and silently put a valid event in the wrong file.
+[ -f "$WORK_DIR/.extraction-date" ] || {
+  echo "ERROR: missing extraction date from init.sh." >&2
+  exit 1
+}
+EXPECTED_DATE=$(cat "$WORK_DIR/.extraction-date")
+if [ "$DATE" != "$EXPECTED_DATE" ] || [ "$YEAR_MONTH" != "${EXPECTED_DATE:0:7}" ]; then
+  echo "ERROR: submit date $YEAR_MONTH/$DATE disagrees with init.sh date $EXPECTED_DATE." >&2
+  exit 1
+fi
+
 ADDED=$(cat "$WORK_DIR/.added-count" 2>/dev/null || echo 0)
 
 bash builder/runtime/git-identity.sh

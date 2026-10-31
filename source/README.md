@@ -12,7 +12,7 @@ qualifying the resulting tip.
   the canonical `source.name` and must match the manifest `name`.
 - `REVIEW.md` — source problems that require maintainer review.
 - `examples/` — slim templates for the active Twitter, Telegram, Reddit,
-  webpage, and API scanner paths.
+  RSS, webpage, and API scanner paths.
 - `scripts/sync-manifest-names.js` — copies source headings to manifest names;
   `--check` reports drift without editing.
 

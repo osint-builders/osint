@@ -55,6 +55,7 @@ for label in a b; do
   agent="$test_root/agent-$label"
   work="$test_root/work-$label"
   mkdir -p "$work/source"
+  printf '2026-10-30\n' > "$work/.extraction-date"
   printf '{"title":"Event %s","source":{"name":"Fixture"},"date_published":"2026-10-30T10:30:00Z","links":[{"url":"https://example.org/%s"}]}\n' "$label" "$label" > "$work/source/events.jsonl"
   (
     cd "$agent"

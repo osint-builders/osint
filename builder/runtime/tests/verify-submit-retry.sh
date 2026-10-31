@@ -7,6 +7,7 @@ test_dir=$(mktemp -d)
 trap 'rm -rf "$test_dir"' EXIT
 mkdir -p "$test_dir/bin" "$test_dir/work"
 printf '1\n' > "$test_dir/work/.added-count"
+printf '2026-10-30\n' > "$test_dir/work/.extraction-date"
 
 cat > "$test_dir/bin/git" <<'GIT'
 #!/usr/bin/env bash
@@ -78,6 +79,14 @@ output=$(run_submit 1 2>&1) || { printf '%s\n' "$output"; exit 1; }
 [ "$(cat "$test_dir/push-count")" -eq 2 ]
 [[ "$output" == *'submit: pushed 1 event(s)'* ]]
 [[ "$output" != *'test-token'* ]]
+
+printf '2026-10-31\n' > "$test_dir/work/.extraction-date"
+if output=$(run_submit 0 2>&1); then
+  printf 'submit unexpectedly accepted a different bucket date\n' >&2
+  exit 1
+fi
+[[ "$output" == *'disagrees with init.sh date'* ]]
+printf '2026-10-30\n' > "$test_dir/work/.extraction-date"
 
 printf '0\n' > "$test_dir/push-count"
 printf '0\n' > "$test_dir/pull-count"

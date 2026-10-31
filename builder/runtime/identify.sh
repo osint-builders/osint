@@ -21,6 +21,7 @@ set -uo pipefail
 
 QUEUE_DIR="data/queue/pending"
 mkdir -p "$QUEUE_DIR"
+RSS_PARSER="$(dirname "${BASH_SOURCE[0]}")/parse-rss.py"
 
 MAX_CANDIDATES=3
 # Worker exit code 10 means one tip was written; 0 means a clean no-hit scan.
@@ -87,9 +88,9 @@ _identify_twitter() {
 _identify_reddit() {
   local sid="$1" name="$2" subreddit="$3"
   local resp candidates
-  if ! resp=$(curl -sf --max-time 10 "https://www.reddit.com/r/$subreddit/new.json?limit=25&raw_json=1" \
-    -A "osint-bot/1.0" 2>/dev/null); then
-    _warn "$sid" "Reddit feed fetch failed"
+  if ! resp=$(curl -fsSL --max-time 10 "https://www.reddit.com/r/$subreddit/new.json?limit=25&raw_json=1" \
+    -A "osint-bot/1.0" 2>&1); then
+    _warn "$sid" "Reddit feed fetch failed: ${resp:0:200}"
     return 1
   fi
   if ! candidates=$(printf '%s' "$resp" | jq -c --argjson ws "$WINDOW_START_TS" --argjson we "$WINDOW_END_TS" --argjson limit "$MAX_CANDIDATES" \
@@ -141,8 +142,8 @@ print(json.dumps(out[:limit]))
 _identify_webpage() {
   local sid="$1" name="$2" url="$3"
   local body recent_ts="" snippet candidates saw_timestamp=0
-  if ! body=$(curl -sf --max-time 15 -L "$url" 2>/dev/null); then
-    _warn "$sid" "webpage/API fetch failed"
+  if ! body=$(curl -fsSL --max-time 15 "$url" 2>&1); then
+    _warn "$sid" "webpage/API fetch failed: ${body:0:200}"
     return 1
   fi
   while IFS= read -r ds; do
@@ -163,6 +164,21 @@ _identify_webpage() {
     return 1
   fi
   _write_tip "$sid" "$name" "webpage" "$candidates"
+}
+
+_identify_rss() {
+  local sid="$1" name="$2" url="$3"
+  local body candidates
+  if ! body=$(curl -fsSL --max-time 15 "$url" 2>&1); then
+    _warn "$sid" "RSS fetch failed: ${body:0:200}"
+    return 1
+  fi
+  if ! candidates=$(RSS_FEED_URL="$url" RSS_WINDOW_START="$TIME_WINDOW_START" RSS_WINDOW_END="$TIME_WINDOW_END" \
+    RSS_MAX_CANDIDATES="$MAX_CANDIDATES" python3 "$RSS_PARSER" <<< "$body" 2>&1); then
+    _warn "$sid" "RSS parse failed: ${candidates:0:200}"
+    return 1
+  fi
+  _write_tip "$sid" "$name" "rss" "$candidates"
 }
 
 PIDS=()
@@ -227,13 +243,17 @@ for sid in "$@"; do
       PID_SOURCE_IDS+=("$sid")
     fi
     ATTEMPTED=$((ATTEMPTED + 1))
-  elif [ "$src_type" = "webpage" ] || [ "$src_type" = "api" ]; then
+  elif [ "$src_type" = "rss" ] || [ "$src_type" = "webpage" ] || [ "$src_type" = "api" ]; then
     url=$(grep -m1 '^url:' "$src_file" | sed 's/^url:[[:space:]]*//' | tr -d '\r')
     if [ -z "$url" ]; then
       _warn "$sid" "webpage/API URL missing from source file"
       FAILED=$((FAILED + 1))
     else
-      _identify_webpage "$sid" "$src_name" "$url" &
+      if [ "$src_type" = "rss" ]; then
+        _identify_rss "$sid" "$src_name" "$url" &
+      else
+        _identify_webpage "$sid" "$src_name" "$url" &
+      fi
       PIDS+=("$!")
       PID_SOURCE_IDS+=("$sid")
     fi

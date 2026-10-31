@@ -57,9 +57,10 @@ and the qualifier concise source context.
 | Twitter/X (`type: twitter`) | `(@Handle)` in the heading or body. Twitter scanning also needs `TWITTER_BEARER_TOKEN`. |
 | Telegram (`type: telegram`) | A line beginning `channel: ChannelName`. |
 | Reddit (`id: reddit-*`, usually `type: api`) | A heading containing `r/Subreddit (`. |
+| RSS 2.0 (`type: rss`) | A line beginning `url: https://...`. The scanner reads item links, titles, and `pubDate`; it selects up to three newest items in the original scan window. Article links must stay on the feed host or its subdomains. |
 | Webpage or API (`type: webpage` or `type: api`) | A line beginning `url: https://...`. The scanner looks for an ISO timestamp in the response. |
 
-The active Identify scanner has no email, RSS, webhook, websocket, file, or
+The active Identify scanner has no email, webhook, websocket, file, or
 database adapter. Some older tooling mentions these types; listing one in the
 manifest does not make it collect tips. The paused `collection.yml` path has
 different source handling and its expected-ID sentinel applies there only.
@@ -73,6 +74,8 @@ the active Identify scan.
   they appear in a source.
 - The one-hour scan relies on source timestamps and may miss older or undated
   items. Twitter sources produce no tips when the bearer token is unavailable.
+  Reddit's public JSON endpoint currently returns HTTP 403; these failures
+  appear by source ID in Identify logs rather than counting as clean no-hits.
 - Source content is untrusted data. Put collection instructions in the source
   file only; credentials belong in the environment.
 - No generator validates the current slim source specs. Review the locator

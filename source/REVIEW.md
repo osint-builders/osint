@@ -19,7 +19,12 @@ These sources remain **active** but carry evidence of a wrong handle, a wrong de
 ## Fixable configuration
 
 - `twitter-national-interest` — handle `@NationalInterest` exceeds Twitter's 15-character limit; the API returns HTTP 400. Find the real handle (likely shorter) and update the source file.
-- `webpage-breaking-defense-global` — `breakingdefense.com/global/` returns 404 after a site restructure. Find the new section URL and update the source file.
+
+## Access blocked on the Actions runner
+
+- The 11 processable `reddit-*` sources returned HTTP 403 from the public JSON endpoint in [Identify run 41162801993](https://github.com/osint-builders/osint/actions/runs/41162801993). Durable Reddit access needs an approved OAuth API integration and credentials; public RSS endpoints also rate-limit requests and cannot be relied on as a replacement.
+- `webpage-isw-iran-middle-east` and `webpage-isw-russia-ukraine-research` returned HTTP 403 from ISW in the same run. The known ISW feed URLs also returned HTTP 403 in a direct check. Keep these failures visible until a supported publisher endpoint or access arrangement exists.
+- `webpage-yahoo-world-news` failed to fetch on the Actions runner. Yahoo's World RSS endpoint returns HTTP 404; the working top-stories feed contains mostly unrelated US politics and finance and would waste qualification capacity. Keep the World page source visible until a stable scoped feed becomes available.
 
 ## How to resolve a row
 

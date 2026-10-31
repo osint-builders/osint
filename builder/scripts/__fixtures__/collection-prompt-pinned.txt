@@ -58,7 +58,7 @@ Webpage fixture content.
 ## Step 1 — Init
 
 ```bash
-WORK_DIR=$(bash builder/runtime/init.sh 2)
+WORK_DIR=$(bash builder/runtime/init.sh 2 2026-05-01)
 export WORK_DIR
 export TIME_WINDOW_START="2026-05-01T14:34:55.000Z"
 export TIME_WINDOW_END="2026-05-01T15:34:55.000Z"

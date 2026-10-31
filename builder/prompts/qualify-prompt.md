@@ -29,7 +29,7 @@ ${tipBlocks}
 ## Step 1 — Init
 
 ```bash
-WORK_DIR=$(bash builder/runtime/init.sh ${batchNum})
+WORK_DIR=$(bash builder/runtime/init.sh ${batchNum} ${extractionDate})
 export WORK_DIR
 ```
 
@@ -40,12 +40,13 @@ export WORK_DIR
 For each tip above (create `mkdir -p "$WORK_DIR/$source_id"` first, using that tip's `source_id`):
 
 1. **Fetch full content** for each candidate URL. The queued snippet may be truncated or empty. Use `curl` first. If a real browser is necessary, install and run `agent-browser` on demand as directed in `skills/agent-browser/SKILL.md`; it is not preinstalled. If installation or retrieval fails, log why and reject that candidate.
-2. **Apply the event and topical gates, then translate** per `builder/prompts/qualified-event-contract.md`. Require a concrete new reported action or development; reject analysis/opinion that only discusses an ongoing situation, plus ordinary politics, crime, unverifiable claims, and unlocatable reports. Translate title, summary, and body fully into English before writing JSON.
+2. **Apply the event, evidence, and topical gates, then translate** per `builder/prompts/qualified-event-contract.md`. Require a concrete new reported action; reject commentary, off-topic, uncheckable, or unlocatable reports. Attribute single-source claims in the title, summary, and body; never call them confirmed. Translate accepted text fully into English.
 3. **Write one JSON World Event Entity per accepted candidate** using `data/SCHEMA.md` and the typed qualified-event contract:
    - `id`: `EVENT_ID=$(node data/scripts/snowflake.js --worker ${batchNum})` — globally unique across parallel batches.
    - `source.name`: exact `#` header text from the source context. If the source file has been removed, use the tip's queued `source_name`. No variants.
    - `date_published`: use the candidate's `Published` timestamp when available; otherwise the fetched page's own timestamp.
    - `source_window`: copy this tip's displayed window into UTC `start`/`end`; reject a candidate published outside it.
+   - `links`: include the original report and every independent corroborating URL used to support a claim.
    - `language: "en"`, the approved `category`, `audience`, and a concrete `allied_relevance` explanation.
    - `topics`: lowercase, hyphenated, singular, deduplicated.
    - Assign the compact JSON object to shell variable `event_json` before Step 7; parse `$GEO` as JSON and keep coordinates numeric.
@@ -54,7 +55,7 @@ For each tip above (create `mkdir -p "$WORK_DIR/$source_id"` first, using that t
    ```bash
    GEO=$(bash builder/runtime/geocode.sh "<City, Country>")
    ```
-   Use a defensible city, region, country, or sea-area centroid with honest precision. Locate the reported action, never the publisher or organization's headquarters by inference. Never use `(0, 0)` or the former global fallback. Reject when no meaningful location exists.
+   Use a defensible city, region, country, or sea-area centroid with honest precision. Locate the reported action, never the publisher or organization's headquarters by inference. Reject multi-country reports with no source-supported focal location or bounded area. Never use `(0, 0)` or the former global fallback.
 6. **Images**: use remote article/post images when available; mark `image_origin: "article"`. Mark source banners/logos as `"source"`. The enrichment helper verifies the image content and promotes a working preview or marked default when needed; never imply fallback art depicts the event.
 7. **Enrich and save** (the helper reads/writes compact JSON on stdin/stdout):
    ```bash

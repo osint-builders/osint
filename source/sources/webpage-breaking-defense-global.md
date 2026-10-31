@@ -1,10 +1,10 @@
 ---
 id: webpage-breaking-defense-global
-type: webpage
+type: rss
 status: testing
-url: https://www.breakingdefense.com/global/
+url: https://breakingdefense.com/feed/
 ---
 # Breaking Defense (breakingdefense.com)
-Breaking Defense's Global section covers international defense and military news, focusing on global security issues, international defense programs, geopolitical analysis, and military developments worldwide. Provides expert coverage of defense industry, military technology, and international security policy from experienced defense journalists.
+Breaking Defense's RSS feed covers defense and military news, including international security, defense programs, technology, and policy. The former `/global/` listing returned HTTP 404; the publisher feed supplies article URLs and publication times.
 Keywords: conflict, military, defense, weapon, security, international, crisis
 Notes: priority:high
