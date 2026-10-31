@@ -1,15 +1,15 @@
 {
-  "last_updated": "2026-10-31T03:24:17.792Z",
+  "last_updated": "2026-10-31T03:27:35.180Z",
   "data_range": {
     "oldest_date": "2026-08-25",
     "newest_date": "2026-10-31"
   },
   "statistics": {
-    "total_events": 5114,
+    "total_events": 5110,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4738,
-      "2026-10": 119
+      "2026-10": 115
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 159,
@@ -34,7 +34,7 @@
       "Ianellisjones (@Ianellisjones)": 20,
       "War Translated": 8,
       "Middle East Spectator": 45,
-      "Geopolitics Prime (@geopolitics_prime)": 164,
+      "Geopolitics Prime (@geopolitics_prime)": 163,
       "AP News (@AP)": 39,
       "CSIS Korea Chair": 9,
       "Our Wars, Today (@ourwarstoday)": 18,
@@ -60,7 +60,7 @@
       "Gcaptain (@Gcaptain)": 29,
       "cnni": 3,
       "twitter-criticalthreats": 1,
-      "Thewarzonewire (@Thewarzonewire)": 83,
+      "Thewarzonewire (@Thewarzonewire)": 82,
       "Middle East Spectator (@Middle_East_Spectator)": 109,
       "BBC World News": 45,
       "BBC Breaking News": 11,
@@ -97,7 +97,7 @@
       "ChineseEmbInUs": 3,
       "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)": 20,
       "ChineseEmbInUs (@ChineseEmbInUs)": 13,
-      "US Treasury (@USTreasury)": 13,
+      "US Treasury (@USTreasury)": 12,
       "Serhii FLASH — Technologies": 5,
       "Quds News Network (@QudsNen)\n": 3,
       "Middle East Spectator — MES\n": 3,
@@ -119,7 +119,7 @@
       "Our Wars, Today": 4,
       "Taiwan News": 8,
       "Xinhua News": 5,
-      "Institute for the Study of War": 13,
+      "Institute for the Study of War": 12,
       "Riskstaff (@Riskstaff)": 2,
       "Japan Joint Staff (@JapanJointStaff)": 16,
       "NATO Maritime Command (@NATO_MARCOM)": 7,
@@ -183,7 +183,7 @@
       "Ministry of National Defense Taiwan": 1
     },
     "media_files": {
-      "images": 991,
+      "images": 987,
       "videos": 0
     }
   },
@@ -226,8 +226,8 @@
     "2026-09-29": 147,
     "2026-09-30": 155,
     "2026-10-01": 67,
-    "2026-10-30": 31,
-    "2026-10-31": 21
+    "2026-10-30": 28,
+    "2026-10-31": 20
   },
-  "average_confidence": 0.7860447504302879
+  "average_confidence": 0.7862288865908263
 }

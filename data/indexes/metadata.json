@@ -148547,9 +148547,9 @@
   },
   {
     "id": "evt_109850554007584768",
-    "title": "Ukrainian Drones Destroy Russian Mi-8 Transport Helicopter in Luhansk",
-    "summary": "Ukrainian mid-range attack drones successfully engaged and destroyed a Russian Mi-8 transport helicopter operating in Luhansk Oblast on October 30, 2026. The destruction was documented and verified by OSINT Technical, a high-reliability conflict imagery and weapons-identification source.",
-    "date_event": "2026-10-30T17:00:00Z",
+    "title": "Ukrainian Unit Says Drones Destroyed Russian Mi-8 After Landing in Luhansk",
+    "summary": "Ukraine's 3rd Army Corps released footage of a drone strike against a Russian Mi-8 helicopter in Luhansk Oblast on October 30. The unit said its drones pursued the aircraft, then struck after it landed. The exact site and crew outcome remain unverified.",
+    "date_event": null,
     "date_published": "2026-10-30T17:27:41Z",
     "geo": {
       "lat": 49.2724587,
@@ -148557,86 +148557,65 @@
       "location_name": "Luhansk Oblast, Ukraine",
       "precision": "region",
       "country": "Ukraine",
-      "region": "Luhansk"
+      "region": "Luhansk Oblast"
     },
     "topics": [
       "helicopter",
-      "drone",
-      "anti-aircraft",
+      "drone-strike",
       "ukraine",
       "russia",
-      "armed-conflict",
       "luhansk"
     ],
-    "confidence": 0.85,
+    "confidence": 0.8,
     "source_name": "OSINT Technical (@Osinttechnical)",
     "links": [
       {
         "url": "https://x.com/Osinttechnical/status/2116220508546936927",
-        "label": "OSINT Technical tweet"
+        "label": "OSINT Technical footage"
+      },
+      {
+        "url": "https://t.me/ab3army/7627",
+        "label": "3rd Army Corps original statement"
+      },
+      {
+        "url": "https://www.pravda.com.ua/eng/news/2026/10/30/8060558/",
+        "label": "Ukrainska Pravda report"
       }
     ],
     "link_preview_image": "https://pbs.twimg.com/amplify_video_thumb/2116220474233368576/img/zJtLT4Mbxg9jPXHv?format=webp&name=large",
     "image_origin": "article"
   },
   {
-    "id": "evt_109850503269081088",
-    "title": "Russia Reports Forced Deportation of 10-Year-Old from Donetsk Oblast; Intensifies Occupation Integration Policies",
-    "summary": "Russian occupation authorities have deported a 10-year-old girl from Donetsk Oblast to Russia and distorted her story in Russian media to frame the deportation as humanitarian. Simultaneously, Russia intensifies efforts to impose Russian language education in occupied Ukraine and implements forced civilian evacuations and family separations.",
-    "date_event": null,
-    "date_published": "2026-10-30T21:51:59Z",
-    "geo": {
-      "lat": 47.9212914,
-      "lon": 37.7809825,
-      "location_name": "Donetsk Oblast, Ukraine",
-      "precision": "region",
-      "country": "Ukraine",
-      "region": "Donetsk Oblast"
-    },
-    "topics": [
-      "russia-ukraine-war",
-      "occupation",
-      "forced-deportation",
-      "child-welfare",
-      "cultural-integration",
-      "ukraine"
-    ],
-    "confidence": 0.75,
-    "source_name": "Institute for the Study of War",
-    "links": [
-      {
-        "url": "https://x.com/TheStudyofWar/status/2116287020872159530",
-        "label": "ISW Occupation Update Tweet"
-      }
-    ],
-    "link_preview_image": "https://pbs.twimg.com/media/HV4qcBKWwAAL8vp.jpg",
-    "image_origin": "article"
-  },
-  {
     "id": "evt_109850625428197376",
-    "title": "Global Dockworkers Strike Across 22 Countries Against Arms Shipments",
-    "summary": "Widespread dockworker labor action reported across 22 countries on October 30, 2026, specifically targeting arms shipment logistics.",
+    "title": "Piraeus Cargo Disrupted During 22-Country Dockworker Strike",
+    "summary": "Reuters reported that dockworkers and seafarers joined a strike across 113 ports in 22 countries on October 30. Cargo operations and ferries faced disruption at Piraeus, Greece. Organizers opposed arms shipments and sought labor protections; the impact on military cargo remained unverified.",
     "date_event": null,
     "date_published": "2026-10-30T18:37:14.000Z",
     "geo": {
-      "lat": 51.9244424,
-      "lon": 4.47775,
-      "location_name": "Rotterdam, Netherlands",
+      "lat": 37.9372,
+      "lon": 23.6211,
+      "location_name": "Port of Piraeus, Greece",
       "precision": "city",
-      "country": "Netherlands"
+      "country": "Greece",
+      "region": "Attica",
+      "city": "Piraeus"
     },
     "topics": [
-      "labor-action",
-      "arms-shipments",
-      "maritime",
-      "logistics"
+      "port-strike",
+      "piraeus",
+      "maritime-logistics",
+      "arms-shipment"
     ],
-    "confidence": 0.65,
+    "confidence": 0.84,
     "source_name": "Ship News (@ShipNews)",
     "links": [
       {
         "url": "https://x.com/ShipNews/status/2116238011390173446",
-        "title": "Dockworkers Strike Across 22 Countries"
+        "label": "Ship News post"
+      },
+      {
+        "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/10/30/dockworkers-strike-in-europe-and-beyond-against-arms-shipments-war-deaths",
+        "label": "Reuters strike report"
       }
     ],
     "link_preview_image": "https://osint.builders/favicon.svg",
@@ -148644,30 +148623,34 @@
   },
   {
     "id": "evt_109850762019901440",
-    "title": "Oil Leak Halted From Gem No. 2 Tanker Offshore UAE",
-    "summary": "Oil leak from the tanker Gem No. 2 offshore UAE halted on October 30, 2026. Cleanup efforts continue along affected coastlines in the Arabian Gulf region.",
+    "title": "UAE Reports GEM NO. 2 Leak Contained; Slick Off Umm Al Quwain",
+    "summary": "UAE authorities reported no new oil leakage from the tanker GEM NO. 2 on October 30. The latest satellite assessment placed the remaining slick off Umm Al Quwain, with cleanup continuing along affected coastlines. The plotted point marks the reported slick area, not a surveyed vessel position.",
     "date_event": null,
     "date_published": "2026-10-30T18:37:12.000Z",
     "geo": {
-      "lat": 24.4539,
-      "lon": 54.3773,
-      "location_name": "United Arab Emirates, Arabian Gulf",
-      "precision": "country",
-      "country": "United Arab Emirates"
+      "lat": 25.6,
+      "lon": 55.55,
+      "location_name": "Waters off Umm Al Quwain, United Arab Emirates",
+      "precision": "sea-area",
+      "country": "United Arab Emirates",
+      "region": "Umm Al Quwain"
     },
     "topics": [
       "oil-spill",
-      "maritime-incident",
       "tanker",
-      "environmental",
-      "gulf"
+      "umm-al-quwain",
+      "maritime"
     ],
-    "confidence": 0.7,
+    "confidence": 0.9,
     "source_name": "Ship News (@ShipNews)",
     "links": [
       {
         "url": "https://x.com/ShipNews/status/2116238003160891842",
-        "title": "Oil Leak Stopped From Tanker Offshore UAE"
+        "label": "Ship News post"
+      },
+      {
+        "url": "https://www.wam.ae/en/article/c3051mm-oil-spill-from-gem-no-tanker-contained",
+        "label": "UAE authorities via Emirates News Agency"
       }
     ],
     "link_preview_image": "https://osint.builders/favicon.svg",
@@ -148675,8 +148658,8 @@
   },
   {
     "id": "evt_109850812699680768",
-    "title": "Ukrainian Drone Strikes Hit Novokuybyshevsk Oil Refinery in Samara Oblast",
-    "summary": "Thick smoke rising from the Novokuybyshevsk oil refinery in Samara Oblast, Russia following confirmed Ukrainian drone strikes. The refinery represents major Russian energy infrastructure targeted by Ukrainian operations.",
+    "title": "Smoke Reported at Novokuybyshevsk Refinery After Drone Attack",
+    "summary": "A monitoring account reported a drone attack near Russia's Novokuybyshevsk refinery on October 30. Reuters satellite imagery showed smoke over the site. Available evidence does not establish damage to specific processing units or a change in fuel output.",
     "date_event": null,
     "date_published": "2026-10-30T17:11:16Z",
     "geo": {
@@ -148689,16 +148672,21 @@
       "city": "Novokuybyshevsk"
     },
     "topics": [
-      "ukraine-conflict",
-      "drone-strikes",
-      "russian-infrastructure",
-      "energy-operations"
+      "drone-strike",
+      "refinery",
+      "russia",
+      "ukraine"
     ],
-    "confidence": 0.7,
+    "confidence": 0.65,
     "source_name": "The Lookout North",
     "links": [
       {
-        "url": "https://x.com/The_Lookout_N/status/2116216377262387533"
+        "url": "https://x.com/The_Lookout_N/status/2116216377262387533",
+        "label": "The Lookout North report"
+      },
+      {
+        "url": "https://www.reutersconnect.com/item/a-satellite-view-of-smoke-from-the-novokuybyshevsk-oil-refinery/dGFnOnJldXRlcnMuY29tLDIwMjY6bmV3c21sX1JDMlBET0FUSFZMRw",
+        "label": "Reuters satellite imagery"
       }
     ],
     "link_preview_image": "https://osint.builders/favicon.svg",
@@ -148706,28 +148694,41 @@
   },
   {
     "id": "evt_109850908401115136",
-    "title": "Iran Conducts Limpet Mine Attack on Vessel in Strait of Hormuz",
-    "summary": "Iran deployed a limpet mine attached to a ship hull in the Strait of Hormuz, marking the latest in a series of maritime attacks. United States and allied air defenses, ships, troops, and supplies are being positioned in the Middle East in response to the escalating maritime threat.",
-    "date_event": null,
+    "title": "Explosive Devices Strike Tanker Near Khasab; Iranian Role Reported",
+    "summary": "UK Maritime Trade Operations reported that a small boat attached two explosive devices to a tanker near Khasab, Oman, on October 29. Financial Times reporting attributed the attack to Iran; the UKMTO notice identified no attacker. The crew remained safe and the vessel resumed its voyage.",
+    "date_event": "2026-10-29T22:12:00Z",
     "date_published": "2026-10-30T18:40:43Z",
     "geo": {
-      "lat": 26.5,
-      "lon": 55.5,
-      "location_name": "Strait of Hormuz",
+      "lat": 26.49,
+      "lon": 56.57,
+      "location_name": "Approximately 25 nautical miles northeast of Khasab, Strait of Hormuz",
       "precision": "sea-area",
-      "country": "Iran"
+      "region": "Strait of Hormuz"
     },
     "topics": [
-      "maritime-security",
-      "iran-operations",
-      "gulf-security",
-      "shipping-threats"
+      "maritime-attack",
+      "explosive-device",
+      "strait-of-hormuz",
+      "tanker"
     ],
-    "confidence": 0.65,
+    "confidence": 0.72,
     "source_name": "Thewarzonewire",
     "links": [
       {
-        "url": "https://x.com/Thewarzonewire/status/2116238886682640590"
+        "url": "https://x.com/Thewarzonewire/status/2116238886682640590",
+        "label": "The War Zone social report"
+      },
+      {
+        "url": "https://www.ukmto.org/-/media/ukmto/products/20261029-ukmto_warning-187-26-update-001.pdf?rev=c5fca281b8cb48d6b275bf6fb612219f",
+        "label": "UKMTO incident update"
+      },
+      {
+        "url": "https://www.twz.com/news-features/iran-used-limpet-mine-placed-on-ships-hull-in-latest-strait-of-hormuz-attack-report",
+        "label": "The War Zone report"
+      },
+      {
+        "url": "https://www.ft.com/content/66ba3e98-26f5-46f1-9af3-5854364b4e9f",
+        "label": "Financial Times attribution report"
       }
     ],
     "link_preview_image": "https://osint.builders/favicon.svg",
@@ -148735,111 +148736,43 @@
   },
   {
     "id": "evt_109850908443058176",
-    "title": "USAF F-16 Fighter Alert Duty Restored on Shemya Island in Aleutian Islands",
-    "summary": "United States Air Force F-16 fighter aircraft have resumed alert duty on remote Shemya Island in the Aleutian Islands for the first time in decades. The return to fighter alert operations in the Arctic region represents a significant shift in NORAD posture and reflects the eroding security environment in the Pacific and Arctic theaters.",
+    "title": "NORAD F-16s Completed Shemya Alert Deployment in October",
+    "summary": "The War Zone reported that U.S. F-16s maintained an alert posture at Eareckson Air Station on Shemya Island from October 18 through 26. The aircraft launched for an October 25 homeland defense mission. The report describes a completed deployment rather than permanent fighter stationing.",
     "date_event": null,
     "date_published": "2026-10-30T18:31:31Z",
     "geo": {
       "lat": 52.728,
       "lon": -174.117,
-      "location_name": "Shemya Island, Aleutian Islands, Alaska",
-      "precision": "city",
+      "location_name": "Eareckson Air Station, Shemya Island, Alaska",
+      "precision": "region",
       "country": "United States",
-      "region": "Alaska",
-      "city": "Shemya"
+      "region": "Alaska"
     },
     "topics": [
-      "arctic-defense",
-      "usaf-operations",
-      "norad-posture",
-      "pacific-security"
+      "norad",
+      "f-16",
+      "air-defense",
+      "alaska"
     ],
-    "confidence": 0.8,
+    "confidence": 0.85,
     "source_name": "Thewarzonewire",
     "links": [
       {
-        "url": "https://x.com/Thewarzonewire/status/2116236573461369123"
+        "url": "https://x.com/Thewarzonewire/status/2116236573461369123",
+        "label": "The War Zone social report"
+      },
+      {
+        "url": "https://www.twz.com/air/usaf-f-16s-back-on-alert-duty-in-aleutian-islands-for-first-time-in-decades",
+        "label": "The War Zone article"
       }
     ],
     "link_preview_image": "https://osint.builders/favicon.svg",
     "image_origin": "default"
   },
   {
-    "id": "evt_109851447738265600",
-    "title": "US Treasury reports Iran economy crippled by American blockade and sanctions",
-    "summary": "The United States Treasury Department issued a report documenting that comprehensive American blockade and sanctions regimes severely limit access of Iran to international financial systems and trade.",
-    "date_event": null,
-    "date_published": "2026-10-30T21:36:44Z",
-    "geo": {
-      "lat": 32.427908,
-      "lon": 53.688046,
-      "location_name": "Iran",
-      "precision": "country"
-    },
-    "topics": [
-      "iran",
-      "sanctions",
-      "united-states",
-      "economy",
-      "treasury",
-      "ofac",
-      "blockade"
-    ],
-    "confidence": 0.78,
-    "source_name": "US Treasury (@USTreasury)",
-    "links": [
-      {
-        "url": "https://x.com/USTreasury/status/2116283183335624880",
-        "text": "Treasury tweet"
-      },
-      {
-        "url": "https://home.treasury.gov",
-        "text": "US Treasury"
-      }
-    ],
-    "link_preview_image": "https://pbs.twimg.com/card_img/2116242010210496512/_CcMFhXI?format=jpg&name=800x419",
-    "image_origin": "article"
-  },
-  {
-    "id": "evt_109851447692128256",
-    "title": "GJ-21 stealth drone completes launch and recovery trials aboard Type 076 amphibious assault ship",
-    "summary": "The People Liberation Army Navy successfully conducted launch and recovery trials of the GJ-21 stealth unmanned aerial vehicle aboard the Type 076 amphibious assault ship Sichuan, signaling advancement in naval airpower capabilities.",
-    "date_event": null,
-    "date_published": "2026-10-30T21:40:01Z",
-    "geo": {
-      "lat": 16.3211814,
-      "lon": 111.9789227,
-      "location_name": "South China Sea, China",
-      "precision": "sea-area"
-    },
-    "topics": [
-      "china",
-      "military",
-      "naval-aviation",
-      "drone",
-      "type-076",
-      "south-china-sea",
-      "unmanned-systems"
-    ],
-    "confidence": 0.72,
-    "source_name": "Thewarzonewire (@Thewarzonewire)",
-    "links": [
-      {
-        "url": "https://www.twz.com/air/stealthy-gj-21-drone-has-launched-and-recovered-from-type-076-amphibious-assault-ship-china-claims",
-        "text": "Original article"
-      },
-      {
-        "url": "https://x.com/Thewarzonewire/status/2116284011333013567",
-        "text": "Twitter source"
-      }
-    ],
-    "link_preview_image": "https://www.twz.com/wp-content/uploads/2026/10/gj-21-drone-type-076-amphibious-assault-ship-develpoments.jpg",
-    "image_origin": "article"
-  },
-  {
     "id": "evt_109851447784402944",
-    "title": "Houthi-fired missiles strike Aden, Yemen; explosions reported near presidential palace",
-    "summary": "Two loud explosions rocked Yemens southern port city of Aden on Friday as missiles fired by Houthi forces struck near the presidential palace, according to local security officials. The attacks represent continued escalation in the Yemen conflict.",
+    "title": "Two Blasts Near Aden Palace; Official Blames Houthi Missiles",
+    "summary": "Xinhua reported two explosions in Aden on October 30. An unnamed local security official attributed missiles near the presidential palace to Houthi forces, while residents reported hearing the blasts. Damage, casualties, and the precise impact point remained unknown.",
     "date_event": null,
     "date_published": "2026-10-30T21:35:28Z",
     "geo": {
@@ -148849,20 +148782,21 @@
       "precision": "city"
     },
     "topics": [
-      "yemen",
-      "houthi",
       "aden",
-      "missile",
-      "armed-conflict",
-      "maritime-security",
-      "middle-east"
+      "yemen",
+      "missile-report",
+      "government-security"
     ],
-    "confidence": 0.75,
+    "confidence": 0.63,
     "source_name": "Xinhua News (@XHNews)",
     "links": [
       {
         "url": "https://x.com/XHNews/status/2116282866745348423",
-        "text": "Xinhua report"
+        "label": "Xinhua initial report"
+      },
+      {
+        "url": "https://english.news.cn/20261031/65e028a014564f428b2f4c2ce01c575f/c.html",
+        "label": "Xinhua follow-up report"
       }
     ],
     "link_preview_image": "https://pbs.twimg.com/media/HV6MDWkakAAZoQk.jpg",
@@ -148870,28 +148804,25 @@
   },
   {
     "id": "evt_109853335594471424",
-    "title": "Ukraine reports Neptune missile strike on Russian Su-34s at Marinovka airfield",
-    "summary": "War Translated reports that satellite imagery confirms Ukrainian Navy strikes destroyed two Russian Su-34 fighter bombers at Marinovka airfield in Volgograd region on October 29. Sentinel imagery from the previous day shows these aircraft occupied their regular parking positions, indicating targeted strike capability.",
-    "date_event": "2026-10-29T00:00:00Z",
+    "title": "Ukrainian Navy Reports Neptune Strike on Su-34s at Marinovka Air Base",
+    "summary": "The Ukrainian Navy reported a Neptune missile strike at Marinovka Air Base on October 29 and claimed two Russian Su-34 aircraft destroyed. AviVector and CyberBoroshno published satellite imagery on October 30 that they interpret as showing damage at two aircraft parking positions. The exact loss count still rests on the Ukrainian claim and imagery interpretation.",
+    "date_event": null,
     "date_published": "2026-10-30T18:44:18Z",
     "geo": {
-      "lat": 48.692368,
-      "lon": 43.832142,
-      "location_name": "Marinovka, Volgograd Oblast, Russia",
-      "precision": "city",
+      "lat": 48.637,
+      "lon": 43.789,
+      "location_name": "Marinovka Air Base area, Volgograd Oblast, Russia",
+      "precision": "region",
       "country": "Russia",
-      "region": "Volgograd Oblast",
-      "city": "Marinovka"
+      "region": "Volgograd Oblast"
     },
     "topics": [
-      "ukraine",
-      "russia",
-      "armed-conflict",
-      "air-strike",
-      "naval-operations",
-      "volgograd"
+      "marinovka",
+      "airbase-strike",
+      "su-34",
+      "neptune-missile"
     ],
-    "confidence": 0.75,
+    "confidence": 0.7,
     "source_name": "War Translated (@wartranslated)",
     "links": [
       {
@@ -148899,8 +148830,20 @@
         "label": "War Translated post"
       },
       {
-        "url": "https://x.com/wartranslated/status/2116228733808058669",
-        "label": "Complementary War Translated report"
+        "url": "https://t.me/ukrainian_navy/22898",
+        "label": "Ukrainian Navy strike statement"
+      },
+      {
+        "url": "https://x.com/avivector/status/2116209964507177016",
+        "label": "AviVector satellite analysis"
+      },
+      {
+        "url": "https://t.me/kiber_boroshno/13664",
+        "label": "CyberBoroshno satellite comparison"
+      },
+      {
+        "url": "https://www.pravda.com.ua/eng/news/2026/10/30/8060549/",
+        "label": "Ukrainska Pravda imagery report"
       }
     ],
     "link_preview_image": "https://pbs.twimg.com/media/HV5kVzPXoAALlG6?format=webp&name=large",
@@ -148908,9 +148851,9 @@
   },
   {
     "id": "evt_109853335640608768",
-    "title": "War Translated reports evacuation of civilians from Oleshky, Kherson region",
-    "summary": "War Translated reports that a column of evacuation buses from Oleshky in Kherson region has stretched for kilometers, according to local media. The report indicates ongoing civilian displacement operations in the contested region.",
-    "date_event": "2026-10-30T17:00:00Z",
+    "title": "Ukrainian Ombudsman Reports Civilian Evacuation From Oleshky",
+    "summary": "Ukraine's human rights commissioner reported that civilians left Russian-occupied Oleshky under a temporary ceasefire on October 30. War Translated relayed a local report of a kilometers-long bus column, but no linked source independently measured its length or counted evacuees. The operation remains a war-zone humanitarian evacuation.",
+    "date_event": null,
     "date_published": "2026-10-30T18:40:01Z",
     "geo": {
       "lat": 46.6260908,
@@ -148922,18 +148865,29 @@
       "city": "Oleshky"
     },
     "topics": [
-      "ukraine",
-      "evacuation",
-      "kherson",
-      "civil-unrest",
-      "humanitarian"
+      "oleshky",
+      "civilian-evacuation",
+      "humanitarian-access",
+      "ukraine"
     ],
-    "confidence": 0.7,
+    "confidence": 0.8,
     "source_name": "War Translated (@wartranslated)",
     "links": [
       {
         "url": "https://x.com/wartranslated/status/2116238710501232758",
-        "label": "War Translated post"
+        "label": "War Translated convoy report"
+      },
+      {
+        "url": "https://t.me/dmytro_lubinetzs/12959",
+        "label": "Ukrainian human rights commissioner statement"
+      },
+      {
+        "url": "https://hromadske.ua/en/amp/war/273503-humanitarian-aid-reaches-russian-occupied-oleshky-as-residents-begin-evacuation-ukrainian-ombudsman-says",
+        "label": "Hromadske evacuation report"
+      },
+      {
+        "url": "https://apnews.com/article/1eb633aee4d33b3845a72053d7f6346c",
+        "label": "Associated Press evacuation report"
       }
     ],
     "link_preview_image": "https://pbs.twimg.com/media/HV5jzsYW8AEm72e?format=webp&name=large",
@@ -149515,36 +149469,5 @@
     ],
     "link_preview_image": null,
     "image_origin": null
-  },
-  {
-    "id": "evt_109850779975696384",
-    "title": "Saudi Coalition Airstrikes Kill Civilians in Yemen, 14 Deaths in 24 Hours",
-    "summary": "Saudi-led coalition forces conducted 93 airstrikes and missile attacks on Yemen over 24 hours, killing at least 14 people and wounding 15 more according to Yemen Health Ministry and Ansarallah reports. The strikes included attacks on civilians, a telecom network, and humanitarian workers.",
-    "date_event": "2026-10-31T00:32:37Z",
-    "date_published": "2026-10-31T02:32:37Z",
-    "geo": {
-      "lat": 16.3471243,
-      "lon": 47.8915271,
-      "location_name": "Yemen",
-      "precision": "country",
-      "country": "Yemen"
-    },
-    "topics": [
-      "yemen",
-      "saudi-coalition",
-      "airstrikes",
-      "armed-conflict",
-      "civilian-casualties"
-    ],
-    "confidence": 0.7,
-    "source_name": "Geopolitics Prime (@geopolitics_prime)",
-    "links": [
-      {
-        "url": "https://t.me/geopolitics_prime/77049",
-        "label": "Geopolitics Prime"
-      }
-    ],
-    "link_preview_image": "https://osint.builders/favicon.svg",
-    "image_origin": "default"
   }
 ]
