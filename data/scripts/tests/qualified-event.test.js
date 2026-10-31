@@ -6,7 +6,7 @@ const path = require('node:path');
 const test = require('node:test');
 const { validateQualifiedEvent, DEFAULT_IMAGE_URL } = require('../lib/qualified-event');
 
-const section = 'A verified notice describes vessel traffic changes near a named port. Officials report a closure while crews inspect navigation channels and terminal equipment. The source gives the publication time and a clear geographic context. Allied planners can monitor routing delays without assuming an exact vessel position.';
+const section = 'A source notice describes vessel traffic changes near a named port. Officials report a closure while crews inspect navigation channels and terminal equipment. The source gives the publication time and a clear geographic context. Allied planners can monitor routing delays without assuming an exact vessel position.';
 const contents = [
   'Event', 'Location and Time', 'Evidence', 'Allied Relevance', 'Confidence and Gaps',
 ].map((heading) => `## ${heading}\n\n${section}`).join('\n\n');
@@ -63,6 +63,16 @@ test('qualified contract rejects missing imagery and a disguised default', () =>
   assert.match(validateQualifiedEvent(disguised).join(' '), /default image/);
 });
 
+test('qualified contract rejects categorical certainty words in published prose', () => {
+  for (const field of ['title', 'summary', 'contents']) {
+    for (const word of ['confirmed', 'confirms', 'verified', 'verifies', 'corroborated', 'corroborates']) {
+      const invalid = event();
+      invalid[field] += ` ${word}`;
+      assert.match(validateQualifiedEvent(invalid).join(' '), new RegExp(`Field '${field}' uses categorical certainty word '${word}'`));
+    }
+  }
+});
+
 test('qualified contract rejects local or credentialed image URLs', () => {
   for (const url of [
     'http://localhost/image.jpg',
@@ -112,7 +122,7 @@ test('qualified contract enforces evidence-grounded body structure', () => {
   assert.match(issues, /100 prose words/);
   assert.match(issues, /HTML/);
   assert.match(issues, /contraction/);
-  invalid.contents = `Preface\n\n${contents.replace('A verified notice', "A notice doesn't")}`;
+  invalid.contents = `Preface\n\n${contents.replace('A source notice', "A notice doesn't")}`;
   const prefacedIssues = validateQualifiedEvent(invalid).join(' ');
   assert.match(prefacedIssues, /must begin/);
   assert.match(prefacedIssues, /contraction/);
@@ -143,6 +153,8 @@ test('historical strict validation stays compatible while --qualified adds the g
   }
   historical.image_urls = [];
   historical.id = 'evt_20261030_001';
+  historical.title = 'Confirmed Port Closure During Regional Storm';
+  historical.summary = 'Officials verified a port closure after a storm disrupted vessel traffic.';
   delete historical.geo.location_name;
   delete historical.geo.precision;
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'osint-qualified-test-'));
@@ -155,6 +167,7 @@ test('historical strict validation stays compatible while --qualified adds the g
     assert.equal(strict.status, 0, strict.stdout + strict.stderr);
     assert.equal(qualified.status, 1, qualified.stdout + qualified.stderr);
     assert.match(qualified.stdout, /image_urls/);
+    assert.match(qualified.stdout, /categorical certainty word/);
   } finally {
     const prefix = path.join(os.tmpdir(), 'osint-qualified-test-');
     if (directory.startsWith(prefix)) fs.rmSync(directory, { recursive: true, force: true });

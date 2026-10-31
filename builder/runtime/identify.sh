@@ -4,7 +4,7 @@
 # For each source with new-in-window content, writes one lightweight tip
 # record per source to data/queue/pending/<source-id>-<epoch>.json for the
 # qualify workflow to pick up later. No LLM, no Warp agent — pure curl/jq
-# (+ python3 for Telegram HTML parsing), meant to run directly on a GitHub
+# (+ python3 for Telegram HTML and RSS parsing), meant to run directly on a GitHub
 # Actions runner. This intentionally mirrors precheck.sh's per-type source
 # parsing (same manifest/front-matter conventions) but captures actual
 # candidate URLs + snippets instead of a pass/fail verdict.

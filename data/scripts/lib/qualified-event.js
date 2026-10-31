@@ -13,6 +13,7 @@ const AUDIENCES = new Set(['united-states', 'allied-forces']);
 const GEO_PRECISIONS = new Set(['exact', 'city', 'region', 'country', 'sea-area']);
 const IMAGE_ORIGINS = new Set(['article', 'source', 'default']);
 const DEFAULT_IMAGE_URL = 'https://osint.builders/favicon.svg';
+const CATEGORICAL_CERTAINTY_RE = /\b(?:confirmed|confirms|verified|verifies|corroborated|corroborates)\b/i;
 const CONTENT_HEADINGS = [
   'Event',
   'Location and Time',
@@ -138,6 +139,13 @@ function validateQualifiedEvent(event) {
     const value = event[field];
     if (typeof value === 'string' && (/\r|\n/.test(value) || /<\/?[a-z][^>]*>/i.test(value) || /&(?:#\d+|[a-z]+);/i.test(value))) {
       issues.push(`Field '${field}' must be single-line plain English text without HTML entities`);
+    }
+  }
+  for (const field of ['title', 'summary', 'contents']) {
+    const value = event[field];
+    const match = typeof value === 'string' && value.match(CATEGORICAL_CERTAINTY_RE);
+    if (match) {
+      issues.push(`Field '${field}' uses categorical certainty word '${match[0]}'; describe evidence or attribute the claim directly`);
     }
   }
   validateContents(event.contents, issues);
