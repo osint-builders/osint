@@ -184,27 +184,41 @@ test('qualified contract requires the original report of the new development', (
   assert.match(validateQualifiedEvent(repostTime).join(' '), /date_published.*equal/);
 });
 
-test('runtime original-report gate rejects one stale candidate without network access', () => {
+test('runtime candidate gate checks provenance, attribution, and registered source name', () => {
   const helper = path.resolve(__dirname, '..', '..', '..', 'builder', 'runtime', 'verify-candidate.cjs');
   const run = (candidate) => spawnSync(process.execPath, [helper], {
     input: JSON.stringify(candidate), encoding: 'utf8',
   });
-  assert.equal(run(event()).status, 0);
-  const missing = event();
+  const registered = event();
+  registered.source.name = 'UNITED24 Media (@United24media)';
+  for (const field of ['title', 'summary', 'contents']) {
+    registered[field] = registered[field].replaceAll('Example Maritime Authority', registered.source.name);
+  }
+  assert.equal(run(registered).status, 0);
+  const missing = structuredClone(registered);
   delete missing.original_report;
   assert.equal(run(missing).status, 1);
-  const stale = event();
+  const stale = structuredClone(registered);
   stale.original_report.published_at = '2026-10-30T16:45:00Z';
   stale.date_published = stale.original_report.published_at;
   const rejected = run(stale);
   assert.equal(rejected.status, 1);
   assert.match(rejected.stderr, /outside this tip's source_window/);
 
-  const unattributed = event();
+  const unattributed = structuredClone(registered);
   unattributed.title = 'A port closure occurred after a storm.';
   const attributionRejected = run(unattributed);
   assert.equal(attributionRejected.status, 1);
   assert.match(attributionRejected.stderr, /Single-source title/);
+
+  const shortened = structuredClone(registered);
+  shortened.source.name = 'UNITED24 Media';
+  for (const field of ['title', 'summary', 'contents']) {
+    shortened[field] = shortened[field].replaceAll('UNITED24 Media (@United24media)', shortened.source.name);
+  }
+  const nameRejected = run(shortened);
+  assert.equal(nameRejected.status, 1);
+  assert.match(nameRejected.stderr, /source.name.*exactly match/);
 });
 
 test('qualified contract omits date-only event times and rejects midnight UTC placeholders', () => {

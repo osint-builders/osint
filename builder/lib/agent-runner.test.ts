@@ -90,3 +90,38 @@ test("successful runs preserve job order and configured model", async () => {
   assert.deepEqual(results.map((result) => result.state), ["SUCCEEDED", "SUCCEEDED", "SUCCEEDED"]);
   assert.deepEqual(models, ["test-model", "test-model", "test-model"]);
 });
+
+test("terminal Oz runs log session links with run IDs and never log prompts", async () => {
+  const output: string[] = [];
+  const cancelled: string[] = [];
+  const runtime = fastRuntime();
+  runtime.log = (message) => { output.push(message); };
+  runtime.write = (message) => { output.push(message); };
+  let starts = 0;
+  let firstPoll = true;
+  const client: AgentClient = {
+    run: async () => ({ run_id: `run-${++starts}` }),
+    retrieve: async (id) => {
+      if (id === "run-1" && firstPoll) {
+        firstPoll = false;
+        return { state: "RUNNING", session_link: "https://app.warp.dev/running" };
+      }
+      if (id === "run-1") return { state: "SUCCEEDED", session_link: "https://app.warp.dev/success" };
+      if (id === "run-2") return { state: "FAILED", session_link: "https://app.warp.dev/failed" };
+      return { state: "BLOCKED", session_link: "https://app.warp.dev/blocked" };
+    },
+    cancel: async (id) => { cancelled.push(id); },
+  };
+  const coordinator = new AgentRunCoordinator(client, { modelId: "test-model" }, runtime);
+  const results = await coordinator.execute([
+    { label: "batch-1", prompt: "PRIVATE_PROMPT_VALUE", itemCount: 1 },
+    ...jobs.slice(1),
+  ]);
+  assert.deepEqual(results.map((result) => result.state), ["SUCCEEDED", "FAILED", "CANCELLED"]);
+  assert.deepEqual(cancelled, ["run-3"]);
+  const log = output.join("\n");
+  assert.match(log, /Oz session \(run ID: run-1\): https:\/\/app\.warp\.dev\/success/);
+  assert.match(log, /Oz session \(run ID: run-2\): https:\/\/app\.warp\.dev\/failed/);
+  assert.match(log, /Oz session \(run ID: run-3\): https:\/\/app\.warp\.dev\/blocked/);
+  assert.doesNotMatch(log, /https:\/\/app\.warp\.dev\/running|PRIVATE_PROMPT_VALUE/);
+});

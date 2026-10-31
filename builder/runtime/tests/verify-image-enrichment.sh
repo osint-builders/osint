@@ -3,7 +3,7 @@ set -euo pipefail
 
 helper="builder/runtime/enrich-link-preview.sh"
 tmp=$(mktemp -d)
-trap 'status=$?; if [ "$status" -ne 0 ]; then cat "$tmp/curl.log" >&2 2>/dev/null || true; fi; rm -f "$tmp/curl" "$tmp/banner-cache.json" "$tmp/curl.log"; rmdir "$tmp"' EXIT
+trap 'status=$?; if [ "$status" -ne 0 ]; then cat "$tmp/curl.log" >&2 2>/dev/null || true; fi; rm -f "$tmp/curl" "$tmp/banner-cache.json" "$tmp/curl.log" "$tmp/source-error"; rmdir "$tmp"' EXIT
 export TWITTER_BANNER_CACHE="$tmp/banner-cache.json"
 export MOCK_CURL_LOG="$tmp/curl.log"
 export PATH="$tmp:$PATH"
@@ -65,10 +65,10 @@ MOCK
 chmod +x "$tmp/curl"
 
 with_original_report() {
-  jq -c '. + {source: (.source // {name: "Example Source"}),
-    title: ((.source.name // "Example Source") + " reports a demo event"),
-    summary: ((.source.name // "Example Source") + " reports a demo event near the test port."),
-    contents: ("## Event\n\n" + (.source.name // "Example Source") + " reports a demo event near the test port."),
+  jq -c '. + {source: (.source // {name: "UNITED24 Media (@United24media)"}),
+    title: ((.source.name // "UNITED24 Media (@United24media)") + " reports a demo event"),
+    summary: ((.source.name // "UNITED24 Media (@United24media)") + " reports a demo event near the test port."),
+    contents: ("## Event\n\n" + (.source.name // "UNITED24 Media (@United24media)") + " reports a demo event near the test port."),
     date_published: "2026-10-30T17:30:00Z",
     source_window: {start: "2026-10-30T17:00:00Z", end: "2026-10-30T18:00:00Z"},
     original_report: {url: .links[0].url, published_at: "2026-10-30T17:30:00Z"}}'
@@ -144,6 +144,13 @@ if printf '%s' "$base" | with_original_report |
    bash "$helper" >/dev/null 2>&1; then
   echo 'Stale original report should fail enrichment' >&2; exit 1
 fi
+# Attribution alone cannot turn a shortened or invented publisher name into a
+# registered source. The candidate must fail before probing its image.
+if printf '%s' "$base" | jq -c '.source = {name: "UNITED24 Media"}' |
+   with_original_report | bash "$helper" > /dev/null 2> "$tmp/source-error"; then
+  echo 'Shortened source name should fail enrichment' >&2; exit 1
+fi
+grep -qF "source.name' must exactly match" "$tmp/source-error"
 after=$(wc -l < "$MOCK_CURL_LOG")
 if [ "$before" -ne "$after" ]; then echo 'Rejected candidate triggered an image request' >&2; exit 1; fi
 

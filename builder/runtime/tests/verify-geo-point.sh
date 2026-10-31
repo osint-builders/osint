@@ -42,7 +42,7 @@ export GEO_POINT_REQUEST_LOG="$resolved_root/requests.log"
 printf '{}\n' > "$GEOCODING_CACHE"
 touch "$GEO_POINT_REQUEST_LOG"
 
-event='{"source":{"name":"Example News"},"title":"Example News reports a development","summary":"Example News reports a development","contents":"## Event\n\nExample News reports a development","links":[{"url":"https://example.org/report"}],"date_published":"2026-10-30T17:30:00Z","source_window":{"start":"2026-10-30T17:00:00Z","end":"2026-10-30T18:00:00Z"},"original_report":{"url":"https://example.org/report","published_at":"2026-10-30T17:30:00Z"},"image_urls":["https://example.org/photo.jpg"]}'
+event='{"source":{"name":"UNITED24 Media (@United24media)"},"title":"UNITED24 Media (@United24media) reports a development","summary":"UNITED24 Media (@United24media) reports a development","contents":"## Event\n\nUNITED24 Media (@United24media) reports a development","links":[{"url":"https://example.org/report"}],"date_published":"2026-10-30T17:30:00Z","source_window":{"start":"2026-10-30T17:00:00Z","end":"2026-10-30T18:00:00Z"},"original_report":{"url":"https://example.org/report","published_at":"2026-10-30T17:30:00Z"},"image_urls":["https://example.org/photo.jpg"]}'
 with_geo() {
   printf '%s' "$event" | jq -c --arg name "$1" --arg precision "$2" \
     --argjson lat "$3" --argjson lon "$4" \

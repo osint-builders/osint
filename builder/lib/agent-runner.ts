@@ -7,14 +7,14 @@ const SPAWN_STAGGER_MS = 500;
 const POLL_MAX_TRANSIENT_RETRIES = 5;
 const MAX_RUN_DURATION_MS = 10 * 60_000;
 export const MAX_PROMPT_SIZE_BYTES = 1_048_576;
-export const DEFAULT_MODEL_ID = "claude-4-5-haiku";
+export const DEFAULT_MODEL_ID = "claude-5-5-haiku-high";
 
 const TERMINAL_STATES = new Set(["SUCCEEDED", "FAILED", "CANCELLED"]);
 
 // Only the three Oz operations the coordinator needs cross this seam.
 export interface AgentClient {
   run(params: OzAPI.AgentRunParams): Promise<{ run_id: string }>;
-  retrieve(runId: string): Promise<{ state: string }>;
+  retrieve(runId: string): Promise<{ state: string; session_link?: string }>;
   cancel(runId: string): Promise<unknown>;
 }
 
@@ -189,10 +189,16 @@ export class AgentRunCoordinator {
         transientRetries = 0;
         if (TERMINAL_STATES.has(run.state)) {
           this.runtime.write("\n");
+          if (run.session_link) {
+            this.runtime.log(`  Oz session (run ID: ${runId}): ${run.session_link}`);
+          }
           return run.state;
         }
         if (run.state === "BLOCKED") {
           this.runtime.write(`\n  ⚠ Run ${runId} entered BLOCKED — cancelling.\n`);
+          if (run.session_link) {
+            this.runtime.log(`  Oz session (run ID: ${runId}): ${run.session_link}`);
+          }
           await this.cancelOne(runId);
           return "CANCELLED";
         }
