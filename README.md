@@ -154,6 +154,8 @@ apt-get update && apt-get install -y jq python3 wget
 
 `agent-browser` is deliberately **not** a setup command. A mandatory Chrome download previously failed and stopped every qualify batch. When `curl` cannot retrieve enough evidence, agents run `npx --yes agent-browser@0.27.0 install` on demand and use that pinned CLI; browser failure rejects only the affected candidate. Version 0.27.0 runs under Node 20, the minimum checked by `init.sh`; the next release, 0.28.0, declares Node 24 and pnpm 11 requirements. See `skills/agent-browser/SKILL.md` and the "Fetch full content" step in `builder/prompts/qualify-prompt.md`.
 
+The optional [`the-news` skill](skills/the-news/SKILL.md) uses a keyless country-headline API to find additional publisher leads for a specific queued tip. It adds no setup dependency; the agent checks any original report before using it as evidence.
+
 Bake these env vars into the environment as Warp Team-scope secrets:
 
 | Variable | Required | Purpose |

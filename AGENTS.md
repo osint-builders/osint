@@ -4,7 +4,7 @@ Agent + human guidance. Max ~150 lines.
 
 ## What this repo is
 
-OSINT collector using a **Tip & Queue** pipeline: `identify.yml` runs a cheap, non-LLM scan (curl/jq/python3, no Warp agent) across ~115 processable sources and writes lightweight "tip" records to a git-committed queue; `qualify.yml` drains that queue in small batches (default 3 tips/agent), spawning short-lived Warp Cloud Agents (`oz-agent-sdk`) to do the LLM-heavy work (translate, extract, geocode, enrich) and normalize each tip into a **World Event Entity** committed to `data/`. A legacy single-phase workflow (`collection.yml`, `builder/index.ts`) still exists but is paused (`workflow_dispatch` only) while the new pipeline is validated.
+OSINT collector using a **Tip & Queue** pipeline: `identify.yml` runs a cheap, non-LLM scan (curl/jq/python3, no Warp agent) across every processable source and writes lightweight "tip" records to a git-committed queue; `qualify.yml` drains that queue in small batches (default 3 tips/agent), spawning short-lived Warp Cloud Agents (`oz-agent-sdk`) to do the LLM-heavy work (translate, extract, geocode, enrich) and normalize each tip into a **World Event Entity** committed to `data/`. A legacy single-phase workflow (`collection.yml`, `builder/index.ts`) still exists but is paused (`workflow_dispatch` only) while the new pipeline is validated.
 
 Human overview: [`README.md`](README.md). Schema: [`data/SCHEMA.md`](data/SCHEMA.md). Queue format: [`data/queue/README.md`](data/queue/README.md).
 
@@ -80,6 +80,7 @@ Cloud agent reads `skills/<name>/SKILL.md` on demand:
 
 - `agent-browser` — web/tweet scraping with deterministic ref selectors
 - `perplexity-search` — optional source corroboration and location research
+- `the-news` — optional keyless country-headline leads; verify original publisher reports
 - `data-to-markdown` — E-PRIME transformation
 - `geocoding` — Nominatim with caching
 - `world-event-entities` — entity schema patterns (defers to `data/SCHEMA.md`)

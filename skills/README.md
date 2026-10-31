@@ -14,6 +14,7 @@ Procedural references for the cloud agent. Each skill lives at `skills/<name>/SK
 | [`geocoding`](geocoding/SKILL.md) | Resolve evidence-grounded event locations to coordinates with the repository geocoding helper; reject candidates with... | 40 |
 | [`perplexity-search`](perplexity-search/SKILL.md) | Optional source corroboration and location research through Perplexity. Verify cited pages directly before using a fi... | 46 |
 | [`remember-as-you-go`](remember-as-you-go/SKILL.md) | Criteria for durable LEARNINGS.md entries versus local run notes. The legacy collection prompt injects these learning... | 105 |
+| [`the-news`](the-news/SKILL.md) | Optional country headline snapshots for finding original publisher leads while qualifying a specific OSINT tip. | 31 |
 | [`world-event-entities`](world-event-entities/SKILL.md) | Build and validate World Event Entity records (JSONL) representing real-world events with structured metadata, source... | 53 |
 
 🛠 = authoring-only skill, not loaded by the cloud agent during collection runs.
