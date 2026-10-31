@@ -148869,6 +148869,77 @@
     "image_origin": "article"
   },
   {
+    "id": "evt_109853335594471424",
+    "title": "Ukraine reports Neptune missile strike on Russian Su-34s at Marinovka airfield",
+    "summary": "War Translated reports that satellite imagery confirms Ukrainian Navy strikes destroyed two Russian Su-34 fighter bombers at Marinovka airfield in Volgograd region on October 29. Sentinel imagery from the previous day shows these aircraft occupied their regular parking positions, indicating targeted strike capability.",
+    "date_event": "2026-10-29T00:00:00Z",
+    "date_published": "2026-10-30T18:44:18Z",
+    "geo": {
+      "lat": 48.692368,
+      "lon": 43.832142,
+      "location_name": "Marinovka, Volgograd Oblast, Russia",
+      "precision": "city",
+      "country": "Russia",
+      "region": "Volgograd Oblast",
+      "city": "Marinovka"
+    },
+    "topics": [
+      "ukraine",
+      "russia",
+      "armed-conflict",
+      "air-strike",
+      "naval-operations",
+      "volgograd"
+    ],
+    "confidence": 0.75,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2116239791054307787",
+        "label": "War Translated post"
+      },
+      {
+        "url": "https://x.com/wartranslated/status/2116228733808058669",
+        "label": "Complementary War Translated report"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HV5kVzPXoAALlG6?format=webp&name=large",
+    "image_origin": "article"
+  },
+  {
+    "id": "evt_109853335640608768",
+    "title": "War Translated reports evacuation of civilians from Oleshky, Kherson region",
+    "summary": "War Translated reports that a column of evacuation buses from Oleshky in Kherson region has stretched for kilometers, according to local media. The report indicates ongoing civilian displacement operations in the contested region.",
+    "date_event": "2026-10-30T17:00:00Z",
+    "date_published": "2026-10-30T18:40:01Z",
+    "geo": {
+      "lat": 46.6260908,
+      "lon": 32.7220187,
+      "location_name": "Oleshky, Kherson Oblast, Ukraine",
+      "precision": "city",
+      "country": "Ukraine",
+      "region": "Kherson Oblast",
+      "city": "Oleshky"
+    },
+    "topics": [
+      "ukraine",
+      "evacuation",
+      "kherson",
+      "civil-unrest",
+      "humanitarian"
+    ],
+    "confidence": 0.7,
+    "source_name": "War Translated (@wartranslated)",
+    "links": [
+      {
+        "url": "https://x.com/wartranslated/status/2116238710501232758",
+        "label": "War Translated post"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HV5jzsYW8AEm72e?format=webp&name=large",
+    "image_origin": "article"
+  },
+  {
     "id": "evt_109828239936991232",
     "title": "Federal Judge Bars Trump Administration from Threatening Election Workers Over California Ballots",
     "summary": "A federal judge issued an order preventing the Trump administration's Justice Department from threatening or coercing election workers in California, marking another legal setback for efforts to assert control over local elections.",

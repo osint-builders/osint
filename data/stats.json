@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-10-31T03:15:47.134Z",
+  "last_updated": "2026-10-31T03:24:17.792Z",
   "data_range": {
     "oldest_date": "2026-08-25",
     "newest_date": "2026-10-31"
   },
   "statistics": {
-    "total_events": 5112,
+    "total_events": 5114,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4738,
-      "2026-10": 117
+      "2026-10": 119
     },
     "events_by_source": {
-      "War Translated (@wartranslated)": 157,
+      "War Translated (@wartranslated)": 159,
       "Quds News Network (@QudsNen)": 224,
       "Rerum Novarum Intel (@rnintel)": 128,
       "Intel Slava Z (@intelslava)": 180,
@@ -183,7 +183,7 @@
       "Ministry of National Defense Taiwan": 1
     },
     "media_files": {
-      "images": 989,
+      "images": 991,
       "videos": 0
     }
   },
@@ -226,8 +226,8 @@
     "2026-09-29": 147,
     "2026-09-30": 155,
     "2026-10-01": 67,
-    "2026-10-30": 29,
+    "2026-10-30": 31,
     "2026-10-31": 21
   },
-  "average_confidence": 0.7860868067516316
+  "average_confidence": 0.7860447504302879
 }
