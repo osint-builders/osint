@@ -59,6 +59,7 @@ jobs:
             base_head=$(git rev-parse HEAD)
 
             RETENTION_TODAY="${{ steps.date.outputs.date }}" bash data/scripts/cleanup-old-data.sh
+            node data/scripts/verify-event-ids.js
             REPO_ROOT="$GITHUB_WORKSPACE" python builder/embeddings/build_index.py
             node data/scripts/rebuild-indexes.js
             REPO_ROOT="$GITHUB_WORKSPACE" python builder/embeddings/verify_index.py

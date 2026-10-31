@@ -33,7 +33,7 @@ See the top-level [README.md](../../README.md) for architecture and secrets setu
 ## embeddings.yml — "Build Search Embeddings"
 
 - Trigger: `workflow_run` after each "OSINT Snapshot Collection" or "Qualify OSINT Tips" completes (also `workflow_dispatch`).
-- Runs `data/scripts/dedupe-events.js` (cross-bucket dedupe), rebuilds the semantic search index (`builder/embeddings/build_index.py`, local MiniLM), runs `data/scripts/rebuild-indexes.js`, and commits `data/events` + `data/indexes/` + `data/stats.json` with `[skip ci]`.
+- Runs `data/scripts/dedupe-events.js` (cross-bucket dedupe), verifies event IDs are globally unique, rebuilds the semantic search index (`builder/embeddings/build_index.py`, local MiniLM), runs `data/scripts/rebuild-indexes.js`, and commits `data/events` + `data/indexes/` + `data/stats.json` with `[skip ci]`.
 
 ## deploy-pages.yml — "Deploy Pages"
 
@@ -54,7 +54,7 @@ Drift detection on pushes to main. The workflow also declares a `pull_request` t
 
 1. Prompt snapshot (`builder/prompts/collection-prompt.md` matches the pinned fixture)
 2. Builder TypeScript typecheck, agent lifecycle tests, and queue recovery
-3. Recent committed-event baseline validation and new-event contract tests; some older legacy IDs remain outside the recent baseline
+3. Recent committed-event baseline validation, global event-ID uniqueness, and new-event contract tests; some older legacy IDs remain outside the recent baseline
 4. Offline Identify adapter coverage, Warp CLI preflight, consumed-tip deletion, image enrichment, concurrent submit, source-index, retention, and release-consistency regressions
 5. `skills/README.md` regeneration and shell syntax/lint checks
 
@@ -67,7 +67,7 @@ Drift detection on pushes to main. The workflow also declares a `pull_request` t
 
 ## create-release.yml — "Create Weekly Data Release"
 
-Weekly on Sunday at midnight UTC and available on demand. Applies the exact 90-day file cutoff (`data/scripts/cleanup-old-data.sh`), rebuilds and verifies semantic indexes and stats against the retained events, commits one consistent snapshot, then archives `data/events`, `data/indexes`, and `data/stats.json` to a release tarball. On a competing push, it rebuilds from the latest `main` before retrying. A repeat release on the same UTC date gets the next `data-YYYY-MM-DD-rN` tag and a matching `osint-data-YYYY-MM-DD-rN.tar.gz` archive instead of replacing an earlier release. The workflow checks that the new tag points to its verified snapshot commit.
+Weekly on Sunday at midnight UTC and available on demand. Applies the exact 90-day file cutoff (`data/scripts/cleanup-old-data.sh`), verifies globally unique event IDs, rebuilds and verifies semantic indexes and stats against the retained events, commits one consistent snapshot, then archives `data/events`, `data/indexes`, and `data/stats.json` to a release tarball. On a competing push, it rebuilds from the latest `main` before retrying. A repeat release on the same UTC date gets the next `data-YYYY-MM-DD-rN` tag and a matching `osint-data-YYYY-MM-DD-rN.tar.gz` archive instead of replacing an earlier release. The workflow checks that the new tag points to its verified snapshot commit.
 
 ## Troubleshooting
 

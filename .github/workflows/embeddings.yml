@@ -60,6 +60,9 @@ jobs:
       - name: Dedupe recent day files (cross-bucket safety net)
         run: node data/scripts/dedupe-events.js --days 7
 
+      - name: Verify event IDs are globally unique
+        run: node data/scripts/verify-event-ids.js
+
       - name: Build search index
         run: python builder/embeddings/build_index.py
         env:

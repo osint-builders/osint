@@ -28,7 +28,7 @@ Human overview: [`README.md`](README.md). Schema: [`data/SCHEMA.md`](data/SCHEMA
 | Queue record schema | `data/queue/README.md` |
 | Cross-run learning policy | `LEARNINGS.md`; only legacy `builder/lib/collection-prompt.ts` injects it into prompts |
 | CI entry points | `.github/workflows/identify.yml`, `.github/workflows/qualify.yml`, `.github/workflows/verify.yml` (legacy: `collection.yml`) |
-| Release consistency | `builder/embeddings/verify_index.py`, `.github/workflows/create-release.yml` |
+| Release consistency and ID integrity | `builder/embeddings/verify_index.py`, `data/scripts/verify-event-ids.js`, `.github/workflows/create-release.yml` |
 
 **Do not** treat `README.md` as agent documentation. It serves humans only.
 

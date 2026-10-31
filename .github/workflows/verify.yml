@@ -58,6 +58,9 @@ jobs:
         # requested future-only enforcement, so keep those records untouched.
         run: node data/scripts/validate-events.js --from 2026-10-01
 
+      - name: Verify event IDs are globally unique
+        run: node data/scripts/verify-event-ids.js
+
       - name: Test event data scripts
         run: |
           node --test data/tests/*.test.cjs
