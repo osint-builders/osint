@@ -65,7 +65,11 @@ MOCK
 chmod +x "$tmp/curl"
 
 with_original_report() {
-  jq -c '. + {date_published: "2026-10-30T17:30:00Z",
+  jq -c '. + {source: (.source // {name: "Example Source"}),
+    title: ((.source.name // "Example Source") + " reports a demo event"),
+    summary: ((.source.name // "Example Source") + " reports a demo event near the test port."),
+    contents: ("## Event\n\n" + (.source.name // "Example Source") + " reports a demo event near the test port."),
+    date_published: "2026-10-30T17:30:00Z",
     source_window: {start: "2026-10-30T17:00:00Z", end: "2026-10-30T18:00:00Z"},
     original_report: {url: .links[0].url, published_at: "2026-10-30T17:30:00Z"}}'
 }

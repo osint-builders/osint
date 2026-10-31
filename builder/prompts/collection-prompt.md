@@ -69,7 +69,7 @@ For each source (create `mkdir -p "$WORK_DIR/$sid"` first):
    - **Reddit JSON API**: `https://www.reddit.com/r/<sub>/new.json?limit=25&raw_json=1` with header `User-Agent: osint-bot/1.0` (no auth); keep `.data.children[].data` rows whose `created_utc` falls inside the window (Unix seconds); `links[0]` = `https://reddit.com` + `.permalink`, label `"Reddit Post"`; add `.url` as `links[1]` (`"External Link"`) only when it points off-reddit.
    - **Webpage/API/RSS**: `curl` + parse; filter by published timestamps.
    Log and reject anything outside `$TIME_WINDOW_START` → `$TIME_WINDOW_END`.
-3. **Apply the event and topical gates, then translate** per `builder/prompts/qualified-event-contract.md`. Find the first report and UTC publication time for the specific new development; a repost does not reset the clock. Require that first report inside the window. Reject analysis/opinion that only discusses an ongoing situation, plus ordinary politics, crime, unverifiable claims, and unlocatable reports. Translate title, summary, and body fully into English before writing JSON.
+3. **Apply the event and topical gates, then translate** per `builder/prompts/qualified-event-contract.md`. Find the first report and UTC publication time for the specific new development; a repost does not reset the clock. Require that first report inside the window. Reject analysis/opinion that only discusses an ongoing situation, plus ordinary politics, crime, unverifiable claims, and unlocatable reports. Attribute single-source claims throughout; with one source URL, start the title, summary, and first Event paragraph with `source.name` plus a reporting verb from the contract. Translate title, summary, and body fully into English before writing JSON.
 4. **Write one JSON World Event Entity per accepted candidate** using `data/SCHEMA.md` and the typed qualified-event contract:
    - `id`: `EVENT_ID=$(node data/scripts/snowflake.js --worker ${bucketNum})` — globally unique across parallel buckets.
    - `source.name`: exact `#` header text from the source file. No variants.
@@ -90,7 +90,7 @@ For each source (create `mkdir -p "$WORK_DIR/$sid"` first):
    if event_json=$(printf '%s' "$event_json" | bash builder/runtime/enrich-link-preview.sh); then
      printf '%s\n' "$event_json" >> "$WORK_DIR/$sid/events.jsonl"
    else
-     printf '[REJECT] original report or image gate failed\n' >> "$WORK_DIR/$sid/notes.md"
+     printf '[REJECT] original report, recap, attribution, geo, or image gate failed\n' >> "$WORK_DIR/$sid/notes.md"
    fi
    ```
 9. **Log** errors, rejects, and rate limits to `$WORK_DIR/$sid/notes.md` (stays local). A candidate lacking topical relevance, reliable facts, or a meaningful location is a normal rejection; continue to the next candidate/source.

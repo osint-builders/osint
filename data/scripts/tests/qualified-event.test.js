@@ -9,14 +9,14 @@ const { validateQualifiedEvent, DEFAULT_IMAGE_URL } = require('../lib/qualified-
 const section = 'A source notice describes vessel traffic changes near a named port. Officials report a closure while crews inspect navigation channels and terminal equipment. The source gives the publication time and a clear geographic context. Allied planners can monitor routing delays without assuming an exact vessel position.';
 const contents = [
   'Event', 'Location and Time', 'Evidence', 'Allied Relevance', 'Confidence and Gaps',
-].map((heading) => `## ${heading}\n\n${section}`).join('\n\n');
+].map((heading) => `## ${heading}\n\n${heading === 'Event' ? 'Example Maritime Authority reports a port closure. ' : ''}${section}`).join('\n\n');
 
 function event() {
   return {
     id: 'evt_12345678901234567',
     source: { name: 'Example Maritime Authority' },
-    title: 'Illustrative Port Closure During Regional Storm',
-    summary: 'A maritime authority reports a port closure after a storm disrupted vessel traffic.',
+    title: 'Example Maritime Authority Reports a Port Closure During a Regional Storm',
+    summary: 'Example Maritime Authority reports a port closure after a storm disrupted vessel traffic.',
     contents,
     date_published: '2026-10-30T18:00:00Z',
     source_window: { start: '2026-10-30T17:00:00Z', end: '2026-10-30T18:00:00Z' },
@@ -34,6 +34,56 @@ function event() {
 
 test('qualified contract accepts a complete event', () => {
   assert.deepEqual(validateQualifiedEvent(event()), []);
+});
+
+test('single-source qualification attributes the title, summary, and first Event paragraph', () => {
+  for (const field of ['title', 'summary', 'contents']) {
+    const invalid = event();
+    if (field === 'contents') {
+      invalid.contents = invalid.contents.replace('Example Maritime Authority reports a port closure.',
+        'A port closure occurred.');
+    } else {
+      invalid[field] = 'A port closure occurred after a storm.';
+    }
+    assert.match(validateQualifiedEvent(invalid).join(' '), new RegExp(`Single-source ${field === 'contents' ? 'contents Event paragraph' : field}`));
+  }
+
+  const duplicate = event();
+  duplicate.links.push({ url: duplicate.links[0].url });
+  duplicate.title = 'A port closure occurred after a storm.';
+  assert.match(validateQualifiedEvent(duplicate).join(' '), /Single-source title/);
+
+  const supported = event();
+  supported.links.push({ url: 'https://example.net/second-report' });
+  supported.title = 'A port closure occurred after a storm.';
+  assert.doesNotMatch(validateQualifiedEvent(supported).join(' '), /Single-source title/);
+
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'osint-attribution-'));
+  try {
+    const file = path.join(directory, 'unattributed.jsonl');
+    const invalid = event();
+    invalid.title = 'A port closure occurred after a storm.';
+    fs.writeFileSync(file, `${JSON.stringify(invalid)}\n`);
+    const validator = path.resolve(__dirname, '..', 'validate-events.js');
+    const result = spawnSync(process.execPath, [validator, file, '--qualified'], { encoding: 'utf8' });
+    assert.equal(result.status, 1, result.stdout + result.stderr);
+    assert.match(result.stdout, /Single-source title/);
+  } finally {
+    const prefix = path.join(os.tmpdir(), 'osint-attribution-');
+    if (directory.startsWith(prefix)) fs.rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+test('single-source reporting verbs allow source names with punctuation', () => {
+  for (const verb of ['reports', 'says', 'claims', 'describes']) {
+    const candidate = event();
+    candidate.source.name = 'Example (Maritime) Authority';
+    candidate.title = `Example (Maritime) Authority ${verb} a port closure`;
+    candidate.summary = `Example (Maritime) Authority ${verb} a port closure after a storm.`;
+    candidate.contents = candidate.contents.replace('Example Maritime Authority reports',
+      `Example (Maritime) Authority ${verb}`);
+    assert.deepEqual(validateQualifiedEvent(candidate), []);
+  }
 });
 
 test('schema example follows the qualified contract', () => {
@@ -135,7 +185,7 @@ test('qualified contract requires the original report of the new development', (
 });
 
 test('runtime original-report gate rejects one stale candidate without network access', () => {
-  const helper = path.resolve(__dirname, '..', '..', '..', 'builder', 'runtime', 'verify-original-report.cjs');
+  const helper = path.resolve(__dirname, '..', '..', '..', 'builder', 'runtime', 'verify-candidate.cjs');
   const run = (candidate) => spawnSync(process.execPath, [helper], {
     input: JSON.stringify(candidate), encoding: 'utf8',
   });
@@ -149,6 +199,12 @@ test('runtime original-report gate rejects one stale candidate without network a
   const rejected = run(stale);
   assert.equal(rejected.status, 1);
   assert.match(rejected.stderr, /outside this tip's source_window/);
+
+  const unattributed = event();
+  unattributed.title = 'A port closure occurred after a storm.';
+  const attributionRejected = run(unattributed);
+  assert.equal(attributionRejected.status, 1);
+  assert.match(attributionRejected.stderr, /Single-source title/);
 });
 
 test('qualified contract omits date-only event times and rejects midnight UTC placeholders', () => {

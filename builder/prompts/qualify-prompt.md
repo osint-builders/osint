@@ -40,7 +40,7 @@ export WORK_DIR
 For each tip above (create `mkdir -p "$WORK_DIR/$source_id"` first, using that tip's `source_id`):
 
 1. **Fetch full content** for each candidate URL. The queued snippet may be truncated or empty. Use `curl` first. If a real browser is necessary, install and run `agent-browser` on demand as directed in `skills/agent-browser/SKILL.md`; it is not preinstalled. If installation or retrieval fails, log why and reject that candidate.
-2. **Apply the event, evidence, and topical gates, then translate** per `builder/prompts/qualified-event-contract.md`. Find the first report of the specific *new development* behind any recap or repost, and record its URL and UTC publication time. Reject when that first report predates this tip's window or its time cannot be established; a recent repost never resets the clock. For a claimed official statement, inspect the original notice or a reporter quoting it directly and include that URL in `links`; an aggregator paraphrase alone does not suffice. For a specific missing publisher lead, optionally read `skills/the-news/SKILL.md`; verify any linked original report before using it. Reject commentary, off-topic, uncheckable, or unlocatable reports. Attribute single-source claims in the title, summary, and body; do not invent source reputation or effects. Translate accepted text fully into English.
+2. **Apply the event, evidence, and topical gates, then translate** per `builder/prompts/qualified-event-contract.md`. Find the first report of the specific *new development* behind any recap or repost, and record its URL and UTC publication time. Reject when that first report predates this tip's window or its time cannot be established; a recent repost never resets the clock. For a claimed official statement, inspect the original notice or a reporter quoting it directly and include that URL in `links`; an aggregator paraphrase alone does not suffice. For a specific missing publisher lead, optionally read `skills/the-news/SKILL.md`; verify any linked original report before using it. Reject commentary, off-topic, uncheckable, or unlocatable reports. Attribute single-source claims throughout; with one source URL, start the title, summary, and first Event paragraph with `source.name` plus a reporting verb from the contract. Do not invent source reputation or effects. Translate accepted text fully into English.
 3. **Write one JSON World Event Entity per accepted candidate** using `data/SCHEMA.md` and the typed qualified-event contract:
    - `id`: `EVENT_ID=$(node data/scripts/snowflake.js --worker ${batchNum})` — globally unique across parallel batches.
    - `source.name`: exact `#` header text from the source context. If the source file has been removed, use the tip's queued `source_name`. No variants.
@@ -63,7 +63,7 @@ For each tip above (create `mkdir -p "$WORK_DIR/$source_id"` first, using that t
    if event_json=$(printf '%s' "$event_json" | bash builder/runtime/enrich-link-preview.sh); then
      printf '%s\n' "$event_json" >> "$WORK_DIR/$source_id/events.jsonl"
    else
-     printf '[REJECT] original report or image gate failed\n' >> "$WORK_DIR/$source_id/notes.md"
+     printf '[REJECT] original report, recap, attribution, geo, or image gate failed\n' >> "$WORK_DIR/$source_id/notes.md"
    fi
    ```
 8. **Log** errors, rejects, and rate limits to `$WORK_DIR/$source_id/notes.md` (stays local). A duplicate, off-topic, weakly evidenced, unlocatable, or unreachable candidate is a normal rejection; continue to the next candidate/tip.

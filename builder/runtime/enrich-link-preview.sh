@@ -13,7 +13,13 @@ if ! event_json=$(jq -ce 'objects' 2>/dev/null); then
   echo 'ERROR: image enrichment requires one JSON object' >&2
   exit 1
 fi
-if ! printf '%s' "$event_json" | node "$SCRIPT_DIR/verify-original-report.cjs"; then
+if ! printf '%s' "$event_json" | node "$SCRIPT_DIR/verify-candidate.cjs"; then
+  exit 1
+fi
+if ! printf '%s' "$event_json" | node "$SCRIPT_DIR/telegram-recap.cjs"; then
+  exit 1
+fi
+if ! printf '%s' "$event_json" | bash "$SCRIPT_DIR/verify-geo-point.sh"; then
   exit 1
 fi
 

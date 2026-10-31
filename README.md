@@ -102,7 +102,8 @@ Newly qualified events use a typed publication contract. This abbreviated shape 
   "contents": "## Event\n\n...\n\n## Location and Time\n\n...\n\n## Evidence\n\n...\n\n## Allied Relevance\n\n...\n\n## Confidence and Gaps\n\n...",
   "date_published": "2026-04-29T10:30:00Z",
   "source_window": {"start": "2026-04-29T10:00:00Z", "end": "2026-04-29T11:00:00Z"},
-  "links": [{"url": "..."}],
+  "original_report": {"url": "https://example.com/report", "published_at": "2026-04-29T10:30:00Z"},
+  "links": [{"url": "https://example.com/report"}],
   "image_urls": ["https://example.com/og-image.jpg"],
   "image_origin": "article",
   "geo": {"lat": 37.27, "lon": 37.02, "location_name": "Gaziantep, Turkey", "precision": "city"},
@@ -115,7 +116,7 @@ Newly qualified events use a typed publication contract. This abbreviated shape 
 }
 ```
 
-Full schema and a valid complete example: [`data/SCHEMA.md`](data/SCHEMA.md). `image_urls` holds **remote** URLs — the pipeline verifies image responses but never stores or re-hosts media. If no working article image exists, the qualifier marks a source or default image in `image_origin`.
+Full schema and a valid complete example: [`data/SCHEMA.md`](data/SCHEMA.md). New events cite the first checked report of the specific development in `original_report`; its timestamp must fall inside `source_window`. `image_urls` holds **remote** URLs — the pipeline verifies image responses but never stores or re-hosts media. If no working article image exists, the qualifier marks a source or default image in `image_origin`.
 
 **E-PRIME**: `contents` strings must avoid forms of *to be* (is, are, was, were, be, been, being). Use specific active verbs.
 

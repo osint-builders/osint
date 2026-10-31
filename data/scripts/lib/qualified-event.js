@@ -70,6 +70,27 @@ function validateOriginalReport(event) {
   return issues;
 }
 
+function validateSingleSourceAttribution(event) {
+  const urls = new Set(Array.isArray(event.links) ? event.links.map((link) => link?.url).filter(Boolean) : []);
+  if (urls.size !== 1) return [];
+
+  const name = event.source?.name;
+  if (typeof name !== 'string' || !name.trim()) {
+    return ["Single-source events require 'source.name' for attribution"];
+  }
+  const contents = typeof event.contents === 'string' ? event.contents.replace(/\r\n/g, '\n') : '';
+  const firstEventLine = contents.match(/^## Event\n(?:[ \t]*\n)*([^\n]+)/)?.[1];
+  const fields = { title: event.title, summary: event.summary, 'contents Event paragraph': firstEventLine };
+  const issues = [];
+  for (const [field, value] of Object.entries(fields)) {
+    if (typeof value !== 'string' || !value.startsWith(name) ||
+        !/^[ \t]+(?:reports|says|claims|describes)\b/i.test(value.slice(name.length))) {
+      issues.push(`Single-source ${field} must start with source.name followed by reports, says, claims, or describes`);
+    }
+  }
+  return issues;
+}
+
 function validateContents(contents, issues) {
   if (typeof contents !== 'string') return;
   const normalized = contents.replace(/\r\n/g, '\n').trim();
@@ -118,6 +139,7 @@ function validateQualifiedEvent(event) {
     }
   }
   issues.push(...validateOriginalReport(event));
+  issues.push(...validateSingleSourceAttribution(event));
   if (typeof event.date_event === 'string' &&
       /^\d{4}-\d{2}-\d{2}T00:00:00(?:\.0+)?(?:Z|[+-]00:00)$/i.test(event.date_event)) {
     issues.push("Field 'date_event' must omit a midnight UTC placeholder; include an event time only when the source supplies an exact time");
@@ -186,5 +208,5 @@ function validateQualifiedEvent(event) {
   return issues;
 }
 
-module.exports = { validateQualifiedEvent, validateOriginalReport, isRemoteUrl,
+module.exports = { validateQualifiedEvent, validateOriginalReport, validateSingleSourceAttribution, isRemoteUrl,
   CONTENT_HEADINGS, CATEGORIES, DEFAULT_IMAGE_URL };
