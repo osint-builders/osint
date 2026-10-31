@@ -4,13 +4,24 @@ React app for exploring the world-events corpus: keyword + semantic search, map,
 
 ## Development
 
+From `frontend/`:
+
 ```bash
-npm install
+npm ci
 npm run dev      # http://localhost:5173
 npm run build    # output: ../docs/ (gitignored; CI builds it fresh per deploy)
 ```
 
-For working search locally, build the index once (`python builder/embeddings/build_index.py` from the repo root) and copy `data/indexes/` to `docs/indexes/` or serve it at `/indexes/`.
+`npm run dev` serves the UI from `frontend/`; it does not copy the repository's search index. To preview the built site with search and event details, run from the repository root:
+
+```bash
+npm run build --prefix frontend
+python3 builder/embeddings/backfill_event_details.py
+cp -r data/indexes docs/indexes
+npm run preview --prefix frontend
+```
+
+The tracked index already contains the latest committed snapshot. Rebuild it only when you change event data; see [`builder/embeddings/README.md`](../builder/embeddings/README.md).
 
 ## Architecture
 

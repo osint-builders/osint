@@ -9,11 +9,11 @@ Procedural references for the cloud agent. Each skill lives at `skills/<name>/SK
 | Name | Description | Lines |
 |---|---|---|
 | [`agent-browser`](agent-browser/SKILL.md) | Native Rust CLI for browser automation by Vercel Labs. Automate web navigation, interact with page elements, extract ... | 60 |
-| [`create-source`](create-source/SKILL.md) 🛠 | Authoring tool for creating new OSINT data sources. Provides templates, validation, and tests for source files. Not u... | 87 |
+| [`create-source`](create-source/SKILL.md) 🛠 | Author concise source specs and manifest entries for the active Identify and Qualify pipeline. Developer tool, not lo... | 43 |
 | [`data-to-markdown`](data-to-markdown/SKILL.md) | Transform raw scraped or API data into clean, semantic Markdown for the `contents` field of a World Event Entity. Enf... | 55 |
 | [`geocoding`](geocoding/SKILL.md) | Resolve evidence-grounded event locations to coordinates with the repository geocoding helper; reject candidates with... | 40 |
-| [`perplexity-search`](perplexity-search/SKILL.md) | Perplexity AI search for web search with AI-powered answers, deep research, and chain-of-thought reasoning. Perform d... | 60 |
-| [`remember-as-you-go`](remember-as-you-go/SKILL.md) | Strict criteria for what to write into LEARNINGS.md (the cross-run knowledge base read by the next Warp Cloud Agent).... | 105 |
+| [`perplexity-search`](perplexity-search/SKILL.md) | Optional source corroboration and location research through Perplexity. Verify cited pages directly before using a fi... | 46 |
+| [`remember-as-you-go`](remember-as-you-go/SKILL.md) | Criteria for durable LEARNINGS.md entries versus local run notes. The legacy collection prompt injects these learning... | 105 |
 | [`world-event-entities`](world-event-entities/SKILL.md) | Build and validate World Event Entity records (JSONL) representing real-world events with structured metadata, source... | 53 |
 
 🛠 = authoring-only skill, not loaded by the cloud agent during collection runs.

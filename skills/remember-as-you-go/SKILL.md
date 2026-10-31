@@ -1,6 +1,6 @@
 ---
 name: remember-as-you-go
-description: Strict criteria for what to write into LEARNINGS.md (the cross-run knowledge base read by the next Warp Cloud Agent). Distinguishes durable findings from per-run telemetry, which stays in the agent's local work directory. Use this skill at Step 7 of each collection run.
+description: Criteria for durable LEARNINGS.md entries versus local run notes. The legacy collection prompt injects these learnings; active Qualify may append but does not receive them in its prompt.
 license: MIT
 compatibility: linux (warp-cloud-agent-env-image)
 metadata:
@@ -18,9 +18,9 @@ Three destinations. Three purposes. Don't conflate.
 |---|---|---|
 | `$WORK_DIR/<source_id>/notes.md` | Per-run telemetry — `Processing <id>`, `Created event:`, dedup skips, window snaps, parse counts. Local to the agent; never committed. | ❌ |
 | `source/manifest.json` `note` field | Per-source liveness verdicts (dead handle, wrong account, stale site). A maintainer applies these — the agent only proposes via a LEARNINGS entry. | ✅ (as status filtering) |
-| `LEARNINGS.md` | Durable cross-cutting findings, shortcuts, cost signals. Append only when criteria met. | ✅ Injected as `## Prior learnings`. |
+| `LEARNINGS.md` | Durable cross-cutting findings, shortcuts, cost signals. Append only when criteria met. | Legacy collection prompt injects it; active Qualify does not. |
 
-Orchestrator reads `LEARNINGS.md`, drops expired entries, caps at 100 entries / 10 KB, injects result into every bucket prompt. Never rotate manually — every byte here multiplies across all bucket prompts.
+`builder/lib/collection-prompt.ts` reads `LEARNINGS.md`, drops expired entries, and caps injection at 100 entries / 10 KB for legacy collection buckets. Active Qualify agents may write a justified entry, but their prompts do not load prior learnings. Never rotate the file manually.
 
 ## When to write to `LEARNINGS.md`
 

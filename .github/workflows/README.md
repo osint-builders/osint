@@ -43,12 +43,12 @@ See the top-level [README.md](../../README.md) for architecture and secrets setu
 
 ## verify.yml — "Verify"
 
-Drift detection on pushes to main, with a protective PR trigger. Checks include:
+Drift detection on pushes to main. The workflow also declares a `pull_request` trigger, though this repository makes development changes directly on `main`. Checks include:
 
 1. Prompt snapshot (`builder/prompts/collection-prompt.md` matches the pinned fixture)
 2. Builder TypeScript typecheck, agent lifecycle tests, and queue recovery
-3. Recent committed-event baseline validation and new-event contract tests (pre-October 2026 records retain 16 malformed legacy IDs)
-4. Source-index, image-enrichment, push-retry, retention, and release-consistency regressions
+3. Recent committed-event baseline validation and new-event contract tests; some older legacy IDs remain outside the recent baseline
+4. Source-index, consumed-tip deletion, image-enrichment, push-retry, retention, and release-consistency regressions
 5. `skills/README.md` regeneration and shell syntax/lint checks
 
 ## audit-bot-commits.yml — "Audit Bot Commits"
@@ -66,4 +66,4 @@ Weekly on Sunday at midnight UTC. Applies the exact 90-day file cutoff (`data/sc
 
 - Run failures → check the **Actions** tab and any open **"Qualify workflow failing"** or **"Collection workflow failing"** issue.
 - Per-source telemetry stays inside each agent's ephemeral work directory; durable findings land in `LEARNINGS.md` and `source/manifest.json` notes.
-- Stale `LEARNINGS.md` entries expire automatically via the orchestrator.
+- The paused legacy collector filters expired `LEARNINGS.md` entries when rendering prompts. Active Qualify can append findings but does not load prior entries.

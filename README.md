@@ -45,6 +45,8 @@ release-cli.yml                        # CLI cross-compile + cli-latest release
 
 A legacy single-phase flow (`collection.yml` → `builder/index.ts`) still exists, paused: one Warp agent processes a whole bucket of ~12 sources sequentially instead of small per-tip batches. The active template lives in `builder/prompts/qualify-prompt.md`; the shared publication rules live in `builder/prompts/qualified-event-contract.md`. The versioned scripts in `builder/runtime/` handle mechanical steps.
 
+The queue holds only unprocessed tips. Qualification deletes each consumed tip, including tips that produce no event; the pre-run cleanup deletes tips older than 24 hours. A default run selects the 30 newest tips (10 batches of 3). Older pending tips wait for a later run and may expire, so this limit controls Warp spend and coverage.
+
 ---
 
 ## Where things live
@@ -54,6 +56,7 @@ A legacy single-phase flow (`collection.yml` → `builder/index.ts`) still exist
 | `builder/runtime/identify.sh` | Non-LLM tip scan (stage 1), run directly by `identify.yml`. |
 | `builder/qualify.ts` | Queue-drain orchestrator (stage 2). Batches tips, dispatches Warp agents. |
 | `builder/prompts/qualify-prompt.md` | Runtime prompt template (one per batch of tips). |
+| `builder/prompts/qualified-event-contract.md` | Typed acceptance and output rules for newly published events. |
 | `builder/lib/agent-runner.ts` | Shared spawn/poll/cancel logic (per-run deadline, BLOCKED handling) used by both `builder/index.ts` and `builder/qualify.ts`. |
 | `builder/index.ts` | Legacy orchestrator (paused). Buckets whole sources, renders `collection-prompt.md`. |
 | `builder/runtime/*.sh` | Versioned helper scripts the agent invokes (init/token-check, geocode, enrich, merge, submit). |
@@ -62,9 +65,9 @@ A legacy single-phase flow (`collection.yml` → `builder/index.ts`) still exist
 | `source/REVIEW.md` | Manual-review queue for wrong-handle / fixable-URL sources. |
 | `skills/<name>/SKILL.md` | Procedural references the cloud agent reads on demand. |
 | `data/SCHEMA.md` | World Event Entity schema (canonical). |
-| `data/queue/README.md` | Tip record schema + pending/processed queue lifecycle. |
+| `data/queue/README.md` | Tip record schema + temporary pending queue lifecycle. |
 | `data/events/YYYY-MM/YYYY-MM-DD.jsonl` | Output: one JSON event per line. |
-| `LEARNINGS.md` | Cross-run learnings injected into the next run's prompts. |
+| `LEARNINGS.md` | Cross-run learnings injected into paused legacy collection prompts; active Qualify does not load them. |
 | `.github/workflows/identify.yml`, `.github/workflows/qualify.yml` | Daily and on-demand Tip & Queue entry points. |
 
 ---
@@ -74,19 +77,14 @@ A legacy single-phase flow (`collection.yml` → `builder/index.ts`) still exist
 ```bash
 git clone https://github.com/osint-builders/osint.git
 cd osint
-cd builder && npm install && cd ..
+npm ci --prefix builder
+npm run qualify-dry-run --prefix builder  # renders prompts from pending tips; no Warp run
+node data/scripts/validate-events.js --from 2026-10-01
 
-export WARP_API_KEY="***"
-export WARP_ENVIRONMENT_ID="your-warp-environment-uid"
-
-cd builder
-REPO_ROOT=.. TIME_WINDOW_START=$(date -u -d '1 hour ago' +%Y-%m-%dT%H:%M:%SZ) TIME_WINDOW_END=$(date -u +%Y-%m-%dT%H:%M:%SZ) \
-  bash ../builder/runtime/identify.sh $(jq -r '.sources[] | select((.status // "") | ascii_downcase | IN("inactive","archived","deprecated") | not) | .id' ../source/manifest.json)  # writes data/queue/pending/*.json, no agents
-npm run qualify-dry-run            # renders qualify prompts without dispatching agents
-# or: npm run dry-run              # legacy single-phase flow (builder/index.ts)
-
-# inspect what was written
-cat ../data/events/$(date +%Y-%m)/$(date +%Y-%m-%d).jsonl | jq .
+# Optional single-source Identify scan, from the repository root (requires curl, jq, python3):
+TIME_WINDOW_START=$(date -u -d '1 hour ago' +%Y-%m-%dT%H:%M:%SZ) \
+TIME_WINDOW_END=$(date -u +%Y-%m-%dT%H:%M:%SZ) \
+  bash builder/runtime/identify.sh telegram-afustratcom
 ```
 
 ---
@@ -170,11 +168,7 @@ When you add a CLI dependency in a new skill, prefer having the agent install it
 
 ## Adding a source
 
-```bash
-node skills/create-source/scripts/create-source.js
-```
-
-Walks you through type, metadata, and validation. Full guide: [`source/CONTRIBUTING.md`](source/CONTRIBUTING.md). After editing source headers, run `node source/scripts/sync-manifest-names.js` to keep the manifest in lockstep.
+Follow [`source/CONTRIBUTING.md`](source/CONTRIBUTING.md) for the current source format, supported Identify adapters, and manifest registration. After editing source headers, run `node source/scripts/sync-manifest-names.js` to keep manifest names in lockstep.
 
 ---
 

@@ -1,6 +1,6 @@
 # LEARNINGS
 
-Cross-run learnings the **next** Warp Cloud Agent reads at the top of its prompt. Treat this file as a compact, append-only knowledge base — not a log.
+Cross-run learnings for the collector. The paused legacy collector injects a bounded, expiry-filtered excerpt into its agent prompt; active Qualify does not inject this file. Treat it as a compact, append-only knowledge base — not a run log.
 
 ## Rules for what goes here
 

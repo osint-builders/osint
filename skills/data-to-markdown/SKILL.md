@@ -36,7 +36,7 @@ Full rules: `references/eprime-guide.md`.
 
 ## Markdown conventions
 
-Use the contract's five H2 headings exactly. One blank line between paragraphs. Fenced code blocks with lang tags. `[label](url)` — no bare URLs. Bullet lists for facts, tables for comparisons. Sparing `**bold**`/`*italic*`. Strip nav chrome, cookie banners, and tracking params.
+Use the contract's five H2 headings exactly, with short evidence-grounded paragraphs under each. Put source URLs in `links[]` rather than bare links in the body. Keep markup simple and remove nav chrome, cookie banners, and tracking text.
 
 ## Pitfalls
 

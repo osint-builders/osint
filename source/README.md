@@ -1,25 +1,38 @@
-# source/
+# Sources
 
-Per-source OSINT collection specs read by the cloud agent.
+`manifest.json` decides which supported sources run. `identify.yml` reads the manifest and
+parses each selected `sources/<id>.md` file for a handle, channel, or URL.
+`qualify.yml` passes the same source file to a cloud agent as context for
+qualifying the resulting tip.
 
 ## Files
 
-- `manifest.json` — registry; deny-list (skip if `status` ∈ `{inactive, archived, deprecated}`). Deactivated entries carry a `note` explaining the evidence.
-- `sources/<id>.md` — per-source spec (front matter + body). The `#` header doubles as the canonical `source.name`.
-- `REVIEW.md` — manual-review queue for sources with wrong-handle or fixable-URL evidence.
-- `examples/` — type templates (`twitter`, `webpage`, `api`, `email`, `rss`)
-- `scripts/sync-manifest-names.js` — syncs manifest `name` fields from source headers (`--check` mode for CI/local drift checks)
-- [`CONTRIBUTING.md`](CONTRIBUTING.md) — how to add a source (schema + step-by-step)
+- `manifest.json` — authoritative source registry and liveness notes.
+- `sources/<id>.md` — short source specification. Its first `#` heading supplies
+  the canonical `source.name` and must match the manifest `name`.
+- `REVIEW.md` — source problems that require maintainer review.
+- `examples/` — slim templates for the active Twitter, Telegram, Reddit,
+  webpage, and API scanner paths.
+- `scripts/sync-manifest-names.js` — copies source headings to manifest names;
+  `--check` reports drift without editing.
 
-## Quick Add
+## Add a source
 
-```bash
-cp examples/twitter-example.md sources/twitter-newaccount.md
-# edit, then:
-node ../skills/create-source/scripts/validate-source.js sources/twitter-newaccount.md
-node ../skills/create-source/scripts/update-manifest.py
-node scripts/sync-manifest-names.js
-```
+From the repository root:
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the detailed schema, type-specific requirements,
-and validation rules. The world-event-entity output schema lives in [`../data/SCHEMA.md`](../data/SCHEMA.md).
+1. Copy a current file under `sources/` or a slim file under `examples/` that
+   matches the source type. Keep its
+   frontmatter and body short, with a unique `id`, `type`, `status: testing`, and
+   a descriptive `#` heading.
+2. Add a **single** entry to `manifest.json` with matching `id`, `type`, and
+   `file: sources/<id>.md`. Set `status: testing`. Preserve all existing entries
+   and notes.
+3. Run `node source/scripts/sync-manifest-names.js` and review the manifest
+   diff. Then run `node source/scripts/sync-manifest-names.js --check`.
+
+The manifest uses a deny-list: each supported source runs unless its status is
+`inactive`, `archived`, or `deprecated`. A new `testing` source can enter the next daily scan. Set its
+manifest and source-file status to `inactive` when it must wait for review.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the supported scanner types and
+format. New published events follow [the event schema](../data/SCHEMA.md).

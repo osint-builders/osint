@@ -10,18 +10,22 @@ See the docstring at the top of `build_index.py` for the canonical pipeline desc
 
 ## Run
 
+From the repository root:
+
 ```bash
-pip install -r requirements.txt
-python build_index.py
+python -m pip install -r builder/embeddings/requirements.txt
+python builder/embeddings/build_index.py
+node data/scripts/rebuild-indexes.js
+python builder/embeddings/verify_index.py
 ```
 
 ## CI
 
-Runs in [`.github/workflows/embeddings.yml`](../../.github/workflows/embeddings.yml) after each collection run completes (chained via `workflow_run`).
+Runs in [`.github/workflows/embeddings.yml`](../../.github/workflows/embeddings.yml) after active Qualify or paused legacy Collection completes (chained via `workflow_run`). The weekly data release also rebuilds and verifies the indexes after retention.
 
 ## Cost notes
 
-The model runs locally in CI — zero per-event API cost. Fingerprinting in `utils.py` skips runs with no changed events, keeping CI time flat as the corpus grows.
+The model runs locally in CI — zero per-event API cost. Fingerprinting reuses unchanged embeddings, but each run still scans the retained event files and verifies the generated artifacts.
 
 ## Files
 

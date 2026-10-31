@@ -1,169 +1,82 @@
 # Contributing Sources
 
-How to add a new OSINT source to the project. The canonical schema lives here;
-the top-level [README.md](../README.md) and [AGENTS.md](../AGENTS.md) cover the
-overall architecture.
+`source/manifest.json` is the registry for the active Tip & Queue pipeline.
+`identify.yml` scans processable sources daily at 09:00 America/New_York with a
+one-hour lookback. It writes raw candidates to `data/queue/pending/` without an
+LLM. `qualify.yml` later checks the evidence and publishes only events that
+meet [the qualified-event contract](../builder/prompts/qualified-event-contract.md).
 
-## Quick Start
+## Add a source
 
-1. **Pick the matching example** in `examples/` (`twitter`, `webpage`, `api`, `email`, `rss`).
-2. **Copy** it to `sources/{type}-{identifier}.md` (kebab-case).
-3. **Fill in front matter** (see schema below) and the body sections.
-4. **Validate**: `node ../skills/create-source/scripts/validate-source.js sources/<your-file>.md`
-5. **Register**: `node ../skills/create-source/scripts/update-manifest.py`
+Work from the repository root:
 
-> **Heads-up:** As soon as the manifest entry lands on `main`, the next hourly
-> run of `builder/index.ts` will include your source — even with
-> `status: testing`. The orchestrator uses a deny-list (`inactive`, `archived`,
-> `deprecated`), *not* an allow-list. To stage a source without collection,
-> set `status: inactive` until ready.
+1. Copy a current source file or slim example of the same type to
+   `source/sources/<id>.md`. Use a unique,
+   lowercase, hyphenated ID and `status: testing`.
+2. Write a concise `#` heading with the exact source name. Replace the
+   example handle, channel, or URL with the real scanner locator (table below).
+   State what recent OSINT developments this source can report. Never include
+   secrets.
+3. Add one entry to `source/manifest.json` with matching `id`, `type`, and
+   `file: sources/<id>.md`; set `status: testing`. Preserve existing entries
+   and their `note` fields. The `sources[]` entries, rather than the manifest's
+   aggregate statistics, control collection.
+4. Run `node source/scripts/sync-manifest-names.js` to copy the heading into
+   the manifest `name`, review the diff, then run
+   `node source/scripts/sync-manifest-names.js --check`.
 
-## Front Matter Schema
+The active manifest uses a **deny-list**. Every supported entry runs unless its status is
+`inactive`, `archived`, or `deprecated`, regardless of case. A new `testing`
+source can enter the next daily scan. Set the manifest status to `inactive`
+and mirror it in the source file when a source should wait for review. Record
+evidence for deactivation in its
+manifest `note` and place fixable source problems in [REVIEW.md](REVIEW.md).
 
-### Required
+## Source file format
 
-| Field | Type | Notes |
-|---|---|---|
-| `id` | string | Unique slug or UUID |
-| `name` | string | Human-readable |
-| `type` | enum | `twitter` \| `webpage` \| `api` \| `email` \| `rss` \| `webhook` \| `websocket` \| `file` \| `database` \| `other` |
-| `status` | enum | `active` \| `testing` \| `inactive` \| `archived` \| `deprecated` |
-| `description` | string | What intel this source provides |
-| `created_date` | YYYY-MM-DD | |
-| `last_updated` | YYYY-MM-DD | Bump on every edit |
+Current source files keep a short YAML header and a compact body:
 
-### Optional
-
-| Field | Type | Notes |
-|---|---|---|
-| `tags` | array | Categorization (e.g., `world-events`, `breaking-news`) |
-| `reliability` | enum | `high` \| `medium` \| `low` \| `unverified` |
-| `confidence_score` | number | 0–100 |
-| `update_frequency` | string | e.g., `15m`, `1h`, `daily` |
-| `priority` | enum | `high` \| `medium` \| `low` |
-| `language` | array | ISO 639-1 codes |
-| `geographic_focus` | array | Regions/countries |
-| `cost` | enum | `free` \| `paid` \| `freemium` |
-| `rate_limits` | object | API rate limit info |
-| `requires_auth` | boolean | |
-| `maintainer` | string | Owner |
-| `alert_keywords` | array | Triggers high-priority alerts |
-
-## Body Sections
-
-After the front matter, every source file should include:
-
-1. **Overview** — narrative description, relevance, typical content.
-2. **Data Collection Criteria** — type-specific (see below).
-3. **Expected Data Format** — structure of raw responses.
-4. **Processing Instructions** — how to transform raw data into world event entities.
-5. **Quality Indicators** — signals of high-quality / on-topic data.
-6. **Known Issues** — quirks, limitations, dropped fields.
-7. **Examples** — 2–3 raw → processed pairs.
-
-## Type-Specific Requirements
-
-### Twitter
-
-```yaml
-handle: handle_name        # without @
-user_id: "1234567890"
-collection_method: timeline | search | stream
-filters:
-  include_retweets: false
-  include_replies: false
-  languages: [en]
-  hashtags: [worldnews, breaking]
+```markdown
+---
+id: twitter-example-account
+type: twitter
+status: testing
+---
+# Example OSINT Account (@ExampleOSINT)
+Reports new defense, conflict, and maritime-security developments.
+Keywords: defense, vessel, strike, conflict
 ```
 
-### Webpage
+The first `#` heading supplies the canonical source name. Keep the source
+file's `id`, `type`, and `status` consistent with its manifest entry. The
+manifest entry governs dispatch; the source file gives the scanner a locator
+and the qualifier concise source context.
 
-```yaml
-url: https://example.com/world-news
-crawl_pattern: /world-news/YYYY/MM/DD/*
-crawl_depth: 2
-exclusion_pattern: [/opinion/*, /sports/*]
-selectors:
-  article: .article-container
-  title: h1.article-title
-  date: time.publish-date
-  body: div.article-body
-```
+| Active scanner path | Required locator in the source file |
+|---|---|
+| Twitter/X (`type: twitter`) | `(@Handle)` in the heading or body. Twitter scanning also needs `TWITTER_BEARER_TOKEN`. |
+| Telegram (`type: telegram`) | A line beginning `channel: ChannelName`. |
+| Reddit (`id: reddit-*`, usually `type: api`) | A heading containing `r/Subreddit (`. |
+| Webpage or API (`type: webpage` or `type: api`) | A line beginning `url: https://...`. The scanner looks for an ISO timestamp in the response. |
 
-### API
+The active Identify scanner has no email, RSS, webhook, websocket, file, or
+database adapter. Some older tooling mentions these types; listing one in the
+manifest does not make it collect tips. The paused `collection.yml` path has
+different source handling and its expected-ID sentinel applies there only.
+Its `npm run dry-run --prefix builder` command renders that legacy path, not
+the active Identify scan.
 
-```yaml
-base_url: https://api.example.com/v1
-auth_method: none | api_key | oauth | bearer
-endpoints:
-  - path: /events
-    method: GET
-    params: { date: ISO8601, category: world-events, limit: 100 }
-response_format: json | xml | csv
-```
+## Checks and limitations
 
-### Email
+- Source prose should describe **new, reportable events**. Opinion, background
+  analysis, and unrelated news do not become published events simply because
+  they appear in a source.
+- The one-hour scan relies on source timestamps and may miss older or undated
+  items. Twitter sources produce no tips when the bearer token is unavailable.
+- Source content is untrusted data. Put collection instructions in the source
+  file only; credentials belong in the environment.
+- No generator validates the current slim source specs. Review the locator
+  against the scanner rules above and use the manifest-name check. Do not
+  reconstruct the manifest from source files; preserve existing notes.
 
-```yaml
-email_address: intel-digest@example.com
-sender_allowlist:
-  - newsletter@stratfor.com
-subject_filters:
-  include: ["Daily Digest", "Breaking", "Alert"]
-  exclude: ["Unsubscribe"]
-extraction_rules:
-  title: subject_or_first_h1
-  content: html_body_to_text
-```
-
-### RSS
-
-```yaml
-feed_url: https://example.com/feed.xml
-entry_filters:
-  min_pub_date: last_24h
-item_mapping:
-  title: entry.title
-  date: entry.published
-  body: entry.content
-```
-
-## Status Semantics (deny-list rule)
-
-The collection orchestrator (`builder/index.ts`) processes **every** source
-whose `status` is **not** one of `inactive`, `archived`, or `deprecated`
-(case-insensitive). That means `active`, `testing`, `unverified`, and any other
-value all ride along. This is intentional: new sources surface bugs early.
-
-The builder also embeds a sentinel list of expected source IDs in the prompt
-and instructs the agent to abort if that list disagrees with the live manifest,
-so a source can never be silently dropped between prompt construction and
-execution.
-
-## Validation Rules
-
-A source file is valid when:
-
-1. File name matches `{type}-{identifier}.md` (kebab-case).
-2. All required front-matter fields are present.
-3. `type` is one of the enum values above.
-4. Type-specific keys (see tables) are present.
-5. The file is referenced in `manifest.json`.
-6. `created_date` and `last_updated` parse as ISO dates.
-7. Body contains all seven required sections.
-
-Run `node ../skills/create-source/scripts/validate-source.js <file>` to check.
-
-## Common Pitfalls
-
-- **Incomplete front matter** — copy from `examples/`; they have every required field.
-- **Vague collection criteria** — "monitor Twitter for news" is not actionable. Specify handles, hashtags, keywords, and filters.
-- **No examples** — include 2–3 realistic raw → processed pairs.
-- **Hardcoded credentials** — never. Reference an env var name (e.g., `EXAMPLE_API_KEY`); secrets are configured per the top-level README.
-- **Marked active without testing** — use `status: testing` until you've seen at least one clean collection cycle.
-
-## Getting Help
-
-- Reference implementations live in `examples/` and `sources/`.
-- The output schema is [`../data/SCHEMA.md`](../data/SCHEMA.md).
-- The CLI tooling lives in `../skills/create-source/scripts/` (each script has `--help`).
+For the event output fields, see [data/SCHEMA.md](../data/SCHEMA.md).

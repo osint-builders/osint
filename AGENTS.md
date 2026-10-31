@@ -25,8 +25,9 @@ Human overview: [`README.md`](README.md). Schema: [`data/SCHEMA.md`](data/SCHEMA
 | Sources needing manual review | `source/REVIEW.md` |
 | Entity schema | `data/SCHEMA.md` |
 | Queue record schema | `data/queue/README.md` |
-| Cross-run learnings the next agent reads | `LEARNINGS.md` (capped at 100 entries / 10 KB and expiry-filtered by `builder/lib/collection-prompt.ts`) |
-| CI entry points | `.github/workflows/identify.yml`, `.github/workflows/qualify.yml` (legacy: `collection.yml`) |
+| Cross-run learning policy | `LEARNINGS.md`; only legacy `builder/lib/collection-prompt.ts` injects it into prompts |
+| CI entry points | `.github/workflows/identify.yml`, `.github/workflows/qualify.yml`, `.github/workflows/verify.yml` (legacy: `collection.yml`) |
+| Release consistency | `builder/embeddings/verify_index.py`, `.github/workflows/create-release.yml` |
 
 **Do not** treat `README.md` as agent documentation. It serves humans only.
 
@@ -34,9 +35,9 @@ Human overview: [`README.md`](README.md). Schema: [`data/SCHEMA.md`](data/SCHEMA
 
 ### Manifest semantics
 - Manifest = **deny-list**. A source runs unless `status` ∈ {`inactive`, `archived`, `deprecated`}.
-- New sources default `status: testing` and run immediately — bugs surface fast.
+- Set new sources to `status: testing`; supported active adapters scan them at the next Identify run. `status` alone does not make an unsupported source type runnable.
 - Deactivated entries carry a `note` with the evidence. Agents propose status changes via a short LEARNINGS entry; maintainers apply them.
-- The orchestrator embeds a sentinel ID list; `builder/runtime/verify-ids.sh` aborts on manifest disagreement — no silent drops.
+- The paused legacy collector embeds a sentinel ID list; `builder/runtime/verify-ids.sh` aborts on manifest disagreement. Active Identify reads processable IDs from the manifest at dispatch.
 - `name` fields mirror each source file's `#` header. After header edits run `node source/scripts/sync-manifest-names.js`.
 
 ### World Event Entity output
@@ -52,8 +53,12 @@ Human overview: [`README.md`](README.md). Schema: [`data/SCHEMA.md`](data/SCHEMA
 - Every new published event needs a verified image URL. Use event/article imagery when available; otherwise a source banner or the marked default icon. Set `image_origin` to `article`, `source`, or `default` so consumers never mistake fallback art for event evidence.
 
 ### Time window
-- Each run: **1-hour lookback** from dispatch time. One scheduled run per day (09:00 America/New_York) — deliberate sampling, not continuous coverage. Widening the cadence or the lookback both increase qualify-stage LLM spend roughly linearly with tip count.
+- Identify scans a **1-hour lookback** from dispatch time. One scheduled run per day (09:00 America/New_York) — deliberate sampling, not continuous coverage. Widening the cadence or the lookback both increase qualify-stage LLM spend roughly linearly with tip count.
 - The qualifier copies each queued tip's original scan window into `source_window`; `validate-events.js --qualified` enforces publication time within it, even when a batch mixes scan windows. Legacy collection also passes `--time-window`.
+
+### Queue lifecycle
+- `data/queue/pending/` holds temporary raw tips, not published events. Qualification deletes each consumed tip, even when no event qualifies; pre-run cleanup deletes tips older than 24 hours. Never recreate `processed/` or `expired/` archives.
+- A default Qualify run selects the 30 newest tips (10 batches × 3). Others wait for another run and may expire; raising the cap increases Warp spend. Do not add a second cron to drain the queue.
 
 ### Dedup
 - `builder/runtime/merge-events.sh` dedups per bucket by `links[0].url` + content fingerprint (sha256 of title|source|date|url).
@@ -64,7 +69,7 @@ Cloud agent env image (`WARP_ENVIRONMENT_ID`) provides the base CLIs; `agent-bro
 Install list: [`README.md`](README.md#warp-cloud-agent-environment-image). Adding a skill that needs a new CLI → update the list + rebuild the image in the same change.
 
 ### `LEARNINGS.md`
-See `skills/remember-as-you-go/SKILL.md`. Cap: 100 entries / 10 KB injected. Orchestrator prunes expired entries — never rotate manually. Per-source liveness facts go to manifest notes, not here.
+See `skills/remember-as-you-go/SKILL.md`. The paused legacy collector injects up to 100 entries / 10 KB and prunes expired entries; active Qualify does not inject the file. Never rotate manually. Per-source liveness facts go to manifest notes, not here.
 
 ## Skills
 

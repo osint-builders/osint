@@ -21,13 +21,13 @@ Building/validating event JSONL for OSINT event store. Pair `data-to-markdown` f
 
 `id`, `source`, `title`, `summary`, `contents`, `date_published`, `links`, `image_urls`, `geo`.
 
-`image_urls` holds **remote** image URLs. New qualified events require at least one URL and `image_origin` (`article`, `source`, or `default`). A source logo or default icon never counts as event evidence. See `builder/prompts/qualified-event-contract.md`.
+`image_urls` holds **remote** image URLs. New qualified events require a verified image URL and `image_origin` (`article`, `source`, or `default`). A source logo or default icon never counts as event evidence. See `builder/prompts/qualified-event-contract.md`.
 
 ## Optional fields
 
 `date_event`, `topics`, `confidence`, `ingested_at`, `link_preview`.
 
-`link_preview` — fetched automatically at collection time by `builder/runtime/enrich-link-preview.sh` (LinkPreview API via `$LINKPREVIEW_API_KEY`, Twitter banner fallback). Structure: `{title, description, image, url}`. Do NOT construct manually.
+`link_preview` — attached when available by `builder/runtime/enrich-link-preview.sh` (optional LinkPreview API via `$LINKPREVIEW_API_KEY`, Twitter banner fallback). The helper verifies image responses and supplies a marked default when needed. Structure: `{title, description, image, url}`. Do not construct manually.
 
 ## ID format
 
@@ -41,7 +41,7 @@ Run `data/scripts/validate-events.js --qualified` for newly published events. Ba
 - `geo.lat` and `geo.lon` present and numeric.
 - `contents`: Markdown, ≥100 words, fully E-PRIME (no `is`/`are`/`was`/`were`/`be`/`been`/`being` or contractions).
 - `date_published` as ISO 8601 UTC (`YYYY-MM-DDTHH:mm:ssZ`).
-- English declaration, approved topical category, allied relevance, meaningful named geo point, image origin, and fixed body sections.
+- English declaration, approved topical category, allied relevance, meaningful named geo point, image origin, and fixed body sections. The agent must still verify the underlying facts and reject opinion-only content without a new reported event; typed fields alone cannot establish relevance.
 
 ```bash
 node data/scripts/validate-events.js path/to/events.jsonl --qualified

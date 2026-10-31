@@ -4,5 +4,5 @@ type: twitter
 status: testing
 ---
 # Example OSINT Account (@ExampleOSINT)
-Monitors breaking world events including military movements, conflicts, natural disasters, and major political developments. Collect events within the 1-hour lookback window that have geopolitical significance.
+Monitors new defense, conflict, major-disaster, and consequential geopolitical developments within the one-hour scan window.
 Keywords: breaking, urgent, crisis, conflict, disaster, emergency, military, attack, sanctions

@@ -4,7 +4,7 @@ type: telegram
 status: testing
 ---
 # Example Conflict Channel (@ExampleChannel)
-Monitors breaking geopolitical events, military operations, and conflict updates. Collect posts within the 1-hour lookback window with geopolitical significance.
+Monitors new conflict and defense developments within the one-hour scan window. Qualify posts against source evidence before publication.
 url: https://t.me/s/ExampleChannel
 channel: ExampleChannel
 Keywords: conflict, military, attack, strike, explosion, offensive, ceasefire, sanctions, casualties
