@@ -10,6 +10,7 @@ import (
 	"github.com/osint/cli/internal/data"
 	"github.com/osint/cli/internal/output"
 	"github.com/osint/cli/internal/search"
+	"github.com/osint/cli/internal/update"
 )
 
 var (
@@ -33,12 +34,16 @@ var rootCmd = &cobra.Command{
 	Use:   "osintcli",
 	Short: "OSINT event search — offline CLI with embedded data and embeddings",
 	Long: `osintcli bundles world-event data with pre-computed semantic embeddings
-into a single binary. Search, filter, and export events without any
-network connection or external dependencies.`,
+into a single binary. Search, filter, and export events even when offline.`,
 	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
-		// Skip data loading for help and completion
-		if cmd.Name() == "help" || cmd.Name() == "completion" {
+		// These commands do not need the embedded event index.
+		if cmd.Name() == "help" || cmd.Name() == "completion" || cmd.Name() == "update" {
 			return nil
+		}
+
+		// The detached updater never delays an offline query.
+		if update.ReleaseBuild() && os.Getenv("OSINTCLI_NO_UPDATE") != "1" {
+			_ = update.StartAutomatic()
 		}
 
 		var err error
@@ -69,6 +74,7 @@ func init() {
 	rootCmd.AddCommand(listCmd)
 	rootCmd.AddCommand(getCmd)
 	rootCmd.AddCommand(statsCmd)
+	rootCmd.AddCommand(updateCmd)
 }
 
 // Execute runs the root command.

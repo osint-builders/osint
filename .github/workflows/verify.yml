@@ -63,6 +63,15 @@ jobs:
           node --test data/tests/*.test.cjs
           node --test data/scripts/tests/qualified-event.test.js
 
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+          cache-dependency-path: cli/go.sum
+
+      - name: Test CLI
+        run: go test ./...
+        working-directory: cli
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'

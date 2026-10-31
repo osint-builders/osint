@@ -68,7 +68,7 @@ jobs:
             if [ "$goos" = "windows" ]; then ext=".exe"; fi
             echo "--> osintcli-${goos}-${goarch}${ext}"
             (cd cli && GOOS="$goos" GOARCH="$goarch" CGO_ENABLED=0 \
-              go build -trimpath -ldflags="-s -w" \
+              go build -trimpath -ldflags="-s -w -X github.com/osint/cli/internal/update.BuildChannel=release" \
               -o "../dist/osintcli-${goos}-${goarch}${ext}" .)
           done
 
