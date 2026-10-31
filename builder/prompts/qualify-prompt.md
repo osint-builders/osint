@@ -47,7 +47,7 @@ For each tip above (create `mkdir -p "$WORK_DIR/$source_id"` first, using that t
    - `original_report`: `{url, published_at}` for the first checked report of this new development. Include its URL in `links` and use its exact UTC timestamp for `date_published`. An original post can supply both; a recap cannot substitute its own later timestamp.
    - `date_event`: omit unless the source gives an exact occurrence time. Never convert a date-only report to midnight UTC.
    - `source_window`: copy this tip's displayed window into UTC `start`/`end`; reject a candidate published outside it.
-   - `links`: include the original report and every independent corroborating URL used to support a claim.
+   - `links`: include the queued candidate URL that led to this event, the original report, and every independent corroborating URL used to support a claim.
    - `language: "en"`, the approved `category`, `audience`, and a concrete `allied_relevance` explanation.
    - `topics`: lowercase, hyphenated, singular, deduplicated.
    - Assign the compact JSON object to shell variable `event_json` before Step 7; parse `$GEO` as JSON and keep coordinates numeric.

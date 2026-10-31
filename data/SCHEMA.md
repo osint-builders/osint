@@ -14,7 +14,7 @@ The baseline validator accepts historical IDs and events without `geo`. New publ
 | `summary` | string | minLength: 10 | 2–4 sentence narrative summary |
 | `contents` | string | Baseline: ≥20 characters; qualified: ≥100 prose words and **E-PRIME** | Evidence-grounded Markdown event description |
 | `date_published` | ISO 8601 | Baseline accepts a timezone offset; qualified output uses UTC `Z` | When the first checked report published the new development |
-| `links` | array | `[{url, label?}]` | Source URLs |
+| `links` | array | `[{url, label?}]` | Source URLs; qualified events include the queued candidate and first report for traceability |
 | `image_urls` | array | `string[]` | Remote image URLs. New qualified events require at least one; historical events may have `[]` or legacy relative paths. |
 
 > **Validator**: `data/scripts/validate-events.js --qualified` for newly published events. Baseline and `--strict` remain available for historical records. Both runtime prompts invoke `--qualified` before committing.
