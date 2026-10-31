@@ -22,7 +22,7 @@ These sources remain **active** but carry evidence of a wrong handle, a wrong de
 
 ## Access blocked on the Actions runner
 
-- The 11 processable `reddit-*` sources returned HTTP 403 from the public JSON endpoint in [Identify run 41162801993](https://github.com/osint-builders/osint/actions/runs/41162801993). Durable Reddit access needs an approved OAuth API integration and credentials; public RSS endpoints also rate-limit requests and cannot be relied on as a replacement.
+- The 11 processable `reddit-*` sources returned HTTP 403 from the public JSON endpoint in [Identify run 41162801993](https://github.com/osint-builders/osint/actions/runs/41162801993). Durable access requires an authorized Reddit Developer Platform integration. Public RSS also rate-limits requests, and [Reddit says RSS support ends November 13, 2026](https://support.reddithelp.com/hc/en-us/articles/54353370049684-Changelog-October-8-2026), with no replacement for feeds outside communities an account moderates. The same notice says new public API access requests stop October 31, 2026.
 - `webpage-isw-iran-middle-east` and `webpage-isw-russia-ukraine-research` returned HTTP 403 from ISW in the same run. The known ISW feed URLs also returned HTTP 403 in a direct check. Keep these failures visible until a supported publisher endpoint or access arrangement exists.
 - `webpage-yahoo-world-news` failed to fetch on the Actions runner. Yahoo's World RSS endpoint returns HTTP 404; the working top-stories feed contains mostly unrelated US politics and finance and would waste qualification capacity. Keep the World page source visible until a stable scoped feed becomes available.
 
