@@ -1,6 +1,6 @@
 # OSINT Data Collector
 
-Automated collection of world-event intelligence from OSINT sources (Twitter/X, Telegram, Reddit, news sites, APIs), using a **Tip & Queue** pipeline: a cheap non-LLM scan identifies candidate content, then a separate stage does the LLM-heavy extraction in small batches. Findings normalize into structured **World Event Entities** (JSONL) and commit back to this repo. A search UI at [osint.builders](https://osint.builders/) and a cross-platform CLI consume the data downstream.
+Automated collection of world-event intelligence from OSINT sources (Twitter/X, Telegram, news sites, APIs), using a **Tip & Queue** pipeline: a cheap non-LLM scan identifies candidate content, then a separate stage does the LLM-heavy extraction in small batches. Findings normalize into structured **World Event Entities** (JSONL) and commit back to this repo. A search UI at [osint.builders](https://osint.builders/) and a cross-platform CLI consume the data downstream. Reddit source specs remain in the registry, paused until approved API access exists.
 
 ![Identify Tips](https://github.com/osint-builders/osint/actions/workflows/identify.yml/badge.svg)
 ![Qualify Tips](https://github.com/osint-builders/osint/actions/workflows/qualify.yml/badge.svg)
@@ -20,7 +20,7 @@ Two stages, kicked off once daily or on demand (see the cadence note above):
 identify.yml (GitHub Actions runner — no Warp agent, no LLM)
   • reads source/manifest.json          # deny-list: skip status ∈ {inactive,archived,deprecated}
   • builder/runtime/identify.sh scans every processable source in parallel
-    (curl/jq for Twitter API, Reddit JSON API, webpages; python3 for Telegram HTML and RSS)
+    (curl/jq for Twitter API and webpages; python3 for Telegram HTML and RSS)
   • writes one tip per hit to data/queue/pending/*.json, commits with github.token
     │
     ▼  (workflow_run)

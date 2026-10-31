@@ -11,7 +11,7 @@ qualifying the resulting tip.
 - `sources/<id>.md` — short source specification. Its first `#` heading supplies
   the canonical `source.name` and must match the manifest `name`.
 - `REVIEW.md` — source problems that require maintainer review.
-- `examples/` — slim templates for the active Twitter, Telegram, Reddit,
+- `examples/` — slim templates for the supported Twitter, Telegram, Reddit,
   RSS, webpage, and API scanner paths.
 - `scripts/sync-manifest-names.js` — copies source headings to manifest names;
   `--check` reports drift without editing.
@@ -33,6 +33,10 @@ From the repository root:
 The manifest uses a deny-list: each supported source runs unless its status is
 `inactive`, `archived`, or `deprecated`. A new `testing` source can enter the next daily scan. Set its
 manifest and source-file status to `inactive` when it must wait for review.
+
+Reddit, two ISW pages, and Yahoo World currently remain registered but paused
+after access failures on the GitHub Actions runner. See [REVIEW.md](REVIEW.md)
+before restoring them to `testing`.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the supported scanner types and
 format. New published events follow [the event schema](../data/SCHEMA.md).

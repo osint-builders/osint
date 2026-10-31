@@ -1,7 +1,7 @@
 ---
 id: webpage-yahoo-world-news
 type: webpage
-status: testing
+status: inactive
 url: https://news.yahoo.com/world/
 ---
 # Yahoo News (news.yahoo.com)

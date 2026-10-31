@@ -1,7 +1,7 @@
 ---
 id: webpage-isw-russia-ukraine-research
 type: webpage
-status: active
+status: inactive
 url: https://understandingwar.org/research/?_date_from=2026-05-27%2C&_teams=russia-ukraine
 ---
 # Institute for the Study of War - Russia-Ukraine Research

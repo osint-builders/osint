@@ -1,7 +1,7 @@
 ---
 id: webpage-isw-iran-middle-east
 type: webpage
-status: active
+status: inactive
 url: https://understandingwar.org/analysis/middle-east/iran-update/
 ---
 # ISW Iran and Middle East Updates

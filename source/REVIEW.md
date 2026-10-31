@@ -1,6 +1,6 @@
 # Source review queue
 
-The access failures below still need a reliable collection path. Personal accounts and opinion posts can produce useful OSINT leads; qualification decides whether a candidate supports a published event. A wrong identity, private account, or inactive feed cannot produce useful tips.
+The paused access failures below need a reliable collection path before reactivation. Personal accounts and opinion posts can produce useful OSINT leads; qualification decides whether a candidate supports a published event. A wrong identity, private account, or inactive feed cannot produce useful tips.
 
 ## Account audit resolved on 2026-10-31
 
@@ -19,13 +19,13 @@ Four source entries and files were removed: `twitter-megatronlion` and `twitter-
 
 ## Access blocked on the Actions runner
 
-- The 11 processable `reddit-*` sources returned HTTP 403 from the public JSON endpoint in [Identify run 41162801993](https://github.com/osint-builders/osint/actions/runs/41162801993). [Reddit requires OAuth or login from hosted-provider IPs](https://support.reddithelp.com/hc/en-us/articles/14945211791892-Developer-Platform-Accessing-Reddit-Data); no approved credentials are currently available for this repository. The proposed `reddit-fetch` browser redirect reached a CAPTCHA and direct JSON remained blocked in a local test, so it cannot repair unattended Identify. Public RSS also rate-limits requests, and [Reddit says RSS support ends November 13, 2026](https://support.reddithelp.com/hc/en-us/articles/54353370049684-Changelog-October-8-2026), with no replacement for feeds outside communities an account moderates. The same notice says new public API access requests stop October 31, 2026.
-- `webpage-isw-iran-middle-east` and `webpage-isw-russia-ukraine-research` returned HTTP 403 from ISW in the same run. The known ISW feed URLs also returned HTTP 403 in a direct check. Keep these failures visible until a supported publisher endpoint or access arrangement exists.
-- `webpage-yahoo-world-news` failed to fetch on the Actions runner. Yahoo's World RSS endpoint returns HTTP 404; the working top-stories feed contains mostly unrelated US politics and finance and would waste qualification capacity. Keep the World page source visible until a stable scoped feed becomes available.
+- The 11 formerly processable `reddit-*` sources returned HTTP 403 from the public JSON endpoint in [Identify run 41220062754](https://github.com/osint-builders/osint/actions/runs/41220062754). They now have `status: inactive`; their source specs remain for reactivation. [Reddit requires OAuth or login from hosted-provider IPs](https://support.reddithelp.com/hc/en-us/articles/14945211791892-Developer-Platform-Accessing-Reddit-Data), and this repository has no approved credentials. The proposed `reddit-fetch` browser redirect reached a CAPTCHA and direct JSON remained blocked in a local test, so it cannot repair unattended Identify. Public RSS also rate-limits requests, and [Reddit says RSS support ends November 13, 2026](https://support.reddithelp.com/hc/en-us/articles/54353370049684-Changelog-October-8-2026), with no replacement for feeds outside communities an account moderates. The same notice says new public API access requests stop October 31, 2026.
+- `webpage-isw-iran-middle-east` and `webpage-isw-russia-ukraine-research` returned HTTP 403 in that run. Known ISW feed URLs also returned HTTP 403 in a direct check. Both pages now have `status: inactive` until a supported publisher endpoint or access arrangement works; the separate `twitter-thestudyofwar` source remains active.
+- `webpage-yahoo-world-news` returned HTTP 429 in that run. Yahoo's World RSS endpoint returns HTTP 404; the working top-stories feed contains mostly unrelated US politics and finance and would waste qualification capacity. The source now has `status: inactive` until a stable scoped feed works.
 
 ## How to resolve a remaining blocker
 
 1. Test an authorized or publisher-supported access path from the Actions runner.
 2. Update the adapter and source specification, then exercise the relevant Identify fixture.
 3. Run `node source/scripts/sync-manifest-names.js --check` after any header change.
-4. Keep an inaccessible source visible here until a tested path works or the source is retired.
+4. Restore `status: testing` in both the manifest and source spec only after the supported access path passes a live Identify run. Keep blocked sources visible here until then.

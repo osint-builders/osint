@@ -7,81 +7,89 @@
       "id": "reddit-combatfootage",
       "name": "r/CombatFootage (reddit.com/r/CombatFootage)",
       "type": "api",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-combatfootage.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Public Reddit JSON returned HTTP 403 from the GitHub Actions runner in Identify run 41220062754 (2026-10-31). Paused until approved OAuth/API access and a tested runner adapter exist."
     },
     {
       "id": "reddit-credibledefense",
       "name": "r/CredibleDefense (reddit.com/r/CredibleDefense)",
       "type": "api",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-credibledefense.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Public Reddit JSON returned HTTP 403 from the GitHub Actions runner in Identify run 41220062754 (2026-10-31). Paused until approved OAuth/API access and a tested runner adapter exist."
     },
     {
       "id": "reddit-cybersecurity",
       "name": "r/cybersecurity (reddit.com/r/cybersecurity)",
       "type": "api",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-cybersecurity.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Public Reddit JSON returned HTTP 403 from the GitHub Actions runner in Identify run 41220062754 (2026-10-31). Paused until approved OAuth/API access and a tested runner adapter exist."
     },
     {
       "id": "reddit-geopolitics",
       "name": "r/geopolitics (reddit.com/r/geopolitics)",
       "type": "api",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-geopolitics.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Public Reddit JSON returned HTTP 403 from the GitHub Actions runner in Identify run 41220062754 (2026-10-31). Paused until approved OAuth/API access and a tested runner adapter exist."
     },
     {
       "id": "reddit-intelligence",
       "name": "r/Intelligence (reddit.com/r/Intelligence)",
       "type": "api",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-intelligence.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Public Reddit JSON returned HTTP 403 from the GitHub Actions runner in Identify run 41220062754 (2026-10-31). Paused until approved OAuth/API access and a tested runner adapter exist."
     },
     {
       "id": "reddit-lesscredibledefence",
       "name": "r/LessCredibleDefence (reddit.com/r/LessCredibleDefence)",
       "type": "api",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-lesscredibledefence.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Public Reddit JSON returned HTTP 403 from the GitHub Actions runner in Identify run 41220062754 (2026-10-31). Paused until approved OAuth/API access and a tested runner adapter exist."
     },
     {
       "id": "reddit-netsec",
       "name": "r/netsec (reddit.com/r/netsec)",
       "type": "api",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-netsec.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Public Reddit JSON returned HTTP 403 from the GitHub Actions runner in Identify run 41220062754 (2026-10-31). Paused until approved OAuth/API access and a tested runner adapter exist."
     },
     {
       "id": "reddit-noncredibledefense",
       "name": "r/NonCredibleDefense (reddit.com/r/NonCredibleDefense)",
       "type": "api",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-noncredibledefense.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Public Reddit JSON returned HTTP 403 from the GitHub Actions runner in Identify run 41220062754 (2026-10-31). Paused until approved OAuth/API access and a tested runner adapter exist."
     },
     {
       "id": "reddit-northkoreanews",
@@ -98,11 +106,12 @@
       "id": "reddit-osint",
       "name": "r/OSINT (reddit.com/r/OSINT)",
       "type": "api",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-osint.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Public Reddit JSON returned HTTP 403 from the GitHub Actions runner in Identify run 41220062754 (2026-10-31). Paused until approved OAuth/API access and a tested runner adapter exist."
     },
     {
       "id": "reddit-russiaukrainewar2022",
@@ -119,21 +128,23 @@
       "id": "reddit-sino",
       "name": "r/Sino (reddit.com/r/Sino)",
       "type": "api",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-sino.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Public Reddit JSON returned HTTP 403 from the GitHub Actions runner in Identify run 41220062754 (2026-10-31). Paused until approved OAuth/API access and a tested runner adapter exist."
     },
     {
       "id": "reddit-ukrainewarvideorepport",
       "name": "r/UkraineWarVideoReport (reddit.com/r/UkraineWarVideoReport)",
       "type": "api",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/reddit-ukrainewarvideorepport.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Public Reddit JSON returned HTTP 403 from the GitHub Actions runner in Identify run 41220062754 (2026-10-31). Paused until approved OAuth/API access and a tested runner adapter exist."
     },
     {
       "id": "telegram-afustratcom",
@@ -1824,21 +1835,23 @@
       "id": "webpage-isw-iran-middle-east",
       "name": "ISW Iran and Middle East Updates",
       "type": "webpage",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/webpage-isw-iran-middle-east.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "ISW page returned HTTP 403 on the GitHub Actions runner in Identify run 41220062754 (2026-10-31); known feed endpoints also returned 403 in a direct check. Paused until a supported publisher endpoint or access arrangement works."
     },
     {
       "id": "webpage-isw-russia-ukraine-research",
       "name": "Institute for the Study of War - Russia-Ukraine Research",
       "type": "webpage",
-      "status": "active",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/webpage-isw-russia-ukraine-research.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "ISW page returned HTTP 403 on the GitHub Actions runner in Identify run 41220062754 (2026-10-31); known feed endpoints also returned 403 in a direct check. Paused until a supported publisher endpoint or access arrangement works."
     },
     {
       "id": "webpage-isw-ukraine-interactive-map",
@@ -1875,18 +1888,19 @@
       "id": "webpage-yahoo-world-news",
       "name": "Yahoo News (news.yahoo.com)",
       "type": "webpage",
-      "status": "testing",
+      "status": "inactive",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/webpage-yahoo-world-news.md",
-      "added_date": "2026-05-27"
+      "added_date": "2026-05-27",
+      "note": "Yahoo World page returned HTTP 429 on the GitHub Actions runner in Identify run 41220062754 (2026-10-31); World RSS returned 404 and the top-stories feed is off-topic. Paused until a scoped supported endpoint works."
     }
   ],
   "statistics": {
     "total_sources": 182,
-    "active_sources": 82,
-    "testing_sources": 40,
-    "inactive_sources": 60,
+    "active_sources": 80,
+    "testing_sources": 28,
+    "inactive_sources": 74,
     "by_type": {
       "twitter": 141,
       "webpage": 7,
