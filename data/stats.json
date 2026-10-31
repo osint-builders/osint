@@ -1,15 +1,15 @@
 {
-  "last_updated": "2026-10-31T17:27:56.829Z",
+  "last_updated": "2026-10-31T17:37:03.897Z",
   "data_range": {
     "oldest_date": "2026-08-25",
     "newest_date": "2026-10-31"
   },
   "statistics": {
-    "total_events": 5114,
+    "total_events": 5116,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4738,
-      "2026-10": 119
+      "2026-10": 121
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 159,
@@ -20,7 +20,7 @@
       "Wagner Z Group": 4,
       "ABC News": 57,
       "Insider Paper (@insiderpaper)": 99,
-      "Clash Report (@ClashReport)": 323,
+      "Clash Report (@ClashReport)": 324,
       "DD Geopolitics (@DDGeopolitics)": 161,
       "OSINT Technical (@Osinttechnical)": 64,
       "NSA (@NSAGov)": 3,
@@ -35,7 +35,7 @@
       "War Translated": 8,
       "Middle East Spectator": 45,
       "Geopolitics Prime (@geopolitics_prime)": 163,
-      "AP News (@AP)": 39,
+      "AP News (@AP)": 40,
       "CSIS Korea Chair": 9,
       "Our Wars, Today (@ourwarstoday)": 18,
       "BBC World News (@BBCWorld)": 125,
@@ -183,7 +183,7 @@
       "Ministry of National Defense Taiwan": 1
     },
     "media_files": {
-      "images": 991,
+      "images": 993,
       "videos": 0
     }
   },
@@ -227,7 +227,7 @@
     "2026-09-30": 155,
     "2026-10-01": 67,
     "2026-10-30": 30,
-    "2026-10-31": 22
+    "2026-10-31": 24
   },
-  "average_confidence": 0.7860413080894962
+  "average_confidence": 0.7859133126934937
 }

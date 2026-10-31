@@ -149670,5 +149670,85 @@
     ],
     "link_preview_image": "https://static.cnews.fr/sites/default/files/styles/image_1160_652/public/une_bombe_artisanale_incendiaire_explose_aux_pieds_d_un_policier_a_paris_6ae617066ec66.jpg?itok=GK3Mv8nS",
     "image_origin": "article"
+  },
+  {
+    "id": "evt_110068059376476160",
+    "title": "AP News (@AP) Reports Third Weekend of Youth-Led Protests Across France",
+    "summary": "AP News (@AP) reports that an estimated 320,000 people protested across France on Saturday, according to the government, in a third weekend of youth-led demonstrations over living costs and education. About 70,000 police and gendarmes deployed nationwide.",
+    "date_event": null,
+    "date_published": "2026-10-31T16:32:45Z",
+    "geo": {
+      "lat": 46.603354,
+      "lon": 1.8883335,
+      "location_name": "France",
+      "precision": "country",
+      "country": "France"
+    },
+    "topics": [
+      "protest",
+      "civil-unrest",
+      "france",
+      "youth-protest",
+      "security-force"
+    ],
+    "confidence": 0.6,
+    "source_name": "AP News (@AP)",
+    "links": [
+      {
+        "url": "https://x.com/AP/status/2116569071084822712",
+        "label": "AP post on X (original report)"
+      },
+      {
+        "url": "https://apnews.com/article/protests-europe-youth-france-germany-spain-362a7cb69871ab21bd894290dad639f5",
+        "label": "AP article"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2116569071793651712/Xj0_ThU7?format=jpg&name=800x419",
+    "image_origin": "article"
+  },
+  {
+    "id": "evt_110068305296904192",
+    "title": "Molotov Cocktail Thrown at Police at End of Paris Cost-of-Living March",
+    "summary": "Clash Report reports Molotov cocktails thrown at police at the end of a Paris cost-of-living march, with at least one officer's gear reported on fire. CNEWS and AFP-sourced reporting place the clashes at Porte de Charenton on October 31, 2026.",
+    "date_event": null,
+    "date_published": "2026-10-31T16:30:21Z",
+    "geo": {
+      "lat": 48.8330612,
+      "lon": 2.4011868,
+      "location_name": "Porte de Charenton, Paris, France",
+      "precision": "city",
+      "country": "France",
+      "region": "Île-de-France",
+      "city": "Paris"
+    },
+    "topics": [
+      "civil-unrest",
+      "protest",
+      "police",
+      "france",
+      "molotov-cocktail"
+    ],
+    "confidence": 0.6,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2116579960404037852",
+        "label": "Queued candidate: Clash Report post"
+      },
+      {
+        "url": "https://www.cnews.fr/france/2026-10-31/mobilisation-du-31-octobre-une-bombe-artisanale-incendiaire-explose-aux-pieds-dun",
+        "label": "Original report: CNEWS"
+      },
+      {
+        "url": "https://www.hln.be/binnenland/spanningen-lopen-op-gendarme-geraakt-door-molotovcocktail-in-parijs-politie-vuurt-traangas-af-in-marseille-en-lyon-waterkanon-ingezet-in-berlijn-en-keulen~a2483eff/",
+        "label": "HLN live blog citing AFP and police prefecture"
+      },
+      {
+        "url": "https://www.pbs.org/newshour/world/a-third-weekend-of-protests-in-france-as-youth-led-rallies-sweep-europe",
+        "label": "AP report on weekend protests"
+      }
+    ],
+    "link_preview_image": "https://static.cnews.fr/sites/default/files/styles/image_1160_652/public/une_bombe_artisanale_incendiaire_explose_aux_pieds_d_un_policier_a_paris_6ae617066ec66.jpg?itok=GK3Mv8nS",
+    "image_origin": "article"
   }
 ]

@@ -216,6 +216,10 @@
     "count": 65
   },
   {
+    "topic": "protest",
+    "count": 64
+  },
+  {
     "topic": "united-nation",
     "count": 64
   },
@@ -229,10 +233,6 @@
   },
   {
     "topic": "disaster",
-    "count": 62
-  },
-  {
-    "topic": "protest",
     "count": 62
   },
   {
@@ -260,6 +260,10 @@
     "count": 54
   },
   {
+    "topic": "france",
+    "count": 52
+  },
+  {
     "topic": "civilian-casualty",
     "count": 50
   },
@@ -269,10 +273,6 @@
   },
   {
     "topic": "japan",
-    "count": 50
-  },
-  {
-    "topic": "france",
     "count": 50
   },
   {
@@ -1696,6 +1696,10 @@
     "count": 8
   },
   {
+    "topic": "civil-unrest",
+    "count": 8
+  },
+  {
     "topic": "economic-development",
     "count": 8
   },
@@ -1801,6 +1805,10 @@
   },
   {
     "topic": "starlink",
+    "count": 7
+  },
+  {
+    "topic": "police",
     "count": 7
   },
   {
@@ -1960,6 +1968,10 @@
     "count": 7
   },
   {
+    "topic": "security-force",
+    "count": 7
+  },
+  {
     "topic": "odesa",
     "count": 7
   },
@@ -2092,10 +2104,6 @@
     "count": 6
   },
   {
-    "topic": "police",
-    "count": 6
-  },
-  {
     "topic": "trial",
     "count": 6
   },
@@ -2213,14 +2221,6 @@
   },
   {
     "topic": "somalia",
-    "count": 6
-  },
-  {
-    "topic": "security-force",
-    "count": 6
-  },
-  {
-    "topic": "civil-unrest",
     "count": 6
   },
   {
@@ -15885,6 +15885,14 @@
   },
   {
     "topic": "pari",
+    "count": 1
+  },
+  {
+    "topic": "youth-protest",
+    "count": 1
+  },
+  {
+    "topic": "molotov-cocktail",
     "count": 1
   }
 ]
