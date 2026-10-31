@@ -149471,42 +149471,9 @@
     "image_origin": null
   },
   {
-    "id": "evt_110053502541127680",
-    "title": "Iran Chief of Staff announces readiness to strike enemies with updated target database",
-    "summary": "Iran's Chief of Staff Maj. Gen. Ali Abdollahi announced that Iran ready to strike at enemies immediately if they decide to attack. He stated that Iran continuously monitors enemies' movements and maintains an updated target database, and would not wait for aggression to begin before responding.",
-    "date_event": null,
-    "date_published": "2026-10-31T16:03:01Z",
-    "geo": {
-      "lat": 35.6762,
-      "lon": 51.4244,
-      "location_name": "Tehran, Iran",
-      "precision": "city",
-      "country": "Iran",
-      "region": "Tehran",
-      "city": "Tehran"
-    },
-    "topics": [
-      "iran",
-      "military-readiness",
-      "strategic-posture",
-      "target-database",
-      "regional-conflict"
-    ],
-    "confidence": 0.6,
-    "source_name": "Geopolitics Prime (@geopolitics_prime)",
-    "links": [
-      {
-        "url": "https://t.me/geopolitics_prime/77084",
-        "label": "Geopolitics Prime announcement"
-      }
-    ],
-    "link_preview_image": "https://cdn4.telesco.pe/file/S8X0f9Xi8e-PCm2rci53n1LqI1W5tn2C-_iNnoTRZb4YFG6Oh3JQSGs5lpJbnRD61QQx-YO0PpI2ryd0kwbZmLmC1J01UwUhOb3EawC0C3T1DDdJ2Cu1SEgNsxexRRtKY6qRM2NQVecA-020aVYZeT5vAQTrsWjQck_-ktNBR1yyXQW6luy08EDCx_vPOso-22NOigJ0BJToSWSRJtohwd4EetZcAUEPgh8zXKMMEeQmxrRkQKZWG_dGzMftUrkYwcasL6FkjX63B1Mx5IMt6vPNVNLg6HbAShupqwYEXf8lQWiDLedkPT1pXacGan-GFgoY4GvZByMBS5gQYbkedg.jpg",
-    "image_origin": "article"
-  },
-  {
     "id": "evt_110053502532739072",
-    "title": "U.S. warns Russia of imminent terrorist attack at Moscow museum",
-    "summary": "The U.S. issued a warning to Russia regarding an imminent terrorist attack planned for Tsaritsyno Museum Reserve in southern Moscow. Russia's FSB responded by closing the palace complexes to visitors as a precautionary measure, stating it takes the warning seriously.",
+    "title": "Reports of Moscow museum closure follow U.S. Embassy security alert",
+    "summary": "The U.S. Embassy warned of a credible mass-casualty threat at Moscow's Tsaritsyno Museum Reserve on October 31. The FSB said it received U.S. information about a possible attack. Local reporters later described a closure for stated technical reasons, after museum staff had reported normal operations.",
     "date_event": null,
     "date_published": "2026-10-31T15:49:52Z",
     "geo": {
@@ -149519,35 +149486,46 @@
       "city": "Moscow"
     },
     "topics": [
-      "terrorism",
-      "threat-warning",
       "russia",
-      "security-response",
-      "moscow"
+      "moscow",
+      "security-alert",
+      "museum-closure"
     ],
-    "confidence": 0.65,
+    "confidence": 0.7,
     "source_name": "Middle East Spectator (@Middle_East_Spectator)",
     "links": [
       {
         "url": "https://t.me/Middle_East_Spectator/37981",
-        "label": "Middle East Spectator post"
+        "label": "Original queued post"
       },
       {
-        "url": "https://t.me/intelslava/97289",
-        "label": "Intel Slava Z warning report"
+        "url": "https://ru.usembassy.gov/ru/security-alert-threat-to-tsaritysyno-museum-reserve-in-moscow-october-31-2026-ru/",
+        "label": "U.S. Embassy security alert"
       },
       {
-        "url": "https://t.me/intelslava/97291",
-        "label": "Intel Slava Z security response"
+        "url": "https://www.fontanka.ru/2026/10/31/76737613/",
+        "label": "Fontanka museum-staff response"
+      },
+      {
+        "url": "https://www.fontanka.ru/2026/10/31/76737651/",
+        "label": "Fontanka closure report"
+      },
+      {
+        "url": "https://theins.ru/news/299007",
+        "label": "The Insider threat and closure report"
+      },
+      {
+        "url": "https://tass.ru/obschestvo/28274871",
+        "label": "TASS report quoting FSB"
       }
     ],
-    "link_preview_image": "https://cdn4.telesco.pe/file/gJ3jDe8kE7fsvGS_0F-qUEGBoZxouila--sY_i0ECyCWebKaeG23ntBYA-fhnlfZPd3ciOAz5S4OIs-z886rc3HuxZyWwIXUkQzax_5UXQvB-1CEOuVWOkGZIgBOPeQ7csm5PEpSmrJAZbDFj5ViL_uVyg1WhcmxCwnRnA2NiJIp2abeHuu66ELbYem_2Dt0Xnh9eNNM3XWC-8II4QUPpbTLzYcaruty23W3kfXOQn0HD9iQfcfAKoC2AKf9qDY_nrUDkqGkLCSqAvwYKTK1s_srcVoYbN91Ol9vmtg-ySReCdcZ_Kn5yqwIdyHLVaWPSKqKyV-zel1Tshf18Coxfg.jpg",
-    "image_origin": "article"
+    "link_preview_image": "https://osint.builders/favicon.svg",
+    "image_origin": "default"
   },
   {
     "id": "evt_110054454627180544",
-    "title": "Ukrainian Hornet kamikaze drones destroy Russian Mi-8 helicopter in Luhansk",
-    "summary": "According to Clash Report, Ukrainian Hornet kamikaze drones destroyed a Russian Mi-8 transport helicopter in Luhansk region on October 30, 2026.",
+    "title": "Ukraine's Third Army Corps reports Mi-8 loss after Hornet drone strikes in Luhansk",
+    "summary": "Ukraine's Third Army Corps said operators from its 3rd Assault Brigade struck a Russian Mi-8 helicopter with two Hornet drones after it landed in Luhansk Oblast on October 30. Clash Report shared the claim and footage; news outlets traced the report to the Ukrainian unit.",
     "date_event": null,
     "date_published": "2026-10-30T17:05:46Z",
     "geo": {
@@ -149564,12 +149542,24 @@
       "ukraine-russia-conflict",
       "luhansk"
     ],
-    "confidence": 0.75,
+    "confidence": 0.6,
     "source_name": "Clash Report",
     "links": [
       {
         "url": "https://t.me/ClashReport/103655",
-        "label": "Original Telegram post"
+        "label": "Original queued post"
+      },
+      {
+        "url": "https://t.me/ab3army/7627",
+        "label": "Third Army Corps statement and footage"
+      },
+      {
+        "url": "https://www.pravda.com.ua/eng/news/2026/10/30/8060558/",
+        "label": "Ukrainska Pravda report"
+      },
+      {
+        "url": "https://en.lb.ua/news/2026/10/30/47352_third_assault_brigades_hornet.html",
+        "label": "LB.ua report"
       }
     ],
     "link_preview_image": "https://cdn4.telesco.pe/file/KjL8oEHntNxNSwv_Hh4bbNh45VlvRrNDNXYT7Z1W-VHQgnrRdVLsJDTp-nv8g5IMoD2hm97hI3-AvTlBB7xITLzVZ6q1-Z-_XUOIJgN4ClfJuAKlw8aS5PHHtBO3K_jnCITPDRePDxXYutjaxjgSoplxnlYEll_Vdo-DZ-VObZXBujb9V5bi34ScWRPs8NMHcw_AdO9AC3KIT4ZcLx_LDCdpxm9hxfP5VEMERUp0AvQDps7TzH76SAJKVXA4rwXvhYk4PA_wys6VmGgMk6rbAOVBmFcpIzDtu3U6cCmXcAncWg5ggWqplHdYGGwGo3Yg3KSVxwJZc9t5aKy1mCoGuw",
