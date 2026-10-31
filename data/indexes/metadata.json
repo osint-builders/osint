@@ -148486,6 +148486,66 @@
     "image_origin": "article"
   },
   {
+    "id": "evt_109841990782291968",
+    "title": "HMAS Perth Operates with US Carrier Strike Group in South China Sea",
+    "summary": "The Australian Navy HMAS Perth operated with the United States Navy Carrier Strike Group 5 on patrol in the South China Sea, demonstrating continued naval cooperation in a strategic region.",
+    "date_event": "2026-10-30T22:00:00Z",
+    "date_published": "2026-10-30T22:00:00Z",
+    "geo": {
+      "lat": 15.0000001,
+      "lon": 114.9999999,
+      "location_name": "South China Sea",
+      "precision": "sea-area"
+    },
+    "topics": [
+      "maritime-security",
+      "naval-operations",
+      "indo-pacific",
+      "us-australia-partnership"
+    ],
+    "confidence": 0.9,
+    "source_name": "Australian Defence (@DefenceAust)",
+    "links": [
+      {
+        "url": "https://x.com/DefenceAust/status/2116289041486217609",
+        "label": "Australian Defence announcement"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HV2ra8NXwAAIhYn?format=webp&name=large",
+    "image_origin": "article"
+  },
+  {
+    "id": "evt_109842096491335680",
+    "title": "Poland Constitutional Court Crisis: Head Suspended Amid Coup D'État Allegations",
+    "summary": "Poland government suspended the head of the country top constitutional court, triggering accusations of a constitutional coup and plunging the nation into political crisis. Prime Minister Donald Tusk defended the suspension against court condemnation.",
+    "date_event": "2026-10-30T23:20:52Z",
+    "date_published": "2026-10-30T23:20:52Z",
+    "geo": {
+      "lat": 52.2319581,
+      "lon": 21.0067249,
+      "location_name": "Warsaw, Poland",
+      "precision": "city",
+      "country": "Poland",
+      "city": "Warsaw"
+    },
+    "topics": [
+      "geopolitics",
+      "poland",
+      "nato",
+      "constitutional-crisis"
+    ],
+    "confidence": 0.65,
+    "source_name": "Fox News (@FoxNews)",
+    "links": [
+      {
+        "url": "https://x.com/FoxNews/status/2116309390219190594",
+        "label": "Fox News breaking report"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HV6kLEqXIAABL9V.jpg",
+    "image_origin": "article"
+  },
+  {
     "id": "evt_109828239936991232",
     "title": "Federal Judge Bars Trump Administration from Threatening Election Workers Over California Ballots",
     "summary": "A federal judge issued an order preventing the Trump administration's Justice Department from threatening or coercing election workers in California, marking another legal setback for efforts to assert control over local elections.",

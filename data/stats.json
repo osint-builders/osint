@@ -1,15 +1,15 @@
 {
-  "last_updated": "2026-10-31T02:27:00.461Z",
+  "last_updated": "2026-10-31T02:38:44.785Z",
   "data_range": {
     "oldest_date": "2026-08-25",
     "newest_date": "2026-10-31"
   },
   "statistics": {
-    "total_events": 5099,
+    "total_events": 5101,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4738,
-      "2026-10": 104
+      "2026-10": 106
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 157,
@@ -45,7 +45,7 @@
       "Warshipcam (@Warshipcam)": 118,
       "Xinhua News (@XHNews)": 197,
       "cnnbrk (@cnnbrk)": 22,
-      "Fox News (@FoxNews)": 79,
+      "Fox News (@FoxNews)": 80,
       "Quds News Network": 118,
       "cepa (@cepa)": 20,
       "ELINT News (@ELINTNews)": 22,
@@ -113,7 +113,7 @@
       "General Staff of the Armed Forces of Ukraine": 9,
       "My Lord Bebo": 6,
       "OSINT Technical": 13,
-      "Australian Defence (@DefenceAust)": 19,
+      "Australian Defence (@DefenceAust)": 20,
       "TankerTrackers": 1,
       "South China Morning Post": 1,
       "Our Wars, Today": 4,
@@ -182,7 +182,7 @@
       "Ministry of National Defense Taiwan": 1
     },
     "media_files": {
-      "images": 976,
+      "images": 978,
       "videos": 0
     }
   },
@@ -225,8 +225,8 @@
     "2026-09-29": 147,
     "2026-09-30": 155,
     "2026-10-01": 67,
-    "2026-10-30": 17,
+    "2026-10-30": 19,
     "2026-10-31": 20
   },
-  "average_confidence": 0.7863010380622791
+  "average_confidence": 0.7862932226832596
 }
