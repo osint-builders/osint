@@ -1,15 +1,15 @@
 {
-  "last_updated": "2026-10-31T03:48:04.369Z",
+  "last_updated": "2026-10-31T16:42:33.644Z",
   "data_range": {
     "oldest_date": "2026-08-25",
     "newest_date": "2026-10-31"
   },
   "statistics": {
-    "total_events": 5110,
+    "total_events": 5113,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4738,
-      "2026-10": 115
+      "2026-10": 118
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 159,
@@ -34,7 +34,7 @@
       "Ianellisjones (@Ianellisjones)": 20,
       "War Translated": 8,
       "Middle East Spectator": 45,
-      "Geopolitics Prime (@geopolitics_prime)": 163,
+      "Geopolitics Prime (@geopolitics_prime)": 164,
       "AP News (@AP)": 39,
       "CSIS Korea Chair": 9,
       "Our Wars, Today (@ourwarstoday)": 18,
@@ -61,7 +61,7 @@
       "cnni": 3,
       "twitter-criticalthreats": 1,
       "Thewarzonewire (@Thewarzonewire)": 82,
-      "Middle East Spectator (@Middle_East_Spectator)": 109,
+      "Middle East Spectator (@Middle_East_Spectator)": 110,
       "BBC World News": 45,
       "BBC Breaking News": 11,
       "UANI (@UANI)": 15,
@@ -75,7 +75,7 @@
       "My Lord Bebo (@MyLordBebo)": 35,
       "cnni (@cnni)": 33,
       "Philippine Coast Guard (@CoastGuardPH)": 9,
-      "Clash Report": 43,
+      "Clash Report": 44,
       "DD Geopolitics": 53,
       "Esri (@Esri)": 4,
       "Scmpnews (@Scmpnews)": 109,
@@ -183,7 +183,7 @@
       "Ministry of National Defense Taiwan": 1
     },
     "media_files": {
-      "images": 987,
+      "images": 990,
       "videos": 0
     }
   },
@@ -226,8 +226,8 @@
     "2026-09-29": 147,
     "2026-09-30": 155,
     "2026-10-01": 67,
-    "2026-10-30": 28,
-    "2026-10-31": 20
+    "2026-10-30": 29,
+    "2026-10-31": 22
   },
-  "average_confidence": 0.7862288865908263
+  "average_confidence": 0.7861053719008221
 }

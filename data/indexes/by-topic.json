@@ -13,7 +13,7 @@
   },
   {
     "topic": "russia",
-    "count": 638
+    "count": 639
   },
   {
     "topic": "geopolitic",
@@ -29,7 +29,7 @@
   },
   {
     "topic": "iran",
-    "count": 458
+    "count": 459
   },
   {
     "topic": "israel",
@@ -200,11 +200,11 @@
     "count": 67
   },
   {
-    "topic": "aviation",
-    "count": 66
+    "topic": "drone-strike",
+    "count": 67
   },
   {
-    "topic": "drone-strike",
+    "topic": "aviation",
     "count": 66
   },
   {
@@ -356,6 +356,10 @@
     "count": 39
   },
   {
+    "topic": "terrorism",
+    "count": 38
+  },
+  {
     "topic": "poland",
     "count": 38
   },
@@ -373,10 +377,6 @@
   },
   {
     "topic": "law-enforcement",
-    "count": 37
-  },
-  {
-    "topic": "terrorism",
     "count": 37
   },
   {
@@ -812,6 +812,10 @@
     "count": 17
   },
   {
+    "topic": "regional-conflict",
+    "count": 17
+  },
+  {
     "topic": "flooding",
     "count": 17
   },
@@ -836,10 +840,6 @@
     "count": 16
   },
   {
-    "topic": "regional-conflict",
-    "count": 16
-  },
-  {
     "topic": "black-sea",
     "count": 16
   },
@@ -861,6 +861,10 @@
   },
   {
     "topic": "hong-kong",
+    "count": 16
+  },
+  {
+    "topic": "ukraine-russia-conflict",
     "count": 16
   },
   {
@@ -920,10 +924,6 @@
     "count": 15
   },
   {
-    "topic": "ukraine-russia-conflict",
-    "count": 15
-  },
-  {
     "topic": "far-right",
     "count": 15
   },
@@ -949,6 +949,10 @@
   },
   {
     "topic": "civilian",
+    "count": 14
+  },
+  {
+    "topic": "moscow",
     "count": 14
   },
   {
@@ -1017,10 +1021,6 @@
   },
   {
     "topic": "military-attack",
-    "count": 13
-  },
-  {
-    "topic": "moscow",
     "count": 13
   },
   {
@@ -2272,6 +2272,10 @@
     "count": 5
   },
   {
+    "topic": "luhansk",
+    "count": 5
+  },
+  {
     "topic": "f-16",
     "count": 5
   },
@@ -2676,10 +2680,6 @@
     "count": 4
   },
   {
-    "topic": "luhansk",
-    "count": 4
-  },
-  {
     "topic": "maritime-shipping",
     "count": 4
   },
@@ -2841,6 +2841,10 @@
   },
   {
     "topic": "uk-foreign-policy",
+    "count": 4
+  },
+  {
+    "topic": "military-readiness",
     "count": 4
   },
   {
@@ -3569,10 +3573,6 @@
   },
   {
     "topic": "october-7",
-    "count": 3
-  },
-  {
-    "topic": "military-readiness",
     "count": 3
   },
   {
@@ -15873,6 +15873,26 @@
   },
   {
     "topic": "riot",
+    "count": 1
+  },
+  {
+    "topic": "strategic-posture",
+    "count": 1
+  },
+  {
+    "topic": "target-database",
+    "count": 1
+  },
+  {
+    "topic": "threat-warning",
+    "count": 1
+  },
+  {
+    "topic": "security-response",
+    "count": 1
+  },
+  {
+    "topic": "helicopter-loss",
     "count": 1
   }
 ]
