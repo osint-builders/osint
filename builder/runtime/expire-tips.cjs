@@ -1,7 +1,5 @@
 #!/usr/bin/env node
-// Archive pending tips too old for the live qualification queue. The original
-// JSON stays under expired/ for audit or deliberate backfill. If a basename
-// already exists under processed/, its pending copy is redundant and removed.
+// Remove pending tips too old for the live qualification queue.
 const fs = require("node:fs");
 const path = require("node:path");
 
@@ -25,31 +23,19 @@ function tipTime(tip) {
     const parsed = Date.parse(tip[field] || "");
     if (Number.isFinite(parsed)) return parsed;
   }
-  // The three original Oct 1 queue tips used urls[].published.
-  const published = Array.isArray(tip.urls)
-    ? tip.urls.map((item) => Date.parse(item?.published || "")).filter(Number.isFinite)
-    : [];
-  return published.length ? Math.max(...published) : NaN;
+  return NaN;
 }
 
-const queue = path.join(repoRoot, "data", "queue");
-const pending = path.join(queue, "pending");
-const processed = path.join(queue, "processed");
-const expired = path.join(queue, "expired");
+const pending = path.join(repoRoot, "data", "queue", "pending");
 if (!fs.existsSync(pending)) {
   console.log("No pending tip directory.");
   process.exit(0);
 }
 
-const duplicates = [];
 const stale = [];
 const unknown = [];
 for (const name of fs.readdirSync(pending).filter((name) => name.endsWith(".json")).sort()) {
   const file = path.join(pending, name);
-  if (fs.existsSync(path.join(processed, name))) {
-    duplicates.push(file);
-    continue;
-  }
   let observed;
   try {
     observed = tipTime(JSON.parse(fs.readFileSync(file, "utf8")));
@@ -63,17 +49,10 @@ for (const name of fs.readdirSync(pending).filter((name) => name.endsWith(".json
 if (unknown.length) {
   throw new Error(`Cannot date ${unknown.length} pending tip(s): ${unknown.slice(0, 5).join(", ")}`);
 }
-const collisions = stale.filter((file) => fs.existsSync(path.join(expired, path.basename(file))));
-if (collisions.length) {
-  throw new Error(`Expired archive already contains ${collisions.length} pending tip basename(s)`);
-}
-
 console.log(
-  `Queue cleanup at ${new Date(now).toISOString()}: ${duplicates.length} already processed, ` +
+  `Queue cleanup at ${new Date(now).toISOString()}: ` +
   `${stale.length} older than ${new Date(cutoff).toISOString()}`
 );
 if (!dryRun) {
-  if (stale.length) fs.mkdirSync(expired, { recursive: true });
-  for (const file of duplicates) fs.unlinkSync(file);
-  for (const file of stale) fs.renameSync(file, path.join(expired, path.basename(file)));
+  for (const file of stale) fs.unlinkSync(file);
 }

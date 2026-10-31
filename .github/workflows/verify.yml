@@ -89,5 +89,6 @@ jobs:
 
       - name: Test runtime helpers
         run: |
+          bash builder/runtime/tests/verify-consume-tips.sh
           bash builder/runtime/tests/verify-image-enrichment.sh
           bash builder/runtime/tests/verify-submit-retry.sh

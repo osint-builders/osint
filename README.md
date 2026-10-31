@@ -33,7 +33,7 @@ Warp Cloud Agent (per batch)
   • clones this repo, then drives builder/runtime/*.sh:
     init (token check) → [fetch → qualify → translate → structure → geocode
     → attach image → enrich] per tip → validate → merge-events (dedup)
-    → archive tip to data/queue/processed/ → submit (commit + push)
+    → remove consumed tip from pending/ → submit (commit + push)
     │
     ▼
 embeddings.yml                         # cross-batch dedupe + search index rebuild

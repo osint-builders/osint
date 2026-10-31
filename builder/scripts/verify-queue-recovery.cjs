@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Integration check for the duplicate-tip crash and bounded backlog recovery.
+// Integration check for expired-tip deletion and bounded backlog planning.
 const assert = require("node:assert/strict");
 const { spawnSync } = require("node:child_process");
 const fs = require("node:fs");
@@ -9,8 +9,6 @@ const path = require("node:path");
 const builder = path.resolve(__dirname, "..");
 const root = fs.mkdtempSync(path.join(os.tmpdir(), "osint-queue-recovery-"));
 const pending = path.join(root, "data", "queue", "pending");
-const processed = path.join(root, "data", "queue", "processed");
-const expired = path.join(root, "data", "queue", "expired");
 
 function run(command, args, options = {}) {
   const result = spawnSync(command, args, { cwd: root, encoding: "utf8", ...options });
@@ -36,7 +34,6 @@ function write(directory, name, value) {
 
 try {
   fs.mkdirSync(pending, { recursive: true });
-  fs.mkdirSync(processed, { recursive: true });
   fs.mkdirSync(path.join(root, "source"), { recursive: true });
   fs.writeFileSync(path.join(root, "source", "manifest.json"), '{"sources":[]}');
   run("git", ["init", "-q"]);
@@ -45,21 +42,20 @@ try {
   write(pending, "stale", tip("stale", "2026-10-29T00:00:00Z"));
   write(pending, "older", tip("older", "2026-10-30T22:00:00Z"));
   write(pending, "newest", tip("newest", "2026-10-30T23:00:00Z"));
-  write(pending, "duplicate", { source_id: "duplicate", type: "telegram", urls: [] });
-  write(processed, "duplicate", tip("duplicate", "2026-10-01T12:00:00Z"));
   run("git", ["add", "-A"]);
   run("git", ["-c", "user.name=fixture", "-c", "user.email=fixture@example.com", "commit", "-qm", "Fixture"]);
 
-  const cleanup = run(process.execPath, [
+  const cleanupArgs = [
     path.join(builder, "runtime", "expire-tips.cjs"),
     "--max-age-hours", "24", "--now", "2026-10-31T01:00:00Z",
     "--repo-root", root,
-  ]);
-  assert.match(cleanup, /1 already processed, 1 older/);
-  assert.equal(fs.existsSync(path.join(pending, "duplicate.json")), false);
+  ];
+  assert.match(run(process.execPath, [...cleanupArgs, "--dry-run"]), /1 older/);
+  assert.equal(fs.existsSync(path.join(pending, "stale.json")), true);
+  const cleanup = run(process.execPath, cleanupArgs);
+  assert.match(cleanup, /1 older/);
   assert.equal(fs.existsSync(path.join(pending, "stale.json")), false);
-  assert.equal(fs.existsSync(path.join(processed, "duplicate.json")), true);
-  assert.equal(JSON.parse(fs.readFileSync(path.join(expired, "stale.json"))).source_id, "stale");
+  assert.equal(fs.existsSync(path.join(root, "data", "queue", "expired")), false);
 
   const tsx = path.join(builder, "node_modules", "tsx", "dist", "cli.mjs");
   const qualify = path.join(builder, "qualify.ts");
@@ -77,9 +73,9 @@ try {
   assert.match(complete, /Built 2 prompts/);
 
   run("git", ["add", "-A", "data/queue"]);
-  const normalMoves = run("git", ["diff", "--cached", "--no-renames", "--name-status", "--", "data/queue/pending"]);
-  assert.match(normalMoves, /^D\s/m);
-  assert.doesNotMatch(normalMoves, /^[AM]\s/m);
+  const deletions = run("git", ["diff", "--cached", "--no-renames", "--name-status", "--", "data/queue/pending"]);
+  assert.match(deletions, /^D\s/m);
+  assert.doesNotMatch(deletions, /^[AM]\s/m);
   write(pending, "older", { ...tip("older", "2026-10-30T22:00:00Z"), source_name: "rewritten" });
   run("git", ["add", "-A", "data/queue"]);
   const rewritten = run("git", ["diff", "--cached", "--no-renames", "--name-status", "--", "data/queue/pending"]);

@@ -86,12 +86,12 @@ Handles URL + fingerprint dedup and JSONL compaction; records this batch's added
 
 Criteria + format: `skills/remember-as-you-go/SKILL.md`. Per-source liveness findings (dead handle, wrong account, stale site) belong in `source/manifest.json` status notes — record one short LEARNINGS entry naming the source and evidence so a maintainer can update the manifest, then move on. Dedup against existing entries before appending below the `<!-- entries below this line; newest first -->` marker.
 
-## Step 6 — Archive consumed tips
+## Step 6 — Consume tips
 
-Move every tip file this batch processed from the pending queue into the processed archive, whether or not it produced an event (a duplicate/dead/off-topic candidate still counts as processed — never leave it in `pending/` to be rescanned forever). The helper validates and stages the moves:
+Delete every tip file this batch processed from the pending queue, whether or not it produced an event (a duplicate/dead/off-topic candidate still counts as processed — never leave it in `pending/` to be rescanned forever). The helper validates and stages the deletions:
 
 ```bash
-bash builder/runtime/archive-tips.sh ${queueFilesBash}
+bash builder/runtime/consume-tips.sh ${queueFilesBash}
 ```
 
 Expected queue files for this batch:
@@ -102,7 +102,7 @@ ${queueFilesList}
 **Never open a pull request. Never use `gh pr create` or any equivalent. If pushing fails after retries, exit 1.**
 
 `submit.sh` owns the commit message, the git identity, and the push. Run it — never `git commit`, `git config user.*`, or `git push` by hand. A commit made outside it lands on `main` under the wrong identity and defeats `.github/workflows/audit-bot-commits.yml`.
-Do not recreate or stage files under `data/queue/pending/` after archiving; `submit.sh` rejects that state.
+Do not recreate or stage additions or modifications under `data/queue/pending/` after consuming tips; `submit.sh` rejects that state.
 
 ```bash
 bash builder/runtime/submit.sh ${yearMonth} ${extractionDate} ${batchNum} ${totalBatches} batch
@@ -118,10 +118,10 @@ rm -rf "$WORK_DIR"
 
 This run is unattended — nobody will see or answer a question you ask. On ANY unrecoverable failure (init.sh's token check fails, validation fails, submit.sh exhausts its push retries, or anything else that leaves you unable to proceed): **stop and end your turn immediately** reporting what failed and why. Do NOT try alternative credentials, do NOT attempt `gh auth login` or any other workaround, and do NOT ask a question and wait for a reply. Ending your turn cleanly on failure is what allows this run to be marked FAILED and retried — the tips stay in `pending/` untouched (Step 6 never ran) so nothing is lost.
 
-- **Candidate fails** (unreachable, duplicate, off-topic): log to `$WORK_DIR/$source_id/notes.md`, continue with the next candidate/tip. Still archive the tip in Step 6.
+- **Candidate fails** (unreachable, duplicate, off-topic): log to `$WORK_DIR/$source_id/notes.md`, continue with the next candidate/tip. Still consume the tip in Step 6.
 - **Validation fails**: exit 1 without committing, end your turn.
 - **Push fails**: `submit.sh` retries 5× with jitter, then exits 1. No PRs, ever. End your turn — do not try to fix the token yourself.
-- **Zero events**: `submit.sh` still commits the Step 6 archive-move if any tips were processed; it only skips the commit if literally nothing changed.
+- **Zero events**: `submit.sh` still commits the Step 6 tip deletions if any tips were processed; it only skips the commit if literally nothing changed.
 
 ## Quality bar
 

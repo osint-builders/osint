@@ -70,15 +70,10 @@ export interface QualifyPlan {
 
 function loadPendingTips(repoRoot: string): LoadedTip[] {
   const pendingDir = path.join(repoRoot, "data", "queue", "pending");
-  const processedDir = path.join(repoRoot, "data", "queue", "processed");
   if (!fs.existsSync(pendingDir)) return [];
   const files = fs.readdirSync(pendingDir).filter((file) => file.endsWith(".json")).sort();
   const tips: LoadedTip[] = [];
   for (const file of files) {
-    if (fs.existsSync(path.join(processedDir, file))) {
-      console.warn(`Skipping duplicate pending tip already in processed/: ${file}`);
-      continue;
-    }
     const tip = parseTip(file, fs.readFileSync(path.join(pendingDir, file), "utf-8"));
     tips.push({ tip, relPath: path.join("data", "queue", "pending", file) });
   }

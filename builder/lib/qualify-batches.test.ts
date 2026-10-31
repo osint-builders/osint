@@ -5,13 +5,11 @@ import * as os from "node:os";
 import * as path from "node:path";
 import { prepareQualifyBatches } from "./qualify-batches";
 
-function fixture(): { root: string; pending: string; processed: string; cleanup(): void } {
+function fixture(): { root: string; pending: string; cleanup(): void } {
   const prefix = path.join(os.tmpdir(), "osint-qualify-batches-");
   const root = fs.mkdtempSync(prefix);
   const pending = path.join(root, "data", "queue", "pending");
-  const processed = path.join(root, "data", "queue", "processed");
   fs.mkdirSync(pending, { recursive: true });
-  fs.mkdirSync(processed, { recursive: true });
   fs.mkdirSync(path.join(root, "source", "sources"), { recursive: true });
   fs.writeFileSync(path.join(root, "source", "manifest.json"), JSON.stringify({
     sources: [{ id: "fixture", name: "Fixture Source", file: "sources/fixture.md", status: "testing" }],
@@ -20,7 +18,6 @@ function fixture(): { root: string; pending: string; processed: string; cleanup(
   return {
     root,
     pending,
-    processed,
     cleanup: () => {
       if (!root.startsWith(prefix)) throw new Error("Unexpected test cleanup path");
       fs.rmSync(root, { recursive: true, force: true });
@@ -61,11 +58,9 @@ test("prepares newest tips within the batch cap and renders complete prompts", (
   }
 });
 
-test("skips an already processed duplicate and names a malformed pending file", () => {
-  const { root, pending, processed, cleanup } = fixture();
+test("rejects a malformed pending file instead of silently skipping it", () => {
+  const { root, pending, cleanup } = fixture();
   try {
-    writeTip(processed, "duplicate", "2026-10-01T00:00:00Z");
-    fs.writeFileSync(path.join(pending, "duplicate.json"), '{"source_id":"fixture","urls":[]}');
     writeTip(pending, "valid", "2026-10-02T00:00:00Z");
     assert.equal(prepareQualifyBatches(root, 3, 10).pendingTipCount, 1);
     fs.writeFileSync(path.join(pending, "invalid.json"), '{"source_id":"fixture","urls":[]}');

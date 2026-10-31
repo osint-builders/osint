@@ -25,9 +25,8 @@ bash builder/runtime/git-identity.sh
 git add "data/events/$YEAR_MONTH/$DATE.jsonl" "LEARNINGS.md"
 
 if [ "$LABEL" = "batch" ]; then
-  # A prior agent committed rewritten copies of already-processed tips back
-  # into pending/, blocking every later qualify run. A batch may only remove
-  # pending paths; additions and modifications are never valid here.
+  # A batch consumes pending tips by deleting their tracked files. Additions
+  # and modifications would leave work in the queue under a misleading name.
   INVALID_PENDING=$(git diff --cached --no-renames --name-status -- data/queue/pending \
     | awk '$1 != "D" { print }')
   if [ -n "$INVALID_PENDING" ]; then
@@ -35,12 +34,6 @@ if [ "$LABEL" = "batch" ]; then
     echo "$INVALID_PENDING" >&2
     exit 1
   fi
-  while IFS= read -r pending; do
-    if [ -f "data/queue/processed/${pending##*/}" ]; then
-      echo "ERROR: tip exists in both pending/ and processed/: ${pending##*/}" >&2
-      exit 1
-    fi
-  done < <(find data/queue/pending -maxdepth 1 -name '*.json' -type f)
 fi
 
 if git diff --cached --quiet; then

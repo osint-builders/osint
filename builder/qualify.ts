@@ -8,7 +8,7 @@
  * and spawns one short-lived Warp cloud agent per batch via oz-agent-sdk.
  * Each agent does the LLM-heavy work (translate, extract, E-PRIME, geocode,
  * enrich, confidence) for just its batch of tips, then commits results and
- * moves the consumed tip files from pending/ to processed/.
+ * removes consumed tip files from the pending queue.
  *
  * Shares spawn/poll/cancel infrastructure (including the per-run deadline
  * and BLOCKED handling) with builder/index.ts via builder/lib/agent-runner.
