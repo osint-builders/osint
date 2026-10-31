@@ -148461,13 +148461,11 @@
     "date_event": "2026-10-30T12:00:00Z",
     "date_published": "2026-10-30T23:18:22Z",
     "geo": {
-      "lat": 50.4500336,
-      "lon": 30.5241361,
-      "location_name": "Kyiv, Ukraine",
-      "precision": "city",
-      "country": "Ukraine",
-      "region": "Kyiv",
-      "city": "Kyiv"
+      "lat": 49.4871968,
+      "lon": 31.2718321,
+      "location_name": "Ukraine",
+      "precision": "country",
+      "country": "Ukraine"
     },
     "topics": [
       "ukraine",
@@ -148484,42 +148482,8 @@
         "label": "BBC News article"
       }
     ],
-    "link_preview_image": "https://www.bbc.com/news/special/2024_images/ukraine_missile.jpg",
+    "link_preview_image": "https://ichef.bbci.co.uk/news/1024/branded_news/ea75/live/f93e2820-d4b7-11f1-a701-fddedf244c16.jpg",
     "image_origin": "article"
-  },
-  {
-    "id": "evt_109835884718723072",
-    "title": "NATO Must Adapt Training to Modern Ukraine Warfare Lessons",
-    "summary": "NATO military training doctrine requires urgent modernization to reflect lessons from the Ukraine war, incorporating drone warfare, electronic warfare, and rapid tactical changes. Expert analysis calls for continuous integration of battlefield experience into training and procurement.",
-    "date_event": "2026-10-29T10:00:00Z",
-    "date_published": "2026-10-30T22:30:00Z",
-    "geo": {
-      "lat": 50.8467372,
-      "lon": 4.352493,
-      "location_name": "Brussels, Belgium",
-      "precision": "city",
-      "country": "Belgium",
-      "region": "Brussels",
-      "city": "Brussels"
-    },
-    "topics": [
-      "nato",
-      "defense",
-      "training",
-      "ukraine",
-      "military-doctrine",
-      "electronic-warfare"
-    ],
-    "confidence": 0.75,
-    "source_name": "cepa",
-    "links": [
-      {
-        "url": "https://cepa.org/article/nato-stop-training-for-yesterdays-wars/",
-        "label": "CEPA article"
-      }
-    ],
-    "link_preview_image": "https://cepa.org/wp-content/uploads/2026/10/nato-training.jpg",
-    "image_origin": "source"
   },
   {
     "id": "evt_109828239936991232",
