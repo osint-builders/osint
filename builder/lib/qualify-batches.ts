@@ -2,7 +2,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { DateTime } from "luxon";
 import { AgentJob, assertPromptSize } from "./agent-runner";
-import { getOriginUrl, loadProcessableSources, readSourceFile, Source } from "./source-catalog";
+import { getOriginUrl, loadManifestSources, readSourceFile, Source } from "./source-catalog";
 import { renderTemplate } from "./prompt-template";
 
 interface TipCandidate {
@@ -47,6 +47,9 @@ function parseTip(file: string, text: string): Tip {
   if (!Number.isFinite(start) || !Number.isFinite(end) || start >= end) {
     throw new Error(`Invalid pending tip ${file}: scan window must have ordered timestamps`);
   }
+  if (!Number.isFinite(Date.parse(tip.identified_at!))) {
+    throw new Error(`Invalid pending tip ${file}: identified_at must be a valid timestamp`);
+  }
   if (!Array.isArray(tip.candidates) || tip.candidates.length < 1 || tip.candidates.length > 3) {
     throw new Error(`Invalid pending tip ${file}: candidates must contain 1-3 items`);
   }
@@ -78,9 +81,9 @@ function loadPendingTips(repoRoot: string): LoadedTip[] {
     tips.push({ tip, relPath: path.join("data", "queue", "pending", file) });
   }
   return tips.sort((a, b) => {
-    const aTime = Date.parse(a.tip.window_end || a.tip.identified_at || "") || 0;
-    const bTime = Date.parse(b.tip.window_end || b.tip.identified_at || "") || 0;
-    return bTime - aTime || a.relPath.localeCompare(b.relPath);
+    const windowOrder = Date.parse(b.tip.window_end) - Date.parse(a.tip.window_end);
+    const identifiedOrder = Date.parse(b.tip.identified_at) - Date.parse(a.tip.identified_at);
+    return windowOrder || identifiedOrder || a.relPath.localeCompare(b.relPath);
   });
 }
 
@@ -124,7 +127,7 @@ function buildQualifyPrompt(
       const source = sourcesById.get(tip.source_id);
       const sourceContext = source
         ? readSourceFile(repoRoot, source)
-        : `(source ${tip.source_id} no longer processable — use queued name: ${tip.source_name})`;
+        : `(source ${tip.source_id} no longer registered — use queued name: ${tip.source_name})`;
       const candidateLines = tip.candidates
         .map((candidate) =>
           `  - URL: ${candidate.url}\n    Published: ${candidate.published_at}\n    Snippet: ${candidate.snippet || "(none captured — fetch the URL for full content)"}`
@@ -168,7 +171,7 @@ export function prepareQualifyBatches(
   if (selected.length === 0) {
     return { pendingTipCount: pendingTips.length, selectedTipCount: 0, originUrl, jobs: [] };
   }
-  const sourcesById = new Map(loadProcessableSources(repoRoot).map((source) => [source.id, source]));
+  const sourcesById = new Map(loadManifestSources(repoRoot).map((source) => [source.id, source]));
   const batches = partitionTips(selected, batchSize);
   const executionTime = DateTime.now().setZone("UTC");
   const jobs = batches.map((batch, index) => {

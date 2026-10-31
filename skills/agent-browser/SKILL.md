@@ -20,15 +20,27 @@ Web/tweet scraping, form interaction, screenshot capture, JS execution, any sour
 
 ## Entry-point Commands
 
+The active Qualify environment does not preinstall this optional tool. When
+`curl` cannot retrieve the needed evidence, use the project's on-demand path:
+
+```bash
+npx --yes agent-browser@0.27.0 install
+npx --yes agent-browser@0.27.0 open https://example.com
+```
+
+Keep this version pinned for the Node 20 environment.
+If npm or the browser install fails, record the failure in the tip notes and
+reject that candidate; do not block the batch or attempt interactive repair.
+
 Core workflow:
 
 ```bash
-agent-browser open https://example.com
-agent-browser snapshot -i                   # interactive elements + refs
-agent-browser fill @e2 "value"
-agent-browser click @e1
-agent-browser screenshot result.png
-agent-browser close
+npx --yes agent-browser@0.27.0 open https://example.com
+npx --yes agent-browser@0.27.0 snapshot -i   # interactive elements + refs
+npx --yes agent-browser@0.27.0 fill @e2 "value"
+npx --yes agent-browser@0.27.0 click @e1
+npx --yes agent-browser@0.27.0 screenshot result.png
+npx --yes agent-browser@0.27.0 close
 ```
 
 Key commands:

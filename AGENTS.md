@@ -63,9 +63,11 @@ Human overview: [`README.md`](README.md). Schema: [`data/SCHEMA.md`](data/SCHEMA
 ### Dedup
 - `builder/runtime/merge-events.sh` dedups per bucket by `links[0].url` + content fingerprint (sha256 of title|source|date|url).
 - `data/scripts/dedupe-events.js` re-sweeps recent day files after each run (embeddings.yml) — parallel buckets cannot see each other's in-flight pushes.
+- Parallel batches may edit the same daily file or `LEARNINGS.md`. `submit.sh` reapplies a conflicting batch's validated output on the latest `main` before retrying.
 
 ### CLI tooling
 Cloud agent env image (`WARP_ENVIRONMENT_ID`) provides the base CLIs; `agent-browser` installs on demand only when a page requires it. Repo carries no vendored binaries. `identify.yml` runs on the bare GitHub Actions runner instead (curl/jq/python3 only, all preinstalled) — it never touches the Warp environment image.
+`builder/runtime/init.sh --check-runtime` verifies CLI prerequisites without secrets; normal agent initialization checks those prerequisites and token authentication. Only a push proves write permission. Verify an environment change with a live one-batch Qualify run in Oz.
 Install list: [`README.md`](README.md#warp-cloud-agent-environment-image). Adding a skill that needs a new CLI → update the list + rebuild the image in the same change.
 
 ### `LEARNINGS.md`

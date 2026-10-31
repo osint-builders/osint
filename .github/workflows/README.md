@@ -7,12 +7,14 @@ See the top-level [README.md](../../README.md) for architecture and secrets setu
 - Triggers: daily at **09:00 America/New_York** (`cron: '0 9 * * *'` with an IANA `timezone:`, so DST is handled and it does not drift), plus `workflow_dispatch`.
 - This is the only scheduled entry point for collection — `qualify.yml` chains off it via `workflow_run`. Do not add a schedule to `qualify.yml` too, or every tip gets processed twice.
 - Runs `builder/runtime/identify.sh` directly on the GitHub Actions runner — **no Warp agent, no LLM spend**. Cheap curl/jq/python3 scan across every processable source for the last hour; writes tip records to `data/queue/pending/` and commits with the ephemeral `github.token` (no `OSINT_GH_TOKEN` needed for this stage).
+- Logs attempted, successful, no-hit, failed, skipped, and tip counts. Individual fetch/parser failures identify the source; an all-failed scan exits nonzero instead of reporting success.
 
 ## qualify.yml — "Qualify OSINT Tips" (Tip & Queue, stage 2)
 
 - Triggers: `workflow_dispatch`, plus `workflow_run` after identify.yml completes. Intentionally has **no** `schedule:` of its own — the daily cadence lives on identify.yml and reaches this stage through the chain.
 - Before dispatch, the job deletes pending tips older than 24 hours. Queue records are temporary handoff data, not retained archives.
 - Job `qualify` runs `builder/qualify.ts`, which takes the newest pending tips in batches of 3 (`QUALIFY_BATCH_SIZE` override), capped at 10 agents per run (`QUALIFY_MAX_BATCHES` override). Each Warp Cloud Agent qualifies, translates, geocodes, attaches an image, and validates new events against `builder/prompts/qualified-event-contract.md`, then deletes consumed pending tips.
+- Each agent clones a fresh checkout and runs runtime prerequisites before qualification. If parallel batches conflict on a daily event file or `LEARNINGS.md`, `submit.sh` reapplies the validated batch on the latest `main` and retries the push.
 - Shares spawn/poll/cancel infrastructure with `collect` via `builder/lib/agent-runner.ts`, including the 10-minute per-run deadline and BLOCKED-state cancellation. Qualify, legacy collection, embeddings, and the data release share the `osint-data-writers` concurrency group so event and index writes serialize.
 - Job `alert-on-failure` opens or updates a **"Qualify workflow failing"** issue on failure.
 
@@ -48,7 +50,7 @@ Drift detection on pushes to main. The workflow also declares a `pull_request` t
 1. Prompt snapshot (`builder/prompts/collection-prompt.md` matches the pinned fixture)
 2. Builder TypeScript typecheck, agent lifecycle tests, and queue recovery
 3. Recent committed-event baseline validation and new-event contract tests; some older legacy IDs remain outside the recent baseline
-4. Source-index, consumed-tip deletion, image-enrichment, push-retry, retention, and release-consistency regressions
+4. Offline Identify adapter coverage, Warp CLI preflight, consumed-tip deletion, image enrichment, concurrent submit, source-index, retention, and release-consistency regressions
 5. `skills/README.md` regeneration and shell syntax/lint checks
 
 ## audit-bot-commits.yml — "Audit Bot Commits"

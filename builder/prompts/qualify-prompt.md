@@ -15,9 +15,12 @@ Process every tip in this batch. Each carries 1-3 candidate URLs. Read `builder/
 ## Step 0 — Clone
 
 ```bash
-if [ ! -d "osint/.git" ]; then git clone ${originUrl} osint; fi
-cd osint && REPO_ROOT=$(pwd)
+RUN_REPO_DIR=$(mktemp -d "${TMPDIR:-/tmp}/osint-qualify-XXXXXX")
+git clone ${originUrl} "$RUN_REPO_DIR"
+cd "$RUN_REPO_DIR" && REPO_ROOT=$(pwd)
 ```
+
+Use this fresh clone for the entire batch so the queued tip files and helpers match the latest `main`.
 
 ## Tips (${tipCount} — process ALL)
 
@@ -36,11 +39,11 @@ export WORK_DIR
 
 For each tip above (create `mkdir -p "$WORK_DIR/$source_id"` first, using that tip's `source_id`):
 
-1. **Fetch full content** for each candidate URL. The queued snippet may be truncated or empty. Use `curl` first; use `agent-browser` only when needed (`skills/agent-browser/SKILL.md`). If neither yields enough evidence, reject and log the candidate.
+1. **Fetch full content** for each candidate URL. The queued snippet may be truncated or empty. Use `curl` first. If a real browser is necessary, install and run `agent-browser` on demand as directed in `skills/agent-browser/SKILL.md`; it is not preinstalled. If installation or retrieval fails, log why and reject that candidate.
 2. **Apply the event and topical gates, then translate** per `builder/prompts/qualified-event-contract.md`. Require a concrete new reported action or development; reject analysis/opinion that only discusses an ongoing situation, plus ordinary politics, crime, unverifiable claims, and unlocatable reports. Translate title, summary, and body fully into English before writing JSON.
 3. **Write one JSON World Event Entity per accepted candidate** using `data/SCHEMA.md` and the typed qualified-event contract:
    - `id`: `EVENT_ID=$(node data/scripts/snowflake.js --worker ${batchNum})` — globally unique across parallel batches.
-   - `source.name`: exact `#` header text from the source context. No variants.
+   - `source.name`: exact `#` header text from the source context. If the source file has been removed, use the tip's queued `source_name`. No variants.
    - `date_published`: use the candidate's `Published` timestamp when available; otherwise the fetched page's own timestamp.
    - `source_window`: copy this tip's displayed window into UTC `start`/`end`; reject a candidate published outside it.
    - `language: "en"`, the approved `category`, `audience`, and a concrete `allied_relevance` explanation.

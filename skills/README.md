@@ -8,7 +8,7 @@ Procedural references for the cloud agent. Each skill lives at `skills/<name>/SK
 
 | Name | Description | Lines |
 |---|---|---|
-| [`agent-browser`](agent-browser/SKILL.md) | Native Rust CLI for browser automation by Vercel Labs. Automate web navigation, interact with page elements, extract ... | 60 |
+| [`agent-browser`](agent-browser/SKILL.md) | Native Rust CLI for browser automation by Vercel Labs. Automate web navigation, interact with page elements, extract ... | 72 |
 | [`create-source`](create-source/SKILL.md) 🛠 | Author concise source specs and manifest entries for the active Identify and Qualify pipeline. Developer tool, not lo... | 43 |
 | [`data-to-markdown`](data-to-markdown/SKILL.md) | Transform raw scraped or API data into clean, semantic Markdown for the `contents` field of a World Event Entity. Enf... | 55 |
 | [`geocoding`](geocoding/SKILL.md) | Resolve evidence-grounded event locations to coordinates with the repository geocoding helper; reject candidates with... | 40 |

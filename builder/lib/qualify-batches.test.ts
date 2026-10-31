@@ -25,14 +25,14 @@ function fixture(): { root: string; pending: string; cleanup(): void } {
   };
 }
 
-function writeTip(directory: string, name: string, end: string): void {
+function writeTip(directory: string, name: string, end: string, identifiedAt = end): void {
   fs.writeFileSync(path.join(directory, `${name}.json`), JSON.stringify({
     source_id: "fixture",
     source_name: "Fixture Source",
     type: "webpage",
     window_start: new Date(Date.parse(end) - 60 * 60_000).toISOString(),
     window_end: end,
-    identified_at: end,
+    identified_at: identifiedAt,
     candidates: [{ url: `https://example.com/${name}`, snippet: name, published_at: end }],
   }));
 }
@@ -51,8 +51,41 @@ test("prepares newest tips within the batch cap and renders complete prompts", (
     assert.match(plan.jobs[1].prompt, /https:\/\/example.com\/middle/);
     assert.doesNotMatch(plan.jobs[0].prompt + plan.jobs[1].prompt, /example.com\/oldest/);
     assert.match(plan.jobs[0].prompt, /Source context body/);
-    assert.doesNotMatch(plan.jobs[0].prompt, /\$\{[a-zA-Z]/);
+    assert.doesNotMatch(plan.jobs[0].prompt, /\$\{[a-zA-Z_][a-zA-Z0-9_]*\}/);
     assert.deepEqual(plan.jobs.map((job) => job.itemCount), [1, 1]);
+  } finally {
+    cleanup();
+  }
+});
+
+test("uses identification time to select the newest tips within one scan window", () => {
+  const { root, pending, cleanup } = fixture();
+  try {
+    const windowEnd = "2026-10-03T00:00:00Z";
+    writeTip(pending, "a-oldest", windowEnd, "2026-10-03T00:00:01Z");
+    writeTip(pending, "m-middle", windowEnd, "2026-10-03T00:00:02Z");
+    writeTip(pending, "z-newest", windowEnd, "2026-10-03T00:00:03Z");
+
+    const plan = prepareQualifyBatches(root, 1, 2);
+    assert.equal(plan.selectedTipCount, 2);
+    assert.match(plan.jobs[0].prompt, /example.com\/z-newest/);
+    assert.match(plan.jobs[1].prompt, /example.com\/m-middle/);
+    assert.doesNotMatch(plan.jobs[0].prompt + plan.jobs[1].prompt, /example.com\/a-oldest/);
+  } finally {
+    cleanup();
+  }
+});
+
+test("keeps source context for a tip whose source was deactivated after Identify", () => {
+  const { root, pending, cleanup } = fixture();
+  try {
+    fs.writeFileSync(path.join(root, "source", "manifest.json"), JSON.stringify({
+      sources: [{ id: "fixture", name: "Fixture Source", file: "sources/fixture.md", status: "inactive" }],
+    }));
+    writeTip(pending, "deactivated", "2026-10-03T00:00:00Z");
+    const plan = prepareQualifyBatches(root, 1, 1);
+    assert.match(plan.jobs[0].prompt, /Source context body/);
+    assert.doesNotMatch(plan.jobs[0].prompt, /no longer registered/);
   } finally {
     cleanup();
   }
@@ -72,6 +105,16 @@ test("rejects a malformed pending file instead of silently skipping it", () => {
       candidates: [{ url: "https://example.com/item", snippet: "item", published_at: "2026-10-02T00:00:00Z" }],
     }));
     assert.throws(() => prepareQualifyBatches(root, 3, 10), /window_start/);
+  } finally {
+    cleanup();
+  }
+});
+
+test("rejects a pending tip with an invalid identification timestamp", () => {
+  const { root, pending, cleanup } = fixture();
+  try {
+    writeTip(pending, "invalid-time", "2026-10-03T00:00:00Z", "not-a-time");
+    assert.throws(() => prepareQualifyBatches(root, 1, 1), /identified_at must be a valid timestamp/);
   } finally {
     cleanup();
   }

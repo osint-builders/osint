@@ -131,7 +131,7 @@ Set these in **Settings → Secrets and variables → Actions**:
 |---|---|---|
 | `WARP_API_KEY` | secret | Authenticates `oz-agent-sdk` against Warp. Used by `qualify.yml`/legacy `collection.yml` only — `identify.yml` never touches Warp. |
 | `WARP_ENVIRONMENT_ID` | secret | UID of the pre-built Warp Cloud Agent environment image (see below). |
-| `OSINT_GH_TOKEN` *or* `GH_TOKEN` | secret | Fine-grained PAT with `Contents: write` on this repo. The **Warp environment** (not GitHub Actions) needs this — `builder/runtime/init.sh` checks it fast, before any qualify work starts. `identify.yml` pushes with the ephemeral `github.token` instead and needs no PAT at all. |
+| `OSINT_GH_TOKEN` *or* `GH_TOKEN` | secret | Fine-grained PAT with `Contents: write` on this repo. The **Warp environment** (not GitHub Actions) needs this — `builder/runtime/init.sh` checks authentication and read access before qualification; the push confirms write access. `identify.yml` uses the ephemeral `github.token` instead. |
 | `TWITTER_BEARER_TOKEN` | secret | Optional but recommended. Used by both `identify.yml` (tip scan) and the qualify agent; Twitter sources produce no tips without it. |
 | `PARALLEL_AGENT_COUNT` | variable | Optional. Legacy `collection.yml` bucket-count override; unset → auto-sized at ~12 sources/agent. |
 | `QUALIFY_BATCH_SIZE` | variable | Optional. Tips per qualify agent; unset → defaults to 3 (`builder/qualify.ts`). |
@@ -140,7 +140,7 @@ Set these in **Settings → Secrets and variables → Actions**:
 
 ### Key rotation / credit exhaustion
 
-When Warp credits run out, the `WARP_API_KEY` expires, or the `OSINT_GH_TOKEN` push token expires, agent spawns/pushes fail, the orchestrator exits non-zero, and the `alert-on-failure` job opens (or updates) a **"Qualify workflow failing"** (or legacy **"Collection workflow failing"**) issue. `builder/runtime/init.sh` checks the push token up front so an expired `OSINT_GH_TOKEN` surfaces in seconds, not after a full batch of work. To recover: rotate the relevant secret (`oz secret update OSINT_GH_TOKEN --team --value` for the push token; the Warp dashboard for `WARP_API_KEY`), then re-run via **Actions → Qualify OSINT Tips → Run workflow**.
+When Warp credits run out, the `WARP_API_KEY` expires, or the `OSINT_GH_TOKEN` push token expires, agent spawns/pushes fail, the orchestrator exits non-zero, and the `alert-on-failure` job opens (or updates) a **"Qualify workflow failing"** (or legacy **"Collection workflow failing"**) issue. `builder/runtime/init.sh` checks token authentication up front, so an expired token surfaces in seconds; only an actual push proves write access. To recover: rotate the relevant secret (`oz secret update OSINT_GH_TOKEN --team --value` for the push token; the Warp dashboard for `WARP_API_KEY`), then re-run via **Actions → Qualify OSINT Tips → Run workflow**.
 
 ### Warp Cloud Agent environment image
 
@@ -150,7 +150,9 @@ When Warp credits run out, the `WARP_API_KEY` expires, or the `OSINT_GH_TOKEN` p
 apt-get update && apt-get install -y jq python3 wget
 ```
 
-`agent-browser` is deliberately **not** a setup command. `npm install -g agent-browser && agent-browser install` (which downloads a full Chrome for Testing binary) proved unreliable as a mandatory pre-run step — a transient failure there took down 100% of qualify batches even though most tips never need a real browser (Twitter/Reddit/Telegram/webpage content is fetchable via the API/`curl` paths in `identify.sh` and the prompt templates). Agents install it themselves, on demand, only when `curl` genuinely isn't enough — see `skills/agent-browser/SKILL.md` and the "Fetch full content" step in `builder/prompts/qualify-prompt.md` / `collection-prompt.md`.
+`builder/runtime/init.sh --check-runtime` performs a secret-free CLI preflight. Normal Qualify initialization runs the same checks inside each Oz agent, then checks token authentication. After changing the Warp image or these runtime scripts, dispatch a one-batch Qualify run and verify its agent completes in Oz; local checks alone do not exercise `WARP_ENVIRONMENT_ID`.
+
+`agent-browser` is deliberately **not** a setup command. A mandatory Chrome download previously failed and stopped every qualify batch. When `curl` cannot retrieve enough evidence, agents run `npx --yes agent-browser@0.27.0 install` on demand and use that pinned CLI; browser failure rejects only the affected candidate. Version 0.27.0 runs under Node 20, the minimum checked by `init.sh`; the next release, 0.28.0, declares Node 24 and pnpm 11 requirements. See `skills/agent-browser/SKILL.md` and the "Fetch full content" step in `builder/prompts/qualify-prompt.md`.
 
 Bake these env vars into the environment as Warp Team-scope secrets:
 

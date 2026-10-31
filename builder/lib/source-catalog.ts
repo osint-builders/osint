@@ -18,10 +18,14 @@ interface Manifest {
   sources: Source[];
 }
 
-export function loadProcessableSources(repoRoot: string): Source[] {
+export function loadManifestSources(repoRoot: string): Source[] {
   const manifestPath = path.join(repoRoot, "source", "manifest.json");
   const manifest: Manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
-  return manifest.sources.filter(
+  return manifest.sources;
+}
+
+export function loadProcessableSources(repoRoot: string): Source[] {
+  return loadManifestSources(repoRoot).filter(
     (source) => !EXCLUDED_STATUSES.has((source.status ?? "").toLowerCase())
   );
 }

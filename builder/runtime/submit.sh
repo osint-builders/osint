@@ -53,17 +53,59 @@ REPO_PATH=$(git remote get-url origin | sed -E 's|^git@github\.com:|https://gith
 PUSH_URL="https://x-access-token:$PUSH_TOKEN@github.com/$REPO_PATH.git"
 REDACT='s|https://[^@]+@|https://<redacted>@|g'
 
+# Parallel batches can append to the same day file and prepend learnings from
+# the same base commit. Rebase cannot resolve those overlapping edits by retry.
+# Reapply this batch's already-validated raw events and consumed tips on the
+# newest main, then make a new linear commit.
+reconcile_after_conflict() {
+  local original_head base_learnings local_learnings latest_tip
+  local -a consumed=() still_pending=()
+  original_head=$(git rev-parse HEAD)
+  base_learnings="$WORK_DIR/.submit-base-learnings"
+  local_learnings="$WORK_DIR/.submit-local-learnings"
+  git show "$original_head^:LEARNINGS.md" > "$base_learnings"
+  git show "$original_head:LEARNINGS.md" > "$local_learnings"
+  mapfile -t consumed < <(git diff-tree --no-commit-id --name-only --diff-filter=D -r "$original_head" -- data/queue/pending/)
+
+  git reset --hard FETCH_HEAD
+  bash builder/runtime/merge-events.sh "$YEAR_MONTH" "$DATE"
+  if ! cmp -s "$base_learnings" "$local_learnings"; then
+    git merge-file --union LEARNINGS.md "$base_learnings" "$local_learnings"
+  fi
+  for latest_tip in "${consumed[@]}"; do
+    [ -f "$latest_tip" ] && still_pending+=("$latest_tip")
+  done
+  if [ "${#still_pending[@]}" -gt 0 ]; then
+    bash builder/runtime/consume-tips.sh "${still_pending[@]}"
+  fi
+  git add "data/events/$YEAR_MONTH/$DATE.jsonl" LEARNINGS.md
+  if git diff --cached --quiet; then
+    echo "submit: batch output already present on main."
+    return 0
+  fi
+  local reconciled_added
+  reconciled_added=$(cat "$WORK_DIR/.added-count")
+  git commit -m "Collect $reconciled_added world events on $DATE ($LABEL $BUCKET/$TOTAL)
+
+$(date -u +%Y-%m-%dT%H:%M:%SZ) | [skip ci]"
+}
+
 PUSHED=0
 for ATTEMPT in 1 2 3 4 5; do
   if ! git pull --rebase "$PUSH_URL" main 2>&1 | sed -E "$REDACT"; then
-    # A failed rebase may leave conflict state behind. Reset this disposable
-    # agent clone before another attempt; persistent conflicts still fail 5x.
-    git rebase --abort >/dev/null 2>&1 || true
-    echo "Pull attempt $ATTEMPT/5 failed."
-    if [ "$ATTEMPT" -eq 5 ]; then break; fi
-    JITTER=$(( RANDOM % 9 + 2 ))
-    sleep "$JITTER"
-    continue
+    REBASE_MERGE=$(git rev-parse --git-path rebase-merge)
+    REBASE_APPLY=$(git rev-parse --git-path rebase-apply)
+    if [ -d "$REBASE_MERGE" ] || [ -d "$REBASE_APPLY" ]; then
+      git rebase --abort
+      echo "Pull attempt $ATTEMPT/5 conflicted; reapplying batch on latest main."
+      reconcile_after_conflict
+    else
+      echo "Pull attempt $ATTEMPT/5 failed."
+      if [ "$ATTEMPT" -eq 5 ]; then break; fi
+      JITTER=$(( RANDOM % 9 + 2 ))
+      sleep "$JITTER"
+      continue
+    fi
   fi
   # The push pipeline belongs in an `if`: with errexit + pipefail, a plain
   # failed pipeline exits before the retry loop can inspect its status.
@@ -80,4 +122,5 @@ if [ "$PUSHED" -eq 0 ]; then
   echo "ERROR: Push to main failed after 5 attempts. Do NOT open a pull request — exit and let the next scheduled run collect fresh events." >&2
   exit 1
 fi
+ADDED=$(cat "$WORK_DIR/.added-count" 2>/dev/null || echo 0)
 echo "submit: pushed $ADDED event(s) for $LABEL $BUCKET/$TOTAL."
