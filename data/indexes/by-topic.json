@@ -121,7 +121,7 @@
   },
   {
     "topic": "west-bank",
-    "count": 107
+    "count": 108
   },
   {
     "topic": "casualty",
@@ -232,11 +232,11 @@
     "count": 62
   },
   {
-    "topic": "lebanon",
-    "count": 61
+    "topic": "protest",
+    "count": 62
   },
   {
-    "topic": "protest",
+    "topic": "lebanon",
     "count": 61
   },
   {
@@ -272,20 +272,20 @@
     "count": 50
   },
   {
+    "topic": "france",
+    "count": 50
+  },
+  {
     "topic": "strike",
     "count": 49
   },
   {
-    "topic": "france",
-    "count": 49
+    "topic": "occupation",
+    "count": 48
   },
   {
     "topic": "south-korea",
     "count": 48
-  },
-  {
-    "topic": "occupation",
-    "count": 47
   },
   {
     "topic": "kyiv",
@@ -428,6 +428,10 @@
     "count": 32
   },
   {
+    "topic": "displacement",
+    "count": 32
+  },
+  {
     "topic": "philippine",
     "count": 32
   },
@@ -457,10 +461,6 @@
   },
   {
     "topic": "xi-jinping",
-    "count": 31
-  },
-  {
-    "topic": "displacement",
     "count": 31
   },
   {
@@ -1372,6 +1372,10 @@
     "count": 9
   },
   {
+    "topic": "demolition",
+    "count": 9
+  },
+  {
     "topic": "genocide",
     "count": 9
   },
@@ -1536,10 +1540,6 @@
     "count": 8
   },
   {
-    "topic": "demolition",
-    "count": 8
-  },
-  {
     "topic": "fpv-drone",
     "count": 8
   },
@@ -1609,6 +1609,10 @@
   },
   {
     "topic": "evacuation",
+    "count": 8
+  },
+  {
+    "topic": "hebron",
     "count": 8
   },
   {
@@ -1805,10 +1809,6 @@
   },
   {
     "topic": "interest-rate",
-    "count": 7
-  },
-  {
-    "topic": "hebron",
     "count": 7
   },
   {
@@ -2092,6 +2092,10 @@
     "count": 6
   },
   {
+    "topic": "police",
+    "count": 6
+  },
+  {
     "topic": "trial",
     "count": 6
   },
@@ -2213,6 +2217,10 @@
   },
   {
     "topic": "security-force",
+    "count": 6
+  },
+  {
+    "topic": "civil-unrest",
     "count": 6
   },
   {
@@ -2373,10 +2381,6 @@
   },
   {
     "topic": "adaptation",
-    "count": 5
-  },
-  {
-    "topic": "police",
     "count": 5
   },
   {
@@ -2573,10 +2577,6 @@
   },
   {
     "topic": "fighter-aircraft",
-    "count": 5
-  },
-  {
-    "topic": "civil-unrest",
     "count": 5
   },
   {
@@ -15881,6 +15881,10 @@
   },
   {
     "topic": "helicopter-loss",
+    "count": 1
+  },
+  {
+    "topic": "pari",
     "count": 1
   }
 ]
