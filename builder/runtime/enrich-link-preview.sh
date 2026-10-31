@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Enrich one event JSON object on stdin. API/preview failures stay optional,
-# but image_urls[0] must resolve to an image before this helper succeeds.
+# Enrich one event JSON object on stdin. Reject stale or missing original-report
+# evidence first; API/preview failures stay optional, but image_urls[0] must resolve.
 set -uo pipefail
 
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
@@ -11,6 +11,9 @@ TWITTER_BANNER_CACHE="${TWITTER_BANNER_CACHE:-/tmp/twitter-banner-cache.json}"
 
 if ! event_json=$(jq -ce 'objects' 2>/dev/null); then
   echo 'ERROR: image enrichment requires one JSON object' >&2
+  exit 1
+fi
+if ! printf '%s' "$event_json" | node "$SCRIPT_DIR/verify-original-report.cjs"; then
   exit 1
 fi
 

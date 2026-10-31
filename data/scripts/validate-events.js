@@ -58,6 +58,7 @@ const TYPES = {
   contents: 'string',
   date_published: 'string',
   date_event: ['string', 'null'],
+  original_report: 'object',
   links: 'array',
   image_urls: 'array',
   geo: 'object',

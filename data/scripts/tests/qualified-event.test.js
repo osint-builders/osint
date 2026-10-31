@@ -20,6 +20,7 @@ function event() {
     contents,
     date_published: '2026-10-30T18:00:00Z',
     source_window: { start: '2026-10-30T17:00:00Z', end: '2026-10-30T18:00:00Z' },
+    original_report: { url: 'https://example.org/port-notice', published_at: '2026-10-30T18:00:00Z' },
     links: [{ url: 'https://example.org/port-notice' }],
     image_urls: [DEFAULT_IMAGE_URL],
     image_origin: 'default',
@@ -114,6 +115,42 @@ test('qualified contract rejects events outside the original tip window', () => 
   assert.match(validateQualifiedEvent(invalid).join(' '), /ordered UTC/);
 });
 
+test('qualified contract requires the original report of the new development', () => {
+  const missing = event();
+  delete missing.original_report;
+  assert.match(validateQualifiedEvent(missing).join(' '), /original_report/);
+
+  const stale = event();
+  stale.original_report.published_at = '2026-10-30T16:45:00Z';
+  stale.date_published = stale.original_report.published_at;
+  assert.match(validateQualifiedEvent(stale).join(' '), /original_report.published_at.*outside/);
+
+  const unlinked = event();
+  unlinked.original_report.url = 'https://example.org/other-report';
+  assert.match(validateQualifiedEvent(unlinked).join(' '), /original_report.url.*links/);
+
+  const repostTime = event();
+  repostTime.original_report.published_at = '2026-10-30T17:30:00Z';
+  assert.match(validateQualifiedEvent(repostTime).join(' '), /date_published.*equal/);
+});
+
+test('runtime original-report gate rejects one stale candidate without network access', () => {
+  const helper = path.resolve(__dirname, '..', '..', '..', 'builder', 'runtime', 'verify-original-report.cjs');
+  const run = (candidate) => spawnSync(process.execPath, [helper], {
+    input: JSON.stringify(candidate), encoding: 'utf8',
+  });
+  assert.equal(run(event()).status, 0);
+  const missing = event();
+  delete missing.original_report;
+  assert.equal(run(missing).status, 1);
+  const stale = event();
+  stale.original_report.published_at = '2026-10-30T16:45:00Z';
+  stale.date_published = stale.original_report.published_at;
+  const rejected = run(stale);
+  assert.equal(rejected.status, 1);
+  assert.match(rejected.stderr, /outside this tip's source_window/);
+});
+
 test('qualified contract omits date-only event times and rejects midnight UTC placeholders', () => {
   const withoutOccurrenceTime = event();
   assert.deepEqual(validateQualifiedEvent(withoutOccurrenceTime), []);
@@ -167,7 +204,7 @@ test('validator rejects invalid time windows and non-object JSONL records', () =
 
 test('historical strict validation stays compatible while --qualified adds the gate', () => {
   const historical = event();
-  for (const field of ['source_window', 'language', 'category', 'audience', 'allied_relevance', 'image_origin']) {
+  for (const field of ['source_window', 'original_report', 'language', 'category', 'audience', 'allied_relevance', 'image_origin']) {
     delete historical[field];
   }
   historical.image_urls = [];

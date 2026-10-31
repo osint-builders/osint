@@ -38,6 +38,38 @@ function isRemoteUrl(value) {
   }
 }
 
+function utcTimestamp(value) {
+  return typeof value === 'string' &&
+    /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$/.test(value) &&
+    Number.isFinite(Date.parse(value));
+}
+
+function validateOriginalReport(event) {
+  const issues = [];
+  const report = event.original_report;
+  if (!report || typeof report !== 'object' || Array.isArray(report) ||
+      !isRemoteUrl(report.url) || !utcTimestamp(report.published_at)) {
+    return ["Field 'original_report' must contain a remote source URL and its UTC publication timestamp"];
+  }
+  if (!Array.isArray(event.links) || !event.links.some((link) => link?.url === report.url)) {
+    issues.push("Field 'original_report.url' must also appear in links");
+  }
+  const window = event.source_window;
+  if (!window || !utcTimestamp(window.start) || !utcTimestamp(window.end) ||
+      Date.parse(window.start) >= Date.parse(window.end)) {
+    issues.push("Field 'source_window' must contain ordered UTC timestamps for original_report");
+  } else {
+    const published = Date.parse(report.published_at);
+    if (published < Date.parse(window.start) || published > Date.parse(window.end)) {
+      issues.push("Field 'original_report.published_at' falls outside this tip's source_window");
+    }
+  }
+  if (event.date_published !== report.published_at) {
+    issues.push("Field 'date_published' must equal original_report.published_at");
+  }
+  return issues;
+}
+
 function validateContents(contents, issues) {
   if (typeof contents !== 'string') return;
   const normalized = contents.replace(/\r\n/g, '\n').trim();
@@ -75,9 +107,6 @@ function validateQualifiedEvent(event) {
     issues.push("Field 'id' must use the evt_<snowflake> format for newly qualified events");
   }
   const window = event.source_window;
-  const utcTimestamp = (value) => typeof value === 'string' &&
-    /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$/.test(value) &&
-    Number.isFinite(Date.parse(value));
   if (!window || typeof window !== 'object' ||
       !utcTimestamp(window.start) || !utcTimestamp(window.end) ||
       Date.parse(window.start) >= Date.parse(window.end)) {
@@ -88,6 +117,7 @@ function validateQualifiedEvent(event) {
       issues.push("Field 'date_published' falls outside this tip's source_window");
     }
   }
+  issues.push(...validateOriginalReport(event));
   if (typeof event.date_event === 'string' &&
       /^\d{4}-\d{2}-\d{2}T00:00:00(?:\.0+)?(?:Z|[+-]00:00)$/i.test(event.date_event)) {
     issues.push("Field 'date_event' must omit a midnight UTC placeholder; include an event time only when the source supplies an exact time");
@@ -156,4 +186,5 @@ function validateQualifiedEvent(event) {
   return issues;
 }
 
-module.exports = { validateQualifiedEvent, isRemoteUrl, CONTENT_HEADINGS, CATEGORIES, DEFAULT_IMAGE_URL };
+module.exports = { validateQualifiedEvent, validateOriginalReport, isRemoteUrl,
+  CONTENT_HEADINGS, CATEGORIES, DEFAULT_IMAGE_URL };

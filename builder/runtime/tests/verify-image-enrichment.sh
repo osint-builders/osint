@@ -64,8 +64,14 @@ esac
 MOCK
 chmod +x "$tmp/curl"
 
+with_original_report() {
+  jq -c '. + {date_published: "2026-10-30T17:30:00Z",
+    source_window: {start: "2026-10-30T17:00:00Z", end: "2026-10-30T18:00:00Z"},
+    original_report: {url: .links[0].url, published_at: "2026-10-30T17:30:00Z"}}'
+}
 run_enrich() {
-  printf '%s' "$1" | env -u LINKPREVIEW_API_KEY -u TWITTER_BEARER_TOKEN bash "$helper"
+  printf '%s' "$1" | with_original_report |
+    env -u LINKPREVIEW_API_KEY -u TWITTER_BEARER_TOKEN bash "$helper"
 }
 assert_image() {
   printf '%s' "$1" | jq -e --arg image "$2" --arg origin "$3" \
@@ -75,7 +81,7 @@ assert_image() {
 base='{"title":"Demo","summary":"Demo summary","links":[{"url":"https://example.org/report"}],"image_urls":[]}'
 fallback=$(run_enrich "$base")
 assert_image "$fallback" 'https://osint.builders/favicon.svg' default
-crlf_fallback=$(printf '%s' "$base" | MOCK_CRLF=1 env -u LINKPREVIEW_API_KEY -u TWITTER_BEARER_TOKEN bash "$helper")
+crlf_fallback=$(printf '%s' "$base" | with_original_report | MOCK_CRLF=1 env -u LINKPREVIEW_API_KEY -u TWITTER_BEARER_TOKEN bash "$helper")
 assert_image "$crlf_fallback" 'https://osint.builders/favicon.svg' default
 
 # A dead scraped image must yield to the verified LinkPreview image.
@@ -84,7 +90,7 @@ assert_image "$preview" 'https://example.org/preview.jpg' article
 grep -qF 'HEAD https://example.org/dead.jpg' "$MOCK_CURL_LOG"
 
 # The API preview path also needs verification before promotion.
-api_preview=$(printf '%s' "$base" | LINKPREVIEW_API_KEY=dummy env -u TWITTER_BEARER_TOKEN bash "$helper")
+api_preview=$(printf '%s' "$base" | with_original_report | LINKPREVIEW_API_KEY=dummy env -u TWITTER_BEARER_TOKEN bash "$helper")
 assert_image "$api_preview" 'https://example.org/preview.jpg' article
 
 head_denied=$(run_enrich '{"title":"Demo","links":[{"url":"https://example.org/report"}],"image_urls":["https://example.org/head-denied.jpg"]}')
@@ -98,7 +104,7 @@ redirect=$(run_enrich '{"title":"Demo","links":[{"url":"https://example.org/repo
 assert_image "$redirect" 'https://example.org/redirect.jpg' article
 grep -qF 'HEAD https://cdn.example.org/photo.jpg' "$MOCK_CURL_LOG"
 crlf_redirect=$(printf '%s' '{"title":"Demo","links":[{"url":"https://example.org/report"}],"image_urls":["https://example.org/redirect.jpg"]}' \
-  | MOCK_CRLF=1 env -u LINKPREVIEW_API_KEY -u TWITTER_BEARER_TOKEN bash "$helper")
+  | with_original_report | MOCK_CRLF=1 env -u LINKPREVIEW_API_KEY -u TWITTER_BEARER_TOKEN bash "$helper")
 assert_image "$crlf_redirect" 'https://example.org/redirect.jpg' article
 
 local_redirect=$(run_enrich '{"title":"Demo","links":[{"url":"https://example.org/report"}],"image_urls":["https://example.org/redirect-local.jpg"]}')
@@ -116,11 +122,25 @@ fi
 
 printf '%s' '{"Warshipcam":"https://pbs.twimg.com/profile_banners/123"}' > "$TWITTER_BANNER_CACHE"
 banner=$(printf '%s' '{"title":"Demo","summary":"Demo summary","source":{"name":"Warshipcam (@Warshipcam)"},"links":[{"url":"https://x.com/Warshipcam/status/123"}],"image_urls":[]}' \
-  | TWITTER_BEARER_TOKEN=dummy env -u LINKPREVIEW_API_KEY bash "$helper")
+  | with_original_report | TWITTER_BEARER_TOKEN=dummy env -u LINKPREVIEW_API_KEY bash "$helper")
 assert_image "$banner" 'https://pbs.twimg.com/profile_banners/123/1500x500' source
 
 if MOCK_FAIL_DEFAULT=1 run_enrich "$base" >/dev/null 2>&1; then
   echo 'Unavailable default image should fail enrichment' >&2; exit 1
 fi
+
+# Missing or stale first-report evidence must reject one candidate before any
+# image request; the caller then continues with its next candidate.
+before=$(wc -l < "$MOCK_CURL_LOG")
+if printf '%s' "$base" | bash "$helper" >/dev/null 2>&1; then
+  echo 'Missing original report should fail enrichment' >&2; exit 1
+fi
+if printf '%s' "$base" | with_original_report |
+   jq -c '.original_report.published_at = "2026-10-30T16:45:00Z" | .date_published = "2026-10-30T16:45:00Z"' |
+   bash "$helper" >/dev/null 2>&1; then
+  echo 'Stale original report should fail enrichment' >&2; exit 1
+fi
+after=$(wc -l < "$MOCK_CURL_LOG")
+if [ "$before" -ne "$after" ]; then echo 'Rejected candidate triggered an image request' >&2; exit 1; fi
 
 echo 'Image enrichment check passed.'
