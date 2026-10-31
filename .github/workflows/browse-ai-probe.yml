@@ -1,0 +1,33 @@
+name: Check Browse AI Connection
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  robots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Check robot inventory access
+        env:
+          BROWSE_AI_API_KEY: ${{ secrets.BROWSE_AI_API_KEY }}
+        run: |
+          set -euo pipefail
+          if [ -z "${BROWSE_AI_API_KEY:-}" ]; then
+            echo "BROWSE_AI_API_KEY is unavailable to this workflow." >&2
+            exit 1
+          fi
+
+          response=$(curl --fail-with-body --silent --show-error --max-time 20 \
+            -H "Authorization: Bearer ${BROWSE_AI_API_KEY}" \
+            https://api.browse.ai/v2/robots)
+          jq -e '.statusCode == 200 and .messageCode == "success"' <<< "$response" >/dev/null
+
+          total=$(jq -er '.robots.totalCount' <<< "$response")
+          reddit=$(jq -r '[.robots.items[] | select((.name // "") | test("reddit"; "i"))] | length' <<< "$response")
+          echo "Browse AI robot inventory access: success"
+          echo "Total robots: $total"
+          echo "Robots with Reddit in their name: $reddit"
