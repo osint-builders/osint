@@ -22,6 +22,13 @@ if [ ! -f "$GEOCODING_CACHE" ]; then
 SEED
 fi
 
+# Nominatim's free-text search ranks the Dnipro River ahead of the city.
+# Override old caches as well as fresh lookups with the city point.
+if [ "$LOCATION" = "Dnipro, Ukraine" ]; then
+  printf '%s\n' '{"lat":48.4680221,"lon":35.0417711,"display_name":"Dnipro, Ukraine (seeded city)"}'
+  exit 0
+fi
+
 cached=$(jq -c --arg loc "$LOCATION" '
   .[$loc] // empty |
   .lat |= (try tonumber catch null) |
@@ -34,19 +41,57 @@ if [ -n "$cached" ]; then
   exit 0
 fi
 
-encoded=$(printf '%s' "$LOCATION" | jq -sRr @uri)
-sleep 1
-if ! response=$(curl -fsS --connect-timeout 5 --max-time 12 \
-  -A "osint-collector/1.0 (github.com/osint-builders/osint)" \
-  "https://nominatim.openstreetmap.org/search?q=$encoded&format=json&limit=1" 2>/dev/null); then
-  printf '%s\n' '{"lat":null,"lon":null,"display_name":null}'
-  exit 0
+fetch_nominatim() {
+  sleep 1
+  curl -fsS --connect-timeout 5 --max-time 12 \
+    -A "osint-collector/1.0 (github.com/osint-builders/osint)" "$1" 2>/dev/null
+}
+
+parse_result() {
+  local mode="$1"
+  jq -c --arg mode "$mode" --arg loc "$LOCATION" '
+    def city_like:
+      (.addresstype // .type // "") as $kind |
+      (["city", "town", "village", "hamlet", "suburb", "neighbourhood", "quarter", "locality"] | index($kind)) != null;
+    def waterway: .class == "waterway" or .type == "river" or .type == "stream" or .type == "canal";
+    if type == "array" then
+      [ .[] |
+        select(if $mode == "city" then city_like
+               else (waterway | not) or ($loc | test("\\b(river|stream|canal)\\b"; "i"))
+               end) |
+        {lat: (try (.lat | tonumber) catch null),
+         lon: (try (.lon | tonumber) catch null),
+         display_name: .display_name} |
+        select(.lat != null and .lon != null and
+               .lat >= -90 and .lat <= 90 and .lon >= -180 and .lon <= 180)
+      ] | .[0] // empty
+    else empty end
+  ' 2>/dev/null
+}
+
+result=''
+if [[ "$LOCATION" == *,* && "$LOCATION" != *,*,* ]]; then
+  city="${LOCATION%%,*}"
+  country="${LOCATION#*,}"
+  city="${city#"${city%%[![:space:]]*}"}"
+  city="${city%"${city##*[![:space:]]}"}"
+  country="${country#"${country%%[![:space:]]*}"}"
+  country="${country%"${country##*[![:space:]]}"}"
+  if [ -n "$city" ] && [ -n "$country" ]; then
+    city_encoded=$(printf '%s' "$city" | jq -sRr @uri)
+    country_encoded=$(printf '%s' "$country" | jq -sRr @uri)
+    if response=$(fetch_nominatim "https://nominatim.openstreetmap.org/search?city=$city_encoded&country=$country_encoded&format=json&limit=1"); then
+      result=$(printf '%s' "$response" | parse_result city) || result=''
+    fi
+  fi
 fi
-result=$(printf '%s' "$response" | jq -c '
-  if type == "array" and length > 0 then
-    {lat: (.[0].lat | tonumber), lon: (.[0].lon | tonumber), display_name: .[0].display_name}
-  else {lat: null, lon: null, display_name: null} end
-' 2>/dev/null) || result=''
+
+if [ -z "$result" ]; then
+  encoded=$(printf '%s' "$LOCATION" | jq -sRr @uri)
+  if response=$(fetch_nominatim "https://nominatim.openstreetmap.org/search?q=$encoded&format=json&limit=1"); then
+    result=$(printf '%s' "$response" | parse_result any) || result=''
+  fi
+fi
 if [ -z "$result" ]; then
   printf '%s\n' '{"lat":null,"lon":null,"display_name":null}'
   exit 0
