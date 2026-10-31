@@ -1,8 +1,8 @@
 ---
 id: twitter-the-diplomat
 type: twitter
-status: inactive
+status: testing
 ---
-# TheDiplomat (@TheDiplomat)
-The Diplomat provides expert coverage of Asia-Pacific politics, security, and diplomacy. Essential source for China, India, Southeast Asia, Korea, Japan, and regional geopolitics. Strong focus on Indo-Pacific security, maritime disputes, and regional power dynamics.
-Keywords: breaking, tensions, military, china, taiwan, maritime, dispute, conflict
+# The Diplomat (@Diplomat_APAC)
+The Diplomat publishes reporting and analysis on Asia-Pacific politics, security, defense, diplomacy, and maritime disputes. Follow original article links and distinguish reported developments from commentary.
+Keywords: military, china, taiwan, maritime, dispute, conflict, indo-pacific, diplomacy

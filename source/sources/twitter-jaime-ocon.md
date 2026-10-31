@@ -1,8 +1,8 @@
 ---
 id: twitter-jaime-ocon
 type: twitter
-status: inactive
+status: testing
 ---
-# JaimeOcon (@JaimeOcon)
-Independent GIS analyst and geospatial intelligence professional sharing practical mapping techniques, spatial analysis methods, and real-world OSINT applications. Provides hands-on tutorials, code snippets, and intelligence-focused GIS workflows for maritime tracking, crisis mapping, and open-source geospatial analysis.
-Keywords: gis, mapping, osint, analysis, tutorial, python, arcgis, qgis, geospatial, intelligence
+# Jaime Ocon (@JaimeOcon1)
+Jaime Ocon reports and analyzes Taiwan defense, cross-Strait security, military exercises, and United States–Taiwan cooperation. His personal commentary can surface leads; use original reporting for event facts.
+Keywords: taiwan, defense, military, cross-strait, exercise, maritime, security

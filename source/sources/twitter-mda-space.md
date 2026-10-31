@@ -1,9 +1,9 @@
 ---
 id: twitter-mda-space
 type: twitter
-status: inactive
+status: testing
 ---
-# MdaSpace (@MdaSpace)
-MDA Space (formerly MDA Ltd.) is a leading provider of advanced satellite systems, robotics, and geospatial intelligence solutions. Operates RADARSAT constellation and provides SAR (Synthetic Aperture Radar) imagery for maritime surveillance, environmental monitoring, and defense intelligence. Valuable for all-weather Earth observation and change detection.
+# MDA Space (@MDA_space)
+MDA Space posts satellite, geospatial intelligence, and defense communications product updates. Many posts concern company news; follow only concrete defense or security developments and verify any operational claims against source material.
 Keywords: satellite, imagery, radarsat, sar, surveillance, monitoring, detection, tracking, geoint, maritime
 Notes: priority:high

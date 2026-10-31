@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-06-12",
+  "last_updated": "2026-10-31",
   "description": "Master registry of all OSINT data sources for world event collection",
   "sources": [
     {
@@ -388,9 +388,9 @@
     },
     {
       "id": "twitter-armed-forces-phil",
-      "name": "Armed Forces Philippines (@ArmedForcesPhil)",
+      "name": "Armed Forces of the Philippines (@TeamAFP)",
       "type": "twitter",
-      "status": "inactive",
+      "status": "testing",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-armed-forces-phil.md",
@@ -564,16 +564,6 @@
       "added_date": "2026-05-27"
     },
     {
-      "id": "twitter-claudefb",
-      "name": "Claudefb (@Claudefb)",
-      "type": "twitter",
-      "status": "active",
-      "reliability": "medium",
-      "priority": "medium",
-      "file": "sources/twitter-claudefb.md",
-      "added_date": "2026-05-27"
-    },
-    {
       "id": "twitter-cnn",
       "name": "CNN (@CNN)",
       "type": "twitter",
@@ -655,9 +645,9 @@
     },
     {
       "id": "twitter-detresfa",
-      "name": "Detresfa (@Detresfa)",
+      "name": "Damien Symon (@detresfa_)",
       "type": "twitter",
-      "status": "inactive",
+      "status": "testing",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-detresfa.md",
@@ -852,9 +842,9 @@
     },
     {
       "id": "twitter-jaime-ocon",
-      "name": "JaimeOcon (@JaimeOcon)",
+      "name": "Jaime Ocon (@JaimeOcon1)",
       "type": "twitter",
-      "status": "inactive",
+      "status": "testing",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-jaime-ocon.md",
@@ -1023,9 +1013,9 @@
     },
     {
       "id": "twitter-kylebass",
-      "name": "kyleBass (@kyleBass)",
+      "name": "Kyle Bass (@Jkylebass)",
       "type": "twitter",
-      "status": "inactive",
+      "status": "testing",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-kylebass.md",
@@ -1033,9 +1023,9 @@
     },
     {
       "id": "twitter-mda-space",
-      "name": "MdaSpace (@MdaSpace)",
+      "name": "MDA Space (@MDA_space)",
       "type": "twitter",
-      "status": "inactive",
+      "status": "testing",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mda-space.md",
@@ -1049,16 +1039,6 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mdat-gog.md",
-      "added_date": "2026-05-27"
-    },
-    {
-      "id": "twitter-megatronlion",
-      "name": "Megatronlion (@Megatronlion)",
-      "type": "twitter",
-      "status": "inactive",
-      "reliability": "medium",
-      "priority": "medium",
-      "file": "sources/twitter-megatronlion.md",
       "added_date": "2026-05-27"
     },
     {
@@ -1104,9 +1084,9 @@
     },
     {
       "id": "twitter-mndchina",
-      "name": "China Ministry of National Defence (@MNDChina)",
+      "name": "Ministry of National Defense of China (@MND_China)",
       "type": "twitter",
-      "status": "inactive",
+      "status": "testing",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-mndchina.md",
@@ -1196,9 +1176,9 @@
     },
     {
       "id": "twitter-national-interest",
-      "name": "National Interest (@NationalInterest)",
+      "name": "The National Interest (@TheNatlInterest)",
       "type": "twitter",
-      "status": "inactive",
+      "status": "testing",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-national-interest.md",
@@ -1254,16 +1234,6 @@
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-nsa-gov.md",
-      "added_date": "2026-05-27"
-    },
-    {
-      "id": "twitter-ntonc",
-      "name": "ntonc (@ntonc)",
-      "type": "twitter",
-      "status": "inactive",
-      "reliability": "medium",
-      "priority": "medium",
-      "file": "sources/twitter-ntonc.md",
       "added_date": "2026-05-27"
     },
     {
@@ -1573,22 +1543,12 @@
     },
     {
       "id": "twitter-the-diplomat",
-      "name": "TheDiplomat (@TheDiplomat)",
+      "name": "The Diplomat (@Diplomat_APAC)",
       "type": "twitter",
-      "status": "inactive",
+      "status": "testing",
       "reliability": "medium",
       "priority": "medium",
       "file": "sources/twitter-the-diplomat.md",
-      "added_date": "2026-05-27"
-    },
-    {
-      "id": "twitter-the-koreaview",
-      "name": "TheKoreaview (@TheKoreaview)",
-      "type": "twitter",
-      "status": "inactive",
-      "reliability": "medium",
-      "priority": "medium",
-      "file": "sources/twitter-the-koreaview.md",
       "added_date": "2026-05-27"
     },
     {
@@ -1923,12 +1883,12 @@
     }
   ],
   "statistics": {
-    "total_sources": 186,
-    "active_sources": 107,
-    "testing_sources": 36,
-    "inactive_sources": 43,
+    "total_sources": 182,
+    "active_sources": 82,
+    "testing_sources": 40,
+    "inactive_sources": 60,
     "by_type": {
-      "twitter": 145,
+      "twitter": 141,
       "webpage": 7,
       "api": 13,
       "email": 0,
@@ -1941,12 +1901,12 @@
     },
     "by_priority": {
       "high": 0,
-      "medium": 186,
+      "medium": 182,
       "low": 0
     },
     "by_reliability": {
       "high": 0,
-      "medium": 186,
+      "medium": 182,
       "low": 0,
       "unverified": 0
     }
@@ -1956,6 +1916,6 @@
     "compatible_versions": [
       "1.0.x"
     ],
-    "last_validated": "2026-05-27"
+    "last_validated": "2026-10-31"
   }
 }

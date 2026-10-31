@@ -1,9 +1,9 @@
 ---
 id: twitter-kylebass
 type: twitter
-status: inactive
+status: testing
 ---
-# kyleBass (@kyleBass)
-Kyle Bass provides expert analysis on Asian markets with particular focus on China's economic conditions, currency policies, Hong Kong developments, and broader Asia-Pacific geopolitical dynamics. Known for macroeconomic insights and deep understanding of regional financial systems and political risk.
-Keywords: china, hong-kong, yuan, rmb, ccp, xi, sanctions, debt, crisis
+# Kyle Bass (@Jkylebass)
+Kyle Bass shares personal analysis on China, Taiwan, geopolitical risk, sanctions, and the United States defense industrial base. His opinions and forecasts can surface OSINT leads; check the underlying report and event date before publication.
+Keywords: china, taiwan, defense, industrial-base, sanctions, supply-chain, geopolitical
 Notes: priority:high

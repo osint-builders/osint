@@ -1,9 +1,9 @@
 ---
 id: twitter-detresfa
 type: twitter
-status: inactive
+status: testing
 ---
-# Detresfa (@Detresfa)
-Detresfa monitors maritime distress situations, search and rescue (SAR) operations, and emergency response activities. Tracks DETRESFA declarations (distress phase), rescue coordination, aircraft and vessel incidents, and humanitarian maritime operations. Critical for maritime safety intelligence.
-Keywords: detresfa, mayday, distress, rescue, missing, overdue, crash, sinking, abandoned
+# Damien Symon (@detresfa_)
+Damien Symon shares open-source geospatial analysis of military activity, satellite imagery, maritime movements, and published airspace notices. Treat his assessments as attributed analysis and verify the original imagery or notice before publication.
+Keywords: satellite, imagery, geospatial, military, maritime, notam, missile, border
 Notes: priority:high

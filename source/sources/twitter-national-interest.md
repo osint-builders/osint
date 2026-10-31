@@ -1,8 +1,8 @@
 ---
 id: twitter-national-interest
 type: twitter
-status: inactive
+status: testing
 ---
-# National Interest (@NationalInterest)
-The National Interest provides expert analysis on defense policy, international security, geopolitics, and foreign affairs. Focus on strategic analysis, military affairs, great power competition, and national security policy. Valuable for context and expert perspectives.
+# The National Interest (@TheNatlInterest)
+The National Interest publishes defense, military, national security, and foreign policy reporting and opinion. Its posts may lead to OSINT-relevant developments; follow the original article and distinguish a reported action from analysis alone.
 Keywords: breaking, analysis, conflict, military, nuclear, china, russia, strategic

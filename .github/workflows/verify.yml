@@ -50,6 +50,9 @@ jobs:
         run: npm run verify-prompt
         working-directory: builder
 
+      - name: Verify source names match the manifest
+        run: node source/scripts/sync-manifest-names.js --check
+
       - name: Validate recent committed events (baseline mode)
         # Sixteen pre-October records have malformed legacy IDs; the user
         # requested future-only enforcement, so keep those records untouched.
