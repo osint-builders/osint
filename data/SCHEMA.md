@@ -41,7 +41,7 @@ Qualified `contents` uses five nonempty H2 sections in this order: `Event`, `Loc
 
 | Field | Type | Constraints | Description |
 |-------|------|-------------|-------------|
-| `date_event` | ISO 8601 or null | `YYYY-MM-DDTHH:mm:ssZ` | When the event occurred (precedes or equals `date_published`) |
+| `date_event` | ISO 8601 or null | `YYYY-MM-DDTHH:mm:ssZ`; omit in qualified output without a source-supplied exact time | When the event occurred (precedes or equals `date_published`). Qualified output rejects midnight UTC placeholders derived from date-only reports. |
 | `topics` | array | `string[]` | Lowercase, hyphenated, singular keywords |
 | `confidence` | number | 0.0–1.0 | Data quality score (0.8–1.0 = high, 0.0–0.2 = unverified) |
 | `ingested_at` | ISO 8601 | `YYYY-MM-DDTHH:mm:ssZ` | Ingestion timestamp; auto-generated |

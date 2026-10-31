@@ -40,11 +40,12 @@ export WORK_DIR
 For each tip above (create `mkdir -p "$WORK_DIR/$source_id"` first, using that tip's `source_id`):
 
 1. **Fetch full content** for each candidate URL. The queued snippet may be truncated or empty. Use `curl` first. If a real browser is necessary, install and run `agent-browser` on demand as directed in `skills/agent-browser/SKILL.md`; it is not preinstalled. If installation or retrieval fails, log why and reject that candidate.
-2. **Apply the event, evidence, and topical gates, then translate** per `builder/prompts/qualified-event-contract.md`. Require a concrete new reported action; reject commentary, off-topic, uncheckable, or unlocatable reports. Attribute single-source claims in the title, summary, and body; never call them confirmed. Translate accepted text fully into English.
+2. **Apply the event, evidence, and topical gates, then translate** per `builder/prompts/qualified-event-contract.md`. Open the original report behind a recap or analysis link and compare its publication date with the claimed event; reject older actions without a new disclosure. Require a concrete new reported action; reject commentary, off-topic, uncheckable, or unlocatable reports. Attribute single-source claims in the title, summary, and body; never call them confirmed. Translate accepted text fully into English.
 3. **Write one JSON World Event Entity per accepted candidate** using `data/SCHEMA.md` and the typed qualified-event contract:
    - `id`: `EVENT_ID=$(node data/scripts/snowflake.js --worker ${batchNum})` — globally unique across parallel batches.
    - `source.name`: exact `#` header text from the source context. If the source file has been removed, use the tip's queued `source_name`. No variants.
    - `date_published`: use the candidate's `Published` timestamp when available; otherwise the fetched page's own timestamp.
+   - `date_event`: omit unless the source gives an exact occurrence time. Never convert a date-only report to midnight UTC.
    - `source_window`: copy this tip's displayed window into UTC `start`/`end`; reject a candidate published outside it.
    - `links`: include the original report and every independent corroborating URL used to support a claim.
    - `language: "en"`, the approved `category`, `audience`, and a concrete `allied_relevance` explanation.

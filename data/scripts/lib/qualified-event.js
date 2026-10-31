@@ -88,6 +88,10 @@ function validateQualifiedEvent(event) {
       issues.push("Field 'date_published' falls outside this tip's source_window");
     }
   }
+  if (typeof event.date_event === 'string' &&
+      /^\d{4}-\d{2}-\d{2}T00:00:00(?:\.0+)?(?:Z|[+-]00:00)$/i.test(event.date_event)) {
+    issues.push("Field 'date_event' must omit a midnight UTC placeholder; include an event time only when the source supplies an exact time");
+  }
   if (event.language !== 'en') issues.push("Field 'language' must equal 'en'");
   if (!CATEGORIES.has(event.category)) {
     issues.push(`Field 'category' must be one of: ${[...CATEGORIES].join(', ')}`);

@@ -114,6 +114,25 @@ test('qualified contract rejects events outside the original tip window', () => 
   assert.match(validateQualifiedEvent(invalid).join(' '), /ordered UTC/);
 });
 
+test('qualified contract omits date-only event times and rejects midnight UTC placeholders', () => {
+  const withoutOccurrenceTime = event();
+  assert.deepEqual(validateQualifiedEvent(withoutOccurrenceTime), []);
+
+  const timedOccurrence = event();
+  timedOccurrence.date_event = '2026-10-30T16:45:00Z';
+  assert.deepEqual(validateQualifiedEvent(timedOccurrence), []);
+
+  for (const placeholder of [
+    '2026-10-29T00:00:00Z',
+    '2026-10-29T00:00:00.000Z',
+    '2026-10-29T00:00:00+00:00',
+  ]) {
+    const invalid = event();
+    invalid.date_event = placeholder;
+    assert.match(validateQualifiedEvent(invalid).join(' '), /date_event.*midnight UTC placeholder/, placeholder);
+  }
+});
+
 test('qualified contract enforces evidence-grounded body structure', () => {
   const invalid = event();
   invalid.contents = '## Overview\n\nIt\'s a short <b>report</b>.';
@@ -155,6 +174,7 @@ test('historical strict validation stays compatible while --qualified adds the g
   historical.id = 'evt_20261030_001';
   historical.title = 'Confirmed Port Closure During Regional Storm';
   historical.summary = 'Officials verified a port closure after a storm disrupted vessel traffic.';
+  historical.date_event = '2026-10-29T00:00:00Z';
   delete historical.geo.location_name;
   delete historical.geo.precision;
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'osint-qualified-test-'));
@@ -168,6 +188,7 @@ test('historical strict validation stays compatible while --qualified adds the g
     assert.equal(qualified.status, 1, qualified.stdout + qualified.stderr);
     assert.match(qualified.stdout, /image_urls/);
     assert.match(qualified.stdout, /categorical certainty word/);
+    assert.match(qualified.stdout, /date_event.*midnight UTC placeholder/);
   } finally {
     const prefix = path.join(os.tmpdir(), 'osint-qualified-test-');
     if (directory.startsWith(prefix)) fs.rmSync(directory, { recursive: true, force: true });
