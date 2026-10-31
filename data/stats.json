@@ -1,27 +1,27 @@
 {
-  "last_updated": "2026-10-30T23:33:39.589Z",
+  "last_updated": "2026-10-31T01:45:10.809Z",
   "data_range": {
     "oldest_date": "2026-08-25",
-    "newest_date": "2026-10-01"
+    "newest_date": "2026-10-31"
   },
   "statistics": {
-    "total_events": 5062,
+    "total_events": 5098,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4738,
-      "2026-10": 67
+      "2026-10": 103
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 157,
-      "Quds News Network (@QudsNen)": 221,
-      "Rerum Novarum Intel (@rnintel)": 122,
-      "Intel Slava Z (@intelslava)": 177,
+      "Quds News Network (@QudsNen)": 224,
+      "Rerum Novarum Intel (@rnintel)": 128,
+      "Intel Slava Z (@intelslava)": 180,
       "UNITED24 Media": 42,
       "Wagner Z Group": 4,
       "ABC News": 57,
-      "Insider Paper (@insiderpaper)": 98,
+      "Insider Paper (@insiderpaper)": 99,
       "Clash Report (@ClashReport)": 323,
-      "DD Geopolitics (@DDGeopolitics)": 155,
+      "DD Geopolitics (@DDGeopolitics)": 161,
       "OSINT Technical (@Osinttechnical)": 63,
       "NSA (@NSAGov)": 3,
       "Sim Nasr (@SimNasr)": 78,
@@ -34,17 +34,17 @@
       "Ianellisjones (@Ianellisjones)": 20,
       "War Translated": 8,
       "Middle East Spectator": 45,
-      "Geopolitics Prime (@geopolitics_prime)": 159,
-      "AP News (@AP)": 38,
+      "Geopolitics Prime (@geopolitics_prime)": 163,
+      "AP News (@AP)": 39,
       "CSIS Korea Chair": 9,
       "Our Wars, Today (@ourwarstoday)": 18,
       "BBC World News (@BBCWorld)": 125,
-      "ABC News (@ABC)": 119,
+      "ABC News (@ABC)": 121,
       "US Navy (@USNavy)": 26,
-      "CNN (@CNN)": 58,
-      "Warshipcam (@Warshipcam)": 117,
+      "CNN (@CNN)": 59,
+      "Warshipcam (@Warshipcam)": 118,
       "Xinhua News (@XHNews)": 197,
-      "cnnbrk (@cnnbrk)": 21,
+      "cnnbrk (@cnnbrk)": 22,
       "Fox News (@FoxNews)": 79,
       "Quds News Network": 118,
       "cepa (@cepa)": 20,
@@ -52,7 +52,7 @@
       "CSIS Korea Chair (@CSISKoreaChair)": 22,
       "Critical Threats Project (@criticalthreats)": 30,
       "Institute for the Study of War (@TheStudyofWar)": 90,
-      "Bellum Acta (@BellumActaNews)": 87,
+      "Bellum Acta (@BellumActaNews)": 90,
       "Serhii FLASH — Technologies (@serhii_flash)": 15,
       "UNITED24 Media (@United24media)": 164,
       "Wagner Z Group (@wagner_group_pmcr)": 37,
@@ -78,11 +78,11 @@
       "Clash Report": 43,
       "DD Geopolitics": 53,
       "Esri (@Esri)": 4,
-      "Scmpnews (@Scmpnews)": 108,
+      "Scmpnews (@Scmpnews)": 109,
       "CNN International": 9,
       "BBC Breaking News (@BBCBreaking)": 16,
       "AP News": 20,
-      "War Monitor (@warmonitors)": 44,
+      "War Monitor (@warmonitors)": 45,
       "Rerum Novarum Intel": 55,
       "cepa": 5,
       "Sim Nasr": 3,
@@ -102,7 +102,7 @@
       "Quds News Network (@QudsNen)\n": 3,
       "Middle East Spectator — MES\n": 3,
       "Rerum Novarum Intel (@rnintel)\n": 3,
-      "Middle East Eye": 50,
+      "Middle East Eye": 51,
       "AFU Strategic Communications (@AFUStratCom)": 6,
       "Defence Intelligence of Ukraine – GUR MO": 9,
       "Southkoreapro (@Southkoreapro)": 32,
@@ -178,10 +178,11 @@
       "Korea Economic Institute (@KoreaEconInst)": 2,
       "Middle East Spectator — MES": 3,
       "twitter-foxnews": 1,
-      "twitter-cnn": 1
+      "twitter-cnn": 1,
+      "Ministry of National Defense Taiwan": 1
     },
     "media_files": {
-      "images": 965,
+      "images": 975,
       "videos": 0
     }
   },
@@ -223,7 +224,9 @@
     "2026-09-28": 116,
     "2026-09-29": 147,
     "2026-09-30": 155,
-    "2026-10-01": 67
+    "2026-10-01": 67,
+    "2026-10-30": 16,
+    "2026-10-31": 20
   },
   "average_confidence": 0.8058346094946413
 }
