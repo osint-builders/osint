@@ -30,8 +30,8 @@ function parseTip(file: string, text: string): Tip {
   let value: unknown;
   try {
     value = JSON.parse(text);
-  } catch (error) {
-    throw new Error(`Invalid pending tip ${file}: ${error}`);
+  } catch {
+    throw new Error(`Invalid pending tip ${file}: invalid JSON`);
   }
   if (!value || typeof value !== "object" || Array.isArray(value)) {
     throw new Error(`Invalid pending tip ${file}: expected an object`);
@@ -77,8 +77,16 @@ function loadPendingTips(repoRoot: string): LoadedTip[] {
   const files = fs.readdirSync(pendingDir).filter((file) => file.endsWith(".json")).sort();
   const tips: LoadedTip[] = [];
   for (const file of files) {
-    const tip = parseTip(file, fs.readFileSync(path.join(pendingDir, file), "utf-8"));
-    tips.push({ tip, relPath: path.join("data", "queue", "pending", file) });
+    const text = fs.readFileSync(path.join(pendingDir, file), "utf-8");
+    try {
+      const tip = parseTip(file, text);
+      tips.push({ tip, relPath: path.join("data", "queue", "pending", file) });
+    } catch (error) {
+      // A single corrupt handoff record must not stall every valid batch.
+      // Leave it untouched for the queue cleanup step to expire, and name it
+      // in the run log so an operator can inspect the failed source.
+      console.warn(`${error}`);
+    }
   }
   return tips.sort((a, b) => {
     const windowOrder = Date.parse(b.tip.window_end) - Date.parse(a.tip.window_end);

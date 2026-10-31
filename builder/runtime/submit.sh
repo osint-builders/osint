@@ -19,6 +19,32 @@ BUCKET="${3:?unit number required}"
 TOTAL="${4:?total unit count required}"
 LABEL="${5:-bucket}"
 
+# The agent prompt validates its candidate files, but publication must not
+# depend on the agent running that step. Check only staged additions: a day
+# file may already contain historical rows that predate the qualified contract.
+validate_batch_additions() {
+  [ "$LABEL" = "batch" ] || return 0
+
+  local raw
+  while IFS= read -r -d '' raw; do
+    if [ -s "$raw" ] && ! node data/scripts/validate-events.js "$raw" --qualified; then
+      echo "ERROR: raw qualified events failed validation; refusing to commit." >&2
+      return 1
+    fi
+  done < <(find "$WORK_DIR" -name events.jsonl -type f -print0)
+
+  local additions="$WORK_DIR/.staged-qualified-events.jsonl"
+  git diff --cached --no-ext-diff --no-textconv --text --unified=0 -- \
+    "data/events/$YEAR_MONTH/$DATE.jsonl" \
+    | sed -n '/^+[^+]/s/^+//p' > "$additions"
+  if [ -s "$additions" ]; then
+    node data/scripts/validate-events.js "$additions" --qualified || {
+      echo "ERROR: staged qualified events failed validation; refusing to commit." >&2
+      return 1
+    }
+  fi
+}
+
 # init.sh records the dispatch date once. An agent may otherwise infer a
 # different date from a tip and silently put a valid event in the wrong file.
 [ -f "$WORK_DIR/.extraction-date" ] || {
@@ -53,6 +79,7 @@ if git diff --cached --quiet; then
   exit 0
 fi
 
+validate_batch_additions
 git commit -m "Collect $ADDED world events on $DATE ($LABEL $BUCKET/$TOTAL)
 
 $(date -u +%Y-%m-%dT%H:%M:%SZ) | [skip ci]"
@@ -95,6 +122,7 @@ reconcile_after_conflict() {
     echo "submit: batch output already present on main."
     return 0
   fi
+  validate_batch_additions
   local reconciled_added
   reconciled_added=$(cat "$WORK_DIR/.added-count")
   git commit -m "Collect $reconciled_added world events on $DATE ($LABEL $BUCKET/$TOTAL)

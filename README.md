@@ -1,12 +1,12 @@
 # OSINT Data Collector
 
-Automated collection of world-event intelligence from OSINT sources (Twitter/X, Telegram, news sites, APIs), using a **Tip & Queue** pipeline: a cheap non-LLM scan identifies candidate content, then a separate stage does the LLM-heavy extraction in small batches. Findings normalize into structured **World Event Entities** (JSONL) and commit back to this repo. A search UI at [osint.builders](https://osint.builders/) and a cross-platform CLI consume the data downstream. Reddit source specs remain in the registry, paused until approved API access exists.
+Automated collection of world-event intelligence from OSINT sources (Twitter/X, Telegram, news sites, APIs), using a **Tip & Queue** pipeline: a cheap non-LLM scan identifies candidate content, then a separate stage does the LLM-heavy extraction in small batches. Findings normalize into structured **World Event Entities** (JSONL) and commit back to this repo. A search UI at [osint.builders](https://osint.builders/) and a cross-platform CLI consume the data downstream. Reddit source specs remain in the registry, paused until a working integration meets the source and publication requirements.
 
 ![Identify Tips](https://github.com/osint-builders/osint/actions/workflows/identify.yml/badge.svg)
 ![Qualify Tips](https://github.com/osint-builders/osint/actions/workflows/qualify.yml/badge.svg)
 ![Data Release](https://github.com/osint-builders/osint/actions/workflows/create-release.yml/badge.svg)
 
-> **Cadence right now**: `identify.yml` runs daily at **09:00 America/New_York** (plus manual dispatch) and `qualify.yml` chains off it automatically, so that one trigger drives a full collection. Each run uses a 1-hour lookback, so a daily cadence samples one hour per day rather than covering it. The legacy `collection.yml` single-phase flow still exists but runs on demand only. See [`.github/workflows/README.md`](.github/workflows/README.md) for details.
+> **Cadence right now**: `identify.yml` is scheduled daily for **09:00 America/New_York** (plus manual dispatch) and `qualify.yml` chains off it automatically, so that one trigger drives a full collection. GitHub may start a scheduled run later; the 1-hour lookback uses the actual dispatch time. A daily cadence samples one hour per day rather than covering it. The legacy `collection.yml` single-phase flow still exists but runs on demand only. See [`.github/workflows/README.md`](.github/workflows/README.md) for details.
 
 > **For agents/contributors editing this repo:** see [`AGENTS.md`](AGENTS.md) for conventions and `builder/prompts/` for runtime prompts. This README serves humans getting their bearings.
 
@@ -45,7 +45,7 @@ release-cli.yml                        # CLI cross-compile + cli-latest release
 
 A legacy single-phase flow (`collection.yml` → `builder/index.ts`) still exists, paused: one Warp agent processes a whole bucket of ~12 sources sequentially instead of small per-tip batches. The active template lives in `builder/prompts/qualify-prompt.md`; the shared publication rules live in `builder/prompts/qualified-event-contract.md`. The versioned scripts in `builder/runtime/` handle mechanical steps.
 
-The queue holds only unprocessed tips. Qualification deletes each consumed tip, including tips that produce no event; the pre-run cleanup deletes tips older than 24 hours. A default run selects the 30 newest tips (10 batches of 3). Older pending tips wait for a later run and may expire, so this limit controls Warp spend and coverage.
+The queue holds only unprocessed tips. Qualification deletes each consumed tip, including tips that produce no event; the pre-run cleanup deletes tips older than 24 hours or impossible to date. Malformed dated records are skipped until they expire. A default run selects the 30 newest valid tips (10 batches of 3). Older pending tips wait for a later run and may expire, so this limit controls Warp spend and coverage.
 
 ---
 

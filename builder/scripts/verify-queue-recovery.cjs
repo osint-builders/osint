@@ -42,6 +42,7 @@ try {
   write(pending, "stale", tip("stale", "2026-10-29T00:00:00Z"));
   write(pending, "older", tip("older", "2026-10-30T22:00:00Z"));
   write(pending, "newest", tip("newest", "2026-10-30T23:00:00Z"));
+  write(pending, "undatable", { source_id: "undatable", candidates: [] });
   run("git", ["add", "-A"]);
   run("git", ["-c", "user.name=fixture", "-c", "user.email=fixture@example.com", "commit", "-qm", "Fixture"]);
 
@@ -50,11 +51,15 @@ try {
     "--max-age-hours", "24", "--now", "2026-10-31T01:00:00Z",
     "--repo-root", root,
   ];
-  assert.match(run(process.execPath, [...cleanupArgs, "--dry-run"]), /1 older/);
+  const cleanupDryRun = run(process.execPath, [...cleanupArgs, "--dry-run"]);
+  assert.match(cleanupDryRun, /1 older/);
+  assert.match(cleanupDryRun, /1 undatable/);
   assert.equal(fs.existsSync(path.join(pending, "stale.json")), true);
+  assert.equal(fs.existsSync(path.join(pending, "undatable.json")), true);
   const cleanup = run(process.execPath, cleanupArgs);
   assert.match(cleanup, /1 older/);
   assert.equal(fs.existsSync(path.join(pending, "stale.json")), false);
+  assert.equal(fs.existsSync(path.join(pending, "undatable.json")), false);
   assert.equal(fs.existsSync(path.join(root, "data", "queue", "expired")), false);
 
   const tsx = path.join(builder, "node_modules", "tsx", "dist", "cli.mjs");

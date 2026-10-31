@@ -67,6 +67,10 @@ case "$url" in
   https://api.twitter.com/2/users/by/username/TestIntel)
     printf '%s\n' '{"data":{"id":"42"}}' ;;
   https://api.twitter.com/2/users/42/tweets*)
+    if [ "${MOCK_TWITTER_MISSING_DATE:-0}" = 1 ]; then
+      printf '%s\n' '{"data":[{"id":"111","text":"Undated defense report"}]}'
+      exit 0
+    fi
     [[ "$url" == *'start_time=2026-10-30T12:00:00Z'* && "$url" == *'end_time=2026-10-30T13:00:00Z'* ]] || {
       echo "Twitter request omitted the fixed scan window: $url" >&2
       exit 1
@@ -178,6 +182,30 @@ large_output=$(
 )
 [[ "$large_output" != *'Broken pipe'* ]]
 
+pending_before=$(find "$pending" -maxdepth 1 -name '*.json' | wc -l)
+if mixed_output=$(
+  cd "$tmp"
+  PATH="$tmp/bin:$PATH" TIME_WINDOW_START="$window_start" TIME_WINDOW_END="$window_end" \
+    TWITTER_BEARER_TOKEN=fixture MOCK_FAIL_NEWS=1 \
+    bash "$identify_script" twitter-test webpage-test 2>&1
+); then
+  echo 'A scan with a successful source and a failed source must report degraded coverage.' >&2
+  exit 1
+fi
+pending_after=$(find "$pending" -maxdepth 1 -name '*.json' | wc -l)
+test "$pending_after" -eq "$((pending_before + 1))"
+[[ "$mixed_output" == *'coverage attempted=2 succeeded=1 no-hit=0 failed=1 skipped=0 tips=1'* ]]
+
+if skipped_output=$(
+  cd "$tmp"
+  PATH="$tmp/bin:$PATH" TIME_WINDOW_START="$window_start" TIME_WINDOW_END="$window_end" \
+    TWITTER_BEARER_TOKEN= bash "$identify_script" twitter-test webpage-stale 2>&1
+); then
+  echo 'A scan missing Twitter credentials must report degraded coverage.' >&2
+  exit 1
+fi
+[[ "$skipped_output" == *'coverage attempted=1 succeeded=1 no-hit=1 failed=0 skipped=1 tips=0'* ]]
+
 if failed_output=$(
   cd "$tmp"
   PATH="$tmp/bin:$PATH" TIME_WINDOW_START="$window_start" TIME_WINDOW_END="$window_end" \
@@ -191,6 +219,19 @@ if [[ "$failed_output" != *WARN* || "$failed_output" != *webpage-test* ]]; then
   printf '%s\n' "$failed_output" >&2
   exit 1
 fi
+
+twitter_tip_count_before=$(find "$pending" -maxdepth 1 -name 'twitter-test-*.json' | wc -l)
+if undated_twitter_output=$(
+  cd "$tmp"
+  PATH="$tmp/bin:$PATH" TIME_WINDOW_START="$window_start" TIME_WINDOW_END="$window_end" \
+    TWITTER_BEARER_TOKEN=fixture MOCK_TWITTER_MISSING_DATE=1 \
+    bash "$identify_script" twitter-test 2>&1
+); then
+  echo 'An undated Twitter candidate must fail instead of writing a poisoned tip.' >&2
+  exit 1
+fi
+[[ "$undated_twitter_output" == *'invalid URL, snippet, or publication time'* ]]
+test "$(find "$pending" -maxdepth 1 -name 'twitter-test-*.json' | wc -l)" -eq "$twitter_tip_count_before"
 
 if rss_failed_output=$(
   cd "$tmp"

@@ -37,9 +37,12 @@ not a durable audit archive.
 1. `identify.yml` (stage 1, no LLM) scans every processable source and
    writes tips here for anything published in the last hour.
 2. Before qualification, `qualify.yml` deletes pending tips older than 24
-   hours. The live workflow does not spend LLM credits on expired tips.
+   hours and records that cannot be dated. The live workflow does not spend
+   LLM credits on expired tips.
 3. `qualify.yml` (stage 2) takes the newest pending tips, at most 10 batches
    of 3 by default, and spawns one short-lived Warp cloud agent per batch to
    do the LLM work (translate, extract, E-PRIME, geocode, enrich, confidence)
    and commit the resulting World Event Entities to `data/events/`. It deletes
-   each consumed pending tip even when no event qualifies.
+   each consumed pending tip even when no event qualifies. Malformed records
+   with a usable date are logged and skipped until they expire; they do not
+   block valid tips.

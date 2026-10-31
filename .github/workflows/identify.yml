@@ -46,6 +46,8 @@ jobs:
           echo "end=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
 
       - name: Identify tips across processable sources
+        id: scan
+        continue-on-error: true
         env:
           TIME_WINDOW_START: ${{ steps.window.outputs.start }}
           TIME_WINDOW_END: ${{ steps.window.outputs.end }}
@@ -69,3 +71,9 @@ jobs:
 
           [skip ci]"
           bash builder/runtime/push-with-retry.sh
+
+      - name: Report degraded source coverage
+        if: steps.scan.outcome == 'failure'
+        run: |
+          echo "::error::Identify reported degraded source coverage. Successful tips were committed; inspect the scan warnings."
+          exit 1

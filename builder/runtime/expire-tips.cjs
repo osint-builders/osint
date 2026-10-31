@@ -33,7 +33,7 @@ if (!fs.existsSync(pending)) {
 }
 
 const stale = [];
-const unknown = [];
+const undatable = [];
 for (const name of fs.readdirSync(pending).filter((name) => name.endsWith(".json")).sort()) {
   const file = path.join(pending, name);
   let observed;
@@ -42,17 +42,18 @@ for (const name of fs.readdirSync(pending).filter((name) => name.endsWith(".json
   } catch {
     observed = NaN;
   }
-  if (!Number.isFinite(observed)) unknown.push(name);
+  if (!Number.isFinite(observed)) undatable.push(file);
   else if (observed < cutoff) stale.push(file);
 }
 
-if (unknown.length) {
-  throw new Error(`Cannot date ${unknown.length} pending tip(s): ${unknown.slice(0, 5).join(", ")}`);
+for (const file of undatable) {
+  console.warn(`${dryRun ? "[DRY RUN] Would drop" : "Dropping"} undatable pending tip: ${path.basename(file)}`);
 }
 console.log(
   `Queue cleanup at ${new Date(now).toISOString()}: ` +
-  `${stale.length} older than ${new Date(cutoff).toISOString()}`
+  `${stale.length} older than ${new Date(cutoff).toISOString()}, ` +
+  `${undatable.length} undatable`
 );
 if (!dryRun) {
-  for (const file of stale) fs.unlinkSync(file);
+  for (const file of [...stale, ...undatable]) fs.unlinkSync(file);
 }

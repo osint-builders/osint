@@ -91,31 +91,66 @@ test("keeps source context for a tip whose source was deactivated after Identify
   }
 });
 
-test("rejects a malformed pending file instead of silently skipping it", () => {
+test("skips a malformed newest tip and still selects the next valid tip", () => {
   const { root, pending, cleanup } = fixture();
+  const warnings: string[] = [];
+  const originalWarn = console.warn;
+  console.warn = (message) => { warnings.push(String(message)); };
   try {
     writeTip(pending, "valid", "2026-10-02T00:00:00Z");
-    assert.equal(prepareQualifyBatches(root, 3, 10).pendingTipCount, 1);
-    fs.writeFileSync(path.join(pending, "invalid.json"), '{"source_id":"fixture","urls":[]}');
-    assert.throws(() => prepareQualifyBatches(root, 3, 10), /Invalid pending tip invalid.json/);
-    fs.rmSync(path.join(pending, "invalid.json"));
-    fs.writeFileSync(path.join(pending, "no-window.json"), JSON.stringify({
-      source_id: "fixture", source_name: "Fixture Source", type: "webpage",
-      identified_at: "2026-10-02T00:00:00Z",
-      candidates: [{ url: "https://example.com/item", snippet: "item", published_at: "2026-10-02T00:00:00Z" }],
-    }));
-    assert.throws(() => prepareQualifyBatches(root, 3, 10), /window_start/);
+    writeTip(pending, "malformed-newest", "2026-10-03T00:00:00Z");
+    const malformedPath = path.join(pending, "malformed-newest.json");
+    const malformed = JSON.parse(fs.readFileSync(malformedPath, "utf-8"));
+    malformed.candidates[0].published_at = null;
+    fs.writeFileSync(malformedPath, JSON.stringify(malformed));
+
+    const plan = prepareQualifyBatches(root, 1, 1);
+    assert.equal(plan.pendingTipCount, 1);
+    assert.equal(plan.selectedTipCount, 1);
+    assert.match(plan.jobs[0].prompt, /https:\/\/example.com\/valid/);
+    assert.doesNotMatch(plan.jobs[0].prompt, /malformed-newest/);
+    assert.ok(warnings.some((warning) => warning.includes("malformed-newest.json")));
+    assert.equal(fs.existsSync(malformedPath), true);
   } finally {
+    console.warn = originalWarn;
     cleanup();
   }
 });
 
-test("rejects a pending tip with an invalid identification timestamp", () => {
+test("a malformed tip outside the batch cap cannot block newer valid tips", () => {
   const { root, pending, cleanup } = fixture();
+  const warnings: string[] = [];
+  const originalWarn = console.warn;
+  console.warn = (message) => { warnings.push(String(message)); };
   try {
-    writeTip(pending, "invalid-time", "2026-10-03T00:00:00Z", "not-a-time");
-    assert.throws(() => prepareQualifyBatches(root, 1, 1), /identified_at must be a valid timestamp/);
+    writeTip(pending, "newest", "2026-10-03T00:00:00Z");
+    writeTip(pending, "middle", "2026-10-02T00:00:00Z");
+    fs.writeFileSync(path.join(pending, "malformed-oldest.json"), "{not JSON");
+    const plan = prepareQualifyBatches(root, 1, 1);
+    assert.equal(plan.pendingTipCount, 2);
+    assert.equal(plan.selectedTipCount, 1);
+    assert.match(plan.jobs[0].prompt, /https:\/\/example.com\/newest/);
+    assert.doesNotMatch(plan.jobs[0].prompt, /example.com\/middle/);
+    assert.ok(warnings.some((warning) => warning.includes("malformed-oldest.json")));
+    assert.equal(fs.existsSync(path.join(pending, "malformed-oldest.json")), true);
   } finally {
+    console.warn = originalWarn;
+    cleanup();
+  }
+});
+
+test("skips a tip with an invalid identification timestamp", () => {
+  const { root, pending, cleanup } = fixture();
+  const originalWarn = console.warn;
+  console.warn = () => {};
+  try {
+    writeTip(pending, "valid", "2026-10-02T00:00:00Z");
+    writeTip(pending, "invalid-time", "2026-10-03T00:00:00Z", "not-a-time");
+    const plan = prepareQualifyBatches(root, 1, 1);
+    assert.equal(plan.pendingTipCount, 1);
+    assert.match(plan.jobs[0].prompt, /example.com\/valid/);
+  } finally {
+    console.warn = originalWarn;
     cleanup();
   }
 });

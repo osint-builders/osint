@@ -37,8 +37,15 @@ _warn() {
 _write_tip() {
   # $1=sid $2=name $3=type $4=candidates(JSON array)
   local sid="$1" name="$2" type="$3" candidates="$4" n
-  n=$(printf '%s' "$candidates" | jq -e 'if type == "array" then length else error("candidates must be an array") end' 2>/dev/null) || {
-    _warn "$sid" "candidate parser returned invalid data"
+  n=$(printf '%s' "$candidates" | jq -er --argjson limit "$MAX_CANDIDATES" '
+    if type == "array" and length <= $limit and all(.[];
+      type == "object"
+      and (.url | type == "string") and (.url | test("^https?://"; "i"))
+      and (.snippet | type == "string")
+      and (.published_at | type == "string") and (.published_at | length > 0)
+    ) then length else error("invalid candidate shape") end
+  ' 2>/dev/null) || {
+    _warn "$sid" "candidate parser returned invalid URL, snippet, or publication time"
     return 1
   }
   [ "$n" -gt 0 ] || return 0
@@ -283,7 +290,7 @@ echo "identify: coverage attempted=$ATTEMPTED succeeded=$SUCCEEDED no-hit=$NO_HI
 if [ "$TWITTER_SKIPPED" -gt 0 ]; then
   echo "identify: skipped $TWITTER_SKIPPED Twitter source(s) because TWITTER_BEARER_TOKEN is unavailable." >&2
 fi
-if [ "$ATTEMPTED" -gt 0 ] && [ "$FAILED" -eq "$ATTEMPTED" ]; then
-  echo "identify: all attempted sources failed; refusing a green scan." >&2
+if [ "$FAILED" -gt 0 ] || [ "$TWITTER_SKIPPED" -gt 0 ]; then
+  echo "identify: degraded source coverage; successful tips remain available for qualification." >&2
   exit 1
 fi

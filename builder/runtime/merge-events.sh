@@ -41,7 +41,9 @@ while IFS= read -r f; do
   while IFS= read -r raw; do
     [ -n "$raw" ] || continue
     line=$(printf '%s' "$raw" | jq -c '.' 2>/dev/null) || {
-      echo "WARN: skipping unparseable line in $f" >&2; continue; }
+      echo "ERROR: unparseable event line in $f" >&2
+      exit 1
+    }
     url=$(printf '%s' "$line" | jq -r '.links[0].url // empty')
     fp=$(printf '%s' "$line" | fingerprint)
     if [ -n "$url" ] && grep -Fxq "$url" "$SEEN_URLS"; then continue; fi
