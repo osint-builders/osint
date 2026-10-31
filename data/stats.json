@@ -1,15 +1,15 @@
 {
-  "last_updated": "2026-10-31T03:03:26.001Z",
+  "last_updated": "2026-10-31T03:15:47.134Z",
   "data_range": {
     "oldest_date": "2026-08-25",
     "newest_date": "2026-10-31"
   },
   "statistics": {
-    "total_events": 5101,
+    "total_events": 5112,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4738,
-      "2026-10": 106
+      "2026-10": 117
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 157,
@@ -22,7 +22,7 @@
       "Insider Paper (@insiderpaper)": 99,
       "Clash Report (@ClashReport)": 323,
       "DD Geopolitics (@DDGeopolitics)": 161,
-      "OSINT Technical (@Osinttechnical)": 63,
+      "OSINT Technical (@Osinttechnical)": 64,
       "NSA (@NSAGov)": 3,
       "Sim Nasr (@SimNasr)": 78,
       "TankerTrackers (@TankerTrackers)": 21,
@@ -30,11 +30,11 @@
       "Middle East Eye (@MiddleEastEye)": 218,
       "MT Anderson (@MT_Anderson)": 4,
       "inside_nk (@inside_nk)": 31,
-      "Ship News (@ShipNews)": 22,
+      "Ship News (@ShipNews)": 24,
       "Ianellisjones (@Ianellisjones)": 20,
       "War Translated": 8,
       "Middle East Spectator": 45,
-      "Geopolitics Prime (@geopolitics_prime)": 163,
+      "Geopolitics Prime (@geopolitics_prime)": 164,
       "AP News (@AP)": 39,
       "CSIS Korea Chair": 9,
       "Our Wars, Today (@ourwarstoday)": 18,
@@ -43,7 +43,7 @@
       "US Navy (@USNavy)": 26,
       "CNN (@CNN)": 59,
       "Warshipcam (@Warshipcam)": 118,
-      "Xinhua News (@XHNews)": 197,
+      "Xinhua News (@XHNews)": 198,
       "cnnbrk (@cnnbrk)": 22,
       "Fox News (@FoxNews)": 80,
       "Quds News Network": 118,
@@ -60,7 +60,7 @@
       "Gcaptain (@Gcaptain)": 29,
       "cnni": 3,
       "twitter-criticalthreats": 1,
-      "Thewarzonewire (@Thewarzonewire)": 82,
+      "Thewarzonewire (@Thewarzonewire)": 83,
       "Middle East Spectator (@Middle_East_Spectator)": 109,
       "BBC World News": 45,
       "BBC Breaking News": 11,
@@ -90,14 +90,14 @@
       "BBG Originals (@BBGOriginals)": 43,
       "Critical Threats Project": 14,
       "CNN": 6,
-      "Thewarzonewire": 9,
+      "Thewarzonewire": 11,
       "Southkoreapro": 1,
       "Insider Paper": 37,
       "Taiwan News (@TaiwanNewsEN)": 66,
       "ChineseEmbInUs": 3,
       "Defence Intelligence of Ukraine – GUR MO (@DIUkraine)": 20,
       "ChineseEmbInUs (@ChineseEmbInUs)": 13,
-      "US Treasury (@USTreasury)": 12,
+      "US Treasury (@USTreasury)": 13,
       "Serhii FLASH — Technologies": 5,
       "Quds News Network (@QudsNen)\n": 3,
       "Middle East Spectator — MES\n": 3,
@@ -119,7 +119,7 @@
       "Our Wars, Today": 4,
       "Taiwan News": 8,
       "Xinhua News": 5,
-      "Institute for the Study of War": 12,
+      "Institute for the Study of War": 13,
       "Riskstaff (@Riskstaff)": 2,
       "Japan Joint Staff (@JapanJointStaff)": 16,
       "NATO Maritime Command (@NATO_MARCOM)": 7,
@@ -179,10 +179,11 @@
       "Middle East Spectator — MES": 3,
       "twitter-foxnews": 1,
       "twitter-cnn": 1,
+      "The Lookout North": 1,
       "Ministry of National Defense Taiwan": 1
     },
     "media_files": {
-      "images": 978,
+      "images": 989,
       "videos": 0
     }
   },
@@ -225,8 +226,8 @@
     "2026-09-29": 147,
     "2026-09-30": 155,
     "2026-10-01": 67,
-    "2026-10-30": 19,
-    "2026-10-31": 20
+    "2026-10-30": 29,
+    "2026-10-31": 21
   },
-  "average_confidence": 0.7862932226832596
+  "average_confidence": 0.7860868067516316
 }
