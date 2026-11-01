@@ -149454,5 +149454,42 @@
     ],
     "link_preview_image": "https://static.cnews.fr/sites/default/files/styles/image_1160_652/public/une_bombe_artisanale_incendiaire_explose_aux_pieds_d_un_policier_a_paris_6ae617066ec66.jpg?itok=GK3Mv8nS",
     "image_origin": "article"
+  },
+  {
+    "id": "evt_110449065602347008",
+    "title": "UKMTO Reports Merchant Vessel Struck by Unknown Projectile in Strait of Hormuz",
+    "summary": "UKMTO reports that a vessel in the Strait of Hormuz was struck by an unknown projectile after a Mayday relay from a merchant vessel. Authorities investigate the incident, and crew status and damage remain unreported.",
+    "date_event": null,
+    "date_published": "2026-11-01T18:14:00Z",
+    "geo": {
+      "lat": 26.4494061,
+      "lon": 56.2027702,
+      "location_name": "Strait of Hormuz",
+      "precision": "sea-area"
+    },
+    "topics": [
+      "maritime-security",
+      "strait-of-hormuz",
+      "shipping",
+      "projectile-attack"
+    ],
+    "confidence": 0.6,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2116960848614949300",
+        "label": "Clash Report post"
+      },
+      {
+        "url": "https://www.devdiscourse.com/article/international/4000351-vessel-struck-by-unknown-projectile-in-hormuz-ukmto-says",
+        "label": "Reuters copy (original report)"
+      },
+      {
+        "url": "https://www.breakingthenews.net/Article/UK-reports-vessel-struck-by-projectile-in-Hormuz/67452572",
+        "label": "Breaking The News (UKMTO relay)"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/media/HWD0lxFXsAAUcL9.png",
+    "image_origin": "article"
   }
 ]
