@@ -149491,5 +149491,40 @@
     ],
     "link_preview_image": "https://pbs.twimg.com/media/HWD0lxFXsAAUcL9.png",
     "image_origin": "article"
+  },
+  {
+    "id": "evt_110871311869317120",
+    "title": "ABC News (@ABC) reports 15 to 20 Inches of Rain Flooding Roads in Brevard County, Florida",
+    "summary": "ABC News (@ABC) reports that parts of Florida recorded 15 to 20 inches of rain, turning roads into rivers and submerging cars. The report centers on southeastern Brevard County, close to the single-day rainfall record for the state.",
+    "date_event": null,
+    "date_published": "2026-11-02T22:06:02Z",
+    "geo": {
+      "lat": 28.2100203,
+      "lon": -80.7997185,
+      "location_name": "Brevard County, Florida",
+      "precision": "region",
+      "country": "United States",
+      "region": "Florida"
+    },
+    "topics": [
+      "flash-flood",
+      "rainfall",
+      "florida",
+      "emergency-management"
+    ],
+    "confidence": 0.6,
+    "source_name": "ABC News (@ABC)",
+    "links": [
+      {
+        "url": "https://x.com/ABC/status/2117380249671397768",
+        "label": "Queued ABC News post"
+      },
+      {
+        "url": "https://abcnews.com/US/florida-county-nears-states-rainfall-record-flash-flood/story?id=137777689",
+        "label": "ABC News article"
+      }
+    ],
+    "link_preview_image": "https://i.abcnewsfe.com/a/7ed1f88c-b0f9-4692-a1bf-7eddb0fd2f4b/flooding-ht-er-261102_1793643564018_hpMain_16x9.jpg?w=1600",
+    "image_origin": "article"
   }
 ]

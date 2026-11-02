@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-11-01T18:50:49.425Z",
+  "last_updated": "2026-11-02T22:47:48.616Z",
   "data_range": {
     "oldest_date": "2026-08-25",
-    "newest_date": "2026-11-01"
+    "newest_date": "2026-11-02"
   },
   "statistics": {
-    "total_events": 5107,
+    "total_events": 5108,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4728,
       "2026-10": 121,
-      "2026-11": 1
+      "2026-11": 2
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 159,
@@ -40,7 +40,7 @@
       "CSIS Korea Chair": 9,
       "Our Wars, Today (@ourwarstoday)": 18,
       "BBC World News (@BBCWorld)": 125,
-      "ABC News (@ABC)": 121,
+      "ABC News (@ABC)": 122,
       "US Navy (@USNavy)": 26,
       "CNN (@CNN)": 59,
       "Warshipcam (@Warshipcam)": 118,
@@ -184,7 +184,7 @@
       "Ministry of National Defense Taiwan": 1
     },
     "media_files": {
-      "images": 987,
+      "images": 988,
       "videos": 0
     }
   },
@@ -229,7 +229,8 @@
     "2026-10-01": 67,
     "2026-10-30": 30,
     "2026-10-31": 24,
-    "2026-11-01": 1
+    "2026-11-01": 1,
+    "2026-11-02": 1
   },
-  "average_confidence": 0.7858695652173864
+  "average_confidence": 0.785805450155221
 }
