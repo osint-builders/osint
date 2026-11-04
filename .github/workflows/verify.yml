@@ -42,7 +42,7 @@ jobs:
 
       - name: Test agent lifecycle and queue recovery
         run: |
-          npx tsx --test lib/*.test.ts
+          npx tsx --test lib/*.test.ts qualify.test.ts
           npm run verify-queue-recovery
         working-directory: builder
 
