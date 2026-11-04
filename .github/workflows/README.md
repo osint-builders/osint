@@ -43,7 +43,7 @@ See the top-level [README.md](../../README.md) for architecture and secrets setu
 
 ## release-cli.yml — "Release CLI"
 
-- One job: packs `data/indexes/` into `cli/embed/*.gz`, cross-compiles the Go CLI for five platforms in a loop, verifies all five exist, and re-points the `cli-latest` release.
+- One job: packs `data/indexes/` into `cli/embed/*.gz`, cross-compiles the Go CLI for five platforms in a loop, verifies all five exist and the embedded snapshot matches the index, then replaces assets on the rolling `cli-latest` release. The tag stays fixed; the release title and body show the build date, event count, index time, and source commit.
 - Triggers on `push` to main touching `cli/**`, `workflow_dispatch`, or a **successful** embeddings `workflow_run`.
 - Workflow-level `concurrency: release-cli, cancel-in-progress: false, queue: max` — releases serialize and queue instead of evicting each other.
 - These two workflows were one file (`deploy-downstream.yml`) whose CLI jobs shared a **job-level** concurrency group. A group holds one running plus one pending entry, so each extra matrix leg evicted the pending one: three of five builds were cancelled seconds after queuing and the release job reported `skipped`. Keep concurrency at the workflow level here.

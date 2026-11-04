@@ -1,7 +1,7 @@
 name: Release CLI
 
 # Packs the search index into cli/embed/*.gz, cross-compiles the Go CLI for
-# five platforms, and re-points the cli-latest release.
+# five platforms, and replaces the assets on the cli-latest release.
 #
 # This ran as cli-prepare -> cli-build (5-way matrix) -> cli-release, with all
 # seven jobs sharing one JOB-level concurrency group. A concurrency group holds
@@ -105,22 +105,11 @@ jobs:
             echo "source_commit=$(git rev-parse HEAD)"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Re-point the cli-latest tag
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          # Drop the old release so its assets don't accumulate, then move the
-          # tag to HEAD. Runs immediately before publishing to keep the window
-          # in which cli-latest 404s as short as possible.
-          gh release delete cli-latest --yes --cleanup-tag 2>/dev/null || true
-          git tag -f cli-latest
-          git push origin cli-latest --force
-
       - name: Publish cli-latest release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: cli-latest
+          overwrite_files: true
           name: OSINT CLI ${{ steps.snapshot.outputs.build_date }} (${{ steps.snapshot.outputs.event_count }} events)
           body: |
             ## OSINT CLI Tool
