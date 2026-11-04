@@ -152,6 +152,7 @@ test("Oz ERROR is terminal and reports its structured status without cancelling"
   const results = await coordinator.execute(jobs.slice(0, 1));
   assert.equal(polls, 1);
   assert.equal(results[0].state, "ERROR");
+  assert.equal(results[0].retryable, true);
   const log = output.join("\n");
   assert.match(log, /Oz session \(run ID: error-run\): https:\/\/app\.warp\.dev\/error-session/);
   assert.match(log, /code=resource_unavailable retryable=true message=Worker unavailable try again/);

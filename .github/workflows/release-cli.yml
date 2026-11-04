@@ -99,7 +99,7 @@ jobs:
             exit 1
           fi
           {
-            echo "build_date=$(date -u +%Y-%m-%d)"
+            echo "build_date=$(TZ=America/New_York date +%Y-%m-%d)"
             echo "event_count=$expected_count"
             echo "index_updated=$expected_updated"
             echo "source_commit=$(git rev-parse HEAD)"

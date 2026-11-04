@@ -51,6 +51,17 @@ const QUALIFY_BATCH_SIZE = positiveInteger("QUALIFY_BATCH_SIZE", 3);
 // launching one agent per backlog batch would exceed the job deadline.
 const QUALIFY_MAX_BATCHES = positiveInteger("QUALIFY_MAX_BATCHES", 10);
 
+// EX_TEMPFAIL: the workflow may reload the remaining queue and try once more.
+export const RETRYABLE_QUALIFY_EXIT_CODE = 75;
+
+/** Retry only platform errors that Oz explicitly identifies as transient. */
+export function shouldRetryQualify(results: readonly AgentResult[]): boolean {
+  const failures = results.filter(({ state }) => state !== "SUCCEEDED");
+  return failures.length > 0 && failures.every(
+    ({ state, retryable }) => state === "ERROR" && retryable === true
+  );
+}
+
 async function main(): Promise<void> {
   const repoRoot = process.env["REPO_ROOT"] ?? path.resolve(__dirname, "..");
   const dryRun = process.argv.includes("--dry-run");
@@ -126,7 +137,7 @@ async function main(): Promise<void> {
     console.log("\n✓ All qualify batches succeeded.");
   } else {
     console.error("\n✗ One or more qualify batches failed.");
-    process.exitCode = 1;
+    process.exitCode = shouldRetryQualify(results) ? RETRYABLE_QUALIFY_EXIT_CODE : 1;
   }
 }
 

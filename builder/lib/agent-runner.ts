@@ -41,6 +41,12 @@ export interface AgentResult {
   runId: string;
   state: string;
   itemCount: number;
+  retryable?: boolean;
+}
+
+interface PollResult {
+  state: string;
+  retryable?: boolean;
 }
 
 interface RunnerConfig {
@@ -119,10 +125,11 @@ export class AgentRunCoordinator {
 
       const settledPolls = await Promise.allSettled(spawned.map(async ({ job, runId }) => {
         try {
+          const outcome = await this.pollUntilComplete(runId);
           return {
             label: job.label,
             runId,
-            state: await this.pollUntilComplete(runId),
+            ...outcome,
             itemCount: job.itemCount,
           };
         } catch (error) {
@@ -174,7 +181,7 @@ export class AgentRunCoordinator {
     }
   }
 
-  private async pollUntilComplete(runId: string): Promise<string> {
+  private async pollUntilComplete(runId: string): Promise<PollResult> {
     this.runtime.write(`Polling run ${runId}`);
     const deadline = this.runtime.now() + MAX_RUN_DURATION_MS;
     await this.runtime.sleep(this.runtime.random() * POLL_BASE_MS);
@@ -185,7 +192,7 @@ export class AgentRunCoordinator {
       if (this.runtime.now() > deadline) {
         this.runtime.write(`\n  ⚠ Run ${runId} exceeded its 10-minute deadline — cancelling.\n`);
         await this.cancelOne(runId);
-        return "CANCELLED";
+        return { state: "CANCELLED" };
       }
       try {
         const run = await this.client.retrieve(runId);
@@ -205,7 +212,7 @@ export class AgentRunCoordinator {
               `retryable=${status.retryable ?? "unspecified"} message=${message}`
             );
           }
-          return run.state;
+          return { state: run.state, retryable: run.status_message?.retryable };
         }
         if (run.state === "BLOCKED") {
           this.runtime.write(`\n  ⚠ Run ${runId} entered BLOCKED — cancelling.\n`);
@@ -213,7 +220,7 @@ export class AgentRunCoordinator {
             this.runtime.log(`  Oz session (run ID: ${runId}): ${run.session_link}`);
           }
           await this.cancelOne(runId);
-          return "CANCELLED";
+          return { state: "CANCELLED" };
         }
         backoffMs = POLL_BASE_MS;
         await this.runtime.sleep(POLL_BASE_MS + this.runtime.random() * POLL_JITTER_MS);

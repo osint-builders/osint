@@ -61,6 +61,7 @@ Human overview: [`README.md`](README.md). Schema: [`data/SCHEMA.md`](data/SCHEMA
 ### Queue lifecycle
 - `data/queue/pending/` holds temporary raw tips, not published events. Qualification deletes each consumed tip, even when no event qualifies; pre-run cleanup deletes tips older than 24 hours or impossible to date. Malformed dated records are logged and skipped until they expire. Never recreate `processed/` or `expired/` archives.
 - A default Qualify run selects the 30 newest tips (10 batches × 3). Others wait for another run and may expire; raising the cap increases Warp spend. Do not add a second cron to drain the queue.
+- Oz `ERROR` is terminal and carries a status code and retryability hint. Qualify retries once only when every failed batch has an explicitly retryable `ERROR`; the second pass reloads `main` so already consumed tips stay consumed. Other failures leave their tips queued for diagnosis.
 
 ### Dedup
 - `builder/runtime/merge-events.sh` dedups per bucket by `links[0].url` + content fingerprint (sha256 of title|source|date|url).

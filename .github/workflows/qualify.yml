@@ -46,10 +46,9 @@ jobs:
     # (any conclusion — even a partial identify pass may have left tips).
     if: github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_run'
     runs-on: ubuntu-latest
-    # Backstop only — builder/qualify.ts enforces a 10-minute per-batch
-    # deadline (cancelling any run that's stuck/BLOCKED) via the same
-    # agent-runner lib as collection.yml.
-    timeout-minutes: 15
+    # Two bounded passes fit: each Oz run has a 10-minute deadline; the
+    # second pass only follows an explicitly retryable platform ERROR.
+    timeout-minutes: 25
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -86,7 +85,18 @@ jobs:
         working-directory: builder
 
       - name: Run OSINT qualify
-        run: npm run qualify
+        run: |
+          set +e
+          npm run qualify
+          result=$?
+          set -e
+          if [ "$result" -eq 0 ]; then exit 0; fi
+          if [ "$result" -ne 75 ]; then exit "$result"; fi
+          echo "Oz reported retryable platform errors; reloading remaining tips in 45 seconds."
+          sleep 45
+          git fetch origin main
+          git reset --hard origin/main
+          npm run qualify
         working-directory: builder
         env:
           REPO_ROOT: ${{ github.workspace }}
