@@ -85,6 +85,26 @@ jobs:
             exit 1
           fi
 
+      - name: Verify embedded snapshot
+        id: snapshot
+        run: |
+          set -euo pipefail
+          expected_count=$(jq -er '.event_count | select(. > 0)' data/indexes/schema.json)
+          expected_updated=$(jq -er '.last_updated | select(length > 0)' data/indexes/schema.json)
+          stats=$(OSINTCLI_NO_UPDATE=1 dist/osintcli-linux-amd64 --format json stats)
+          actual_count=$(jq -er '.event_count | select(. > 0)' <<< "$stats")
+          actual_updated=$(jq -er '.last_updated | select(length > 0)' <<< "$stats")
+          if [ "$actual_count" != "$expected_count" ] || [ "$actual_updated" != "$expected_updated" ]; then
+            echo "::error::CLI snapshot differs from data/indexes/schema.json"
+            exit 1
+          fi
+          {
+            echo "build_date=$(date -u +%Y-%m-%d)"
+            echo "event_count=$expected_count"
+            echo "index_updated=$expected_updated"
+            echo "source_commit=$(git rev-parse HEAD)"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Re-point the cli-latest tag
         env:
           GH_TOKEN: ${{ github.token }}
@@ -101,12 +121,14 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: cli-latest
-          name: OSINT CLI Tool (latest)
+          name: OSINT CLI ${{ steps.snapshot.outputs.build_date }} (${{ steps.snapshot.outputs.event_count }} events)
           body: |
             ## OSINT CLI Tool
 
             Cross-platform single-file executable for querying OSINT world events
             offline. Data and semantic embeddings are baked into the binary.
+
+            Built from commit `${{ steps.snapshot.outputs.source_commit }}` with ${{ steps.snapshot.outputs.event_count }} events. Embedded index updated `${{ steps.snapshot.outputs.index_updated }}`.
 
             ### Download
 

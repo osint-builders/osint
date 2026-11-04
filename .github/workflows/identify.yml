@@ -7,7 +7,7 @@ name: Identify OSINT Tips
 # ephemeral github.token instead). Sources with a hit get a lightweight tip
 # record committed to data/queue/pending/ for qualify.yml to process.
 #
-# Cadence: daily at 09:00 America/New_York, plus manual dispatch.
+# Cadence: daily at 09:17 America/New_York, plus manual dispatch.
 # qualify.yml chains off this run via `workflow_run`, so this single trigger
 # drives the whole Tip & Queue pipeline — do not also schedule qualify.yml or
 # each tip gets picked up twice.
@@ -18,7 +18,7 @@ name: Identify OSINT Tips
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '17 9 * * *'
       timezone: America/New_York
 
 concurrency:

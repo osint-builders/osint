@@ -55,7 +55,7 @@ Human overview: [`README.md`](README.md). Schema: [`data/SCHEMA.md`](data/SCHEMA
 - Every new published event needs a verified image URL. Use event/article imagery when available; otherwise a source banner or the marked default icon. Set `image_origin` to `article`, `source`, or `default` so consumers never mistake fallback art for event evidence.
 
 ### Time window
-- Identify scans a **1-hour lookback** from dispatch time. One scheduled run per day (09:00 America/New_York) — deliberate sampling, not continuous coverage. Widening the cadence or the lookback both increase qualify-stage LLM spend roughly linearly with tip count.
+- Identify scans a **1-hour lookback** from dispatch time. One scheduled run per day (09:17 America/New_York) — deliberate sampling, not continuous coverage. Widening the cadence or the lookback both increase qualify-stage LLM spend roughly linearly with tip count.
 - The qualifier copies each queued tip's original scan window into `source_window`; `validate-events.js --qualified` enforces publication time within it, even when a batch mixes scan windows. `original_report` identifies the first checked report of this new development; a recap cannot reset freshness. Legacy collection also passes `--time-window`.
 
 ### Queue lifecycle
@@ -118,4 +118,4 @@ Skill editing rules:
 - Don't introduce `os.getenv`-style secret reading from the agent prompt; secrets flow through the Warp env, not the repo.
 - Don't commit `node_modules/` or media files to the repo.
 - **Don't open pull requests or merge requests — ever, for any change.** This repo works directly on `main`. Never use `gh pr create` or any equivalent. Runtime agents commit and push via `builder/runtime/submit.sh`; if push fails after retries, exit 1. For development work, commit to `main` and push — rebase onto `origin/main` rather than creating merge commits, so history stays linear and the audit can walk it.
-- Don't add a `schedule:` trigger to `qualify.yml` or `collection.yml`. `identify.yml` carries the only approved cron (daily 09:00 America/New_York); `qualify.yml` reaches the schedule through its `workflow_run` chain, and a second cron would process every tip twice. `collection.yml` stays on-demand-only.
+- Don't add a `schedule:` trigger to `qualify.yml` or `collection.yml`. `identify.yml` carries the only approved cron (daily 09:17 America/New_York); `qualify.yml` reaches the schedule through its `workflow_run` chain, and a second cron would process every tip twice. `collection.yml` stays on-demand-only.

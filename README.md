@@ -6,7 +6,7 @@ Automated collection of world-event intelligence from OSINT sources (Twitter/X, 
 ![Qualify Tips](https://github.com/osint-builders/osint/actions/workflows/qualify.yml/badge.svg)
 ![Data Release](https://github.com/osint-builders/osint/actions/workflows/create-release.yml/badge.svg)
 
-> **Cadence right now**: `identify.yml` is scheduled daily for **09:00 America/New_York** (plus manual dispatch) and `qualify.yml` chains off it automatically, so that one trigger drives a full collection. GitHub may start a scheduled run later; the 1-hour lookback uses the actual dispatch time. A daily cadence samples one hour per day rather than covering it. The legacy `collection.yml` single-phase flow still exists but runs on demand only. See [`.github/workflows/README.md`](.github/workflows/README.md) for details.
+> **Cadence right now**: `identify.yml` is scheduled daily for **09:17 America/New_York** (plus manual dispatch) and `qualify.yml` chains off it automatically, so that one trigger drives a full collection. GitHub may start a scheduled run later; the 1-hour lookback uses the actual dispatch time. A daily cadence samples one hour per day rather than covering it. The legacy `collection.yml` single-phase flow still exists but runs on demand only. See [`.github/workflows/README.md`](.github/workflows/README.md) for details.
 
 > **For agents/contributors editing this repo:** see [`AGENTS.md`](AGENTS.md) for conventions and `builder/prompts/` for runtime prompts. This README serves humans getting their bearings.
 

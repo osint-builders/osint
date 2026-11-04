@@ -4,7 +4,7 @@ See the top-level [README.md](../../README.md) for architecture and secrets setu
 
 ## identify.yml — "Identify OSINT Tips" (Tip & Queue, stage 1)
 
-- Triggers: scheduled daily for **09:00 America/New_York** (`cron: '0 9 * * *'` with an IANA `timezone:`, so DST is handled), plus `workflow_dispatch`. GitHub may delay a scheduled start; the one-hour scan window starts at actual dispatch.
+- Triggers: scheduled daily for **09:17 America/New_York** (`cron: '17 9 * * *'` with an IANA `timezone:`, so DST is handled), plus `workflow_dispatch`. GitHub may delay a scheduled start; the one-hour scan window starts at actual dispatch.
 - This is the only scheduled entry point for collection — `qualify.yml` chains off it via `workflow_run`. Do not add a schedule to `qualify.yml` too, or every tip gets processed twice.
 - Runs `builder/runtime/identify.sh` directly on the GitHub Actions runner — **no Warp agent, no LLM spend**. Cheap curl/jq/python3 scan across every processable source for the last hour; writes tip records to `data/queue/pending/` and commits with the ephemeral `github.token` (no `OSINT_GH_TOKEN` needed for this stage).
 - Logs attempted, successful, no-hit, failed, skipped, and tip counts. Individual fetch/parser failures identify the source. Any failed source or missing Twitter token marks the run as degraded; the workflow commits successful tips before reporting failure, and Qualify still processes them.

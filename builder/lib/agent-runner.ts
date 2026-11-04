@@ -9,12 +9,16 @@ const MAX_RUN_DURATION_MS = 10 * 60_000;
 export const MAX_PROMPT_SIZE_BYTES = 1_048_576;
 export const DEFAULT_MODEL_ID = "claude-5-5-haiku-high";
 
-const TERMINAL_STATES = new Set(["SUCCEEDED", "FAILED", "CANCELLED"]);
+const TERMINAL_STATES = new Set(["SUCCEEDED", "FAILED", "ERROR", "CANCELLED"]);
 
 // Only the three Oz operations the coordinator needs cross this seam.
 export interface AgentClient {
   run(params: OzAPI.AgentRunParams): Promise<{ run_id: string }>;
-  retrieve(runId: string): Promise<{ state: string; session_link?: string }>;
+  retrieve(runId: string): Promise<{
+    state: string;
+    session_link?: string;
+    status_message?: { message: string; error_code?: string; retryable?: boolean };
+  }>;
   cancel(runId: string): Promise<unknown>;
 }
 
@@ -191,6 +195,15 @@ export class AgentRunCoordinator {
           this.runtime.write("\n");
           if (run.session_link) {
             this.runtime.log(`  Oz session (run ID: ${runId}): ${run.session_link}`);
+          }
+          if (run.state !== "SUCCEEDED" && run.status_message) {
+            const status = run.status_message;
+            const message = status.message.replace(/\s+/g, " ").slice(0, 500);
+            this.runtime.log(
+              `  Oz ${run.state} (run ID: ${runId}): ` +
+              `code=${status.error_code ?? "unspecified"} ` +
+              `retryable=${status.retryable ?? "unspecified"} message=${message}`
+            );
           }
           return run.state;
         }

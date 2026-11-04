@@ -125,3 +125,34 @@ test("terminal Oz runs log session links with run IDs and never log prompts", as
   assert.match(log, /Oz session \(run ID: run-3\): https:\/\/app\.warp\.dev\/blocked/);
   assert.doesNotMatch(log, /https:\/\/app\.warp\.dev\/running|PRIVATE_PROMPT_VALUE/);
 });
+
+test("Oz ERROR is terminal and reports its structured status without cancelling", async () => {
+  const output: string[] = [];
+  const runtime = fastRuntime();
+  runtime.log = (message) => { output.push(message); };
+  runtime.write = (message) => { output.push(message); };
+  let polls = 0;
+  const client: AgentClient = {
+    run: async () => ({ run_id: "error-run" }),
+    retrieve: async () => {
+      polls++;
+      return {
+        state: "ERROR",
+        session_link: "https://app.warp.dev/error-session",
+        status_message: {
+          message: "Worker unavailable\ntry again",
+          error_code: "resource_unavailable",
+          retryable: true,
+        },
+      };
+    },
+    cancel: async () => { throw new Error("terminated ERROR run must not be cancelled"); },
+  };
+  const coordinator = new AgentRunCoordinator(client, { modelId: "test-model" }, runtime);
+  const results = await coordinator.execute(jobs.slice(0, 1));
+  assert.equal(polls, 1);
+  assert.equal(results[0].state, "ERROR");
+  const log = output.join("\n");
+  assert.match(log, /Oz session \(run ID: error-run\): https:\/\/app\.warp\.dev\/error-session/);
+  assert.match(log, /code=resource_unavailable retryable=true message=Worker unavailable try again/);
+});
