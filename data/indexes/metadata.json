@@ -149526,5 +149526,54 @@
     ],
     "link_preview_image": "https://i.abcnewsfe.com/a/7ed1f88c-b0f9-4692-a1bf-7eddb0fd2f4b/flooding-ht-er-261102_1793643564018_hpMain_16x9.jpg?w=1600",
     "image_origin": "article"
+  },
+  {
+    "id": "evt_111568980203827200",
+    "title": "Quds News Network (@QudsNen) Reports an Israeli Airstrike Near Talousa in Southern Lebanon",
+    "summary": "Quds News Network (@QudsNen) reports an Israeli airstrike on the outskirts of Talousa in southern Lebanon on the evening of 4 November 2026. MTV Lebanon and Elnashra separately report an Israeli strike near Talousa that evening. The reviewed reports mention no casualties for this strike.",
+    "date_event": null,
+    "date_published": "2026-11-04T20:17:13Z",
+    "geo": {
+      "lat": 33.2283674,
+      "lon": 35.4884564,
+      "location_name": "Tallouseh, Lebanon",
+      "precision": "city",
+      "country": "Lebanon",
+      "region": "Nabatieh Governorate",
+      "city": "Tallouseh"
+    },
+    "topics": [
+      "airstrike",
+      "lebanon",
+      "israel",
+      "southern-lebanon",
+      "ceasefire-compliance"
+    ],
+    "confidence": 0.6,
+    "source_name": "Quds News Network (@QudsNen)",
+    "links": [
+      {
+        "url": "https://t.me/QudsNen/244398",
+        "label": "Quds News Network Telegram post (queued candidate and original report)"
+      },
+      {
+        "url": "https://www.mtv.com.lb/en/news/1755206",
+        "label": "MTV Lebanon"
+      },
+      {
+        "url": "https://www.elnashra.com/news/show/1807699/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86-%D8%A7%D9%84%D8%AD%D8%B1%D8%A8%D9%8A-%D8%A7%D9%84%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A-%D8%A3%D8%BA%D8%A7%D8%B1-%D9%85%D8%B3%D8%AA%D9%87%D8%AF%D9%81%D8%A7%D9%8B-%D8%A8%D9%84%D8%AF%D8%A9%C2%A0%D8%B7%D9%84%D9%88%D8%B3%D8%A9",
+        "label": "Elnashra"
+      },
+      {
+        "url": "https://www.aa.com.tr/en/middle-east/1-killed-another-wounded-in-fresh-israeli-strike-on-southern-lebanon/4111534",
+        "label": "Anadolu Agency (framework context)"
+      },
+      {
+        "url": "https://www.arabnews.com/middle-east/lebanon-says-israeli-strike-kills-one-in-south-3009799",
+        "label": "Arab News (framework context)"
+      }
+    ],
+    "link_preview_image": "https://imagescdn.mtv.com.lb/articles/902786238031.jpg?width=1200&height=675&quality=85",
+    "image_origin": "article"
   }
 ]
