@@ -85,7 +85,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    # Pages may need several minutes to sync thousands of event detail files.
+    # Give deploy-pages its documented 10-minute window plus job setup time.
+    timeout-minutes: 12
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
