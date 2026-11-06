@@ -25,7 +25,7 @@ function fixture(): { root: string; pending: string; cleanup(): void } {
   };
 }
 
-function writeTip(directory: string, name: string, end: string, identifiedAt = end): void {
+function writeTip(directory: string, name: string, end: string, identifiedAt = end, publishedAt = end): void {
   fs.writeFileSync(path.join(directory, `${name}.json`), JSON.stringify({
     source_id: "fixture",
     source_name: "Fixture Source",
@@ -33,7 +33,7 @@ function writeTip(directory: string, name: string, end: string, identifiedAt = e
     window_start: new Date(Date.parse(end) - 60 * 60_000).toISOString(),
     window_end: end,
     identified_at: identifiedAt,
-    candidates: [{ url: `https://example.com/${name}`, snippet: name, published_at: end }],
+    candidates: [{ url: `https://example.com/${name}`, snippet: name, published_at: publishedAt }],
   }));
 }
 
@@ -60,19 +60,33 @@ test("prepares newest tips within the batch cap and renders complete prompts", (
   }
 });
 
-test("uses identification time to select the newest tips within one scan window", () => {
+test("uses publication time to select tips within one scan window", () => {
   const { root, pending, cleanup } = fixture();
   try {
-    const windowEnd = "2026-10-03T00:00:00Z";
-    writeTip(pending, "a-oldest", windowEnd, "2026-10-03T00:00:01Z");
-    writeTip(pending, "m-middle", windowEnd, "2026-10-03T00:00:02Z");
-    writeTip(pending, "z-newest", windowEnd, "2026-10-03T00:00:03Z");
+    const windowEnd = "2026-10-03T01:00:00Z";
+    writeTip(pending, "a-newest", windowEnd, "2026-10-03T01:00:01Z", "2026-10-03T00:59:00Z");
+    writeTip(pending, "m-middle", windowEnd, "2026-10-03T01:00:03Z", "2026-10-03T00:30:00Z");
+    writeTip(pending, "z-oldest", windowEnd, "2026-10-03T01:00:02Z", "2026-10-03T00:01:00Z");
 
     const plan = prepareQualifyBatches(root, 1, 2);
     assert.equal(plan.selectedTipCount, 2);
-    assert.match(plan.jobs[0].prompt, /example.com\/z-newest/);
+    assert.match(plan.jobs[0].prompt, /example.com\/a-newest/);
     assert.match(plan.jobs[1].prompt, /example.com\/m-middle/);
-    assert.doesNotMatch(plan.jobs[0].prompt + plan.jobs[1].prompt, /example.com\/a-oldest/);
+    assert.doesNotMatch(plan.jobs[0].prompt + plan.jobs[1].prompt, /example.com\/z-oldest/);
+  } finally {
+    cleanup();
+  }
+});
+
+test("uses identification time only to break publication-time ties", () => {
+  const { root, pending, cleanup } = fixture();
+  try {
+    const windowEnd = "2026-10-03T01:00:00Z";
+    const publishedAt = "2026-10-03T00:30:00Z";
+    writeTip(pending, "first", windowEnd, "2026-10-03T01:00:01Z", publishedAt);
+    writeTip(pending, "second", windowEnd, "2026-10-03T01:00:02Z", publishedAt);
+    const plan = prepareQualifyBatches(root, 1, 1);
+    assert.match(plan.jobs[0].prompt, /example.com\/second/);
   } finally {
     cleanup();
   }
@@ -103,7 +117,7 @@ test("skips a malformed newest tip and still selects the next valid tip", () => 
     writeTip(pending, "malformed-newest", "2026-10-03T00:00:00Z");
     const malformedPath = path.join(pending, "malformed-newest.json");
     const malformed = JSON.parse(fs.readFileSync(malformedPath, "utf-8"));
-    malformed.candidates[0].published_at = null;
+    malformed.candidates[0].published_at = "not-a-time";
     fs.writeFileSync(malformedPath, JSON.stringify(malformed));
 
     const plan = prepareQualifyBatches(root, 1, 1);

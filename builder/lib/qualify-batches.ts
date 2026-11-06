@@ -24,6 +24,7 @@ interface Tip {
 interface LoadedTip {
   tip: Tip;
   relPath: string;
+  latestPublishedAt: number;
 }
 
 function parseTip(file: string, text: string): Tip {
@@ -57,7 +58,8 @@ function parseTip(file: string, text: string): Tip {
     if (!candidate || typeof candidate.url !== "string" ||
         !/^https?:\/\//i.test(candidate.url) ||
         typeof candidate.snippet !== "string" ||
-        typeof candidate.published_at !== "string" || !candidate.published_at) {
+        typeof candidate.published_at !== "string" ||
+        !Number.isFinite(Date.parse(candidate.published_at))) {
       throw new Error(`Invalid pending tip ${file}: candidate URL, snippet, or published_at is malformed`);
     }
   }
@@ -80,7 +82,11 @@ function loadPendingTips(repoRoot: string): LoadedTip[] {
     const text = fs.readFileSync(path.join(pendingDir, file), "utf-8");
     try {
       const tip = parseTip(file, text);
-      tips.push({ tip, relPath: path.join("data", "queue", "pending", file) });
+      tips.push({
+        tip,
+        relPath: path.join("data", "queue", "pending", file),
+        latestPublishedAt: Math.max(...tip.candidates.map((candidate) => Date.parse(candidate.published_at))),
+      });
     } catch (error) {
       // A single corrupt handoff record must not stall every valid batch.
       // Leave it untouched for the queue cleanup step to expire, and name it
@@ -89,9 +95,10 @@ function loadPendingTips(repoRoot: string): LoadedTip[] {
     }
   }
   return tips.sort((a, b) => {
+    const publicationOrder = b.latestPublishedAt - a.latestPublishedAt;
     const windowOrder = Date.parse(b.tip.window_end) - Date.parse(a.tip.window_end);
     const identifiedOrder = Date.parse(b.tip.identified_at) - Date.parse(a.tip.identified_at);
-    return windowOrder || identifiedOrder || a.relPath.localeCompare(b.relPath);
+    return publicationOrder || windowOrder || identifiedOrder || a.relPath.localeCompare(b.relPath);
   });
 }
 

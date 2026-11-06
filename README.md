@@ -137,7 +137,7 @@ Set these in **Settings → Secrets and variables → Actions**:
 | `BROWSE_AI_API_KEY` | secret | Used only by the manual `browse-ai-probe.yml` connection check. It does not enable Reddit collection. |
 | `PARALLEL_AGENT_COUNT` | variable | Optional. Legacy `collection.yml` bucket-count override; unset → auto-sized at ~12 sources/agent. |
 | `QUALIFY_BATCH_SIZE` | variable | Optional. Tips per qualify agent; unset → defaults to 3 (`builder/qualify.ts`). |
-| `QUALIFY_MAX_BATCHES` | variable | Optional. Maximum qualify agents per workflow run; unset → defaults to 10. The newest tips run first. |
+| `QUALIFY_MAX_BATCHES` | variable | Optional. Maximum qualify agents per workflow run; unset → defaults to 10. Tips with the newest candidate publication times run first. |
 | `WARP_MODEL_ID` | variable | Optional. Overrides the pinned Oz `model_id` (default: `claude-5-5-haiku-high`). Keeps every agent run on a Warp/Anthropic model instead of the account/environment default. |
 
 ### Key rotation / credit exhaustion
