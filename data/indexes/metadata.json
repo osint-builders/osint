@@ -149643,5 +149643,89 @@
     ],
     "link_preview_image": "https://cdn4.telesco.pe/file/kJUE3xThBQvFzicCoyqlLzVxJqvR-M2eDmzDNewOBdt56PSBLjeBvFtwzXvyTjsnY6lBU85IzUPA-c88orWI7taXQwYB0ZOeQG22GEM9MoAxZk9zK9S10G4Jv7rkaptrAoqa_EzwhItvNrzMG7ZGhLva1iUN8vzVJu1O41Ld2ATgNTuByXswVdlECe5T4X_Of7tKvuPWls3t2K6390w_Egu7yHcELRM0EjC2ML1L2OlUuBVBNXrp9wq4fKcHkT_hmuzzRcLuboTjJ4gCOBSDToR2Q1VJNFngOWv6u-456nHP-n5cAd_cNC_vaNfWONdit1eWSjXZ0IMCr61iKtEwVg.jpg",
     "image_origin": "article"
+  },
+  {
+    "id": "evt_112287482103468032",
+    "title": "US Treasury Sanctions Eight Canada-Based Currency Exchanges Over Iran Ties",
+    "summary": "Middle East Eye reports new US Treasury Iran-related sanctions on eight Canada-based money services businesses on Friday, 6 November 2026. Reuters reports the same Treasury notice from an earlier timestamp, and a Treasury press release lists the action.",
+    "date_event": null,
+    "date_published": "2026-11-06T19:39:00Z",
+    "geo": {
+      "lat": 61.0666922,
+      "lon": -107.991707,
+      "location_name": "Canada",
+      "precision": "country",
+      "country": "Canada"
+    },
+    "topics": [
+      "sanctions",
+      "iran",
+      "canada",
+      "money-services-business",
+      "shadow-banking"
+    ],
+    "confidence": 0.7,
+    "source_name": "Middle East Eye (@MiddleEastEye)",
+    "links": [
+      {
+        "url": "https://x.com/MiddleEastEye/status/2118801512029671469",
+        "label": "Queued Middle East Eye post"
+      },
+      {
+        "url": "https://www.devdiscourse.com/article/international/4002978-us-issues-new-iran-related-sanctions-treasury-dept-says",
+        "label": "Reuters wire (original report, 19:39 UTC)"
+      },
+      {
+        "url": "https://home.treasury.gov/news/press-releases",
+        "label": "US Treasury press release listing"
+      },
+      {
+        "url": "https://www.vetogate.com/5765500",
+        "label": "Vetogate report naming eight Canadian firms"
+      }
+    ],
+    "link_preview_image": "https://pbs.twimg.com/card_img/2118651429984313344/m4oDXqD7?format=jpg&name=800x419",
+    "image_origin": "article"
+  },
+  {
+    "id": "evt_112287482766196736",
+    "title": "Klitschko says Zhytomyr energy facility damage worsened Kyiv power and water supply",
+    "summary": "Zhytomyr Regional Military Administration head Vitalii Bunechko says the enemy attacked an energy infrastructure facility in the Zhytomyr community. Kyiv Mayor Vitali Klitschko says the damage worsened electricity supply in Kyiv and reduced water pressure.",
+    "date_event": null,
+    "date_published": "2026-11-06T19:41:00Z",
+    "geo": {
+      "lat": 50.2601065,
+      "lon": 28.6696281,
+      "location_name": "Zhytomyr, Ukraine",
+      "precision": "city",
+      "country": "Ukraine",
+      "region": "Zhytomyr Oblast",
+      "city": "Zhytomyr"
+    },
+    "topics": [
+      "energy-infrastructure",
+      "critical-infrastructure",
+      "power-outage",
+      "water-supply",
+      "russia-ukraine-war"
+    ],
+    "confidence": 0.5,
+    "source_name": "Ukrinform War (ukrinform.net)",
+    "links": [
+      {
+        "url": "https://www.ukrinform.net/rubric-ato/4182262-russian-forces-attack-energy-infrastructure-facility-in-zhytomyr-community.html",
+        "label": "Queued candidate 1: Bunechko statement"
+      },
+      {
+        "url": "https://www.ukrinform.net/rubric-ato/4182261-kyiv-faces-worsening-electricity-and-water-supply-situation-due-to-damage-to-energy-facility-in-zhytomyr-klitschko.html",
+        "label": "Original report: Klitschko statement"
+      },
+      {
+        "url": "https://www.kyivpost.com/post/89390",
+        "label": "Kyiv Post: repeats both officials' statements"
+      }
+    ],
+    "link_preview_image": "https://static.ukrinform.com/photos/2026_11/thumb_files/630_360_1793994693-487.png",
+    "image_origin": "article"
   }
 ]
