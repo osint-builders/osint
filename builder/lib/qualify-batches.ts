@@ -137,11 +137,11 @@ function buildQualifyPrompt(
         ? readSourceFile(repoRoot, source)
         : `(source ${tip.source_id} no longer registered — use queued name: ${tip.source_name})`;
       const candidateLines = tip.candidates
-        .map((candidate) =>
-          `  - URL: ${candidate.url}\n    Published: ${candidate.published_at}\n    Snippet: ${candidate.snippet || "(none captured — fetch the URL for full content)"}`
+        .map((candidate, index) =>
+          `  - Candidate ${index + 1} URL: ${candidate.url}\n    Published: ${candidate.published_at}\n    Snippet: ${candidate.snippet || "(none captured — fetch the URL for full content)"}`
         )
         .join("\n");
-      return `### Tip: ${tip.source_id} (queue file: ${relPath})\n\n**Source context** (id: ${tip.source_id}, type: ${tip.type}):\n\n${sourceContext}\n\n**Candidates** (window ${tip.window_start} → ${tip.window_end}):\n${candidateLines}`;
+      return `### Tip: ${tip.source_id} (queue file: ${relPath})\n\n**Decision key:** ${path.basename(relPath, ".json")}\n\n**Source context** (id: ${tip.source_id}, type: ${tip.type}):\n\n${sourceContext}\n\n**Candidates** (window ${tip.window_start} → ${tip.window_end}):\n${candidateLines}`;
     })
     .join("\n\n---\n\n");
 
@@ -153,6 +153,7 @@ function buildQualifyPrompt(
     batchNum,
     totalBatches,
     tipCount: batch.length,
+    candidateCount: batch.reduce((count, { tip }) => count + tip.candidates.length, 0),
     executionTimestamp,
     extractionDate,
     yearMonth,

@@ -137,8 +137,9 @@ for pid, iso in zip(posts, times):
     except ValueError:
         continue
     if ws < t <= we:
-        out.append({"url": f"https://t.me/{channel}/{pid}", "snippet": "", "published_at": iso})
-print(json.dumps(out[:limit]))
+        out.append((t, {"url": f"https://t.me/{channel}/{pid}", "snippet": "", "published_at": iso}))
+out.sort(key=lambda item: item[0])
+print(json.dumps([candidate for _, candidate in out[-limit:]]))
 ' <<< "$body" 2>/dev/null); then
     _warn "$sid" "Telegram channel parser failed"
     return 1

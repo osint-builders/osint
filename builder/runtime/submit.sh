@@ -59,6 +59,28 @@ fi
 
 ADDED=$(cat "$WORK_DIR/.added-count" 2>/dev/null || echo 0)
 
+# The batch agent records code-only decisions. Keep a bounded copy in the
+# commit body so zero-event runs remain diagnosable after its work dir is gone.
+QUALIFICATION_REPORT=""
+build_qualification_report() {
+  [ "$LABEL" = "batch" ] || return 0
+  local -a consumed=()
+  mapfile -t consumed < <(git diff --cached --no-renames --name-only \
+    --diff-filter=D -- data/queue/pending/)
+  QUALIFICATION_REPORT=$(node builder/runtime/qualification-report.cjs \
+    "$WORK_DIR/.qualification-decisions.tsv" "${QUALIFICATION_EXPECTED_CANDIDATES:-0}" \
+    "${consumed[@]}")
+}
+
+commit_output() {
+  local added="$1" body
+  body="$(date -u +%Y-%m-%dT%H:%M:%SZ) | [skip ci]"
+  if [ -n "$QUALIFICATION_REPORT" ]; then
+    body="$body"$'\n'"$QUALIFICATION_REPORT"
+  fi
+  git commit -m "Collect $added world events on $DATE ($LABEL $BUCKET/$TOTAL)" -m "$body"
+}
+
 bash builder/runtime/git-identity.sh
 git add "data/events/$YEAR_MONTH/$DATE.jsonl" "LEARNINGS.md"
 
@@ -80,9 +102,8 @@ if git diff --cached --quiet; then
 fi
 
 validate_batch_additions
-git commit -m "Collect $ADDED world events on $DATE ($LABEL $BUCKET/$TOTAL)
-
-$(date -u +%Y-%m-%dT%H:%M:%SZ) | [skip ci]"
+build_qualification_report
+commit_output "$ADDED"
 
 # Token validity was already confirmed once in init.sh (Step 1); re-derive
 # the push URL here since it isn't passed between steps.
@@ -125,9 +146,7 @@ reconcile_after_conflict() {
   validate_batch_additions
   local reconciled_added
   reconciled_added=$(cat "$WORK_DIR/.added-count")
-  git commit -m "Collect $reconciled_added world events on $DATE ($LABEL $BUCKET/$TOTAL)
-
-$(date -u +%Y-%m-%dT%H:%M:%SZ) | [skip ci]"
+  commit_output "$reconciled_added"
 }
 
 PUSHED=0
@@ -164,3 +183,6 @@ if [ "$PUSHED" -eq 0 ]; then
 fi
 ADDED=$(cat "$WORK_DIR/.added-count" 2>/dev/null || echo 0)
 echo "submit: pushed $ADDED event(s) for $LABEL $BUCKET/$TOTAL."
+if [ -n "$QUALIFICATION_REPORT" ]; then
+  printf '%s\n' "$QUALIFICATION_REPORT"
+fi

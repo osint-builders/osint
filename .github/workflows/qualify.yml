@@ -84,6 +84,9 @@ jobs:
         run: npm ci
         working-directory: builder
 
+      - name: Remember qualification baseline
+        run: echo "QUALIFY_START_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
       - name: Run OSINT qualify
         run: |
           set +e
@@ -100,6 +103,29 @@ jobs:
         working-directory: builder
         env:
           REPO_ROOT: ${{ github.workspace }}
+
+      - name: Show qualification decisions
+        if: always()
+        run: |
+          if [ -z "${QUALIFY_START_SHA:-}" ]; then
+            echo "Qualification baseline unavailable."
+            exit 0
+          fi
+          if ! git fetch origin main; then
+            echo "Could not fetch qualification reports from main."
+            exit 0
+          fi
+          commits=$(git log --reverse --format=%H --extended-regexp \
+            --grep='^Collect [0-9]+ world events on .* \(batch [0-9]+/[0-9]+\)$' \
+            "$QUALIFY_START_SHA..origin/main")
+          if [ -z "$commits" ]; then
+            echo "No qualification batch commits produced."
+            exit 0
+          fi
+          while IFS= read -r commit; do
+            echo "$(git log -1 --format='%h %s' "$commit")"
+            git log -1 --format=%b "$commit" | grep '^Qualification:' || echo "Qualification: report unavailable"
+          done <<< "$commits"
 
   alert-on-failure:
     needs: qualify

@@ -80,9 +80,13 @@ case "$url" in
     printf '%s\n' '{"data":{"children":[{"data":{"created_utc":1793363400,"permalink":"/r/TestDefense/comments/recent","title":"Recent vessel report"}},{"data":{"created_utc":1793359800,"permalink":"/r/TestDefense/comments/old","title":"Old report"}},{"data":{"created_utc":1793365800,"permalink":"/r/TestDefense/comments/future","title":"Future report"}}]}}' ;;
   https://t.me/s/TestChannel)
     cat <<'HTML'
-<article data-post="TestChannel/501"><time datetime="2026-10-30T12:40:00Z"></time></article>
 <article data-post="TestChannel/500"><time datetime="2026-10-30T11:30:00Z"></time></article>
-<article data-post="TestChannel/502"><time datetime="2026-10-30T13:10:00Z"></time></article>
+<article data-post="TestChannel/501"><time datetime="2026-10-30T12:10:00Z"></time></article>
+<article data-post="TestChannel/502"><time datetime="2026-10-30T12:20:00Z"></time></article>
+<article data-post="TestChannel/504"><time datetime="2026-10-30T12:40:00Z"></time></article>
+<article data-post="TestChannel/503"><time datetime="2026-10-30T12:30:00Z"></time></article>
+<article data-post="TestChannel/505"><time datetime="2026-10-30T12:50:00Z"></time></article>
+<article data-post="TestChannel/506"><time datetime="2026-10-30T13:10:00Z"></time></article>
 HTML
     ;;
   https://example.org/news)
@@ -159,7 +163,9 @@ assert_tip() {
 
 assert_tip twitter-test 'https://x.com/TestIntel/status/111'
 assert_tip reddit-test 'https://reddit.com/r/TestDefense/comments/recent'
-assert_tip telegram-test 'https://t.me/TestChannel/501'
+assert_tip telegram-test 'https://t.me/TestChannel/503' 3
+telegram_tip=$(find "$pending" -maxdepth 1 -name 'telegram-test-*.json' -print -quit)
+jq -e '[.candidates[].url] == ["https://t.me/TestChannel/503", "https://t.me/TestChannel/504", "https://t.me/TestChannel/505"]' "$telegram_tip" >/dev/null
 assert_tip webpage-test 'https://example.org/news'
 assert_tip api-test 'https://api.example.org/feed'
 assert_tip rss-test 'https://example.org/articles/recent' 2

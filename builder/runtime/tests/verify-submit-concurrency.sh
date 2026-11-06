@@ -22,7 +22,7 @@ git init --bare -b main "$remote" >/dev/null
 git -C "$seed" init -b main >/dev/null
 git -C "$seed" config user.name "Fixture"
 git -C "$seed" config user.email "fixture@example.org"
-cp "$repo_root/builder/runtime/"{submit.sh,git-identity.sh,merge-events.sh,consume-tips.sh} "$seed/builder/runtime/"
+cp "$repo_root/builder/runtime/"{submit.sh,git-identity.sh,merge-events.sh,consume-tips.sh,qualification-report.cjs} "$seed/builder/runtime/"
 cp "$repo_root/data/scripts/validate-events.js" "$seed/data/scripts/"
 cp "$repo_root/data/scripts/lib/qualified-event.js" "$seed/data/scripts/lib/"
 sed -i 's/\r$//' "$seed/builder/runtime/"*.sh
@@ -81,6 +81,7 @@ for label in a b; do
   work="$test_root/work-$label"
   mkdir -p "$work/source"
   printf '2026-10-30\n' > "$work/.extraction-date"
+  printf 'tip-%s\t1\tQUALIFIED\n' "$label" > "$work/.qualification-decisions.tsv"
   if [ "$label" = a ]; then event_id=evt_52117619469189121; else event_id=evt_52117619469189122; fi
   jq -c --arg label "$label" --arg id "$event_id" '
     .id = $id |
@@ -147,6 +148,7 @@ for label in a b; do
   (
     cd "$test_root/agent-$label"
     export WORK_DIR="$test_root/work-$label"
+    export QUALIFICATION_EXPECTED_CANDIDATES=1
     export REAL_GIT="$real_git" TEST_REMOTE="$remote" OSINT_GH_TOKEN="fixture-token"
     export PATH="$test_root/bin:$PATH"
     bash builder/runtime/submit.sh 2026-10 2026-10-30 1 2 batch
@@ -160,6 +162,7 @@ for label in a b; do
   jq -e --arg url "https://example.org/$label" 'select(.links[0].url == $url)' "$result/data/events/2026-10/2026-10-30.jsonl" >/dev/null
   [ ! -e "$result/data/queue/pending/tip-$label.json" ]
   grep -Fq "## Learning $label" "$result/LEARNINGS.md"
+  git -C "$result" log -2 --format=%B | grep -Fq "Qualification: tip-$label 1=QUALIFIED"
 done
 ! grep -Eq '^(<<<<<<<|=======|>>>>>>>)' "$result/LEARNINGS.md" "$result/data/events/2026-10/2026-10-30.jsonl"
 
@@ -168,9 +171,11 @@ git clone -q -b main "$remote" "$test_root/agent-zero"
 mkdir -p "$test_root/work-zero"
 printf '2026-10-30\n' > "$test_root/work-zero/.extraction-date"
 printf '0\n' > "$test_root/work-zero/.added-count"
+printf 'tip-zero\t1\tSTALE\n' > "$test_root/work-zero/.qualification-decisions.tsv"
 (
   cd "$test_root/agent-zero"
   export WORK_DIR="$test_root/work-zero"
+  export QUALIFICATION_EXPECTED_CANDIDATES=1
   export REAL_GIT="$real_git" TEST_REMOTE="$remote" OSINT_GH_TOKEN="fixture-token"
   export PATH="$test_root/bin:$PATH"
   bash builder/runtime/consume-tips.sh data/queue/pending/tip-zero.json
@@ -179,4 +184,5 @@ printf '0\n' > "$test_root/work-zero/.added-count"
 git clone -q -b main "$remote" "$test_root/result-zero"
 [ ! -e "$test_root/result-zero/data/queue/pending/tip-zero.json" ]
 [ "$(wc -l < "$test_root/result-zero/data/events/2026-10/2026-10-30.jsonl")" -eq 3 ]
+git -C "$test_root/result-zero" log -1 --format=%B | grep -Fq 'Qualification: tip-zero 1=STALE'
 printf 'concurrent submit checks passed\n'

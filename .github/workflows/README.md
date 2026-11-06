@@ -15,6 +15,7 @@ See the top-level [README.md](../../README.md) for architecture and secrets setu
 - Before dispatch, the job deletes pending tips older than 24 hours and records that cannot be dated. Malformed records with a valid date are logged and skipped until they expire, so valid batches can continue. Queue records are temporary handoff data, not retained archives.
 - Job `qualify` runs `builder/qualify.ts`, which takes the newest pending tips in batches of 3 (`QUALIFY_BATCH_SIZE` override), capped at 10 agents per run (`QUALIFY_MAX_BATCHES` override). Each Warp Cloud Agent qualifies, translates, geocodes, attaches an image, and validates new events against `builder/prompts/qualified-event-contract.md`, then deletes consumed pending tips. `submit.sh` independently validates raw output and staged new events with `--qualified` before publication.
 - Each agent clones a fresh checkout and runs runtime prerequisites before qualification. If parallel batches conflict on a daily event file or `LEARNINGS.md`, `submit.sh` reapplies the validated batch on the latest `main` and retries the push.
+- Each batch records code-only decisions for its candidates. `submit.sh` includes a bounded summary in the batch commit body, and the workflow prints those summaries in **Show qualification decisions**. `unreported` means an agent omitted decisions; local free-form notes remain temporary. No fetched text or URLs enter the report.
 - Shares spawn/poll/cancel infrastructure with `collect` via `builder/lib/agent-runner.ts`, including the 10-minute per-run deadline. Oz `ERROR` is terminal; only errors Oz explicitly marks retryable trigger one fresh pass over the remaining queue after 45 seconds. Qualify, legacy collection, embeddings, and the data release share the `osint-data-writers` concurrency group so event and index writes serialize.
 - Job `alert-on-failure` opens or updates a **"Qualify workflow failing"** issue on failure.
 
@@ -72,5 +73,5 @@ Weekly on Sunday at midnight UTC and available on demand. Applies the exact 90-d
 ## Troubleshooting
 
 - Run failures → check the **Actions** tab and any open **"Qualify workflow failing"** or **"Collection workflow failing"** issue.
-- Per-source telemetry stays inside each agent's ephemeral work directory; durable findings land in `LEARNINGS.md` and `source/manifest.json` notes.
+- For a zero-event run, compare Identify's tip count with Qualify's **Show qualification decisions** step. `STALE` means the first checked report fell outside the scan window; `UNVERIFIABLE` and `WEAK_EVIDENCE` mean the source could not support publication. `unreported > 0` means the batch did not record every candidate decision. Detailed notes stay in the agent's ephemeral work directory; durable source findings land in `LEARNINGS.md` and `source/manifest.json` notes.
 - The paused legacy collector filters expired `LEARNINGS.md` entries when rendering prompts. Active Qualify can append findings but does not load prior entries.

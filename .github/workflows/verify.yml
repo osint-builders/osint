@@ -114,6 +114,7 @@ jobs:
           bash builder/runtime/tests/verify-geocode.sh
           bash builder/runtime/tests/verify-geo-point.sh
           node --test builder/runtime/tests/telegram-recap.test.cjs
+          node --test builder/runtime/tests/qualification-report.test.cjs
           bash builder/runtime/tests/verify-identify.sh
           bash builder/runtime/tests/verify-consume-tips.sh
           bash builder/runtime/tests/verify-image-enrichment.sh

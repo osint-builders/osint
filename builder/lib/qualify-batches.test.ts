@@ -51,6 +51,8 @@ test("prepares newest tips within the batch cap and renders complete prompts", (
     assert.match(plan.jobs[1].prompt, /https:\/\/example.com\/middle/);
     assert.doesNotMatch(plan.jobs[0].prompt + plan.jobs[1].prompt, /example.com\/oldest/);
     assert.match(plan.jobs[0].prompt, /Source context body/);
+    assert.match(plan.jobs[0].prompt, /Decision key:\*\* newest/);
+    assert.match(plan.jobs[0].prompt, /QUALIFICATION_EXPECTED_CANDIDATES=1/);
     assert.doesNotMatch(plan.jobs[0].prompt, /\$\{[a-zA-Z_][a-zA-Z0-9_]*\}/);
     assert.deepEqual(plan.jobs.map((job) => job.itemCount), [1, 1]);
   } finally {

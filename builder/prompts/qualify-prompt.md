@@ -37,7 +37,7 @@ export WORK_DIR
 
 ## Step 2 — Process each tip
 
-For each tip above (create `mkdir -p "$WORK_DIR/$source_id"` first, using that tip's `source_id`):
+For each tip above (create `mkdir -p "$WORK_DIR/$source_id"` first, using that tip's `source_id`), process its numbered candidates in order:
 
 1. **Fetch full content** for each candidate URL. The queued snippet may be truncated or empty. Use `curl` first. If a real browser is necessary, install and run `agent-browser` on demand as directed in `skills/agent-browser/SKILL.md`; it is not preinstalled. If installation or retrieval fails, log why and reject that candidate.
 2. **Apply the event, evidence, and topical gates, then translate** per `builder/prompts/qualified-event-contract.md`. Find the first report of the specific *new development* behind any recap or repost, and record its URL and UTC publication time. Reject when that first report predates this tip's window or its time cannot be established; a recent repost never resets the clock. For a claimed official statement, inspect the original notice or a reporter quoting it directly and include that URL in `links`; an aggregator paraphrase alone does not suffice. For a specific missing publisher lead, optionally read `skills/the-news/SKILL.md`; verify any linked original report before using it. Report a new statement as the statement, never an older attack or fire cited as context. Reject isolated symbolic protests without direct security impact, plus commentary, off-topic, uncheckable, or unlocatable reports. Attribute single-source claims throughout; with one source URL, start the title, summary, and first Event paragraph with `source.name` plus a reporting verb from the contract. Do not invent source reputation or effects. Translate accepted text fully into English.
@@ -66,7 +66,11 @@ For each tip above (create `mkdir -p "$WORK_DIR/$source_id"` first, using that t
      printf '[REJECT] original report, recap, attribution, geo, or image gate failed\n' >> "$WORK_DIR/$source_id/notes.md"
    fi
    ```
-8. **Log** errors, rejects, and rate limits to `$WORK_DIR/$source_id/notes.md` (stays local). A duplicate, off-topic, weakly evidenced, unlocatable, or unreachable candidate is a normal rejection; continue to the next candidate/tip.
+8. **Record one decision per numbered candidate** in the local tab-separated decision log. Set `decision_key` to the tip's displayed **Decision key** (unique even when a source has tips from two windows). Use only these codes: `QUALIFIED`, `DUPLICATE`, `OFF_TOPIC`, `STALE` (first report outside the window), `UNVERIFIABLE` (time or claim cannot be checked), `WEAK_EVIDENCE`, `NO_GEO`, `IMAGE_FAILED`, `FETCH_FAILED`, or `OTHER`. `QUALIFIED` means accepted for the merge, even if a duplicate there prevents a new row. Never put a URL, fetched text, or free-form explanation in this log. For example, after deciding candidate 1:
+   ```bash
+   printf '%s\t%s\t%s\n' "$decision_key" 1 "$decision_code" >> "$WORK_DIR/.qualification-decisions.tsv"
+   ```
+   Log optional detail and rate limits to `$WORK_DIR/$source_id/notes.md` (stays local). A rejected candidate is normal; continue to the next candidate/tip. The commit report lists missing decisions as `unreported`.
 
 ## Step 3 — Validate
 
@@ -110,7 +114,7 @@ ${queueFilesList}
 Do not recreate or stage additions or modifications under `data/queue/pending/` after consuming tips; `submit.sh` rejects that state.
 
 ```bash
-bash builder/runtime/submit.sh ${yearMonth} ${extractionDate} ${batchNum} ${totalBatches} batch
+QUALIFICATION_EXPECTED_CANDIDATES=${candidateCount} bash builder/runtime/submit.sh ${yearMonth} ${extractionDate} ${batchNum} ${totalBatches} batch
 ```
 
 ## Step 8 — Cleanup
