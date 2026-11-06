@@ -149575,5 +149575,73 @@
     ],
     "link_preview_image": "https://imagescdn.mtv.com.lb/articles/902786238031.jpg?width=1200&height=675&quality=85",
     "image_origin": "article"
+  },
+  {
+    "id": "evt_112201699698954240",
+    "title": "Ukrinform War (ukrinform.net) Reports Kyiv Facing the Most Severe Power and Water Outages After Russian Attacks",
+    "summary": "Ukrinform War (ukrinform.net) reports that President Volodymyr Zelensky calls Kyiv electricity and water disruptions the most severe in the country after Russian attacks on energy infrastructure. Zelensky says he discussed generator and equipment supplies with partner leaders while crews work to restore the grid.",
+    "date_event": null,
+    "date_published": "2026-11-06T14:27:00Z",
+    "geo": {
+      "lat": 50.4500336,
+      "lon": 30.5241361,
+      "location_name": "Kyiv, Ukraine",
+      "precision": "city",
+      "country": "Ukraine",
+      "city": "Kyiv"
+    },
+    "topics": [
+      "energy-infrastructure",
+      "power-outage",
+      "water-outage",
+      "kyiv",
+      "ukraine"
+    ],
+    "confidence": 0.6,
+    "source_name": "Ukrinform War (ukrinform.net)",
+    "links": [
+      {
+        "url": "https://www.ukrinform.net/rubric-ato/4182153-zelensky-kyiv-facing-most-severe-electricity-and-water-supply-disruptions-following-russian-attacks.html",
+        "label": "Ukrinform report quoting Zelensky"
+      }
+    ],
+    "link_preview_image": "https://static.ukrinform.com/photos/2026_04/thumb_files/630_360_1775931777-179.jpeg",
+    "image_origin": "article"
+  },
+  {
+    "id": "evt_112202205523636224",
+    "title": "War Monitor (@warmonitors) Reports IRGC Claim of US MQ-1 Drone Shootdown Over Qeshm Island",
+    "summary": "War Monitor (@warmonitors) reports an IRGC claim that Iranian air defenses destroyed a US MQ-1 drone over Qeshm Island in the Strait of Hormuz. The IRGC presents the loss as its sixteenth MQ-1 claim, and the checked reporting contains no independent verification.",
+    "date_event": null,
+    "date_published": "2026-11-06T14:02:00Z",
+    "geo": {
+      "lat": 26.7687296,
+      "lon": 55.8476653,
+      "location_name": "Qeshm Island, Iran",
+      "precision": "region",
+      "country": "Iran",
+      "region": "Hormozgan"
+    },
+    "topics": [
+      "drone",
+      "air-defense",
+      "strait-of-hormuz",
+      "iran",
+      "qeshm-island"
+    ],
+    "confidence": 0.2,
+    "source_name": "War Monitor (@warmonitors)",
+    "links": [
+      {
+        "url": "https://t.me/warmonitors/46533",
+        "label": "War Monitor post"
+      },
+      {
+        "url": "https://www.mnimarkets.com/articles/irgc-claims-downing-of-another-us-drone-1793973740847",
+        "label": "MNI report citing Fars"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/kJUE3xThBQvFzicCoyqlLzVxJqvR-M2eDmzDNewOBdt56PSBLjeBvFtwzXvyTjsnY6lBU85IzUPA-c88orWI7taXQwYB0ZOeQG22GEM9MoAxZk9zK9S10G4Jv7rkaptrAoqa_EzwhItvNrzMG7ZGhLva1iUN8vzVJu1O41Ld2ATgNTuByXswVdlECe5T4X_Of7tKvuPWls3t2K6390w_Egu7yHcELRM0EjC2ML1L2OlUuBVBNXrp9wq4fKcHkT_hmuzzRcLuboTjJ4gCOBSDToR2Q1VJNFngOWv6u-456nHP-n5cAd_cNC_vaNfWONdit1eWSjXZ0IMCr61iKtEwVg.jpg",
+    "image_origin": "article"
   }
 ]

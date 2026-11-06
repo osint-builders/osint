@@ -485,9 +485,9 @@
   {
     "source_id": "telegram-warmonitors",
     "source_name": "War Monitor (@warmonitors)",
-    "count": 45,
+    "count": 46,
     "earliest_date": "2026-09-01T16:44:25Z",
-    "latest_date": "2026-10-30T22:16:56Z"
+    "latest_date": "2026-11-06T14:02:00Z"
   },
   {
     "source_id": "name:Rerum Novarum Intel",
@@ -1118,5 +1118,12 @@
     "count": 1,
     "earliest_date": "2026-10-30T17:11:16Z",
     "latest_date": "2026-10-30T17:11:16Z"
+  },
+  {
+    "source_id": "rss-ukrinform-war",
+    "source_name": "Ukrinform War (ukrinform.net)",
+    "count": 1,
+    "earliest_date": "2026-11-06T14:27:00Z",
+    "latest_date": "2026-11-06T14:27:00Z"
   }
 ]

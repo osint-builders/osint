@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-11-06T13:59:33.954Z",
+  "last_updated": "2026-11-06T14:56:44.850Z",
   "data_range": {
     "oldest_date": "2026-08-25",
-    "newest_date": "2026-11-04"
+    "newest_date": "2026-11-06"
   },
   "statistics": {
-    "total_events": 5109,
+    "total_events": 5111,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4728,
       "2026-10": 121,
-      "2026-11": 3
+      "2026-11": 5
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 159,
@@ -83,7 +83,7 @@
       "CNN International": 9,
       "BBC Breaking News (@BBCBreaking)": 16,
       "AP News": 20,
-      "War Monitor (@warmonitors)": 45,
+      "War Monitor (@warmonitors)": 46,
       "Rerum Novarum Intel": 52,
       "cepa": 5,
       "Sim Nasr": 3,
@@ -181,10 +181,11 @@
       "twitter-foxnews": 1,
       "twitter-cnn": 1,
       "The Lookout North": 1,
-      "Ministry of National Defense Taiwan": 1
+      "Ministry of National Defense Taiwan": 1,
+      "Ukrinform War (ukrinform.net)": 1
     },
     "media_files": {
-      "images": 989,
+      "images": 991,
       "videos": 0
     }
   },
@@ -231,7 +232,8 @@
     "2026-10-31": 24,
     "2026-11-01": 1,
     "2026-11-02": 1,
-    "2026-11-04": 1
+    "2026-11-04": 1,
+    "2026-11-06": 2
   },
-  "average_confidence": 0.7857413793103398
+  "average_confidence": 0.7854755341143987
 }
