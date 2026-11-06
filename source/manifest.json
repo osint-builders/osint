@@ -147,6 +147,26 @@
       "note": "Public Reddit JSON returned HTTP 403 from the GitHub Actions runner in Identify run 41220062754 (2026-10-31). Paused until approved OAuth/API access and a tested runner adapter exist."
     },
     {
+      "id": "rss-aljazeera",
+      "name": "Al Jazeera English (aljazeera.com)",
+      "type": "rss",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/rss-aljazeera.md",
+      "added_date": "2026-11-06"
+    },
+    {
+      "id": "rss-ukrinform-war",
+      "name": "Ukrinform War (ukrinform.net)",
+      "type": "rss",
+      "status": "testing",
+      "reliability": "medium",
+      "priority": "medium",
+      "file": "sources/rss-ukrinform-war.md",
+      "added_date": "2026-11-06"
+    },
+    {
       "id": "telegram-afustratcom",
       "name": "AFU Strategic Communications (@AFUStratCom)",
       "type": "telegram",
@@ -265,6 +285,16 @@
       "priority": "medium",
       "file": "sources/telegram-middle-east-spectator.md",
       "added_date": "2026-05-27"
+    },
+    {
+      "id": "telegram-mohe-ye",
+      "name": "Sana'a Ministry of Health and Environment (@mohe_ye)",
+      "type": "telegram",
+      "status": "testing",
+      "reliability": "unverified",
+      "priority": "medium",
+      "file": "sources/telegram-mohe-ye.md",
+      "added_date": "2026-11-06"
     },
     {
       "id": "telegram-ourwarstoday",
@@ -1897,16 +1927,17 @@
     }
   ],
   "statistics": {
-    "total_sources": 182,
+    "total_sources": 185,
     "active_sources": 80,
-    "testing_sources": 28,
+    "testing_sources": 31,
     "inactive_sources": 74,
     "by_type": {
       "twitter": 141,
+      "telegram": 21,
       "webpage": 7,
       "api": 13,
       "email": 0,
-      "rss": 1,
+      "rss": 3,
       "webhook": 0,
       "websocket": 0,
       "file": 0,
@@ -1915,14 +1946,14 @@
     },
     "by_priority": {
       "high": 0,
-      "medium": 182,
+      "medium": 185,
       "low": 0
     },
     "by_reliability": {
       "high": 0,
-      "medium": 182,
+      "medium": 184,
       "low": 0,
-      "unverified": 0
+      "unverified": 1
     }
   },
   "metadata": {

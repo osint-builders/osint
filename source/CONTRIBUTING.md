@@ -1,7 +1,7 @@
 # Contributing Sources
 
 `source/manifest.json` is the registry for the active Tip & Queue pipeline.
-`identify.yml` scans processable sources daily at 09:00 America/New_York with a
+`identify.yml` scans processable sources daily at 09:17 America/New_York with a
 one-hour lookback. It writes raw candidates to `data/queue/pending/` without an
 LLM. `qualify.yml` later checks the evidence and publishes only events that
 meet [the qualified-event contract](../builder/prompts/qualified-event-contract.md).
