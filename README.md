@@ -45,7 +45,7 @@ release-cli.yml                        # CLI cross-compile + cli-latest release
 
 A legacy single-phase flow (`collection.yml` → `builder/index.ts`) still exists, paused: one Warp agent processes a whole bucket of ~12 sources sequentially instead of small per-tip batches. The active template lives in `builder/prompts/qualify-prompt.md`; the shared publication rules live in `builder/prompts/qualified-event-contract.md`. The versioned scripts in `builder/runtime/` handle mechanical steps.
 
-The queue holds only unprocessed tips. Qualification deletes each consumed tip, including tips that produce no event; the pre-run cleanup deletes tips older than 24 hours or impossible to date. Malformed dated records are skipped until they expire. A default run selects the 30 newest valid tips (10 batches of 3). Older pending tips wait for a later run and may expire, so this limit controls Warp spend and coverage.
+The queue holds only unprocessed tips. Qualification deletes each consumed tip, including tips that produce no event; the pre-run cleanup deletes tips older than 24 hours or impossible to date. Malformed dated records are skipped until they expire. A default run selects 30 valid tips by their latest candidate publication time (10 batches of 3). Other pending tips wait for a later run and may expire, so this limit controls Warp spend and coverage.
 
 ---
 
