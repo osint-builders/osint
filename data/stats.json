@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-11-08T03:58:02.400Z",
+  "last_updated": "2026-11-08T18:58:08.482Z",
   "data_range": {
     "oldest_date": "2026-08-25",
-    "newest_date": "2026-11-06"
+    "newest_date": "2026-11-08"
   },
   "statistics": {
-    "total_events": 5113,
+    "total_events": 5115,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4728,
       "2026-10": 121,
-      "2026-11": 7
+      "2026-11": 9
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 159,
@@ -182,10 +182,10 @@
       "twitter-cnn": 1,
       "The Lookout North": 1,
       "Ministry of National Defense Taiwan": 1,
-      "Ukrinform War (ukrinform.net)": 2
+      "Ukrinform War (ukrinform.net)": 4
     },
     "media_files": {
-      "images": 993,
+      "images": 995,
       "videos": 0
     }
   },
@@ -233,7 +233,8 @@
     "2026-11-01": 1,
     "2026-11-02": 1,
     "2026-11-04": 1,
-    "2026-11-06": 4
+    "2026-11-06": 4,
+    "2026-11-08": 2
   },
-  "average_confidence": 0.7853477961432456
+  "average_confidence": 0.785203028217476
 }

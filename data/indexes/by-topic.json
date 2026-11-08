@@ -265,7 +265,7 @@
   },
   {
     "topic": "civilian-casualty",
-    "count": 50
+    "count": 51
   },
   {
     "topic": "economic",
@@ -312,6 +312,10 @@
     "count": 44
   },
   {
+    "topic": "drone-attack",
+    "count": 43
+  },
+  {
     "topic": "military-technology",
     "count": 43
   },
@@ -329,10 +333,6 @@
   },
   {
     "topic": "natural-disaster",
-    "count": 41
-  },
-  {
-    "topic": "drone-attack",
     "count": 41
   },
   {
@@ -512,6 +512,10 @@
     "count": 28
   },
   {
+    "topic": "russia-ukraine-war",
+    "count": 28
+  },
+  {
     "topic": "death",
     "count": 27
   },
@@ -525,10 +529,6 @@
   },
   {
     "topic": "pakistan",
-    "count": 27
-  },
-  {
-    "topic": "russia-ukraine-war",
     "count": 27
   },
   {
@@ -1028,6 +1028,10 @@
     "count": 13
   },
   {
+    "topic": "emergency-response",
+    "count": 13
+  },
+  {
     "topic": "unmanned-system",
     "count": 13
   },
@@ -1101,10 +1105,6 @@
   },
   {
     "topic": "environment",
-    "count": 12
-  },
-  {
-    "topic": "emergency-response",
     "count": 12
   },
   {
@@ -1344,6 +1344,10 @@
     "count": 10
   },
   {
+    "topic": "kharkiv",
+    "count": 10
+  },
+  {
     "topic": "oman",
     "count": 9
   },
@@ -1493,10 +1497,6 @@
   },
   {
     "topic": "strait",
-    "count": 9
-  },
-  {
-    "topic": "kharkiv",
     "count": 9
   },
   {
@@ -15921,6 +15921,14 @@
   },
   {
     "topic": "water-supply",
+    "count": 1
+  },
+  {
+    "topic": "dnipropetrovsk-region",
+    "count": 1
+  },
+  {
+    "topic": "civilian-injury",
     "count": 1
   }
 ]

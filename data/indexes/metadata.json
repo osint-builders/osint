@@ -149727,5 +149727,68 @@
     ],
     "link_preview_image": "https://static.ukrinform.com/photos/2026_11/thumb_files/630_360_1793994693-487.png",
     "image_origin": "article"
+  },
+  {
+    "id": "evt_112987613706596352",
+    "title": "Ukrinform War (ukrinform.net) Reports Two Killed and Seven Injured in Russian Attacks Across Dnipropetrovsk Region",
+    "summary": "Ukrinform War (ukrinform.net) reports two people killed and seven injured in drone, artillery, and aerial bomb attacks across Dnipropetrovsk region on November 8. The publisher cites regional military administration head Oleksandr Hanzha, who says the enemy attacked six districts nearly 40 times.",
+    "date_event": null,
+    "date_published": "2026-11-08T18:33:00Z",
+    "geo": {
+      "lat": 48.662589,
+      "lon": 34.9501715,
+      "location_name": "Dnipropetrovsk Oblast, Ukraine",
+      "precision": "region",
+      "region": "Dnipropetrovsk Oblast",
+      "country": "Ukraine"
+    },
+    "topics": [
+      "drone-attack",
+      "civilian-casualty",
+      "dnipropetrovsk-region",
+      "russia-ukraine-war"
+    ],
+    "confidence": 0.6,
+    "source_name": "Ukrinform War (ukrinform.net)",
+    "links": [
+      {
+        "url": "https://www.ukrinform.net/rubric-ato/4182728-two-killed-seven-injured-in-russian-attacks-on-dnipropetrovsk-region.html",
+        "label": "Ukrinform report"
+      }
+    ],
+    "link_preview_image": "https://static.ukrinform.com/photos/2026_11/thumb_files/630_360_1794158864-621.jpg",
+    "image_origin": "article"
+  },
+  {
+    "id": "evt_112987613752733696",
+    "title": "Ukrinform War (ukrinform.net) Reports a Drone Strike Injures One Person in the Kyivskyi District of Kharkiv",
+    "summary": "Ukrinform War (ukrinform.net) reports that a UAV strike injured one person and set a passenger car on fire in the Kyivskyi district of Kharkiv on November 8. The publisher says a follow-up FPV drone attack damaged a fire engine responding to the scene, citing the mayor and the regional State Emergency Service.",
+    "date_event": null,
+    "date_published": "2026-11-08T18:10:00Z",
+    "geo": {
+      "lat": 50.0050521,
+      "lon": 36.2401101,
+      "location_name": "Kyivskyi district, Kharkiv",
+      "precision": "city",
+      "city": "Kharkiv",
+      "region": "Kharkiv Oblast",
+      "country": "Ukraine"
+    },
+    "topics": [
+      "drone-attack",
+      "civilian-injury",
+      "kharkiv",
+      "emergency-response"
+    ],
+    "confidence": 0.55,
+    "source_name": "Ukrinform War (ukrinform.net)",
+    "links": [
+      {
+        "url": "https://www.ukrinform.net/rubric-ato/4182724-russian-forces-attack-kharkivs-kyivskyi-district-again-injuring-one-person.html",
+        "label": "Ukrinform report"
+      }
+    ],
+    "link_preview_image": "https://static.ukrinform.com/photos/2026_11/thumb_files/630_360_1794158669-357.jpg",
+    "image_origin": "article"
   }
 ]
