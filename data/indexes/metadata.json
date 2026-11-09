@@ -149790,5 +149790,43 @@
     ],
     "link_preview_image": "https://static.ukrinform.com/photos/2026_11/thumb_files/630_360_1794158669-357.jpg",
     "image_origin": "article"
+  },
+  {
+    "id": "evt_113420274203910144",
+    "title": "Thewarzonewire (@Thewarzonewire) Reports Enhanced Force Protection at RAF Lakenheath and RAF Mildenhall",
+    "summary": "Thewarzonewire (@Thewarzonewire) reports that an unnamed U.S. official says enhanced force protection measures apply at RAF Lakenheath and RAF Mildenhall in England. The official declined to specify the measures, and their cause remains unclear.",
+    "date_event": null,
+    "date_published": "2026-11-09T22:35:14Z",
+    "geo": {
+      "lat": 52.3626963,
+      "lon": 0.4854831,
+      "location_name": "RAF Mildenhall, Suffolk, England",
+      "precision": "city",
+      "country": "United Kingdom",
+      "region": "Suffolk",
+      "city": "Mildenhall"
+    },
+    "topics": [
+      "force-protection",
+      "air-force-basing",
+      "raf-mildenhall",
+      "raf-lakenheath",
+      "united-kingdom",
+      "security-posture"
+    ],
+    "confidence": 0.6,
+    "source_name": "Thewarzonewire (@Thewarzonewire)",
+    "links": [
+      {
+        "url": "https://x.com/Thewarzonewire/status/2119928632806195525",
+        "label": "Queued TWZ post"
+      },
+      {
+        "url": "https://www.twz.com/air/security-levels-at-u-s-bases-in-england-raised-without-explanation",
+        "label": "TWZ article"
+      }
+    ],
+    "link_preview_image": "https://www.twz.com/wp-content/uploads/2026/11/F-35Lakenheath.jpg?w=1200",
+    "image_origin": "article"
   }
 ]

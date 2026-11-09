@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-11-08T18:58:08.482Z",
+  "last_updated": "2026-11-09T23:37:33.869Z",
   "data_range": {
     "oldest_date": "2026-08-25",
-    "newest_date": "2026-11-08"
+    "newest_date": "2026-11-09"
   },
   "statistics": {
-    "total_events": 5115,
+    "total_events": 5116,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4728,
       "2026-10": 121,
-      "2026-11": 9
+      "2026-11": 10
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 159,
@@ -61,7 +61,7 @@
       "Gcaptain (@Gcaptain)": 29,
       "cnni": 3,
       "twitter-criticalthreats": 1,
-      "Thewarzonewire (@Thewarzonewire)": 82,
+      "Thewarzonewire (@Thewarzonewire)": 83,
       "Middle East Spectator (@Middle_East_Spectator)": 110,
       "BBC World News": 45,
       "BBC Breaking News": 11,
@@ -185,7 +185,7 @@
       "Ukrinform War (ukrinform.net)": 4
     },
     "media_files": {
-      "images": 995,
+      "images": 996,
       "videos": 0
     }
   },
@@ -234,7 +234,8 @@
     "2026-11-02": 1,
     "2026-11-04": 1,
     "2026-11-06": 4,
-    "2026-11-08": 2
+    "2026-11-08": 2,
+    "2026-11-09": 1
   },
-  "average_confidence": 0.785203028217476
+  "average_confidence": 0.7851393188854437
 }
