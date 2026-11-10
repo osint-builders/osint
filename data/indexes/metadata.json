@@ -149828,5 +149828,45 @@
     ],
     "link_preview_image": "https://www.twz.com/wp-content/uploads/2026/11/F-35Lakenheath.jpg?w=1200",
     "image_origin": "article"
+  },
+  {
+    "id": "evt_113743037129039872",
+    "title": "Drone Strikes Hit Kryvyi Rih Infrastructure and Cut Power, Ukrainian Outlets Report",
+    "summary": "DD Geopolitics reports a drone strike on Kryvyi Rih late on 10 November 2026 and claims a total citywide blackout. Ukrainian outlets 0564.ua and Telegraf describe strikes on critical infrastructure, explosions, and power disruptions. The reports attribute the drones to Russian forces, and they do not support a total blackout claim.",
+    "date_event": null,
+    "date_published": "2026-11-10T20:22:00Z",
+    "geo": {
+      "lat": 47.9102734,
+      "lon": 33.3917703,
+      "location_name": "Kryvyi Rih, Ukraine",
+      "precision": "city",
+      "country": "Ukraine",
+      "region": "Dnipropetrovsk Oblast",
+      "city": "Kryvyi Rih"
+    },
+    "topics": [
+      "drone-strike",
+      "critical-infrastructure",
+      "power-outage",
+      "ukraine"
+    ],
+    "confidence": 0.6,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/197808",
+        "label": "DD Geopolitics Telegram post (queued candidate)"
+      },
+      {
+        "url": "https://www.0564.ua/news/4178107/krivij-rig-pid-atakou-rosijskih-bpla-vorog-be-po-kriticnij-infrastrukturi-u-misti-pereboi-zi-svitlom",
+        "label": "0564.ua local report (original report)"
+      },
+      {
+        "url": "https://war.telegraf.com.ua/ukr/war-in-ukraine/5955042-pislya-vibukhu-u-poltavi-pereboi-zi-svitlom-ta-vodoyu-khronologiya-viyni-den-1721",
+        "label": "Telegraf live war chronology"
+      }
+    ],
+    "link_preview_image": "https://s.0564.ua/img/section/newsIcon/is/2/sili-oboroni-pivdna_6af37c5c384b3.jpg",
+    "image_origin": "source"
   }
 ]
