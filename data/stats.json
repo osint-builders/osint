@@ -1,28 +1,28 @@
 {
-  "last_updated": "2026-11-11T21:32:33.767Z",
+  "last_updated": "2026-11-12T21:36:50.852Z",
   "data_range": {
     "oldest_date": "2026-08-25",
-    "newest_date": "2026-11-10"
+    "newest_date": "2026-11-12"
   },
   "statistics": {
-    "total_events": 5117,
+    "total_events": 5119,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4728,
       "2026-10": 121,
-      "2026-11": 11
+      "2026-11": 13
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 159,
       "Quds News Network (@QudsNen)": 226,
       "Rerum Novarum Intel (@rnintel)": 128,
-      "Intel Slava Z (@intelslava)": 180,
+      "Intel Slava Z (@intelslava)": 181,
       "UNITED24 Media": 38,
       "Wagner Z Group": 4,
       "ABC News": 57,
       "Insider Paper (@insiderpaper)": 99,
       "Clash Report (@ClashReport)": 324,
-      "DD Geopolitics (@DDGeopolitics)": 162,
+      "DD Geopolitics (@DDGeopolitics)": 163,
       "OSINT Technical (@Osinttechnical)": 64,
       "NSA (@NSAGov)": 3,
       "Sim Nasr (@SimNasr)": 78,
@@ -185,7 +185,7 @@
       "Ukrinform War (ukrinform.net)": 4
     },
     "media_files": {
-      "images": 997,
+      "images": 999,
       "videos": 0
     }
   },
@@ -236,7 +236,8 @@
     "2026-11-06": 4,
     "2026-11-08": 2,
     "2026-11-09": 1,
-    "2026-11-10": 1
+    "2026-11-10": 1,
+    "2026-11-12": 2
   },
-  "average_confidence": 0.7850756533700086
+  "average_confidence": 0.7849484536082422
 }

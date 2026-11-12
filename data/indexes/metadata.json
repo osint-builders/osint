@@ -149868,5 +149868,96 @@
     ],
     "link_preview_image": "https://s.0564.ua/img/section/newsIcon/is/2/sili-oboroni-pivdna_6af37c5c384b3.jpg",
     "image_origin": "source"
+  },
+  {
+    "id": "evt_114477063833923584",
+    "title": "Trump Says He Would Certainly Consider Military Force Against Cuba",
+    "summary": "President Donald Trump tells a Salem News Channel interview that he would certainly consider military force against Cuba before leaving office. Several outlets quote the November 12, 2026 remarks, and the Clash Report carries the earliest timestamp found.",
+    "date_event": null,
+    "date_published": "2026-11-12T20:48:00Z",
+    "geo": {
+      "lat": 23.0131338,
+      "lon": -80.8328748,
+      "location_name": "Cuba",
+      "precision": "country",
+      "country": "Cuba"
+    },
+    "topics": [
+      "cuba",
+      "united-states",
+      "military-action",
+      "sanction",
+      "geopolitics"
+    ],
+    "confidence": 0.6,
+    "source_name": "Intel Slava Z (@intelslava)",
+    "links": [
+      {
+        "url": "https://t.me/intelslava/97998",
+        "label": "Queued Telegram candidate (Intel Slava Z)"
+      },
+      {
+        "url": "https://clashreport.com/world/articles/trump-says-he-would-certainly-consider-a-cuba-military-campaign-izjpbqpebm",
+        "label": "Original report (Clash Report)"
+      },
+      {
+        "url": "https://newrepublic.com/post/217941/donald-trump-cuba-2028-iran",
+        "label": "The New Republic"
+      },
+      {
+        "url": "https://breakingthenews.net/Article/Trump:-I-wanna-get-Cuba-done-before-I-leave/67554417",
+        "label": "Breaking the News"
+      },
+      {
+        "url": "https://g1.globo.com/mundo/noticia/2026/11/12/trump-diz-que-quer-resolver-a-questao-de-cuba-antes-de-deixar-cargo.ghtml",
+        "label": "G1"
+      },
+      {
+        "url": "https://www.infobae.com/america/agencias/2026/11/12/trump-quiere-resolver-el-tema-de-cuba-antes-de-dejar-la-casa-blanca/",
+        "label": "Infobae"
+      }
+    ],
+    "link_preview_image": "https://imagedelivery.net/qIvImu8MgTZD-kGvW-i83w/production.gdh/uploads/news/0c00a221-0d65-4961-8d68-36eb3e082dea.jpg/w=1200,h=630,fit=cover,gravity=auto,quality=85",
+    "image_origin": "article"
+  },
+  {
+    "id": "evt_114477156616130560",
+    "title": "Ukrainska Pravda Reports Zelensky Meets US Envoys Kushner and Witkoff at Baldonnel",
+    "summary": "Ukrainska Pravda reports that Ukrainian President Volodymyr Zelensky met US envoys Jared Kushner and Steve Witkoff at Casement Aerodrome in Baldonnel, west of Dublin, on 12 November 2026. The meeting followed the envoys' talks with Vladimir Putin in Moscow. The Irish Independent live coverage reports the same encounter.",
+    "date_event": null,
+    "date_published": "2026-11-12T20:55:00Z",
+    "geo": {
+      "lat": 53.3011101,
+      "lon": -6.4479105,
+      "location_name": "Casement Aerodrome, Baldonnel, County Dublin, Ireland",
+      "precision": "exact",
+      "country": "Ireland",
+      "region": "Leinster",
+      "city": "Dublin"
+    },
+    "topics": [
+      "diplomacy",
+      "ukraine",
+      "peace-negotiation",
+      "ireland"
+    ],
+    "confidence": 0.6,
+    "source_name": "DD Geopolitics (@DDGeopolitics)",
+    "links": [
+      {
+        "url": "https://t.me/DDGeopolitics/198015",
+        "label": "Queued DD Geopolitics tip"
+      },
+      {
+        "url": "https://www.pravda.com.ua/news/2026/11/12/8062612/",
+        "label": "Original report (Ukrainska Pravda)"
+      },
+      {
+        "url": "https://www.independent.ie/irish-news/zelensky-meets-with-jared-kushner-at-baldonnell-as-taoiseach-hails-productive-day/a/164423289.html",
+        "label": "Irish Independent live coverage"
+      }
+    ],
+    "link_preview_image": "https://cdn4.telesco.pe/file/QH2sDnR8iQVyq3gsMChEphZY7ocxCFDSUedWPvyuuHOG76Pd8hnWaas2Vw06h-i_RFHOXrFEJdOi02GLwL7Qyu-7vNqgwNIt8OCPD38sRHkUy8e90yjBqeUJQccA_rrv2t0sPKEwr-bp4DVcdXmVqoZrXvjVHcLqc2Te79jIAVVy6bSRqkZYD5RloY50lRooOtK7bRqSL26VPH2qNICgg-zkrZS-WpfuM4vKLjleJxz3Fztk9n6eeQZKDexm88q-FCuJPlPMeo9AhuBdn22keD51Ygaa_FRRjdvk1ASjkBsH2LO1d17rT8LcEOy0hxyQhR7jAAeeL3QG4CzCX4guxg",
+    "image_origin": "article"
   }
 ]
