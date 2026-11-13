@@ -149959,5 +149959,48 @@
     ],
     "link_preview_image": "https://cdn4.telesco.pe/file/QH2sDnR8iQVyq3gsMChEphZY7ocxCFDSUedWPvyuuHOG76Pd8hnWaas2Vw06h-i_RFHOXrFEJdOi02GLwL7Qyu-7vNqgwNIt8OCPD38sRHkUy8e90yjBqeUJQccA_rrv2t0sPKEwr-bp4DVcdXmVqoZrXvjVHcLqc2Te79jIAVVy6bSRqkZYD5RloY50lRooOtK7bRqSL26VPH2qNICgg-zkrZS-WpfuM4vKLjleJxz3Fztk9n6eeQZKDexm88q-FCuJPlPMeo9AhuBdn22keD51Ygaa_FRRjdvk1ASjkBsH2LO1d17rT8LcEOy0hxyQhR7jAAeeL3QG4CzCX4guxg",
     "image_origin": "article"
+  },
+  {
+    "id": "evt_114831149821333504",
+    "title": "U.S. Air Force Reports Response to Suspected Drone Activity at RAF Lakenheath",
+    "summary": "The U.S. Air Force reports that its security forces responded to suspected unauthorized drone activity over RAF Lakenheath in Suffolk on the evening of November 13, 2026. The service states that no personnel, aircraft, or infrastructure experienced effects. A local drone count remains unsupported by official sources.",
+    "date_event": null,
+    "date_published": "2026-11-13T20:33:00Z",
+    "geo": {
+      "lat": 52.404201,
+      "lon": 0.5565787,
+      "location_name": "RAF Lakenheath, Suffolk, England",
+      "precision": "city",
+      "country": "United Kingdom",
+      "region": "Suffolk"
+    },
+    "topics": [
+      "drone",
+      "air-base",
+      "force-protection",
+      "united-kingdom"
+    ],
+    "confidence": 0.7,
+    "source_name": "Rerum Novarum Intel (@rnintel)",
+    "links": [
+      {
+        "url": "https://t.me/rnintel/69038",
+        "label": "Queued candidate (Rerum Novarum Intel)"
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/articles/c6jd75geegzyo",
+        "label": "BBC breaking report (original)"
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/articles/cwj3k1g55nypo",
+        "label": "BBC follow-up"
+      },
+      {
+        "url": "https://www.dailymail.com/news/article-16291289/Sirens-RAF-bases-drone-US-evacuated-aircraft-Iran.html",
+        "label": "Daily Mail report"
+      }
+    ],
+    "link_preview_image": "https://ichef.bbci.co.uk/news/1024/branded_news/0f2c/live/60f697b0-1203-11ef-82e8-cd354766a224.png",
+    "image_origin": "source"
   }
 ]
