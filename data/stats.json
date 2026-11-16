@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-11-15T19:52:20.498Z",
+  "last_updated": "2026-11-16T23:32:08.635Z",
   "data_range": {
     "oldest_date": "2026-08-25",
-    "newest_date": "2026-11-13"
+    "newest_date": "2026-11-16"
   },
   "statistics": {
-    "total_events": 5120,
+    "total_events": 5122,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4728,
       "2026-10": 121,
-      "2026-11": 14
+      "2026-11": 16
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 159,
@@ -42,7 +42,7 @@
       "BBC World News (@BBCWorld)": 125,
       "ABC News (@ABC)": 122,
       "US Navy (@USNavy)": 26,
-      "CNN (@CNN)": 59,
+      "CNN (@CNN)": 60,
       "Warshipcam (@Warshipcam)": 118,
       "Xinhua News (@XHNews)": 198,
       "cnnbrk (@cnnbrk)": 22,
@@ -74,7 +74,7 @@
       "ISW Ukraine Interactive Territorial Control Map": 14,
       "The Lookout North (@The_Lookout_N)": 4,
       "My Lord Bebo (@MyLordBebo)": 36,
-      "cnni (@cnni)": 33,
+      "cnni (@cnni)": 34,
       "Philippine Coast Guard (@CoastGuardPH)": 9,
       "Clash Report": 44,
       "DD Geopolitics": 53,
@@ -185,7 +185,7 @@
       "Ukrinform War (ukrinform.net)": 4
     },
     "media_files": {
-      "images": 1000,
+      "images": 1002,
       "videos": 0
     }
   },
@@ -238,7 +238,8 @@
     "2026-11-09": 1,
     "2026-11-10": 1,
     "2026-11-12": 2,
-    "2026-11-13": 1
+    "2026-11-13": 1,
+    "2026-11-16": 2
   },
-  "average_confidence": 0.7849192717279233
+  "average_confidence": 0.7847579814624046
 }
