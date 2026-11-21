@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-11-20T21:56:56.275Z",
+  "last_updated": "2026-11-21T20:40:54.418Z",
   "data_range": {
     "oldest_date": "2026-08-25",
-    "newest_date": "2026-11-20"
+    "newest_date": "2026-11-21"
   },
   "statistics": {
-    "total_events": 5126,
+    "total_events": 5127,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4728,
       "2026-10": 121,
-      "2026-11": 20
+      "2026-11": 21
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 159,
@@ -21,7 +21,7 @@
       "Wagner Z Group": 4,
       "ABC News": 57,
       "Insider Paper (@insiderpaper)": 99,
-      "Clash Report (@ClashReport)": 324,
+      "Clash Report (@ClashReport)": 325,
       "DD Geopolitics (@DDGeopolitics)": 163,
       "OSINT Technical (@Osinttechnical)": 64,
       "NSA (@NSAGov)": 3,
@@ -185,7 +185,7 @@
       "Ukrinform War (ukrinform.net)": 5
     },
     "media_files": {
-      "images": 1006,
+      "images": 1007,
       "videos": 0
     }
   },
@@ -241,7 +241,8 @@
     "2026-11-13": 1,
     "2026-11-16": 2,
     "2026-11-17": 3,
-    "2026-11-20": 1
+    "2026-11-20": 1,
+    "2026-11-21": 1
   },
-  "average_confidence": 0.7844189235515888
+  "average_confidence": 0.7842871830020509
 }

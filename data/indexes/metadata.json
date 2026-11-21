@@ -150228,5 +150228,45 @@
     ],
     "link_preview_image": "https://static.ukrinform.com/photos/2026_11/thumb_files/630_360_1795205292-430.jpg",
     "image_origin": "article"
+  },
+  {
+    "id": "evt_117724448601161728",
+    "title": "IRGC Claims Strikes on Two US Patriot Radars in Bahrain",
+    "summary": "The Islamic Revolutionary Guard Corps claims it struck two US Patriot air defense radars at bases in Bahrain with missiles and drones. The claim rests on an IRGC statement, and no independent source describes radar damage. Bahraini authorities separately report a fire at an industrial facility after an Iranian attack.",
+    "date_event": null,
+    "date_published": "2026-11-21T20:15:00Z",
+    "geo": {
+      "lat": 26.1551249,
+      "lon": 50.5344606,
+      "location_name": "Bahrain",
+      "precision": "country",
+      "country": "Bahrain"
+    },
+    "topics": [
+      "air-defense",
+      "radar",
+      "drone-attack",
+      "missile-attack",
+      "bahrain",
+      "irgc"
+    ],
+    "confidence": 0.4,
+    "source_name": "Clash Report (@ClashReport)",
+    "links": [
+      {
+        "url": "https://x.com/ClashReport/status/2124235682704990644",
+        "label": "Clash Report post (queued candidate)"
+      },
+      {
+        "url": "https://defapress.ir/fa/news/879822/%D9%87%D8%AF%D9%81-%D9%82%D8%B1%D8%A7%D8%B1-%DA%AF%D8%B1%D9%81%D8%AA%D9%86-%D8%AF%D9%88-%D8%B1%D8%A7%D8%AF%D8%A7%D8%B1-%D9%BE%D8%AF%D8%A7%D9%81%D9%86%D8%AF%DB%8C-%D9%BE%D8%A7%D8%AA%D8%B1%DB%8C%D9%88%D8%AA-%D8%A7%D8%B1%D8%AA%D8%B4-%D8%AA%D8%B1%D9%88%D8%B1%DB%8C%D8%B3%D8%AA%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AF%D8%B1-%D9%BE%D8%A7%DB%8C%DA%AF%D8%A7%D9%87-%D9%87%D8%A7%DB%8C-%D8%A7%D9%84%D8%B1%D9%81%D8%A7%D8%B9-%D9%88-%D8%B9%D9%88%D8%A7%D9%84%DB%8C-%D8%A8%D8%AD%D8%B1%DB%8C%D9%86",
+        "label": "IRGC statement reproduced by Defapress (original report)"
+      },
+      {
+        "url": "https://www.aljazeera.com/news/liveblog/2026/11/21/iran-war-live-saudi-led-coalition-repels-houthi-missiles",
+        "label": "Al Jazeera live report: Bahrain fire and IRGC base attacks"
+      }
+    ],
+    "link_preview_image": "https://www.aljazeera.com/wp-content/uploads/2026/11/2026-11-20T110959Z_393580283_RC2KROAH1EGC_RTRMADP_3_IRAN-CRISIS-1795291005.jpg?resize=1920%2C1440",
+    "image_origin": "article"
   }
 ]

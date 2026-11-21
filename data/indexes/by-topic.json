@@ -129,7 +129,7 @@
   },
   {
     "topic": "air-defense",
-    "count": 103
+    "count": 104
   },
   {
     "topic": "election",
@@ -293,7 +293,7 @@
   },
   {
     "topic": "drone-attack",
-    "count": 45
+    "count": 46
   },
   {
     "topic": "europe",
@@ -976,6 +976,10 @@
     "count": 14
   },
   {
+    "topic": "irgc",
+    "count": 14
+  },
+  {
     "topic": "mali",
     "count": 14
   },
@@ -1041,10 +1045,6 @@
   },
   {
     "topic": "history",
-    "count": 13
-  },
-  {
-    "topic": "irgc",
     "count": 13
   },
   {
@@ -1632,6 +1632,10 @@
     "count": 8
   },
   {
+    "topic": "missile-attack",
+    "count": 8
+  },
+  {
     "topic": "naval-exercise",
     "count": 8
   },
@@ -1849,10 +1853,6 @@
   },
   {
     "topic": "naval-conflict",
-    "count": 7
-  },
-  {
-    "topic": "missile-attack",
     "count": 7
   },
   {
@@ -3216,6 +3216,10 @@
     "count": 4
   },
   {
+    "topic": "radar",
+    "count": 4
+  },
+  {
     "topic": "political-tension",
     "count": 4
   },
@@ -4181,10 +4185,6 @@
   },
   {
     "topic": "ukraine-military-operation",
-    "count": 3
-  },
-  {
-    "topic": "radar",
     "count": 3
   },
   {
@@ -15961,6 +15961,10 @@
   },
   {
     "topic": "cluster-munition",
+    "count": 1
+  },
+  {
+    "topic": "bahrain",
     "count": 1
   }
 ]
