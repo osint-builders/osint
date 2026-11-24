@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-11-22T20:50:21.199Z",
+  "last_updated": "2026-11-24T01:49:22.177Z",
   "data_range": {
     "oldest_date": "2026-08-25",
-    "newest_date": "2026-11-21"
+    "newest_date": "2026-11-24"
   },
   "statistics": {
-    "total_events": 5127,
+    "total_events": 5128,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4728,
       "2026-10": 121,
-      "2026-11": 21
+      "2026-11": 22
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 159,
@@ -140,7 +140,7 @@
       "Lebanese News and Updates (@LebUpdate)": 3,
       "Scmpnews": 10,
       "SCS Probing Initiative (@SCS_PI)": 11,
-      "Mondefense (@Mondefense)": 2,
+      "Mondefense (@Mondefense)": 3,
       "ELINT News": 4,
       "The War Zone (@Thewarzonewire)": 2,
       "AFU Strategic Communications": 1,
@@ -185,7 +185,7 @@
       "Ukrinform War (ukrinform.net)": 5
     },
     "media_files": {
-      "images": 1007,
+      "images": 1008,
       "videos": 0
     }
   },
@@ -242,7 +242,8 @@
     "2026-11-16": 2,
     "2026-11-17": 3,
     "2026-11-20": 1,
-    "2026-11-21": 1
+    "2026-11-21": 1,
+    "2026-11-24": 1
   },
-  "average_confidence": 0.7842871830020509
+  "average_confidence": 0.7842240493319578
 }
