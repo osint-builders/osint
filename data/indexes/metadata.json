@@ -150299,5 +150299,40 @@
     ],
     "link_preview_image": "https://pbs.twimg.com/media/HX2hlApaMAA2lTg.jpg",
     "image_origin": "article"
+  },
+  {
+    "id": "evt_119573350883274752",
+    "title": "BBC World News (@BBCWorld) reports Zelensky says US air defense delays hurt Ukraine",
+    "summary": "BBC World News (@BBCWorld) reports Zelensky says delayed US Patriot deliveries leave Ukraine short of anti-ballistic interceptors. In a Kyiv interview, he also says Starlink restrictions in occupied areas hamper Ukrainian interceptor drones.",
+    "date_event": null,
+    "date_published": "2026-11-26T22:44:51Z",
+    "geo": {
+      "lat": 49.4871968,
+      "lon": 31.2718321,
+      "location_name": "Ukraine",
+      "precision": "country",
+      "country": "Ukraine"
+    },
+    "topics": [
+      "air-defense",
+      "patriot",
+      "starlink",
+      "ukraine",
+      "us-ukraine-relations"
+    ],
+    "confidence": 0.6,
+    "source_name": "BBC World News (@BBCWorld)",
+    "links": [
+      {
+        "url": "https://x.com/BBCWorld/status/2126084797088796890",
+        "label": "BBC World News post (queued candidate and original report)"
+      },
+      {
+        "url": "https://www.bbc.com/news/articles/c820q9wgrpyyo",
+        "label": "BBC News interview article"
+      }
+    ],
+    "link_preview_image": "https://ichef.bbci.co.uk/news/1024/branded_news/20f7/live/d0e75f10-e9e6-11f1-ab41-f1f84c0c758a.jpg",
+    "image_origin": "article"
   }
 ]

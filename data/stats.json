@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-11-25T23:12:15.474Z",
+  "last_updated": "2026-11-26T23:07:22.953Z",
   "data_range": {
     "oldest_date": "2026-08-25",
-    "newest_date": "2026-11-24"
+    "newest_date": "2026-11-26"
   },
   "statistics": {
-    "total_events": 5128,
+    "total_events": 5129,
     "events_by_month": {
       "2026-08": 257,
       "2026-09": 4728,
       "2026-10": 121,
-      "2026-11": 22
+      "2026-11": 23
     },
     "events_by_source": {
       "War Translated (@wartranslated)": 159,
@@ -39,7 +39,7 @@
       "AP News (@AP)": 40,
       "CSIS Korea Chair": 9,
       "Our Wars, Today (@ourwarstoday)": 18,
-      "BBC World News (@BBCWorld)": 125,
+      "BBC World News (@BBCWorld)": 126,
       "ABC News (@ABC)": 122,
       "US Navy (@USNavy)": 26,
       "CNN (@CNN)": 60,
@@ -185,7 +185,7 @@
       "Ukrinform War (ukrinform.net)": 5
     },
     "media_files": {
-      "images": 1008,
+      "images": 1009,
       "videos": 0
     }
   },
@@ -243,7 +243,8 @@
     "2026-11-17": 3,
     "2026-11-20": 1,
     "2026-11-21": 1,
-    "2026-11-24": 1
+    "2026-11-24": 1,
+    "2026-11-26": 1
   },
-  "average_confidence": 0.7842240493319578
+  "average_confidence": 0.7841609589041043
 }
